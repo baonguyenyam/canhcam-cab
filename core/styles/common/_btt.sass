@@ -1,0 +1,27 @@
+#back-to-top
+	position: fixed
+	bottom: 20px
+	right: 20px
+	z-index: 9999
+	text-align: center
+	background: #f5f5f5
+	color: #444
+	cursor: pointer
+	border: 0
+	border-radius: 2px
+	text-decoration: none
+	transition: opacity 0.2s ease-out
+	opacity: 0
+	+pad(.25rem .5rem)
+	+media-breakpoint-up(md)
+		bottom: 40px
+		right: 40px
+	span
+		display: block
+	i
+		line-height: .75rem
+		height: .75rem
+	&:hover
+		background: #e9ebec
+	&.show
+		opacity: 1

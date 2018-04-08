@@ -1,0 +1,92 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-carousel-1
+	.owl-nav
+		text-align: center
+		-webkit-tap-highlight-color: transparent
+		margin-top: 10px
+		+media-breakpoint-up(lg)
+			position: absolute
+			width: 100%
+			top: 50%
+			left: 0
+			height: 40px
+			margin-top: -30px
+			.owl-prev
+				position: absolute
+				left: -15px
+				top: 0
+			.owl-next
+				position: absolute
+				right: -15px
+				top: 0
+		[class*='owl-']
+			font-size: 14px
+			margin: 5px
+			padding: 4px 12px
+			display: inline-block
+			cursor: pointer
+			&:hover
+				text-decoration: none
+		.disabled
+			opacity: 0.5
+			cursor: default
+			+ .owl-dots
+				margin-top: 10px
+
+		.owl-dots
+			text-align: center
+			-webkit-tap-highlight-color: transparent
+			.owl-dot
+				display: inline-block
+				zoom: 1
+				*display: inline
+				span
+					width: 10px
+					height: 10px
+					margin: 5px 7px
+					display: block
+					-webkit-backface-visibility: visible
+					transition: opacity 200ms ease
+					border-radius: 30px
+					&:hover, &.active
+						span
+
+	.owl-carousel
+		.owl-item
+			text-align: center
+			img
+				width: initial
+				display: initial
+				max-width: 100%
+
+	.owl-nav
+		@include media-breakpoint-up(md)
+			position: relative
+		[class*='owl-']
+			+border-radius(0)
+			+pad(8px 15px)
+			background: color-get($mau,duong)
+			&:hover, &.active
+				background: color-get($mau,cam)
+				i
+					color: color-get($mau,den)
+			i
+				line-height: 1.8rem
+				height: 0
+				font-size: 1.2rem
+		.owl-prev
+			left: 0
+		.owl-next
+			right: 0
+	.owl-dots
+		.owl-dot
+			span
+				+border-radius(0)
+				background: color-get($mau,duong)
+			&.active, &:hover
+				span
+					background: color-get($mau,cam)

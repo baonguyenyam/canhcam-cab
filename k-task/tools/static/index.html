@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HTML 2 Jade/Pug - a converter for HTML</title>
+    <meta name="viewport" content="width=1024, user-scalable=no">
+    <link href="/normalizer.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/theme/solarized.min.css" type="text/css" />
+    <link href="/site.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>HTML to Jade/Pug converter</h1>
+    </header>
+    <section role="main">
+        <div class="container-fluid">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <fieldset class="form-group">
+                            <label for="HTML">HTML</label>
+                            <textarea name="html" id="html"></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="col-sm-6">
+                        <fieldset class="form-group">
+                            <label for="jade">JADE/PUG</label>
+                            <textarea name="jade" id="jade"></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+                <fieldset class="actions">
+                <button type="submit" class="to-jade">Convert!</button>
+            </fieldset>
+            </form>
+        </div>
+    <footer>Copyright by Bao Nguyen</footer>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/codemirror.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/mode/xml/xml.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/mode/javascript/javascript.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/mode/css/css.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/mode/jade/jade.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>

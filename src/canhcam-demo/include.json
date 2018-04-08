@@ -1,0 +1,25 @@
+{
+    "SETUP": {
+        "trang-chu": {
+            "header": [
+                "header/h-1"
+            ]
+        },
+        "ve-chung-toi": {
+            "header": [
+                "header/h-1"
+            ],
+            "body": [
+                "carousel/c-1"
+            ]
+        },
+        "lien-he": {
+            "body": [
+                "form/f-1",
+                "form/f-1",
+                "form/f-1",
+                "form/f-1"
+            ]
+        }
+    }
+}

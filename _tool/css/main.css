@@ -1,0 +1,132 @@
+body,
+html {
+	height: 100%;
+}
+
+* {
+	border-radius: 0 !important
+}
+
+.list-group {
+	display: flex;
+	padding: .5rem;
+}
+.list-group .list-group-item {
+		padding: .5rem .5rem;
+		margin-bottom: .25rem;
+}
+.list-group .list-group-item:last-child {
+		margin-bottom: 0;
+}
+.list-group .list-group-item h5 {
+	    font-size: 1rem;
+}
+.list-group .list-group-item figure{
+	margin-bottom: 0;
+}
+.list-group .list-group-item figure img{
+	max-width: 100%;
+}
+
+#accordion {
+	background: #fffef2;
+	min-height: calc(100vh - 38px);
+	max-height: calc(100vh - 38px);
+    overflow: scroll;
+	border-right: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf;
+}
+#accordion .card-header {
+	    padding: .25rem .1rem;
+		background: #f7f7f7
+}
+#accordion .card-header .btn-link{
+	text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+#accordion .card{
+	border: 0;
+	background: none
+}
+#accordion .card-body{ padding:0 }
+#accordion .list-group-item{ cursor: move;}
+
+.bleft {
+	padding-right: .5rem !important;
+}
+
+.noleft {
+	border-left: 0;
+	max-height: 100vh;
+	overflow: scroll;
+}
+
+#myTab {
+	border-bottom: 0
+}
+
+#myTab.cnt {
+	border-bottom: 1px solid #dee2e6;
+}
+
+#myTab .btn-sm {
+	    padding: .1rem .15rem;
+    margin-left: .5rem;
+    font-size: .7rem;
+    line-height: 0.65rem;
+}
+#myTab .nav-item {
+	margin-right: 2px;
+}
+#myTab .nav-item .nav-link {
+	display: block;
+    padding: .25rem .5rem;
+    font-size: .8rem;
+}
+#myTab .nav-link:not(.active) {
+	background: #fbfbfb;
+    border-bottom: 1px solid #dfdfdf;
+}
+.tab-content .tab-pane {
+	border: 1px solid #dfdfdf;
+	border-top: 0
+}
+
+.newlist {
+	min-height: 300px;
+	position: relative;
+}
+.newlist:after {
+	content: 'Kéo thả components vào đây, kéo về bên trái để xóa bỏ.';
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    justify-content: center;
+	align-items: center;
+	z-index: -1;
+	margin: .5rem;
+	background: #f5f5f5;
+}
+.newlist.cnt:after {
+	content: '';
+	background: none
+}
+.newlist .list-group-item {
+	padding: 0;
+	border: 0;
+	margin: 0
+}
+.newlist .list-group-item h5{
+	display: none;
+}
+.newlist .list-group-item img{
+	width: 100%;
+	max-width: initial;
+}
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bao Nguyen - Tool build</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="jquery-3.2.1.slim.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="sortable.min.js"></script>
+</head>
+
+<body>
+	<div class="container-no">
+
+		<div class="row no-gutters">
+			<div class="col-3 d-flex flex-column bleft">
+				<form name="toDoList" id="toDoList" style="display:none">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Nhập tên trang" name="ListItem">
+						<div class="input-group-append">
+							<button class="btn btn-primary" id="button" type="button">Thêm</button>
+						</div>
+					</div>
+				</form>
+				<form name="toDoListMain" id="toDoListMain">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Tên dự án" name="ListItemMain">
+						<div class="input-group-append">
+							<button class="btn btn-danger" id="buttonListItemMain" type="button">Nhập</button>
+						</div>
+					</div>
+				</form>
+
+
+				<div id="accordion">
+					<div class="card">
+						<div class="card-header" id="heading-1">
+							<h5 class="mb-0">
+								<button class="btn btn-link" data-toggle="collapse" data-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+									Header
+								</button>
+							</h5>
+						</div>
+
+						<div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion">
+							<div class="card-body">
+								<div class="list-group mainList">
+									<div class="list-group-item" data-key="header/h-1" data-type="header">
+										<h5>header 1</h5>
+										<figure>
+											<img src="./img/layout/header-1.png" alt="">
+										</figure>
+									</div>
+									<div class="list-group-item" data-key="carousel/c-1" data-type="body">
+										<h5>carousel 1</h5>
+										<figure>
+											<img src="./img/layout/header-1.png" alt="">
+										</figure>
+									</div>
+									<div class="list-group-item" data-key="form/f-1" data-type="body">
+										<h5>form 1</h5>
+										<figure>
+											<img src="./img/layout/header-1.png" alt="">
+										</figure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-2">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+									Footer
+								</button>
+							</h5>
+						</div>
+						<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion">
+							<div class="card-body">
+
+							</div>
+						</div>
+
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-3">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+									Carousel
+								</button>
+							</h5>
+						</div>
+						<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion">
+							<div class="card-body">
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+			</div>
+			<div class="col-9 d-flex flex-column noleft" id="noleft">
+				<h4 id="obName" class="mt-3" style="display: none"></h4>
+				<div class="mt-2 mr-2">
+					<ul class="nav nav-tabs tab-sm" id="myTab" role="tablist">
+					</ul>
+					<div class="tab-content" id="nav-tabContent"></div>
+				</div>
+				<div class="notedcanhcam mt-5">
+					<div class="col-12 text-center">
+						<div class="alert alert-success mb-5" role="alert" style="display:none">
+							Đã tạo site thành công!
+						</div>
+						<p>
+							<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
+						</p>
+						<p>
+							<img src="./img/logo.jpg" alt="">
+						</p>
+						<h4 class="mb-0">Auto build website by Cánh Cam</h4>
+						<p class="text-sm">v.1.0.0</p>
+						<p class="text-muted">Tạo trang mới bằng cách nhập tên vào form bên cạnh sau đó kéo thả components vào.</p>
+					</div>
+				</div>
+				<div class="createcanhcam" style="display: none">
+					<div class="col-12 mt-4 text-center">
+						<button type="button" id="createsite" class="btn btn-success btn-lg">Tạo site</button>
+						<p class="text-muted mt-2">Chỉ nên thực hiện tạo site khi hoàn tất layout toàn bộ website.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/core.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

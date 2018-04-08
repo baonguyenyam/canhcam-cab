@@ -1,0 +1,109 @@
+header {
+    background-color: #00a86b;
+}
+
+// body {
+//     margin: 0px;
+//     background-color: white;
+// }
+
+section[role="main"], footer {
+  // width: 1300px;
+  // margin: 0 auto;
+  // padding: 15px 40px;
+  // font-family: Helvetica, Arial, sans-serif;
+  // font-size: 16px;
+  // line-height: 1.75;
+  // color: #111;
+}
+
+footer{
+    text-align: center;
+    font-size: .8rem;
+    margin-top: 2rem;
+}
+
+header {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+}
+
+// h1, h3 {
+// 	font-family: 'Source Code Pro', sans-serif;
+//     text-align: center;
+// }
+
+// h3 {
+//     font-size: 12px;
+// }
+
+// form {
+// 	overflow: hidden;
+// 	width: 100%;
+// }
+
+// fieldset {
+// 	float:left;
+// 	border: none;
+//     padding-top: 0px;
+//     padding-bottom: 0px;
+// }
+
+fieldset.actions {
+	
+    text-align: center;
+}
+
+legend {
+	text-indent: -999em;
+    height: 0px;    
+}
+
+label {
+	display: block;
+	font-weight: bold;
+    margin-top: 10px;
+}
+
+textarea {
+	border-radius: 5px;
+  font-size: .8rem;
+	width: 550px;
+    height: 700px;
+}
+
+button {
+    background: transparent no-repeat scroll 0 0;
+    border: 0px;
+    width: 128px;
+    height: 128px;
+    text-indent: -999em;
+}
+
+.to-jade {
+    background-image: url(img/right.png);
+}
+
+// footer div {
+//     margin: 50px 0 30px;
+//     padding-top: 50px;
+//     font-size: 11px;
+//     color: #777;
+//     text-transform: uppercase;
+// }
+
+// footer a:link,
+// footer a:active,
+// footer a:visited {
+//     color: #777;
+// }
+
+.CodeMirror {
+    min-width: 550px;
+    min-height: 650px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: .8rem;
+}
