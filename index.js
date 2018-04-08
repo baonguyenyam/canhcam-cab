@@ -12,6 +12,10 @@ app.use(urlencoded_body_parser);
 
 app.use('/', express.static(__dirname + '/_tool/'));
 
+app.get('/getdata', function (req, res) {
+	res.end("done");
+})
+
 app.post('/createsite', function (req, res) {
 	var json = JSON.stringify(req.body.data, null, 4);
 	var dir = './src/' + req.body.name

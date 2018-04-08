@@ -78,7 +78,7 @@ $('#buttonListItemMain').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItemMain]').val().trim());
 	if (toAdd) {
 		objectName = toAdd
-		$('#obName').html("Dự Án: "+objectName)
+		$('.deview h4').html("Dự Án: "+objectName)
 		$('#toDoListMain').hide()
 		$('#toDoListMain')[0].reset();
 		$('#toDoList').show()
@@ -96,10 +96,9 @@ $('#createsite').click(function (e) {
 		jQuery.post("/createsite", { name: objectName, data: newData}, function (data) {
 			if (data === 'done') {
 				$('#toDoListMain').show()
-				$('#toDoList, #obName').hide()
+				$('#toDoList, .deview').hide()
 				$('.notedcanhcam').show()
 				$('.notedcanhcam .alert').show()
-				$('#obName').hide()
 				$('.createcanhcam').hide()
 				$('#myTab').removeClass('cnt')
 				$('#myTab, #nav-tabContent').html('')
@@ -150,3 +149,42 @@ $('#button').click(function () {
 		$('#toDoList')[0].reset();
 	}
 });
+
+$(function () {
+	$('.cppicker').colorpicker();
+	checkFormDisable("customCheck1", "customCheck2")
+	$('#customCheck1').click(function () {
+		checkFormDisable("customCheck1", "customCheck2")
+	})
+});
+
+function checkFormDisable(a,b) {
+	if ($('#'+a).prop("checked")) {
+		$('#'+b).attr("disabled", false);
+		$('#'+b).prop("checked", false);
+	} else {
+		$('#'+b).attr("disabled", true);
+		$('#'+b).prop("checked", false);
+	}
+}
+
+$('#sbm').click(function () {
+	var pargam = []
+	$("#settings input[type=text]").each(function () {
+		var input = $(this).val()
+		var inputattr = $(this).parents('.cppicker').find('.input-group-text').html()
+		pargam.push(inputattr+": "+input)
+	});
+	alert(pargam)
+})
+
+
+function getData() {
+	jQuery.get("/getdata", function (data) {
+		if (data === 'done') {
+			console.log(1)
+		}
+	});
+}
+
+getData()

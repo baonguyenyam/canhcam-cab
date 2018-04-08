@@ -6,13 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Bao Nguyen - Tool build</title>
-	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
 	<link rel="stylesheet" href="css/main.css">
-	<script src="jquery-3.2.1.slim.min.js"></script>
-	<script src="popper.min.js"></script>
-	<script src="bootstrap.min.js"></script>
-	<script src="sortable.min.js"></script>
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/sortable.min.js"></script>
+	<script src="js/bootstrap-colorpicker.min.js"></script>
 </head>
 
 <body>
@@ -110,33 +112,481 @@
 
 			</div>
 			<div class="col-9 d-flex flex-column noleft" id="noleft">
-				<h4 id="obName" class="mt-3" style="display: none"></h4>
-				<div class="mt-2 mr-2">
-					<ul class="nav nav-tabs tab-sm" id="myTab" role="tablist">
-					</ul>
-					<div class="tab-content" id="nav-tabContent"></div>
-				</div>
-				<div class="notedcanhcam mt-5">
-					<div class="col-12 text-center">
-						<div class="alert alert-success mb-5" role="alert" style="display:none">
-							Đã tạo site thành công!
+				<div class="container">
+					<div class="row deview mt-3" style="display: none">
+						<div class="col-6">
+							<h4></h4>
 						</div>
-						<p>
-							<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
-						</p>
-						<p>
-							<img src="./img/logo.jpg" alt="">
-						</p>
-						<h4 class="mb-0">Auto build website by Cánh Cam</h4>
-						<p class="text-sm">v.1.0.0</p>
-						<p class="text-muted">Tạo trang mới bằng cách nhập tên vào form bên cạnh sau đó kéo thả components vào.</p>
+						<div class="col-6 text-right">
+							<button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
+								<i class="fa fa-cog"></i>
+							</button>
+
+						</div>
+					</div>
+					<div class="maindev">
+						<ul class="nav nav-tabs tab-sm" id="myTab" role="tablist">
+						</ul>
+						<div class="tab-content" id="nav-tabContent"></div>
+					</div>
+					<div class="notedcanhcam mt-5">
+						<div class="col-12 text-center">
+							<div class="alert alert-success mb-5" role="alert" style="display:none">
+								Đã tạo site thành công!
+							</div>
+							<p>
+								<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
+							</p>
+							<p>
+								<img src="./img/logo.jpg" alt="">
+							</p>
+							<h4 class="mb-0">Auto build website by Cánh Cam</h4>
+							<p class="text-sm">v.1.0.0</p>
+							<p class="text-muted">Tạo trang mới bằng cách nhập tên vào form bên cạnh sau đó kéo thả components vào.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Tùy chỉnh</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+
+					<ul class="nav nav-tabs" id="modalTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tùy chỉnh màu</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cấu hình Javascript</a>
+						</li>
+
+					</ul>
+					<div class="tab-content" id="modalTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<form id="settings">
+								<div class="row">
+									<div class="col">
+										<h5>Màu Chính</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">main</span>
+												</div>
+												<input type="text" class="form-control" value="#2196f3">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">extra</span>
+												</div>
+												<input type="text" class="form-control" value="#ec8b00">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">front</span>
+												</div>
+												<input type="text" class="form-control" value="#659f13">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">back</span>
+												</div>
+												<input type="text" class="form-control" value="#f1c40f">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<h5>Màu phụ</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">cyan-1</span>
+												</div>
+												<input type="text" class="form-control" value="#1ABC9C">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">cyan-2</span>
+												</div>
+												<input type="text" class="form-control" value="#16A085">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">la-1</span>
+												</div>
+												<input type="text" class="form-control" value="#2ECC71">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">la-2</span>
+												</div>
+												<input type="text" class="form-control" value="#27AE60">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">duong-1</span>
+												</div>
+												<input type="text" class="form-control" value="#3498DB">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">duong-2</span>
+												</div>
+												<input type="text" class="form-control" value="#2980B9">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">tim-1</span>
+												</div>
+												<input type="text" class="form-control" value="#9B59B6">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">tim-2</span>
+												</div>
+												<input type="text" class="form-control" value="#8E44AD">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">vang-1</span>
+												</div>
+												<input type="text" class="form-control" value="#F1C40F">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">vang-2</span>
+												</div>
+												<input type="text" class="form-control" value="#F39C12">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">cam-1</span>
+												</div>
+												<input type="text" class="form-control" value="#E67E22">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">cam-2</span>
+												</div>
+												<input type="text" class="form-control" value="#D35400">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">do-1</span>
+												</div>
+												<input type="text" class="form-control" value="#E74C3C">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">do-2</span>
+												</div>
+												<input type="text" class="form-control" value="#C0392B">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">den-1</span>
+												</div>
+												<input type="text" class="form-control" value="#34495E">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">den-2</span>
+												</div>
+												<input type="text" class="form-control" value="#2C3E50">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">xam-1</span>
+												</div>
+												<input type="text" class="form-control" value="#95A5A6">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">xam-2</span>
+												</div>
+												<input type="text" class="form-control" value="#7F8C8D">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">hong-1</span>
+												</div>
+												<input type="text" class="form-control" value="#ff9ff3">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">hong-2</span>
+												</div>
+												<input type="text" class="form-control" value="#f368e0">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3 d-none">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">trang</span>
+												</div>
+												<input type="text" class="form-control" value="#ffffff">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3 d-none">
+										<div class="form-group">
+											<div class="input-group colorpicker-component cppicker">
+												<div class="input-group-prepend">
+													<span class="input-group-text">den</span>
+												</div>
+												<input type="text" class="form-control" value="#000000">
+												<span class="input-group-addon">
+													<i></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+							<form id="jsf">
+								<div class="row">
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" checked class="custom-control-input" id="customCheck1">
+												<label class="custom-control-label" for="customCheck1">Enable Dev tool</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="customCheck2">
+												<label class="custom-control-label" for="customCheck2">Enable Dev Full-width mode</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="customCheck3">
+												<label class="custom-control-label" for="customCheck3">Active Fixed Footer</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="customCheck4">
+												<label class="custom-control-label" for="customCheck4">Active Back to top button</label>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
-				<div class="createcanhcam" style="display: none">
-					<div class="col-12 mt-4 text-center">
-						<button type="button" id="createsite" class="btn btn-success btn-lg">Tạo site</button>
-						<p class="text-muted mt-2">Chỉ nên thực hiện tạo site khi hoàn tất layout toàn bộ website.</p>
-					</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Bỏ qua</button>
+					<button type="button" id="sbm" class="btn btn-primary">Lưu</button>
 				</div>
 			</div>
 		</div>
@@ -144,6 +594,7 @@
 
 	<script src="js/core.js"></script>
 	<script src="js/main.js"></script>
+
 </body>
 
 </html>

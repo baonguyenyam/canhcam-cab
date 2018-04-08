@@ -1,9 +1,9 @@
-function CCHeader1() {
+function CCFooter1() {
 
 };
 
 $(function() {
-    CCHeader1();
+    CCFooter1();
 })
 
 $(window).resize(function() {})

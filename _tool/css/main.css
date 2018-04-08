@@ -7,6 +7,18 @@ html {
 	border-radius: 0 !important
 }
 
+#settings, #jsf {
+	padding: 1rem 1rem 0 1rem
+}
+
+.modal-lg {
+	max-width: initial !important;
+	margin: .5rem !important;
+}
+.modal-lg .input-group-text {
+	min-width: 95px;
+}
+
 .list-group {
 	display: flex;
 	padding: .5rem;
@@ -53,8 +65,10 @@ html {
 #accordion .card-body{ padding:0 }
 #accordion .list-group-item{ cursor: move;}
 
-.bleft {
-	padding-right: .5rem !important;
+.cppicker.colorpicker-element .add-on i, .cppicker.colorpicker-element .input-group-addon i {
+	height: 100%;
+    display: block;
+    width: 30px;
 }
 
 .noleft {

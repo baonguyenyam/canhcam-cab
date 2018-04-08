@@ -25,10 +25,10 @@ function checkTab() {
 		$('#myTab').addClass('cnt')
 		$('.notedcanhcam').hide()
 		$('.createcanhcam').show()
-		$('#obName').show()
+		$('.deview').show()
 	} else {
 		$('.notedcanhcam').show()
-		$('#obName').hide()
+		$('.deview').hide()
 		$('.createcanhcam').hide()
 		$('#myTab').removeClass('cnt')
 	}

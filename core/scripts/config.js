@@ -6,5 +6,5 @@ const CANHCAM_APP = {
     "CHANGE_GRID": 991,
     "ACTIVE_RESPONSIVE": true,
     "DEV_MODE": true,
-    "DEV_MODE_GIRD_FULL": true
+    "DEV_MODE_GIRD_FULL": false
 }
