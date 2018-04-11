@@ -12,8 +12,54 @@ app.use(urlencoded_body_parser);
 
 app.use('/', express.static(__dirname + '/_tool/'));
 
-app.get('/getdata', function (req, res) {
+app.post('/savedata', function (req, res) {
+	var dir = './CANHCAM-LIB';
+	var dir2 = './core/scripts';
+	var jsonColor = JSON.stringify(req.body.dataColor, null, 4);
+	var jsonJS = JSON.stringify(req.body.dataJS, null, 4);
+	try {
+		fs.writeFileSync(dir + '/_colors.sass', jsonColor.replace(/["]/gi, ''), 'utf8', function (err) {
+			if (err) {
+				return console.log(err);
+			}
+		});
+		fs.writeFileSync(dir2 + '/config.js', jsonJS.replace(/["]/gi, '').replace(/[\\]/gi, '"'), 'utf8', function (err) {
+			if (err) {
+				return console.log(err);
+			}
+		});
+	} catch (err) {
+		return console.log(err);
+	}
 	res.end("done");
+})
+
+app.get('/getdata', function (req, res) {
+	var dir = './CANHCAM-LIB';
+	var dataE
+	fs.readFile(dir + '/_colors.sass', 'utf8', function readFileCallback(err, data) {
+		if (err) {
+			console.log(err);
+		} else {
+			dataE = data
+			dataE = dataE.replace("$mau: (", "{\"")
+			non_asciis = { '': '[\n]', '"}': '[)]', '"#': '[#]', '","': ',', '":': ':' };
+			for (i in non_asciis) { dataE = dataE.replace(new RegExp(non_asciis[i], 'gi'), i); }
+			res.end(dataE);
+		}
+	});
+})
+app.get('/getdatajs', function (req, res) {
+	var dir = './core/scripts';
+	var dataE
+	fs.readFile(dir + '/config.js', 'utf8', function readFileCallback(err, data) {
+		if (err) {
+			console.log(err);
+		} else {
+			dataE = data.replace("const CANHCAM_APP = ", "")
+			res.end(dataE);
+		}
+	});
 })
 
 app.post('/createsite', function (req, res) {

@@ -39,56 +39,22 @@
 					</div>
 				</form>
 
-
 				<div id="accordion">
 					<div class="card">
 						<div class="card-header" id="heading-1">
 							<h5 class="mb-0">
-								<button class="btn btn-link" data-toggle="collapse" data-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
 									Header
 								</button>
 							</h5>
 						</div>
 
-						<div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion">
+						<div id="collapse-1" class="collapse" aria-labelledby="heading-1" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList">
-									<div class="list-group-item" data-key="header/h-1" data-type="header">
-										<h5>header 1</h5>
-										<figure>
-											<img src="./img/layout/header-1.png" alt="">
-										</figure>
-									</div>
-									<div class="list-group-item" data-key="carousel/c-1" data-type="body">
-										<h5>carousel 1</h5>
-										<figure>
-											<img src="./img/layout/header-1.png" alt="">
-										</figure>
-									</div>
-									<div class="list-group-item" data-key="form/f-1" data-type="body">
-										<h5>form 1</h5>
-										<figure>
-											<img src="./img/layout/header-1.png" alt="">
-										</figure>
-									</div>
+								<div class="list-group mainList" id="cc-menu-header">
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-2">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-									Footer
-								</button>
-							</h5>
-						</div>
-						<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion">
-							<div class="card-body">
-
-							</div>
-						</div>
-
 					</div>
 					<div class="card">
 						<div class="card-header" id="heading-3">
@@ -100,15 +66,63 @@
 						</div>
 						<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion">
 							<div class="card-body">
-
+								<div class="list-group mainList" id="cc-menu-carousel">
+								</div>
 							</div>
 						</div>
 
 					</div>
+					<div class="card">
+						<div class="card-header" id="heading-4">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+									Form
+								</button>
+							</h5>
+						</div>
+						<div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion">
+							<div class="card-body">
+								<div class="list-group mainList" id="cc-menu-form">
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-5">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+									Map
+								</button>
+							</h5>
+						</div>
+						<div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion">
+							<div class="card-body">
+								<div class="list-group mainList" id="cc-menu-map">
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="card">
+						<div class="card-header" id="heading-2">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+									Footer
+								</button>
+							</h5>
+						</div>
+						<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion">
+							<div class="card-body">
+								<div class="list-group mainList" id="cc-menu-footer">
+								</div>
+							</div>
+						</div>
+
+					</div>
+
 				</div>
-
-
-
 
 			</div>
 			<div class="col-9 d-flex flex-column noleft" id="noleft">
@@ -145,6 +159,12 @@
 							<p class="text-muted">Tạo trang mới bằng cách nhập tên vào form bên cạnh sau đó kéo thả components vào.</p>
 						</div>
 					</div>
+					<div class="createcanhcam" style="display: none">
+						<div class="col-12 mt-4 text-center">
+							<button type="button" id="createsite" class="btn btn-success btn-lg">Tạo site</button>
+							<p class="text-muted mt-2">Chỉ nên thực hiện tạo site khi hoàn tất layout toàn bộ website.</p>
+						</div>
+					</div>
 
 				</div>
 			</div>
@@ -163,7 +183,6 @@
 				</div>
 				<div class="modal-body">
 
-
 					<ul class="nav nav-tabs" id="modalTab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tùy chỉnh màu</a>
@@ -181,365 +200,7 @@
 										<h5>Màu Chính</h5>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">main</span>
-												</div>
-												<input type="text" class="form-control" value="#2196f3">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">extra</span>
-												</div>
-												<input type="text" class="form-control" value="#ec8b00">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">front</span>
-												</div>
-												<input type="text" class="form-control" value="#659f13">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">back</span>
-												</div>
-												<input type="text" class="form-control" value="#f1c40f">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col">
-										<h5>Màu phụ</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">cyan-1</span>
-												</div>
-												<input type="text" class="form-control" value="#1ABC9C">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">cyan-2</span>
-												</div>
-												<input type="text" class="form-control" value="#16A085">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">la-1</span>
-												</div>
-												<input type="text" class="form-control" value="#2ECC71">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">la-2</span>
-												</div>
-												<input type="text" class="form-control" value="#27AE60">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">duong-1</span>
-												</div>
-												<input type="text" class="form-control" value="#3498DB">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">duong-2</span>
-												</div>
-												<input type="text" class="form-control" value="#2980B9">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">tim-1</span>
-												</div>
-												<input type="text" class="form-control" value="#9B59B6">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">tim-2</span>
-												</div>
-												<input type="text" class="form-control" value="#8E44AD">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">vang-1</span>
-												</div>
-												<input type="text" class="form-control" value="#F1C40F">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">vang-2</span>
-												</div>
-												<input type="text" class="form-control" value="#F39C12">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">cam-1</span>
-												</div>
-												<input type="text" class="form-control" value="#E67E22">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">cam-2</span>
-												</div>
-												<input type="text" class="form-control" value="#D35400">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">do-1</span>
-												</div>
-												<input type="text" class="form-control" value="#E74C3C">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">do-2</span>
-												</div>
-												<input type="text" class="form-control" value="#C0392B">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">den-1</span>
-												</div>
-												<input type="text" class="form-control" value="#34495E">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">den-2</span>
-												</div>
-												<input type="text" class="form-control" value="#2C3E50">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">xam-1</span>
-												</div>
-												<input type="text" class="form-control" value="#95A5A6">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">xam-2</span>
-												</div>
-												<input type="text" class="form-control" value="#7F8C8D">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">hong-1</span>
-												</div>
-												<input type="text" class="form-control" value="#ff9ff3">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">hong-2</span>
-												</div>
-												<input type="text" class="form-control" value="#f368e0">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3 d-none">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">trang</span>
-												</div>
-												<input type="text" class="form-control" value="#ffffff">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-lg-3 d-none">
-										<div class="form-group">
-											<div class="input-group colorpicker-component cppicker">
-												<div class="input-group-prepend">
-													<span class="input-group-text">den</span>
-												</div>
-												<input type="text" class="form-control" value="#000000">
-												<span class="input-group-addon">
-													<i></i>
-												</span>
-											</div>
-										</div>
-									</div>
+								<div class="row" id="maincolor">
 								</div>
 							</form>
 						</div>
@@ -549,7 +210,7 @@
 									<div class="col-sm-6 col-lg-3">
 										<div class="form-group">
 											<div class="custom-control custom-checkbox">
-												<input type="checkbox" checked class="custom-control-input" id="customCheck1">
+												<input type="checkbox" checked class="custom-control-input" id="customCheck1" data-key="DEV_MODE">
 												<label class="custom-control-label" for="customCheck1">Enable Dev tool</label>
 											</div>
 										</div>
@@ -557,7 +218,7 @@
 									<div class="col-sm-6 col-lg-3">
 										<div class="form-group">
 											<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input" id="customCheck2">
+												<input type="checkbox" class="custom-control-input" id="customCheck2" data-key="DEV_MODE_GIRD_FULL">
 												<label class="custom-control-label" for="customCheck2">Enable Dev Full-width mode</label>
 											</div>
 										</div>
@@ -565,7 +226,7 @@
 									<div class="col-sm-6 col-lg-3">
 										<div class="form-group">
 											<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input" id="customCheck3">
+												<input type="checkbox" class="custom-control-input" id="customCheck3" data-key="ACTIVE_FIXED_FOOTER">
 												<label class="custom-control-label" for="customCheck3">Active Fixed Footer</label>
 											</div>
 										</div>
@@ -573,20 +234,79 @@
 									<div class="col-sm-6 col-lg-3">
 										<div class="form-group">
 											<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input" id="customCheck4">
+												<input type="checkbox" class="custom-control-input" id="customCheck4" data-key="ACTIVE_BACKTOTOP">
 												<label class="custom-control-label" for="customCheck4">Active Back to top button</label>
 											</div>
 										</div>
 									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="customCheck5" data-key="ACTIVE_RESPONSIVE">
+												<label class="custom-control-label" for="customCheck5">Active Responsive IMG</label>
+											</div>
+										</div>
+									</div>
 
+
+								</div>
+								<div class="row">
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Display footer</span>
+												</div>
+												<input type="text" class="form-control" data-key="DISPLAY_FOOTER">
+												<div class="input-group-append">
+													<span class="input-group-text" style="min-width:initial">px</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Display ToTop</span>
+												</div>
+												<input type="text" class="form-control" data-key="DISPLAY_BACKTOTOP">
+												<div class="input-group-append">
+													<span class="input-group-text" style="min-width:initial">px</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-3">
+										<div class="form-group">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Default Grid</span>
+												</div>
+												<input type="text" class="form-control" data-key="CHANGE_GRID">
+												<div class="input-group-append">
+													<span class="input-group-text" style="min-width:initial">px</span>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Bỏ qua</button>
-					<button type="button" id="sbm" class="btn btn-primary">Lưu</button>
+					<div class="w-100">
+						<div class="row">
+							<div class="col-6">
+								<button type="button" class="btn btn-success" onclick="setDefault()">Reset to default</button>
+							</div>
+							<div class="col-6 text-right">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Bỏ qua</button>
+								<button type="button" id="sbm" class="btn btn-primary">Lưu</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

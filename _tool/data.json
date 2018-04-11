@@ -1,0 +1,42 @@
+{
+	"header": {
+		"header-1": [
+			"header/h-1",
+			"header",
+			"header-1.png",
+			"Header 1"
+		]
+	},
+	"carousel": {
+		"carousel-1": [
+			"carousel/c-1",
+			"carousel",
+			"carousel-1.png",
+			"carousel 1"
+		]
+	},
+	"form": {
+		"form-1": [
+			"form/c-1",
+			"form",
+			"form-1.png",
+			"form 1"
+		]
+	},
+	"map": {
+		"map-1": [
+			"map/m-1",
+			"map",
+			"map-1.png",
+			"map 1"
+		]
+	},
+	"footer": {
+		"footer-1": [
+			"footer/f-1",
+			"footer",
+			"footer-1.png",
+			"footer 1"
+		]
+	}
+}

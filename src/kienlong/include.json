@@ -1,0 +1,18 @@
+{
+    "SETUP": {
+        "index": {
+            "header": [
+                "header/h-1"
+            ],
+            "footer": [
+                "carousel/c-1"
+            ]
+        },
+        "vechungtoi": {
+            "footer": [
+                "map/m-1",
+                "footer/f-1"
+            ]
+        }
+    }
+}
