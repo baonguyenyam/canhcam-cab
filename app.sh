@@ -1,4 +1,7 @@
 #!/bin/bash
+printf "\n"
+printf "\n"
+printf "\n"
 printf "\033[1;36m=====================================\033[0m\n"
 printf "\033[1;36mWelcome to the Canh Cam Application. This is the products of Bao Nguyen\033[0m\n"
 printf "\033[1;36mCopyright 2018\033[0m\n"
@@ -23,6 +26,7 @@ do
         echo "9) RUN DEV TEMPLATE (9999)"
         echo "u) Updrage Package"
         echo "q) Quit"
+		echo "\n"
         echo
 
         read choice
