@@ -268,6 +268,7 @@ gulp.task('product-local-no', function(cb) {
 gulp.task('k-dev', function (cb) {
 	runSequence(
 		'pug-copy-dev', // hamber, ejs, pug
+		'sass', // css, less, stylus
 		'sass-dev', // css, less, stylus
 		'concat',
 		'babel',

@@ -5,7 +5,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     // Run task
     gulp.task('browserSync', () => {
         browserSync.init({
-            open: (process.argv.slice(2) == 'server' || process.argv.slice(2) == 'serve') ? true : false,
+			open: (process.argv.slice(2) == 'server' || process.argv.slice(2) == 'serve' || process.argv.slice(2) == 'dev') ? true : false,
             startPath: config.baseUrl,
             port: config.port || config.sameport,
             server: {

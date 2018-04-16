@@ -25,10 +25,12 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 		};
 
 		gulp.src([
+			// path.join(url.source, url.styles.sass, '**/*.{sass,scss}'),
+			// '!' + path.join(url.source, url.styles.sass, '{**/\_*,**/\_*/**}'),
 			path.join(url.src2, '**/index.{sass,scss}'),
 			'!' + path.join(url.src2, '{**/\_*,**/\_*/**}'),
-			'!' + path.join(url.src2, url.concat.ACTIVE_CONCAT ? url.ignore.sassactiveconcat : url.ignore.sass),
-			// setgulp.production ? '!' + path.join(url.source, url.styles.sass, '**/viensoi-dev.sass') : path.join()
+			// '!' + path.join(url.src2, url.concat.ACTIVE_CONCAT ? url.ignore.sassactiveconcat : url.ignore.sass),
+			// setgulp.production ? '!' + path.join(url.source, url.styles.sass, '**/canhcam-dev.sass') : path.join()
 		])
 			.pipe(plugins.plumber())
 			.pipe(gulpif(!setgulp.production, plugins.sourcemaps.init()))
@@ -44,7 +46,7 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 				plugins.util.log(err);
 			})
 				.on('error', plugins.notify.onError(config.defaultNotification)))
-			.pipe(concat('main.css'))
+			.pipe(concat('maindev.css'))
 			.pipe(plugins.postcss([autoprefixer(autoprefixerOpts)]))
 			.pipe(gulpif(!setgulp.production, plugins.sourcemaps.init()))
 			.pipe(gulpif(!setgulp.production, plugins.sourcemaps.write('./')))

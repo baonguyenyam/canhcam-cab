@@ -17,6 +17,7 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 	// Run task
 	gulp.task('babel-concat-dev', () => {
 		return gulp.src([
+			path.join(url.source, url.scripts.javascript, '**/*.js'),
 			path.join(url.src2, '**/index.js'),
 			'!' + path.join(url.src2, '{**/\_*,**/\_*/**}')
 		])
