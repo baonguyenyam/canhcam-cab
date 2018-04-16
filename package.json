@@ -8,6 +8,7 @@
     "test": "gulp test",
     "serve": "gulp serve",
     "start": "gulp server",
+    "dev": "gulp dev",
     "web": "node index.js",
     "tool": "gulp tool",
     "node": "cd k-task/tools && node index.js",

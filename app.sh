@@ -20,6 +20,7 @@ do
         echo "6) Build product with local NOT MIN"
         echo "7) Run Tool (9999)"
         echo "8) Run HTML2PUG (1234)"
+        echo "9) RUN DEV TEMPLATE (9999)"
         echo "u) Updrage Package"
         echo "q) Quit"
         echo
@@ -35,6 +36,7 @@ do
             '6') npm run prod-no;;
             '7') npm run tool;;
             '8') npm run node;;
+            '9') npm run dev;;
             'u') npm run update;;
             'q') ;;
             *)   printf "\033[0;33mMenu item is not available, try again!\033[0m\n";;

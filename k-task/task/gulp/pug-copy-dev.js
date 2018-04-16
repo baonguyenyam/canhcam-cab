@@ -17,6 +17,21 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 
 
 	// Run task
+	gulp.task('pug-rename-dev', function () {
+		gulp.src([
+			path.join('tmp', 'template', '**/index.html'),
+			'!' + path.join(url.src2, '{**/\_*,**/\_*/**}')
+		])
+			.pipe(rename(function (path) {
+				var a = path.dirname.replace('/', '-')
+				path.dirname = "/";
+				path.basename += "-" + a;
+				path.extname = ".html"
+			}))
+			.pipe(plugins.changed('tmp'))
+			.pipe(gulp.dest('tmp'));
+	});
+	// Run task
 	gulp.task('pug-copy-dev', function () {
 		gulp.src([
 			path.join(url.src2, '**/index.pug'),
@@ -25,5 +40,33 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 			.pipe(plugins.changed(dest))
 			.pipe(gulp.dest(dest));
 	});
+	gulp.task('pug-insert-dev', ['pug-copy-dev'], function () {
+		fs.readdirSync('./tmppug/').forEach(f => {
+			var folder = f
+			fs.readdirSync('./tmppug/' + folder).forEach(fl => {
+				var getfile = './tmppug/' + folder + '/' + fl
+				var data = fs.readFileSync(getfile+ '/index.pug').toString().split("\n");
+				if (folder === 'header') {
+					data.splice(0, 0, "extends ../../../core/templates/_layout/layout.pug\nblock header");
+				} else if (folder === 'footer') {
+					data.splice(0, 0, "extends ../../../core/templates/_layout/layout.pug\nblock footer");
+				} else {
+					data.splice(0, 0, "extends ../../../core/templates/_layout/layout.pug\nblock body");
+				}
+				var text = data.join("\n\t");
+				fs.writeFile(getfile+ '/index.pug', text, function (err) {
+					if (err) {
+						throw err;
+					} else {
+						// console.log(data);
+					}
+				});
+			})
+		})
+
+	});
+
+
+
 
 }

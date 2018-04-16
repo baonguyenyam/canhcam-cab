@@ -5,18 +5,17 @@ import path from 'path';
 import foldero from 'foldero';
 import pug from 'pug';
 import yaml from 'js-yaml';
-import rename from "gulp-rename"
 import insert from 'gulp-insert';
 
 module.exports = function (gulp, setgulp, plugins, config, target, browserSync) {
 	let url = config;
 	let dest = path.join('tmppug');
-	let destjade = path.join(target);
+	let destjade = path.join(target, 'template');
 	let dataPath = path.join(url.src, url.data);
 	let dataPathJS = path.join(url.src, url.dataJS);
 
 	// Jade template compile
-	gulp.task('pug-dev', ['pug-copy-dev'], () => {
+	gulp.task('pug-dev', ['pug-copy-dev', 'pug-insert-dev'], () => {
 
 		let siteData = {};
 		let siteDataJS = '';
@@ -76,12 +75,6 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 			'tmppug/**/index.pug',
 			'!tmppug/{**/\_*,**/\_*/**}'
 		])
-			.pipe(rename(function (path) {
-				var a = path.dirname.replace('/', '-')
-				path.dirname = "/";
-				path.basename += "-"+a;
-				path.extname = ".html"
-			}))
 			.pipe(plugins.changed(destjade))
 			.pipe(plugins.plumber())
 			.pipe(plugins.pug({

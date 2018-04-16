@@ -1,75 +1,32 @@
-## Demo 
+# Cánh Cam - Auto Build Website Tool
+________
 
-http://baonguyenyam.github.io/docs/k-lite-task/
+## Gọi APP
+- Nếu là Windows thì chạy file `app.bat`
+- Nếu là MacOS thì chạy lệnh `sh app.sh`
 
----
+## Bước 1 
+Chạy Công cụ Auto build `npm run web` => Sau đó build site tại bước 2
 
-## This is a Tool for WebApp Front-End with All-in-One Gulp task 
+## Bước 2
+Chạy Dev để test thử web, có thể cấu hình lại các file `concat.json` và `seo.json` trong thư mục `./src/[TÊN-DỰ-ÁN]`
 
-##### Template 
+________
 
-* Jade Template
-* Nunjucks Template
+## Chạy dự án
+- `npm run web` => Chạy Công cụ Auto build 
+- `npm run tool` => Xây dựng công cụ Auto Build
+- `npm run dev` => Chạy Dev giao diện
+- `npm start` => Chạy Dev 
+- `npm run pro` => Build với đường dẫn gián tiếp
+- `npm run prod` => Build với đường dẫn trực tiếp
+- `npm run pro-no` => Build với đường dẫn gián tiếp ko nén 
+- `npm run prod-no` => Build với đường dẫn trực tiếp ko nén 
 
-##### Scripts 
+________
 
-* Babel
-* Typescript
-* Coffee 
-
-##### Styles
-
-* SASS/SCSS
-* LESS
-* Stylus
-* CSS
-
-##### Image Tools
-
-* SVG
-* Real Favicon
-
-##### Build Tools
-
-* CSSMin
-* Uglify
-* HTML minify
-* ImageMin
-* Concat 
-
-##### Test Tools
-
-* Browserify
-* BrowserSync
-* Phantom
-* Karma
-
-
-### Install Project 
-
-Windows: run file `install.bat`
-
-MAC/Ubuntu: run file `sh install.sh` 
-
-### Update Project
-
-Windows: run file `update.bat`
-
-MAC/Ubuntu: run file `sh update.sh` 
-
-### Upgrade & Check Missing package
-
-run `npm run update`
-
-### Config 
-
-Config file `config.yml`
-
-### Working in Project
-
-Run: run `npm run app`
-
-Tools: run `npm run tool`
+## Chú ý:
+Khi code thư viện bạn phải tuân thủ bảng màu trong `CANHCAM-LIB\_color.sass`
 
 ## Licence
 

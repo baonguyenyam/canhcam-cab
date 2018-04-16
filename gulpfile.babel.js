@@ -276,6 +276,8 @@ gulp.task('k-dev', function (cb) {
 		'fonts',
 		'pug-dev', // hamber, ejs, pug
 		'inject',
+		'pug-rename-dev',
+		'map-dev',
 		'browserSync',
 		cb
 	);

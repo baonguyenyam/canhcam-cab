@@ -19,6 +19,7 @@ ECHO 5) Build product NOT MIN
 ECHO 6) Build product with local NOT MIN
 ECHO 7) Run Tool (9999)
 ECHO 8) Run HTML2PUG (1234)
+ECHO 9) RUN DEV TEMPLATE (9999)
 ECHO u) Updrage Package
 ECHO q) Quit
 ECHO.
@@ -32,6 +33,7 @@ IF "%op%"=="5" GOTO productNo
 IF "%op%"=="6" GOTO productNolocal
 IF "%op%"=="7" GOTO Tool
 IF "%op%"=="8" GOTO Pug
+IF "%op%"=="9" GOTO DevPro
 IF "%op%"=="q" GOTO ExitInstall
 IF "%op%"=="u" GOTO Updrage
 
@@ -72,6 +74,10 @@ GOTO begin
 
 :Updrage
 npm run update
+GOTO begin
+
+:DevPro
+npm run dev
 GOTO begin
 
 :ExitInstall
