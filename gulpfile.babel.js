@@ -110,6 +110,10 @@ gulp.task('dev', ['clean'], () => {
     gulp.start('k-dev');
 });
 
+gulp.task('builder', ['clean'], () => {
+	gulp.start('k-builder');
+});
+
 gulp.task('server', ['clean'], () => {
     gulp.start('ser');
 });
@@ -280,6 +284,24 @@ gulp.task('k-dev', function (cb) {
 		'pug-rename-dev',
 		'map-dev',
 		'browserSync',
+		cb
+	);
+});
+gulp.task('k-builder', function (cb) {
+	runSequence(
+		'pug-copy-dev', // hamber, ejs, pug
+		'sass', // css, less, stylus
+		'sass-dev', // css, less, stylus
+		'concat',
+		'babel',
+		'babel-concat-dev',
+		'copy',
+		'fonts',
+		'pug-dev', // hamber, ejs, pug
+		'inject',
+		'pug-rename-dev',
+		'map-dev',
+		'copytool',
 		cb
 	);
 });

@@ -2,6 +2,30 @@ body,
 html {
 	height: 100%;
 }
+.boxiframe {
+	max-height: 149px;
+	max-width: 265px
+}
+.boxiframe iframe {
+    width: 1366px; /*265*/
+    height: 786px;/*149*/
+    border: 0;
+    -ms-transform: scaleX(0.1939) scaleY(0.1907);
+    -moz-transform: scaleX(0.1939) scaleY(0.1907);
+    -o-transform: scaleX(0.1939) scaleY(0.1907);
+    -webkit-transform: scaleX(0.1939) scaleY(0.1907);
+    transform: scaleX(0.1939) scaleY(0.1907);
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.bleft {
+	width: 300px;
+	max-width: 300px;
+}
 
 * {
 	border-radius: 0 !important

@@ -1,0 +1,134 @@
+.canhcam-carousel-1 .owl-nav {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 10px;
+}
+
+@media (min-width: 992px) {
+  .canhcam-carousel-1 .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    height: 40px;
+    margin-top: -30px;
+  }
+  .canhcam-carousel-1 .owl-nav .owl-prev {
+    position: absolute;
+    left: -15px;
+    top: 0;
+  }
+  .canhcam-carousel-1 .owl-nav .owl-next {
+    position: absolute;
+    right: -15px;
+    top: 0;
+  }
+}
+
+.canhcam-carousel-1 .owl-nav [class*='owl-'] {
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.canhcam-carousel-1 .owl-nav [class*='owl-']:hover {
+  text-decoration: none;
+}
+
+.canhcam-carousel-1 .owl-nav .disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.canhcam-carousel-1 .owl-nav .disabled + .owl-dots {
+  margin-top: 10px;
+}
+
+.canhcam-carousel-1 .owl-nav .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.canhcam-carousel-1 .owl-nav .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.canhcam-carousel-1 .owl-nav .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  display: block;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+
+.canhcam-carousel-1 .owl-carousel .owl-item {
+  text-align: center;
+}
+
+.canhcam-carousel-1 .owl-carousel .owl-item img {
+  width: initial;
+  display: initial;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .canhcam-carousel-1 .owl-nav {
+    position: relative;
+  }
+}
+
+.canhcam-carousel-1 .owl-nav [class*='owl-'] {
+  border-radius: 0;
+  padding-top: 8px;
+  padding-right: 15px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  background: #95a5a6;
+}
+
+.canhcam-carousel-1 .owl-nav [class*='owl-']:hover, .canhcam-carousel-1 .owl-nav [class*='owl-'].active {
+  background: #2196f3;
+}
+
+.canhcam-carousel-1 .owl-nav [class*='owl-']:hover i, .canhcam-carousel-1 .owl-nav [class*='owl-'].active i {
+  color: #000000;
+}
+
+.canhcam-carousel-1 .owl-nav [class*='owl-'] i {
+  line-height: 1.8rem;
+  height: 0;
+  font-size: 1.2rem;
+}
+
+.canhcam-carousel-1 .owl-nav .owl-prev {
+  left: 0;
+}
+
+.canhcam-carousel-1 .owl-nav .owl-next {
+  right: 0;
+}
+
+.canhcam-carousel-1 .owl-dots .owl-dot span {
+  border-radius: 0;
+  background: #95a5a6;
+}
+
+.canhcam-carousel-1 .owl-dots .owl-dot.active span, .canhcam-carousel-1 .owl-dots .owl-dot:hover span {
+  background: #2196f3;
+}
+
+
+
+
+.canhcam-map-1 #ccmaps {
+  min-height: 400px;
+}
+
+/*# sourceMappingURL=maindev.css.map */

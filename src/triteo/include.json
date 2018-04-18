@@ -1,0 +1,14 @@
+{
+    "SETUP": {
+        "index": {
+            "header": [
+                "header/h-1"
+            ]
+        },
+        "about-us": {
+            "footer": [
+                "carousel/c-1"
+            ]
+        }
+    }
+}

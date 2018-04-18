@@ -1,0 +1,880 @@
+/* line 4, ../sass/_offline-theme-base.sass */
+
+.offline-ui,
+.offline-ui *,
+.offline-ui:before,
+.offline-ui:after,
+.offline-ui *:before,
+.offline-ui *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/_offline-theme-base.sass */
+
+.offline-ui {
+  display: none;
+  position: fixed;
+  background: white;
+  z-index: 2000;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* line 17, ../sass/_offline-theme-base.sass */
+
+.offline-ui .offline-ui-content:before {
+  display: inline;
+}
+
+/* line 20, ../sass/_offline-theme-base.sass */
+
+.offline-ui .offline-ui-retry {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: none;
+}
+
+/* line 24, ../sass/_offline-theme-base.sass */
+
+.offline-ui .offline-ui-retry:before {
+  display: inline;
+}
+
+/* line 29, ../sass/_offline-theme-base.sass */
+
+.offline-ui.offline-ui-up.offline-ui-up-5s {
+  display: block;
+}
+
+/* line 32, ../sass/_offline-theme-base.sass */
+
+.offline-ui.offline-ui-down {
+  display: block;
+}
+
+/* line 37, ../sass/_offline-theme-base.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-retry {
+  display: block;
+}
+
+/* line 42, ../sass/_offline-theme-base.sass */
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+  display: none;
+}
+
+@-webkit-keyframes offline-fadein {
+  /* line 6, ../sass/_keyframes.sass */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 8, ../sass/_keyframes.sass */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes offline-fadein {
+  /* line 6, ../sass/_keyframes.sass */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 8, ../sass/_keyframes.sass */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes offline-fadein {
+  /* line 6, ../sass/_keyframes.sass */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 8, ../sass/_keyframes.sass */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes offline-fadein {
+  /* line 6, ../sass/_keyframes.sass */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 8, ../sass/_keyframes.sass */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes offline-fadein {
+  /* line 6, ../sass/_keyframes.sass */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 8, ../sass/_keyframes.sass */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes offline-fadeout-and-hide {
+  /* line 20, ../sass/_keyframes.sass */
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  /* line 23, ../sass/_keyframes.sass */
+  99% {
+    opacity: 0;
+    display: block;
+  }
+
+  /* line 26, ../sass/_keyframes.sass */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-moz-keyframes offline-fadeout-and-hide {
+  /* line 20, ../sass/_keyframes.sass */
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  /* line 23, ../sass/_keyframes.sass */
+  99% {
+    opacity: 0;
+    display: block;
+  }
+
+  /* line 26, ../sass/_keyframes.sass */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-ms-keyframes offline-fadeout-and-hide {
+  /* line 20, ../sass/_keyframes.sass */
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  /* line 23, ../sass/_keyframes.sass */
+  99% {
+    opacity: 0;
+    display: block;
+  }
+
+  /* line 26, ../sass/_keyframes.sass */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-o-keyframes offline-fadeout-and-hide {
+  /* line 20, ../sass/_keyframes.sass */
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  /* line 23, ../sass/_keyframes.sass */
+  99% {
+    opacity: 0;
+    display: block;
+  }
+
+  /* line 26, ../sass/_keyframes.sass */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes offline-fadeout-and-hide {
+  /* line 20, ../sass/_keyframes.sass */
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  /* line 23, ../sass/_keyframes.sass */
+  99% {
+    opacity: 0;
+    display: block;
+  }
+
+  /* line 26, ../sass/_keyframes.sass */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes offline-rotation {
+  /* line 64, ../sass/_keyframes.sass */
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  /* line 66, ../sass/_keyframes.sass */
+  100% {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+  }
+}
+
+@-moz-keyframes offline-rotation {
+  /* line 64, ../sass/_keyframes.sass */
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  /* line 66, ../sass/_keyframes.sass */
+  100% {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+  }
+}
+
+@-ms-keyframes offline-rotation {
+  /* line 64, ../sass/_keyframes.sass */
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  /* line 66, ../sass/_keyframes.sass */
+  100% {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes offline-rotation {
+  /* line 64, ../sass/_keyframes.sass */
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  /* line 66, ../sass/_keyframes.sass */
+  100% {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+  }
+}
+
+@keyframes offline-rotation {
+  /* line 64, ../sass/_keyframes.sass */
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  /* line 66, ../sass/_keyframes.sass */
+  100% {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+  }
+}
+
+/* line 21, ../sass/offline-theme-default.sass */
+
+.offline-ui {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  font-family: "Helvetica Neue", sans-serif;
+  padding: 1em;
+  top: 1em;
+  width: 38em;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 38em) {
+  /* line 21, ../sass/offline-theme-default.sass */
+
+  .offline-ui {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    top: 0;
+  }
+}
+
+/* line 34, ../sass/offline-theme-default.sass */
+
+.offline-ui .offline-ui-content:before {
+  line-height: 1.25em;
+}
+
+/* line 37, ../sass/offline-theme-default.sass */
+
+.offline-ui .offline-ui-retry {
+  position: absolute;
+  right: 3em;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  line-height: 3.5em;
+  height: 3.5em;
+  margin: auto;
+  padding: 0 1em;
+}
+
+/* line 50, ../sass/offline-theme-default.sass */
+
+.offline-ui.offline-ui-up {
+  -webkit-animation: offline-fadeout-and-hide forwards 0.5s 2s;
+  -moz-animation: offline-fadeout-and-hide forwards 0.5s 2s;
+  -ms-animation: offline-fadeout-and-hide forwards 0.5s 2s;
+  -o-animation: offline-fadeout-and-hide forwards 0.5s 2s;
+  animation: offline-fadeout-and-hide forwards 0.5s 2s;
+  -webkit-backface-visibility: hidden;
+  background: #d6e9c6;
+  color: #468847;
+}
+
+/* line 55, ../sass/offline-theme-default.sass */
+
+.offline-ui.offline-ui-down {
+  -webkit-animation: offline-fadein 0.5s;
+  -moz-animation: offline-fadein 0.5s;
+  -ms-animation: offline-fadein 0.5s;
+  -o-animation: offline-fadein 0.5s;
+  animation: offline-fadein 0.5s;
+  -webkit-backface-visibility: hidden;
+  background: #ec8787;
+  color: #551313;
+}
+
+/* line 60, ../sass/offline-theme-default.sass */
+
+.offline-ui.offline-ui-down.offline-ui-connecting,
+.offline-ui.offline-ui-down.offline-ui-waiting {
+  background: #f8ecad;
+  color: #7c6d1f;
+  padding-right: 3em;
+}
+
+/* line 65, ../sass/offline-theme-default.sass */
+
+.offline-ui.offline-ui-down.offline-ui-connecting:after,
+.offline-ui.offline-ui-down.offline-ui-waiting:after {
+  -webkit-animation: offline-rotation 0.7s linear infinite;
+  -moz-animation: offline-rotation 0.7s linear infinite;
+  -ms-animation: offline-rotation 0.7s linear infinite;
+  -o-animation: offline-rotation 0.7s linear infinite;
+  animation: offline-rotation 0.7s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1em;
+  width: 1em;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-top-color: #7c6d1f;
+  border-left-color: #7c6d1f;
+  opacity: 0.7;
+}
+
+/* line 82, ../sass/offline-theme-default.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting {
+  padding-right: 11em;
+}
+
+/* line 85, ../sass/offline-theme-default.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting.offline-ui-reconnect-failed-2s {
+  padding-right: 0;
+}
+/* line 6, ../sass/_content.sass */
+
+.offline-ui .offline-ui-retry:before {
+  content: "Reconnect";
+}
+
+/* line 11, ../sass/_content.sass */
+
+.offline-ui.offline-ui-up .offline-ui-content:before {
+  content: "Your computer is connected to the internet.";
+}
+
+@media (max-width: 1024px) {
+  /* line 11, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-up .offline-ui-content:before {
+    content: "Your device is connected to the internet.";
+  }
+}
+
+@media (max-width: 568px) {
+  /* line 11, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-up .offline-ui-content:before {
+    content: "Your device is connected.";
+  }
+}
+
+/* line 22, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down .offline-ui-content:before {
+  content: "Your computer lost its internet connection.";
+}
+
+@media (max-width: 1024px) {
+  /* line 22, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down .offline-ui-content:before {
+    content: "Your device lost its internet connection.";
+  }
+}
+
+@media (max-width: 568px) {
+  /* line 22, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down .offline-ui-content:before {
+    content: "Your device isn't connected.";
+  }
+}
+
+/* line 33, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-connecting .offline-ui-content:before,
+.offline-ui.offline-ui-down.offline-ui-connecting-2s .offline-ui-content:before {
+  content: "Attempting to reconnect...";
+}
+
+/* line 42, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"]:before {
+  content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " seconds...";
+}
+
+@media (max-width: 568px) {
+  /* line 42, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"]:before {
+    content: "Reconnecting in " attr(data-retry-in-value) "s...";
+  }
+}
+
+/* line 50, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"][data-retry-in-value="1"]:before {
+  content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " second...";
+}
+
+@media (max-width: 568px) {
+  /* line 50, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"][data-retry-in-value="1"]:before {
+    content: "Reconnecting in " attr(data-retry-in-value) "s...";
+  }
+}
+
+/* line 58, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"]:before {
+  content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " minutes...";
+}
+
+@media (max-width: 568px) {
+  /* line 58, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"]:before {
+    content: "Reconnecting in " attr(data-retry-in-value) "m...";
+  }
+}
+
+/* line 66, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"][data-retry-in-value="1"]:before {
+  content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " minute...";
+}
+
+@media (max-width: 568px) {
+  /* line 66, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"][data-retry-in-value="1"]:before {
+    content: "Reconnecting in " attr(data-retry-in-value) "m...";
+  }
+}
+
+/* line 74, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"]:before {
+  content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " hours...";
+}
+
+@media (max-width: 568px) {
+  /* line 74, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"]:before {
+    content: "Reconnecting in " attr(data-retry-in-value) "h...";
+  }
+}
+
+/* line 82, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"][data-retry-in-value="1"]:before {
+  content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " hour...";
+}
+
+@media (max-width: 568px) {
+  /* line 82, ../sass/_content.sass */
+
+  .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"][data-retry-in-value="1"]:before {
+    content: "Reconnecting in " attr(data-retry-in-value) "h...";
+  }
+}
+
+/* line 90, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+  display: none;
+}
+
+/* line 93, ../sass/_content.sass */
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s .offline-ui-content:before {
+  content: "Connection attempt failed.";
+}
+/**
+ * Owl Carousel v2.2.1
+ * Copyright 2013-2017 David Deutsch
+ * Licensed under  ()
+ */
+
+.owl-carousel,
+.owl-carousel .owl-item {
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  z-index: 1;
+}
+
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  -moz-backface-visibility: hidden;
+}
+
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.owl-carousel .owl-item,
+.owl-carousel .owl-wrapper {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+.owl-carousel .owl-item {
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-touch-callout: none;
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+}
+
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+  display: none;
+}
+
+.no-js .owl-carousel,
+.owl-carousel.owl-loaded {
+  display: block;
+}
+
+.owl-carousel .owl-dot,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev {
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block;
+}
+
+.owl-carousel.owl-hidden {
+  opacity: 0;
+}
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden;
+}
+
+.owl-carousel.owl-drag .owl-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.owl-grab {
+  cursor: move;
+  cursor: grab;
+}
+
+.owl-carousel.owl-rtl {
+  direction: rtl;
+}
+
+.owl-carousel.owl-rtl .owl-item {
+  float: right;
+}
+
+.owl-carousel .animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.owl-carousel .owl-animated-in {
+  z-index: 0;
+}
+
+.owl-carousel .owl-animated-out {
+  z-index: 1;
+}
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.owl-height {
+  transition: height .5s ease-in-out;
+}
+
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d;
+}
+
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000;
+}
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url(owl.video.play.png) no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform .1s ease;
+}
+
+.owl-carousel .owl-video-play-icon:hover {
+  -ms-transform: scale(1.3,1.3);
+  transform: scale(1.3,1.3);
+}
+
+.owl-carousel .owl-video-playing .owl-video-play-icon,
+.owl-carousel .owl-video-playing .owl-video-tn {
+  display: none;
+}
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity .4s ease;
+}
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+/**
+ * Owl Carousel v2.2.1
+ * Copyright 2013-2017 David Deutsch
+ * Licensed under  ()
+ */
+
+/*
+ * 	Default theme - Owl Carousel CSS File
+ */
+
+.owl-theme .owl-nav {
+  margin-top: 10px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+  color: #FFF;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #D6D6D6;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background: #869791;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.owl-theme .owl-nav .disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #869791;
+}
