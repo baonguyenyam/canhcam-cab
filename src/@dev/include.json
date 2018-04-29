@@ -5,12 +5,7 @@
                 "header/h-2"
 			],
 			"body": [
-				"news/n-1",
-				"carousel/c-1",
-				"form/f-1",
-				"map/m-1",
-				"gallery/g-1",
-				"carousel/c-2"
+				"gallery/g-1"
 			],
 			"footer": [
 				"footer/f-1"

@@ -10,48 +10,46 @@ function ProductDetail1() {
 	});
 	$('.canhcam-gallery-1 .product-details .slider-nav').slick({
 		autoplay: false,
-		slidesToShow: 3,
+		slidesToShow: 5,
 		slidesToScroll: 1,
 		asNavFor: '.slider-for',
 		dots: false,
 		arrows: true,
-		// verticalSwiping: true,
-		// centerMode: true,
-		// useTransform: false,
-		// vertical: true,
+		centerMode: false,
 		focusOnSelect: true,
-		// variableWidth: true,
 		prevArrow: $('.top-arrow'),
 		nextArrow: $('.bottom-arrow'),
-		// responsive: [
-		// 	{
-		// 		breakpoint: 1140,
-		// 		settings: {
-		// 			vertical: true,
-		// 			// variableWidth: false,
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 768,
-		// 		settings: {
-		// 			vertical: false,
-		// 			// variableWidth: false
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 480,
-		// 		settings: {
-		// 			vertical: false,
-		// 			// variableWidth: false
-		// 		}
-		// 	}
-		// ]
+		vertical: true,
+		variableWidth: false,
+		verticalSwiping: false,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+					vertical: false,
+					verticalSwiping: false,
+					centerMode: true,
+					variableWidth: false
+				}
+			}
+		]
 	});
 };
 
+$(document).ready(function () {
+
+	ProductDetail1();
+	if (!$('.canhcam-gallery-1 .product-details .slider-nav .top-arrow').is(':visible')) {
+		$('.canhcam-gallery-1 .product-details .slider-control').css({
+			'padding-top': '0px'
+		})
+	}
+
+});
+
 
 $(function () {
-	ProductDetail1();
 })
 
 $(window).resize(function () { })

@@ -18,33 +18,55 @@
 			+clearfix
 			.slider-control
 				margin-top: 2rem
+				text-align: center
+				position: relative
 				+media-breakpoint-up(md)
 					margin-top: 0
+					padding-top: 3rem
 					float: left
 					width: 80px
 				.slick-track
+					margin-bottom: 1rem
+					+media-breakpoint-up(md)
+						flex-direction: column
+						margin-bottom: 1rem
+						width: initial !important
+						cursor: pointer
+						float: none
 					.slick-slide
 						text-align: center !important
-				// 	display: flex
-				// 	-webkit-box-pack: justify!important
-				// 	-ms-flex-pack: justify!important
-				// 	justify-content: space-between!important
-				// 	width: initial !important
-				// 	left: initial !important
-				// 	+media-breakpoint-up(md)
-				// 		flex-direction: column
-				// 		margin: 2px
-				// 		width: initial !important
-				// 		cursor: pointer
-				// 		border: 2px solid transparent
-				// 		float: none
-				// 		&:hover, &.slick-current
-				// 			border: 2px solid color-get($mau,main)
-				// 		&:focus
-				// 			outline: none
-				// 		img
-				// 			max-width: 100%
-				// 			display: inline-block
+						cursor: pointer
+						+media-breakpoint-up(md)
+							margin-bottom: .5rem
+						&:focus
+							outline: none
+						img
+							border: 2px solid transparent
+							display: inline-block
+						&.slick-current, &:hover
+							img
+								border: 2px solid color-get($mau,main)
+				.top-arrow, .bottom-arrow
+					background: darken(color-get($mau,trang),5%)
+					margin: .5rem
+					height: 3rem
+					width: 3rem
+					+bor-rad(50%)
+					+media-breakpoint-up(md)
+						margin: 0
+						width: 100%
+						+bor-rad(5px)
+						height: initial
+						i
+							+transform(rotate(90deg))
+					&.active, &:hover
+						background: color-get($mau,main)
+						color: color-get($mau,trang)
+				.top-arrow
+					+media-breakpoint-up(md)
+						+pos(abs, 0 0 null null)
+
+
 			.slider-for
 				.item
 					text-align: center
