@@ -1,0 +1,65 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-4
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar, .navbar-collapse
+		position: static
+	.navbar-toggler
+		border: 1px solid darken(color-get($mau,trang),20%)
+		+pad(.5rem .75rem)
+		&:focus
+			outline: none
+	.navbar-brand
+		+media-breakpoint-down(md)
+			margin-right: auto
+		img
+			max-height: 2rem
+	&.expand
+		.navbar-toggler
+			background: color-get($mau,main)
+			color: color-get($mau,trang)
+			border-color: color-get($mau,main)
+	+media-breakpoint-up(xl)
+		.navbar-nav
+			.nav-item
+				.nav-link
+					+pad(.5rem 1rem)
+	+media-breakpoint-up(lg)
+		.navbar
+			.btnsearch
+				order: 9
+	.search
+		+pos(fix, 0 0 null null)
+		z-index: 999
+		display: none
+		width: 100%
+		height: 100%
+		background: rgba(0,0,0,.7)
+		+pad(.5rem)
+		border: 1px solid darken(color-get($mau,trang),20%)
+		border-top: 0
+		+bor-rad(0 0 3px 3px)
+		justify-content: center
+		align-items: center
+		.input-group
+			width: 70%
+			input
+				padding: 1rem 2rem
+				font-size: 2rem
+			button
+				padding: 1rem 2rem
+				font-size: 2rem
+		&.active
+			display: flex
+		.closebnt
+			+pos(abs, 30px 30px null null)
+			z-index: 999
+			color: color-get($mau,trang)
+			cursor: pointer
+			i
+				font-size: 6rem
+				line-height: 6rem

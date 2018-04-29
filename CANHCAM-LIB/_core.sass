@@ -1,0 +1,26 @@
++font-face('CenturyGothic', "../fonts/", "CenturyGothic")
+
+html, body
+	// font-family: 'CenturyGothic'
+	font-size: 14px
+	height: 100%
+	width: 100%
+	+selection
+		background-color: color-get($colors,main)
+		color: #fff
+
+a
+	color: color-get($mau,main)
+	&:hover
+		color: color-get($mau,extra)
+	&:visited, &:active
+		color: color-get($mau,main)
+
+header
+	width: 100%
+	z-index: 999
+	+transition(all .5s ease-in-out)
+	&.has-tranparent
+		background: none
+	&.fixedheader
+		+pos(fix, 0 null null 0)

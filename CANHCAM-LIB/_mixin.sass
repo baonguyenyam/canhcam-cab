@@ -1,0 +1,24 @@
+// // Set Link Hover
+=link ($link, $hover:$link, $active:$link, $visit:$link)
+	color: #{$link}
+	&:visited
+		color: #{$visit}
+	&:hover
+		color: #{$hover}
+	&:active, &:focus , &.active, &.activated
+		color: #{$active}
+
+// Set bg hover
+=bg ($link, $hover:$link, $active:$link)
+	@if $link != "none"
+		background-color: #{$link}
+		&:hover
+			background-color: #{$hover}
+		&:active, &:focus , &.active, &.activated
+			background-color: #{$active}
+	@else
+		background: none
+		&:hover
+			background-color: #{$hover}
+		&:active, &:focus , &.active, &.activated
+			background-color: #{$active}

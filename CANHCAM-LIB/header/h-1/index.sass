@@ -4,3 +4,23 @@
 //////////////////////////////////////
 
 .canhcam-header-1
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar-toggler
+		border: 1px solid darken(color-get($mau,trang),20%)
+		+pad(.5rem .75rem)
+		&:focus
+			outline: none
+	.navbar-brand
+		img
+			max-height: 2rem
+	&.expand
+		.navbar-toggler
+			background: color-get($mau,main)
+			color: color-get($mau,trang)
+			border-color: color-get($mau,main)
+	+media-breakpoint-up(xl)
+		.navbar-nav
+			.nav-item
+				.nav-link
+					+pad(.5rem 1rem)

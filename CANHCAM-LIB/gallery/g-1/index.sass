@@ -1,0 +1,90 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-gallery-1
+	.product-details
+		padding: 2rem 0
+		+media-breakpoint-up(md)
+			padding: 3rem 0
+			.order-md-1
+				-ms-flex-order: 1
+				order: 1
+			.order-md-2
+				-ms-flex-order: 2
+				order: 2
+		.slider-img
+			+clearfix
+			.slider-control
+				margin-top: 2rem
+				+media-breakpoint-up(md)
+					margin-top: 0
+					float: left
+					width: 80px
+				.slick-track
+					.slick-slide
+						text-align: center !important
+				// 	display: flex
+				// 	-webkit-box-pack: justify!important
+				// 	-ms-flex-pack: justify!important
+				// 	justify-content: space-between!important
+				// 	width: initial !important
+				// 	left: initial !important
+				// 	+media-breakpoint-up(md)
+				// 		flex-direction: column
+				// 		margin: 2px
+				// 		width: initial !important
+				// 		cursor: pointer
+				// 		border: 2px solid transparent
+				// 		float: none
+				// 		&:hover, &.slick-current
+				// 			border: 2px solid color-get($mau,main)
+				// 		&:focus
+				// 			outline: none
+				// 		img
+				// 			max-width: 100%
+				// 			display: inline-block
+			.slider-for
+				.item
+					text-align: center
+					img
+						text-align: center
+						max-width: 100%
+						display: inline-block
+					&:focus
+						outline: none
+				+media-breakpoint-up(md)
+					float: right
+					width: calc(100% - 80px)
+		.infomation
+			h1
+				+fz(1.8rem)
+			h3
+				+fz(1.1rem)
+			.price
+				color: color-get($mau,do-1)
+				margin-bottom: 0
+				+fz(1.3rem)
+			hr
+				border-top: 1px dashed darken(color-get($mau,trang) ,5%)
+			.table
+				background: darken(color-get($mau,trang) ,3%)
+				tr
+					td
+						border-color: color-get($mau,trang)
+			.checkbox-styled
+				cursor: pointer
+				span
+					display: inline-block
+					background: darken(color-get($mau,trang) ,3%)
+					+pad(.5rem 1rem)
+					text-transform: uppercase
+					border: 1px solid darken(color-get($mau,trang) ,20%)
+				input[type="checkbox"]:checked + span,
+				input[type="radio"]:checked + span
+					background: color-get($mau,main)
+					color: color-get($mau,trang)
+					border: 1px solid color-get($mau,main)
+				input
+					display: none

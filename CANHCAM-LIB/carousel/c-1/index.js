@@ -3,9 +3,10 @@ $(function() {
         $('.canhcam-carousel-1 .owl-carousel').owlCarousel({
             animateIn: 'fadeIn',
             animateOut: 'fadeOut',
-            items: 1,
+            items: 2,
             loop: true,
             center: false,
+            padding: 10,
             margin: 20,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             nav: true,
