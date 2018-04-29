@@ -1,10 +1,11 @@
 $(function() {
-    if ($('.canhcam-carousel-2 .owl-carousel').length) {
-        $('.canhcam-carousel-2 .owl-carousel').owlCarousel({
+    if ($('.canhcam-carousel-3 .owl-carousel').length) {
+        $('.canhcam-carousel-3 .owl-carousel').owlCarousel({
             animateIn: 'fadeIn',
             animateOut: 'fadeOut',
             items: 1,
-            loop: false,
+			false: true,
+			loop: false,
             center: false,
             padding: 10,
             margin: 20,
@@ -12,19 +13,20 @@ $(function() {
             nav: true,
             dots: false,
             autoplay: true,
-            autoplayTimeout: 5000,
-			autoplayHoverPause: true,
-            callbacks: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: false,
+			callbacks: true,
             responsive: {
                 480: {
-                    items: 2
+                    items: 1
                 },
                 768: {
-                    items: 3,
-					nav: true,
-					dots: false
+                    items: 2
                 },
                 992: {
+                    items: 3
+                },
+                1140: {
                     items: 4
                 }
             }

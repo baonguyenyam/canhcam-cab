@@ -1,0 +1,89 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-carousel-3
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.owl-carousel
+		position: relative
+		// Main
+		.owl-stage-outer
+			.owl-stage
+				display: flex
+			.owl-item
+				display: flex
+		// Nav
+		.owl-nav
+			text-align: center
+			button
+				&.owl-prev, &.owl-next
+					+mar(.5rem)
+					+pad(.5rem_)
+					width: 3rem
+					height: 3rem
+					background: darken(color-get($mau,trang),5%)
+					+bor-rad(50%)
+					text-align: center
+					&:focus
+						outline: none
+				&:hover, &.active
+					&.owl-prev, &.owl-next
+						background: color-get($mau,main)
+						color: color-get($mau,trang)
+				&.disabled
+					+opacity(.5)
+		// Dots
+		.owl-dots
+			.owl-dot
+				&:focus
+					outline: none
+				span
+					background: darken(color-get($mau,trang),5%)
+				&.active
+					span
+						background: color-get($mau,main)
+	.news-list
+		.item
+			display: flex
+			text-decoration: none
+			height: 100%
+			+bor-rad(5px)
+			overflow: hidden
+			figure
+				position: relative
+				overflow: hidden
+				+bor-rad(5px)
+				background: darken(color-get($mau,trang) ,3%)
+				img
+					+bor-rad(5px 5px 0 0)
+				figcaption
+					padding: 1rem
+
+					h3
+						+fz(1.1rem)
+						+fw(400)
+						color: color-get($mau,main)
+					time
+						+fz(.9rem)
+						+fw(200)
+						color: darken(color-get($mau,trang) ,30%)
+					p
+						color: darken(color-get($mau,trang) ,60%)
+						line-height: 1.3rem
+						+fz(1rem)
+						margin-bottom: 0
+			&:hover
+				figure
+					background: darken(color-get($mau,trang) ,7%)
+					img
+						+opacity(.7)
+					figcaption
+						h3
+							color: darken(color-get($mau,extra),0%)
+						time
+							color: darken(color-get($mau,trang) ,20%)
+						p
+							color: darken(color-get($mau,trang) ,70%)

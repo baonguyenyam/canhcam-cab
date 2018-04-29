@@ -3,7 +3,7 @@
 // CODE
 //////////////////////////////////////
 
-.canhcam-news-1
+.canhcam-news-3
 	+pad(2rem 0)
 	+media-breakpoint-up(lg)
 		+pad(4rem 0)
@@ -53,66 +53,63 @@
 					&:after
 						+opacity(1)
 						height: 100%
-		.top-list
-			.owl-carousel
-				position: relative
-				// Main
-				.owl-stage-outer
-				// Nav
-				.owl-nav
-					margin-bottom: 2rem
-					button
-						&.owl-prev, &.owl-next
-							+pad(.5rem_)
-							width: 3rem
-							height: 3rem
-							background: darken(color-get($mau,trang),5%)
-							+bor-rad(50%)
-							text-align: center
-							&:focus
-								outline: none
-						&:hover, &.active
-							&.owl-prev, &.owl-next
-								background: color-get($mau,main)
-					+media-breakpoint-up(md)
-						margin-top: 0
-						+opacity(0)
-						button
-							&.owl-prev, &.owl-next
-								background: rgba(0,0,0,.5)
-								color: color-get($mau,trang)
-								margin: 0
-								+transform(translateY(-50%))
-								&:focus
-									outline: none
-							&:hover, &.active
-								&.owl-prev, &.owl-next
-									background: rgba(255,255,255,.7)
-									color: color-get($mau,den)
-							&.owl-prev
-								+pos(abs, 50% null null .5rem)
-							&.owl-next
-								+pos(abs, 50% .5rem null null)
-				// Dots
-				.owl-dots
-					margin-bottom: 2rem
-					+media-breakpoint-up(lg)
-						margin-bottom: 0
-					.owl-dot
+		.owl-carousel
+			position: relative
+			+media-breakpoint-down(md)
+				display: block
+			// Main
+			.owl-stage-outer
+			// Nav
+			.owl-nav
+				margin-bottom: 2rem
+				button
+					&.owl-prev, &.owl-next
+						+pad(.5rem_)
+						width: 3rem
+						height: 3rem
+						background: darken(color-get($mau,trang),5%)
+						+bor-rad(50%)
+						text-align: center
 						&:focus
 							outline: none
+					&:hover, &.active
+						&.owl-prev, &.owl-next
+							background: color-get($mau,main)
+				+media-breakpoint-up(md)
+					margin-top: 0
+					+opacity(0)
+					+transition(all .5s ease-in-out)
+					button
+						&.owl-prev, &.owl-next
+							margin: 0
+							+transform(translateY(-50%))
+							&:focus
+								outline: none
+						&.owl-prev
+							+pos(abs, 50% null null -.5rem)
+						&.owl-next
+							+pos(abs, 50% -.5rem null null)
+			// Dots
+			.owl-dots
+				margin-bottom: 2rem
+				+media-breakpoint-up(lg)
+					margin-bottom: 0
+				.owl-dot
+					&:focus
+						outline: none
+					span
+						background: darken(color-get($mau,trang),5%)
+					&.active
 						span
-							background: darken(color-get($mau,trang),5%)
-						&.active
-							span
-								background: color-get($mau,main)
-				&:hover
-					.owl-nav
-						+opacity(1)
+							background: color-get($mau,main)
+			&:hover
+				.owl-nav
+					+opacity(1)
+		.top-list
 			.item
 				figure
-					margin-bottom: 0
-				+media-breakpoint-up(lg)
+					+media-breakpoint-up(lg)
+						margin-bottom: 0
 
 		.part-list
 			.item
@@ -123,6 +120,12 @@
 							+fz(1rem)
 						time
 							+fz(.8rem)
+				+media-breakpoint-up(lg)
+					figure
+						margin-bottom: 2rem
+					&:last-child
+						figure
+							margin-bottom: 0
 	.news-list
 		.btn-group
 			i

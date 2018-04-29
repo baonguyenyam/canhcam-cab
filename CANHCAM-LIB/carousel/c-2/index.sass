@@ -21,6 +21,8 @@
 					background: darken(color-get($mau,trang),5%)
 					+bor-rad(50%)
 					text-align: center
+					&:focus
+						outline: none
 				&:hover, &.active
 					&.owl-prev, &.owl-next
 						background: color-get($mau,main)
@@ -39,6 +41,8 @@
 		// Dots
 		.owl-dots
 			.owl-dot
+				&:focus
+					outline: none
 				span
 					background: darken(color-get($mau,trang),5%)
 				&.active

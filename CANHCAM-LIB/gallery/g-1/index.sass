@@ -43,6 +43,7 @@
 						img
 							border: 2px solid transparent
 							display: inline-block
+							+bor-rad(5px)
 						&.slick-current, &:hover
 							img
 								border: 2px solid color-get($mau,main)
@@ -102,6 +103,7 @@
 					background: darken(color-get($mau,trang) ,3%)
 					+pad(.5rem 1rem)
 					text-transform: uppercase
+					+bor-rad(5px)
 					border: 1px solid darken(color-get($mau,trang) ,20%)
 				input[type="checkbox"]:checked + span,
 				input[type="radio"]:checked + span
