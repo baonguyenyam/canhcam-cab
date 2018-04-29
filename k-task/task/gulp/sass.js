@@ -29,9 +29,10 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 
     arraySassList.push('!' + path.join(url.source, url.styles.sass, url.concat.ACTIVE_CONCAT ? url.ignore.sassactiveconcat : url.ignore.sass))
     arraySassList.push(path.join(url.source, url.styles.sass, '**/*.{sass,scss}'))
+	arraySassList.push(url.src2 + '/_core/index.sass')
     for (var i = 0; i < arraySass.length; i++) {
         arraySassList.push(url.src2 + '/' + arraySass[i] + '/index.sass')
-    }
+	}
     arraySassList.push('!' + path.join(url.source, '{**/\_*,**/\_*/**}'))
 
     // Run task

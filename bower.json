@@ -17,7 +17,7 @@
   "dependencies": {
     "animate.css": "3.5.2",
     "owl.carousel": "2.3.4",
-    "k-sass-core": "6.0.1",
+    "k-sass-core": "6.0.2",
     "k-gmaps": "1.0.6",
     "Modernizr": "http://modernizr.com/download/?-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load.zip",
     "offline": "0.7.19",
