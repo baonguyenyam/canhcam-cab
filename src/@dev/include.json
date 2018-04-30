@@ -2,14 +2,55 @@
     "SETUP": {
         "index": {
             "header": [
-                "header/h-2"
+                "header/h-1"
 			],
 			"body": [
+				"news/n-1",
+				"carousel/c-1",
+				"gallery/g-1"
+			],
+			"footer": [
+				"footer/f-1"
+			]
+		},
+		"index-1": {
+			"header": [
+				"header/h-2"
+			],
+			"body": [
+				"news/n-2",
+				"carousel/c-2",
+				"gallery/g-2"
+			],
+			"footer": [
+				"footer/f-1"
+			]
+		},
+		"index-2": {
+			"header": [
+				"header/h-3"
+			],
+			"body": [
+				"news/n-3",
+				"carousel/c-3",
 				"gallery/g-3"
 			],
 			"footer": [
 				"footer/f-1"
 			]
-        }
+		},
+		"index-3": {
+			"header": [
+				"header/h-4"
+			],
+			"body": [
+				"welcome/w",
+				"form/f-1",
+				"map/m-1"
+			],
+			"footer": [
+				"footer/f-1"
+			]
+		}
     }
 }
