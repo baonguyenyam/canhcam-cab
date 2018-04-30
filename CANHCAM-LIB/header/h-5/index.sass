@@ -1,0 +1,105 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-5
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar
+		.title
+			order: 0
+			display: none
+			color: color-get($mau,trang)
+			padding-bottom: 1rem
+			border-bottom: 1px dashed darken(color-get($mau,trang),0%)
+			h2
+				margin-bottom: 0
+				+fz(2rem)
+			.closebnt
+				+pos(abs, 1rem 1rem null null)
+				z-index: 999
+				color: color-get($mau,trang)
+				cursor: pointer
+				i
+					font-size: 4rem
+					line-height: 4rem
+	.navbar-toggler
+		border: 1px solid darken(color-get($mau,trang),20%)
+		+pad(.5rem .75rem)
+		&:focus
+			outline: none
+	.navbar-brand
+		img
+			max-height: 2rem
+	+media-breakpoint-down(md)
+		.navbar-collapse
+			display: flex
+			flex-direction: column
+			+transition(all .3s ease-in-out)
+			+pos(fix, 0 100% null null)
+			background: rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.95)
+			height: 100%
+			width: 100%
+			overflow-y: scroll
+			display: block
+			+pad(2rem)
+			.search
+				order: 1
+				button
+					background: darken(color-get($mau,trang),5%)
+					color: color-get($mau,main)
+					border-color: darken(color-get($mau,trang),5%)
+			.navbar-nav
+				order: 2
+				.nav-link
+					+link(color-get($mau,trang), color-get($mau,extra), color-get($mau,extra))
+	&.expand
+		.navbar
+			.title
+				display: block
+		.navbar-toggler
+			background: color-get($mau,main)
+			color: color-get($mau,trang)
+			border-color: color-get($mau,main)
+		.navbar-collapse
+			+pos(fix, 0 0 null null)
+	+media-breakpoint-up(xl)
+		.navbar-nav
+			.nav-item
+				.nav-link
+					+pad(.5rem 1rem)
+	+media-breakpoint-up(lg)
+		.navbar
+			position: relative
+		.navbar-collapse
+			position: static
+		.search
+			+pos(abs, 100% 1rem null null)
+			display: none
+			max-width: 300px
+			background: darken(color-get($mau,trang),0%)
+			+pad(.5rem)
+			border: 1px solid darken(color-get($mau,trang),20%)
+			border-top: 0
+			+bor-rad(0 0 3px 3px)
+			.input-group
+				width: 100%
+
+			&.active
+				display: block
+		.btnsearch
+			.btn
+				text-decoration: none
+				i
+					width: 20px
+					height: 20px
+					line-height: 20px
+					text-align: center
+			.fa-times
+				display: none
+			&.active
+				.fa-times
+					display: block
+				.fa-search
+					display: none

@@ -29,3 +29,45 @@ header
 		background: none
 	&.fixedheader
 		+pos(fix, 0 null null 0)
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle
+	&:focus
+		+box-sha(0 0 0 0.2rem rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.25))
+		background: color-get($mau,main)
+		border-color: color-get($mau,main)
+.btn, .form-control
+	&:focus
+		+box-sha(0 0 0 0.2rem rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.25))
+		border-color: color-get($mau,main)
+
+.btn
+	&.btn-link
+		color: color-get($mau,main)
+	&.btn-primary
+		background: color-get($mau,main)
+		border-color: color-get($mau,main)
+	&.btn-outline-primary
+		border-color: color-get($mau,main)
+		color: color-get($mau,main)
+		&:not(:disabled):not(.disabled)
+			&.active, &:hover
+				background: color-get($mau,main)
+				border-color: color-get($mau,main)
+				color: color-get($mau,trang)
+			&:focus
+				+box-sha(0 0 0 0.2rem rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.25))
+
+.pagination
+	.page-item
+		.page-link
+			&:focus
+				+box-sha(0 0 0 0.2rem rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.25))
+		&.active
+			.page-link
+				background: color-get($mau,main)
+				border-color: color-get($mau,main)
+				color: color-get($mau,trang)
+.dropdown-item.active, .dropdown-item:active
+	background: color-get($mau,main)

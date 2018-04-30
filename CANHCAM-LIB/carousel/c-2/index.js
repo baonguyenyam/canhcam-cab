@@ -11,7 +11,7 @@ $(function() {
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             nav: true,
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 5000,
 			autoplayHoverPause: true,
             callbacks: true,
