@@ -8,4 +8,6 @@ $(function() {
     CCHeader1();
 })
 
-$(window).resize(function() {})
+$(window).resize(function() {
+	$('.canhcam-header-1').removeClass('expand')
+})

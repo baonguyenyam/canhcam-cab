@@ -25,6 +25,7 @@ $(function () {
 })
 
 $(window).resize(function () {
+	$('.canhcam-header-2').removeClass('expand')
 	$('.canhcam-header-2 .search').removeClass('active')
 	if ($(window).width() <= CANHCAM_APP.CHANGE_GRID) {
 		$('.canhcam-header-2 .search button').removeClass('searchbtn')

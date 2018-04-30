@@ -2,21 +2,28 @@ function CCHeader5() {
 	$('.canhcam-header-5 .navbar-toggler').on("click", function () {
 		$('.canhcam-header-5').toggleClass('expand')
 	});
-	$('.canhcam-header-5 .btnsearch .btn').on("click", function () {
-		$('.canhcam-header-5 .search').toggleClass('active')
-		$('.canhcam-header-5 .btnsearch').toggleClass('active')
-	});
-	$('.canhcam-header-5 .closebnt').on("click", function () {
-		$('.canhcam-header-5').toggleClass('expand')
-	});
+	marginHeader()
 };
 
-$(function() {
-    CCHeader5();
+function marginHeader() {
+	var headerHeight = $("header").outerHeight();
+	if ($(window).width() <= CANHCAM_APP.CHANGE_GRID) {
+		$('.canhcam-header-5 #CCMenuHeader').css({
+			'margin-top': headerHeight + 'px'
+		})
+	} else {
+		$('.canhcam-header-5 #CCMenuHeader').css({
+			'margin-top': 'initial'
+		})
+	}
+}
+
+$(function () {
+	CCHeader5();
 })
 
-$(window).resize(function() {
+$(window).resize(function () {
 	$('.canhcam-header-5').removeClass('expand')
-	$('.canhcam-header-5 .search').removeClass('active')
-	$('.canhcam-header-5 .btnsearch').removeClass('active')
+	marginHeader()
+
 })

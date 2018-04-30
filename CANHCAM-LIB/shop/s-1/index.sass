@@ -1,0 +1,173 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-shop-1
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.shop-category
+		.title
+			p
+				color: darken(color-get($mau,trang) ,60%)
+	.product-lists
+		.boxprice
+			background: darken(color-get($mau,trang) ,4%)
+			+pad(1rem)
+			+bor-rad(5px)
+			.title
+				h3
+					color: color-get($mau,main)
+					+fz(1.5rem)
+					margin-bottom: 0
+				.btn
+					background: white!important
+					color: black!important
+					&.collapsed
+						background: color-get($mau,main) !important
+						color: white!important
+			#filterSearch
+				padding-top: .5rem
+				margin-top: .5rem
+				border-top: 1px dashed darken(color-get($mau,trang) ,20%)
+				+media-breakpoint-up(md)
+					padding: 0
+					margin: 0
+					border: 0
+				h4
+					color: color-get($mau,main)
+					+fz(1rem)
+					margin-bottom: 1rem
+					text-transform: uppercase
+				hr
+					border-top: 1px dashed darken(color-get($mau,trang) ,20%)
+				.form-check
+					display: flex
+					align-items: center
+					input
+						display: none
+					label
+						&:before, &:after
+							font-family: 'Font Awesome 5 Free'
+							font-weight: 900
+					input[type="checkbox"]:checked + label::before,
+					input[type="radio"]:checked + label::before
+						background: color-get($mau,main)
+						border-color: color-get($mau,main)
+					input[type="checkbox"]:checked + label::after,
+					input[type="radio"]:checked + label::after
+						color: color-get($mau,trang)
+					input[type="checkbox"]:checked + label,
+					input[type="radio"]:checked + label
+						color: color-get($mau,main)
+						+fw(600)
+					input[type="checkbox"]:indeterminate + label::after,
+					input[type="radio"]:indeterminate + label::after
+						background: none
+
+				.checkbox-styled
+					cursor: pointer
+					span
+						display: inline-block
+						background: darken(color-get($mau,trang) ,3%)
+						+pad(.25rem .5rem)
+						text-transform: uppercase
+						+bor-rad(3px)
+						border: 1px solid darken(color-get($mau,trang) ,20%)
+					input[type="checkbox"]:checked + span,
+					input[type="radio"]:checked + span
+						background: color-get($mau,main)
+						color: color-get($mau,trang)
+						border: 1px solid color-get($mau,main)
+					input
+						display: none
+				.slider
+					.slider-handle
+						border: 2px solid color-get($mau,main)
+						background: color-get($mau,trang)
+						height: 15px
+						width: 15px
+					&.slider-horizontal
+						width: 100%
+						height: 15px
+						.slider-track
+							height: 5px
+							margin-top: -2px
+							.slider-selection
+								background: color-get($mau,main)
+							.slider-track-low, .slider-track-high
+								background: color-get($mau,trang)
+
+		.boxproducts
+			padding: 2rem 0
+			.item
+				overflow: hidden
+				.item-detail
+					border: 1px dashed darken(color-get($mau,trang) ,10%)
+					display: block
+					text-decoration: none
+					padding: 1rem
+					height: 100%
+					.bagde
+						+pos(abs, 0 0 null null)
+						span
+							background: color-get($mau,main)
+							color: color-get($mau,trang)
+							text-align: center
+							+pad(.25rem .5rem)
+							display: inline-block
+							&.bagde-hot
+								background: color-get($mau,do-1)
+							&.bagde-success
+								background: color-get($mau,la-1)
+					h2
+						+fz(1.1rem)
+						+fw(400)
+						color: darken(color-get($mau,trang) ,50%)
+					.price
+						color: color-get($mau,do-1)
+						+fz(1.4rem)
+					figure
+						overflow: hidden
+						text-align: center
+						img
+							max-width: 100%
+						figcaption
+				&:hover
+					+opacity(.8)
+
+		.pager
+			.pagination
+				.page-item
+					.page-link
+						+bor-rad(3px)
+						color: darken(color-get($mau,trang) ,20%)
+						margin-left: 3px
+					&:first-child
+						.page-link
+							margin-left: 0
+					&.active, &:hover
+						.page-link
+							background: none
+							color: color-get($mau,main)
+							border-color: color-get($mau,main)
+		.pagelist
+			.pagination
+				margin-bottom: 0
+				.page-item
+					margin-left: .5rem
+					&:first-child
+						margin-left: 0
+					.page-link
+						+bor-rad(50% 50%)
+						width: 2.5rem
+						height: 2.5rem
+						justify-content: center
+						align-items: center
+						display: flex
+						color: darken(color-get($mau,trang) ,20%)
+					&.active
+						.page-link
+							color: darken(color-get($mau,trang) ,0%)
+

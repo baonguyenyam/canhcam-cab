@@ -13,6 +13,7 @@ $(function() {
 })
 
 $(window).resize(function() {
+	$('.canhcam-header-3').removeClass('expand')
 	$('.canhcam-header-3 .search').removeClass('active')
 	$('.canhcam-header-3 .btnsearch').removeClass('active')
 })

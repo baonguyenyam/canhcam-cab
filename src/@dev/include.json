@@ -4,6 +4,10 @@
             "header": [
                 "header/h-5"
 			],
+			"body": [
+				"shop/s-2",
+				"gallery/g-2"
+			],
 			"footer": [
 				"footer/f-1"
 			]

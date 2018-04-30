@@ -17,6 +17,7 @@ $(function() {
 })
 
 $(window).resize(function() {
+	$('.canhcam-header-4').removeClass('expand')
 	$('.canhcam-header-4 .search').removeClass('active')
 	$('.canhcam-header-4 .btnsearch').removeClass('active')
 })
