@@ -298,10 +298,9 @@ gulp.task('k-builder', function (cb) {
 		'copy',
 		'fonts',
 		'pug-dev', // hamber, ejs, pug
-		'inject',
+		'inject-dev',
 		'pug-rename-dev',
 		'map-dev',
-		'copytool',
 		cb
 	);
 });

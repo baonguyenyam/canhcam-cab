@@ -4,21 +4,103 @@
 			"header/h-1",
 			"header",
 			"header-1.png",
-			"Header 1"
+			"Header Basic"
+		],
+		"header-2": [
+			"header/h-2",
+			"header",
+			"header-2.png",
+			"Header Toggle width search"
+		],
+		"header-3": [
+			"header/h-3",
+			"header",
+			"header-3.png",
+			"Header Dropdown Search"
+		],
+		"header-4": [
+			"header/h-4",
+			"header",
+			"header-4.png",
+			"Header Fullpage Search"
+		],
+		"header-5": [
+			"header/h-5",
+			"header",
+			"header-5.png",
+			"Header 5"
+		],
+		"header-6": [
+			"header/h-6",
+			"header",
+			"header-6.png",
+			"Header 6"
 		]
 	},
 	"carousel": {
 		"carousel-1": [
 			"carousel/c-1",
-			"carousel",
+			"body",
 			"carousel-1.png",
 			"carousel 1"
+		],
+		"carousel-2": [
+			"carousel/c-2",
+			"body",
+			"carousel-2.png",
+			"carousel 2"
+		],
+		"carousel-3": [
+			"carousel/c-3",
+			"body",
+			"carousel-3.png",
+			"carousel 3"
+		]
+	},
+	"news": {
+		"news-1": [
+			"news/n-1",
+			"body",
+			"news-1.png",
+			"news 1"
+		],
+		"news-2": [
+			"news/n-2",
+			"body",
+			"news-2.png",
+			"news 2"
+		],
+		"news-3": [
+			"news/n-3",
+			"body",
+			"news-3.png",
+			"news 3"
+		]
+	},
+	"gallery": {
+		"gallery-1": [
+			"gallery/g-1",
+			"body",
+			"gallery-1.png",
+			"gallery 1"
+		],
+		"gallery-2": [
+			"gallery/g-2",
+			"body",
+			"gallery-2.png",
+			"gallery 2"
+		],
+		"gallery-3": [
+			"gallery/g-3",
+			"body",
+			"gallery-3.png",
+			"gallery 3"
 		]
 	},
 	"form": {
 		"form-1": [
-			"form/c-1",
-			"form",
+			"form/f-1",
+			"body",
 			"form-1.png",
 			"form 1"
 		]
@@ -26,7 +108,7 @@
 	"map": {
 		"map-1": [
 			"map/m-1",
-			"map",
+			"body",
 			"map-1.png",
 			"map 1"
 		]

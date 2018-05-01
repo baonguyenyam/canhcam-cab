@@ -9,6 +9,30 @@ section.canhcam-shop-2
 		.container
 			.row
 				.col-md-4.col-lg-3
+					.boxmenu
+						ul.list-group(data-select)
+							li.list-group-item
+								a.list-group-item-action.active(href='#')
+									i.mdi.mdi-headphones
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action(href='#')
+									i.mdi.mdi-cellphone-android
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action(href='#')
+									i.mdi.mdi-laptop-chromebook
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action(href='#')
+									i.mdi.mdi-tshirt-crew
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action.disabled(href='#')
+									i.mdi.mdi-soccer
+									| Cras justo odio
+
+
 					.boxprice
 						.title.d-flex.d-md-none.justify-content-between.align-items-center
 							h3 Filter Search
@@ -69,24 +93,32 @@ section.canhcam-shop-2
 							.mt-2
 								button.btn.btn-primary Apply filter
 				.col-md-8.col-lg-9
-					.row.pager
-						.col-6.mt-3.mt-md-0.d-flex.align-items-center
-							select.custom-select.my-1.mr-sm-2
-								option(selected) Choose...
-								option(value="1") One
-								option(value="2") Two
-								option(value="3") Three
+					.row.filter.no-gutters.justify-content-between
+						.col-12.col-md-auto.mt-3.mt-md-0.d-flex.align-items-center.justify-content-between
+							ul.nav.align-items-center
+								li.nav-item
+									.nav-link
+										strong Lọc theo
+								li.nav-item
+									a.nav-link(href='#') Khuyến mãi
+								li.nav-item
+									a.nav-link(href='#') Bán chạy
+								li.nav-item
+									a.nav-link(href='#') Giá thấp
+								li.nav-item
+									select.form-control.form-control-sm
+										option(selected) Choose...
+										option(value="1") One
+										option(value="2") Two
+										option(value="3") Three
 
-						.col-6.mt-3.mt-md-0.d-flex.align-items-center.justify-content-end
-							ul.pagination.pagination-sm.mb-0
-								li.page-item
-									a.page-link(href="#", title="title") 1
-								li.page-item.active
-									a.page-link(href="#", title="title") 2
-								li.page-item
-									a.page-link(href="#", title="title") 3
-								li.page-item
-									a.page-link(href="#", title="title") 4
+						.col-12.col-lg-3.d-flex.align-items-center.justify-content-end
+							form.form-inline.my-2.my-lg-0.search.w-100
+								.input-group.input-group-sm.w-100
+									input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+									.input-group-append
+										button.btn.btn-default.searchbtn(type='button')
+											i.fa.fa-search
 
 					.row
 						.col
@@ -96,61 +128,111 @@ section.canhcam-shop-2
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/01.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
+											.circle
+												span.circle-hot HOT
+
 											.bagde
-												span.bagde-hot HOT
 												span.bagde-success Sale 30%
 											figure
 												img(src="./img/product/02.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women short sleeve
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/03.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 R569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/04.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women sN 200 GR / M2 WOMEN SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/01.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/02.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/03.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 									.col-sm-6.col-lg-4.item
 										a.item-detail(href="#")
 											figure
 												img(src="./img/product/04.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
 												figcaption
 													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
-													.price $18.55
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
 
 					.row.pagelist
 						.col.d-flex.align-items-center.justify-content-center.justify-content-md-end

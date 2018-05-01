@@ -4,20 +4,30 @@ var data = {
 var objectName = ''
 var pages = ['index']
 var dataSites = {
-	color: 'main: #2196f3,extra: #ec8b00,front: #659f13,back: #f1c40f,cyan-1: #1abc9c,cyan-2: #16a085,la-1: #2ecc71,la-2: #27ae60,duong-1: #3498db,duong-2: #2980b9,tim-1: #9b59b6,tim-2: #8e44ad,vang-1: #f1c40f,vang-2: #f39c12,cam-1: #e67e22,cam-2: #d35400,do-1: #e74c3c,do-2: #c0392b,den-1: #34495e,den-2: #2c3e50,xam-1: #95a5a6,xam-2: #7f8c8d,hong-1: #ff9ff3,hong-2: #f368e0,trang: #ffffff,den: #000000',
-	js: '"DEV_MODE":true,"DEV_MODE_GIRD_FULL":false,"ACTIVE_FIXED_FOOTER":true,"ACTIVE_BACKTOTOP":true,"ACTIVE_RESPONSIVE":true,"DISPLAY_FOOTER":600,"DISPLAY_BACKTOTOP":100,"CHANGE_GRID":991'
+	color: 'main: #2e3192,extra: #ec8b00,front: #659f13,back: #f1c40f,cyan-1: #1abc9c,cyan-2: #16a085,la-1: #2ecc71,la-2: #27ae60,duong-1: #3498db,duong-2: #2980b9,tim-1: #9b59b6,tim-2: #8e44ad,vang-1: #f1c40f,vang-2: #f39c12,cam-1: #e67e22,cam-2: #d35400,do-1: #e74c3c,do-2: #c0392b,den-1: #34495e,den-2: #2c3e50,xam-1: #95a5a6,xam-2: #7f8c8d,hong-1: #ff9ff3,hong-2: #f368e0,trang: #ffffff,den: #000000',
+	js: '"ACTIVE_FIXED_HEADER": false,"HEADER_TRANPARENT": false,"ACTIVE_HEADER_POSITION": 1,"ACTIVE_PADDING_MAIN": true,"ACTIVE_FIXED_FOOTER": true,"DISPLAY_FOOTER": 600,"ACTIVE_RESPONSIVE": true,"ACTIVE_BACKTOTOP": true,"DISPLAY_BACKTOTOP": 100,"CHANGE_GRID": 991,"CHANGE_GRID_SM": 767,"DEV_MODE": false,"DEV_MODE_GIRD_FULL": false'
 }
 
 $('.mainList').each(function (i, e) {
 	var sortableMain = new Sortable.create(e, {
 		group: {
 			name: 'mainList',
-			pull: "clone"
+			pull: "clone",
 		},
-		ghostClass: 'sortable-ghost',
 		animation: 100
 	});
 })
+
+function makeid() {
+	var text = "";
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	for (var i = 0; i < 10; i++)
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	return text;
+}
+
 
 function createList(toAdd) {
 	data.SETUP[toAdd] = []
@@ -27,9 +37,6 @@ function createList(toAdd) {
 				put: 'mainList',
 				pull: false
 			},
-			onAdd: function (evt) {
-				getlist()
-			},
 			onClone: function (evt) {
 				getlist()
 			},
@@ -38,9 +45,27 @@ function createList(toAdd) {
 			},
 			onAdd: function (evt) {
 				getlist()
+				var itemEl = evt.item
+				var gname = $(itemEl).attr('data-key').replace('/','-')
+				var getid = makeid()
+				$(itemEl).append('<div class="ifthumnails"><iframe id="' + getid + '" src="./templates/index-' + gname +'.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>')
+				setTimeout(() => {
+					var abc = $('#' + getid).contents().height()
+					$('#' + getid).css({
+						"height": abc+'px'
+					})
+				}, 1000);
 			},
 			onUpdate: function (evt) {
 				getlist()
+				var itemEl = evt.item
+				$(itemEl).find('iframe').removeAttr('style')
+				setTimeout(() => {
+					var abc = $(itemEl).find('iframe').contents().height()
+					$(itemEl).find('iframe').css({
+						"height": abc + 'px'
+					})
+				}, 3000);
 			},
 			onEnd: function (evt) {
 				getlist()
@@ -86,6 +111,7 @@ $('#buttonListItemMain').click(function () {
 		$('#toDoListMain').hide()
 		$('#toDoListMain')[0].reset();
 		$('#toDoList').show()
+		$('#accordion').toggleClass('active')
 		alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
 		createIndex()
 	} else {
@@ -260,19 +286,13 @@ function getDataJS() {
 		var e = JSON.parse(data)
 		i = 0
 		for (var key in e) {
-			if (i < 5) {
+			if (typeof e[key] == 'number') {
+				$("[data-key='" + key +"']").val(e[key])
+			} else {
 				if (e[key]) {
 					$("[data-key='" + key + "']").prop("checked", true)
 				} else {
 					$("[data-key='" + key + "']").prop("checked", false)
-				}
-			} else {
-				if (key === 'DISPLAY_FOOTER') {
-					$("[data-key='DISPLAY_FOOTER']").val(e[key])
-				} else if (key === 'DISPLAY_BACKTOTOP') {
-					$("[data-key='DISPLAY_BACKTOTOP']").val(e[key])
-				} else if (key === 'CHANGE_GRID') {
-					$("[data-key='CHANGE_GRID']").val(e[key])
 				}
 			}
 			i++

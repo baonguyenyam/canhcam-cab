@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	shopCanhCam2()
 	$(".canhcam-shop-2 #price").slider({
@@ -10,6 +9,7 @@ $(document).ready(function() {
 		$(".canhcam-shop-2 #geVal").text(slideEvt.value);
 	});
 	selectCountriesShop2()
+
 });
 
 function selectCountriesShop2() {

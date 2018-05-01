@@ -12,6 +12,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
         path.join(url.tmp),
 		path.join('tmppug'),
 		path.join('tmptool'),
+		path.join('_tool/templates'),
     ]));
 
     gulp.task('cleanall', del.bind(null, [

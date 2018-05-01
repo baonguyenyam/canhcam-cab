@@ -81,8 +81,12 @@ function getAllLocations() {
 				badge.innerHTML =
 					'<h5>' + dataTitle + '</h5>' +
 					'<figure>' +
-				'<img src="./img/layout/' + dataImg +'" alt=""></figure>';
-				document.getElementById("cc-menu-"+key).appendChild(badge);
+				'<img src="./img/layout/' + dataImg +'" alt="">'+
+				// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
+				'</figure>';
+				if (key) {
+					document.getElementById("cc-menu-"+key).appendChild(badge);
+				}
 			}
 		}
 	});

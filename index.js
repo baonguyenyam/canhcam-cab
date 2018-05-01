@@ -18,7 +18,7 @@ app.post('/savedata', function (req, res) {
 	var jsonColor = JSON.stringify(req.body.dataColor, null, 4);
 	var jsonJS = JSON.stringify(req.body.dataJS, null, 4);
 	try {
-		fs.writeFileSync(dir + '/_colors.sass', jsonColor.replace(/["]/gi, ''), 'utf8', function (err) {
+		fs.writeFileSync(dir + '/_core/_colors.sass', jsonColor.replace(/["]/gi, ''), 'utf8', function (err) {
 			if (err) {
 				return console.log(err);
 			}
@@ -37,7 +37,7 @@ app.post('/savedata', function (req, res) {
 app.get('/getdata', function (req, res) {
 	var dir = './CANHCAM-LIB';
 	var dataE
-	fs.readFile(dir + '/_colors.sass', 'utf8', function readFileCallback(err, data) {
+	fs.readFile(dir + '/_core/_colors.sass', 'utf8', function readFileCallback(err, data) {
 		if (err) {
 			console.log(err);
 		} else {

@@ -12,6 +12,68 @@
 			p
 				color: darken(color-get($mau,trang) ,60%)
 	.product-lists
+		.filter
+			.nav
+				margin-bottom: 0
+				+fz(.85rem)
+				.nav-item
+					margin-right: .5rem
+					.nav-link
+						+pad(.5rem 0)
+						border-bottom: 2px solid transparent
+					&:not(:first-child)
+						.nav-link
+							color: darken(color-get($mau,trang) ,60%)
+						&:hover, &.active
+							.nav-link
+								color: color-get($mau,main)
+								border-bottom: 2px solid color-get($mau,main)
+
+
+		.search
+			input
+				+bor-rad(1rem 0 0 1rem)
+				padding-left: 1rem
+				border-color: darken(color-get($mau,trang) ,20%)
+				&:focus, &:active
+					outline: none
+					+box-sha(none)
+			button
+				padding-right: .75rem
+				+bor-rad(0 1rem 1rem 0)
+				background: darken(color-get($mau,trang) ,10%)
+				border-color: darken(color-get($mau,trang) ,20%)
+				&:focus, &:active
+					outline: none
+					+box-sha(none)
+		.boxmenu
+			margin-bottom: 2rem
+			.list-group
+				border: 1px solid darken(color-get($mau,trang) ,20%)
+				+bor-rad(0.25rem)
+				.list-group-item
+					+pad(0)
+					border: 0
+					position: relative
+					.list-group-item-action
+						+pad(.5rem 1rem)
+						display: flex
+						align-items: center
+						background: none
+						color: darken(color-get($mau,trang) ,60%)
+						i
+							padding-right: .5rem
+							width: 2rem
+							+fz(1.5rem)
+							text-align: center
+							color: darken(color-get($mau,trang) ,20%)
+					&:hover
+						background: color-get($mau,main)
+						.list-group-item-action
+							color: color-get($mau,trang)
+							i
+								color: color-get($mau,trang)
+
 		.boxprice
 			background: darken(color-get($mau,trang) ,4%)
 			+pad(1rem)
@@ -68,6 +130,8 @@
 
 				.checkbox-styled
 					cursor: pointer
+					+fz(.85rem)
+					+lh(.85rem)
 					span
 						display: inline-block
 						background: darken(color-get($mau,trang) ,3%)
@@ -103,31 +167,68 @@
 			padding: 2rem 0
 			.item
 				overflow: hidden
+				position: relative
 				.item-detail
 					border: 1px dashed darken(color-get($mau,trang) ,10%)
 					display: block
 					text-decoration: none
 					padding: 1rem
 					height: 100%
-					.bagde
-						+pos(abs, 0 0 null null)
+					.circle
+						+pos(abs, 1rem null null 1rem)
 						span
+							text-align: center
+							width: 3rem
+							height: 3rem
+							+bor-rad(50%)
+							background: color-get($mau,main)
+							color: color-get($mau,trang)
+							justify-content: center
+							align-items: center
+							display: flex
+							&.circle-hot
+								background: color-get($mau,do-1)
+							&.circle-success
+								background: color-get($mau,la-1)
+					.bagde
+						+pos(abs, 15px -45px null null)
+						text-align: right
+						width: 150px
+						+transform(rotate(45deg))
+						span
+							width: 150px
 							background: color-get($mau,main)
 							color: color-get($mau,trang)
 							text-align: center
 							+pad(.25rem .5rem)
-							display: inline-block
+							display: block
 							&.bagde-hot
 								background: color-get($mau,do-1)
 							&.bagde-success
 								background: color-get($mau,la-1)
+					.addtocart
+						background: color-get($mau,main)
+						color: color-get($mau,trang)
+						+bor-rad(1.5rem)
+						+pad(.5rem 1.5rem)
+						+pos(abs, 50% null null 50%)
+						+transform(translateX(-50%) translateY(-50%))
+						z-index: 100
+						+opacity(0)
+						+transition(all .5s ease-in-out)
+						i
+							padding-right: .5rem
 					h2
-						+fz(1.1rem)
+						+fz(1rem)
 						+fw(400)
 						color: darken(color-get($mau,trang) ,50%)
 					.price
 						color: color-get($mau,do-1)
-						+fz(1.4rem)
+						+fz(1.1rem)
+					.price-out
+						color: darken(color-get($mau,trang) ,50%)
+						+fz(.85rem)
+						text-decoration: line-through
 					figure
 						overflow: hidden
 						text-align: center
@@ -135,7 +236,10 @@
 							max-width: 100%
 						figcaption
 				&:hover
-					+opacity(.8)
+					.item-detail
+						.addtocart
+							+opacity(1)
+
 
 		.pager
 			.pagination
