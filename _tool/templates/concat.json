@@ -1,0 +1,50 @@
+{
+  "concat": {
+    "ACTIVE_CONCAT": true,
+    "babelconcat": "app",
+    "namejs": "plugins",
+    "namecss": "plugins",
+    "namejs_core": "core",
+    "namecss_core": "core",
+    "js_core": [
+      "bower_components/Modernizr/modernizr.custom.js",
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/popper.js/dist/umd/popper.js",
+      "node_modules/bootstrap/dist/js/bootstrap.js",
+      "bower_components/lodash/dist/lodash.min.js"
+    ],
+    "css_core": [
+      "bower_components/animate.css/animate.css",
+      "bower_components/offline/themes/offline-theme-default.css",
+      "bower_components/offline/themes/offline-language-english.css",
+      "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
+      "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
+      "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
+      "node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
+      "bower_components/mdi/css/materialdesignicons.min.css"
+    ],
+    "js": [
+      "bower_components/moment/min/moment.min.js",
+      "bower_components/offline/offline.min.js",
+      "bower_components/owl.carousel/dist/owl.carousel.min.js",
+      "bower_components/k-gmaps/dist/js/kmaps.js",
+      "bower_components/bootstrap-validator/dist/validator.min.js",
+      "bower_components/select2/dist/js/select2.full.min.js",
+      "bower_components/lightgallery/dist/js/lightgallery.min.js",
+      "bower_components/slick-carousel/slick/slick.min.js",
+      "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js",
+      "bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"
+    ],
+    "css": [
+      "bower_components/select2/dist/css/select2.min.css",
+      "bower_components/lightgallery/dist/css/lightgallery.min.css",
+      "node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
+      "bower_components/slick-carousel/slick/slick.css",
+      "bower_components/slick-carousel/slick/slick-theme.css",
+      "bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css",
+      "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css",
+      "bower_components/owl.carousel/dist/assets/owl.carousel.min.css",
+      "bower_components/owl.carousel/dist/assets/owl.theme.default.css"
+    ]
+  }
+}

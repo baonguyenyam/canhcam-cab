@@ -9,9 +9,16 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 	let url = config;
 	let dest = path.join(target, url.styles.assets);
 
+	let fstm = require('fs');
+	let arraySassList = []
+
+	arraySassList.push('!' + path.join(url.source, url.styles.sass, url.concat.ACTIVE_CONCAT ? url.ignore.sassactiveconcat : url.ignore.sass))
+	arraySassList.push(path.join(url.source, url.styles.sass, '**/*.{sass,scss}'))
+	arraySassList.push(url.src2 + '/_core/index.sass')
+	arraySassList.push(path.join(url.src2, '**/index.{sass,scss}'))
+	arraySassList.push('!' + path.join(url.source, '{**/\_*,**/\_*/**}'))
 	// Run task
 	gulp.task('sass-dev', () => {
-
 
 		var autoprefixerOpts = {
 			browsers: [
@@ -24,14 +31,7 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 			cascade: false
 		};
 
-		gulp.src([
-			// path.join(url.source, url.styles.sass, '**/*.{sass,scss}'),
-			// '!' + path.join(url.source, url.styles.sass, '{**/\_*,**/\_*/**}'),
-			path.join(url.src2, '**/index.{sass,scss}'),
-			'!' + path.join(url.src2, '{**/\_*,**/\_*/**}'),
-			// '!' + path.join(url.src2, url.concat.ACTIVE_CONCAT ? url.ignore.sassactiveconcat : url.ignore.sass),
-			// setgulp.production ? '!' + path.join(url.source, url.styles.sass, '**/canhcam-dev.sass') : path.join()
-		])
+		gulp.src(arraySassList)
 			.pipe(plugins.plumber())
 			.pipe(gulpif(!setgulp.production, plugins.sourcemaps.init()))
 			.pipe(plugins.sass({

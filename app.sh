@@ -16,7 +16,7 @@ do
         echo
         echo "Please choice a selection!"
         echo "1) Chạy Site Builder (8080)"
-        echo "2) Chạy site hoàn chỉnh (9999)"
+        echo "2) Chạy site đã build"
         echo "3) Build product"
         echo "4) Build product with local"
         echo "5) Build product NOT MIN"

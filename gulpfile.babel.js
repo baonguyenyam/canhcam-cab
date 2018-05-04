@@ -15,9 +15,27 @@ const fs = require('fs');
 const fse = require('fs-extra');
 const yaml = require("js-yaml");
 const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
-const loadGEN = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/include.json"));
 const loadSEO = JSON.parse(fs.readFileSync("./core/seo.json"));
 const loadCC = JSON.parse(fs.readFileSync("./core/concat.json"));
+var loadGEN = JSON.parse(fs.readFileSync(load.config.src + "/" + load.config.dev + "/include.json"));
+
+var srcgettmp = ''
+var devgettmp = ''
+
+if (process.argv.slice(2).indexOf("builder") > -1) {
+	srcgettmp = load.config.src
+	devgettmp = load.config.dev
+} else if (process.argv.slice(2).indexOf("dev") > -1) {
+	srcgettmp = load.config.src
+	devgettmp = load.config.dev
+} else {
+	loadGEN = JSON.parse(fs.readFileSync("./@SITE/nguyen/include.json"));
+	srcgettmp = '@SITE'
+	devgettmp = 'nguyen'
+}
+
+loadGEN.src = srcgettmp
+loadGEN.dev = devgettmp
 
 // Global
 const plugins = gulpLoadPlugins();
@@ -39,6 +57,8 @@ const defaultNotification = function(err) {
 load.config.concat = loadCC.concat
 load.config.SEO = loadSEO.SEO
 load.config.SETUP = loadGEN.SETUP
+load.config.src = loadGEN.src
+load.config.dev = loadGEN.dev
 
 // Call Config
 let config = Object.assign({}, load.config, defaultNotification);
@@ -220,22 +240,13 @@ gulp.task('product-local-no', function(cb) {
     );
 });
 
-
+// Basic production-ready code
 gulp.task('k-dev', function (cb) {
 	runSequence(
-		'pug-copy-dev', // hamber, ejs, pug
-		// 'sass', // css, less, stylus
-		'sass-dev', // css, less, stylus
-		'concat',
-		'babel',
-		'babel-concat-dev',
-		'copy',
-		'fonts',
-		'pug-dev', // hamber, ejs, pug
+		'k-task',
 		'inject',
-		'pug-rename-dev',
-		'map-dev',
 		'browserSync',
+		'watch',
 		cb
 	);
 });
@@ -243,7 +254,6 @@ gulp.task('k-dev', function (cb) {
 gulp.task('k-builder', function (cb) {
 	runSequence(
 		'pug-copy-dev', // hamber, ejs, pug
-		// 'sass', // css, less, stylus
 		'sass-dev', // css, less, stylus
 		'concat',
 		'babel',

@@ -13,6 +13,8 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let dataPath = path.join(url.src, url.data);
     let dataPathJS = path.join(url.src, url.dataJS);
 
+	console.log(path.join(url.src, url.dev, url.layouts.jade, '**/*.pug'))
+
     // Run task
 
     // Jade template compile
