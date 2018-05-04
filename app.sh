@@ -29,8 +29,8 @@ do
         case $choice in
             '1') npm run web;;
             '2') npm run start;;
-            '3') npm run node;;
-            '4') npm run dev;;
+            '3') npm run dev;;
+            '4') npm run node;;
             'u') npm run update;;
             'q') ;;
             *)   printf "\033[0;33mMenu item is not available, try again!\033[0m\n";;

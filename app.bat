@@ -22,8 +22,8 @@ ECHO.
 set /p op=Choice:
 IF "%op%"=="1" GOTO Builder
 IF "%op%"=="2" GOTO dev
-IF "%op%"=="3" GOTO Pug
-IF "%op%"=="4" GOTO DevPro
+IF "%op%"=="3" GOTO DevPro
+IF "%op%"=="4" GOTO Pug
 IF "%op%"=="q" GOTO ExitInstall
 IF "%op%"=="u" GOTO Updrage
 

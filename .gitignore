@@ -1,6 +1,7 @@
 /@SITE
 /vendor
 /node_modules
+/_tool/templates
 /public/storage
 /.idea/
 Homestead.yaml
