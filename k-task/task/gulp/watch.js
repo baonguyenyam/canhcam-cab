@@ -21,26 +21,31 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 
             // Styles
             gulp.watch([
-                path.join(url.src2, url.styles.root, '**/*.css')
+                path.join(url.src2, url.styles.root, '**/*.css'),
+				path.join(url.source, url.styles.root, '**/*.css')
             ], ['css']);
 
             gulp.watch([
-                path.join(url.src2, url.styles.root, '**/*.less')
+                path.join(url.src2, url.styles.root, '**/*.less'),
+				path.join(url.source, url.styles.root, '**/*.less')
             ], ['less']);
 
             gulp.watch([
-                path.join(url.src2, url.styles.root, '**/*.styl')
+                path.join(url.src2, url.styles.root, '**/*.styl'),
+				path.join(url.source, url.styles.root, '**/*.styl')
             ], ['styl']);
 
             gulp.watch([
-                path.join(url.src2, '**/*.{sass,scss}')
+                path.join(url.src2, '**/*.{sass,scss}'),
+				path.join(url.source, '**/*.{sass,scss}')
             ], function() {
                 runSequence('sass', 'inject');
             })
 
             // Scripts
             gulp.watch([
-                path.join(url.src2, '**/*.js')
+                path.join(url.src2, '**/*.js'),
+				path.join(url.source, '**/*.js')
             ], ['babel', 'babel-concat'])
 
             gulp.watch([
@@ -53,12 +58,16 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 
             // Templates
             gulp.watch([
-                path.join(url.src2, '**/*.jade')
+                path.join(url.src2, '**/*.jade'),
+				path.join(url.src, '**/*.jade'),
+				path.join(url.source, '**/*.jade')
             ], function() {
                 runSequence('jade', 'inject');
             })
             gulp.watch([
-                path.join(url.src2, '**/*.pug')
+				path.join(url.src2, '**/*.pug'),
+				path.join(url.src, '**/*.pug'),
+				path.join(url.source, '**/*.pug')
             ], function() {
                 runSequence('pug', 'inject');
             })

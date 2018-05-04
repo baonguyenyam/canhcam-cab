@@ -45,7 +45,7 @@ load.config.SEO = loadSEO.SEO
 load.config.SETUP = loadGEN.SETUP
 
 // var fstm = require('fs');
-// var dirtm = './src/' + load.config.dev + '/';
+// var dirtm = './@SITE/demo/templates/';
 
 // if (!fstm.existsSync(dirtm)) {
 //     fstm.mkdirSync(dirtm);
@@ -53,7 +53,7 @@ load.config.SETUP = loadGEN.SETUP
 // for (var key in loadGEN.SETUP) {
 //     if (loadGEN.SETUP.hasOwnProperty(key)) {
 //         fstm.writeFileSync(dirtm + key + '.pug', '');
-// 		fstm.appendFileSync(dirtm + key + '.pug', 'extends templates/_layout/layout.pug\n');
+// 		fstm.appendFileSync(dirtm + key + '.pug', 'extends ../layout/_layout/layout.pug\n');
 //         fstm.appendFileSync(dirtm + key + '.pug', 'block variables\n');
 //         fstm.appendFileSync(dirtm + key + '.pug', '\t- var title = "' + key + '"\n');
 //         fstm.appendFileSync(dirtm + key + '.pug', '\t- var description = "Description for ' + key + ' page"\n');
@@ -67,14 +67,14 @@ load.config.SETUP = loadGEN.SETUP
 // 					let dirfull = loadGEN.SETUP[key][u][v].slice(0, loadGEN.SETUP[key][u][v].indexOf("/"))
 // 					async function copyFiles() {
 // 						try {
-// 							await fse.copy('./CANHCAM-LIB/' + dirfull, './src/demo/core/' + dirfull)
-// 							await fse.copy('./core/templates', './src/demo/templates')
+// 							await fse.copy('./CANHCAM-LIB/' + dirfull, './@SITE/demo/core/' + dirfull)
+// 							await fse.copy('./core/templates', './@SITE/demo/layout')
 // 						} catch (err) {
 // 						}
 // 					}
 // 					copyFiles()
 
-//                     fstm.appendFileSync(dirtm + key + '.pug', '\tinclude core/' + loadGEN.SETUP[key][u][v] + '/index.pug\n');
+//                     fstm.appendFileSync(dirtm + key + '.pug', '\tinclude ../core/' + loadGEN.SETUP[key][u][v] + '/index.pug\n');
 //                 }
 //             }
 //         }
