@@ -71,9 +71,9 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
         }
 
         return gulp.src([
-                path.join(url.src, url.dev, url.layouts.jade, '**/*.pug'),
+                path.join(url.src, url.layouts.jade, '**/*.pug'),
                 '!' + path.join(url.src, '{**/\_*,**/\_*/**}'),
-                '!' + path.join(url.src, url.dev, url.layouts.jade, url.ignore.jade)
+                '!' + path.join(url.src, url.layouts.jade, url.ignore.jade)
             ])
             .pipe(plugins.changed(destjade))
             .pipe(plugins.plumber())
