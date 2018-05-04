@@ -15,15 +15,15 @@ while [ "$choice" != "q" ]
 do
         echo
         echo "Please choice a selection!"
-        echo "1) Run Site Builder (8080)"
-        echo "2) Run dev (9999)"
+        echo "1) Chạy Site Builder (8080)"
+        echo "2) Chạy site hoàn chỉnh (9999)"
         echo "3) Build product"
         echo "4) Build product with local"
         echo "5) Build product NOT MIN"
         echo "6) Build product with local NOT MIN"
         echo "7) AAAAAAAAAAA"
         echo "8) Run HTML2PUG (1234)"
-        echo "9) RUN DEV TEMPLATE (9999)"
+        echo "9) Chạy xây dựng components (9999)"
         echo "u) Updrage Package"
         echo "q) Quit"
 		echo "\n"

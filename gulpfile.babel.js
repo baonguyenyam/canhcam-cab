@@ -16,12 +16,8 @@ const fse = require('fs-extra');
 const yaml = require("js-yaml");
 const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
 const loadGEN = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/include.json"));
-const loadSEO = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/seo.json"));
-const loadCC = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/concat.json"));
-
-if (process.argv.slice(2).indexOf("k-dev") > -1) {
-	const loadCC = JSON.parse(fs.readFileSync("./core/_default/concat.json"));
-}
+const loadSEO = JSON.parse(fs.readFileSync("./core/seo.json"));
+const loadCC = JSON.parse(fs.readFileSync("./core/concat.json"));
 
 // Global
 const plugins = gulpLoadPlugins();
@@ -43,45 +39,6 @@ const defaultNotification = function(err) {
 load.config.concat = loadCC.concat
 load.config.SEO = loadSEO.SEO
 load.config.SETUP = loadGEN.SETUP
-
-// var fstm = require('fs');
-// var dirtm = './@SITE/demo/templates/';
-
-// if (!fstm.existsSync(dirtm)) {
-//     fstm.mkdirSync(dirtm);
-// }
-// for (var key in loadGEN.SETUP) {
-//     if (loadGEN.SETUP.hasOwnProperty(key)) {
-//         fstm.writeFileSync(dirtm + key + '.pug', '');
-// 		fstm.appendFileSync(dirtm + key + '.pug', 'extends ../layout/_layout/layout.pug\n');
-//         fstm.appendFileSync(dirtm + key + '.pug', 'block variables\n');
-//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var title = "' + key + '"\n');
-//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var description = "Description for ' + key + ' page"\n');
-//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var bodyclass = "' + key + '"\n');
-//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var href = "/' + key + '.html"\n');
-//         for (var u in loadGEN.SETUP[key]) {
-//             if (loadGEN.SETUP[key].hasOwnProperty(u)) {
-// 				fstm.appendFileSync(dirtm + key + '.pug', 'block ' + u + '\n');
-//                 for (var v in loadGEN.SETUP[key][u]) {
-
-// 					let dirfull = loadGEN.SETUP[key][u][v].slice(0, loadGEN.SETUP[key][u][v].indexOf("/"))
-// 					async function copyFiles() {
-// 						try {
-// 							await fse.copy('./CANHCAM-LIB/' + dirfull, './@SITE/demo/core/' + dirfull)
-// 							await fse.copy('./core/templates', './@SITE/demo/layout')
-// 						} catch (err) {
-// 						}
-// 					}
-// 					copyFiles()
-
-//                     fstm.appendFileSync(dirtm + key + '.pug', '\tinclude ../core/' + loadGEN.SETUP[key][u][v] + '/index.pug\n');
-//                 }
-//             }
-//         }
-//     }
-// }
-
-
 
 // Call Config
 let config = Object.assign({}, load.config, defaultNotification);
@@ -264,11 +221,10 @@ gulp.task('product-local-no', function(cb) {
 });
 
 
-// Basic production-ready code
 gulp.task('k-dev', function (cb) {
 	runSequence(
 		'pug-copy-dev', // hamber, ejs, pug
-		'sass', // css, less, stylus
+		// 'sass', // css, less, stylus
 		'sass-dev', // css, less, stylus
 		'concat',
 		'babel',
@@ -283,10 +239,11 @@ gulp.task('k-dev', function (cb) {
 		cb
 	);
 });
+
 gulp.task('k-builder', function (cb) {
 	runSequence(
 		'pug-copy-dev', // hamber, ejs, pug
-		'sass', // css, less, stylus
+		// 'sass', // css, less, stylus
 		'sass-dev', // css, less, stylus
 		'concat',
 		'babel',
