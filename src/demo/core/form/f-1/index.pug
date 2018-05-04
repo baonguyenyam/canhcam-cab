@@ -1,0 +1,42 @@
+section.canhcam-form-1.container
+	.row.info
+		.col-md-5.col-lg-4
+			article.inf.h-100(bg-img="./img/bg.png")
+				figure.text-center
+					img.img-fluid(src="./img/logo.png", alt="alt")
+					figcaption
+				h2.h2.text-center.text-md-left Natail SARL - Golf etc.
+				p.text-center.text-md-left 19B Le Thi Rieng, Ben Thanh Ward, Dis.1
+
+		.col-md-7.col-lg-8
+			h3.h3.mt-5.mt-md-0.mb-4 Complete this form to email us your enquiry
+			form.validator
+				.row
+					.form-group.col-md-6
+						label(for='name') Name
+							span.text-danger (*)
+						input#name.form-control(type='text', placeholder='Name', data-error="Vui lòng nhập thông tin", required)
+						.help-block.with-errors
+					.form-group.col-md-6
+						label(for='Email') Email
+						input#Email.form-control(type='text', placeholder='Email', data-error="Vui lòng nhập thông tin", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", required)
+						.help-block.with-errors
+				.row
+					.form-group.col-md-6
+						label(for='Phone') Phone
+						input#Phone.form-control(type='text', placeholder='Phone', data-error="Vui lòng nhập thông tin", pattern="^[_A-z0-9]{1,}$", required)
+						.help-block.with-errors
+					.form-group.col-md-6
+						label(for='Address') Address
+						input#Address.form-control(type='text', placeholder='Address')
+				.row
+					.form-group.col
+						label(for='sms') Message
+						textarea#sms.form-control(name="sms", cols="30", rows="5")
+
+				.row
+					.col
+						button.btn.btn-outline-primary.text-uppercase(type="submit")
+							| Submit
+							|
+							i.fa.fa-long-arrow-right

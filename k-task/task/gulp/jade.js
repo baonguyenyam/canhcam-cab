@@ -49,7 +49,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
         }
 
         return gulp.src([
-                path.join(url.source, url.getSRC, url.layouts.jade, '**/*.jade'),
+                path.join(url.source, url.dev, url.layouts.jade, '**/*.jade'),
                 '!' + path.join(url.source, '{**/\_*,**/\_*/**}'),
                 '!' + path.join(url.source, url.layouts.jade, url.ignore.jade)
             ])

@@ -1,0 +1,88 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-5
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar-toggler
+		+pad(0rem .75rem)
+		border: 0
+		.mdi
+			+fz(2rem)
+		&:focus
+			outline: none
+	.navbar-brand
+		img
+			max-height: 2rem
+	+media-breakpoint-down(md)
+		.navbar-collapse
+			display: flex
+			flex-direction: column
+			+transition(all .3s ease-in-out)
+			+pos(fix, 100% 0 null null)
+			background: rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.95)
+			height: 100%
+			width: 100%
+			overflow-y: scroll
+			display: block
+			+pad(1rem)
+			.dropdown-divider
+				display: none
+			.navbar-nav, .form-inline
+				text-align: center
+				display: flex
+				flex-direction: column
+				justify-content: center
+				.nav-link
+					color: color-get($mau,trang)
+					+fz(1.3rem)
+					font-weight: 300
+					&:active, &.active, &:hover
+						color: darken(color-get($mau,trang),20%)
+				.dropdown-menu
+					text-align: center
+					background: none
+					border: 0
+					.dropdown-item
+						color: color-get($mau,trang)
+						+fz(1.1rem)
+						font-weight: 300
+						&:hover, &:focus, &:active
+							background: none
+							color: darken(color-get($mau,trang),20%)
+
+		.navbar-toggler
+			.mdi-close
+				display: none
+			.mdi-menu
+				display: block
+	&.expand
+		.navbar-toggler
+			color: color-get($mau,main)
+			.mdi-close
+				display: block
+			.mdi-menu
+				display: none
+		.navbar-collapse
+			+pos(fix, 0 0 null null)
+			z-index: 999
+
+	.search
+		position: relative
+		input
+			+bor-rad(1.5rem_ 1.5rem_)
+		button
+			+pos(abs, 0 .0 null null)
+			border: 1px solid transparent !important
+			background: none !important
+			color: darken(color-get($mau,trang),50%) !important
+			&:focus, &:active
+				outline: none !important
+				+box-sha(none !important)
+	+media-breakpoint-up(xl)
+		.navbar-nav
+			.nav-item
+				.nav-link
+					+pad(.5rem 1rem)

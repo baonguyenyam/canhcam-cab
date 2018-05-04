@@ -1,0 +1,34 @@
+header.canhcam-header-1
+	nav.navbar.navbar-expand-lg.container
+		a.navbar-brand(href='#')
+			img(src="./img/logo.png", alt="Logo")
+		button.navbar-toggler(type='button', data-toggle='collapse', data-target='#CCMenuHeader', aria-controls='CCMenuHeader', aria-expanded='false', aria-label='Toggle navigation')
+			span.fa.fa-bars
+		#CCMenuHeader.collapse.navbar-collapse
+			ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+				li.nav-item.active
+					a.nav-link(href='#')
+						| Home
+						span.sr-only (current)
+				li.nav-item
+					a.nav-link(href='#') Shop
+				li.nav-item.dropdown
+					a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+						| Dropdown
+					.dropdown-menu(aria-labelledby='navbarDropdown')
+						a.dropdown-item(href='#') Action
+						a.dropdown-item(href='#') Another action
+						.dropdown-divider
+						a.dropdown-item(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') About
+				li.nav-item
+					a.nav-link(href='#') Contact
+				li.nav-item
+					a.nav-link(href='#') Maps
+
+			form.form-inline.my-2.my-lg-0
+				.search
+					input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+					button.btn.btn-outline-light(type='submit')
+						i.fa.fa-search

@@ -10,7 +10,6 @@
     "start": "gulp server",
     "dev": "gulp dev",
     "web": "gulp builder && gulp copytool && node index.js",
-    "tool": "gulp builder && gulp copytool && gulp tool",
     "node": "cd k-task/tools && node index.js",
     "clean-deps": "rimraf node_modules",
     "rebuild": "npm rebuild",
@@ -28,7 +27,7 @@
     "popper.js": "1.14.3"
   },
   "devDependencies": {
-    "autoprefixer": "8.3.0",
+    "autoprefixer": "^8.3.0",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.3",
     "babel-plugin-add-module-exports": "0.2.1",

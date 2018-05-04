@@ -1,0 +1,253 @@
+section.canhcam-shop-2
+	article.shop-category
+		.container.title
+			.row
+				.col
+					h2.h2 Lorem
+					p.mb-5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sequi modi impedit laboriosam esse voluptatibus, repellat laudantium omnis magnam hic reiciendis similique laborum tempore eos soluta natus facilis explicabo expedita?
+	article.product-lists
+		.container
+			.row
+				.col-md-4.col-lg-3
+					.boxmenu
+						ul.list-group(data-select)
+							li.list-group-item
+								a.list-group-item-action.active(href='#')
+									i.mdi.mdi-headphones
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action(href='#')
+									i.mdi.mdi-cellphone-android
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action(href='#')
+									i.mdi.mdi-laptop-chromebook
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action(href='#')
+									i.mdi.mdi-tshirt-crew
+									| Cras justo odio
+							li.list-group-item
+								a.list-group-item-action.disabled(href='#')
+									i.mdi.mdi-soccer
+									| Cras justo odio
+
+
+					.boxprice
+						.title.d-flex.d-md-none.justify-content-between.align-items-center
+							h3 Filter Search
+							button.collapsed.btn.btn-sm(data-toggle="collapse", data-target="#filterSearch", role="button", aria-expanded="false" aria-controls="filterSearch")
+								i.fa.fa-search
+						form#filterSearch
+							h4 Brands
+							.form-check.abc-checkbox
+								input.form-check-input(name="IsChecked", id="checkbox", type='checkbox', value="true")
+								label.form-check-label(for="checkbox") I agree
+							.form-check.abc-checkbox
+								input.form-check-input(name="IsChecked1", id="checkbox1", type='checkbox', value="true")
+								label.form-check-label(for="checkbox1") I agree
+							.form-check.abc-checkbox
+								input.form-check-input(name="IsChecked2", id="checkbox2", type='checkbox', value="true")
+								label.form-check-label(for="checkbox2") I agree
+							.form-check.abc-checkbox
+								input.form-check-input(name="IsChecked3", id="checkbox3", type='checkbox', value="true")
+								label.form-check-label(for="checkbox3") I agree
+							hr
+							h4 Countries
+							select#selectcountries.custom-select.my-1.mr-sm-2(data-no="Không tìm thấy kếy quả nào")
+								option(selected) Choose...
+								option(value="1") One
+								option(value="2") Two
+								option(value="3") Three
+							hr
+							h4 Kind
+							.form-check.abc-checkbox.abc-checkbox-circle
+								input.form-check-input(name="IsChecked", id="radio", type='radio', value="true")
+								label.form-check-label(for="radio") I agree
+							.form-check.abc-checkbox.abc-checkbox-circle
+								input.form-check-input(name="IsChecked", id="radio1", type='radio', value="true")
+								label.form-check-label(for="radio1") I agree
+							hr
+							h4 Size
+							label.checkbox-styled
+								input(type='checkbox', name='hello', value='happy')
+								span S
+							label.checkbox-styled
+								input(type='checkbox', name='hello2', value='happy')
+								span M
+							label.checkbox-styled
+								input(type='checkbox', name='hello3', value='happy')
+								span L
+							label.checkbox-styled
+								input(type='checkbox', name='hello4', value='happy')
+								span XL
+							label.checkbox-styled
+								input(type='checkbox', name='hello5', value='sad')
+								span.sad XXXL
+							hr
+							h4 Price
+								span.float-right#geVal
+							.pl-2
+								input(id="price" type="text" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[0,1000]")
+							hr
+							.mt-2
+								button.btn.btn-primary Apply filter
+				.col-md-8.col-lg-9
+					.row.filter.no-gutters.justify-content-between
+						.col-12.col-md-auto.mt-3.mt-md-0.d-flex.align-items-center.justify-content-between
+							ul.nav.align-items-center
+								li.nav-item
+									.nav-link
+										strong Lọc theo
+								li.nav-item
+									a.nav-link(href='#') Khuyến mãi
+								li.nav-item
+									a.nav-link(href='#') Bán chạy
+								li.nav-item
+									a.nav-link(href='#') Giá thấp
+								li.nav-item
+									select.form-control.form-control-sm
+										option(selected) Choose...
+										option(value="1") One
+										option(value="2") Two
+										option(value="3") Three
+
+						.col-12.col-lg-3.d-flex.align-items-center.justify-content-end
+							form.form-inline.my-2.my-lg-0.search.w-100
+								.input-group.input-group-sm.w-100
+									input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+									.input-group-append
+										button.btn.btn-default.searchbtn(type='button')
+											i.fa.fa-search
+
+					.row
+						.col
+							.boxproducts
+								.row.no-gutters
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/01.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											.circle
+												span.circle-hot HOT
+
+											.bagde
+												span.bagde-success Sale 30%
+											figure
+												img(src="./img/product/02.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women short sleeve
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/03.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 R569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/04.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women sN 200 GR / M2 WOMEN SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/01.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/02.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/03.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+									.col-sm-6.col-lg-4.item
+										a.item-detail(href="#")
+											figure
+												img(src="./img/product/04.jpg", alt="")
+												.addtocart.btn.btn-lg
+													i.fa.fa-cart-plus
+													| Add to Cart
+												figcaption
+													h2 Polo cotton 200 gr/ M2 women short sleeve - FR569 02/2016 POLO COTTON 200 GR / M2 WOMEN SHORT SLEEVE
+													.all-price
+														span.price 16.990.000 ₫
+														span  -
+														span.price-out 17.990.000 ₫
+
+					.row.pagelist
+						.col.d-flex.align-items-center.justify-content-center.justify-content-md-end
+							ul.pagination
+								li.page-item
+									a.page-link(href="#", title="title")
+										i.fa.fa-chevron-left
+								li.page-item
+									a.page-link(href="#", title="title") 1
+								li.page-item.active
+									a.page-link(href="#", title="title") 2
+								li.page-item
+									a.page-link(href="#", title="title") 3
+								li.page-item
+									a.page-link(href="#", title="title") 4
+								li.page-item
+									a.page-link(href="#", title="title")
+										i.fa.fa-chevron-right

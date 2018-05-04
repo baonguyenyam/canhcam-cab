@@ -1,0 +1,27 @@
+{
+    "SETUP": {
+        "index": {
+            "header": [
+                "header/h-5"
+			],
+			"body": [
+				"carousel/c-1",
+				"carousel/c-2",
+				"carousel/c-3",
+				"gallery/g-1",
+				"gallery/g-2",
+				"gallery/g-3",
+				"shop/s-1",
+				"shop/s-2",
+				"news/n-1",
+				"news/n-2",
+				"news/n-3",
+				"map/m-1",
+				"form/f-1"
+			],
+			"footer": [
+				"footer/f-1"
+			]
+		}
+    }
+}

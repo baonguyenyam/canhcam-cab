@@ -1,0 +1,66 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-carousel-2
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.owl-carousel
+		position: relative
+		// Main
+		.owl-stage-outer
+		// Nav
+		.owl-nav
+			button
+				&.owl-prev, &.owl-next
+					+pad(.5rem_)
+					width: 3rem
+					height: 3rem
+					background: darken(color-get($mau,trang),5%)
+					+bor-rad(50%)
+					text-align: center
+					&:focus
+						outline: none
+				&:hover, &.active
+					&.owl-prev, &.owl-next
+						background: color-get($mau,main)
+			+media-breakpoint-up(md)
+				margin-top: 0
+				button
+					&.owl-prev, &.owl-next
+						margin: 0
+						+transform(translateY(-50%))
+						&:focus
+							outline: none
+					&.owl-prev
+						+pos(abs, 50% null null -1rem)
+					&.owl-next
+						+pos(abs, 50% -1rem null null)
+		// Dots
+		.owl-dots
+			.owl-dot
+				&:focus
+					outline: none
+				span
+					background: darken(color-get($mau,trang),5%)
+				&.active
+					span
+						background: color-get($mau,main)
+		// List
+		&.list-items
+			.item
+				a
+					color: darken(color-get($mau,trang),50%)
+					text-decoration: none
+					.price
+						color: color-get($mau,do-1)
+						+fw(bold)
+				&:hover
+					img
+						+opacity(.8)
+					a
+						color: color-get($mau,den)
+					h3
+						text-decoration: underline

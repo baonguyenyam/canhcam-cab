@@ -1,0 +1,38 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-1
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar-toggler
+		border: 1px solid darken(color-get($mau,trang),20%)
+		+pad(.5rem .75rem)
+		&:focus
+			outline: none
+	.navbar-brand
+		img
+			max-height: 2rem
+	&.expand
+		.navbar-toggler
+			background: color-get($mau,main)
+			color: color-get($mau,trang)
+			border-color: color-get($mau,main)
+	.search
+		position: relative
+		input
+			+bor-rad(1.5rem_ 1.5rem_)
+		button
+			+pos(abs, 0 .0 null null)
+			border: 1px solid transparent !important
+			background: none !important
+			color: darken(color-get($mau,trang),50%) !important
+			&:focus, &:active
+				outline: none !important
+				+box-sha(none !important)
+	+media-breakpoint-up(xl)
+		.navbar-nav
+			.nav-item
+				.nav-link
+					+pad(.5rem 1rem)

@@ -1,0 +1,73 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-2
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar-collapse
+		position: relative
+	.navbar-toggler
+		border: 1px solid darken(color-get($mau,trang),20%)
+		+pad(.5rem)
+		+bor-rad(50%)
+		line-height: 1rem
+		align-items: center
+		justify-content: center
+		.fa
+			line-height: 1.4rem
+			width: 1.3rem
+			height: 1.3rem
+			font-size: 1.3rem
+		&:focus
+			outline: none
+	.navbar-brand
+		img
+			max-height: 2rem
+	&.expand
+		.navbar-toggler
+			background: color-get($mau,main)
+			color: color-get($mau,trang)
+			border-color: color-get($mau,main)
+	.input-group
+		width: 100%
+		input
+			+bor-rad(1.5rem 0 0 1.5rem)
+			padding-left: 1rem
+		button
+			+bor-rad( 0 1.5rem 1.5rem 0)
+			padding-right: 1rem
+	+media-breakpoint-up(xl)
+		.navbar-nav
+			.nav-item
+				.nav-link
+					+pad(.5rem 1rem)
+	+media-breakpoint-up(lg)
+		.search
+			+pos(abs, 0 0 null null)
+			input
+				border-color: color-get($mau,main)
+				+transition(all .3s ease-in-out)
+				width: 0px
+				padding-left: 0
+				padding-right: 0
+				+opacity(0)
+			.searchbtn
+				background: darken(color-get($mau,trang),3%) !important
+				color: darken(color-get($mau,main),0%) !important
+				border-color: transparent !important
+				+bor-rad(50%)
+				padding: .5rem
+				line-height: 1
+				i
+					width: 20px
+					height: 20px
+					line-height: 20px
+					text-align: center
+			&.active
+				input
+					+opacity(1)
+					width: 200px
+					padding-left: 1rem
+					padding-right: .5rem

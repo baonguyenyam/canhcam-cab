@@ -12,12 +12,12 @@ import genfile from 'gulp-file'
 
 
 const fs = require('fs');
+const fse = require('fs-extra');
 const yaml = require("js-yaml");
-const getSRC = JSON.parse(fs.readFileSync("./src/setup.json"));
 const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
-const loadGEN = JSON.parse(fs.readFileSync("./src/" + getSRC.sitename + "/include.json"));
-const loadSEO = JSON.parse(fs.readFileSync("./src/" + getSRC.sitename + "/seo.json"));
-const loadCC = JSON.parse(fs.readFileSync("./src/" + getSRC.sitename + "/concat.json"));
+const loadGEN = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/include.json"));
+const loadSEO = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/seo.json"));
+const loadCC = JSON.parse(fs.readFileSync("./src/" + load.config.dev + "/concat.json"));
 
 if (process.argv.slice(2).indexOf("k-dev") > -1) {
 	const loadCC = JSON.parse(fs.readFileSync("./core/_default/concat.json"));
@@ -43,35 +43,45 @@ const defaultNotification = function(err) {
 load.config.concat = loadCC.concat
 load.config.SEO = loadSEO.SEO
 load.config.SETUP = loadGEN.SETUP
-load.config.getSRC = getSRC.sitename
 
-var fstm = require('fs');
-var dirtm = './src/' + getSRC.sitename + '/templates/';
+// var fstm = require('fs');
+// var dirtm = './src/' + load.config.dev + '/';
 
-if (!fstm.existsSync(dirtm)) {
-    fstm.mkdirSync(dirtm);
-}
-for (var key in loadGEN.SETUP) {
-    if (loadGEN.SETUP.hasOwnProperty(key)) {
-        // if (!fstm.existsSync(dirtm + key + '.pug')) {
-        fstm.writeFileSync(dirtm + key + '.pug', '');
-        fstm.appendFileSync(dirtm + key + '.pug', 'extends ../../../core/templates/_layout/layout.pug\n');
-        fstm.appendFileSync(dirtm + key + '.pug', 'block variables\n');
-        fstm.appendFileSync(dirtm + key + '.pug', '\t- var title = "' + key + '"\n');
-        fstm.appendFileSync(dirtm + key + '.pug', '\t- var description = "Description for ' + key + ' page"\n');
-        fstm.appendFileSync(dirtm + key + '.pug', '\t- var bodyclass = "' + key + '"\n');
-        fstm.appendFileSync(dirtm + key + '.pug', '\t- var href = "/' + key + '.html"\n');
-        for (var u in loadGEN.SETUP[key]) {
-            if (loadGEN.SETUP[key].hasOwnProperty(u)) {
-                fstm.appendFileSync(dirtm + key + '.pug', 'block ' + u + '\n');
-                for (var v in loadGEN.SETUP[key][u]) {
-                    fstm.appendFileSync(dirtm + key + '.pug', '\tinclude ../../../CANHCAM-LIB/' + loadGEN.SETUP[key][u][v] + '/index.pug\n');
-                }
-            }
-        }
-        // };
-    }
-}
+// if (!fstm.existsSync(dirtm)) {
+//     fstm.mkdirSync(dirtm);
+// }
+// for (var key in loadGEN.SETUP) {
+//     if (loadGEN.SETUP.hasOwnProperty(key)) {
+//         fstm.writeFileSync(dirtm + key + '.pug', '');
+// 		fstm.appendFileSync(dirtm + key + '.pug', 'extends templates/_layout/layout.pug\n');
+//         fstm.appendFileSync(dirtm + key + '.pug', 'block variables\n');
+//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var title = "' + key + '"\n');
+//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var description = "Description for ' + key + ' page"\n');
+//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var bodyclass = "' + key + '"\n');
+//         fstm.appendFileSync(dirtm + key + '.pug', '\t- var href = "/' + key + '.html"\n');
+//         for (var u in loadGEN.SETUP[key]) {
+//             if (loadGEN.SETUP[key].hasOwnProperty(u)) {
+// 				fstm.appendFileSync(dirtm + key + '.pug', 'block ' + u + '\n');
+//                 for (var v in loadGEN.SETUP[key][u]) {
+
+// 					let dirfull = loadGEN.SETUP[key][u][v].slice(0, loadGEN.SETUP[key][u][v].indexOf("/"))
+// 					async function copyFiles() {
+// 						try {
+// 							await fse.copy('./CANHCAM-LIB/' + dirfull, './src/demo/core/' + dirfull)
+// 							await fse.copy('./core/templates', './src/demo/templates')
+// 						} catch (err) {
+// 						}
+// 					}
+// 					copyFiles()
+
+//                     fstm.appendFileSync(dirtm + key + '.pug', '\tinclude core/' + loadGEN.SETUP[key][u][v] + '/index.pug\n');
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
 
 // Call Config
 let config = Object.assign({}, load.config, defaultNotification);
@@ -92,10 +102,6 @@ wrench.readdirSyncRecursive('./k-task/task/gulp').filter((file) => {
 // Default task
 gulp.task('default', ['clean'], () => {
     gulp.start('k-task');
-});
-
-gulp.task('tool', ['clean'], () => {
-    gulp.start('k-tool');
 });
 
 gulp.task('test', ['clean'], () => {
@@ -130,16 +136,6 @@ gulp.task('build-no', ['cleanall'], () => {
 });
 gulp.task('build-local-no', ['cleanall'], () => {
     gulp.start('product-local-no');
-});
-
-// Basic production-ready code
-gulp.task('k-tool', function (cb) {
-	runSequence(
-		'gettool',
-		'browserSynctool',
-		'watchtool',
-		cb
-	);
 });
 
 // Basic production-ready code

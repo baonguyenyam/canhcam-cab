@@ -1,0 +1,201 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-news-1
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.news-hot
+		figure
+			position: relative
+			margin-bottom: 2rem
+			overflow: hidden
+			+bor-rad(5px)
+			img
+				width: 100%
+			.item
+				display: block
+			figcaption
+				+pos(abs, 0 null 0 null)
+				width: 100%
+				height: 100%
+				padding: 1rem
+				color: #fff
+				z-index: 1
+				+text-sha(2px 2px 3px rgba(0,0,0,.2))
+				display: flex
+				flex-direction: column
+				justify-content: flex-end
+				h3
+					+fz(1.2rem)
+					+fw(300)
+				time
+					+fz(.9rem)
+					+fw(200)
+					color: darken(color-get($mau,whites) ,10%)
+				&:after
+					content: ''
+					+pos(abs, null 0 0 null)
+					width: 100%
+					height: 50%
+					z-index: -1
+					+transition(ease-in-out all .15s)
+					+opacity(0)
+					background: rgba(0,0,0,.5)
+					background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.65) 100%)
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%)
+					background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%)
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0)
+			&:hover
+				figcaption
+					&:after
+						+opacity(1)
+						height: 100%
+		.top-list
+			.owl-carousel
+				position: relative
+				// Main
+				.owl-stage-outer
+				// Nav
+				.owl-nav
+					margin-bottom: 2rem
+					button
+						&.owl-prev, &.owl-next
+							+pad(.5rem_)
+							width: 3rem
+							height: 3rem
+							background: darken(color-get($mau,trang),5%)
+							+bor-rad(50%)
+							text-align: center
+							&:focus
+								outline: none
+						&:hover, &.active
+							&.owl-prev, &.owl-next
+								background: color-get($mau,main)
+					+media-breakpoint-up(md)
+						margin-top: 0
+						+opacity(0)
+						button
+							&.owl-prev, &.owl-next
+								background: rgba(0,0,0,.5)
+								color: color-get($mau,trang)
+								margin: 0
+								+transform(translateY(-50%))
+								&:focus
+									outline: none
+							&:hover, &.active
+								&.owl-prev, &.owl-next
+									background: rgba(255,255,255,.7)
+									color: color-get($mau,den)
+							&.owl-prev
+								+pos(abs, 50% null null .5rem)
+							&.owl-next
+								+pos(abs, 50% .5rem null null)
+				// Dots
+				.owl-dots
+					margin-bottom: 2rem
+					+media-breakpoint-up(lg)
+						margin-bottom: 0
+					.owl-dot
+						&:focus
+							outline: none
+						span
+							background: darken(color-get($mau,trang),5%)
+						&.active
+							span
+								background: color-get($mau,main)
+				&:hover
+					.owl-nav
+						+opacity(1)
+			.item
+				figure
+					margin-bottom: 0
+				+media-breakpoint-up(lg)
+
+		.part-list
+			.item
+				figure
+					figcaption
+						+pad(.5rem 1rem)
+						h3
+							+fz(1rem)
+						time
+							+fz(.8rem)
+	.news-list
+		.btn-group
+			i
+				padding-right: 5px
+		.list-group-wrapper
+			flex-direction: column
+			> div
+				-webkit-box-flex: 0
+				-webkit-flex: 0 0 100%
+				-ms-flex: 0 0 100%
+				flex: 0 0 100%
+				max-width: 100%
+				figure
+					display: block
+					+media-breakpoint-up(md)
+						+clearfix
+						img
+							max-width: 30%
+							float: left
+						figcaption
+							max-width: 70%
+							float: left
+							padding-left: 1rem
+
+		.item
+			display: block
+			text-decoration: none
+			height: 100%
+			figure
+				position: relative
+				overflow: hidden
+				+bor-rad(5px)
+				img
+					+bor-rad(5px)
+				figcaption
+					h3
+						+fz(1.1rem)
+						+fw(400)
+						color: color-get($mau,main)
+					time
+						+fz(.9rem)
+						+fw(200)
+						color: darken(color-get($mau,trang) ,10%)
+					p
+						color: darken(color-get($mau,trang) ,40%)
+						line-height: 1.3rem
+						+fz(1rem)
+			&:hover
+				figure
+					img
+						+opacity(.7)
+					figcaption
+						h3
+							color: darken(color-get($mau,extra),0%)
+						time
+							color: darken(color-get($mau,trang) ,20%)
+						p
+							color: darken(color-get($mau,trang) ,70%)
+	.pagelist
+		.pagination
+			margin-bottom: 0
+			.page-item
+				margin-left: .5rem
+				&:first-child
+					margin-left: 0
+				.page-link
+					+bor-rad(50% 50%)
+					width: 2.5rem
+					height: 2.5rem
+					justify-content: center
+					align-items: center
+					display: flex
+					color: darken(color-get($mau,trang) ,20%)
+				&.active
+					.page-link
+						color: darken(color-get($mau,trang) ,0%)

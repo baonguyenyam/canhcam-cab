@@ -9,6 +9,7 @@ config:
   src2: "CANHCAM-LIB"
   views: "core/views"
   dest: "dist"
+  dev: "@dev"
   tmp: "tmp"
   docs: "docs"
   test: "test"

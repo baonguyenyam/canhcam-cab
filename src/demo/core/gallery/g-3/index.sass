@@ -1,0 +1,77 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-gallery-3
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.gallery-details
+		.item
+			display: flex
+			text-decoration: none
+			height: 100%
+			+bor-rad(5px)
+			overflow: hidden
+			figure
+				position: relative
+				overflow: hidden
+				+bor-rad(5px)
+				margin-bottom: 2rem
+				background: darken(color-get($mau,trang) ,3%)
+				&:after
+					content: ''
+					display: block
+					z-index: -1
+					background: rgba(0,0,0,.5)
+					width: 100%
+					height: 100%
+					+pos(abs, 0 0 null null)
+				.zoom-item
+					+opacity(0)
+					color: color-get($mau,trang)
+					+pos(abs, 50% null null 50%)
+					+transform(translateX(-50%) translateY(-50%))
+					z-index: 10
+					+fz(3rem)
+					+transition(all .2s ease-in-out)
+				.boxzoom
+					overflow: hidden
+				img
+					+bor-rad(5px 5px 0 0)
+					+transition(all .5s ease-in-out)
+				figcaption
+					padding: 1rem
+
+					h3
+						+fz(1.1rem)
+						+fw(400)
+						color: color-get($mau,den)
+						margin-bottom: 0
+			&:hover
+				figure
+					&:after
+						z-index: 1
+					img
+						+transform(scale(1.1))
+					.zoom-item
+						+opacity(1)
+	.pagelist
+		.pagination
+			margin-bottom: 0
+			.page-item
+				margin-left: .5rem
+				&:first-child
+					margin-left: 0
+				.page-link
+					+bor-rad(50% 50%)
+					width: 2.5rem
+					height: 2.5rem
+					justify-content: center
+					align-items: center
+					display: flex
+					color: darken(color-get($mau,trang) ,20%)
+				&.active
+					.page-link
+						color: darken(color-get($mau,trang) ,0%)

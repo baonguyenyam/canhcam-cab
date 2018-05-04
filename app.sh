@@ -21,7 +21,7 @@ do
         echo "4) Build product with local"
         echo "5) Build product NOT MIN"
         echo "6) Build product with local NOT MIN"
-        echo "7) Run Tool (9999)"
+        echo "7) AAAAAAAAAAA"
         echo "8) Run HTML2PUG (1234)"
         echo "9) RUN DEV TEMPLATE (9999)"
         echo "u) Updrage Package"
@@ -38,7 +38,7 @@ do
             '4') npm run prod;;
             '5') npm run pro-no;;
             '6') npm run prod-no;;
-            '7') npm run tool;;
+            '7') aaaaaaaaaa;;
             '8') npm run node;;
             '9') npm run dev;;
             'u') npm run update;;
