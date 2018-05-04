@@ -52,10 +52,6 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
                 path.join(url.src2, url.scripts.root, '**/*.coffee')
             ], ['coffee']);
 
-            gulp.watch([
-                path.join(url.src2, url.scripts.root, '**/*.ts')
-            ], ['ts']);
-
             // Templates
             gulp.watch([
                 path.join(url.src2, '**/*.jade'),

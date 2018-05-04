@@ -9,7 +9,6 @@ import concat from 'gulp-concat';
 import rev from 'gulp-rev';
 import revReplace from 'gulp-rev-replace';
 import useref from 'gulp-useref';
-import filter from 'gulp-filter';
 
 
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {

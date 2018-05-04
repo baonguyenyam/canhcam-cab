@@ -67,6 +67,17 @@ app.post('/createsite', function (req, res) {
 	var json = JSON.stringify(req.body.data, null, 4);
 	var dir = dest + '/' + req.body.name
 
+	try {
+		fs.writeFileSync(dest + '/setup.json', "{\"sitename\": \"" + req.body.name + "\"}", 'utf8', function (err) {
+			if (err) {
+				return console.log(err);
+			}
+		});
+	} catch (err) {
+		return console.log(err);
+	}
+
+
 	if (!fs.existsSync(dir)) {
 		fs.mkdirSync(dir);
 		if (fs.existsSync(dir + '/include.json')) {

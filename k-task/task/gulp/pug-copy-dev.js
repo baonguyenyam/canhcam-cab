@@ -6,7 +6,6 @@ import foldero from 'foldero';
 import pug from 'pug';
 import yaml from 'js-yaml';
 import rename from "gulp-rename"
-import insert from 'gulp-insert';
 
 module.exports = function (gulp, setgulp, plugins, config, target, browserSync) {
 	let url = config;

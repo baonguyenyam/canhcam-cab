@@ -17,13 +17,8 @@ do
         echo "Please choice a selection!"
         echo "1) Chạy Site Builder (8080)"
         echo "2) Chạy site đã build"
-        echo "3) Build product"
-        echo "4) Build product with local"
-        echo "5) Build product NOT MIN"
-        echo "6) Build product with local NOT MIN"
-        echo "7) AAAAAAAAAAA"
-        echo "8) Run HTML2PUG (1234)"
-        echo "9) Chạy xây dựng components (9999)"
+        echo "3) Chạy xây dựng components (9999)"
+        echo "4) Run HTML2PUG (1234)"
         echo "u) Updrage Package"
         echo "q) Quit"
 		echo "\n"
@@ -34,13 +29,8 @@ do
         case $choice in
             '1') npm run web;;
             '2') npm run start;;
-            '3') npm run pro;;
-            '4') npm run prod;;
-            '5') npm run pro-no;;
-            '6') npm run prod-no;;
-            '7') aaaaaaaaaa;;
-            '8') npm run node;;
-            '9') npm run dev;;
+            '3') npm run node;;
+            '4') npm run dev;;
             'u') npm run update;;
             'q') ;;
             *)   printf "\033[0;33mMenu item is not available, try again!\033[0m\n";;

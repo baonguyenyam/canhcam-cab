@@ -1,0 +1,82 @@
+# #####################################################################
+config:
+# #####################################################################
+# Base config
+  url: "./"
+  baseUrl: "./"
+  source: "./"
+  src: "./"
+  src2: "lib"
+  views: "core/views"
+  dest: "dist"
+  dev: "@dev"
+  tmp: "tmp"
+  docs: "docs"
+  test: "test"
+  favicon: "resources/favicon.png"
+  favicondist: "/favicon/"
+  resources: "resources"
+  config: "config"
+  fonts: "fonts"
+  data: "data"
+  dataJS: "scripts"
+  blank: "_blank"
+  images: "images"
+# Layout
+  layouts:
+    assets: "partials"
+    root: "templates"
+    jade: "templates"
+    nunjucks: "templates/nunjucks"
+# Scripts
+  scripts:
+    assets: "js"
+    root: "scripts"
+    typescript: "scripts/typescript"
+    javascript: "scripts"
+    coffee: "scripts/coffee"
+# Styles
+  styles:
+    assets: "css"
+    root: "styles"
+    css: "styles/css"
+    less: "styles/less"
+    sass: "lib/styles"
+    stylus: "styles/stylus"
+# CleanUp
+  cleanup: "{favicon.json,rev-manifest.json}"
+# Ignore
+  ignore:
+    copy: "{**/*.jade,**/*.nunjucks,**/*.js,**/*.ts,**/*.coffee}"
+    scripts: "{**/*.ts,**/*.coffee}"
+    jade: "{include,include/**}"
+    nunjucks: "{include,include/**}"
+    concat: "{config.js,core,core/**/*.js}"
+    concatactiveconcat: "{config.js,core,core/**/*.js,pages,pages/**/*.js}"
+    sass: "{includes,includes/**,common,common/**,mixins,mixins/**}"
+    sassactiveconcat: "{includes,includes/**,common,common/**,mixins,mixins/**,pages,pages/**}"
+    inject: "{pages,pages/**}"
+    stylus: "{include,include/**}"
+    css: "{include,include/**}"
+    less: "{include,include/**}"
+    test: "{vendor,vendor/**}"
+# Config Host
+  host: "127.0.0.1"
+  port: "9999"
+  sameport: "6000"
+  proxy: "9018"
+  website: "baonguyenyam.github.io"
+# Packer
+  packer: main.js
+  packerdist: app.js #to app.min.js
+# License
+  title: "Gulp App"
+  author:
+    email: "baonguyenyam@gmail.com"
+    name: "BaoNguyen"
+    phone: "0969689893 - 0933112900"
+    link: "https://baonguyenyam.github.io"
+    coding: "Coding by Bao Nguyen"
+  license: "MIT"
+  name: "Bao Nguyen Apps"
+  version: "1.0"
