@@ -7,17 +7,19 @@ $(window).resize(function() {
 })
 
 function checkDev() {
-    if ($(window).width() < 576) {
-        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - XS')
-    } else if ($(window).width() >= 576 && $(window).width() < 768) {
-        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - SM')
-    } else if ($(window).width() >= 768 && $(window).width() < 992) {
-        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - MD')
-    } else if ($(window).width() >= 992 && $(window).width() < 1200) {
-        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - LG')
-    } else {
-        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - XL')
-    }
+	if ($('#devtools').length) {
+		if ($(window).width() < 576) {
+			$('.canhcam-develop #devtools .header-devtools h3').html('Dev - XS')
+		} else if ($(window).width() >= 576 && $(window).width() < 768) {
+			$('.canhcam-develop #devtools .header-devtools h3').html('Dev - SM')
+		} else if ($(window).width() >= 768 && $(window).width() < 992) {
+			$('.canhcam-develop #devtools .header-devtools h3').html('Dev - MD')
+		} else if ($(window).width() >= 992 && $(window).width() < 1200) {
+			$('.canhcam-develop #devtools .header-devtools h3').html('Dev - LG')
+		} else {
+			$('.canhcam-develop #devtools .header-devtools h3').html('Dev - XL')
+		}
+	}
 }
 
 (function($) {
@@ -73,30 +75,33 @@ function checkDev() {
 })(jQuery);
 
 if (CANHCAM_APP.DEV_MODE) {
+	if ($('#devtools').length) {
+		$('#devtools').drags();
+		createDevTo()
 
-	$('#devtools').drags();
-	createDevTo()
+		$(document).ready(function() {
+			if ($('.canhcam-develop #devtools').length) {
+				var devtls = $('.canhcam-develop #devtools').find('.body-devtools button')
+				devtls.click(function() {
+					if ($(this).attr('data-click-state') == 1) {
+						$(this).attr('data-click-state', 0)
+						$('body').toggleClass('active')
+						$('body').find('.devtool-gird').remove()
+					} else {
+						$(this).attr('data-click-state', 1)
+						$('body').toggleClass('active')
+						if (CANHCAM_APP.DEV_MODE_GIRD_FULL) {
+							$('body').append('<div class="devtool-gird"><div class="container-fluid d-flex"><div class="row d-flex align-items-stretch bd-highlight"><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div></div></div></div>')
+						} else {
+							$('body').append('<div class="devtool-gird"><div class="container d-flex"><div class="row d-flex align-items-stretch bd-highlight"><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div></div></div></div>')
+						}
+					}
+				});
+			}
+		});
+	}
 
-    $(document).ready(function() {
-        if ($('.canhcam-develop #devtools').length) {
-            var devtls = $('.canhcam-develop #devtools').find('.body-devtools button')
-            devtls.click(function() {
-                if ($(this).attr('data-click-state') == 1) {
-                    $(this).attr('data-click-state', 0)
-                    $('body').toggleClass('active')
-                    $('body').find('.devtool-gird').remove()
-                } else {
-                    $(this).attr('data-click-state', 1)
-                    $('body').toggleClass('active')
-                    if (CANHCAM_APP.DEV_MODE_GIRD_FULL) {
-                        $('body').append('<div class="devtool-gird"><div class="container-fluid d-flex"><div class="row d-flex align-items-stretch bd-highlight"><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div></div></div></div>')
-                    } else {
-                        $('body').append('<div class="devtool-gird"><div class="container d-flex"><div class="row d-flex align-items-stretch bd-highlight"><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div><div class="col d-flex align-items-stretch"><div class="item"></div></div></div></div></div>')
-                    }
-                }
-            });
-        }
-    });
+
 }
 
 function getSizeDevTo() {
@@ -107,7 +112,9 @@ function getSizeDevTo() {
 }
 
 $(window).resize(function () {
-	getSizeDevTo()
+	if ($('#devtools').length) {
+		getSizeDevTo()
+	}
 });
 
 function createDevTo() {
