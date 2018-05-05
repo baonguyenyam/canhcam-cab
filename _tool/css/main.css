@@ -38,7 +38,19 @@ iframe {
     overflow-y: scroll;
 }
 .mainList .list-group-item h5 {
-	display: none
+	display: none;
+	background: #3F51B5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .15rem .25rem;
+    font-size: .6rem !important;
+    color: #fff;
+    font-weight: 100;
+    text-transform: lowercase;
+}
+.mainList .list-group-item:hover h5 {
+	display: block;
 }
 #nav-tabContent .list-group-item .ifthumnails,
 #nav-tabContent .list-group-item .ifthumnails iframe {

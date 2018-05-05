@@ -8,15 +8,15 @@ $(window).resize(function() {
 
 function checkDev() {
     if ($(window).width() < 576) {
-        $('.canhcam-develop .devtools .header-devtools h3').html('Dev - XS')
+        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - XS')
     } else if ($(window).width() >= 576 && $(window).width() < 768) {
-        $('.canhcam-develop .devtools .header-devtools h3').html('Dev - SM')
+        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - SM')
     } else if ($(window).width() >= 768 && $(window).width() < 992) {
-        $('.canhcam-develop .devtools .header-devtools h3').html('Dev - MD')
+        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - MD')
     } else if ($(window).width() >= 992 && $(window).width() < 1200) {
-        $('.canhcam-develop .devtools .header-devtools h3').html('Dev - LG')
+        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - LG')
     } else {
-        $('.canhcam-develop .devtools .header-devtools h3').html('Dev - XL')
+        $('.canhcam-develop #devtools .header-devtools h3').html('Dev - XL')
     }
 }
 
@@ -32,6 +32,7 @@ function checkDev() {
         }
 
         return $el.find('.header-devtools').css('cursor', opt.cursor).on("mousedown", function(e) {
+			// getSizeDevTo()
             if (opt.handle === "") {
                 var $drag = $(this).parent().addClass('draggable');
             } else {
@@ -43,15 +44,24 @@ function checkDev() {
                 pos_y = $drag.offset().top + drg_h - e.pageY,
                 pos_x = $drag.offset().left + drg_w - e.pageX;
             $drag.css('z-index', 99999).parents().on("mousemove", function(e) {
-                $('.draggable').offset({
+				getSizeDevTo()
+				$('.draggable').offset({
                     top: e.pageY + pos_y - drg_h,
                     left: e.pageX + pos_x - drg_w
                 }).on("mouseup", function() {
+					// getSizeDevTo()
                     $(this).removeClass('draggable').css('z-index', z_idx);
-                });
+				});
+				$('#devtools .inline').offset({
+					top: e.pageY + pos_y - drg_h
+				})
+				$('#devtools .online').offset({
+					left: e.pageX + pos_x - drg_w
+				})
             });
             e.preventDefault(); // disable selection
         }).on("mouseup", function() {
+			// getSizeDevTo()
             if (opt.handle === "") {
                 $(this).removeClass('draggable');
             } else {
@@ -64,11 +74,12 @@ function checkDev() {
 
 if (CANHCAM_APP.DEV_MODE) {
 
-    $('.devtools').drags();
+	$('#devtools').drags();
+	createDevTo()
 
     $(document).ready(function() {
-        if ($('.canhcam-develop .devtools').length) {
-            var devtls = $('.canhcam-develop .devtools').find('.body-devtools button')
+        if ($('.canhcam-develop #devtools').length) {
+            var devtls = $('.canhcam-develop #devtools').find('.body-devtools button')
             devtls.click(function() {
                 if ($(this).attr('data-click-state') == 1) {
                     $(this).attr('data-click-state', 0)
@@ -86,4 +97,19 @@ if (CANHCAM_APP.DEV_MODE) {
             });
         }
     });
+}
+
+function getSizeDevTo() {
+	$('#devtools .body-devtools .size .width').html('W: ' + $(window).width() + '')
+	$('#devtools .body-devtools .size .height').html('H: ' + $(window).height() + '')
+	$('#devtools .body-devtools .size .top').html('T: ' + $('#devtools').offset().top + '')
+	$('#devtools .body-devtools .size .left').html('L: ' + $('#devtools').offset().left + '')
+}
+
+$(window).resize(function () {
+	getSizeDevTo()
+});
+
+function createDevTo() {
+	$('#devtools .body-devtools').append('<div class="size"><div class="width">W: ' + $(window).width() + '</div><div class="height">H: ' + $(window).height() + '</div><div class="top">T: ' + $('#devtools').offset().top + '</div><div class="left">L: ' + $('#devtools').offset().left + '</div></div>')
 }

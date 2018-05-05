@@ -102,20 +102,6 @@ gulp.task('server', ['clean'], () => {
     gulp.start('ser');
 });
 
-// Build task
-gulp.task('build', ['cleanall'], () => {
-    gulp.start('product');
-});
-gulp.task('build-local', ['cleanall'], () => {
-    gulp.start('product-local');
-});
-gulp.task('build-no', ['cleanall'], () => {
-    gulp.start('product-no');
-});
-gulp.task('build-local-no', ['cleanall'], () => {
-    gulp.start('product-local-no');
-});
-
 // Basic production-ready code
 gulp.task('k-task', function(cb) {
     runSequence(
@@ -136,107 +122,6 @@ gulp.task('ser', function(cb) {
         'inject',
         'browserSync',
         'watch',
-        cb
-    );
-});
-
-
-// Rebuild will call by browserify
-gulp.task('product', function(cb) {
-    runSequence(
-        'k-task',
-        // 'favicon',
-        'cssmin',
-        'uglify',
-        'csscomb',
-        'tobase64',
-        'rev',
-        'delete-css',
-        'delete-js',
-        'revreplace',
-        'sitemap',
-        'htmlmin',
-        'imagemin',
-        'header',
-        'cleanup',
-        'cleanup-js',
-        'cleanup-css',
-        'browserSync',
-        'done',
-        cb
-    );
-});
-
-// Rebuild will call by browserify
-gulp.task('product-no', function(cb) {
-    runSequence(
-        'k-task',
-        // 'favicon',
-        'csscomb',
-        'tobase64',
-        'inject',
-        'sitemap',
-        'htmlmin',
-        'imagemin',
-        'remove-comment-css',
-        'remove-comment-js',
-        'html-beautify',
-        'header',
-        'cleanup',
-        'browserSync',
-        'done',
-        cb
-    );
-});
-
-// Not min & can run without localhost
-gulp.task('product-local', function(cb) {
-    runSequence(
-        'k-task',
-        // 'favicon',
-        'cssmin',
-        'uglify',
-        'csscomb',
-        'tobase64',
-        'rev',
-        'delete-css',
-        'delete-js',
-        'revreplace',
-        'sitemap',
-        'htmlmin',
-        'imagemin',
-        'header',
-        'cleanup',
-        'cleanup-js',
-        'cleanup-css',
-        'local-run',
-        'local-run-home',
-        'browserSync',
-        'done',
-        cb
-    );
-});
-
-// Not min & can run without localhost
-gulp.task('product-local-no', function(cb) {
-    runSequence(
-        'k-task',
-        // 'favicon',
-        'csscomb',
-        'tobase64',
-        'inject',
-        'sitemap',
-        'htmlmin',
-        'imagemin',
-        'remove-comment-css',
-        'remove-comment-js',
-        'html-beautify',
-        'header',
-        'cleanup',
-        'local-run',
-        'local-run-home',
-        'browserSync',
-        'done',
         cb
     );
 });

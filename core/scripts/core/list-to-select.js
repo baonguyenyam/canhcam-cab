@@ -20,23 +20,29 @@ function listToSelect() {
 }
 
 function selectChangeToList() {
-	if ($(window).width() > CANHCAM_APP.CHANGE_GRID_SM) {
-		$('[data-select-changed]').each(function () {
-			$(this).show().removeAttr('data-select-changed').attr('data-select', '');
-		})
-		$('[data-select-show]').remove()
-	} else {
-		listToSelect()
+	if (CANHCAM_APP.ACTIVE_LIST_TO_SELECT) {
+		if ($(window).width() > CANHCAM_APP.CHANGE_GRID_SM) {
+			$('[data-select-changed]').each(function () {
+				$(this).show().removeAttr('data-select-changed').attr('data-select', '');
+			})
+			$('[data-select-show]').remove()
+		} else {
+			listToSelect()
+		}
 	}
 }
 
 $(document).ready(function () {
-	if ($(window).width() <= CANHCAM_APP.CHANGE_GRID_SM) {
-		listToSelect()
+	if (CANHCAM_APP.ACTIVE_LIST_TO_SELECT) {
+		if ($(window).width() <= CANHCAM_APP.CHANGE_GRID_SM) {
+			listToSelect()
+		}
 	}
 });
 
 $(window).resize(function () {
-	selectChangeToList()
+	if (CANHCAM_APP.ACTIVE_LIST_TO_SELECT) {
+		selectChangeToList()
+	}
 });
 

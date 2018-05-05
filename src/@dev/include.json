@@ -4,6 +4,11 @@
             "header": [
                 "header/h-1"
 			],
+            "body": [
+                "carousel/c-1",
+                "gallery/g-2",
+                "gallery/g-3"
+			],
             "footer": [
                 "footer/f-1"
 			]

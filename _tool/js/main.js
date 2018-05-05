@@ -5,7 +5,7 @@ var objectName = ''
 var pages = ['index']
 var dataSites = {
 	color: 'main: #2e3192,extra: #ec8b00,front: #659f13,back: #f1c40f,cyan-1: #1abc9c,cyan-2: #16a085,la-1: #2ecc71,la-2: #27ae60,duong-1: #3498db,duong-2: #2980b9,tim-1: #9b59b6,tim-2: #8e44ad,vang-1: #f1c40f,vang-2: #f39c12,cam-1: #e67e22,cam-2: #d35400,do-1: #e74c3c,do-2: #c0392b,den-1: #34495e,den-2: #2c3e50,xam-1: #95a5a6,xam-2: #7f8c8d,hong-1: #ff9ff3,hong-2: #f368e0,trang: #ffffff,den: #000000',
-	js: '"ACTIVE_FIXED_HEADER": false,"HEADER_TRANPARENT": false,"ACTIVE_HEADER_POSITION": 1,"ACTIVE_PADDING_MAIN": true,"ACTIVE_FIXED_FOOTER": true,"DISPLAY_FOOTER": 600,"ACTIVE_RESPONSIVE": true,"ACTIVE_BACKTOTOP": true,"DISPLAY_BACKTOTOP": 100,"CHANGE_GRID": 991,"CHANGE_GRID_SM": 767,"DEV_MODE": false,"DEV_MODE_GIRD_FULL": false'
+	js: '"ACTIVE_FIXED_HEADER": false,"HEADER_TRANPARENT": false,"ACTIVE_HEADER_POSITION": 1,"ACTIVE_PADDING_MAIN": true,"ACTIVE_VALIDATOR": true,"ACTIVE_SELECT": true,"ACTIVE_FIXED_FOOTER": true,"ACTIVE_LIST_TO_SELECT": true,"DISPLAY_FOOTER": 600,"ACTIVE_RESPONSIVE": true,"ACTIVE_BACKTOTOP": true,"DISPLAY_BACKTOTOP": 100,"CHANGE_GRID": 991,"CHANGE_GRID_SM": 767,"DEV_MODE": false,"DEV_MODE_GIRD_FULL": false'
 }
 
 
