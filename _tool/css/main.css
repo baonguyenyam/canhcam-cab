@@ -2,10 +2,23 @@ body,
 html {
 	height: 100%
 }
+.maindev.pc{
+	max-width: initial;
+	min-width: initial;
+}
+.maindev.mobile{
+	max-width: calc(480px + 1rem);
+	min-width: calc(480px + 1rem);
+	margin: 0 auto
+}
+.maindev.tablet{
+	max-width: calc(768px + 1rem);
+	min-width: calc(768px + 1rem);
+	margin: 0 auto
+}
 #maincc.active .bleft {
 	display: none;
 }
-#maincc.active .noleft {}
 .sortable-drag {
 	background: #daf4ff
 }
@@ -19,6 +32,10 @@ html {
 }
 iframe {
 	height: 1px
+}
+#accordion  .mainList  {
+	max-height: 400px;
+    overflow-y: scroll;
 }
 .mainList .list-group-item h5 {
 	display: none

@@ -80,32 +80,41 @@ function getAllLocations() {
 	jQuery.get("./data.json", function (data) {
 		var parsedJSON = data;
 		for (var key in parsedJSON) {
+			var father = document.createElement('div');
+			father.id = "cc-menu-" + key;
+			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-' + key +'" aria-expanded="true" aria-controls="collapse-' + key+'">'+key.toUpperCase()+'</button></h5></div><div id="collapse-' + key+'" class="collapse" aria-labelledby="heading-' + key+'" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
+			document.getElementById('accordion').appendChild(father);
+
+		}
+		for (var key in parsedJSON) {
+			var index = 0
 			for (var des in parsedJSON[key]) {
 				var dataKey = parsedJSON[key][des][0]
 				var dataType = parsedJSON[key][des][1]
 				var dataImg = parsedJSON[key][des][2]
 				var dataTitle = parsedJSON[key][des][3]
-				var badge = document.createElement('div');
-				badge.className = 'list-group-item';
-				badge.setAttribute("data-key", dataKey);
-				badge.setAttribute("data-type", dataType);
-				badge.innerHTML = '<h5>' + dataTitle + '</h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt="">' +
+				var badge = '<div class="list-group-item" data-key="' + dataKey + '" data-type="' + dataType + '"><h5>' + dataTitle + '</h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
 					// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
-					'</figure>';
+					'</figure></div>'
 				if (key) {
-					document.getElementById("cc-menu-" + key).appendChild(badge);
-					// setTimeout(function () {
-					// 	$('#cc-menu-' + key + ' .slider-items').slick({
-					// 		dots: true,
-					// 		vertical: true,
-					// 		slidesToShow: 5,
-					// 		slidesToScroll: 5,
-					// 		verticalSwiping: true,
-					// 	});
-					// }, 1000);
+					if ($("#cc-menu-" + key).length){
+						$("#cc-menu-"+ key +" .mainList").append(badge);
+					}
+					$('.mainList').each(function (i, e) {
+						var sortableMain = new Sortable.create(e, {
+							group: {
+								name: 'mainList',
+								pull: "clone",
+							},
+							sort: false,
+							animation: 100
+						});
+					})
 				}
+				index++
 			}
 		}
+
 	});
 }
 getAllLocations()

@@ -7,16 +7,7 @@ var dataSites = {
 	color: 'main: #2e3192,extra: #ec8b00,front: #659f13,back: #f1c40f,cyan-1: #1abc9c,cyan-2: #16a085,la-1: #2ecc71,la-2: #27ae60,duong-1: #3498db,duong-2: #2980b9,tim-1: #9b59b6,tim-2: #8e44ad,vang-1: #f1c40f,vang-2: #f39c12,cam-1: #e67e22,cam-2: #d35400,do-1: #e74c3c,do-2: #c0392b,den-1: #34495e,den-2: #2c3e50,xam-1: #95a5a6,xam-2: #7f8c8d,hong-1: #ff9ff3,hong-2: #f368e0,trang: #ffffff,den: #000000',
 	js: '"ACTIVE_FIXED_HEADER": false,"HEADER_TRANPARENT": false,"ACTIVE_HEADER_POSITION": 1,"ACTIVE_PADDING_MAIN": true,"ACTIVE_FIXED_FOOTER": true,"DISPLAY_FOOTER": 600,"ACTIVE_RESPONSIVE": true,"ACTIVE_BACKTOTOP": true,"DISPLAY_BACKTOTOP": 100,"CHANGE_GRID": 991,"CHANGE_GRID_SM": 767,"DEV_MODE": false,"DEV_MODE_GIRD_FULL": false'
 }
-$('.mainList').each(function (i, e) {
-	var sortableMain = new Sortable.create(e, {
-		group: {
-			name: 'mainList',
-			pull: "clone",
-		},
-		sort: false,
-		animation: 100
-	});
-})
+
 
 function makeid() {
 	var text = "";
@@ -27,6 +18,24 @@ function makeid() {
 $('.togglemenu').click(function () {
 	$('#maincc').toggleClass('active')
 	$(this).toggleClass('active')
+});
+$('#tooglepc').click(function () {
+	$(this).addClass('active')
+	$('#toogletablet, #tooglemobile').removeClass('active')
+	$('.maindev').addClass('pc').removeClass('mobile').removeClass('tablet')
+	resizeFrame()
+});
+$('#tooglemobile').click(function () {
+	$(this).addClass('active')
+	$('#toogletablet, #tooglepc').removeClass('active')
+	$('.maindev').addClass('mobile').removeClass('pc').removeClass('tablet')
+	resizeFrame()
+});
+$('#toogletablet').click(function () {
+	$(this).addClass('active')
+	$('#tooglemobile, #tooglepc').removeClass('active')
+	$('.maindev').addClass('tablet').removeClass('mobile').removeClass('pc')
+	resizeFrame()
 });
 
 function createList(toAdd) {
@@ -111,7 +120,7 @@ $('#buttonListItemMain').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItemMain]').val().trim());
 	if (toAdd) {
 		objectName = toAdd
-		$('.deview h4').html("Dự Án: " + objectName)
+		$('#projectname').html("" + objectName + "")
 		$('#toDoListMain').hide()
 		$('#toDoListMain')[0].reset();
 		$('#toDoList').show()
@@ -122,6 +131,10 @@ $('#buttonListItemMain').click(function () {
 		return false
 	}
 });
+$('#precreatesite').click(function (e) {
+	location.reload();
+})
+
 $('#createsite').click(function (e) {
 	e.preventDefault();
 	var newData = data
@@ -136,6 +149,7 @@ $('#createsite').click(function (e) {
 				$('.notedcanhcam').show()
 				$('.notedcanhcam .alert').show()
 				$('.createcanhcam').hide()
+				$('.enterpro').hide()
 				$('#myTab').removeClass('cnt')
 				$('#myTab, #nav-tabContent').html('')
 				data = {
@@ -165,32 +179,7 @@ function createIndex() {
 		checkTab()
 	}
 }
-$('#accordion .card button[data-toggle="collapse"]').each(function () {
-	$(this).click(function () {
-		setTimeout(function () {
-			$(this).parents('.card').find('.slider-items').slick({
-				dots: true,
-				// vertical: true,
-				slidesToShow: 5,
-				slidesToScroll: 5,
-				// verticalSwiping: true,
-			});
-		}, 2000);
-	})
-});
-// $('#accordion').on('show.bs.collapse', function () {
-// 	console.log($(this).find('.slider-items'))
-// 	setTimeout(function () {
-// 		$(this).find('.slider-items').slick({
-// 			dots: true,
-// 			// vertical: true,
-// 			slidesToShow: 5,
-// 			slidesToScroll: 5,
-// 			// verticalSwiping: true,
-// 		});
-// 	}, 500);
-// 	// do something…
-// })
+
 $('#button').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItem]').val().trim());
 	if (!checkValue(toAdd, pages)) {
@@ -318,6 +307,10 @@ function getDataJS() {
 getData()
 getDataJS()
 $(window).resize(function () {
+	resizeFrame()
+})
+
+function resizeFrame() {
 	$('.ifthumnails').each(function () {
 		$(this).removeAttr('style')
 		$(this).find('iframe').removeAttr('style')
@@ -331,4 +324,26 @@ $(window).resize(function () {
 			})
 		}, 1000);
 	});
+}
+
+$(window).bind('beforeunload', function () {
+	return 'Bạn có muốn thoát trang ngay bây giờ?';
+});
+
+$(function () {
+	$('#projectname').quickEdit({
+		blur: false,
+		checkold: true,
+		space: false,
+		maxLength: 50,
+		showbtn: false,
+		submit: function (dom, newValue) {
+			var newval = removeVietnam(newValue.trim())
+			objectName = newval
+			dom.text(newval);
+		}
+	});
+})
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
 })

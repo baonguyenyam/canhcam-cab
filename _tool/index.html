@@ -9,15 +9,13 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
-	<link rel="stylesheet" href="css/slick.min.css">
-	<link rel="stylesheet" href="css/slick-theme.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/sortable.min.js"></script>
 	<script src="js/bootstrap-colorpicker.min.js"></script>
-	<script src="js/slick.min.js"></script>
+	<script src="js/jquery-quickedit.js"></script>
 </head>
 
 <body>
@@ -25,105 +23,19 @@
 		<div class="row no-gutters" id="maincc">
 			<div class="col flex-column bleft" style="display:none">
 				<div id="accordion">
-					<div class="card">
-						<div class="card-header" id="heading-1">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">Header</button>
-							</h5>
-						</div>
-						<div id="collapse-1" class="collapse" aria-labelledby="heading-1" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-header">
-									<!-- <div class="list-group-item" data-key="gallety/g-1" data-type="main" draggable="true"><h5>Header 1</h5><div class="thumbnail-container"><div class="thumbnail"><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity=1"></iframe></div></div></div>--></div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-3">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Carousel</button>
-							</h5>
-						</div>
-						<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-carousel"></div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-4">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">News</button>
-							</h5>
-						</div>
-						<div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-news"></div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-5">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">Gallery</button>
-							</h5>
-						</div>
-						<div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-gallery"></div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-6">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">Form</button>
-							</h5>
-						</div>
-						<div id="collapse-6" class="collapse" aria-labelledby="heading-6" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-form"></div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-7">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">Map</button>
-							</h5>
-						</div>
-						<div id="collapse-7" class="collapse" aria-labelledby="heading-7" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-map"></div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header" id="heading-2">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Footer</button>
-							</h5>
-						</div>
-						<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion">
-							<div class="card-body">
-								<div class="slider-items list-group mainList" id="cc-menu-footer"></div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="col d-flex flex-column noleft" id="noleft">
 				<div class="container-fluid">
 					<div class="row deview mt-3 mb-4" style="display: none">
 						<div class="col-auto mr-auto d-flex align-items-center justify-content-start">
-							<button class="btn btn-outline-secondary btn-sm togglemenu mr-2">
+							<button data-toggle="tooltip" data-placement="bottom" title="Bật tắt menu" class="btn btn-outline-secondary btn-sm togglemenu mr-2">
 								<i class="fa fa-bars"></i>
 							</button>
-							<h4 class="mb-0"></h4>
+							<h4 class="mb-0 h6">Dự án: <abbr data-toggle="tooltip" data-placement="bottom" title="Sửa tên dự án" class="text-danger" id="projectname"></abbr></h4>
 						</div>
 						<div class="col-auto text-right d-flex align-items-center justify-content-end">
-							<a href="./templates/index.html" target="_blank" class="btn btn-info btn-sm mr-2">Test sites</a>
-							<form name="toDoList" id="toDoList">
+							<form name="toDoList" id="toDoList" class="mr-2">
 								<div class="input-group input-group-sm">
 									<input type="text" class="form-control" placeholder="Nhập tên trang" name="ListItem">
 									<div class="input-group-append">
@@ -131,8 +43,19 @@
 									</div>
 								</div>
 							</form>
-							<button class="btn btn-outline-secondary btn-sm ml-2" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
-								<i class="fa fa-cog"></i>
+							<div class="btn-group btn-group-sm mr-2" role="group">
+							<button id="tooglepc" class="btn btn-outline-secondary active" onclick="javascript:void(0)">
+								PC
+							</button>
+							<button id="tooglemobile" class="btn btn-outline-secondary" onclick="javascript:void(0)">
+								Mobile
+							</button>
+							<button id="toogletablet" class="btn btn-outline-secondary" onclick="javascript:void(0)">
+								Tablet
+							</button>
+							</div>
+							<button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
+								<i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Cấu hình dự án"></i>
 							</button>
 						</div>
 					</div>
@@ -147,8 +70,8 @@
 								<img src="./img/logo.jpg" alt="">
 							</p>
 							<h4 class="mb-0">All-In-One Website Builder tool (CAB)</h4>
-							<p class="text-sm">v.1.3</p>
-							<div class="row col-auto align-items-center justify-content-center mb-5">
+							<p class="text-sm">v.1.3 - <a href="./api/">API Docs</a></p>
+							<div class="enterpro row col-auto align-items-center justify-content-center mb-5">
 								<div class="card bg-light">
 									<div class="card-body">
 										<form name="toDoListMain" id="toDoListMain" class="form-inline">
@@ -163,10 +86,14 @@
 									</div>
 								</div>
 							</div>
-							<p>
+							<p class="enterpro">
 								<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
 							</p>
-							<p class="text-muted">Tạo trang mới bằng cách nhập tên vào form bên cạnh sau đó kéo thả components vào.</p>
+							<div class="notedcanhcam" style="display: none">
+								<div class="col-12 mt-4 text-center">
+									<button type="button" id="precreatesite" class="btn btn-success">Tạo dự án mới</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="createcanhcam" style="display: none">
