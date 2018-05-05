@@ -36,7 +36,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     for (var i = 0; i < arrayJS.length; i++) {
         arrayJSList.push(url.src2 + '/' + arrayJS[i] + '/index.js')
     }
-	arrayJSList.push((setgulp.production || process.argv.slice(2).indexOf("dev") > -1 || process.argv.slice(2).indexOf("serve") > -1 || process.argv.slice(2).indexOf("server") > -1) ? '!' + path.join(url.source, url.scripts.javascript, '**/canhcam-dev.js') : path.join())
+	arrayJSList.push((setgulp.production || process.argv.slice(2).indexOf("builder") > -1) ? '!' + path.join(url.source, url.scripts.javascript, '**/canhcam-dev.js') : path.join())
 
     // Run task
     gulp.task('babel-concat', () => {
