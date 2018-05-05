@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $(".select2").select2({
-        placeholder: "Select one"
+        placeholder: "Chọn một"
     });
 
     $('.select2').on("select2:select", function(e) {

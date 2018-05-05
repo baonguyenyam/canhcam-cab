@@ -19,7 +19,7 @@ function CanhCamResponsive() {
                 "background-position": "center center",
                 "background-size": "cover"
             });
-        } else if ($(window).width() < CANHCAM_APP.CHANGE_GRID && $(window).width() > 600) {
+		} else if ($(window).width() < CANHCAM_APP.CHANGE_GRID && $(window).width() > CANHCAM_APP.CHANGE_GRID_SM) {
             $(this).css({
                 "background-image": "url(" + bgimgsm + ")",
                 "background-position": "center center",
@@ -40,7 +40,7 @@ function CanhCamResponsive() {
         var bgimg2xs = $(this).attr('img-src-responsive-xs');
         if ($(window).width() >= CANHCAM_APP.CHANGE_GRID) {
             $(this).attr("src", "" + bgimg2 + "");
-        } else if ($(window).width() < CANHCAM_APP.CHANGE_GRID && $(window).width() > 600) {
+		} else if ($(window).width() < CANHCAM_APP.CHANGE_GRID && $(window).width() > CANHCAM_APP.CHANGE_GRID_SM) {
             $(this).attr("src", "" + bgimg2sm + "");
         } else {
             $(this).attr("src", "" + bgimg2xs + "");
