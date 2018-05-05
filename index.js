@@ -130,11 +130,10 @@ function copyFiles(dir, json) {
 	if (!fs.existsSync(dir + '/lib')) {
 		try {
 			fs.mkdirSync(dir + '/lib');
-			buildFiles(dir, json)
 		} catch (err) {
-			buildFiles(dir, json)
 		}
 	}
+	buildFiles(dir, json)
 	fse.copySync(root + '/_core', dir + '/lib/_core');
 	fse.copySync(root + '/_includes.sass', dir + '/lib/_includes.sass');
 	fse.move(dir + '/styles', dir + '/lib/styles', err => {});
@@ -168,11 +167,10 @@ function createFolderLib(dir, dirfull, val) {
 	if (!fs.existsSync(dir + '/lib/' + dirfull)) {
 		try {
 			fs.mkdirSync(dir + '/lib/' + dirfull);
-			copyLibsUse(root + '/' + val, dir + '/lib/' + val)
 		} catch (err) {
-			copyLibsUse(root + '/' + val, dir + '/lib/' + val)
 		}
 	}
+	copyLibsUse(root + '/' + val, dir + '/lib/' + val)
 }
 
 function copyLibsUse(a, b) {

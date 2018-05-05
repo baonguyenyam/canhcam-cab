@@ -5,216 +5,180 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Bao Nguyen - Tool build</title>
+	<title>Canh Cam - All-In-One Website Builder tool by Bao Nguyen</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
+	<link rel="stylesheet" href="css/slick.min.css">
+	<link rel="stylesheet" href="css/slick-theme.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/sortable.min.js"></script>
 	<script src="js/bootstrap-colorpicker.min.js"></script>
+	<script src="js/slick.min.js"></script>
 </head>
 
 <body>
 	<div class="container-no">
-
-		<div class="row no-gutters">
-			<div class="col d-flex flex-column bleft">
-				<form name="toDoList" id="toDoList" style="display:none">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Nhập tên trang" name="ListItem">
-						<div class="input-group-append">
-							<button class="btn btn-primary" id="button" type="button">Thêm</button>
-						</div>
-					</div>
-				</form>
-				<form name="toDoListMain" id="toDoListMain">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Tên dự án" name="ListItemMain">
-						<div class="input-group-append">
-							<button class="btn btn-danger" id="buttonListItemMain" type="button">Nhập</button>
-						</div>
-					</div>
-				</form>
-
+		<div class="row no-gutters" id="maincc">
+			<div class="col flex-column bleft" style="display:none">
 				<div id="accordion">
 					<div class="card">
 						<div class="card-header" id="heading-1">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
-									Header
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">Header</button>
 							</h5>
 						</div>
-
 						<div id="collapse-1" class="collapse" aria-labelledby="heading-1" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-header">
-
-									<!-- <div class="list-group-item" data-key="gallety/g-1" data-type="main" draggable="true">
-										<h5>Header 1</h5>
-										<div class="thumbnail-container">
-											<div class="thumbnail">
-												<iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe>
-											</div>
-										</div>
-									</div> -->
-
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-header">
+									<!-- <div class="list-group-item" data-key="gallety/g-1" data-type="main" draggable="true"><h5>Header 1</h5><div class="thumbnail-container"><div class="thumbnail"><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity=1"></iframe></div></div></div>--></div>
 							</div>
 						</div>
 					</div>
 					<div class="card">
 						<div class="card-header" id="heading-3">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-									Carousel
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Carousel</button>
 							</h5>
 						</div>
 						<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-carousel">
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-carousel"></div>
 							</div>
 						</div>
-
 					</div>
 					<div class="card">
 						<div class="card-header" id="heading-4">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-									News
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">News</button>
 							</h5>
 						</div>
 						<div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-news">
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-news"></div>
 							</div>
 						</div>
-
 					</div>
 					<div class="card">
 						<div class="card-header" id="heading-5">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
-									Gallery
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">Gallery</button>
 							</h5>
 						</div>
 						<div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-gallery">
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-gallery"></div>
 							</div>
 						</div>
-
 					</div>
 					<div class="card">
 						<div class="card-header" id="heading-6">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
-									Form
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">Form</button>
 							</h5>
 						</div>
 						<div id="collapse-6" class="collapse" aria-labelledby="heading-6" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-form">
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-form"></div>
 							</div>
 						</div>
-
 					</div>
 					<div class="card">
 						<div class="card-header" id="heading-7">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
-									Map
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">Map</button>
 							</h5>
 						</div>
 						<div id="collapse-7" class="collapse" aria-labelledby="heading-7" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-map">
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-map"></div>
 							</div>
 						</div>
-
 					</div>
-
 					<div class="card">
 						<div class="card-header" id="heading-2">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-									Footer
-								</button>
+								<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Footer</button>
 							</h5>
 						</div>
 						<div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion">
 							<div class="card-body">
-								<div class="list-group mainList" id="cc-menu-footer">
-								</div>
+								<div class="slider-items list-group mainList" id="cc-menu-footer"></div>
 							</div>
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
 			<div class="col d-flex flex-column noleft" id="noleft">
-				<div class="container">
-					<div class="row deview mt-3" style="display: none">
-						<div class="col-6">
-							<h4></h4>
+				<div class="container-fluid">
+					<div class="row deview mt-3 mb-4" style="display: none">
+						<div class="col-auto mr-auto d-flex align-items-center justify-content-start">
+							<button class="btn btn-outline-secondary btn-sm togglemenu mr-2">
+								<i class="fa fa-bars"></i>
+							</button>
+							<h4 class="mb-0"></h4>
 						</div>
-						<div class="col-6 text-right">
-							<button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
+						<div class="col-auto text-right d-flex align-items-center justify-content-end">
+							<a href="./templates/index.html" target="_blank" class="btn btn-info btn-sm mr-2">Test sites</a>
+							<form name="toDoList" id="toDoList">
+								<div class="input-group input-group-sm">
+									<input type="text" class="form-control" placeholder="Nhập tên trang" name="ListItem">
+									<div class="input-group-append">
+										<button class="btn btn-primary" id="button" type="button">Thêm</button>
+									</div>
+								</div>
+							</form>
+							<button class="btn btn-outline-secondary btn-sm ml-2" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
 								<i class="fa fa-cog"></i>
 							</button>
-
 						</div>
 					</div>
 					<div class="maindev">
-						<ul class="nav nav-tabs tab-sm" id="myTab" role="tablist">
-						</ul>
+						<ul class="nav nav-tabs tab-sm" id="myTab" role="tablist"></ul>
 						<div class="tab-content" id="nav-tabContent"></div>
 					</div>
 					<div class="notedcanhcam mt-5">
 						<div class="col-12 text-center">
-							<div class="alert alert-success mb-5" role="alert" style="display:none">
-								Đã tạo site thành công!
-							</div>
-
-							<p>
-								<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
-							</p>
+							<div class="alert alert-success mb-5" role="alert" style="display:none">Đã tạo site thành công!</div>
 							<p>
 								<img src="./img/logo.jpg" alt="">
 							</p>
-							<h4 class="mb-0">Auto build website by Cánh Cam</h4>
-							<p class="text-sm">v.0.9</p>
+							<h4 class="mb-0">All-In-One Website Builder tool (CAB)</h4>
+							<p class="text-sm">v.1.3</p>
+							<div class="row col-auto align-items-center justify-content-center mb-5">
+								<div class="card bg-light">
+									<div class="card-body">
+										<form name="toDoListMain" id="toDoListMain" class="form-inline">
+											<div class="input-group mr-2">Nhập tên dự án</div>
+											<div class="input-group">
+												<input type="text" class="form-control" placeholder="Tên dự án" name="ListItemMain">
+												<div class="input-group-append">
+													<button class="btn btn-success" id="buttonListItemMain" type="button">Nhập</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<p>
+								<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
+							</p>
 							<p class="text-muted">Tạo trang mới bằng cách nhập tên vào form bên cạnh sau đó kéo thả components vào.</p>
 						</div>
 					</div>
 					<div class="createcanhcam" style="display: none">
 						<div class="col-12 mt-4 text-center">
-							<button type="button" id="createsite" class="btn btn-success btn-lg">Tạo site</button>
+							<button type="button" id="createsite" class="btn btn-success">Tạo site</button>
 							<p class="text-muted mt-2">Chỉ nên thực hiện tạo site khi hoàn tất layout toàn bộ website.</p>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<!-- Modal -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -225,7 +189,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-
 					<ul class="nav nav-tabs" id="modalTab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tùy chỉnh màu</a>
@@ -233,7 +196,6 @@
 						<li class="nav-item">
 							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cấu hình Javascript</a>
 						</li>
-
 					</ul>
 					<div class="tab-content" id="modalTabContent">
 						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -243,8 +205,7 @@
 										<h5>Màu Chính</h5>
 									</div>
 								</div>
-								<div class="row" id="maincolor">
-								</div>
+								<div class="row" id="maincolor"></div>
 							</form>
 						</div>
 						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -314,8 +275,6 @@
 											</div>
 										</div>
 									</div>
-
-
 								</div>
 								<div class="row">
 									<div class="col-sm-6 col-lg-3">
@@ -404,10 +363,8 @@
 			</div>
 		</div>
 	</div>
-
 	<script src="js/core.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
 
 </html>

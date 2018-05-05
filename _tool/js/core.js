@@ -1,4 +1,3 @@
-
 function deleteTodoItem(e, item) {
 	e.preventDefault();
 	var txt;
@@ -10,7 +9,6 @@ function deleteTodoItem(e, item) {
 	} else {
 		return false
 	}
-
 }
 $(function () {
 	$('#noleft').on('click', '.btn-danger', function (e) {
@@ -26,14 +24,15 @@ function checkTab() {
 		$('.notedcanhcam').hide()
 		$('.createcanhcam').show()
 		$('.deview').show()
+		$('.bleft').show()
 	} else {
 		$('.notedcanhcam').show()
 		$('.deview').hide()
 		$('.createcanhcam').hide()
 		$('#myTab').removeClass('cnt')
+		$('.bleft').hide()
 	}
 }
-
 $('#toDoList, #toDoListMain').on('keyup keypress', function (e) {
 	var keyCode = e.keyCode || e.which;
 	if (keyCode === 13) {
@@ -43,16 +42,28 @@ $('#toDoList, #toDoListMain').on('keyup keypress', function (e) {
 	}
 });
 
-
-
 function removeVietnam(s) {
 	var r = s.toLowerCase().replace(/\s+/g, '-');
-	non_asciis = { '-': '[`~!@#$%^&*()_|+=?;:",.<>/]', 'a': '[ảàạảãàáâãäåắặẳằẵấầẩẫậâă]', 'ae': 'æ', 'c': 'ç', 'e': '[èéẹẽẻềệếểễê]', 'd': '[đ]', 'i': '[ìíîïị]', 'n': 'ñ', 'o': '[òóôõöộồốổỗơởợỡờớôơ]', 'oe': 'œ', 'u': '[ùúûűüủụưửựứừữư]', 'y': '[ýỳỷỵỹ]' };
-	for (i in non_asciis) { r = r.replace(new RegExp(non_asciis[i], 'gi'), i); }
+	non_asciis = {
+		'-': '[`~!@#$%^&*()_|+=?;:",.<>/]',
+		'a': '[ảàạảãàáâãäåắặẳằẵấầẩẫậâă]',
+		'ae': 'æ',
+		'c': 'ç',
+		'e': '[èéẹẽẻềệếểễê]',
+		'd': '[đ]',
+		'i': '[ìíîïị]',
+		'n': 'ñ',
+		'o': '[òóôõöộồốổỗơởợỡờớôơ]',
+		'oe': 'œ',
+		'u': '[ùúûűüủụưửựứừữư]',
+		'y': '[ýỳỷỵỹ]'
+	};
+	for (i in non_asciis) {
+		r = r.replace(new RegExp(non_asciis[i], 'gi'), i);
+	}
 	r = r.replace(/[^\w\s]/gi, '-')
 	return r
 };
-
 
 function getJSONFile(url) {
 	var resp = '';
@@ -78,14 +89,20 @@ function getAllLocations() {
 				badge.className = 'list-group-item';
 				badge.setAttribute("data-key", dataKey);
 				badge.setAttribute("data-type", dataType);
-				badge.innerHTML =
-					'<h5>' + dataTitle + '</h5>' +
-					'<figure>' +
-				'<img src="./img/layout/' + dataImg +'" alt="">'+
-				// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
-				'</figure>';
+				badge.innerHTML = '<h5>' + dataTitle + '</h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt="">' +
+					// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
+					'</figure>';
 				if (key) {
-					document.getElementById("cc-menu-"+key).appendChild(badge);
+					document.getElementById("cc-menu-" + key).appendChild(badge);
+					// setTimeout(function () {
+					// 	$('#cc-menu-' + key + ' .slider-items').slick({
+					// 		dots: true,
+					// 		vertical: true,
+					// 		slidesToShow: 5,
+					// 		slidesToScroll: 5,
+					// 		verticalSwiping: true,
+					// 	});
+					// }, 1000);
 				}
 			}
 		}
