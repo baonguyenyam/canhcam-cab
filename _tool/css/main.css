@@ -180,8 +180,9 @@ iframe {
 .list-group .list-group-item {
 	padding: 0;
 	margin-bottom: .25rem;
-	overflow: hidden;
+	border-radius: .25rem !important;
 }
+
 .list-group .list-group-item:last-child {
 	margin-bottom: 0
 }
@@ -189,7 +190,8 @@ iframe {
 	font-size: 1rem
 }
 .list-group .list-group-item figure {
-	margin-bottom: 0
+	margin-bottom: 0;
+	border-radius: .25rem;
 }
 #accordion .list-group .list-group-item figure {
 	max-height: 140px;
@@ -366,7 +368,7 @@ iframe {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 24px;
+    font-size: 18px;
     color: #fff;
 }
 #nav-tabContent.active {
