@@ -75,6 +75,9 @@ function checkDev() {
 })(jQuery);
 
 if (CANHCAM_APP.DEV_MODE) {
+
+	$('body').append('<div id="devtools"> <div class="online"></div><div class="inline"></div><div class="header-devtools"> <h3>Dev - XL</h3> </div><div class="body-devtools"> <button class="btn btn-block btn-secondary btn-sm" type="button">Toogle Grid</button> </div></div>')
+
 	$('#devtools').drags();
 	createDevTo()
 
