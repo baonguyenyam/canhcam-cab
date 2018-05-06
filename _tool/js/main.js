@@ -36,15 +36,27 @@ function createPageBuilder(toAdd) {
 				var gname = $(itemEl).attr('data-key').replace('/', '-')
 				var getid = taoIdNgauNhien()
 				$(itemEl).append('<div id="' + getid + '" class="ifthumnails"><iframe src="./templates/index-' + gname + '.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>')
-				setTimeout(() => {
-					var abc = $('#' + getid + ' iframe').contents().height()
-					$('#' + getid).css({
-						"height": abc + 'px'
-					})
-					$('#' + getid + ' iframe').css({
-						"height": abc + 'px'
-					})
-				}, 1000);
+				if ($(itemEl).attr('data-height') && $(itemEl).attr('data-height').length) {
+					var setH = $(itemEl).attr('data-height')
+					setTimeout(() => {
+						$('#' + getid).css({
+							"height": setH
+						})
+						$('#' + getid + ' iframe').css({
+							"height": setH
+						})
+					}, 1000);
+				} else {
+					setTimeout(() => {
+						var abc = $('#' + getid + ' iframe').contents().height()
+						$('#' + getid).css({
+							"height": abc + 'px'
+						})
+						$('#' + getid + ' iframe').css({
+							"height": abc + 'px'
+						})
+					}, 1000);
+				}
 			},
 			onUpdate: function (evt) {
 				getlist()
@@ -89,7 +101,6 @@ function createPageBuilder(toAdd) {
 				}
 			});
 			data.SETUP[toAdd] = optionTexts
-			// console.log(data)
 		}
 	})
 }

@@ -74,7 +74,6 @@ function createLeftMenuList() {
 	});
 }
 
-
 function removeVietnam(s) {
 	var r = s.toLowerCase().replace(/\s+/g, '-');
 	non_asciis = {
@@ -181,15 +180,28 @@ function resizeFrame() {
 	$('.ifthumnails').each(function () {
 		$(this).removeAttr('style')
 		$(this).find('iframe').removeAttr('style')
-		setTimeout(() => {
-			var abc = $(this).find('iframe').contents().height()
-			$(this).css({
-				"height": abc + 'px'
-			})
-			$(this).find('iframe').css({
-				"height": abc + 'px'
-			})
-		}, 1000);
+		var ge = $(this).parents('.list-group-item')
+		if (ge.attr('data-height') && ge.attr('data-height').length) {
+			var setH = ge.attr('data-height')
+			setTimeout(() => {
+				$(this).css({
+					"height": setH
+				})
+				$(this).find('iframe').css({
+					"height": setH
+				})
+			}, 1000);
+		} else {
+			setTimeout(() => {
+				var abc = $(this).find('iframe').contents().height()
+				$(this).css({
+					"height": abc + 'px'
+				})
+				$(this).find('iframe').css({
+					"height": abc + 'px'
+				})
+			}, 1000);
+		}
 	});
 }
 //////////////////////////////////////////////
