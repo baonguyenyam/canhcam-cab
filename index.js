@@ -73,6 +73,11 @@ app.post('/createsite', function (req, res) {
 				return console.log(err);
 			}
 		});
+		fs.writeFileSync('_tool/justbuild.json', "{\"sitename\": \"" + req.body.name + "\"}", 'utf8', function (err) {
+			if (err) {
+				return console.log(err);
+			}
+		});
 	} catch (err) {
 		return console.log(err);
 	}
