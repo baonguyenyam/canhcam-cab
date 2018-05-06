@@ -133,34 +133,52 @@
 	},
 	"tagline": {
 		"tagline-1": [
-			"tagline/m-1",
+			"tagline/t-1",
 			"body",
 			"tagline-1.png",
 			"tagline 1"
 		],
 		"tagline-2": [
-			"tagline/m-2",
+			"tagline/t-2",
 			"body",
 			"tagline-2.png",
 			"tagline 2"
 		],
 		"tagline-3": [
-			"tagline/m-3",
+			"tagline/t-3",
 			"body",
 			"tagline-3.png",
 			"tagline 3"
 		],
 		"tagline-4": [
-			"tagline/m-4",
+			"tagline/t-4",
 			"body",
 			"tagline-4.png",
 			"tagline 4"
 		],
 		"tagline-5": [
-			"tagline/m-5",
+			"tagline/t-5",
 			"body",
 			"tagline-5.png",
 			"tagline 5"
+		],
+		"tagline-6": [
+			"tagline/t-6",
+			"body",
+			"tagline-6.png",
+			"tagline 6"
+		],
+		"tagline-7": [
+			"tagline/t-7",
+			"body",
+			"tagline-7.png",
+			"tagline 7"
+		],
+		"tagline-8": [
+			"tagline/t-8",
+			"body",
+			"tagline-8.png",
+			"tagline 8"
 		]
 	},
 	"footer": {

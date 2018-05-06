@@ -1,0 +1,25 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-tagline-7
+	+pad(2rem 0)
+	text-align: center
+	+media-breakpoint-up(lg)
+		+pad(3rem 0)
+	h1
+		position: relative
+		margin-bottom: 2rem
+		&:before
+			display: block
+			width: 60px
+			height: 3px
+			background: color-get($mau,main)
+			content: ''
+			+pos(abs, calc(100% + 10px) null null 50%)
+			+transform(translateX(-50%))
+	p
+		+media-breakpoint-up(lg)
+			max-width: 50%
+			margin: 0 auto
