@@ -16,7 +16,10 @@
 				"tagline/t-8"
 			],
             "footer": [
-                "footer/f-1"
+                "footer/f-1",
+                "footer/f-2",
+                "footer/f-3",
+                "footer/f-4"
 			]
 		}
     }

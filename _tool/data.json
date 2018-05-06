@@ -193,6 +193,24 @@
 			"footer",
 			"footer-1.png",
 			"footer 1"
+		],
+		"footer-2": [
+			"footer/f-2",
+			"footer",
+			"footer-2.png",
+			"footer 2"
+		],
+		"footer-3": [
+			"footer/f-3",
+			"footer",
+			"footer-3.png",
+			"footer 3"
+		],
+		"footer-4": [
+			"footer/f-4",
+			"footer",
+			"footer-4.png",
+			"footer 4"
 		]
 	}
 }
