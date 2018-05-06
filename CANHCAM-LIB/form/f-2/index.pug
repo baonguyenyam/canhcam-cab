@@ -1,47 +1,48 @@
-section.canhcam-form-2.container
-	.row.info
-		.col-md-8.col-lg-9
-			.mb-4.bg-light.p-4
-				h3.h3.mb-3 Complete this form to email us your enquiry
-				.form-inline.mb-3
-					select#selectcountries.form-control.select2.custom-select(data-no="Không tìm thấy kếy quả nào")
-						option(selected) Choose...
-						option(value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3724.7853713842974!2d105.8175534!3d21.0012389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac852d847093%3A0x15431e84b98305be!2zNzIgTmd1eeG7hW4gVHLDo2ksIE5nw6MgVMawIFPhu58sIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1422267118040") Onea address
-						option(value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0377552572972!2d106.75194021422664!3d10.808420292299827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317526420c374823%3A0x59b104f328cc7ca3!2zUml0YVbDtQ!5e0!3m2!1svi!2s!4v1477379919505") Three
-				p.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, enim saepe suscipit nam beatae minima officia fugiat sapiente harum quae laborum fugit perferendis, magni recusandae unde temporibus asperiores at. Rerum!
-			form.validator
-				.row
-					.col#map-change
-						iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3724.7853713842974!2d105.8175534!3d21.0012389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac852d847093%3A0x15431e84b98305be!2zNzIgTmd1eeG7hW4gVHLDo2ksIE5nw6MgVMawIFPhu58sIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1422267118040" frameborder="0" style="border: 0px;")
-					.col-5
-						.row
-							.form-group.col
-								input#name.form-control(type='text', placeholder='Name (*)', data-error="Vui lòng nhập thông tin", required)
-						.row
-							.form-group.col
-								input#Email.form-control(type='text', placeholder='Email', data-error="Vui lòng nhập thông tin", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", required)
-						.row
-							.form-group.col
-								input#Phone.form-control(type='text', placeholder='Phone', data-error="Vui lòng nhập thông tin", pattern="^[_A-z0-9]{1,}$", required)
-						.row
-							.form-group.col
-								input#Address.form-control(type='text', placeholder='Address')
-						.row
-							.form-group.col
-								textarea#sms.form-control(placeholder='Nội dung', name="sms", cols="30", rows="5")
-						.row
-							.col
-								button.btn.btn-outline-primary.text-uppercase(type="submit")
-									| Submit
-									|
-									i.fa.fa-long-arrow-right
+section.canhcam-form-2
+	article.container.info
+		.row
+			.col-md-8.col-lg-9
+				.mb-4.bg-light.p-4
+					h3.h3.mb-3 Complete this form to email us your enquiry
+					.form-inline.mb-3
+						select#selectcountries.form-control.select2.custom-select(data-no="Không tìm thấy kếy quả nào")
+							option(selected) Choose...
+							option(value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3724.7853713842974!2d105.8175534!3d21.0012389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac852d847093%3A0x15431e84b98305be!2zNzIgTmd1eeG7hW4gVHLDo2ksIE5nw6MgVMawIFPhu58sIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1422267118040") Onea address
+							option(value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0377552572972!2d106.75194021422664!3d10.808420292299827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317526420c374823%3A0x59b104f328cc7ca3!2zUml0YVbDtQ!5e0!3m2!1svi!2s!4v1477379919505") Three
+					p.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, enim saepe suscipit nam beatae minima officia fugiat sapiente harum quae laborum fugit perferendis, magni recusandae unde temporibus asperiores at. Rerum!
+				form.validator
+					.row
+						.col#map-change
+							iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3724.7853713842974!2d105.8175534!3d21.0012389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac852d847093%3A0x15431e84b98305be!2zNzIgTmd1eeG7hW4gVHLDo2ksIE5nw6MgVMawIFPhu58sIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1422267118040" frameborder="0" style="border: 0px;")
+						.col-5
+							.row
+								.form-group.col
+									input#name.form-control(type='text', placeholder='Name (*)', data-error="Vui lòng nhập thông tin", required)
+							.row
+								.form-group.col
+									input#Email.form-control(type='text', placeholder='Email', data-error="Vui lòng nhập thông tin", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", required)
+							.row
+								.form-group.col
+									input#Phone.form-control(type='text', placeholder='Phone', data-error="Vui lòng nhập thông tin", pattern="^[_A-z0-9]{1,}$", required)
+							.row
+								.form-group.col
+									input#Address.form-control(type='text', placeholder='Address')
+							.row
+								.form-group.col
+									textarea#sms.form-control(placeholder='Nội dung', name="sms", cols="30", rows="5")
+							.row
+								.col
+									button.btn.btn-outline-primary.text-uppercase(type="submit")
+										| Submit
+										|
+										i.fa.fa-long-arrow-right
 
 
-		.col-md-4.col-lg-3.mt-5.mt-md-0
-			article.inf.h-100(bg-img="./img/bg.png")
-				figure.text-center
-					img.img-fluid(src="./img/logo.png", alt="alt")
-					figcaption
-				h2.h2.text-center.text-md-left Natail SARL - Golf etc.
-				p.text-center.text-md-left 19B Le Thi Rieng, Ben Thanh Ward, Dis.1
+			.col-md-4.col-lg-3.mt-5.mt-md-0
+				article.inf.h-100(bg-img="./img/bg.png")
+					figure.text-center
+						img.img-fluid(src="./img/logo.png", alt="alt")
+						figcaption
+					h2.h2.text-center.text-md-left Natail SARL - Golf etc.
+					p.text-center.text-md-left 19B Le Thi Rieng, Ben Thanh Ward, Dis.1
 
