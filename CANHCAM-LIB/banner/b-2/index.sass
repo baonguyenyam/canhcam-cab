@@ -1,0 +1,91 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-banner-2
+	.owl-carousel
+		position: relative
+		// Main
+		.owl-stage-outer
+			.item
+				min-height: 280px
+				+media-breakpoint-up(sm)
+					min-height: 320px
+				+media-breakpoint-up(lg)
+					min-height: 100vh
+				.title
+					+pos(abs, null null 3rem 0)
+					text-align: center
+					width: 100%
+					+pad(0 1rem)
+					h1
+						color: color-get($mau,trang)
+						+text-sha(1px 1px 3px rgba(0,0,0,.4))
+					p
+						color: color-get($mau,trang)
+						+text-sha(2px 2px 3px rgba(0,0,0,.2))
+						+fz(1.5rem)
+						+lh(1.8rem)
+						+fw(300)
+						+media-breakpoint-up(md)
+							max-width: 50%
+							margin: 0 auto 1rem auto
+					+media-breakpoint-up(lg)
+						+pos(abs, 50% null initial 0)
+						+transform(translateY(-50%))
+						h1
+							+fz(4rem)
+							letter-spacing: 1px
+						p
+							+fz(2rem)
+							+lh(2.3rem)
+							letter-spacing: 1px
+		// Nav
+		.owl-nav
+			button
+				&.owl-prev, &.owl-next
+					+pad(.5rem_)
+					width: 3rem
+					height: 3rem
+					background: rgba(0,0,0,.3)
+					color: rgba(255,255,255,.3)
+					+bor-rad(50%)
+					text-align: center
+					&:focus
+						outline: none
+				&:hover, &.active
+					&.owl-prev, &.owl-next
+						background: color-get($mau,main)
+						color: color-get($mau,trang)
+			+media-breakpoint-up(md)
+				+opacity(0)
+				margin-top: 0
+				+transition(all .3s ease-in-out)
+				button
+					&.owl-prev, &.owl-next
+						margin: 0
+						+transform(translateY(-50%))
+						&:focus
+							outline: none
+					&.owl-prev
+						+pos(abs, 50% null null 1rem)
+					&.owl-next
+						+pos(abs, 50% 1rem null null)
+		// Dots
+		.owl-dots
+			+pos(abs, null null 0 0)
+			width: 100%
+			.owl-dot
+				&:focus
+					outline: none
+				span
+					background: darken(color-get($mau,trang),5%)
+				&.active
+					span
+						background: color-get($mau,main)
+	&:hover
+		+media-breakpoint-up(md)
+			.owl-carousel
+				.owl-nav
+					+opacity(1)
