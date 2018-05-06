@@ -5,7 +5,7 @@
 html, body
 	font-family: 'Montserrat', sans-serif
 	font-size: 14px
-    font-weight: 500
+	font-weight: 500
 	height: 100%
 	width: 100%
 	+selection
@@ -113,3 +113,27 @@ header
 
 	.select2-results__option--highlighted[aria-selected]
 		background-color: color-get($mau,main)
+
+.datepicker table tr td.active,
+.datepicker table tr td span.active
+	&:hover, &.disabled:hover, &:active, &:hover:active
+		background: color-get($mau,main)
+	&.disabled
+		&:active, &:hover:active
+			background: color-get($mau,main)
+	&.active, &:hover.active
+		background: color-get($mau,main)
+	&.disabled
+		&.active, &:hover.active
+			background: color-get($mau,main)
+		background: color-get($mau,main)
+	&:hover.disabled
+		background: color-get($mau,main)
+	&.disabled
+		&.disabled, &:hover.disabled
+			background: color-get($mau,main)
+	&[disabled], &:hover[disabled]
+		background: color-get($mau,main)
+	&.disabled
+		&[disabled], &:hover[disabled]
+			background: color-get($mau,main)

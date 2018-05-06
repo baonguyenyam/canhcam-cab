@@ -29,6 +29,8 @@
     "seiyria-bootstrap-slider": "10.0.0",
     "slick-carousel": "1.8.1",
     "mdi": "2.3.54",
-    "bootstrap-touchspin": "4.2.5"
+    "bootstrap-touchspin": "4.2.5",
+    "perfect-scrollbar": "0.8.1",
+    "bootstrap-datepicker": "1.8.0"
   }
 }

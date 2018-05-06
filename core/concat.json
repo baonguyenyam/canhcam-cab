@@ -32,6 +32,8 @@
       "bower_components/select2/dist/js/select2.full.min.js",
       "bower_components/lightgallery/dist/js/lightgallery.min.js",
       "bower_components/slick-carousel/slick/slick.min.js",
+      "bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js",
+      "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js",
       "bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"
     ],
@@ -43,6 +45,8 @@
       "bower_components/slick-carousel/slick/slick-theme.css",
       "bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css",
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css",
+      "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.css",
+      "bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css",
       "bower_components/owl.carousel/dist/assets/owl.carousel.min.css",
       "bower_components/owl.carousel/dist/assets/owl.theme.default.css"
     ]

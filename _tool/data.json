@@ -55,6 +55,12 @@
 			"body",
 			"carousel-3.png",
 			"carousel 3"
+		],
+		"carousel-4": [
+			"carousel/c-4",
+			"body",
+			"carousel-4.png",
+			"carousel 4"
 		]
 	},
 	"news": {

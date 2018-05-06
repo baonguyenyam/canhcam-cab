@@ -12,7 +12,12 @@
 	<script src="/js/jquery-3.2.1.slim.min.js"></script>
 	<script src="/js/popper.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-
+	<style>
+		.list-group .list-group-item {
+			padding: .25rem .5rem;
+			margin-bottom: -1px;
+		}
+	</style>
 </head>
 
 <body>
@@ -49,8 +54,10 @@
 					<a href="#sec12" class="list-group-item list-group-item-action">Slider Bar</a>
 					<a href="#sec13" class="list-group-item list-group-item-action">Select2</a>
 					<a href="#sec14" class="list-group-item list-group-item-action">Light Gallery</a>
-					<a href="#sec15" class="list-group-item list-group-item-action">Font Awesome</a>
-					<a href="#sec16" class="list-group-item list-group-item-action">Font Material</a>
+					<a href="#sec15" class="list-group-item list-group-item-action">Perfect Scrollbar</a>
+					<a href="#sec16" class="list-group-item list-group-item-action">Bootstrap Datepicker <span class="badge badge-danger">HOT</span></a>
+					<a href="#fawe" class="list-group-item list-group-item-action">Font Awesome</a>
+					<a href="#fmat" class="list-group-item list-group-item-action">Font Material</a>
 				</div>
 			</div>
 			<div class="col p-4">
@@ -427,7 +434,34 @@
 					<div>});</div>
 				</div>
 
-				<h1 class="mt-5" id="sec15">Font Awesome</h1>
+				<h1 class="mt-5" id="sec15">Perfect Scrollbar</h1>
+				<p class="lead">Tạo Scrollbar đặc thù cho page, elements...
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;div id="element" style="height:200px;position:relative"&gt;&lt;/div&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$(function(){</div>
+					<div>&emsp;$('#element').perfectScrollbar();</div>
+					<div>});</div>
+				</div>
+
+				<h1 class="mt-5" id="sec16">Bootstrap Datepicker</h1>
+				<p class="lead">Tạo popup date cho form
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;input class="datepicker"&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$('.datepicker').datepicker({</div>
+					<div>&emsp;format: 'dd/mm/yyyy',</div>
+					<div>&emsp;startDate: '-3d'</div>
+					<div>});</div>
+				</div>
+
+				<h1 class="mt-5" id="fawe">Font Awesome</h1>
 				<p class="lead">Cách sử dụng font bằng các class
 					<code>.fa</code>,
 					<code>.fab</code>,
@@ -442,7 +476,7 @@
 
 
 
-				<h1 class="mt-5" id="sec16">Font Material</h1>
+				<h1 class="mt-5" id="fmat">Font Material</h1>
 				<p class="lead">Cách sử dụng font bằng các class
 					<code>.mdi</code>
 				</p>
