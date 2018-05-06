@@ -6,8 +6,11 @@
 			],
             "body": [
                 "carousel/c-1",
-                "map/m-2",
-                "form/f-3"
+                "tagline/t-1",
+                "tagline/t-2",
+				"tagline/t-3",
+				"tagline/t-4",
+				"tagline/t-5"
 			],
             "footer": [
                 "footer/f-1"

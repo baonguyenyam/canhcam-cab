@@ -131,6 +131,38 @@
 			"map 2"
 		]
 	},
+	"tagline": {
+		"tagline-1": [
+			"tagline/m-1",
+			"body",
+			"tagline-1.png",
+			"tagline 1"
+		],
+		"tagline-2": [
+			"tagline/m-2",
+			"body",
+			"tagline-2.png",
+			"tagline 2"
+		],
+		"tagline-3": [
+			"tagline/m-3",
+			"body",
+			"tagline-3.png",
+			"tagline 3"
+		],
+		"tagline-4": [
+			"tagline/m-4",
+			"body",
+			"tagline-4.png",
+			"tagline 4"
+		],
+		"tagline-5": [
+			"tagline/m-5",
+			"body",
+			"tagline-5.png",
+			"tagline 5"
+		]
+	},
 	"footer": {
 		"footer-1": [
 			"footer/f-1",
