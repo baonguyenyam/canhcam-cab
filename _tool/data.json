@@ -127,6 +127,12 @@
 			"body",
 			"shop-4.png",
 			"shop 4"
+		],
+		"shop-5": [
+			"shop/s-5",
+			"body",
+			"shop-5.png",
+			"shop 5"
 		]
 	},
 	"gallery": {

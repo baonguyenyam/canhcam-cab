@@ -5,7 +5,8 @@
                 "header/h-1"
 			],
             "body": [
-                "banner/b-2"
+				"banner/b-1",
+				"shop/s-5"
 			],
             "footer": [
                 "footer/f-4"
