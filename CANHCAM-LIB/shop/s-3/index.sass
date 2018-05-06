@@ -3,7 +3,7 @@
 // CODE
 //////////////////////////////////////
 
-.canhcam-gallery-2
+.canhcam-shop-3
 	.product-details
 		padding: 2rem 0
 		+media-breakpoint-up(md)
@@ -14,46 +14,73 @@
 			.order-md-2
 				-ms-flex-order: 2
 				order: 2
-		.slider-nav
-			margin: 1rem 0
-			.owl-carousel
-			// Main
-			.owl-stage-outer
-				.owl-item
-					text-align: center
-					img
-						max-width: 80px
-						display: inline-block
-						border: 2px solid transparent
-						+bor-rad(5px)
-					&:hover
-						img
-							border: 2px solid color-get($mau,main)
-			// Nav
-			.owl-nav
-				button
-					&.owl-prev, &.owl-next
-						+pad(.5rem_)
-						width: 3rem
-						height: 3rem
-						background: darken(color-get($mau,trang),5%)
-						+bor-rad(50%)
-						text-align: center
+		.slider-img
+			+clearfix
+			.slider-control
+				margin-top: 2rem
+				text-align: center
+				position: relative
+				+media-breakpoint-up(md)
+					margin-top: 0
+					padding-top: 3rem
+					float: left
+					width: 80px
+				.slick-track
+					margin-bottom: 1rem
+					+media-breakpoint-up(md)
+						flex-direction: column
+						margin-bottom: 1rem
+						width: initial !important
+						cursor: pointer
+						float: none
+					.slick-slide
+						text-align: center !important
+						cursor: pointer
+						+media-breakpoint-up(md)
+							margin-bottom: .5rem
 						&:focus
 							outline: none
-					&:hover, &.active
-						&.owl-prev, &.owl-next
-							background: color-get($mau,main)
-			// Dots
-			.owl-dots
-				.owl-dot
+						img
+							border: 2px solid transparent
+							display: inline-block
+							+bor-rad(5px)
+							max-width: 100%
+						&.slick-current, &:hover
+							img
+								border: 2px solid color-get($mau,main)
+				.top-arrow, .bottom-arrow
+					background: darken(color-get($mau,trang),5%)
+					margin: .5rem
+					height: 3rem
+					width: 3rem
+					+bor-rad(50%)
+					+media-breakpoint-up(md)
+						margin: 0
+						width: 100%
+						+bor-rad(5px)
+						height: initial
+						i
+							+transform(rotate(90deg))
+					&.active, &:hover
+						background: color-get($mau,main)
+						color: color-get($mau,trang)
+				.top-arrow
+					+media-breakpoint-up(md)
+						+pos(abs, 0 0 null null)
+
+
+			.slider-for
+				.item
+					text-align: center
+					img
+						text-align: center
+						max-width: 100%
+						display: inline-block
 					&:focus
 						outline: none
-					span
-						background: darken(color-get($mau,trang),5%)
-					&.active
-						span
-							background: color-get($mau,main)
+				+media-breakpoint-up(md)
+					float: right
+					width: calc(100% - 80px)
 		.infomation
 			h1
 				+fz(1.8rem)
@@ -80,8 +107,8 @@
 					display: inline-block
 					background: darken(color-get($mau,trang) ,3%)
 					+pad(.5rem 1rem)
-					+bor-rad(5px)
 					text-transform: uppercase
+					+bor-rad(5px)
 					border: 1px solid darken(color-get($mau,trang) ,20%)
 				input[type="checkbox"]:checked + span,
 				input[type="radio"]:checked + span
@@ -97,13 +124,3 @@
 					border-color: darken(color-get($mau,trang) ,20%)
 				.btn
 					border-color: darken(color-get($mau,trang) ,20%)
-
-		.slider-for
-			.item
-				text-align: center
-				img
-					text-align: center
-					max-width: 100%
-					display: inline-block
-				&:focus
-					outline: none

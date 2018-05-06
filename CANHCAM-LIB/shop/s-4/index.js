@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.canhcam-gallery-2 .slider-for').owlCarousel({
+	$('.canhcam-shop-4 .slider-for').owlCarousel({
 		items: 1,
 		loop: true,
 		center: true,
@@ -15,7 +15,7 @@ $(document).ready(function() {
 		URLhashListener: true,
 		startPosition: 'URLHash'
 	});
-	$('.canhcam-gallery-2 .slider-nav').owlCarousel({
+	$('.canhcam-shop-4 .slider-nav').owlCarousel({
 		animateIn: 'fadeIn',
 		animateOut: 'fadeOut',
 		items: 3,
@@ -46,7 +46,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.canhcam-gallery-2 #quantity input').TouchSpin({
+	$('.canhcam-shop-4 #quantity input').TouchSpin({
 		min: 0,
 		max: 100,
 		buttondown_class: "btn btn-default",

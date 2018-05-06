@@ -103,24 +103,38 @@
 			"news 3"
 		]
 	},
+	"shop": {
+		"shop-1": [
+			"shop/s-1",
+			"body",
+			"shop-1.png",
+			"shop 1"
+		],
+		"shop-2": [
+			"shop/s-2",
+			"body",
+			"shop-2.png",
+			"shop 2"
+		],
+		"shop-3": [
+			"shop/s-3",
+			"body",
+			"shop-3.png",
+			"shop 3"
+		],
+		"shop-4": [
+			"shop/s-4",
+			"body",
+			"shop-4.png",
+			"shop 4"
+		]
+	},
 	"gallery": {
 		"gallery-1": [
 			"gallery/g-1",
 			"body",
 			"gallery-1.png",
 			"gallery 1"
-		],
-		"gallery-2": [
-			"gallery/g-2",
-			"body",
-			"gallery-2.png",
-			"gallery 2"
-		],
-		"gallery-3": [
-			"gallery/g-3",
-			"body",
-			"gallery-3.png",
-			"gallery 3"
 		]
 	},
 	"form": {
