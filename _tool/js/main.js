@@ -23,8 +23,15 @@ function createPageBuilder(toAdd) {
 				put: 'mainList',
 				pull: false
 			},
-			chosenClass: "sortable-chosen",
+			// ghostClass: "canhcam-drag",
+			onMove: function (evt, originalEvent) {
+				$('#nav-tabContent').addClass('active')
+			},
+			onStart: function (evt) {
+				$('#nav-tabContent').addClass('active')
+			},
 			onClone: function (evt) {
+				$('#nav-tabContent').addClass('active')
 				getlist()
 			},
 			onRemove: function (evt) {
@@ -71,6 +78,7 @@ function createPageBuilder(toAdd) {
 			},
 			onEnd: function (evt) {
 				getlist()
+				$('#nav-tabContent').removeClass('active')
 			},
 			animation: 100
 		});

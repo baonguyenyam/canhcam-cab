@@ -63,8 +63,21 @@ function createLeftMenuList() {
 								pull: "clone",
 								put: false
 							},
+							ghostClass: "canhcam-ghost",
 							sort: false,
-							animation: 100
+							animation: 100,
+							onMove: function (evt, originalEvent) {
+								$('#nav-tabContent').addClass('active')
+							},
+							onClone: function (evt) {
+								$('#nav-tabContent').addClass('active')
+							},
+							onStart: function (evt) {
+								$('#nav-tabContent').addClass('active')
+							},
+							onEnd: function (evt) {
+								$('#nav-tabContent').removeClass('active')
+							}
 						});
 					})
 				}

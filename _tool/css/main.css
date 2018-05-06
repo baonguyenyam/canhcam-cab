@@ -23,7 +23,8 @@ html {
 	background: #daf4ff
 }
 .sortable-ghost {
-	opacity: .2
+	opacity: .2;
+	background: #C8EBFB;
 }
 #nav-tabContent .sortable-chosen {
 	width: 100%;
@@ -55,6 +56,10 @@ iframe {
 .mainList .list-group-item h5 a {
 	color: #fff
 }
+.ifthumnails {
+	overflow: hidden;
+}
+
 #nav-tabContent .list-group-item .ifthumnails,
 #nav-tabContent .list-group-item .ifthumnails iframe {
 	width: 100%;
@@ -326,10 +331,51 @@ iframe {
 	display: none
 }
 .newlist .list-group-item figure {
+	display: none;
+	width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+	background: rgba(0,0,0,.5);
+	justify-content: center;
+	align-items: center;
+	cursor: move;
+}
+.newlist .list-group-item:hover figure {
+	display: flex
+}
+.newlist .list-group-item.canhcam-ghost {
+	background: #000;
+	padding: 2rem;
+	opacity: .5;
+}
+/* .canhcam-drag {
+	background: #000;
+	height: 30px;
+	padding: 2rem
+} */
+.newlist .list-group-item figure::before{
+	content: '\f0b2';
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 24px;
+    color: #fff;
+}
+#nav-tabContent.active {
+	 background: #fff9c7;
+}
+#nav-tabContent.active .newlist .list-group-item figure {
+	display: block;
 	width: 100%;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 999
+	background: none
+}
+#nav-tabContent.active .newlist .list-group-item figure::before {
+	content: none
 }
