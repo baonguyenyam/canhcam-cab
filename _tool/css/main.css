@@ -52,6 +52,9 @@ iframe {
 .mainList .list-group-item:hover h5 {
 	display: block;
 }
+.mainList .list-group-item h5 a {
+	color: #fff
+}
 #nav-tabContent .list-group-item .ifthumnails,
 #nav-tabContent .list-group-item .ifthumnails iframe {
 	width: 100%;

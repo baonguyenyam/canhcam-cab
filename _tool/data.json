@@ -4,37 +4,43 @@
 			"header/h-1",
 			"header",
 			"header-1.png",
-			"Header Basic"
+			"Header 1",
+			"50px"
 		],
 		"header-2": [
 			"header/h-2",
 			"header",
 			"header-2.png",
-			"Header Toggle width search"
+			"Header 2",
+			"50px"
 		],
 		"header-3": [
 			"header/h-3",
 			"header",
 			"header-3.png",
-			"Header Dropdown Search"
+			"Header 3",
+			"50px"
 		],
 		"header-4": [
 			"header/h-4",
 			"header",
 			"header-4.png",
-			"Header Fullpage Search"
+			"Header 4",
+			"50px"
 		],
 		"header-5": [
 			"header/h-5",
 			"header",
 			"header-5.png",
-			"Header 5"
+			"Header 5",
+			"50px"
 		],
 		"header-6": [
 			"header/h-6",
 			"header",
 			"header-6.png",
-			"Header 6"
+			"Header 6",
+			"50px"
 		]
 	},
 	"banner": {

@@ -1,4 +1,4 @@
-function deleteTodoItem(e, item) {
+function xoaTab(e, item) {
 	e.preventDefault();
 	var txt;
 	if (confirm("Bạn có chắc chắn xóa nó?")) {
@@ -10,13 +10,6 @@ function deleteTodoItem(e, item) {
 		return false
 	}
 }
-$(function () {
-	$('#noleft').on('click', '.btn-danger', function (e) {
-		var item = this;
-		deleteTodoItem(e, item)
-		checkTab()
-	});
-})
 
 function checkTab() {
 	if ($('#myTab').html().trim().length > 0) {
@@ -33,14 +26,54 @@ function checkTab() {
 		$('.bleft').hide()
 	}
 }
-$('#toDoList, #toDoListMain').on('keyup keypress', function (e) {
-	var keyCode = e.keyCode || e.which;
-	if (keyCode === 13) {
-		e.preventDefault();
-		$(this).find('button').trigger('click')
-		return false;
-	}
-});
+
+function createLeftMenuList() {
+	jQuery.get("./data.json", function (data) {
+		var parsedJSON = data;
+		for (var key in parsedJSON) {
+			var father = document.createElement('div');
+			father.id = "cc-menu-" + key;
+			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.toUpperCase() + '</button></h5></div><div id="collapse-' + key + '" class="collapse" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
+			document.getElementById('accordion').appendChild(father);
+
+		}
+		for (var key in parsedJSON) {
+			var index = 0
+			for (var des in parsedJSON[key]) {
+				var dataKey = parsedJSON[key][des][0]
+				var dataType = parsedJSON[key][des][1]
+				var dataImg = parsedJSON[key][des][2]
+				var dataTitle = parsedJSON[key][des][3]
+				var badge = '<div class="list-group-item" data-key="' + dataKey + '" data-type="' + dataType + '"><h5><a href="/templates/index-' + dataKey.replace('/','-') + '.html" target="_blank">' + dataTitle + '</a></h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
+					// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
+					'</figure></div>'
+				if (parsedJSON[key][des][4] && parsedJSON[key][des][4].length) {
+					var dataHeight = parsedJSON[key][des][4]
+					badge = '<div class="list-group-item" data-height="' + dataHeight + '" data-key="' + dataKey + '" data-type="' + dataType + '"><h5><a href="/templates/index-' + dataKey.replace('/', '-') + '.html" target="_blank">' + dataTitle + '</a></h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
+						'</figure></div>'
+				}
+				if (key) {
+					if ($("#cc-menu-" + key).length) {
+						$("#cc-menu-" + key + " .mainList").append(badge);
+					}
+					$('.mainList').each(function (i, e) {
+						var sortableMain = new Sortable.create(e, {
+							group: {
+								name: 'mainList',
+								pull: "clone",
+							},
+							sort: false,
+							animation: 100
+						});
+					})
+				}
+				index++
+			}
+		}
+
+	});
+}
+
 
 function removeVietnam(s) {
 	var r = s.toLowerCase().replace(/\s+/g, '-');
@@ -65,56 +98,191 @@ function removeVietnam(s) {
 	return r
 };
 
-function getJSONFile(url) {
-	var resp = '';
-	var xmlHttp = new XMLHttpRequest();
-	if (xmlHttp != null) {
-		xmlHttp.open("GET", url, false);
-		xmlHttp.send(null);
-		resp = xmlHttp.responseText;
-	}
-	return resp;
+function taoIdNgauNhien() {
+	var text = "";
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (var i = 0; i < 10; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
+	return text;
 }
 
-function getAllLocations() {
-	jQuery.get("./data.json", function (data) {
-		var parsedJSON = data;
-		for (var key in parsedJSON) {
-			var father = document.createElement('div');
-			father.id = "cc-menu-" + key;
-			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-' + key +'" aria-expanded="true" aria-controls="collapse-' + key+'">'+key.toUpperCase()+'</button></h5></div><div id="collapse-' + key+'" class="collapse" aria-labelledby="heading-' + key+'" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
-			document.getElementById('accordion').appendChild(father);
 
-		}
-		for (var key in parsedJSON) {
-			var index = 0
-			for (var des in parsedJSON[key]) {
-				var dataKey = parsedJSON[key][des][0]
-				var dataType = parsedJSON[key][des][1]
-				var dataImg = parsedJSON[key][des][2]
-				var dataTitle = parsedJSON[key][des][3]
-				var badge = '<div class="list-group-item" data-key="' + dataKey + '" data-type="' + dataType + '"><h5>' + dataTitle + '</h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
-					// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
-					'</figure></div>'
-				if (key) {
-					if ($("#cc-menu-" + key).length){
-						$("#cc-menu-"+ key +" .mainList").append(badge);
-					}
-					$('.mainList').each(function (i, e) {
-						var sortableMain = new Sortable.create(e, {
-							group: {
-								name: 'mainList',
-								pull: "clone",
-							},
-							sort: false,
-							animation: 100
-						});
-					})
-				}
-				index++
+function kiemTraTenTrang(value, arr) {
+	return ($.inArray(value, arr) > -1);
+}
+
+function checkFormDisable(a, b) {
+	if ($('#' + a).prop("checked")) {
+		$('#' + b).attr("disabled", false);
+		$('#' + b).prop("checked", false);
+	} else {
+		$('#' + b).attr("disabled", true);
+		$('#' + b).prop("checked", false);
+	}
+}
+
+function saveToData(a, b) {
+	if (confirm("Bạn có chắc chắn lưu ngay bây giờ?")) {
+		jQuery.post("/savedata", {
+			dataColor: a,
+			dataJS: b
+		}, function (data) {
+			if (data === 'done') {
+				$('#exampleModalCenter').modal('hide')
 			}
-		}
+		});
+	} else {
+		return false
+	}
+}
 
+function getDataColor() {
+	jQuery.get("/getdata", function (data) {
+		var e = JSON.parse(data)
+		i = 0
+		for (var key in e) {
+			var dataKey = key
+			var dataVal = e[key]
+			var badge2 = document.createElement('div');
+			badge2.className = 'col-12 mt-3';
+			badge2.innerHTML = '<h5>Màu Phụ</h5>' + '<hr>';
+			var badge = document.createElement('div');
+			badge.className = 'col-sm-6 col-lg-3';
+			badge.innerHTML = '<div class="form-group">' + '<div class="input-group colorpicker-component cppicker">' + '<div class="input-group-prepend">' + '<span class="input-group-text">' + dataKey + '</span>' + '</div>' + '<input type="text" class="form-control" value="' + dataVal + '">' + '<span class="input-group-addon">' + '<i></i>' + '</span>' + '</div>' + '</div>';
+			if (i == 4) {
+				document.getElementById("maincolor").appendChild(badge2);
+			}
+			document.getElementById("maincolor").appendChild(badge);
+			$('.cppicker').colorpicker();
+			i++
+		}
 	});
 }
-getAllLocations()
+
+function getDataJS() {
+	jQuery.get("/getdatajs", function (data) {
+		var e = JSON.parse(data)
+		i = 0
+		for (var key in e) {
+			if (typeof e[key] == 'number') {
+				$("[data-key='" + key + "']").val(e[key])
+			} else {
+				if (e[key]) {
+					$("[data-key='" + key + "']").prop("checked", true)
+				} else {
+					$("[data-key='" + key + "']").prop("checked", false)
+				}
+			}
+			i++
+		}
+	});
+}
+
+function resizeFrame() {
+	$('.ifthumnails').each(function () {
+		$(this).removeAttr('style')
+		$(this).find('iframe').removeAttr('style')
+		setTimeout(() => {
+			var abc = $(this).find('iframe').contents().height()
+			$(this).css({
+				"height": abc + 'px'
+			})
+			$(this).find('iframe').css({
+				"height": abc + 'px'
+			})
+		}, 1000);
+	});
+}
+//////////////////////////////////////////////
+
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+	$('#projectname').quickEdit({
+		blur: false,
+		checkold: true,
+		space: false,
+		maxLength: 50,
+		showbtn: false,
+		submit: function (dom, newValue) {
+			var newval = removeVietnam(newValue.trim())
+			objectName = newval
+			dom.text(newval);
+		}
+	});
+	checkFormDisable("customCheck1", "customCheck2")
+	$('#customCheck1').click(function () {
+		checkFormDisable("customCheck1", "customCheck2")
+	})
+	$('#preCreateSite').click(function (e) {
+		location.reload();
+	})
+	$('.togglemenu').click(function () {
+		$('#maincc').toggleClass('active')
+		$(this).toggleClass('active')
+	});
+	$('#tooglepc').click(function () {
+		$(this).addClass('active')
+		$('#toogletablet, #tooglemobile').removeClass('active')
+		$('.maindev').addClass('pc').removeClass('mobile').removeClass('tablet')
+		resizeFrame()
+	});
+	$('#tooglemobile').click(function () {
+		$(this).addClass('active')
+		$('#toogletablet, #tooglepc').removeClass('active')
+		$('.maindev').addClass('mobile').removeClass('pc').removeClass('tablet')
+		resizeFrame()
+	});
+	$('#toogletablet').click(function () {
+		$(this).addClass('active')
+		$('#tooglemobile, #tooglepc').removeClass('active')
+		$('.maindev').addClass('tablet').removeClass('mobile').removeClass('pc')
+		resizeFrame()
+	});
+
+	$('#noleft').on('click', '.xoatab', function (e) {
+		var item = this;
+		xoaTab(e, item)
+		checkTab()
+	});
+	$('#toDoList, #toDoListMain').on('keyup keypress', function (e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode === 13) {
+			e.preventDefault();
+			$(this).find('button').trigger('click')
+			return false;
+		}
+	});
+	$('#saveConfig').click(function () {
+		var pargam = []
+		var pargamJS = []
+		var dataColor, dataJS;
+		$("#settings input[type=text]").each(function () {
+			var input = $(this).val()
+			var inputattr = $(this).parents('.cppicker').find('.input-group-text').html()
+			pargam.push(inputattr + ": " + input)
+		});
+		$("#jsf input[type=checkbox]").each(function () {
+			var inputJS = $(this).prop("checked")
+			var inputJSName = $(this).attr('data-key')
+			pargamJS.push('"' + inputJSName + '":' + inputJS)
+		});
+		$("#jsf input[type=text]").each(function () {
+			var inputJSText = $(this).val()
+			var inputJSTextName = $(this).attr('data-key')
+			pargamJS.push('"' + inputJSTextName + '":' + inputJSText)
+		});
+		dataColor = "$mau: (" + pargam + ")"
+		dataJS = "const CANHCAM_APP = {" + pargamJS + "}"
+		saveToData(dataColor.toString(), dataJS.toString())
+	})
+	createLeftMenuList()
+	getDataColor()
+	getDataJS()
+})
+
+$(window).resize(function () {
+	resizeFrame()
+})
+
+$(window).bind('beforeunload', function () {
+	return 'Bạn có muốn thoát trang ngay bây giờ?';
+});
