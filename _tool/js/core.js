@@ -90,8 +90,8 @@ function createLeftMenuList() {
 function buildTotal(params) {
 	jQuery.get("./version.json", function (data) {
 		var info = data;
-		$('#version').html(info.version + ' build ' + info.build)
-		$('#accordion').append('<div class="total bg-light p-2 small">Components: <span class="text-info">' + params + '</span><br>Tập tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phiên bản: <span class="text-info">' + info.version + '</span></div>')
+		$('#version').html(info.version + ' ' + info.build)
+		$('#accordion').append('<div class="total bg-light p-2 small">Components: <span class="text-info">' + params + '</span><br>Tập tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phiên bản: <span class="text-info">' + info.version + ' ' + info.build + '</span></div>')
 	})
 	jQuery.get("./justbuild.json", function (data) {
 		var info = data;

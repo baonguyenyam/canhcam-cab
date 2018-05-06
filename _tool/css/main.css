@@ -160,7 +160,7 @@ iframe {
 	position: relative
 }
 * {
-	border-radius: 0 !important
+	/* border-radius: 0 !important */
 }
 #settings,
 #jsf {
@@ -179,7 +179,8 @@ iframe {
 }
 .list-group .list-group-item {
 	padding: 0;
-	margin-bottom: .25rem
+	margin-bottom: .25rem;
+	overflow: hidden;
 }
 .list-group .list-group-item:last-child {
 	margin-bottom: 0
@@ -292,7 +293,8 @@ iframe {
 }
 .tab-content .tab-pane {
 	border: 1px solid #dfdfdf;
-	border-top: 0
+	border-top: 0;
+	border-radius: 0 0 .25rem .25rem;
 }
 .newlist {
 	min-height: 300px;

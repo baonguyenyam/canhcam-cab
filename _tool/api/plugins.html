@@ -55,7 +55,10 @@
 					<a href="#sec13" class="list-group-item list-group-item-action">Select2</a>
 					<a href="#sec14" class="list-group-item list-group-item-action">Light Gallery</a>
 					<a href="#sec15" class="list-group-item list-group-item-action">Perfect Scrollbar</a>
-					<a href="#sec16" class="list-group-item list-group-item-action">Bootstrap Datepicker <span class="badge badge-danger">HOT</span></a>
+					<a href="#sec16" class="list-group-item list-group-item-action">Bootstrap Datepicker
+						<span class="badge badge-danger">HOT</span>
+					</a>
+					<a href="#sec17" class="list-group-item list-group-item-action">Image Zoom</a>
 					<a href="#fawe" class="list-group-item list-group-item-action">Font Awesome</a>
 					<a href="#fmat" class="list-group-item list-group-item-action">Font Material</a>
 				</div>
@@ -460,6 +463,43 @@
 					<div>&emsp;startDate: '-3d'</div>
 					<div>});</div>
 				</div>
+
+				<h1 class="mt-5" id="sec17">Image Zoom</h1>
+				<p class="lead">Phóng to ảnh trong chi tiết sản phẩm
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;article class="product-item"&gt;</div>
+					<div>&emsp;&lt;img id="zoomimg" src="./img/product/01.jpg" data-zoom-image="./img/product/t-shirt.jpg"&gt;</div>
+					<div>&lt;/article&gt;</div>
+					<div>&lt;article class="product-control"&gt;</div>
+					<div>&emsp;&lt;a class="item active" href="javascript:void(0)"&gt;</div>
+					<div>&emsp;&emsp;&lt;figure&gt;</div>
+					<div>&emsp;&emsp;&emsp;&lt;img src="./img/product/s-01.png" data-preview-image="./img/product/01.jpg" data-zoom-image="./img/product/t-shirt.jpg"&gt;</div>
+					<div>&emsp;&emsp;&lt;/figure&gt;</div>
+					<div>&emsp;&lt;/a&gt;</div>
+					<div>&lt;/article&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$("#zoomimg").elevateZoom({</div>
+					<div>&emsp;responsive: true,</div>
+					<div>&emsp;gallery: "product-control",</div>
+					<div>&emsp;galleryActiveClass: "active"</div>
+					<div>});</div>
+
+					<div>$(".product-control .item").each(function () {</div>
+					<div>&emsp;$(this).click(function (e) {</div>
+					<div>&emsp;&emsp;var currentValue = $(this).find('img').attr('data-preview-image')</div>
+					<div>&emsp;&emsp;var currentValueZoom = $(this).find('img').attr('data-zoom-image')</div>
+					<div>&emsp;&emsp;$('.product-control .item').removeClass('active')</div>
+					<div>&emsp;&emsp;$(this).addClass('active')</div>
+					<div>&emsp;&emsp;var gallery_zoomimg = $('#zoomimg').data('elevateZoom');</div>
+					<div>&emsp;&emsp;gallery_zoomimg.swaptheimage(currentValue, currentValueZoom);</div>
+					<div>&emsp;});</div>
+					<div>});</div>
+				</div>
+
+
 
 				<h1 class="mt-5" id="fawe">Font Awesome</h1>
 				<p class="lead">Cách sử dụng font bằng các class
