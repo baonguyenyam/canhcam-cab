@@ -103,6 +103,18 @@
 			"body",
 			"form-1.png",
 			"form 1"
+		],
+		"form-2": [
+			"form/f-2",
+			"body",
+			"form-2.png",
+			"form 2"
+		],
+		"form-3": [
+			"form/f-3",
+			"body",
+			"form-3.png",
+			"form 3"
 		]
 	},
 	"map": {
