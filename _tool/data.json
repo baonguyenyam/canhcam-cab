@@ -37,6 +37,20 @@
 			"Header 6"
 		]
 	},
+	"banner": {
+		"banner-1": [
+			"banner/b-1",
+			"body",
+			"banner-1.png",
+			"banner 1"
+		],
+		"banner-2": [
+			"banner/b-2",
+			"body",
+			"banner-2.png",
+			"banner 2"
+		]
+	},
 	"carousel": {
 		"carousel-1": [
 			"carousel/c-1",
