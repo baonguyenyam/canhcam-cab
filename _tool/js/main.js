@@ -32,13 +32,11 @@ function createPageBuilder(toAdd) {
 			},
 			onClone: function (evt) {
 				$('#nav-tabContent').addClass('active')
-				getlist()
 			},
 			onRemove: function (evt) {
 				getlist()
 			},
 			onAdd: function (evt) {
-				getlist()
 				var itemEl = evt.item
 				var gname = $(itemEl).attr('data-key').replace('/', '-')
 				var getid = taoIdNgauNhien(10)
@@ -64,9 +62,9 @@ function createPageBuilder(toAdd) {
 						})
 					}, 1000);
 				}
+				getlist()
 			},
 			onUpdate: function (evt) {
-				getlist()
 				var itemEl = evt.item
 				$(itemEl).find('iframe').removeAttr('style')
 				setTimeout(() => {
@@ -75,9 +73,9 @@ function createPageBuilder(toAdd) {
 						"height": abc + 'px'
 					})
 				}, 3000);
+				getlist()
 			},
 			onEnd: function (evt) {
-				getlist()
 				$('#nav-tabContent').removeClass('active')
 			},
 			animation: 100
@@ -125,11 +123,15 @@ function taoTrangIndex() {
 	}
 }
 
+// Đang làm phền xóa phage
+
 function deleteArrayPage(page) {
 	var index = pagesLists.indexOf(page);
 	if (index > -1) {
 		pagesLists.splice(index, 1);
 	}
+	data.SETUP[page] = null
+	delete data.SETUP[page]
 }
 
 function changePageName(tenmoi, tencu) {
@@ -137,6 +139,9 @@ function changePageName(tenmoi, tencu) {
 	if (index > -1) {
 		pagesLists.splice(index, 1, tenmoi);
 	}
+	data.SETUP[tenmoi] = data.SETUP[tencu]
+	data.SETUP[tencu] = null
+	delete data.SETUP[tencu]
 }
 
 
@@ -234,7 +239,6 @@ $('#createPage').click(function () {
 					}
 				}
 			});
-			console.log(pagesLists)
 		} else {
 			return false
 		}
