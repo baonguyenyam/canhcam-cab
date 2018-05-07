@@ -277,6 +277,7 @@ $(function () {
 	$('.togglemenu').click(function () {
 		$('#maincc').toggleClass('active')
 		$(this).toggleClass('active')
+		resizeFrame()
 	});
 	$('#tooglepc').click(function () {
 		$(this).addClass('active')

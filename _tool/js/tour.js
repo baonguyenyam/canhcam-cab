@@ -49,3 +49,4 @@ function showTour() {
 		tour.restart();
 	})
 }
+
