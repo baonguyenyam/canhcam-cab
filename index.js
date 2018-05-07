@@ -62,6 +62,21 @@ app.get('/getdatajs', function (req, res) {
 		}
 	});
 })
+app.post('/checksite', function (req, res) {
+	let val = true
+	fs.readdir(dest, function (err, items) {
+		for (var i = 0; i < items.length; i++) {
+			if (req.body.site === items[i]){
+				val = false
+			}
+		}
+		if (!val) {
+			res.send('fail')
+		} else {
+			res.send('done')
+		}
+	});
+})
 
 app.post('/createsite', function (req, res) {
 	var json = JSON.stringify(req.body.data, null, 4);

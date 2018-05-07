@@ -41,7 +41,7 @@ function createPageBuilder(toAdd) {
 				getlist()
 				var itemEl = evt.item
 				var gname = $(itemEl).attr('data-key').replace('/', '-')
-				var getid = taoIdNgauNhien()
+				var getid = taoIdNgauNhien(10)
 				$(itemEl).append('<div id="' + getid + '" class="ifthumnails"><iframe src="./templates/index-' + gname + '.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>')
 				if ($(itemEl).attr('data-height') && $(itemEl).attr('data-height').length) {
 					var setH = $(itemEl).attr('data-height')
@@ -116,7 +116,7 @@ function createPageBuilder(toAdd) {
 function taoTrangIndex() {
 	if (pagesLists.length == 1) {
 		var toAdd = "index";
-		$('.noleft .nav-tabs').append('<li class="nav-item"><a class="nav-link" id="' + toAdd + '-tab" data-toggle="tab" href="#' + toAdd + '" role="tab" aria-controls="' + toAdd + '" aria-selected="true">' + toAdd + '.html</a></li>');
+		$('.noleft .nav-tabs').append('<li class="nav-item" data-tab-id="' + taoIdNgauNhien(10) + '"><a class="nav-link" id="' + toAdd + '-tab" data-toggle="tab" href="#' + toAdd + '" role="tab" aria-controls="' + toAdd + '" aria-selected="true"><i class="fa fa-file mr-2"></i>' + toAdd + '.html</a></li>');
 		$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '" role="tabpanel" aria-labelledby="' + toAdd + '-tab"><div class="list-group newlist"></div></div>');
 		$('#toDoList')[0].reset();
 		$('#' + toAdd + '-tab').trigger('click')
@@ -125,20 +125,46 @@ function taoTrangIndex() {
 	}
 }
 
+function deleteArrayPage(page) {
+	var index = pagesLists.indexOf(page);
+	if (index > -1) {
+		pagesLists.splice(index, 1);
+	}
+}
+
+function changePageName(tenmoi, tencu) {
+	var index = pagesLists.indexOf(tencu);
+	if (index > -1) {
+		pagesLists.splice(index, 1, tenmoi);
+	}
+}
+
+
+
 $('#buttonListItemMain').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItemMain]').val().trim());
-	if (toAdd) {
-		objectName = toAdd
-		$('#projectname').html("" + objectName + "")
-		$('#toDoListMain').hide()
-		$('#toDoListMain')[0].reset();
-		$('#toDoList').show()
-		$('#accordion').toggleClass('active')
-		alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
-		taoTrangIndex()
-	} else {
-		return false
-	}
+	jQuery.post("/checksite", {
+		site: toAdd
+	}, function (data) {
+		if (toAdd) {
+			if (data === 'done') {
+				objectName = toAdd
+				$('#projectname').html("" + objectName + "")
+				$('#toDoListMain').hide()
+				$('#toDoListMain')[0].reset();
+				$('#toDoList').show()
+				$('#accordion').toggleClass('active')
+				alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
+				taoTrangIndex()
+			} else {
+				alert('KHÔNG THÀNH CÔNG! Đã tồn tại dự án với tên này!')
+				return false
+			}
+		} else {
+			return false
+		}
+
+	});
 });
 
 $('#createSite').click(function (e) {
@@ -174,13 +200,41 @@ $('#createPage').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItem]').val().trim());
 	if (!kiemTraTenTrang(toAdd, pagesLists)) {
 		if (toAdd) {
-			$('.noleft .nav-tabs').append('<li class="nav-item"><a class="nav-link" id="' + toAdd + '-tab" data-toggle="tab" href="#' + toAdd + '" role="tab" aria-controls="' + toAdd + '" aria-selected="true">' + toAdd + '.html<span class="btn btn-sm btn-danger xoatab" data-id="' + toAdd + '"><i class="fa fa-close"></i></span></a></li>');
+			$('.noleft .nav-tabs').append('<li class="nav-item page-tab" data-tab-name="' + toAdd + '" data-tab-id="' + taoIdNgauNhien(10) + '"><a class="nav-link" id="' + toAdd + '-tab" data-toggle="tab" href="#' + toAdd + '" role="tab" aria-controls="' + toAdd + '" aria-selected="true"><i class="fa fa-file mr-2"></i><abbr data-original-title="Edit" class="name-tab">' + toAdd + '</abbr>.html<span class="btn btn-sm btn-danger xoatab" data-id="' + toAdd + '"><i class="fa fa-close"></i></span></a></li>');
 			$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '" role="tabpanel" aria-labelledby="' + toAdd + '-tab"><div class="list-group newlist"></div></div>');
 			$('#toDoList')[0].reset();
 			$('#' + toAdd + '-tab').trigger('click')
 			createPageBuilder(toAdd)
 			checkTab()
 			pagesLists.push(toAdd)
+			$('#myTab .page-tab .nav-link .name-tab').quickEdit({
+				blur: false,
+				checkold: true,
+				space: false,
+				maxLength: 50,
+				showbtn: false,
+				submit: function (dom, newValue) {
+					var newval = removeVietnam(newValue.trim())
+					if (!kiemTraTenTrang(newval, pagesLists)) {
+						dom.text(newval);
+						var valname = $(dom).parents('.nav-item').attr('data-tab-name')
+						$(dom).parents('.nav-item').attr('data-tab-name', newval)
+						$(dom).parents('.nav-link').attr({
+							'id': newval + "-tab",
+							'aria-controls': newval,
+							'href': "#"+ newval
+						})
+						$('#nav-tabContent').find('#' + valname).attr({
+							'id': newval,
+							'aria-labelledby': newval + "-tab",
+						})
+						changePageName(newval, valname)
+					} else {
+						dom.text(dom.innerText);
+					}
+				}
+			});
+			console.log(pagesLists)
 		} else {
 			return false
 		}
@@ -189,5 +243,4 @@ $('#createPage').click(function () {
 		$('#toDoList')[0].reset();
 	}
 });
-
 

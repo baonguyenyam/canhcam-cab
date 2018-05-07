@@ -16,6 +16,7 @@
 	<script src="js/sortable.min.js"></script>
 	<script src="js/bootstrap-colorpicker.min.js"></script>
 	<script src="js/jquery-quickedit.js"></script>
+	<script src="js/keymaster.js"></script>
 </head>
 
 <body>
@@ -44,16 +45,19 @@
 								</div>
 							</form>
 							<div class="btn-group btn-group-sm mr-2" role="group">
-							<button id="tooglepc" class="btn btn-outline-secondary active" onclick="javascript:void(0)">
-								PC
-							</button>
-							<button id="tooglemobile" class="btn btn-outline-secondary" onclick="javascript:void(0)">
-								Mobile
-							</button>
-							<button id="toogletablet" class="btn btn-outline-secondary" onclick="javascript:void(0)">
-								Tablet
-							</button>
+								<button id="tooglepc" class="btn btn-outline-secondary active" onclick="javascript:void(0)">
+									PC
+								</button>
+								<button id="tooglemobile" class="btn btn-outline-secondary" onclick="javascript:void(0)">
+									Mobile
+								</button>
+								<button id="toogletablet" class="btn btn-outline-secondary" onclick="javascript:void(0)">
+									Tablet
+								</button>
 							</div>
+							<button class="btn btn-outline-secondary btn-sm mr-2" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#keyboardShortCut">
+								<i class="fa fa-keyboard-o" data-toggle="tooltip" data-placement="bottom" title="Cấu hình dự án"></i>
+							</button>
 							<button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
 								<i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Cấu hình dự án"></i>
 							</button>
@@ -108,6 +112,57 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id="keyboardShortCut" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Phím tắt trên CAB</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + D<br>⌘ + Alt + D</dt>
+						<dd class="col">Nhập tên dự án</dd>
+					</dl>
+					<hr>
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + P<br>⌘ + Alt + P</dt>
+						<dd class="col">Nhập tên trang</dd>
+					</dl>
+					<hr>
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + E<br>⌘ + Alt + E</dt>
+						<dd class="col">Enter</dd>
+					</dl>
+					<hr>
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + L<br>⌘ + Alt + L</dt>
+						<dd class="col">Chế độ view trên Laptop</dd>
+					</dl>
+					<hr>
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + M<br>⌘ + Alt + M</dt>
+						<dd class="col">Chế độ view trên Mobile</dd>
+					</dl>
+					<hr>
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + T<br>⌘ + Alt + T</dt>
+						<dd class="col">Chế độ view trên Tablet</dd>
+					</dl>
+					<hr>
+					<dl class="row">
+						<dt class="col-auto">Ctrl + Alt + N<br>⌘ + Alt + N</dt>
+						<dd class="col">Bật/Tắt Navigation</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -318,6 +373,7 @@
 	</div>
 	<script src="js/core.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/key.js"></script>
 </body>
 
 </html>

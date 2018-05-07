@@ -4,6 +4,8 @@ function xoaTab(e, item) {
 	if (confirm("Bạn có chắc chắn xóa nó?")) {
 		$(item).parents('li').remove()
 		var u = $(item).attr('data-id')
+		var m = $(item).parents('li').attr('data-tab-name')
+		deleteArrayPage(m)
 		$('#' + u).remove()
 		$('#myTab li:first-child > a').trigger('click')
 	} else {
@@ -36,6 +38,7 @@ function createLeftMenuList() {
 			total = + total + count
 			var father = document.createElement('div');
 			father.id = "cc-menu-" + key;
+			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
 			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
 			$('#accordion').append(father)
 
@@ -121,10 +124,10 @@ function removeVietnam(s) {
 	return r
 };
 
-function taoIdNgauNhien() {
+function taoIdNgauNhien(a) {
 	var text = "";
-	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	for (var i = 0; i < 10; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-";
+	for (var i = 0; i < a; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
 	return text;
 }
 
@@ -228,6 +231,8 @@ function resizeFrame() {
 		}
 	});
 }
+
+
 //////////////////////////////////////////////
 
 $(function () {
@@ -275,6 +280,7 @@ $(function () {
 	});
 
 	$('#noleft').on('click', '.xoatab', function (e) {
+		$(this).parents('.nav-link').trigger('click')
 		var item = this;
 		xoaTab(e, item)
 		checkTab()

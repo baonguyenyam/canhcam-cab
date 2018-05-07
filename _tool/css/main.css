@@ -383,3 +383,16 @@ iframe {
 #nav-tabContent.active .newlist .list-group-item figure::before {
 	content: none
 }
+input[qe="input"] {
+	    display: inline-block;
+    width: auto;
+    padding: .1rem .35rem;
+    font-size: .8rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
