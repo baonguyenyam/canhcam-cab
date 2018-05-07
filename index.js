@@ -78,6 +78,16 @@ app.post('/checksite', function (req, res) {
 	});
 })
 
+app.get('/getreadysite', function (req, res) {
+	let val = []
+	fs.readdir(dest, function (err, items) {
+		for (var i = 0; i < items.length; i++) {
+			val.push(items[i])
+		}
+		res.send(val)
+	});
+})
+
 app.post('/createsite', function (req, res) {
 	var json = JSON.stringify(req.body.data, null, 4);
 	var dir = dest + '/' + req.body.name

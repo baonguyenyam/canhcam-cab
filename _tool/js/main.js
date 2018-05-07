@@ -77,6 +77,7 @@ function createPageBuilder(toAdd) {
 			},
 			onEnd: function (evt) {
 				$('#nav-tabContent').removeClass('active')
+				toggleContentReady()
 			},
 			animation: 100
 		});
@@ -85,13 +86,6 @@ function createPageBuilder(toAdd) {
 		});
 
 		function getlist() {
-			$('.newlist').each(function () {
-				if ($('.newlist').html().trim().length > 0) {
-					$(this).addClass('cnt')
-				} else {
-					$(this).removeClass('cnt')
-				}
-			})
 			var optionTexts = {
 				header: [],
 				body: [],
@@ -186,6 +180,7 @@ $('#createSite').click(function (e) {
 				$('.notedcanhcam').show()
 				$('.notedcanhcam .alert').show()
 				$('.createcanhcam').hide()
+				$('.bleft').hide()
 				$('.enterpro').hide()
 				$('#myTab').removeClass('cnt')
 				$('#myTab, #nav-tabContent').html('')

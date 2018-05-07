@@ -80,6 +80,7 @@ function createLeftMenuList() {
 							},
 							onEnd: function (evt) {
 								$('#nav-tabContent').removeClass('active')
+								toggleContentReady()
 							}
 						});
 					})
@@ -98,7 +99,7 @@ function buildTotal(params) {
 	})
 	jQuery.get("./justbuild.json", function (data) {
 		var info = data;
-		$('.justbuild').html('@SITE/'+info.sitename)
+		$('.justbuild').html('@SITE/' + info.sitename)
 	})
 }
 function removeVietnam(s) {
@@ -232,6 +233,15 @@ function resizeFrame() {
 	});
 }
 
+function toggleContentReady() {
+	$('.newlist').each(function () {
+		if ($(this).html().trim().length > 0) {
+			$(this).addClass('cnt')
+		} else {
+			$(this).removeClass('cnt')
+		}
+	})
+}
 
 //////////////////////////////////////////////
 
