@@ -155,6 +155,7 @@ $('#buttonListItemMain').click(function () {
 				$('#accordion').toggleClass('active')
 				alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
 				taoTrangIndex()
+				showTour()
 			} else {
 				alert('KHÔNG THÀNH CÔNG! Đã tồn tại dự án với tên này!')
 				return false

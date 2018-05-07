@@ -33,13 +33,20 @@ function createLeftMenuList() {
 	jQuery.get("./data.json", function (data) {
 		var parsedJSON = data;
 		var total = 0
+		var index = 0
+		var show = ''
 		for (var key in parsedJSON) {
+			if (index == 0) {
+				show = ' show';
+			} else {
+				show = ''
+			}
 			var count = Object.keys(parsedJSON[key]).length;
 			total = + total + count
 			var father = document.createElement('div');
 			father.id = "cc-menu-" + key;
 			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
-			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
+			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show +'" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
 			$('#accordion').append(father)
 
 			for (var des in parsedJSON[key]) {
@@ -86,6 +93,7 @@ function createLeftMenuList() {
 					})
 				}
 			}
+			index++
 		}
 		buildTotal(total)
 	});

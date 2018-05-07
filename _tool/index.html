@@ -1,3 +1,21 @@
+<!--
+
+$$$$$$$\   $$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\  $$\   $$\ $$\     $$\ $$$$$$$$\ $$\   $$\
+$$  __$$\ $$  __$$\ $$  __$$\ $$$\  $$ |$$  __$$\ $$ |  $$ |\$$\   $$  |$$  _____|$$$\  $$ |
+$$ |  $$ |$$ /  $$ |$$ /  $$ |$$$$\ $$ |$$ /  \__|$$ |  $$ | \$$\ $$  / $$ |      $$$$\ $$ |
+$$$$$$$\ |$$$$$$$$ |$$ |  $$ |$$ $$\$$ |$$ |$$$$\ $$ |  $$ |  \$$$$  /  $$$$$\    $$ $$\$$ |
+$$  __$$\ $$  __$$ |$$ |  $$ |$$ \$$$$ |$$ |\_$$ |$$ |  $$ |   \$$  /   $$  __|   $$ \$$$$ |
+$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |\$$$ |$$ |  $$ |$$ |  $$ |    $$ |    $$ |      $$ |\$$$ |
+$$$$$$$  |$$ |  $$ | $$$$$$  |$$ | \$$ |\$$$$$$  |\$$$$$$  |    $$ |    $$$$$$$$\ $$ | \$$ |
+\_______/ \__|  \__| \______/ \__|  \__| \______/  \______/     \__|    \________|\__|  \__|
+
+Coding by: Bao Nguyen
+Tel: 0.96.96.89.89.3
+Email: baonguyenyam@gmail.com
+URL: fb.com/pham.nguyen.bao.nguyen,
+baonguyenyam.github.io
+baonguyenyam.blogspot.com
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +28,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
 	<link rel="stylesheet" href="css/select2.min.css">
+	<link rel="stylesheet" href="css/bootstrap-tour.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
@@ -19,6 +38,7 @@
 	<script src="js/jquery-quickedit.js"></script>
 	<script src="js/typeahead.jquery.min.js"></script>
 	<script src="js/select2.full.min.js"></script>
+	<script src="js/bootstrap-tour.min.js"></script>
 	<script src="js/keymaster.js"></script>
 </head>
 
@@ -59,7 +79,10 @@
 								</button>
 							</div>
 							<button class="btn btn-outline-secondary btn-sm mr-2" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#keyboardShortCut">
-								<i class="fa fa-keyboard-o" data-toggle="tooltip" data-placement="bottom" title="Cấu hình dự án"></i>
+								<i class="fa fa-keyboard-o" data-toggle="tooltip" data-placement="bottom" title="Phím tắt"></i>
+							</button>
+							<button id="retour" class="btn btn-outline-secondary btn-sm mr-2">
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Xem hướng dẫn"></i>
 							</button>
 							<button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
 								<i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Cấu hình dự án"></i>
@@ -377,6 +400,7 @@
 	<script src="js/core.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/key.js"></script>
+	<script src="js/tour.js"></script>
 </body>
 
 </html>

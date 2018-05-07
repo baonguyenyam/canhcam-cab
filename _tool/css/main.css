@@ -426,8 +426,15 @@ input[qe="input"] {
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
+#typeahead {
+	border-radius: .25rem 0 0 .25rem !important;
+	background: #fff !important;
+
+}
+
 .tt-hint {
   color: #999;
+  display: none !important;
 }
 
 .tt-menu {
@@ -470,4 +477,11 @@ input[qe="input"] {
 
 .gist {
   font-size: 14px;
+}
+
+.tour-tour .popover-navigation .btn-group{
+	margin-right: 5px;
+}
+.tour-tour .popover-header{
+color: #047afb;
 }
