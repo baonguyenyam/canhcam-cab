@@ -262,7 +262,21 @@ function addClickDel(a){
 	})
 }
 
-
+function buildFormAddComponent(){
+	jQuery.get("./data.json", function (data) {
+		var lists = ''
+		for (var key in data) {
+			if (data.hasOwnProperty(key)) {
+				var imt = Object.keys(data[key]).length
+				lists += '<option data-count=' + key.charAt(0) + '-' + (imt+1) +' value=' + key + '>' + key.charAt(0).toUpperCase() + key.slice(1); + '</option>'
+			}
+		}
+		$('#formAddComponent select').append(lists).on('change', function (e) {
+			var option = $('option:selected', this).attr('data-count');
+			$('#formAddComponent .textresult').html(e.target.value + '/' + option)
+		})
+	});
+}
 
 //////////////////////////////////////////////
 
@@ -284,6 +298,9 @@ $(function () {
 	checkFormDisable("customCheck1", "customCheck2")
 	$('#customCheck1').click(function () {
 		checkFormDisable("customCheck1", "customCheck2")
+	})
+	$('#addComponent').click(function (e) {
+		buildFormAddComponent()
 	})
 	$('#preCreateSite').click(function (e) {
 		location.reload();

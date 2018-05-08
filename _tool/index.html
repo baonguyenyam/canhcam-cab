@@ -88,11 +88,72 @@ baonguyenyam.blogspot.com
 							<button id="retour" class="btn btn-outline-secondary btn-sm mr-2">
 								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="Xem hướng dẫn"></i>
 							</button>
-							<button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
+							<button class="btn btn-outline-secondary btn-sm mr-2" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModalCenter">
 								<i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Cấu hình dự án"></i>
+							</button>
+							<button id="addComponent" class="btn btn-outline-success btn-sm" type="button" data-toggle="collapse" data-target="#addCompo" aria-expanded="false" aria-controls="addCompo">
+								<i class="fa fa-plus" data-toggle="tooltip" data-placement="bottom" title="Thêm một component vào dự án"></i>
 							</button>
 						</div>
 					</div>
+
+					<div class="collapse mt-3" id="addCompo">
+						<div class="card card-body">
+							<div class="alert alert-danger" role="alert">
+								Chú ý: Cẩn trọng khi thêm plugins
+							</div>
+							<form id="formAddComponent" method="post" enctype="multipart/form-data" action="/upload">
+								<div class="row">
+									<div class="col-6">
+										<div class="form-group mb-2">
+											<label>Tên components</label>
+											<input type="text" class="form-control" placeholder="Tên components VD: 'Header 3'">
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="form-group mb-2">
+											<label>Độ cao mặc định</label>
+											<div class="input-group mb-3">
+												<input type="text" class="form-control" placeholder="Không bắt buộc">
+												<div class="input-group-append">
+													<span class="input-group-text">px</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="form-group mb-2">
+											<label>Chọn menu</label>
+											<select class="form-control">
+												<option selected disabled>Vui lòng chọn</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="form-group mb-2">
+											<label>Upload</label>
+											<div class="custom-file">
+												<input type="file" class="custom-file-input">
+												<label class="custom-file-label justify-content-start" for="customFile">Chọn ảnh</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<div class="bg-light p-2 textresult">...</div>
+									</div>
+								</div>
+								<div class="row mt-3">
+									<div class="col">
+										<button type="submit" class="btn btn-primary">Thêm Compoents</button>
+									</div>
+								</div>
+
+							</form>
+						</div>
+					</div>
+
 					<div class="maindev">
 						<ul class="nav nav-tabs tab-sm" id="myTab" role="tablist"></ul>
 						<div class="tab-content" id="nav-tabContent"></div>
