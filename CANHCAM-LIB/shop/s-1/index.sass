@@ -42,29 +42,6 @@
 					text-transform: uppercase
 				hr
 					border-top: 1px dashed darken(color-get($mau,trang) ,20%)
-				.form-check
-					display: flex
-					align-items: center
-					input
-						display: none
-					label
-						&:before, &:after
-							font-family: 'Font Awesome 5 Free'
-							font-weight: 900
-					input[type="checkbox"]:checked + label::before,
-					input[type="radio"]:checked + label::before
-						background: color-get($mau,main)
-						border-color: color-get($mau,main)
-					input[type="checkbox"]:checked + label::after,
-					input[type="radio"]:checked + label::after
-						color: color-get($mau,trang)
-					input[type="checkbox"]:checked + label,
-					input[type="radio"]:checked + label
-						color: color-get($mau,main)
-						+fw(600)
-					input[type="checkbox"]:indeterminate + label::after,
-					input[type="radio"]:indeterminate + label::after
-						background: none
 
 				.checkbox-styled
 					cursor: pointer

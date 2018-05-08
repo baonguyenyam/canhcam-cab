@@ -1,0 +1,70 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-form-4
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	min-height: 100vh
+	background: darken(color-get($mau,trang),5%)
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	h2
+		+fw(200)
+	figure
+		text-align: center
+		margin-bottom: 3rem
+		img
+			max-width: 250px
+	.forgot
+		+fz(1rem)
+	.createaccount
+		text-align: center
+		color: darken(color-get($mau,trang),60%)
+		+fz(.95rem)
+		.getstart
+			+fw(500)
+
+	form
+		.boxlogin
+			background: color-get($mau,trang)
+			max-width: 500px
+			+pad(1.5rem)
+			+bor-rad(.35rem)
+			+box-sha(0 0 .3rem 0 rgba(0, 0, 0, 0.125))
+			+media-breakpoint-up(md)
+				+pad(3rem 2.5rem 1rem 2.5rem)
+			+media-breakpoint-up(lg)
+				+pad(4.5rem 4.5rem 3rem 4.5rem)
+			input
+				background: darken(color-get($mau,trang),5%)
+				+pad(.75rem)
+				border-color: darken(color-get($mau,trang),8%)
+			.btn-outline-default
+				background: darken(color-get($mau,trang),8%)
+				+pad(.75rem 2.5rem)
+				&:hover, &:active, &:focus
+					background: color-get($mau,main)
+					color: color-get($mau,trang)
+			label
+				color: darken(color-get($mau,trang),60%)
+				+fz(.95rem)
+			.help-block
+				height: 1rem
+				ul
+					margin-bottom: 0
+					+fz(.9rem)
+					color: color-get($mau,do-1)
+			.has-danger
+				input, textarea, select
+					border-color: color-get($mau,do-1)
+					background: color-get($mau,trang)
+				.form-check
+					label
+						color: color-get($mau,do-1)
+						&:before
+							border-color: color-get($mau,do-1)

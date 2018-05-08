@@ -137,3 +137,28 @@ header
 	&.disabled
 		&[disabled], &:hover[disabled]
 			background: color-get($mau,main)
+
+
+
+.form-check
+	display: flex
+	align-items: center
+	input
+		display: none
+	label
+		&:before, &:after
+			font-family: 'Font Awesome 5 Free' !important
+			font-weight: 900 !important
+	input[type="checkbox"]:checked + label::before,
+	input[type="radio"]:checked + label::before
+		background: color-get($mau,main)
+		border-color: color-get($mau,main)
+	input[type="checkbox"]:checked + label::after,
+	input[type="radio"]:checked + label::after
+		color: color-get($mau,trang)
+	input[type="checkbox"]:checked + label,
+	input[type="radio"]:checked + label
+		color: color-get($mau,main)
+	input[type="checkbox"]:indeterminate + label::after,
+	input[type="radio"]:indeterminate + label::after
+		background: none

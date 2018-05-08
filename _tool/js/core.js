@@ -251,9 +251,23 @@ function toggleContentReady() {
 	})
 }
 
+function addClickDel(a){
+	$('#edit-' + a).css({
+		"cursor": "pointer"
+	})
+	$('#edit-'+a).click(function () {
+		setTimeout(() => {
+			$('#'+a).focus().click()
+		}, 100);
+	})
+}
+
+
+
 //////////////////////////////////////////////
 
 $(function () {
+	addClickDel('projectname')
 	$('[data-toggle="tooltip"]').tooltip()
 	$('#projectname').quickEdit({
 		blur: false,

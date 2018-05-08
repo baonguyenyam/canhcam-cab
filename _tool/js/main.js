@@ -26,12 +26,15 @@ function createPageBuilder(toAdd) {
 			// ghostClass: "canhcam-drag",
 			onMove: function (evt, originalEvent) {
 				$('#nav-tabContent').addClass('active')
+				$('#accordion').addClass('remove')
 			},
 			onStart: function (evt) {
 				$('#nav-tabContent').addClass('active')
+				$('#accordion').addClass('remove')
 			},
 			onClone: function (evt) {
 				$('#nav-tabContent').addClass('active')
+				$('#accordion').addClass('remove')
 			},
 			onRemove: function (evt) {
 				getlist()
@@ -40,7 +43,7 @@ function createPageBuilder(toAdd) {
 				var itemEl = evt.item
 				var gname = $(itemEl).attr('data-key').replace('/', '-')
 				var getid = taoIdNgauNhien(10)
-				$(itemEl).append('<div id="' + getid + '" class="ifthumnails"><iframe src="./templates/index-' + gname + '.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>')
+				$(itemEl).append('<span class="btn btn-sm btn-danger js-remove" data-id="fg"><i class="fa fa-close"></i></span><div id="' + getid + '" class="ifthumnails"><iframe src="./templates/index-' + gname + '.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>')
 				if ($(itemEl).attr('data-height') && $(itemEl).attr('data-height').length) {
 					var setH = $(itemEl).attr('data-height')
 					setTimeout(() => {
@@ -77,9 +80,21 @@ function createPageBuilder(toAdd) {
 			},
 			onEnd: function (evt) {
 				$('#nav-tabContent').removeClass('active')
+				$('#accordion').removeClass('remove')
 				toggleContentReady()
 			},
-			animation: 100
+			animation: 100,
+			filter: '.js-remove',
+			onFilter: function (evt) {
+				if (confirm("Bạn có chắc chắn xóa nó?")) {
+					var el = sortable.closest(evt.item);
+					el && el.parentNode.removeChild(el);
+					getlist()
+					toggleContentReady()
+				} else {
+					return false
+				}
+			}
 		});
 		$('.mainList').on('dragenter', function () {
 			$('.sortable-ghost', e).remove();

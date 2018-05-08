@@ -161,6 +161,12 @@
 			"body",
 			"form-3.png",
 			"form 3"
+		],
+		"form-4": [
+			"form/f-4",
+			"body",
+			"form-4.png",
+			"form 4"
 		]
 	},
 	"map": {
@@ -251,6 +257,12 @@
 			"footer",
 			"footer-4.png",
 			"footer 4"
+		],
+		"footer-5": [
+			"footer/f-5",
+			"footer",
+			"footer-5.png",
+			"footer 5"
 		]
 	}
 }
