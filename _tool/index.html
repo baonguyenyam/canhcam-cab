@@ -102,19 +102,19 @@ baonguyenyam.blogspot.com
 							<div class="alert alert-danger" role="alert">
 								Chú ý: Cẩn trọng khi thêm plugins
 							</div>
-							<form id="formAddComponent" method="post" enctype="multipart/form-data" action="/upload">
+							<form id="formAddComponent" enctype="multipart/form-data" method="POST">
 								<div class="row">
 									<div class="col-6">
 										<div class="form-group mb-2">
 											<label>Tên components</label>
-											<input type="text" class="form-control" placeholder="Tên components VD: 'Header 3'">
+											<input type="text" id="nameCompo" name="nameCompo" class="form-control" placeholder="Tên components VD: 'Header 3'" required>
 										</div>
 									</div>
 									<div class="col-6">
 										<div class="form-group mb-2">
 											<label>Độ cao mặc định</label>
 											<div class="input-group mb-3">
-												<input type="text" class="form-control" placeholder="Không bắt buộc">
+												<input type="text" id="heightCompo" name="heightCompo" class="form-control" placeholder="Không bắt buộc">
 												<div class="input-group-append">
 													<span class="input-group-text">px</span>
 												</div>
@@ -124,7 +124,7 @@ baonguyenyam.blogspot.com
 									<div class="col-6">
 										<div class="form-group mb-2">
 											<label>Chọn menu</label>
-											<select class="form-control">
+											<select name="selectCompo" class="form-control" required>
 												<option selected disabled>Vui lòng chọn</option>
 											</select>
 										</div>
@@ -133,8 +133,8 @@ baonguyenyam.blogspot.com
 										<div class="form-group mb-2">
 											<label>Upload</label>
 											<div class="custom-file">
-												<input type="file" class="custom-file-input">
-												<label class="custom-file-label justify-content-start" for="customFile">Chọn ảnh</label>
+												<input type="file" id="imgUploader" name="imgUploader" class="custom-file-input" required>
+												<label class="custom-file-label justify-content-start" for="imgUploader">Chọn ảnh</label>
 											</div>
 										</div>
 									</div>
@@ -146,7 +146,10 @@ baonguyenyam.blogspot.com
 								</div>
 								<div class="row mt-3">
 									<div class="col">
-										<button type="submit" class="btn btn-primary">Thêm Compoents</button>
+										<input type="hidden" id="comkey" name="comkey">
+										<input type="hidden" id="commain" name="commain">
+										<input type="hidden" id="comnum" name="comnum">
+										<button type="button" class="btn btn-primary">Thêm Component</button>
 									</div>
 								</div>
 

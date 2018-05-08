@@ -263,20 +263,58 @@ function addClickDel(a){
 }
 
 function buildFormAddComponent(){
+	$('#formAddComponent select').html('<option selected disabled>Vui lòng chọn</option>')
+	$('#formAddComponent')[0].reset();
+	$('#formAddComponent .textresult').html('...')
 	jQuery.get("./data.json", function (data) {
-		var lists = ''
+		var lists = '',
+			main = 'body'
 		for (var key in data) {
 			if (data.hasOwnProperty(key)) {
 				var imt = Object.keys(data[key]).length
-				lists += '<option data-count=' + key.charAt(0) + '-' + (imt+1) +' value=' + key + '>' + key.charAt(0).toUpperCase() + key.slice(1); + '</option>'
+				if(key === 'header') {
+					main = 'header'
+				} else if (key === 'footer') {
+					main = 'footer'
+				} else {
+					main = 'body'
+				}
+				lists += '<option data-comnum=' + (imt+1) + ' data-type=' + main +' data-count=' + key.charAt(0) + '-' + (imt+1) +' value=' + key + '>' + key.charAt(0).toUpperCase() + key.slice(1); + '</option>'
 			}
 		}
 		$('#formAddComponent select').append(lists).on('change', function (e) {
 			var option = $('option:selected', this).attr('data-count');
+			var mopt = $('option:selected', this).attr('data-type');
+			var comnum = $('option:selected', this).attr('data-comnum');
 			$('#formAddComponent .textresult').html(e.target.value + '/' + option)
+			$('#formAddComponent #comkey').val(option)
+			$('#formAddComponent #commain').val(mopt)
+			$('#formAddComponent #comnum').val(comnum)
 		})
 	});
 }
+
+$('#formAddComponent button').click(function (e) {
+	var data = new FormData($('#formAddComponent')[0]);
+	$.ajax({
+		url: '/upload',
+		type: 'POST',
+		contentType: false,
+		processData: false,
+		cache: false,
+		data: data,
+		success: function () {
+			alert('Upload hoàn tất')
+			$('#addComponent').trigger('click')
+			$('#formAddComponent')[0].reset();
+			$('#formAddComponent .textresult').html('...')
+		},
+		error: function () {
+			alert('Lỗi khi upload!');
+		}
+	});
+	return false;
+})
 
 //////////////////////////////////////////////
 

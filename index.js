@@ -4,16 +4,98 @@ var path = require('path');
 var bodyParser = require("body-parser");
 var fs = require('fs');
 var fse = require('fs-extra')
-
+var crypto = require('crypto');
+var multer = require('multer');
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 app.use(json_body_parser);
 app.use(urlencoded_body_parser);
-
 app.use('/', express.static(__dirname + '/_tool/'));
 
 var root = './CANHCAM-LIB';
 var dest = './@SITE';
+
+var Storage = multer.diskStorage({
+	destination: function (req, file, callback) {
+		callback(null, "./_tool/img/layout");
+	},
+	filename: function (req, file, callback) {
+		callback(null, crypto.createHash('md5').update(Date.now() + "_" + removeVietnam(file.originalname.substring(0, 10))).digest('hex'));
+	}
+});
+
+var upload = multer({ storage: Storage }).array(
+	"imgUploader",
+	"selectCompo",
+	"comkey",
+	"commain",
+	"comnum",
+	"heightCompo",
+	"nameCompo",
+	10
+);
+
+function removeVietnam(s) {
+	var r = s.toLowerCase().replace(/\s+/g, '-');
+	non_asciis = {
+		'-': '[`~!@#$%^&*()_|+=?;:",.<>/]',
+		'a': '[ảàạảãàáâãäåắặẳằẵấầẩẫậâă]',
+		'ae': 'æ',
+		'c': 'ç',
+		'e': '[èéẹẽẻềệếểễê]',
+		'd': '[đ]',
+		'i': '[ìíîïị]',
+		'n': 'ñ',
+		'o': '[òóôõöộồốổỗơởợỡờớôơ]',
+		'oe': 'œ',
+		'u': '[ùúûűüủụưửựứừữư]',
+		'y': '[ýỳỷỵỹ]'
+	};
+	for (i in non_asciis) {
+		r = r.replace(new RegExp(non_asciis[i], 'gi'), i);
+	}
+	r = r.replace(/[^\w\s]/gi, '-')
+	return r
+};
+
+app.post('/upload', function (req, res) {
+	upload(req, res, function (err) {
+
+		let dataToAdd = []
+		let mainkey = req.body.selectCompo.trim()
+		let keynew = req.body.selectCompo.trim() + '-' + req.body.comnum.trim()
+		dataToAdd.push(req.body.selectCompo.trim() + '/' + req.body.comkey.trim())
+		dataToAdd.push(req.body.commain.trim())
+		dataToAdd.push(req.files[0].filename)
+		dataToAdd.push(req.body.nameCompo.trim())
+		if (req.body.heightCompo && req.body.heightCompo.length > 0){
+			dataToAdd.push(req.body.heightCompo.trim())
+		}
+		// console.log(mainkey)
+		// console.log(keynew)
+		// console.log(dataToAdd)
+		fs.readFile('_tool/data.json', 'utf8', function readFileCallback(err, data) {
+			if (err) {
+				console.log(err);
+			} else {
+				var getDat = JSON.parse(data)
+				getDat[mainkey][keynew] = dataToAdd
+				var aResultS = getDat
+
+				var jsonJS = JSON.stringify(aResultS, null, 4);
+				fs.writeFileSync('_tool/data.json', jsonJS, 'utf8', function (err) {
+					if (err) {
+						return console.log(err);
+					}
+				});
+			}
+		});
+		if (err) {
+			return res.end("error");
+		}
+		return res.end("done");
+	});
+});
 
 app.post('/savedata', function (req, res) {
 	var dir2 = './core/scripts';
