@@ -1,0 +1,50 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-1
+	background: darken(color-get($mau,trang),5%)
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.boxes-details
+		background: color-get($mau,trang)
+		+bor-rad(.35rem)
+		+box-sha(0 0 .15rem 0 rgba(0, 0, 0, 0.125))
+		overflow: hidden
+		.item
+			+pad(3rem)
+			border-top: 1px solid darken(color-get($mau,trang),5%)
+			&:first-child
+				border-top: 0
+			+media-breakpoint-up(md)
+				border-right: 1px solid darken(color-get($mau,trang),5%)
+				&:nth-child(2)
+					border-top: 0
+				&:nth-child(2n)
+					border-right: 0
+			+media-breakpoint-up(lg)
+				&:nth-child(3)
+					border-top: 0
+				&:nth-child(2n)
+					border-right: 1px solid darken(color-get($mau,trang),5%)
+				&:nth-child(3n)
+					border-right: 0
+			i
+				+fz(4rem)
+				+lh(4rem)
+				+fw(200)
+				margin-right: 1rem
+				color: color-get($mau,main)
+			h3
+				font-weight: 400
+				letter-spacing: 1px
+				+fz(1.3rem)
+				color: color-get($mau,main)
+			p
+				font-size: 1rem
+				font-weight: 300
+				color: darken(color-get($mau,trang),50%)
+			&:hover
+				background: darken(color-get($mau,trang),2%)

@@ -1,0 +1,52 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-3
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.number
+		.item
+			border-top: 1px solid darken(color-get($mau,trang),5%)
+			min-height: 180px
+			padding: 2rem 0
+			&:last-child
+				border-bottom: 1px solid darken(color-get($mau,trang),5%)
+			i
+				+fz(4rem)
+				+lh(4rem)
+				+fw(200)
+				color: color-get($mau,main)
+			h3
+				margin-top: 1rem
+				+fz(2rem)
+				color: color-get($mau,main)
+			p
+				text-transform: uppercase
+				color: color-get($mau,main)
+				margin-bottom: 0
+		.item-block
+			padding: 2rem 0
+			min-height: 170px
+			+media-breakpoint-up(sm)
+				border-top: 1px solid darken(color-get($mau,trang),5%)
+				border-bottom: 1px solid darken(color-get($mau,trang),5%)
+			i
+				+fz(4rem)
+				+lh(4rem)
+				+fw(200)
+				margin-right: 1rem
+				color: color-get($mau,main)
+			h3
+				margin-top: 1rem
+				+fz(2rem)
+				color: color-get($mau,main)
+			p
+				text-transform: uppercase
+				color: color-get($mau,main)
+				+ p
+					text-transform: initial
+					color: lighten(color-get($mau,den) ,40%)
+					margin-bottom: 0
