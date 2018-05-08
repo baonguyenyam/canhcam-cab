@@ -20,7 +20,15 @@ var Storage = multer.diskStorage({
 		callback(null, "./_tool/img/layout");
 	},
 	filename: function (req, file, callback) {
-		callback(null, crypto.createHash('md5').update(Date.now() + "_" + removeVietnam(file.originalname.substring(0, 10))).digest('hex'));
+		let type = 'jpg'
+		if (file.mimetype === 'image/png') {
+			type = 'png'
+		} else if (file.mimetype === 'image/jpeg') {
+			type = 'jpeg'
+		} else {
+			type = 'jpg'
+		}
+		callback(null, crypto.createHash('md5').update(Date.now() + "_" + removeVietnam(file.originalname.substring(0, 10))).digest('hex') + '.' + type);
 	}
 });
 
@@ -71,7 +79,7 @@ app.post('/upload', function (req, res) {
 		if (req.body.heightCompo && req.body.heightCompo.length > 0){
 			dataToAdd.push(req.body.heightCompo.trim())
 		}
-		// console.log(mainkey)
+		// console.log(req.files[0])
 		// console.log(keynew)
 		// console.log(dataToAdd)
 		fs.readFile('_tool/data.json', 'utf8', function readFileCallback(err, data) {

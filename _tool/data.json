@@ -1,288 +1,288 @@
 {
-	"header": {
-		"header-1": [
-			"header/h-1",
-			"header",
-			"header-1.png",
-			"Header 1",
-			"51px"
-		],
-		"header-2": [
-			"header/h-2",
-			"header",
-			"header-2.png",
-			"Header 2",
-			"51px"
-		],
-		"header-3": [
-			"header/h-3",
-			"header",
-			"header-3.png",
-			"Header 3",
-			"51px"
-		],
-		"header-4": [
-			"header/h-4",
-			"header",
-			"header-4.png",
-			"Header 4",
-			"51px"
-		],
-		"header-5": [
-			"header/h-5",
-			"header",
-			"header-5.png",
-			"Header 5",
-			"51px"
-		],
-		"header-6": [
-			"header/h-6",
-			"header",
-			"header-6.png",
-			"Header 6",
-			"51px"
-		]
-	},
-	"boxes": {
-		"boxes-1": [
-			"boxes/b-1",
-			"body",
-			"boxes-1.png",
-			"boxes 1"
-		],
-		"boxes-2": [
-			"boxes/b-2",
-			"body",
-			"boxes-2.png",
-			"boxes 2"
-		],
-		"boxes-3": [
-			"boxes/b-3",
-			"body",
-			"boxes-3.png",
-			"boxes 3"
-		]
-	},
-	"banner": {
-		"banner-1": [
-			"banner/b-1",
-			"body",
-			"banner-1.png",
-			"banner 1"
-		],
-		"banner-2": [
-			"banner/b-2",
-			"body",
-			"banner-2.png",
-			"banner 2"
-		]
-	},
-	"carousel": {
-		"carousel-1": [
-			"carousel/c-1",
-			"body",
-			"carousel-1.png",
-			"carousel 1"
-		],
-		"carousel-2": [
-			"carousel/c-2",
-			"body",
-			"carousel-2.png",
-			"carousel 2"
-		],
-		"carousel-3": [
-			"carousel/c-3",
-			"body",
-			"carousel-3.png",
-			"carousel 3"
-		],
-		"carousel-4": [
-			"carousel/c-4",
-			"body",
-			"carousel-4.png",
-			"carousel 4"
-		]
-	},
-	"news": {
-		"news-1": [
-			"news/n-1",
-			"body",
-			"news-1.png",
-			"news 1"
-		],
-		"news-2": [
-			"news/n-2",
-			"body",
-			"news-2.png",
-			"news 2"
-		],
-		"news-3": [
-			"news/n-3",
-			"body",
-			"news-3.png",
-			"news 3"
-		]
-	},
-	"shop": {
-		"shop-1": [
-			"shop/s-1",
-			"body",
-			"shop-1.png",
-			"shop 1"
-		],
-		"shop-2": [
-			"shop/s-2",
-			"body",
-			"shop-2.png",
-			"shop 2"
-		],
-		"shop-3": [
-			"shop/s-3",
-			"body",
-			"shop-3.png",
-			"shop 3"
-		],
-		"shop-4": [
-			"shop/s-4",
-			"body",
-			"shop-4.png",
-			"shop 4"
-		],
-		"shop-5": [
-			"shop/s-5",
-			"body",
-			"shop-5.png",
-			"shop 5"
-		]
-	},
-	"gallery": {
-		"gallery-1": [
-			"gallery/g-1",
-			"body",
-			"gallery-1.png",
-			"gallery 1"
-		]
-	},
-	"form": {
-		"form-1": [
-			"form/f-1",
-			"body",
-			"form-1.png",
-			"form 1"
-		],
-		"form-2": [
-			"form/f-2",
-			"body",
-			"form-2.png",
-			"form 2"
-		],
-		"form-3": [
-			"form/f-3",
-			"body",
-			"form-3.png",
-			"form 3"
-		],
-		"form-4": [
-			"form/f-4",
-			"body",
-			"form-4.png",
-			"form 4"
-		]
-	},
-	"map": {
-		"map-1": [
-			"map/m-1",
-			"body",
-			"map-1.png",
-			"map 1"
-		],
-		"map-2": [
-			"map/m-2",
-			"body",
-			"map-2.png",
-			"map 2"
-		]
-	},
-	"tagline": {
-		"tagline-1": [
-			"tagline/t-1",
-			"body",
-			"tagline-1.png",
-			"tagline 1"
-		],
-		"tagline-2": [
-			"tagline/t-2",
-			"body",
-			"tagline-2.png",
-			"tagline 2"
-		],
-		"tagline-3": [
-			"tagline/t-3",
-			"body",
-			"tagline-3.png",
-			"tagline 3"
-		],
-		"tagline-4": [
-			"tagline/t-4",
-			"body",
-			"tagline-4.png",
-			"tagline 4"
-		],
-		"tagline-5": [
-			"tagline/t-5",
-			"body",
-			"tagline-5.png",
-			"tagline 5"
-		],
-		"tagline-6": [
-			"tagline/t-6",
-			"body",
-			"tagline-6.png",
-			"tagline 6"
-		],
-		"tagline-7": [
-			"tagline/t-7",
-			"body",
-			"tagline-7.png",
-			"tagline 7"
-		],
-		"tagline-8": [
-			"tagline/t-8",
-			"body",
-			"tagline-8.png",
-			"tagline 8"
-		]
-	},
-	"footer": {
-		"footer-1": [
-			"footer/f-1",
-			"footer",
-			"footer-1.png",
-			"footer 1"
-		],
-		"footer-2": [
-			"footer/f-2",
-			"footer",
-			"footer-2.png",
-			"footer 2"
-		],
-		"footer-3": [
-			"footer/f-3",
-			"footer",
-			"footer-3.png",
-			"footer 3"
-		],
-		"footer-4": [
-			"footer/f-4",
-			"footer",
-			"footer-4.png",
-			"footer 4"
-		],
-		"footer-5": [
-			"footer/f-5",
-			"footer",
-			"footer-5.png",
-			"footer 5"
-		]
-	}
+    "header": {
+        "header-1": [
+            "header/h-1",
+            "header",
+            "header-1.png",
+            "Header 1",
+            "51px"
+        ],
+        "header-2": [
+            "header/h-2",
+            "header",
+            "header-2.png",
+            "Header 2",
+            "51px"
+        ],
+        "header-3": [
+            "header/h-3",
+            "header",
+            "header-3.png",
+            "Header 3",
+            "51px"
+        ],
+        "header-4": [
+            "header/h-4",
+            "header",
+            "header-4.png",
+            "Header 4",
+            "51px"
+        ],
+        "header-5": [
+            "header/h-5",
+            "header",
+            "header-5.png",
+            "Header 5",
+            "51px"
+        ],
+        "header-6": [
+            "header/h-6",
+            "header",
+            "header-6.png",
+            "Header 6",
+            "51px"
+        ]
+    },
+    "boxes": {
+        "boxes-1": [
+            "boxes/b-1",
+            "body",
+            "boxes-1.png",
+            "boxes 1"
+        ],
+        "boxes-2": [
+            "boxes/b-2",
+            "body",
+            "boxes-2.png",
+            "boxes 2"
+        ],
+        "boxes-3": [
+            "boxes/b-3",
+            "body",
+            "7e07c3213f76f5d7696ff597e20ffaec.png",
+            "dfg"
+        ]
+    },
+    "banner": {
+        "banner-1": [
+            "banner/b-1",
+            "body",
+            "banner-1.png",
+            "banner 1"
+        ],
+        "banner-2": [
+            "banner/b-2",
+            "body",
+            "banner-2.png",
+            "banner 2"
+        ]
+    },
+    "carousel": {
+        "carousel-1": [
+            "carousel/c-1",
+            "body",
+            "carousel-1.png",
+            "carousel 1"
+        ],
+        "carousel-2": [
+            "carousel/c-2",
+            "body",
+            "carousel-2.png",
+            "carousel 2"
+        ],
+        "carousel-3": [
+            "carousel/c-3",
+            "body",
+            "carousel-3.png",
+            "carousel 3"
+        ],
+        "carousel-4": [
+            "carousel/c-4",
+            "body",
+            "carousel-4.png",
+            "carousel 4"
+        ]
+    },
+    "news": {
+        "news-1": [
+            "news/n-1",
+            "body",
+            "news-1.png",
+            "news 1"
+        ],
+        "news-2": [
+            "news/n-2",
+            "body",
+            "news-2.png",
+            "news 2"
+        ],
+        "news-3": [
+            "news/n-3",
+            "body",
+            "news-3.png",
+            "news 3"
+        ]
+    },
+    "shop": {
+        "shop-1": [
+            "shop/s-1",
+            "body",
+            "shop-1.png",
+            "shop 1"
+        ],
+        "shop-2": [
+            "shop/s-2",
+            "body",
+            "shop-2.png",
+            "shop 2"
+        ],
+        "shop-3": [
+            "shop/s-3",
+            "body",
+            "shop-3.png",
+            "shop 3"
+        ],
+        "shop-4": [
+            "shop/s-4",
+            "body",
+            "shop-4.png",
+            "shop 4"
+        ],
+        "shop-5": [
+            "shop/s-5",
+            "body",
+            "shop-5.png",
+            "shop 5"
+        ]
+    },
+    "gallery": {
+        "gallery-1": [
+            "gallery/g-1",
+            "body",
+            "gallery-1.png",
+            "gallery 1"
+        ]
+    },
+    "form": {
+        "form-1": [
+            "form/f-1",
+            "body",
+            "form-1.png",
+            "form 1"
+        ],
+        "form-2": [
+            "form/f-2",
+            "body",
+            "form-2.png",
+            "form 2"
+        ],
+        "form-3": [
+            "form/f-3",
+            "body",
+            "form-3.png",
+            "form 3"
+        ],
+        "form-4": [
+            "form/f-4",
+            "body",
+            "form-4.png",
+            "form 4"
+        ]
+    },
+    "map": {
+        "map-1": [
+            "map/m-1",
+            "body",
+            "map-1.png",
+            "map 1"
+        ],
+        "map-2": [
+            "map/m-2",
+            "body",
+            "map-2.png",
+            "map 2"
+        ]
+    },
+    "tagline": {
+        "tagline-1": [
+            "tagline/t-1",
+            "body",
+            "tagline-1.png",
+            "tagline 1"
+        ],
+        "tagline-2": [
+            "tagline/t-2",
+            "body",
+            "tagline-2.png",
+            "tagline 2"
+        ],
+        "tagline-3": [
+            "tagline/t-3",
+            "body",
+            "tagline-3.png",
+            "tagline 3"
+        ],
+        "tagline-4": [
+            "tagline/t-4",
+            "body",
+            "tagline-4.png",
+            "tagline 4"
+        ],
+        "tagline-5": [
+            "tagline/t-5",
+            "body",
+            "tagline-5.png",
+            "tagline 5"
+        ],
+        "tagline-6": [
+            "tagline/t-6",
+            "body",
+            "tagline-6.png",
+            "tagline 6"
+        ],
+        "tagline-7": [
+            "tagline/t-7",
+            "body",
+            "tagline-7.png",
+            "tagline 7"
+        ],
+        "tagline-8": [
+            "tagline/t-8",
+            "body",
+            "tagline-8.png",
+            "tagline 8"
+        ]
+    },
+    "footer": {
+        "footer-1": [
+            "footer/f-1",
+            "footer",
+            "footer-1.png",
+            "footer 1"
+        ],
+        "footer-2": [
+            "footer/f-2",
+            "footer",
+            "footer-2.png",
+            "footer 2"
+        ],
+        "footer-3": [
+            "footer/f-3",
+            "footer",
+            "footer-3.png",
+            "footer 3"
+        ],
+        "footer-4": [
+            "footer/f-4",
+            "footer",
+            "footer-4.png",
+            "footer 4"
+        ],
+        "footer-5": [
+            "footer/f-5",
+            "footer",
+            "footer-5.png",
+            "footer 5"
+        ]
+    }
 }
