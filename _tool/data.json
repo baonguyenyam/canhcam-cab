@@ -55,6 +55,12 @@
 			"body",
 			"boxes-2.png",
 			"boxes 2"
+		],
+		"boxes-3": [
+			"boxes/b-3",
+			"body",
+			"boxes-3.png",
+			"boxes 3"
 		]
 	},
 	"banner": {
