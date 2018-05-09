@@ -1,15 +1,15 @@
 {
-    "SETUP": {
-        "index": {
-            "header": [
-                "header/h-7"
+	"SETUP": {
+		"index": {
+			"header": [
+				"header/h-7"
 			],
-            "body": [
-
+			"body": [
+				"boxes/b-5"
 			],
-            "footer": [
-                "footer/f-6"
+			"footer": [
+				"footer/f-6"
 			]
 		}
-    }
+	}
 }

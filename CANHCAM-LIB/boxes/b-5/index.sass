@@ -1,0 +1,72 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-5
+	+pad(3rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.project-hot
+		figure
+			position: relative
+			margin-bottom: 2rem
+			overflow: hidden
+			+bor-rad(5px)
+			img
+				width: 100%
+			.item
+				display: block
+			figcaption
+				+pos(abs, 0 null 0 null)
+				width: 100%
+				height: 100%
+				padding: 1rem
+				color: #fff
+				z-index: 1
+				+text-sha(2px 2px 3px rgba(0,0,0,.2))
+				display: flex
+				flex-direction: column
+				justify-content: flex-end
+				h3
+					+fz(1.2rem)
+					+fw(300)
+				time
+					+fz(.9rem)
+					+fw(200)
+					color: darken(color-get($mau,whites) ,10%)
+				&:after
+					content: ''
+					+pos(abs, null 0 0 null)
+					width: 100%
+					height: 100%
+					z-index: -1
+					+transition(ease-in-out all .15s)
+					background: rgba(0,0,0,.5)
+					background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.65) 100%)
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%)
+					background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%)
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0)
+			+media-breakpoint-up(sm)
+				figcaption
+					h3
+						+fz(1.3rem)
+			&:hover
+				+opacity(.8)
+
+		.bot-project
+			> div
+				&:last-child
+					figure
+						margin-bottom: 0
+			+media-breakpoint-up(md)
+				> div
+					figure
+						margin-bottom: 0
+
+		.part-list
+			.item
+				figure
+					+media-breakpoint-up(md)
+						img
+							display: none
