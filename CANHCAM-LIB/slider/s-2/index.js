@@ -1,6 +1,6 @@
 $(function() {
-    if ($('.canhcam-banner-2 .owl-carousel').length) {
-		$('.canhcam-banner-2 .owl-carousel').owlCarousel({
+	if ($('.canhcam-slider-2 .owl-carousel').length) {
+		$('.canhcam-slider-2 .owl-carousel').owlCarousel({
             items: 1,
             loop: true,
             center: true,

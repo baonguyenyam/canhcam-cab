@@ -3,7 +3,7 @@
 // CODE
 //////////////////////////////////////
 
-.canhcam-banner-2
+.canhcam-slider-1
 	.owl-carousel
 		position: relative
 		// Main
@@ -12,9 +12,10 @@
 				min-height: 280px
 				+media-breakpoint-up(sm)
 					min-height: 320px
+				+media-breakpoint-up(md)
+					min-height: 380px
 				+media-breakpoint-up(lg)
 					min-height: 480px
-					height: 100vh
 				.title
 					+pos(abs, null null 3rem 0)
 					text-align: center
@@ -32,16 +33,6 @@
 						+media-breakpoint-up(md)
 							max-width: 50%
 							margin: 0 auto 1rem auto
-					+media-breakpoint-up(lg)
-						+pos(abs, 50% null initial 0)
-						+transform(translateY(-50%))
-						h1
-							+fz(4rem)
-							letter-spacing: 1px
-						p
-							+fz(2rem)
-							+lh(2.3rem)
-							letter-spacing: 1px
 		// Nav
 		.owl-nav
 			button

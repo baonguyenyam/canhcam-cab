@@ -63,20 +63,21 @@
             "dfg"
         ]
     },
-    "slider": {},
+    "slider": {
+		"slider-1": [
+			"slider/s-1",
+			"body",
+			"slider-1.png",
+			"slider 1"
+		],
+		"slider-2": [
+			"slider/s-2",
+			"body",
+			"slider-2.png",
+			"slider 2"
+		]
+	},
     "banner": {
-        "banner-1": [
-            "banner/b-1",
-            "body",
-            "banner-1.png",
-            "banner 1"
-        ],
-        "banner-2": [
-            "banner/b-2",
-            "body",
-            "banner-2.png",
-            "banner 2"
-        ]
     },
     "carousel": {
         "carousel-1": [

@@ -59,24 +59,25 @@
 		"boxes-3": [
 			"boxes/b-3",
 			"body",
-			"boxes-3.png",
-			"boxes 3"
+			"7e07c3213f76f5d7696ff597e20ffaec.png",
+			"dfg"
 		]
 	},
-	"banner": {
-		"banner-1": [
-			"banner/b-1",
+	"slider": {
+		"slider-1": [
+			"slider/s-1",
 			"body",
-			"banner-1.png",
-			"banner 1"
+			"slider-1.png",
+			"slider 1"
 		],
-		"banner-2": [
-			"banner/b-2",
+		"slider-2": [
+			"slider/s-2",
 			"body",
-			"banner-2.png",
-			"banner 2"
+			"slider-2.png",
+			"slider 2"
 		]
 	},
+	"banner": {},
 	"carousel": {
 		"carousel-1": [
 			"carousel/c-1",
@@ -123,6 +124,14 @@
 			"news 3"
 		]
 	},
+	"news-details": {
+		"news-details-1": [
+			"news-details/n-1",
+			"body",
+			"d692c21877284337d23b07caaa0d40f5.png",
+			"News Details 1 with stycky"
+		]
+	},
 	"shop": {
 		"shop-1": [
 			"shop/s-1",
@@ -139,20 +148,28 @@
 		"shop-3": [
 			"shop/s-3",
 			"body",
-			"shop-3.png",
-			"shop 3"
-		],
-		"shop-4": [
-			"shop/s-4",
+			"c041b486fa87ef9cca1f9beb51fc8f48.png",
+			"Shop 3 - Quick view"
+		]
+	},
+	"shop-details": {
+		"shop-details-1": [
+			"shop-details/s-1",
 			"body",
-			"shop-4.png",
-			"shop 4"
+			"shop-details-1.png",
+			"shop-details 1"
 		],
-		"shop-5": [
-			"shop/s-5",
+		"shop-details-2": [
+			"shop-details/s-2",
 			"body",
-			"shop-5.png",
-			"shop 5"
+			"shop-details-2.png",
+			"shop-details 2"
+		],
+		"shop-details-3": [
+			"shop-details/s-3",
+			"body",
+			"shop-details-3.png",
+			"shop-details 3"
 		]
 	},
 	"gallery": {
@@ -187,6 +204,18 @@
 			"body",
 			"form-4.png",
 			"form 4"
+		],
+		"form-5": [
+			"form/f-5",
+			"body",
+			"888e8edb4297291eef77a66acfe22cd0.png",
+			"Form 5"
+		],
+		"form-6": [
+			"form/f-6",
+			"body",
+			"c486f373e434056da0d1fbe8484efec9.png",
+			"Form 6"
 		]
 	},
 	"map": {
