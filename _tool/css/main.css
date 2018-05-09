@@ -61,12 +61,12 @@ html {
 .maindev.mobile{
 	max-width: calc(480px + 1rem);
 	min-width: calc(480px + 1rem);
-	margin: 0 auto
+	margin: 1rem auto 0 auto
 }
 .maindev.tablet{
 	max-width: calc(768px + 1rem);
 	min-width: calc(768px + 1rem);
-	margin: 0 auto
+	margin: 1rem auto 0 auto
 }
 #maincc.active .bleft {
 	display: none;

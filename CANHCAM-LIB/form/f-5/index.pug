@@ -1,0 +1,13 @@
+section.canhcam-form-5
+	.container
+		.row.justify-content-center
+			.col.col-md-8.col-lg-6.col-lg-5
+				article.subscribe.text-center
+					h2.h2 Subscribe
+					p.text-muted Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+					form.validator.d-flex.justify-content-center.mt-5
+						.form-group.mb-2.col-12
+							input#email.form-control(type='email', pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", placeholder='Enter your email', data-error="Vui lòng nhập thông tin", required)
+							.help-block.with-errors.small
+							button.btn.btn-primary.mt-3.mt-lg-5(type="submit")
+								| Subscribe

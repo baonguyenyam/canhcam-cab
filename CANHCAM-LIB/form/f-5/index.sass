@@ -1,0 +1,41 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-form-5
+	+pad(4rem 0)
+	background: darken(color-get($mau,trang),3%)
+	+media-breakpoint-up(lg)
+		+pad(6rem 0)
+	.subscribe
+		background: color-get($mau,trang)
+		max-width: 600px
+		position: relative
+		+bor-rad(.35rem)
+		+pad(3rem 2rem)
+		+box-sha(0 0 .15rem 0 rgba(0, 0, 0, 0.125))
+		form
+			button.disabled
+				+opacity(1)
+			.has-danger
+				input, textarea, select
+					background: color-get($mau,trang)
+			.help-block
+				display: none
+		.form-group
+			input
+				+bor-rad(3rem)
+				+pad(0.65rem 1.5rem)
+				text-align: center
+				+media-breakpoint-up(lg)
+					+pad(0.75rem 1.5rem)
+					+fz(1.2rem)
+			button
+				text-transform: uppercase
+				+bor-rad(3.5rem)
+				+pad(0.65rem 1.5rem)
+				+media-breakpoint-up(lg)
+					+pad(0.75rem 1.5rem)
+					+fz(1.2rem)
+

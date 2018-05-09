@@ -1,0 +1,11 @@
+section.canhcam-form-6(bg-img="./img/bg/hero-3.jpg")
+	article.subscribe.container
+		.row
+			.col
+				h2.h2.text-center Subscribe
+		form.validator.d-flex.justify-content-center.mt-4
+			.form-group.mb-2.col-12
+				input#email.form-control(type='email', pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", placeholder='Enter your email', data-error="Vui lòng nhập thông tin", required)
+				.help-block.with-errors.small
+				button.btn.btn-primary(type="submit")
+					| Subscribe
