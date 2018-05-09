@@ -5,7 +5,8 @@
                 "header/h-1"
 			],
             "body": [
-				"news-details/n-1"
+				"shop/s-1",
+				"shop/s-2"
 			],
             "footer": [
                 "footer/f-3"

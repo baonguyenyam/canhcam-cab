@@ -242,13 +242,18 @@ function resizeFrame() {
 }
 
 function toggleContentReady() {
+	var exitsCom = true
 	$('.newlist').each(function () {
 		if ($(this).html().trim().length > 0) {
+			exitsCom = false
 			$(this).addClass('cnt')
 		} else {
 			$(this).removeClass('cnt')
 		}
 	})
+	if (!exitsCom) {
+		unSavePage()
+	}
 }
 
 function addClickDel(a){
@@ -294,27 +299,12 @@ function buildFormAddComponent(){
 	});
 }
 
-$('#formAddComponent button').click(function (e) {
-	var data = new FormData($('#formAddComponent')[0]);
-	$.ajax({
-		url: '/upload',
-		type: 'POST',
-		contentType: false,
-		processData: false,
-		cache: false,
-		data: data,
-		success: function () {
-			alert('Upload hoàn tất')
-			$('#addComponent').trigger('click')
-			$('#formAddComponent')[0].reset();
-			$('#formAddComponent .textresult').html('...')
-		},
-		error: function () {
-			alert('Lỗi khi upload!');
-		}
+
+function unSavePage() {
+	$(window).bind('beforeunload', function () {
+		return 'Bạn có muốn thoát trang ngay bây giờ?';
 	});
-	return false;
-})
+}
 
 //////////////////////////////////////////////
 
@@ -373,11 +363,19 @@ $(function () {
 		xoaTab(e, item)
 		checkTab()
 	});
-	$('#toDoList, #toDoListMain').on('keyup', function (e) {
+	$('#toDoListMain').on('keyup', function (e) {
 		var keyCode = e.keyCode || e.which;
 		if (keyCode === 13) {
 			e.preventDefault();
-			$(this).find('button').trigger('click')
+			$(this).find('#buttonListItemMain').trigger('click')
+			return false;
+		}
+	});
+	$('#toDoList').on('keyup keypress', function (e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode === 13) {
+			e.preventDefault();
+			$(this).find('#createPage').trigger('click')
 			return false;
 		}
 	});
@@ -413,6 +411,4 @@ $(window).resize(function () {
 	resizeFrame()
 })
 
-$(window).bind('beforeunload', function () {
-	return 'Bạn có muốn thoát trang ngay bây giờ?';
-});
+

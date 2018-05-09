@@ -124,7 +124,14 @@
             "news 3"
         ]
     },
-    "news-details": {},
+    "news-details": {
+        "news-details-1": [
+            "news-details/n-1",
+            "body",
+            "d692c21877284337d23b07caaa0d40f5.png",
+            "News Details 1 with stycky"
+        ]
+    },
     "shop": {
         "shop-1": [
             "shop/s-1",

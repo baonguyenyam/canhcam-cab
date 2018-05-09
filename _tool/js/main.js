@@ -154,8 +154,6 @@ function changePageName(tenmoi, tencu) {
 	delete data.SETUP[tencu]
 }
 
-
-
 $('#buttonListItemMain').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItemMain]').val().trim());
 	jQuery.post("/checksite", {
@@ -182,6 +180,29 @@ $('#buttonListItemMain').click(function () {
 
 	});
 });
+
+$('#formAddComponent button').click(function (e) {
+	var data = new FormData($('#formAddComponent')[0]);
+	$.ajax({
+		url: '/upload',
+		type: 'POST',
+		contentType: false,
+		processData: false,
+		cache: false,
+		data: data,
+		success: function () {
+			alert('Upload hoàn tất')
+			$('#addComponent').trigger('click')
+			$('#formAddComponent')[0].reset();
+			$('#formAddComponent .textresult').html('...')
+		},
+		error: function () {
+			alert('Lỗi khi upload!');
+		}
+	});
+	return false;
+})
+
 
 $('#createSite').click(function (e) {
 	e.preventDefault();
