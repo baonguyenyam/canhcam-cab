@@ -27,10 +27,12 @@ function changeIMGtoDiv1(){
 }
 
 function stickyMenu1() {
-	$('.canhcam-news-details-1 .othernews').css({
-		"position": "sticky",
-		"top": $('.canhcam-news-details-1 .othernews').offset().top + 'px'
-	})
+	if ($('.canhcam-news-details-1 .othernews').length) {
+		$('.canhcam-news-details-1 .othernews').css({
+			"position": "sticky",
+			"top": $('.canhcam-news-details-1 .othernews').offset().top + 'px'
+		})
+	}
 }
 
 $(document).ready(function() {

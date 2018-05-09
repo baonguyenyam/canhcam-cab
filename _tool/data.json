@@ -144,6 +144,12 @@
             "body",
             "shop-2.png",
             "shop 2"
+        ],
+        "shop-3": [
+            "shop/s-3",
+            "body",
+            "c041b486fa87ef9cca1f9beb51fc8f48.png",
+            "Shop 3 - Quick view"
         ]
     },
     "shop-details": {
