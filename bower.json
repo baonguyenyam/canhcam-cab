@@ -32,7 +32,6 @@
     "bootstrap-touchspin": "4.2.5",
     "perfect-scrollbar": "0.8.1",
     "bootstrap-datepicker": "1.8.0",
-    "elevatezoom": "2.2.3",
-    "fancybox": "3.3.5"
+    "elevatezoom": "2.2.3"
   }
 }
