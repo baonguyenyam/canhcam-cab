@@ -36,6 +36,7 @@
       "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
       "bower_components/elevatezoom/jquery.elevatezoom.js",
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js",
+      "bower_components/fancybox/dist/jquery.fancybox.min.js",
       "bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"
     ],
     "css": [
@@ -48,6 +49,7 @@
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css",
       "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.css",
       "bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css",
+      "bower_components/fancybox/dist/jquery.fancybox.min.css",
       "bower_components/owl.carousel/dist/assets/owl.carousel.min.css",
       "bower_components/owl.carousel/dist/assets/owl.theme.default.css"
     ]
