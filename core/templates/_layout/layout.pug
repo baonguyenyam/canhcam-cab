@@ -23,6 +23,7 @@ html(dir='ltr', lang=config.SEO.seo_lang, itemscope, itemtype="http://schema.org
 		if process.argv.slice(3).indexOf('--production') > -1
 			include ../_include/_favicon
 	body#top-page(class=process.argv.slice(3).indexOf('--production') < 0 ? 'canhcam-develop '+prefix+bodyclass+'-page' : prefix+bodyclass+'-page' || 'default')
+		#fb-root
 		<!-- ////////////// Header ////////////// -->
 		block header
 		<!-- ////////////// End Header ////////////// -->

@@ -1,14 +1,14 @@
-function zoomIMG5() {
-	$(".canhcam-shop-5 #zoomimg").elevateZoom({
+function zoomShopDetailIMG3() {
+	$(".canhcam-shop-details-3 #zoomimg").elevateZoom({
 		responsive: true,
 		gallery: "product-control",
 		galleryActiveClass: "active"
 	});
-	$(".canhcam-shop-5 .product-control .item").each(function () {
+	$(".canhcam-shop-details-3 .product-control .item").each(function () {
 		$(this).click(function (e) {
 			var currentValue = $(this).find('img').attr('data-preview-image')
 			var currentValueZoom = $(this).find('img').attr('data-zoom-image')
-			$('.canhcam-shop-5 .product-control .item').removeClass('active')
+			$('.canhcam-shop-details-3 .product-control .item').removeClass('active')
 			$(this).addClass('active')
 			var gallery_zoomimg = $('#zoomimg').data('elevateZoom');
 			gallery_zoomimg.swaptheimage(currentValue, currentValueZoom);
@@ -19,9 +19,9 @@ function zoomIMG5() {
 
 $(document).ready(function() {
 	if ($(window).width() > CANHCAM_APP.CHANGE_GRID) {
-		zoomIMG5()
+		zoomShopDetailIMG3()
 	}
-	$('.canhcam-shop-5 #quantity input').TouchSpin({
+	$('.canhcam-shop-details-3 #quantity input').TouchSpin({
 		min: 0,
 		max: 100,
 		buttondown_class: "btn btn-default",
@@ -31,6 +31,6 @@ $(document).ready(function() {
 
 $(window).resize(function () {
 	if ($(window).width() > CANHCAM_APP.CHANGE_GRID) {
-		zoomIMG5()
+		zoomShopDetailIMG3()
 	}
 })

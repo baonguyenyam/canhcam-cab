@@ -129,6 +129,7 @@ function taoTrangIndex() {
 		$('#' + toAdd + '-tab').trigger('click')
 		createPageBuilder(toAdd)
 		checkTab()
+		console.log(pagesLists)
 	}
 }
 
@@ -167,7 +168,7 @@ $('#buttonListItemMain').click(function () {
 				$('#toDoListMain').hide()
 				$('#toDoListMain')[0].reset();
 				$('#toDoList').show()
-				$('#accordion').toggleClass('active')
+				$('#accordion').addClass('active')
 				alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
 				taoTrangIndex()
 				showTour()

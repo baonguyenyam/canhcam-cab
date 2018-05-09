@@ -46,7 +46,7 @@ function createLeftMenuList() {
 			var father = document.createElement('div');
 			father.id = "cc-menu-" + key;
 			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
-			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show +'" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
+			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.replace('-', ' ').toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show +'" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
 			$('#accordion').append(father)
 
 			for (var des in parsedJSON[key]) {
@@ -373,7 +373,7 @@ $(function () {
 		xoaTab(e, item)
 		checkTab()
 	});
-	$('#toDoList, #toDoListMain').on('keyup keypress', function (e) {
+	$('#toDoList, #toDoListMain').on('keyup', function (e) {
 		var keyCode = e.keyCode || e.which;
 		if (keyCode === 13) {
 			e.preventDefault();

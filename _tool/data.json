@@ -63,6 +63,7 @@
             "dfg"
         ]
     },
+    "slider": {},
     "banner": {
         "banner-1": [
             "banner/b-1",
@@ -123,6 +124,7 @@
             "news 3"
         ]
     },
+    "news-details": {},
     "shop": {
         "shop-1": [
             "shop/s-1",
@@ -135,24 +137,26 @@
             "body",
             "shop-2.png",
             "shop 2"
-        ],
-        "shop-3": [
-            "shop/s-3",
+        ]
+    },
+    "shop-details": {
+        "shop-details-1": [
+            "shop-details/s-1",
             "body",
-            "shop-3.png",
-            "shop 3"
+            "shop-details-1.png",
+            "shop-details 1"
         ],
-        "shop-4": [
-            "shop/s-4",
+        "shop-details-2": [
+            "shop-details/s-2",
             "body",
-            "shop-4.png",
-            "shop 4"
+            "shop-details-2.png",
+            "shop-details 2"
         ],
-        "shop-5": [
-            "shop/s-5",
+        "shop-details-3": [
+            "shop-details/s-3",
             "body",
-            "shop-5.png",
-            "shop 5"
+            "shop-details-3.png",
+            "shop-details 3"
         ]
     },
     "gallery": {
@@ -187,6 +191,18 @@
             "body",
             "form-4.png",
             "form 4"
+        ],
+        "form-5": [
+            "form/f-5",
+            "body",
+            "888e8edb4297291eef77a66acfe22cd0.png",
+            "Form 5"
+        ],
+        "form-6": [
+            "form/f-6",
+            "body",
+            "c486f373e434056da0d1fbe8484efec9.png",
+            "Form 6"
         ]
     },
     "map": {
