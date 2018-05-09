@@ -146,12 +146,12 @@
 			.item
 				overflow: hidden
 				border: 1px solid darken(color-get($mau,trang),5%)
-				padding-top: 1rem
 				border-top: 0
 				&:first-child
 					border-top: 1px solid darken(color-get($mau,trang),5%)
 					padding-top: 0
 				+media-breakpoint-up(sm)
+					padding-top: 0
 					&:nth-child(2)
 						border-top: 1px solid darken(color-get($mau,trang),5%)
 						padding-top: 0
@@ -163,8 +163,17 @@
 					&:nth-child(3)
 						border-top: 1px solid darken(color-get($mau,trang),5%)
 						padding-top: 0
+					// &:nth-child(3n+1)
+					// 	border-right: 0
+					// &:nth-child(3n+2)
+					// 	border-right: 1px solid darken(color-get($mau,trang),5%)
+					// &:nth-child(3n)
+					// 	border-left: 0
 					&:nth-child(3n+1)
-						border-right: 0
+						border-left: 1px solid darken(color-get($mau,trang),5%)
+					&:nth-child(3n+2)
+						border-right: 1px solid darken(color-get($mau,trang),5%)
+						border-left: 0
 					&:nth-child(3n)
 						border-left: 0
 
@@ -173,7 +182,6 @@
 					display: block
 					text-decoration: none
 					padding: 1rem
-					height: 100%
 					.circle
 						+pos(abs, 1rem null null 1rem)
 						span
@@ -186,6 +194,7 @@
 							justify-content: center
 							align-items: center
 							display: flex
+							margin-bottom: .5rem
 							&.circle-hot
 								background: color-get($mau,do-1)
 							&.circle-success
@@ -206,18 +215,7 @@
 								background: color-get($mau,do-1)
 							&.bagde-success
 								background: color-get($mau,la-1)
-					.addtocart
-						background: color-get($mau,main)
-						color: color-get($mau,trang)
-						+bor-rad(1.5rem)
-						+pad(.5rem 1.5rem)
-						+pos(abs, 50% null null 50%)
-						+transform(translateX(-50%) translateY(-50%))
-						z-index: 100
-						+opacity(0)
-						+transition(all .5s ease-in-out)
-						i
-							padding-right: .5rem
+
 					h2
 						+fz(1rem)
 						+fw(400)
@@ -235,10 +233,39 @@
 						img
 							max-width: 100%
 						figcaption
+				.addtocart
+					z-index: 500
+					margin-bottom: 2rem
+					display: flex
+					justify-content: center
+					width: 100%
+					.btn-group
+						flex-wrap: wrap
+						justify-content: center
+						.btn
+							background: color-get($mau,main)
+							color: color-get($mau,trang)
+							+bor-rad(1.5rem)
+							display: flex
+							align-items: center
+							margin: .5rem
+							+pad(.5rem 1.5rem)
+							i
+								padding-right: .5rem
+					+media-breakpoint-up(sm)
+						+transition(all .5s ease-in-out)
+						+pad(.5rem)
+						+transform(translateX(-50%) translateY(-50%))
+						+pos(abs, 50% null null 50%)
+						z-index: 100
+						+opacity(0)
+						.btn-group
+							.btn
+								i
+									display: block
 				&:hover
-					.item-detail
-						.addtocart
-							+opacity(1)
+					.addtocart
+						+opacity(1)
 
 
 		.pager
