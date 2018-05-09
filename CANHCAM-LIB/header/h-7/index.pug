@@ -1,0 +1,48 @@
+header.canhcam-header-7
+	nav.navbar.navbar-expand-md.container
+		a.navbar-brand.d-none.d-md-block(href='#')
+			img(src="./img/logo-ang.png", alt="Logo")
+		a.navbar-brand.d-md-none(href='#')
+			img(src="./img/logo-min.png", alt="Logo")
+		button.navbar-toggler(type='button', data-toggle='offcanvas', data-target='#CCMenuHeader', aria-controls='CCMenuHeader', aria-expanded='false', aria-label='Toggle navigation')
+			span.mdi.mdi-menu
+
+		#CCMenuHeader.collapse.navbar-collapse.justify-content-end
+			.title
+				h2 Menu
+				.closebnt
+					i.mdi.mdi-close
+			ul.navbar-nav.mt-2.mt-md-0
+				li.nav-item.active
+					a.nav-link(href='#') Giới thiệu
+				li.nav-item
+					a.nav-link(href='#') Dự án
+				li.nav-item
+					a.nav-link(href='#') Tin tức
+				li.nav-item
+					a.nav-link(href='#') Phát triển bền vững
+				li.nav-item
+					a.nav-link(href='#') Thư viện
+				li.nav-item
+					a.nav-link(href='#') Tuyển dụng
+				li.nav-item
+					a.nav-link(href='#') Liên hệ
+
+
+			.language
+				ul.mt-2.mt-md-0.list-unstyled(data-select)
+					li
+						a(href='#')
+							span English
+							img(src="./img/icon/usa.png", alt="")
+
+			form.form-inline.my-2.my-md-0.search
+				.input-group
+					input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+					.input-group-append
+						button.btn.btn-primary(type='submit')
+							i.fa.fa-search
+			.my-2.my-md-0.btnsearch.d-none.d-md-block
+				.btn.btn-link
+					i.fa.fa-search
+					i.fa.fa-times

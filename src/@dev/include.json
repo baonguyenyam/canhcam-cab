@@ -2,14 +2,13 @@
     "SETUP": {
         "index": {
             "header": [
-                "header/h-1"
+                "header/h-7"
 			],
             "body": [
-				"shop/s-1",
-				"shop/s-2"
+
 			],
             "footer": [
-                "footer/f-3"
+                "footer/f-6"
 			]
 		}
     }

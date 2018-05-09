@@ -1,0 +1,68 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-footer-6
+	background-color: darken(color-get($mau,trang) ,85%)
+	position: relative
+	z-index: 1
+	overflow: hidden
+	color: darken(color-get($mau,trang) ,40%)
+	+media-breakpoint-down(xs)
+		text-align: center
+	h4
+		color: darken(color-get($mau,trang) ,80%)
+		text-transform: uppercase
+		position: relative
+		+fz(1.2rem)
+		+fw(600)
+		margin-bottom: 1.5rem
+	.linkfooter
+		padding: 3rem 0
+		+media-breakpoint-up(md)
+			+pad(4rem 0)
+		.list-group
+			.list-group-item
+				display: inline-block
+				+bg(none, none, none)
+				border: 0
+				+pad(.5rem 0)
+				+media-breakpoint-up(md)
+					+pad(.15rem 0)
+				a
+					font-size: .9rem
+					+link(darken(color-get($mau,trang) ,40%),color-get($mau,main),color-get($mau,main))
+	.copyright
+		background: color-get($mau,trang)
+		+pad(1rem 0)
+		color: darken(color-get($mau,trang) ,30%)
+		.list-group
+			.list-group-item
+				display: inline-block
+				+bg(none, none, none)
+				border: 0
+				+pad(.5rem 0)
+				a
+					font-size: .9rem
+					+link(darken(color-get($mau,trang) ,30%),darken(color-get($mau,trang) ,70%),darken(color-get($mau,trang) ,70%))
+			+media-breakpoint-up(md)
+				display: flex
+				flex-direction: row
+				.list-group-item
+					+pad(.15rem 0)
+					a
+						margin-right: calc(1rem + 1px)
+						position: relative
+						&:after
+							display: inline-flex
+							width: 1px
+							height: 100%
+							content: ''
+							+pos(abs, 0 -.5rem null null)
+							background: darken(color-get($mau,trang) ,30%)
+					&:last-child
+						a
+							margin-right: 0
+							&:after
+								content: none

@@ -41,6 +41,12 @@
             "header-6.png",
             "Header 6",
             "51px"
+        ],
+        "header-7": [
+            "header/h-7",
+            "header",
+            "4bce78ba6e87a21236f52f144f940c85.png",
+            "Header big logo"
         ]
     },
     "boxes": {
@@ -64,21 +70,20 @@
         ]
     },
     "slider": {
-		"slider-1": [
-			"slider/s-1",
-			"body",
-			"slider-1.png",
-			"slider 1"
-		],
-		"slider-2": [
-			"slider/s-2",
-			"body",
-			"slider-2.png",
-			"slider 2"
-		]
-	},
-    "banner": {
+        "slider-1": [
+            "slider/s-1",
+            "body",
+            "slider-1.png",
+            "slider 1"
+        ],
+        "slider-2": [
+            "slider/s-2",
+            "body",
+            "slider-2.png",
+            "slider 2"
+        ]
     },
+    "banner": {},
     "carousel": {
         "carousel-1": [
             "carousel/c-1",
