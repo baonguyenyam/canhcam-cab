@@ -208,6 +208,12 @@
             "body",
             "0157ebd88a540ff4f65be0b6fe5424a0.png",
             "Gallery Video/Image/Hover"
+        ],
+        "gallery-4": [
+            "gallery/g-4",
+            "body",
+            "7afbbb96fbb667c6c84ae157f84256d8.png",
+            "Gallery 4"
         ]
     },
     "form": {
