@@ -196,6 +196,12 @@
             "body",
             "gallery-1.png",
             "gallery 1"
+        ],
+        "gallery-2": [
+            "gallery/g-2",
+            "body",
+            "711d2a1733005cd9ab00016753036e06.png",
+            "Gallery Video"
         ]
     },
     "form": {
