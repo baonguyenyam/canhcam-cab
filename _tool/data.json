@@ -202,6 +202,12 @@
             "body",
             "711d2a1733005cd9ab00016753036e06.png",
             "Gallery Video"
+        ],
+        "gallery-3": [
+            "gallery/g-3",
+            "body",
+            "0157ebd88a540ff4f65be0b6fe5424a0.png",
+            "Gallery Video/Image/Hover"
         ]
     },
     "form": {
