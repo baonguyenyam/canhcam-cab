@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>APIs</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<script src="./js/jquery-3.2.1.slim.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<style>
+		.list-group .list-group-item {
+			padding: .5rem .5rem;
+			margin-bottom: -1px;
+			border-radius: 0 !important
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center mt-5">
+				<h4>All-In-One Website Builder tool (CAB)</h4>
+				<h5>Dễ dàng triển khai và sử dụng</h5>
+				<p class="lead"> Bộ công cụ phát triển web vô cùng mạnh mẽ dựa trên nền tảng Bootstrap.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-3 pt-4">
+				<div class="list-group p-0" style="position: -webkit-sticky; position: sticky; top: 1rem; ">
+					<div class="list-group-item active">Danh mục</div>
+					<a href="#sec1" class="list-group-item list-group-item-action">Dành cho Sales</a>
+					<a href="#sec2" class="list-group-item list-group-item-action">Dành cho Developers</a>
+					<a href="#sec3" class="list-group-item list-group-item-action">Thực thi ứng dụng</a>
+					<a href="#sec4" class="list-group-item list-group-item-action">Lệnh build trên CAB</a>
+					<a href="#sec5" class="list-group-item list-group-item-action">Lệnh build trên Project</a>
+					<a href="./plugins.html" class="list-group-item list-group-item-action">Các Plug-ins có sẵn <span class="badge badge-danger">REQUIRED</span></a>
+					<a href="./documents.html" class="list-group-item list-group-item-action">APIs Documents</a>
+					<a href="/templates" class="list-group-item list-group-item-action">Test Components</a>
+					<a href="./logs.html" class="list-group-item list-group-item-action">Changelog</a>
+				</div>
+			</div>
+			<div class="col p-4">
+				<div class="jumbotron pt-4 pb-4">
+					<p class="lead mb-0">Trước khi sử dụng bộ Kit này bạn phải hiểu rằng đây là tài sản riêng của Cánh Cam, bạn phải tuân thủ các qui định để
+						sử dụng nó vào mục đích thích hợp. Công cụ có tên All-In-One Website Builder tool hay còn gọi là
+						<code>CAB</code>
+					</p>
+				</div>
+
+				<h1 class="mt-6" id="sec1">Dành cho Sales</h1>
+
+				<div class="mb-3" id="collapseExample">
+						<p class="lead mb-4">Truy cập vào CAB sau đó nhập tên dự án cần tạo site</p>
+						<p>
+							<img src="/img/enter.png" alt="" class="img-fluid img-thumbnail">
+						</p>
+						<p class="lead mb-4">Ở màn hình chính bạn kéo thả components vào, bên cạnh đó bạn có thể tạo thêm nhiều page cho sites, Sau khi hoàn tất
+							bạn nhấn nút
+							<code>Tạo site</code>
+						</p>
+						<p>
+							<img src="/img/main.png" alt="" class="img-fluid img-thumbnail">
+						</p>
+						<p class="lead mb-4">Bạn có thể thay đổi màu sắc cũng như thuộc tính Javascript của site với bảng cấu hình bên dưới.</p>
+						<p>
+							<img src="/img/config.png" alt="" class="img-fluid img-thumbnail">
+						</p>
+				</div>
+
+				<h1 class="mt-6" id="sec2">Dành cho Developers</h1>
+				<hr>
+				<p>Để cài đặt bộ kit này trước tiên bạn clone source về từ:</p>
+				<blockquote class="blockquote text-primary">git clone https://github.com/baonguyenyam/auto-build-static-web.git</blockquote>
+				<p>Sau đó tiến hành cài đặt bằng cách nhấp vào file</p>
+				<blockquote class="blockquote text-primary">install.bat</blockquote>
+				<p>Nếu bạn sử dụng Mac thì có thể chạy file
+					<code>install.sh</code>
+				</p>
+				<div class="alert alert-danger" role="alert">
+					Để đảm bảo công việc thuận lợi bạn phải xác định rõ mục tiêu sử dụng:
+					<ul class="list-unstyled ml-3 mb-0">
+						<li>1) Nếu bạn là lập trình viên: Máy bạn phải có sẵn NodeJS cũng như các plugins đi kèm như: pug, gulp, sass, npm... </li>
+						<li>2) Nếu bạn là sales: Bạn chỉ có quyền tạo site và sau đó liên hệ phòng develop để copy source (nếu được duyệt)</li>
+					</ul>
+				</div>
+				<hr>
+				<h1 class="mt-6" id="sec3">Thực thi ứng dụng</h1>
+				<h5 class="text-danger">Nếu sử dụng MacOS</h5>
+				<p>Vào thư mục dự án gọi lệnh:
+					<blockquote class="blockquote text-primary">sh app.sh</blockquote>
+				</p>
+				<p>
+					<img src="/img/sh.png" alt="" srcset="">
+				</p>
+				<p>Trong đó:</p>
+				<ul class="list-unstyled">
+					<li>1) Ấn số
+						<code>1</code> + Enter để chạy công cụ CAB</li>
+					<li>2) Ấn số
+						<code>2</code> + Enter: Sau khi build xong web muốn xem thử chạy lệnh này</li>
+					<li>3) Ấn số
+						<code>3</code> + Enter: Để xây dựng thêm thư viện cho CAB, xem thêm
+						<a href="./documents.html">tại đây</a>
+					</li>
+				</ul>
+				<h5 class="text-danger">Nếu sử dụng Windows</h5>
+				<p>Các sử dụng tương tự nhưng chạy file:
+					<blockquote class="blockquote text-primary">app.bat</blockquote>
+				</p>
+
+				<hr>
+				<h1 class="mt-6" id="sec4">Lệnh build trên CAB</h1>
+				<p>1) Để chạy CAB bạn chạy lệnh</p>
+				<blockquote class="blockquote text-primary">gulp builder && gulp copytool && node index.js</blockquote>
+				<p>2) Sau khi build xong web muốn xem thử chạy lệnh</p>
+				<blockquote class="blockquote text-primary">npm start</blockquote>
+				<p>3) Để xây dựng thêm thư viện cho CAB bạn chạy lệnh</p>
+				<blockquote class="blockquote text-primary">npm run dev</blockquote>
+				<hr>
+				<h1 class="mt-6" id="sec5">Lệnh build trên Project</h1>
+				<p class="lead">Sau khi kéo thả và tạo site xong developer vào thư mục <code>@SITE/[tên-dự-án]</code> và tiến hành cài đặt với hai lệnh cơ bản:</p>
+				<div class="card card-body text-left text-danger mb-3">
+					- npm i<br>
+					- bower update
+				</div>
+				<p>1) Để chạy Build tích hợp nén CSS,JS,HTML,IMG và deploy lên server bạn chạy lệnh</p>
+				<blockquote class="blockquote text-primary">npm run pro</blockquote>
+				<p>2) Để chạy Build KHÔNG NÉN và deploy lên server bạn chạy lệnh</p>
+				<blockquote class="blockquote text-primary">npm run pro-no</blockquote>
+				<p>3) Để chạy Build tích hợp nén CSS,JS,HTML,IMG và chạy được trên local bạn chạy lệnh</p>
+				<blockquote class="blockquote text-primary">npm run local</blockquote>
+				<p>4) Để chạy Build KHÔNG NÉN và chạy được trên local bạn chạy lệnh</p>
+				<blockquote class="blockquote text-primary">npm run local-no</blockquote>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

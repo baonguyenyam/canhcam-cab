@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Plug-ins Documents</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<script src="./js/jquery-3.2.1.slim.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<style>
+		.list-group .list-group-item {
+			padding: .25rem .5rem;
+			margin-bottom: -1px;
+			border-radius: 0 !important
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center mt-5">
+				<h4>Hướng dẫn sử dụng Plug-ins tích hợp</h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-3 pt-4">
+				<div class="list-group small p-0" style="position: -webkit-sticky; position: sticky; top: 1rem; ">
+					<div class="list-group-item active">Sử dụng Plug-ins</div>
+					<a href="#sec1" class="list-group-item list-group-item-action">Image auto responsive
+						<span class="badge badge-danger">HOT</span>
+					</a>
+					<a href="#sec2" class="list-group-item list-group-item-action">Fixed Header</a>
+					<a href="#sec3" class="list-group-item list-group-item-action">Fixed Footer</a>
+					<a href="#sec4" class="list-group-item list-group-item-action">Back to top</a>
+					<a href="#sec5" class="list-group-item list-group-item-action">Dev tools</a>
+					<a href="#sec6" class="list-group-item list-group-item-action">Toogle List to Select box
+						<span class="badge badge-danger">HOT</span>
+					</a>
+					<a href="#sec7" class="list-group-item list-group-item-action">Form auto validator
+						<span class="badge badge-danger">HOT</span>
+					</a>
+					<a href="#sec8" class="list-group-item list-group-item-action">OWL Carousel</a>
+					<a href="#sec9" class="list-group-item list-group-item-action">Slick Carousel</a>
+					<a href="#sec10" class="list-group-item list-group-item-action">TouchSpin</a>
+					<a href="#sec11" class="list-group-item list-group-item-action">K-Gmaps</a>
+					<a href="#sec12" class="list-group-item list-group-item-action">Slider Bar</a>
+					<a href="#sec13" class="list-group-item list-group-item-action">Select2</a>
+					<a href="#sec14" class="list-group-item list-group-item-action">Light Gallery</a>
+					<a href="#sec15" class="list-group-item list-group-item-action">Perfect Scrollbar</a>
+					<a href="#sec16" class="list-group-item list-group-item-action">Bootstrap Datepicker
+					<a href="#sec17" class="list-group-item list-group-item-action">Number CountUp
+						<span class="badge badge-danger">HOT</span>
+					</a>
+					<a href="#sec18" class="list-group-item list-group-item-action">Image Zoom</a>
+					<a href="#fawe" class="list-group-item list-group-item-action">Font Awesome</a>
+					<a href="#fmat" class="list-group-item list-group-item-action">Font Material</a>
+				</div>
+			</div>
+			<div class="col p-4">
+
+				<h1 id="sec1">Image auto responsive</h1>
+				<p class="lead">Tính năng này tự động đổi ảnh khi responsive web nhằm đảm bảo cho site đạt được điểm tại google friendly là cao nhất,
+					với việc sử dụng attribulte
+					<code>[bg-img]</code>,
+					<code>[img-src-responsive]</code> rất dễ dàng:</p>
+				<div class="row">
+					<div class="col">
+						Tính năng này sẽ được bật nếu bạn chọn mục
+						<code>Active Responsive IMG</code> và đi kèm với hai mục
+						<code>Default Grid</code> và
+						<code>Default Grid SM</code> trong phần config site trên CAB
+					</div>
+				</div>
+				<hr>
+				<h5 class="text-primary mb-3">Nền
+					<code>[bg-img]</code>
+				</h5>
+				<div class="card card-body bg-light text-left mb-3">
+					&lt;div bg-img="./img/demo.png"&gt; &lt;/div&gt;
+				</div>
+				<div class="mb-5 alert alert-warning" role="alert">
+					<strong>
+						<i class="fa fa-lightbulb-o" aria-hidden="true"></i> Phạm vi sử dụng</strong>
+					<div class="mt-2">
+						Sử dụng trong các thẻ div, figure...
+						<code>ngoại trừ thẻ img</code>
+					</div>
+				</div>
+
+				<h5 class="text-primary mb-3">Nền + Responsive
+					<code>[bg-img-responsive], [bg-img-responsive-sm], [bg-img-responsive-xs]</code>
+				</h5>
+
+				<div class="card card-body bg-light text-left mb-3">
+					&lt;div bg-img-responsive="./img/demo.png" bg-img-responsive-sm="./img/demo-sm.png" bg-img-responsive-xs="./img/demo-xs.png"&gt;
+					&lt;/div&gt;
+				</div>
+				<div class="mb-5 alert alert-warning" role="alert">
+					<strong>
+						<i class="fa fa-lightbulb-o" aria-hidden="true"></i> Phạm vi sử dụng</strong>
+					<div class="mt-2">
+						Sử dụng trong các thẻ div, figure...
+						<code>ngoại trừ thẻ img</code>
+					</div>
+				</div>
+
+
+				<h5 class="text-primary mb-3">Ảnh + Responsive
+					<code>[img-src-responsive], [img-src-responsive-sm], [img-src-responsive-xs]</code>
+				</h5>
+
+				<div class="card card-body bg-light text-left mb-3">
+					&lt;img img-src-responsive="./img/demo.png" img-src-responsive-sm="./img/demo-sm.png" img-src-responsive-xs="./img/demo-xs.png"&gt;
+				</div>
+				<div class="mb-5 alert alert-warning" role="alert">
+					<strong>
+						<i class="fa fa-lightbulb-o" aria-hidden="true"></i> Phạm vi sử dụng</strong>
+					<div class="mt-2">
+						<code>Chỉ sử dụng cho thẻ img</code>
+					</div>
+				</div>
+
+				<h1 class="mt-5" id="sec2">Fixed Header</h1>
+				<p class="lead">Tính năng này có 2 class đặc biệt cho header sẽ được tự động gán là
+					<code>.active</code>,
+					<code>.fixedheader</code>
+				</p>
+				<hr>
+				<dl class="row">
+					<dt class="col-sm-2">Class</dt>
+					<dd class="col-sm-10">
+						<div class="row">
+							<div class="col-sm-3">
+								<code>.active</code>
+							</div>
+							<div class="col-sm-9">
+								Class này sẽ tự động đổi màu (hoặc thuộc tính khác) của header khi scroll page và sẽ được bật nếu bạn chọn mục
+								<code>Active Header Tranparents</code> và
+								<code>Header Position</code> trong phần config site trên CAB
+							</div>
+						</div>
+					</dd>
+					<dt class="col-sm-2"></dt>
+					<dd class="col-sm-10">
+						<div class="row">
+							<div class="col-sm-3">
+								<code>.fixedheader</code>
+							</div>
+							<div class="col-sm-9">
+								Class này sẽ tự động gắn cứng header khi vào mobile hoặc scroll page và sẽ được bật nếu bạn chọn mục
+								<code>Active Fixed Header</code> và
+								<code>Header Position</code> trong phần config site trên CAB
+							</div>
+						</div>
+					</dd>
+				</dl>
+
+				<h1 class="mt-5" id="sec3">Fixed Footer</h1>
+				<p class="lead">Tính năng này sẽ tự động gắn cứng footer khi nội dung ngắn và sẽ được bật nếu bạn chọn mục
+					<code>Active Fixed Footer</code> và
+					<code>Display footer</code> trong phần config site trên CAB</p>
+
+				<h1 class="mt-5" id="sec4">Back to top</h1>
+				<p class="lead">Tính năng này sẽ tự động hiển thị nút Back to top khi scroll page và sẽ được bật nếu bạn chọn mục
+					<code>Active Back to top button</code> và
+					<code>Display ToTop</code> trong phần config site trên CAB</p>
+
+				<h1 class="mt-5" id="sec5">Dev tools</h1>
+				<p class="lead">Tính năng này sẽ tự động bật/tắt lưới khi dev và sẽ được bật nếu bạn chọn mục
+					<code>Enable Dev tool</code> và
+					<code>Enable Dev Full-width mode</code> trong phần config site trên CAB</p>
+
+				<h1 class="mt-5" id="sec6">Toogle List to Select box</h1>
+				<p class="lead">Tính năng này tự động đổi list sang select box khi responsive rất dễ dàng với việc sử dụng attribulte
+					<code>[data-select]</code> trong thẻ
+					<code>ul</code>:</p>
+
+				<hr>
+
+				<h5 class="text-primary mb-3">Định dạng cho thẻ
+					<code>ul</code>
+				</h5>
+				<div class="card card-body bg-light text-left mb-3">
+					&lt;ul data-select&gt;
+					<br> &emsp;&lt;li&gt;
+					<br> &emsp;&emsp;&lt;a href="#"&gt;Demo&lt;/a&gt;
+					<br> &emsp;&lt;/li&gt;
+					<br> &emsp;&lt;li&gt;
+					<br> &emsp;&emsp;&lt;a href="#"&gt;Demo&lt;/a&gt;
+					<br> &emsp;&lt;/li&gt;
+					<br> &emsp;...
+					<br> &lt;/ul&gt;
+				</div>
+
+				<h1 class="mt-5" id="sec7">Form auto validator</h1>
+				<p class="lead">Tính năng này tự động đổi báo lỗi form khi người dùng nhập sai yêu cầu với việc sử dụng attribulte
+					<code>[data-toggle="validator"]</code> trong thẻ
+					<code>form</code> nó được sử dụng đi kèm với các attribulte
+					<code>[data-error]</code> class
+					<code>.help-block</code>,
+					<code>required</code>:</p>
+
+				<hr>
+
+				<h5 class="text-primary mb-3">Định dạng cho thẻ
+					<code>form</code>
+				</h5>
+				<div class="card card-body bg-light text-left mb-3">
+					&lt;form data-toggle="validator"&gt;
+					<br> &emsp;&lt;input data-error="Vui lòng nhập thông tin" required&gt;
+					<br> &emsp;&lt;div class="help-block with-errors">&lt;/div&gt;
+					<br> &emsp;&lt;input data-error="Vui lòng nhập thông tin" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$" required&gt;
+					<br> &emsp;&lt;div class="help-block with-errors">&lt;/div&gt;
+					<br> &lt;/form&gt;
+				</div>
+				<h5 class="text-primary mb-3">Các pattern tham khảo</h5>
+				<dl class="row">
+					<dt class="col-sm-4 small">Email</dt>
+					<dd class="col-sm-8">
+						<code>^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$</code>
+					</dd>
+					<dt class="col-sm-4 small">Phone</dt>
+					<dd class="col-sm-8">
+						<code>^[_A-z0-9]{1,}$</code>
+					</dd>
+					<dt class="col-sm-4 small">Password (UpperCase, LowerCase and Number)</dt>
+					<dd class="col-sm-8">
+						<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$</code>
+					</dd>
+					<dt class="col-sm-4 small">Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)</dt>
+					<dd class="col-sm-8">
+						<code>(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$</code>
+					</dd>
+				</dl>
+				<p>Xem thêm tại
+					<a href="http://html5pattern.com/" target="_blank">http://html5pattern.com/</a>
+				</p>
+
+				<h1 class="mt-5" id="sec8">OWL Carousel</h1>
+				<p class="lead">Plugins này khuyến cáo sử dụng vì có performance rất tốt</p>
+
+				<hr>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					$('.canhcam-carousel-1 .owl-carousel').owlCarousel({
+					<br />&emsp;animateIn: 'fadeIn',
+					<br />&emsp;animateOut: 'fadeOut',
+					<br />&emsp;items: 2,
+					<br />&emsp;loop: true,
+					<br />&emsp;center: false,
+					<br />&emsp;padding: 10,
+					<br />&emsp;margin: 20,
+					<br />&emsp;navText: ['&lt;i class="fa fa-chevron-left"&gt;&lt;/i&gt;', '&lt;i class="fa fa-chevron-right"&gt;&lt;/i&gt;'],
+					<br />&emsp;nav: true,
+					<br />&emsp;dots: false,
+					<br />&emsp;autoplay: true,
+					<br />&emsp;autoplayTimeout: 3000,
+					<br />&emsp;autoplayHoverPause: false,
+					<br />&emsp;callbacks: true,
+					<br />&emsp;responsive: {
+					<br />&emsp;&emsp;480: {
+					<br />&emsp;&emsp;&emsp;items: 2
+					<br />&emsp;&emsp;},
+					<br />&emsp;&emsp;768: {
+					<br />&emsp;&emsp;&emsp;items: 3
+					<br />&emsp;&emsp;},
+					<br />&emsp;&emsp;992: {
+					<br />&emsp;&emsp;&emsp;items: 4,
+					<br />&emsp;&emsp;&emsp;nav: false,
+					<br />&emsp;&emsp;&emsp;dots: true
+					<br />&emsp;&emsp;},
+					<br />&emsp;&emsp;1140: {
+					<br />&emsp;&emsp;&emsp;items: 6,
+					<br />&emsp;&emsp;&emsp;nav: false,
+					<br />&emsp;&emsp;&emsp;dots: true
+					<br />&emsp;&emsp;}
+					<br />&emsp;}
+					<br />});
+				</div>
+				<h1 class="mt-5" id="sec9">Slick Carousel</h1>
+				<p class="lead">Plugins này sử dụng trong đa số trường hợp</p>
+
+				<hr>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$('.canhcam-gallery-1 .product-details .slider-nav').slick({</div>
+					<div>&emsp;autoplay: false,</div>
+					<div>&emsp;slidesToShow: 5,</div>
+					<div>&emsp;slidesToScroll: 1,</div>
+					<div>&emsp;dots: false,</div>
+					<div>&emsp;arrows: true,</div>
+					<div>&emsp;centerMode: false,</div>
+					<div>&emsp;focusOnSelect: true,</div>
+					<div>&emsp;prevArrow: $('.top-arrow'),</div>
+					<div>&emsp;nextArrow: $('.bottom-arrow'),</div>
+					<div>&emsp;vertical: true,</div>
+					<div>&emsp;variableWidth: false,</div>
+					<div>&emsp;verticalSwiping: false,</div>
+					<div>&emsp;infinite: false,</div>
+					<div>&emsp;responsive: [{</div>
+					<div>&emsp;&emsp;breakpoint: 768,</div>
+					<div>&emsp;&emsp;settings: {</div>
+					<div>&emsp;&emsp;&emsp;slidesToShow: 3,
+					</div>
+					<div>&emsp;&emsp;&emsp;vertical: false,
+					</div>
+					<div>&emsp;&emsp;&emsp;verticalSwiping: false,
+					</div>
+					<div>&emsp;&emsp;&emsp;variableWidth: false
+					</div>
+					<div>&emsp;&emsp;}</div>
+					<div>&emsp;&emsp;}]</div>
+					<div>&emsp;})</div>
+					});
+				</div>
+
+				<h1 class="mt-5" id="sec10">TouchSpin</h1>
+				<p class="lead">Plugins này sử dụng trong trang shopping</p>
+
+				<hr>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$('.canhcam-gallery-1 #quantity input').TouchSpin({</div>
+					<div>&emsp;min: 0,</div>
+					<div>&emsp;max: 100,</div>
+					<div>&emsp;buttondown_class: "btn btn-default",</div>
+					<div>&emsp;buttonup_class: "btn btn-default"</div>
+					<div>});</div>
+				</div>
+
+
+				<h1 class="mt-5" id="sec11">K-Gmaps</h1>
+				<p class="lead">Plugins này sử dụng trong trang liên hệ thuận lợi cho SEO nhất và thay đổi được màu sắc bản đồ</p>
+
+				<p>Theme list:
+					<code>default</code>,
+					<code>white</code>,
+					<code>black</code>,
+					<code>river</code>,
+					<code>cyan</code>,
+					<code>green</code>,
+					<code>metan</code>,
+					<code>yellow</code>,
+					<code>red</code>
+				</p>
+
+				<hr>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$(document).ready(function() {</div>
+					<div>&emsp;$('#ccmaps').kmaps();</div>
+					<div>});</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;article id="ccmaps"&gt;</div>
+					<div>&emsp;&lt;div class="Lat"&gt;10.359352&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="Lng"&gt;106.673089&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="MarginLat"&gt;-0.0050&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="MarginLng"&gt;0&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="imgMap"&gt;/img/logo.png&lt;/div&gt;</div>
+					<div>&emsp;&lt;address&gt;Nguyễn Văn Thủ, Ho Chi Minhg, Việt Nam&lt;/address&gt;</div>
+					<div>&emsp;&lt;div class="infoWindow"&gt;</div>
+					<div>&emsp;&emsp;&lt;h3&gt;C&aacute;nh Cam&lt;/h3&gt;</div>
+					<div>&emsp;&emsp;&lt;p&gt;&lt;strong&gt;Tại Tiền Giang :&lt;/strong&gt;&lt;br&gt; Nguyễn Văn Thủ, Ho Chi Minh&lt;br&gt; Email:
+						info@canhcam.com&lt;br&gt; Tel :&lt;ahref="tel:+840000000"onclick="_gaq.push(['_trackEvent', 'Mobile', 'Click to Call'])"&gt;0.96.96.89.89.3&lt;/a&gt;&lt;/p&gt;</div>
+					<div>&emsp;&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="mapType"&gt;ROADMAP&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="mapCenter"&gt;true&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="Title"&gt;Hello&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="infoWidth"&gt;200&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="ms"&gt;white&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="mapZoom"&gt;15&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="scrollwheel"&gt;false&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="disableDoubleClickZoom"&gt;true&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="fullscreenControl"&gt;true&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="disableOpenURL"&gt;false&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="OpenURL"&gt;View full map&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="draggable"&gt;false&lt;/div&gt;</div>
+					<div>&emsp;&lt;div class="disableDefaultUI"&gt;false&lt;/div&gt;</div>
+					<div>&lt;/article&gt;</div>
+				</div>
+
+				<p>Xem thêm tại
+					<a href="https://github.com/baonguyenyam/k-gmaps" target="_blank">https://github.com/baonguyenyam/k-gmaps</a>
+				</p>
+
+				<h1 class="mt-5" id="sec12">Slider Bar</h1>
+				<p class="lead">Plugins này sử dụng trong filter giá cho danh sách sản phẩm</p>
+
+				<hr>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;input id="price" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[0,1000]"&gt;</div>
+					<div>&lt;div id="display-price"&gt;&lt;/div&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$(".canhcam-shop-1 #price").slider({</div>
+					<div>&emsp;formatter: function (value) {</div>
+					<div>&emsp;&emsp;return value;</div>
+					<div>&emsp;}</div>
+					<div>});</div>
+					<div>$(".canhcam-shop-1 #price").on("slide", function (slideEvt) {</div>
+					<div>&emsp;$(".canhcam-shop-1 #display-price").text(slideEvt.value);</div>
+					<div>});</div>
+				</div>
+
+				<h1 class="mt-5" id="sec13">Select2</h1>
+				<p class="lead">Plugins này sử dụng trong select box</p>
+
+				<hr>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$('.canhcam-shop-2 select').select2({</div>
+					<div>&emsp;"language": {</div>
+					<div>&emsp;&emsp;"noResults": function () {</div>
+					<div>&emsp;&emsp;&emsp;return "Kh&ocirc;ng c&oacute; sản phẩm n&agrave;o";</div>
+					<div>&emsp;&emsp;}</div>
+					<div>&emsp;},</div>
+					<div>&emsp;escapeMarkup: function (markup) {</div>
+					<div>&emsp;&emsp;return markup;</div>
+					<div>&emsp;}</div>
+					<div>});</div>
+				</div>
+				<h1 class="mt-5" id="sec14">Light Gallery</h1>
+				<p class="lead">Plugins này sử dụng trong album ảnh</p>
+
+				<hr>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$(".canhcam-gallery-3 .gallery-lists").lightGallery({</div>
+					<div>&emsp;thumbnail: true,</div>
+					<div>&emsp;animateThumb: false,</div>
+					<div>&emsp;showThumbByDefault: false,</div>
+					<div>&emsp;selector: '.item'</div>
+					<div>});</div>
+				</div>
+
+				<h1 class="mt-5" id="sec15">Perfect Scrollbar</h1>
+				<p class="lead">Tạo Scrollbar đặc thù cho page, elements...
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;div id="element" style="height:200px;position:relative"&gt;&lt;/div&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$(function(){</div>
+					<div>&emsp;$('#element').perfectScrollbar();</div>
+					<div>});</div>
+				</div>
+
+				<h1 class="mt-5" id="sec16">Bootstrap Datepicker</h1>
+				<p class="lead">Tạo popup date cho form
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;input class="datepicker"&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$('.datepicker').datepicker({</div>
+					<div>&emsp;format: 'dd/mm/yyyy',</div>
+					<div>&emsp;startDate: '-3d'</div>
+					<div>});</div>
+				</div>
+
+				<h1 class="mt-5" id="sec17">Number CountUp</h1>
+				<p class="lead">Tự động đếm số theo giá trị và thời gian qui định trước, tính năng này được kích hoạt khi scroll màn hình đến vị trí của element trong đó giá trị <code>data-top</code> là khoảng trống pixel khi scroll tới element
+				</p>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;span data-duration="8000" data-count="343" data-top="30"&gt;&lt;/span&gt;</div>
+				</div>
+
+				<h1 class="mt-5" id="sec18">Image Zoom</h1>
+				<p class="lead">Phóng to ảnh trong chi tiết sản phẩm
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>&lt;article class="product-item"&gt;</div>
+					<div>&emsp;&lt;img id="zoomimg" src="./img/product/01.jpg" data-zoom-image="./img/product/t-shirt.jpg"&gt;</div>
+					<div>&lt;/article&gt;</div>
+					<div>&lt;article class="product-control"&gt;</div>
+					<div>&emsp;&lt;a class="item active" href="javascript:void(0)"&gt;</div>
+					<div>&emsp;&emsp;&lt;figure&gt;</div>
+					<div>&emsp;&emsp;&emsp;&lt;img src="./img/product/s-01.png" data-preview-image="./img/product/01.jpg" data-zoom-image="./img/product/t-shirt.jpg"&gt;</div>
+					<div>&emsp;&emsp;&lt;/figure&gt;</div>
+					<div>&emsp;&lt;/a&gt;</div>
+					<div>&lt;/article&gt;</div>
+				</div>
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$("#zoomimg").elevateZoom({</div>
+					<div>&emsp;responsive: true,</div>
+					<div>&emsp;gallery: "product-control",</div>
+					<div>&emsp;galleryActiveClass: "active"</div>
+					<div>});</div>
+
+					<div>$(".product-control .item").each(function () {</div>
+					<div>&emsp;$(this).click(function (e) {</div>
+					<div>&emsp;&emsp;var currentValue = $(this).find('img').attr('data-preview-image')</div>
+					<div>&emsp;&emsp;var currentValueZoom = $(this).find('img').attr('data-zoom-image')</div>
+					<div>&emsp;&emsp;$('.product-control .item').removeClass('active')</div>
+					<div>&emsp;&emsp;$(this).addClass('active')</div>
+					<div>&emsp;&emsp;var gallery_zoomimg = $('#zoomimg').data('elevateZoom');</div>
+					<div>&emsp;&emsp;gallery_zoomimg.swaptheimage(currentValue, currentValueZoom);</div>
+					<div>&emsp;});</div>
+					<div>});</div>
+				</div>
+
+
+
+				<h1 class="mt-5" id="fawe">Font Awesome</h1>
+				<p class="lead">Cách sử dụng font bằng các class
+					<code>.fa</code>,
+					<code>.fab</code>,
+					<code>.fal</code>,
+					<code>.far</code>,
+					<code>.fas</code>
+				</p>
+
+				<p>Xem thêm tại
+					<a href="./fonts-awesome.html" target="_blank">đây</a>
+				</p>
+
+
+
+				<h1 class="mt-5" id="fmat">Font Material</h1>
+				<p class="lead">Cách sử dụng font bằng các class
+					<code>.mdi</code>
+				</p>
+
+				<p>Xem thêm tại
+					<a href="./fonts-material.html" target="_blank">đây</a>
+				</p>
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
