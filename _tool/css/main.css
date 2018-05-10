@@ -248,7 +248,7 @@ iframe {
 	border-radius: .25rem;
 }
 #accordion .list-group .list-group-item figure {
-	max-height: 140px;
+	/* max-height: 140px; */
 	overflow: hidden
 }
 .list-group .list-group-item figure img {

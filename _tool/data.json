@@ -67,6 +67,18 @@
             "body",
             "7e07c3213f76f5d7696ff597e20ffaec.png",
             "dfg"
+        ],
+        "boxes-4": [
+            "boxes/b-4",
+            "body",
+            "f6e92256e2a7d837302b5a870409735a.png",
+            "Boxes 4"
+        ],
+        "boxes-5": [
+            "boxes/b-5",
+            "body",
+            "012d813c37a4d74ba3672030950a0df6.png",
+            "Boxes 5"
         ]
     },
     "slider": {

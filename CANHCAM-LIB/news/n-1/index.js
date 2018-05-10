@@ -1,12 +1,14 @@
 function changeNewsItemNews1() {
 	if ($(window).width() > CANHCAM_APP.CHANGE_GRID) {
-		var geth = $('.canhcam-news-1 .top-list .item:first-child figure').outerHeight();
-		var countitem = $('.canhcam-news-1 .part-list').find('.item').length
+
 		$('.canhcam-news-1 .part-list .item figure').each(function () {
+			var geth = $('.canhcam-news-1 .top-list .item:first-child figure').outerHeight();
+			var countitem = $('.canhcam-news-1 .part-list').find('.item').length
 			$(this).css({
 				'height': 'calc(' + (geth / countitem) + 'px - 1rem)'
 			})
-		});
+		})
+
 	} else {
 		$('.canhcam-news-1 .part-list .item figure').each(function () {
 			$(this).css({
@@ -29,6 +31,7 @@ $(document).ready(function() {
 		navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
 		nav: true,
 		dots: false,
+		autoHeight: true,
 		autoplay: true,
 		autoplayTimeout: 5000,
 		autoplayHoverPause: true
