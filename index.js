@@ -1,4 +1,5 @@
 var express = require('express');
+var compression = require('compression');
 var app = express();
 var path = require('path');
 var bodyParser = require("body-parser");
@@ -8,9 +9,22 @@ var crypto = require('crypto');
 var multer = require('multer');
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
+console.log(process.env.NODE_ENV)
 app.use(json_body_parser);
 app.use(urlencoded_body_parser);
 app.use('/', express.static(__dirname + '/_tool/'));
+app.locals.pretty = true;
+
+app.set('view engine', 'pug')
+app.set('views', './_tool/views')
+app.get('/', function (req, res) {
+	res.render('index')
+})
+app.use(compression());
+
+app.get(/\/js/, express.static(path.join(__dirname + '/_tool/', 'js')));
+app.get(/\/css/, express.static(path.join(__dirname + '/_tool/', 'css')));
+app.get(/\/images/, express.static(path.join(__dirname + '/_tool/', 'images')));
 
 var root = './CANHCAM-LIB';
 var dest = './@SITE';

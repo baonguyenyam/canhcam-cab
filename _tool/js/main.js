@@ -129,7 +129,6 @@ function taoTrangIndex() {
 		$('#' + toAdd + '-tab').trigger('click')
 		createPageBuilder(toAdd)
 		checkTab()
-		console.log(pagesLists)
 	}
 }
 

@@ -1,0 +1,365 @@
+doctype html
+//
+	$$$$$$$\   $$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\  $$\   $$\ $$\     $$\ $$$$$$$$\ $$\   $$\
+	$$  __$$\ $$  __$$\ $$  __$$\ $$$\  $$ |$$  __$$\ $$ |  $$ |\$$\   $$  |$$  _____|$$$\  $$ |
+	$$ |  $$ |$$ /  $$ |$$ /  $$ |$$$$\ $$ |$$ /  \__|$$ |  $$ | \$$\ $$  / $$ |      $$$$\ $$ |
+	$$$$$$$\ |$$$$$$$$ |$$ |  $$ |$$ $$\$$ |$$ |$$$$\ $$ |  $$ |  \$$$$  /  $$$$$\    $$ $$\$$ |
+	$$  __$$\ $$  __$$ |$$ |  $$ |$$ \$$$$ |$$ |\_$$ |$$ |  $$ |   \$$  /   $$  __|   $$ \$$$$ |
+	$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |\$$$ |$$ |  $$ |$$ |  $$ |    $$ |    $$ |      $$ |\$$$ |
+	$$$$$$$  |$$ |  $$ | $$$$$$  |$$ | \$$ |\$$$$$$  |\$$$$$$  |    $$ |    $$$$$$$$\ $$ | \$$ |
+	\_______/ \__|  \__| \______/ \__|  \__| \______/  \______/     \__|    \________|\__|  \__|
+	Coding by: Bao Nguyen
+	Tel: 0.96.96.89.89.3
+	Email: baonguyenyam@gmail.com
+	URL: fb.com/pham.nguyen.bao.nguyen,
+	baonguyenyam.github.io
+	baonguyenyam.blogspot.com
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		title Canh Cam - All-In-One Website Builder tool by Bao Nguyen
+		link(rel='stylesheet', href='/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/css/bootstrap-colorpicker.min.css')
+		link(rel='stylesheet', href='/css/select2.min.css')
+		link(rel='stylesheet', href='/css/bootstrap-tour.min.css')
+		link(rel='stylesheet', href='/css/main.css')
+		if process.env.NODE_ENV === 'production'
+			script(src='/js/core.min.js')
+		else 
+			script(src='/js/jquery-3.2.1.slim.min.js')
+			script(src='/js/popper.min.js')
+			script(src='/js/bootstrap.min.js')
+			script(src='/js/sortable.min.js')
+			script(src='/js/bootstrap-colorpicker.min.js')
+			script(src='/js/jquery-quickedit.js')
+			script(src='/js/typeahead.jquery.min.js')
+			script(src='/js/select2.full.min.js')
+			script(src='/js/bootstrap-tour.min.js')
+			script(src='/js/keymaster.js')
+	body
+		.container-no
+			#maincc.row.no-gutters
+				.col.flex-column.bleft(style='display:none')
+					#accordion.bg-light
+						figure#logopage
+							img.img-fluid(src='./img/logo.jpg')
+				#noleft.col.d-flex.flex-column.noleft
+					.container-fluid
+						.row.deview(style='display: none')
+							.col-auto.mr-auto.d-flex.align-items-center.justify-content-start
+								button.btn.btn-outline-secondary.btn-sm.togglemenu.mr-2(data-toggle='tooltip', data-placement='bottom', title='Bật tắt menu')
+									i.fa.fa-bars
+								h4.mb-0.h6
+									| Dự án: 
+									abbr#projectname.text-danger(data-toggle='tooltip', data-placement='bottom', title='Sửa tên dự án')
+									i#edit-projectname.text-danger.fa.fa-pencil
+							.col-auto.text-right.d-flex.align-items-center.justify-content-end
+								form#toDoList.mr-2(name='toDoList')
+									.input-group.input-group-sm
+										input.form-control(type='text', placeholder='Nhập tên trang', name='ListItem')
+										.input-group-append
+											button#createPage.btn.btn-primary(type='button') Thêm
+								.btn-group.btn-group-sm.mr-2(role='group')
+									button#tooglepc.btn.btn-outline-secondary.active(onclick='javascript:void(0)')
+										| PC
+									button#tooglemobile.btn.btn-outline-secondary(onclick='javascript:void(0)')
+										| Mobile
+									button#toogletablet.btn.btn-outline-secondary(onclick='javascript:void(0)')
+										| Tablet
+								button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#keyboardShortCut')
+									i.fa.fa-keyboard-o(data-toggle='tooltip', data-placement='bottom', title='Phím tắt')
+								button#retour.btn.btn-outline-secondary.btn-sm.mr-2
+									i.fa.fa-info-circle(data-toggle='tooltip', data-placement='bottom', title='Xem hướng dẫn')
+								button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#exampleModalCenter')
+									i.fa.fa-cog(data-toggle='tooltip', data-placement='bottom', title='Cấu hình dự án')
+								button#addComponent.btn.btn-outline-success.btn-sm(type='button', data-toggle='collapse', data-target='#addCompo', aria-expanded='false', aria-controls='addCompo')
+									i.fa.fa-plus(data-toggle='tooltip', data-placement='bottom', title='Thêm một component vào dự án')
+						#addCompo.collapse.mt-3
+							.card.card-body
+								.alert.alert-danger(role='alert')
+									| Chú ý: Cẩn trọng khi thêm plugins
+								form#formAddComponent(enctype='multipart/form-data', method='POST')
+									.row
+										.col-6
+											.form-group.mb-2
+												label Tên components
+												input#nameCompo.form-control(type='text', name='nameCompo', placeholder="Tên components VD: 'Header 3'", required='')
+										.col-6
+											.form-group.mb-2
+												label Độ cao mặc định
+												.input-group.mb-3
+													input#heightCompo.form-control(type='text', name='heightCompo', placeholder='Không bắt buộc')
+													.input-group-append
+														span.input-group-text px
+										.col-6
+											.form-group.mb-2
+												label Chọn menu
+												select.form-control(name='selectCompo', required='')
+													option(selected='', disabled='') Vui lòng chọn
+										.col-6
+											.form-group.mb-2
+												label Upload
+												.custom-file
+													input#imgUploader.custom-file-input(type='file', name='imgUploader', required='')
+													label.custom-file-label.justify-content-start(for='imgUploader') Chọn ảnh
+									.row
+										.col
+											.bg-light.p-2.textresult ...
+									.row.mt-3
+										.col
+											input#comkey(type='hidden', name='comkey')
+											input#commain(type='hidden', name='commain')
+											input#comnum(type='hidden', name='comnum')
+											button.btn.btn-primary(type='button') Thêm Component
+						.maindev
+							ul#myTab.nav.nav-tabs.tab-sm(role='tablist')
+							#nav-tabContent.tab-content
+						.notedcanhcam.mt-5
+							.col-12.text-center
+								.alert.alert-success.mb-5(role='alert', style='display:none') Đã tạo site thành công!
+								p
+									img(src='./img/logo.jpg', alt='')
+								h4.mb-0 All-In-One Website Builder tool (CAB)
+								p.text-sm
+									span#version.text-muted
+									|  -
+									| 
+									a(href='https://baonguyenyam.github.io/canhcam-cab/', target='_blank') API Docs
+									|  -
+									| 
+									a(href='https://baonguyenyam.github.io/canhcam-cab/logs.html', target='_blank') ChangeLog
+								.enterpro.row.col-auto.align-items-center.justify-content-center.mb-5
+									.card.bg-light
+										.card-body
+											form#toDoListMain.form-inline(name='toDoListMain')
+												.input-group.mr-2 Nhập tên dự án
+												.input-group
+													input#typeahead.form-control(type='text', placeholder='Tên dự án', name='ListItemMain')
+													.input-group-append
+														button#buttonListItemMain.btn.btn-success(type='button') Nhập
+								//
+									<p class="enterpro">
+									<img class="img-fluid" src="./img/responsive-web-design.jpg" alt="">
+									</p>
+								.container.pt-4
+									.row
+										.col
+											figure.text-center
+												img(src='./img/icon-1.png', style='height:100px', alt='')
+												h3.h5.mt-3.text-danger Drag and Drop website builder
+												p.text-muted
+													| Được xây dựng trên công nghệ tiên tiến của Bootstrap, các components của chúng tôi được thiết kế tốt và phù hợp với mọi loại hình kinh doanh. Khám phá qua các mẫu wweb responsive của chúng tôi để thấy sự hấp dẫn.
+										.col
+											figure.text-center
+												img(src='./img/icon-4.png', style='height:100px', alt='')
+												h3.h5.mt-3.text-danger Thân thiện bán hàng
+												p.text-muted
+													| Các tính năng được xây dựng cho công cụ bán hàng hết sức chi tiết và mạnh mẽ, từ những công cụ quản lý album ảnh cho đến các bộ lọc giá hay tính năng phóng to thu nhỏ ảnh đều được chúng tôi chọn lọc một cách tỉ mỉ.
+										.col
+											figure.text-center
+												img(src='./img/icon-2.png', style='height:100px', alt='')
+												h3.h5.mt-3.text-danger Trình tạo ứng dụng
+												p.text-muted
+													| Xây dựng trên các nền tảng ngôn ngữ hiện đại cùng với sự hỗ trợ của giao diện người dùng linh hoạt chúng tôi cho phép thực hiện dễ dàng và nhanh chóng bất kỳ ứng dụng web nào, cho bất kỳ nhu cầu nào.
+								.copyright.bg-light.p-3.small(style='width:100%; position: fixed; bottom: 0; left: 0')
+									| Copyright by Canh Cam
+								.notedcanhcam(style='display: none')
+									.col-12.mt-4.text-center
+										button#preCreateSite.btn.btn-success(type='button') Tạo dự án mới
+						.createcanhcam(style='display: none')
+							.col-12.mt-4.text-center
+								button#createSite.btn.btn-success(type='button') Tạo site
+								p.text-muted.mt-2 Chỉ nên thực hiện tạo site khi hoàn tất toàn bộ page.
+		#keyboardShortCut.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+			.modal-dialog(role='document')
+				.modal-content
+					.modal-header
+						h5#exampleModalLongTitle.modal-title Phím tắt trên CAB
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') ×
+					.modal-body
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + D
+								br
+								| ⌘ + Alt + D
+							dd.col Nhập tên dự án
+						hr
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + P
+								br
+								| ⌘ + Alt + P
+							dd.col Nhập tên trang
+						hr
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + E
+								br
+								| ⌘ + Alt + E
+							dd.col Enter
+						hr
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + L
+								br
+								| ⌘ + Alt + L
+							dd.col Chế độ view trên Laptop
+						hr
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + M
+								br
+								| ⌘ + Alt + M
+							dd.col Chế độ view trên Mobile
+						hr
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + T
+								br
+								| ⌘ + Alt + T
+							dd.col Chế độ view trên Tablet
+						hr
+						dl.row
+							dt.col-auto
+								| Ctrl + Alt + N
+								br
+								| ⌘ + Alt + N
+							dd.col Bật/Tắt Navigation
+		#exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+			.modal-dialog.modal-lg(role='document')
+				.modal-content
+					.modal-header
+						h5#exampleModalLongTitle.modal-title Tùy chỉnh
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') ×
+					.modal-body
+						ul#modalTab.nav.nav-tabs(role='tablist')
+							li.nav-item
+								a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Tùy chỉnh màu
+							li.nav-item
+								a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Cấu hình Javascript
+						#modalTabContent.tab-content
+							#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+								form#settings
+									.row
+										.col
+											h5 Màu Chính
+									#maincolor.row
+							#profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+								form#jsf
+									.row
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck1.custom-control-input(type='checkbox', data-key='DEV_MODE')
+													label.custom-control-label(for='customCheck1') Enable Dev tool
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck2.custom-control-input(type='checkbox', data-key='DEV_MODE_GIRD_FULL')
+													label.custom-control-label(for='customCheck2') Enable Dev Full-width mode
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck3.custom-control-input(type='checkbox', data-key='ACTIVE_FIXED_FOOTER')
+													label.custom-control-label(for='customCheck3') Active Fixed Footer
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck4.custom-control-input(type='checkbox', data-key='ACTIVE_BACKTOTOP')
+													label.custom-control-label(for='customCheck4') Active Back to top button
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck5.custom-control-input(type='checkbox', data-key='ACTIVE_RESPONSIVE')
+													label.custom-control-label(for='customCheck5') Active Responsive IMG
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck6.custom-control-input(type='checkbox', data-key='ACTIVE_FIXED_HEADER')
+													label.custom-control-label(for='customCheck6') Active Fixed Header
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck7.custom-control-input(type='checkbox', data-key='HEADER_TRANPARENT')
+													label.custom-control-label(for='customCheck7') Active Header Tranparents
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck8.custom-control-input(type='checkbox', data-key='ACTIVE_PADDING_MAIN')
+													label.custom-control-label(for='customCheck8') Active Padding Main
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck9.custom-control-input(type='checkbox', data-key='ACTIVE_LIST_TO_SELECT')
+													label.custom-control-label(for='customCheck9') Active List to Select box
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck10.custom-control-input(type='checkbox', data-key='ACTIVE_VALIDATOR')
+													label.custom-control-label(for='customCheck10') Active Form validator
+										.col-sm-6.col-lg-3
+											.form-group
+												.custom-control.custom-checkbox
+													input#customCheck11.custom-control-input(type='checkbox', data-key='ACTIVE_SELECT')
+													label.custom-control-label(for='customCheck11') Active select2
+									.row
+										.col-sm-6.col-lg-3
+											.form-group
+												.input-group
+													.input-group-prepend
+														span.input-group-text Header Position
+													input.form-control(type='text', data-key='ACTIVE_HEADER_POSITION')
+													.input-group-append
+														span.input-group-text(style='min-width:initial') px
+										.col-sm-6.col-lg-3
+											.form-group
+												.input-group
+													.input-group-prepend
+														span.input-group-text Display footer
+													input.form-control(type='text', data-key='DISPLAY_FOOTER')
+													.input-group-append
+														span.input-group-text(style='min-width:initial') px
+										.col-sm-6.col-lg-3
+											.form-group
+												.input-group
+													.input-group-prepend
+														span.input-group-text Display ToTop
+													input.form-control(type='text', data-key='DISPLAY_BACKTOTOP')
+													.input-group-append
+														span.input-group-text(style='min-width:initial') px
+										.col-sm-6.col-lg-3
+											.form-group
+												.input-group
+													.input-group-prepend
+														span.input-group-text Default Grid
+													input.form-control(type='text', data-key='CHANGE_GRID')
+													.input-group-append
+														span.input-group-text(style='min-width:initial') px
+										.col-sm-6.col-lg-3
+											.form-group
+												.input-group
+													.input-group-prepend
+														span.input-group-text Default Grid SM
+													input.form-control(type='text', data-key='CHANGE_GRID_SM')
+													.input-group-append
+														span.input-group-text(style='min-width:initial') px
+					.modal-footer
+						.w-100
+							.row
+								.col-6
+									button.btn.btn-success(type='button', onclick='setDefault()') Reset to default
+								.col-6.text-right
+									button.btn.btn-secondary(type='button', data-dismiss='modal') Bỏ qua
+									button#saveConfig.btn.btn-primary(type='button') Lưu
+		if process.env.NODE_ENV === 'production'
+			script(src='/js/app.min.js')
+		else 
+			script(src='/js/core.js')
+			script(src='/js/main.js')
+			script(src='/js/key.js')
+			script(src='/js/tour.js')

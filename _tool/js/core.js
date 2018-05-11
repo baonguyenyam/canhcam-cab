@@ -30,7 +30,7 @@ function checkTab() {
 }
 
 function createLeftMenuList() {
-	jQuery.get("./data.json", function (data) {
+	jQuery.get("/data.json", function (data) {
 		var parsedJSON = data;
 		var total = 0
 		var index = 0
@@ -100,18 +100,18 @@ function createLeftMenuList() {
 }
 
 function buildTotal(params) {
-	jQuery.get("./version.json", function (data) {
+	jQuery.get("/version.json", function (data) {
 		var info = data;
 		$('#version').html(info.version + ' ' + info.build)
 		$('#accordion').append('<div class="total bg-light p-2 small">Components: <span class="text-info">' + params + '</span><br>Tập tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phiên bản: <span class="text-info">' + info.version + ' ' + info.build + '</span></div>')
 	})
-	jQuery.get("./justbuild.json", function (data) {
+	jQuery.get("/justbuild.json", function (data) {
 		var info = data;
 		$('.justbuild').html('@SITE/' + info.sitename)
 	})
 }
 function removeVietnam(s) {
-	var r = s.toLowerCase().replace(/\s+/g, '-');
+	var r = s.toLowerCase().replace(/\s+/g, '-'),
 	non_asciis = {
 		'-': '[`~!@#$%^&*()_|+=?;:",.<>/]',
 		'a': '[ảàạảãàáâãäåắặẳằẵấầẩẫậâă]',
@@ -126,7 +126,7 @@ function removeVietnam(s) {
 		'u': '[ùúûűüủụưửựứừữư]',
 		'y': '[ýỳỷỵỹ]'
 	};
-	for (i in non_asciis) {
+	for (var i in non_asciis) {
 		r = r.replace(new RegExp(non_asciis[i], 'gi'), i);
 	}
 	r = r.replace(/[^\w\s]/gi, '-')
@@ -173,7 +173,7 @@ function saveToData(a, b) {
 function getDataColor() {
 	jQuery.get("/getdata", function (data) {
 		var e = JSON.parse(data)
-		i = 0
+		var i = 0
 		for (var key in e) {
 			var dataKey = key
 			var dataVal = e[key]
@@ -196,7 +196,7 @@ function getDataColor() {
 function getDataJS() {
 	jQuery.get("/getdatajs", function (data) {
 		var e = JSON.parse(data)
-		i = 0
+		var i = 0
 		for (var key in e) {
 			if (typeof e[key] == 'number') {
 				$("[data-key='" + key + "']").val(e[key])
@@ -271,7 +271,7 @@ function buildFormAddComponent(){
 	$('#formAddComponent select').html('<option selected disabled>Vui lòng chọn</option>')
 	$('#formAddComponent')[0].reset();
 	$('#formAddComponent .textresult').html('...')
-	jQuery.get("./data.json", function (data) {
+	jQuery.get("/data.json", function (data) {
 		var lists = '',
 			main = 'body'
 		for (var key in data) {

@@ -15,6 +15,7 @@ ECHO 1) Run Site Builder (8080)
 ECHO 2) Chạy site đã build
 ECHO 3) Chạy xây dựng components (9999)
 ECHO 4) Run HTML2PUG (1234)
+ECHO p) Chạy Production
 ECHO u) Updrage Package
 ECHO q) Quit
 ECHO.
@@ -24,6 +25,7 @@ IF "%op%"=="1" GOTO Builder
 IF "%op%"=="2" GOTO dev
 IF "%op%"=="3" GOTO DevPro
 IF "%op%"=="4" GOTO Pug
+IF "%op%"=="p" GOTO Production
 IF "%op%"=="q" GOTO ExitInstall
 IF "%op%"=="u" GOTO Updrage
 
@@ -40,6 +42,10 @@ GOTO begin
 
 :Pug
 npm run node
+GOTO begin
+
+:Production
+npm run index
 GOTO begin
 
 :Updrage

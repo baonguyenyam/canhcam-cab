@@ -19,6 +19,7 @@ do
         echo "2) Chạy site đã build"
         echo "3) Chạy xây dựng components (9999)"
         echo "4) Run HTML2PUG (1234)"
+        echo "p) Chạy Production"
         echo "u) Updrage Package"
         echo "q) Quit"
 		echo "\n"
@@ -31,6 +32,7 @@ do
             '2') npm run start;;
             '3') npm run dev;;
             '4') npm run node;;
+            'p') npm run index;;
             'u') npm run update;;
             'q') ;;
             *)   printf "\033[0;33mMenu item is not available, try again!\033[0m\n";;
