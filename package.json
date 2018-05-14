@@ -9,7 +9,7 @@
     "serve": "gulp serve",
     "start": "gulp server",
     "dev": "gulp dev",
-    "web": "gulp builder && gulp copytool && concattool && node index.js",
+    "web": "gulp builder && gulp copytool && gulp concattool && node index.js",
     "index": "NODE_ENV=production node index.js",
     "node": "cd k-task/tools && node index.js",
     "clean-deps": "rimraf node_modules",
