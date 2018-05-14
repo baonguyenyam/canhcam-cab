@@ -1,0 +1,80 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-footer-7
+	.footer-content
+		background: #233441
+		color: white
+		padding: 2rem 0
+		font-weight: 200
+		h6
+			font-size: 1rem 
+			margin-bottom: 1rem 
+			color: darken(white, 0%) 
+		.slogan 
+			.logo 
+				a
+					display: block
+				img 
+					max-width: 200px 
+			.quote
+				color: darken(white, 30%)
+				font-size: .9rem 
+				line-height: 1.2rem 
+			.social-list
+				margin: 2rem 
+				.list-inline
+					margin: 0
+					.list-inline-item
+						font-size: .9rem 
+						margin-right: .5rem 
+						a
+							display: flex
+							height: 2rem
+							width: 2rem
+							border: 2px solid darken(white, 30%)
+							color: darken(white, 30%)
+							align-items: center 
+							justify-content: center 
+						&:last-child
+							margin-right: 0
+						&:hover 
+							a 
+								background: rgba(255,255,255,.13)
+								color: white 
+								border-color: white 
+		.list-group
+			.list-group-item
+				display: inline-block
+				background: none 
+				border: 0
+				padding: .5rem 0
+				a
+					font-size: .9rem
+					color: darken(white, 30%) 
+					&:hover 
+						text-decoration: underline
+						color: darken(white, 0%) 
+	.copy-right
+		font-size: .8rem 
+		padding: .75rem 1rem
+		background: darken(white, 90%)
+		color: darken(white, 20%)
+	// Khi lên Tablet 
+	+media-breakpoint-up(md)
+		.footer-content
+			padding: 4rem 0
+			.list-group
+				.list-group-item
+					padding: .15rem 0
+			.slogan 
+				.social-list
+					margin: 1rem 0 0 0
+	// Khi lên PC
+	+media-breakpoint-up(lg)
+		.slogan
+			display: flex 
+			.quote
+				padding-left: 1rem 

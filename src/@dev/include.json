@@ -2,13 +2,13 @@
 	"SETUP": {
 		"index": {
 			"header": [
-				"header/h-7"
+				"header/h-8"
 			],
 			"body": [
 				"gallery/g-4"
 			],
 			"footer": [
-				"footer/f-6"
+				"footer/f-7"
 			]
 		}
 	}
