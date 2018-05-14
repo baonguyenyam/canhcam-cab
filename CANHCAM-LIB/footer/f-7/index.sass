@@ -5,14 +5,14 @@
 
 .canhcam-footer-7
 	.footer-content
-		background: #233441
-		color: white
+		background: lighten(color-get($mau,main), 0%)
+		color: lighten(color-get($mau,trang), 0%)
 		padding: 2rem 0
 		font-weight: 200
 		h6
 			font-size: 1rem 
 			margin-bottom: 1rem 
-			color: darken(white, 0%) 
+			color: lighten(color-get($mau,trang), 0%) 
 		.slogan 
 			.logo 
 				a
@@ -20,7 +20,7 @@
 				img 
 					max-width: 200px 
 			.quote
-				color: darken(white, 30%)
+				color: darken(color-get($mau,trang), 30%)
 				font-size: .9rem 
 				line-height: 1.2rem 
 			.social-list
@@ -34,17 +34,18 @@
 							display: flex
 							height: 2rem
 							width: 2rem
-							border: 2px solid darken(white, 30%)
-							color: darken(white, 30%)
+							border: 2px solid darken(color-get($mau,trang), 30%)
+							color: darken(color-get($mau,trang), 30%)
 							align-items: center 
 							justify-content: center 
+							text-decoration: none
 						&:last-child
 							margin-right: 0
 						&:hover 
 							a 
 								background: rgba(255,255,255,.13)
-								color: white 
-								border-color: white 
+								color: lighten(color-get($mau,trang), 0%) 
+								border-color: lighten(color-get($mau,trang), 0%) 
 		.list-group
 			.list-group-item
 				display: inline-block
@@ -53,15 +54,15 @@
 				padding: .5rem 0
 				a
 					font-size: .9rem
-					color: darken(white, 30%) 
+					color: darken(color-get($mau,trang), 30%) 
 					&:hover 
 						text-decoration: underline
-						color: darken(white, 0%) 
+						color: lighten(color-get($mau,trang), 0%) 
 	.copy-right
 		font-size: .8rem 
 		padding: .75rem 1rem
-		background: darken(white, 90%)
-		color: darken(white, 20%)
+		background: darken(color-get($mau,trang), 90%)
+		color: darken(color-get($mau,trang), 20%)
 	// Khi lên Tablet 
 	+media-breakpoint-up(md)
 		.footer-content

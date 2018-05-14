@@ -47,6 +47,12 @@
             "header",
             "4bce78ba6e87a21236f52f144f940c85.png",
             "Header big logo"
+        ],
+        "header-8": [
+            "header/h-8",
+            "header",
+            "14ed823d93896fefe52afb5bf1c49e7c.png",
+            "Header 8"
         ]
     },
     "boxes": {
@@ -354,6 +360,12 @@
             "footer",
             "4a39521b55cd4e039df619985f7ef78f.png",
             "Footer 6"
+        ],
+        "footer-7": [
+            "footer/f-7",
+            "footer",
+            "004ffbce90efe6c8e778bbd77bcbf801.png",
+            "Footer 7"
         ]
     }
 }
