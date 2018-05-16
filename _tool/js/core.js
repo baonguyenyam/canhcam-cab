@@ -295,6 +295,7 @@ function buildFormAddComponent(){
 			$('#formAddComponent #comkey').val(option)
 			$('#formAddComponent #commain').val(mopt)
 			$('#formAddComponent #comnum').val(comnum)
+			$('#formAddComponent #nameCompo').val(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1).replace('-', ' ') + ' ' + comnum)
 		})
 	});
 }

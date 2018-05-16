@@ -133,6 +133,12 @@
             "body",
             "a2030ddf1f54c3028f0f56d9ecc2e7de.png",
             "Box 12"
+        ],
+        "boxes-13": [
+            "boxes/b-13",
+            "body",
+            "6877ce036fd0106384d814741ac8d220.png",
+            "Boxes 13"
         ]
     },
     "slider": {
@@ -348,6 +354,12 @@
             "body",
             "c486f373e434056da0d1fbe8484efec9.png",
             "Form 6"
+        ],
+        "form-7": [
+            "form/f-7",
+            "body",
+            "dae021b08db57f4fb085402219b074d6.png",
+            "Form 7"
         ]
     },
     "map": {
@@ -462,6 +474,12 @@
             "footer",
             "acb1c94c08f2e71c0787442fdc2f630c.png",
             "Footer 8"
+        ],
+        "footer-9": [
+            "footer/f-9",
+            "footer",
+            "efe7f75308d47e016379be988bf19c16.png",
+            "Footer 9"
         ]
     }
 }
