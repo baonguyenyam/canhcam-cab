@@ -1,0 +1,105 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-banner-2
+	.slick-slider
+		position: relative
+		.slick-track
+			.item
+				position: relative
+				&:focus
+					outline: none 
+				min-height: 280px
+				+media-breakpoint-up(sm)
+					min-height: 320px
+				+media-breakpoint-up(md)
+					min-height: 360px
+				+media-breakpoint-up(lg)
+					min-height: 480px
+					height: 100vh
+				.title
+					+pos(abs, null null 3rem 0)
+					text-align: center
+					width: 100%
+					+pad(0 1rem)
+					h1
+						color: color-get($mau,trang)
+						+text-sha(1px 1px 3px rgba(0,0,0,.4))
+					p
+						color: color-get($mau,trang)
+						+text-sha(2px 2px 3px rgba(0,0,0,.2))
+						+fz(1.5rem)
+						+lh(1.8rem)
+						+fw(300)
+						+media-breakpoint-up(md)
+							max-width: 50%
+							margin: 0 auto 1rem auto
+					+media-breakpoint-up(lg)
+						+pos(abs, 50% null initial 0)
+						+transform(translateY(-50%))
+						h1
+							+fz(4rem)
+							letter-spacing: 1px
+						p
+							+fz(2rem)
+							+lh(2.3rem)
+							letter-spacing: 1px
+		// Arrow
+		.slick-arrow
+			background: rgba(0,0,0,.3)
+			color: rgba(255,255,255,.3)
+			padding: .85rem 1rem
+			width: initial
+			height: initial
+			z-index: 100
+			+opacity(0)
+			+transition(all .25s ease-in-out)
+			&:before
+				font-family: 'Font Awesome 5 Free'
+				font-weight: 900
+				+fz(1rem)
+			&.slick-prev
+				left: 0
+				&:before
+					content: '\f053'
+			&.slick-next
+				right: 0
+				&:before
+					content: '\f054'
+			&.slick-disabled
+				&:before
+					+opacity(.5)
+			&:hover 
+				background: color-get($mau,main)
+				color: color-get($mau,trang)
+		// Dots
+		.slick-dots
+			+pos(abs, null null 1rem 0)
+			width: 100%
+			li
+				width: .75rem
+				height: .75rem
+				+mar(.5rem)
+				&:focus
+					outline: none
+				button
+					+pad(0)
+					width: .75rem
+					height: .75rem
+					&:before
+						content: '' 
+						background: darken(color-get($mau,trang),5%)
+						+bor-rad(50%)
+						width: .75rem
+						height: .75rem
+				&.slick-active
+					button
+						&:before
+							background: color-get($mau,main)
+		&:hover 
+			.slick-arrow
+				+opacity(1)
+
+	

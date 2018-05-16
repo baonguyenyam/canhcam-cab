@@ -173,7 +173,20 @@
             "Slider 5"
         ]
     },
-    "banner": {},
+    "banner": {
+        "banner-1": [
+            "banner/b-1",
+            "body",
+            "bbcdc2d1b8a7d09efd6ee313c6c3ac88.png",
+            "Banner 1"
+        ],
+        "banner-2": [
+            "banner/b-2",
+            "body",
+            "dc8c0e798df3610973a8ad41a197cb38.png",
+            "Banner 2"
+        ]
+    },
     "carousel": {
         "carousel-1": [
             "carousel/c-1",
