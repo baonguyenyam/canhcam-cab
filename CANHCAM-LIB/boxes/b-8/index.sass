@@ -1,0 +1,29 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-8
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.box-info
+		background: darken(color-get($mau,trang) ,5%)
+		+bor-rad(5px)
+		overflow: hidden
+		img 
+			max-width: 100%
+		.text
+			position: relative
+			+mar(2rem)
+			+pad(2rem)
+			max-height: 500px
+			display: flex
+			flex-direction: column
+			background: darken(color-get($mau,trang) ,3%)
+			overflow: scroll
+		+media-breakpoint-up(md)
+			img 
+				+opacity(0)
+				display: none
+	

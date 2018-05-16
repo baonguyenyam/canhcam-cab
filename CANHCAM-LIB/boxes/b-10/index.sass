@@ -1,0 +1,40 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-10
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	h1 
+		color: lighten(color-get($mau,main),30%)
+		font-weight: 600 
+		font-size: 1.5rem
+		position: relative
+		margin-bottom: 2rem
+		&:before
+			display: block
+			width: 60px
+			height: 2px
+			background: lighten(color-get($mau,extra),0%)
+			content: ''
+			+pos(abs, calc(100% + 10px) null null 0)
+	h2, h3, h4, h5, h6
+		color: lighten(color-get($mau,main),30%)
+		font-weight: 400 
+	time 
+		color: darken(color-get($mau,trang),40%)
+		margin-bottom: .5rem
+		display: block
+		i 
+			margin-right: .25rem 
+	.item 
+		a
+			color: darken(color-get($mau,trang),70%)
+	.download 
+		background: lighten(color-get($mau,main),0%)
+		color: color-get($mau,trang)
+		+bor-rad(0)
+		i 
+			margin-right: .5rem

@@ -1,0 +1,74 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-slider-4
+	.news-list
+		// +pad(2rem 0)
+		+media-breakpoint-up(lg)
+			+pad(0 0 0 2rem)
+		h3 
+			text-transform: uppercase
+			color: lighten(color-get($mau,main),30%)
+			font-weight: 600 
+			position: relative
+			margin-bottom: 2rem
+			+fz(1.5rem)
+			&:before
+				display: block
+				width: 60px
+				height: 2px
+				background: lighten(color-get($mau,extra),0%)
+				content: ''
+				+pos(abs, calc(100% + 10px) null null 0)
+
+	.list-thumb
+		.slick-slide
+			min-height: 400px 
+			+media-breakpoint-up(lg)
+				min-height: 500px
+	.slider-nav
+		overflow: hidden
+		margin-top: .5rem 
+		margin-right: -.25rem
+		margin-left: -.25rem
+		display: none
+		+media-breakpoint-up(md)
+			display: block
+		.slick-slide
+			min-height: 130px 
+			margin: 0 .25rem 
+	.slick-slider
+		.slick-arrow
+			background: darken(color-get($mau,main) ,0%)
+			color: darken(color-get($mau,trang) ,0%)
+			padding: 1rem 1.1rem 
+			width: initial
+			height: initial
+			z-index: 100
+			&:before
+				font-family: 'Font Awesome 5 Free'
+				font-weight: 900
+				color: darken(color-get($mau,trang) ,0%)
+				font-size: .9rem 
+			&.slick-prev
+				left: 0
+				&:before
+					content: '\f053'
+			&.slick-next
+				right: 0
+				&:before
+					content: '\f054'
+			&:hover 
+				background: darken(color-get($mau,extra) ,0%)
+				&:before
+					color: darken(color-get($mau,main) ,0%)
+		.slick-list
+			text-align: center
+			.slick-slide
+				&:focus
+					outline: none
+				img
+					display: inline-block
+

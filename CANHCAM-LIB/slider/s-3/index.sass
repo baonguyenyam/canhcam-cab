@@ -1,0 +1,97 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-slider-3
+	.news-list
+		.block-details 
+			+pad(2rem 1rem)
+			background: darken(color-get($mau,main),0%)
+			color: darken(color-get($mau,trang),0%)
+			display: block
+			text-decoration: none
+			h3 
+				color: lighten(color-get($mau,main),50%)
+				font-weight: 600
+				+fz(1.8rem)
+				margin-bottom: 0
+			.muted 
+				color: lighten(color-get($mau,main),20%)
+				+ p 
+					+fz(1.1rem)
+			&:hover 
+				background: darken(color-get($mau,main),5%)
+		h2 
+			+pad(2rem 0)
+			background: darken(color-get($mau,extra),30%)
+			margin-bottom: 0
+			color: darken(color-get($mau,trang),0%)
+			+fz(1.5rem)
+			text-transform: uppercase
+		+media-breakpoint-up(lg)
+			background: darken(color-get($mau,extra),30%)
+			justify-content: flex-end
+			display: flex
+			flex-direction: column
+			.block-details 
+				+pad(4rem)
+				height: 50%
+				justify-content: center
+				display: flex
+				flex-direction: column
+				text-align: justify
+			h2 
+				background: none 
+				+pad(4rem)
+				+fz(3rem)
+				+fw(600)
+				letter-spacing: .25rem 
+				span 
+					display: block
+
+	.slick-slide
+		min-height: 400px 
+		+media-breakpoint-up(lg)
+			min-height: 600px
+	.slick-slider
+		.slick-arrow
+			background: darken(color-get($mau,main) ,0%)
+			color: darken(color-get($mau,trang) ,0%)
+			padding: 1rem 1.1rem 
+			width: initial
+			height: initial
+			z-index: 100
+			&:before
+				font-family: 'Font Awesome 5 Free'
+				font-weight: 900
+				color: darken(color-get($mau,trang) ,0%)
+				font-size: .9rem 
+			&.slick-prev
+				left: 0
+				&:before
+					content: '\f053'
+			&.slick-next
+				right: 0
+				&:before
+					content: '\f054'
+			&:hover 
+				background: darken(color-get($mau,extra) ,0%)
+				&:before
+					color: darken(color-get($mau,main) ,0%)
+			+media-breakpoint-up(lg)
+				top: initial 
+				bottom: 0
+				&.slick-prev
+					left: initial
+					right: 4rem
+				&.slick-next
+					right: 1rem
+		.slick-list
+			text-align: center
+			.slick-slide
+				&:focus
+					outline: none
+				img
+					display: inline-block
+

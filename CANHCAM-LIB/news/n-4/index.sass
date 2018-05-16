@@ -1,0 +1,141 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-news-4
+	+pad(0 0 2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(0 0 4rem 0)
+	.news-hot
+		.item
+			text-decoration: none
+			figure
+				position: relative
+				overflow: hidden
+				margin-bottom: 2rem
+				width: 100%
+				img
+					width: 100%
+				figcaption
+					padding-top: 1rem
+
+					h3
+						+fz(1.1rem)
+						+fw(600)
+						color: lighten(color-get($mau,main) ,30%)
+					time
+						+fz(.9rem)
+						+fw(200)
+						color: darken(color-get($mau,trang) ,30%)
+						i 
+							margin-right: .25rem 
+					p
+						color: darken(color-get($mau,trang) ,50%)
+						line-height: 1.3rem
+						+fz(1rem)
+						margin-bottom: 0
+			&:hover
+				figure
+					img
+						+opacity(.7)
+					figcaption
+						h3
+							color: darken(color-get($mau,extra),0%)
+						time
+							color: darken(color-get($mau,trang) ,20%)
+						p
+							color: darken(color-get($mau,trang) ,70%)
+		
+		.top-list
+			.item
+				+media-breakpoint-up(lg)
+					figure
+						margin-bottom: 0
+		
+	.news-list
+		.btn-group
+			.btn 
+				+bor-rad(0)
+			i
+				padding-right: 5px
+		.list-group-wrapper
+			flex-direction: column
+			> div
+				-webkit-box-flex: 0
+				-webkit-flex: 0 0 100%
+				-ms-flex: 0 0 100%
+				flex: 0 0 100%
+				max-width: 100%
+				figure
+					display: block
+					+media-breakpoint-up(md)
+						+clearfix
+						img
+							max-width: 30%
+							float: left
+						figcaption
+							max-width: 70%
+							float: left
+							padding-left: 1rem
+							padding-top: 0
+
+		.item
+			display: flex
+			text-decoration: none
+			height: 100%
+			overflow: hidden
+			figure
+				position: relative
+				overflow: hidden
+				margin-bottom: 2rem
+				width: 100%
+				img
+					width: 100%
+				figcaption
+					padding-top: 1rem
+
+					h3
+						+fz(1.1rem)
+						+fw(600)
+						color: lighten(color-get($mau,main) ,30%)
+					time
+						+fz(.9rem)
+						+fw(200)
+						color: darken(color-get($mau,trang) ,30%)
+						i 
+							margin-right: .25rem 
+					p
+						color: darken(color-get($mau,trang) ,50%)
+						line-height: 1.3rem
+						+fz(1rem)
+						margin-bottom: 0
+			&:hover
+				figure
+					img
+						+opacity(.7)
+					figcaption
+						h3
+							color: darken(color-get($mau,extra),0%)
+						time
+							color: darken(color-get($mau,trang) ,20%)
+						p
+							color: darken(color-get($mau,trang) ,70%)
+	.pagelist
+		.pagination
+			margin-bottom: 0
+			.page-item
+				margin-left: .5rem
+				&:first-child
+					margin-left: 0
+				.page-link
+					+bor-rad(0%)
+					width: 2.5rem
+					height: 2.5rem
+					justify-content: center
+					align-items: center
+					display: flex
+					color: darken(color-get($mau,trang) ,20%)
+				&.active
+					.page-link
+						color: darken(color-get($mau,trang) ,0%)

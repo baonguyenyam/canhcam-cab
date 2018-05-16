@@ -1,0 +1,62 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-slider-5
+	padding: 4rem 0 
+	.list-thumb
+		.slick-slide
+			min-height: 400px 
+			+media-breakpoint-up(lg)
+				min-height: 400px
+				margin: 4rem 0
+				&.slick-current.slick-center
+					+transform(scale(1.3))
+					margin: 4rem 0
+					.zoom-item
+						display: block
+			.zoom-item
+				color: color-get($mau,trang)
+				+pos(abs, 50% null null 50%)
+				+transform(translateX(-50%) translateY(-50%))
+				z-index: 10
+				+fz(4rem)
+				+transition(all .2s ease-in-out)
+				display: none
+
+	.slick-slider
+		.slick-arrow
+			background: darken(color-get($mau,main) ,0%)
+			color: darken(color-get($mau,trang) ,0%)
+			padding: 1rem 1.1rem 
+			width: initial
+			height: initial
+			z-index: 100
+			&:before
+				font-family: 'Font Awesome 5 Free'
+				font-weight: 900
+				color: darken(color-get($mau,trang) ,0%)
+				font-size: .9rem 
+			&.slick-prev
+				left: 0
+				&:before
+					content: '\f053'
+			&.slick-next
+				right: 0
+				&:before
+					content: '\f054'
+			&:hover 
+				background: darken(color-get($mau,extra) ,0%)
+				&:before
+					color: darken(color-get($mau,main) ,0%)
+		.slick-list
+			text-align: center
+			.slick-slide
+				&:focus
+					outline: none
+				img
+					display: inline-block
+
+	&.canhcam-video-fixed-size.lg-outer
+		padding: 0
