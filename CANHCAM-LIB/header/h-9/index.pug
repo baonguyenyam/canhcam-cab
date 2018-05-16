@@ -1,0 +1,96 @@
+header.canhcam-shop-menu
+	nav#GlobalMENU.navbar.navbar-expand-lg.container
+		a.navbar-brand.d-lg-none.mr-auto(href='#')
+			img(src="./img/logo-trang.png", alt="Logo")
+		.__top-bar
+			ul.nav.justify-content-end
+				li.nav-item
+					.nav-link.active 
+						span Chăm sóc khách hàng
+						i 1900 1248
+				li.nav-item
+					a.nav-link(href='#') 
+						i.mdi.mdi-file-document
+						span Kiểm tra đơn hàng
+				li.nav-item
+					a.nav-link(href='#') 
+						i.mdi.mdi-account
+						span Đăng nhập
+				li.nav-item
+					a.nav-link(href='#') 
+						i.mdi.mdi-earth
+						span Tiếng việt
+		button.navbar-toggler(type='button', data-toggle='offset', data-target='#CCMenuHeader', aria-controls='CCMenuHeader', aria-expanded='false', aria-label='Toggle navigation')
+			span.fa.fa-bars
+
+		#CCMenuHeader.collapse.navbar-collapse
+			.d-flex.d-lg-none.menubars
+				.brand.mr-auto
+					img(src="./img/logo-trang.png", alt="Logo")
+				button.navbar-toggler.navbar-closed(type='button')
+					span.mdi.mdi-close
+			.logo.d-none.d-lg-block
+				img(src="./img/logo-trang.png", alt="Logo")
+			.__search-menu 
+				.input-group
+					.input-group-prepend
+						select#inputGroupSelect01.custom-select.select2
+							option(selected='') Choose...
+							option(value='1') One
+							option(value='2') Two
+							option(value='3') Three
+					input.form-control(type='text', placeholder="Tìm kiếm")
+					.input-group-append
+						button.btn.btn-outline-secondary(type='button') 
+							i.fa.fa-search
+				.__cart
+					.icon
+						i.mdi.mdi-cart-outline
+						.bagde 9
+					span Giỏ hàng 
+			.__main-menu
+				.__product 
+					button.menu-toggler(type='button')
+						span.fa.fa-bars
+						| Danh mục sản phẩm 
+					ul.navbar-nav
+						li.nav-item.active
+							a.nav-link(href='#') 
+								img(src="./img/icon/usa.png")
+								| Giới thiệu
+						li.nav-item
+							a.nav-link(href='#') 
+								img(src="./img/icon/usa.png")
+								| Giới thiệu
+						li.nav-item
+							a.nav-link(href='#') 
+								img(src="./img/icon/usa.png")
+								| Giới thiệu
+						li.nav-item
+							a.nav-link(href='#') 
+								img(src="./img/icon/usa.png")
+								| Giới thiệu
+				.__promotion 
+					ul.navbar-nav
+						li.nav-item.active 
+							i.mdi.mdi-gift
+							span Khuyến mãi HOT
+						li.nav-item.active 
+							i.mdi.mdi-newspaper
+							span Góc tư vấn 
+
+
+			.__notice-menu 
+				ul.navbar-nav
+					li.nav-item.active
+						.__bl
+							.icon
+								i.mdi.mdi-phone
+							span 1900 6234
+					li.nav-item.active
+						.__bl
+							.icon
+								i.mdi.mdi-map
+							span Xem địa chỉ depot gần nhất
+
+			
