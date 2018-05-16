@@ -1,0 +1,64 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-4
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(2rem 0)
+	.accordion-option
+		display: flex
+		background: darken(color-get($mau,main) ,0%)
+		margin-bottom: 1rem 
+		border: 1px solid  darken(color-get($mau,main) ,0%)
+		+pad(.5rem .5rem .5rem 1rem)
+		align-items: center
+		color: color-get($mau,trang)
+		+bor-rad(5px)
+		h2 
+			+fw(bold)
+			text-transform: uppercase
+			color: color-get($mau,trang)
+			margin-bottom: 0
+		input
+			border: 1px solid darken(color-get($mau,trang) ,10%)
+			+bor-rad(2rem)
+			+pad(.15rem 1rem)
+			outline: none 
+			width: 150px 
+			min-width: 150px
+	#accordion
+		.card
+			margin-bottom: .5rem
+			.card-header
+				background: none 
+				h4 
+					margin-bottom: 0
+					a 
+						display: block
+						color: color-get($mau,main)
+						+fw(bold)
+						text-decoration: none
+						display: flex
+						align-items: center
+						.fa-minus
+							display: none
+						.fa-plus
+							display: block
+						i 
+							+bor-rad(3px)
+							background: color-get($mau,main)
+							color: color-get($mau,trang)
+							+pad(.5rem)
+							margin-right: .5rem 
+			&.active 
+				.card-header
+					background: darken(color-get($mau,trang) ,3%)
+					h4 
+						a 
+							.fa-minus
+								display: block
+							.fa-plus
+								display: none
+

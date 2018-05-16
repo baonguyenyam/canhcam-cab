@@ -46,7 +46,8 @@
             "header/h-7",
             "header",
             "4bce78ba6e87a21236f52f144f940c85.png",
-            "Header big logo"
+            "Header big logo",
+            "140px"
         ],
         "header-8": [
             "header/h-8",
@@ -95,8 +96,8 @@
         "boxes-6": [
             "boxes/b-6",
             "body",
-            "ebee8771e948779386090f03c6c90967.png",
-            "Box 6"
+            "6877ce036fd0106384d814741ac8d220.png",
+            "Boxes 6"
         ],
         "boxes-7": [
             "boxes/b-7",
@@ -133,12 +134,6 @@
             "body",
             "a2030ddf1f54c3028f0f56d9ecc2e7de.png",
             "Box 12"
-        ],
-        "boxes-13": [
-            "boxes/b-13",
-            "body",
-            "6877ce036fd0106384d814741ac8d220.png",
-            "Boxes 13"
         ]
     },
     "slider": {
@@ -171,6 +166,24 @@
             "body",
             "220d3912497f2ce4217ca71314f1dfd6.png",
             "Slider 5"
+        ]
+    },
+    "nav": {
+        "nav-1": [
+            "nav/n-1",
+            "body",
+            "nav-1.png",
+            "Nav 1",
+            "10px",
+            "Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế"
+        ],
+        "nav-2": [
+            "nav/n-2",
+            "body",
+            "ebee8771e948779386090f03c6c90967.png",
+            "Nav 2",
+            "",
+            ""
         ]
     },
     "banner": {

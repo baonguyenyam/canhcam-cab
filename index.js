@@ -54,6 +54,7 @@ var upload = multer({ storage: Storage }).array(
 	"comnum",
 	"heightCompo",
 	"nameCompo",
+	"nameNoted",
 	10
 );
 
@@ -92,6 +93,13 @@ app.post('/upload', function (req, res) {
 		dataToAdd.push(req.body.nameCompo.trim())
 		if (req.body.heightCompo && req.body.heightCompo.length > 0){
 			dataToAdd.push(req.body.heightCompo.trim())
+		} else {
+			dataToAdd.push("")
+		}
+		if (req.body.nameNoted && req.body.nameNoted.length > 0){
+			dataToAdd.push(req.body.nameNoted.trim())
+		} else {
+			dataToAdd.push("")
 		}
 		// console.log(req.files[0])
 		// console.log(keynew)

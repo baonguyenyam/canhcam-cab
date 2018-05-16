@@ -249,8 +249,27 @@ iframe {
 }
 #accordion .list-group .list-group-item figure {
 	/* max-height: 140px; */
-	overflow: hidden
+	overflow: hidden;
 }
+#accordion .list-group .list-group-item {
+	position: relative;
+}
+#accordion .list-group .list-group-item:after {
+	content: attr(data-noted);
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: black;
+	text-align: center;
+    color: white;
+    font-size: .7rem;
+	display: none;
+}
+#accordion .list-group .list-group-item:hover:after {
+	display: block;
+}
+
 .list-group .list-group-item figure img {
 	max-width: 100%
 }

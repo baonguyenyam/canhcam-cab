@@ -54,14 +54,17 @@ function createLeftMenuList() {
 				var dataType = parsedJSON[key][des][1]
 				var dataImg = parsedJSON[key][des][2]
 				var dataTitle = parsedJSON[key][des][3]
-				var badge = '<div class="list-group-item" data-key="' + dataKey + '" data-type="' + dataType + '"><h5><a href="/templates/index-' + dataKey.replace('/', '-') + '.html" target="_blank">' + dataTitle + '</a></h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
+				var dataHeight = ''
+				var dataNoted = ''
+				if (parsedJSON[key][des][4] && parsedJSON[key][des][4].length) {
+					dataHeight = 'data-height="'+ parsedJSON[key][des][4] + '"'
+				}
+				if (parsedJSON[key][des][5] && parsedJSON[key][des][5].length) {
+					dataNoted = 'data-noted="'+ parsedJSON[key][des][5] + '"'
+				}
+				var badge = '<div class="list-group-item" ' + dataHeight + ' ' + dataNoted + ' data-key="' + dataKey + '" data-type="' + dataType + '"><h5><a href="/templates/index-' + dataKey.replace('/', '-') + '.html" target="_blank">' + dataTitle + '</a></h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
 					// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
 					'</figure></div>'
-				if (parsedJSON[key][des][4] && parsedJSON[key][des][4].length) {
-					var dataHeight = parsedJSON[key][des][4]
-					badge = '<div class="list-group-item" data-height="' + dataHeight + '" data-key="' + dataKey + '" data-type="' + dataType + '"><h5><a href="/templates/index-' + dataKey.replace('/', '-') + '.html" target="_blank">' + dataTitle + '</a></h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
-						'</figure></div>'
-				}
 				if (key) {
 					if ($("#cc-menu-" + key).length) {
 						$("#cc-menu-" + key + " .mainList").append(badge);

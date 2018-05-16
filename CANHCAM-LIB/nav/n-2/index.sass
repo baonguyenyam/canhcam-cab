@@ -1,0 +1,25 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-2
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(2rem 0)
+	.nav-item
+		.nav-link
+			background: darken(color-get($mau,trang) ,5%)
+			color: darken(color-get($mau,trang) ,80%)
+			text-transform: uppercase
+			+fw(600)
+			+fz(.9rem)
+			+bor-rad(3rem)
+			margin-right: .5rem
+		&:last-child
+			.nav-link
+				margin-right: 0
+		&:hover, &.active 
+			.nav-link
+				background: darken(color-get($mau,main) ,0%)
+				color: color-get($mau,trang)

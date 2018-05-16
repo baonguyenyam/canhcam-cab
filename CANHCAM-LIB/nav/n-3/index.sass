@@ -1,0 +1,74 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-3
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(2rem 0)
+	form
+		border: 1px solid  darken(color-get($mau,trang) ,20%)
+		background: darken(color-get($mau,trang) ,5%)
+		+pad(2rem)
+		+bor-rad(5px)
+		.has-danger
+			input, textarea, select
+				border-color: color-get($mau,do-1)
+
+	.accordion-option
+		display: flex
+		background: darken(color-get($mau,main) ,0%)
+		margin-bottom: 1rem 
+		border: 1px solid  darken(color-get($mau,main) ,0%)
+		+pad(.5rem .5rem .5rem 1rem)
+		align-items: center
+		color: color-get($mau,trang)
+		+bor-rad(5px)
+		h2 
+			+fw(bold)
+			text-transform: uppercase
+			color: color-get($mau,trang)
+			margin-bottom: 0
+		input
+			border: 1px solid darken(color-get($mau,trang) ,10%)
+			+bor-rad(2rem)
+			+pad(.15rem 1rem)
+			outline: none 
+			width: 150px 
+			min-width: 150px
+	#accordion
+		.card
+			margin-bottom: .5rem
+			.card-header
+				background: none 
+				h4 
+					margin-bottom: 0
+					+fz(1rem)
+					a 
+						display: block
+						color: color-get($mau,den)
+						+fw(bold)
+						text-decoration: none
+						display: flex
+						align-items: center
+						.fa-minus-circle
+							display: none
+							color: darken(color-get($mau,trang) ,50%)
+						.fa-plus-circle
+							display: block
+							color: color-get($mau,main)
+						i 
+							+bor-rad(3px)
+							+fz(1.5rem)
+							margin-right: .5rem 
+							color: color-get($mau,main)
+			&.active 
+				.card-header
+					h4 
+						a 
+							.fa-minus-circle
+								display: block
+							.fa-plus-circle
+								display: none
+				

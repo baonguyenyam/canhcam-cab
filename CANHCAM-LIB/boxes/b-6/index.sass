@@ -4,22 +4,112 @@
 //////////////////////////////////////
 
 .canhcam-boxes-6
-	+pad(2rem 0)
-	+media-breakpoint-up(lg)
-		+pad(2rem 0)
-	.nav-item
-		.nav-link
-			background: darken(color-get($mau,trang) ,5%)
-			color: darken(color-get($mau,trang) ,80%)
-			text-transform: uppercase
-			+fw(600)
-			+fz(.9rem)
-			+bor-rad(3rem)
-			margin-right: .5rem
-		&:last-child
-			.nav-link
-				margin-right: 0
-		&:hover, &.active 
-			.nav-link
-				background: darken(color-get($mau,main) ,0%)
-				color: color-get($mau,trang)
+	+pad(1rem 0)
+	.boxes
+		border: 1px solid darken(color-get($mau,trang),5%)
+		.boxes-title
+			border-bottom: 1px solid darken(color-get($mau,trang),15%)
+			+pad(.5rem 1rem)
+			h2 
+				margin-bottom: 0
+				+pad(.5rem 0)
+				text-transform: uppercase
+				color: color-get($mau,den)
+				+fw(bold)
+			.nav
+				.nav-item
+					.nav-link 
+						+pad(.25rem .5rem)
+						color: darken(color-get($mau,trang),35%)
+						+fz(.9rem)
+					&:hover, &.active
+						.nav-link 
+							color: color-get($mau,main)
+		.boxes-content 
+			+pad(1rem)
+			// List
+			.product-items
+				margin-top: 2rem
+				+media-breakpoint-up(md)
+					margin-top: 0
+				.item
+					a
+						color: darken(color-get($mau,trang),50%)
+						text-decoration: none
+						figure
+							margin-bottom: 0
+						.price
+							color: color-get($mau,do-1)
+							+fw(bold)
+							min-height: 1.5rem
+							+fz(1.2rem)
+						.old-price 
+							text-decoration: line-through
+							color: darken(color-get($mau,trang),25%)
+							+fz(.9rem)
+							min-height: 1.2rem
+						h3 
+							margin-top: .5rem
+							text-transform: uppercase
+							color: color-get($mau,den)
+							+fz(1rem)
+							+fw(bold)
+							min-height: 2.4rem
+							max-height: 2.4rem
+							overflow: hidden
+							text-overflow: ellipsis
+						.code 
+							+fw(initial)
+							display: block
+							+fz(.9rem)
+							color: darken(color-get($mau,trang),45%)
+							min-height: 1.2rem
+						.noted
+							+fz(.9rem)
+							+lh(1rem)
+							color: darken(color-get($mau,trang),45%)
+					&:hover
+						img
+							+opacity(.8)
+						a
+							color: color-get($mau,den)
+						h3
+							text-decoration: underline
+
+	.owl-carousel
+		// Main
+		.owl-stage-outer
+		// Nav
+		.owl-nav
+			margin-top: 0
+			button
+				&.owl-prev, &.owl-next
+					+pad(.5rem_)
+					width: 2.5rem
+					height: 2.5rem
+					background: rgba(0,0,0,.5)
+					color: color-get($mau,trang)
+					+bor-rad(0%)
+					text-align: center
+					+transform(translateY(-50%))
+					margin: 0
+					&:focus
+						outline: none
+				&.owl-prev
+						+pos(abs, 50% null null 0)
+				&.owl-next
+					+pos(abs, 50% 0 null null)
+				&:hover, &.active
+					&.owl-prev, &.owl-next
+						background: color-get($mau,main)
+				
+		// Dots
+		.owl-dots
+			.owl-dot
+				&:focus
+					outline: none
+				span
+					background: darken(color-get($mau,trang),5%)
+				&.active
+					span
+						background: color-get($mau,main)

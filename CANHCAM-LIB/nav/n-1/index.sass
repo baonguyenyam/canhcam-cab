@@ -1,0 +1,33 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-1
+	display: none
+	@media (min-width: 700px) and (max-width: 767px)
+		display: block
+	@media (min-width: 880px) and (max-width: 991px)
+		display: block
+	@media (min-width: 1130px) and (max-width: 1199px)
+		display: block
+	@media (min-width: 1366px)
+		display: block
+	background: color-get($mau,trang)
+	+box-shadow(0 0 2px rgba(0, 0, 0, 0.3))
+	.navbar-nav
+		+mar(0)
+		+pad(0)
+		text-align: center
+		.nav-item
+			.nav-link
+				+pad(1rem)
+				img
+					max-width: 100%
+					min-width: 2rem
+			&:hover 
+				.nav-link
+					background: color-get($mau,main)
+					img 
+						filter: invert(100%)
+	
