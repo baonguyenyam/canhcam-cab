@@ -91,6 +91,48 @@
             "body",
             "012d813c37a4d74ba3672030950a0df6.png",
             "Boxes 5"
+        ],
+        "boxes-6": [
+            "boxes/b-6",
+            "body",
+            "ebee8771e948779386090f03c6c90967.png",
+            "Box 6"
+        ],
+        "boxes-7": [
+            "boxes/b-7",
+            "body",
+            "caeccd0e19fd8dc006e8c1067ce841a3.png",
+            "Box 7"
+        ],
+        "boxes-8": [
+            "boxes/b-8",
+            "body",
+            "922a03d8dd20e732ac2fe2afca8a368d.png",
+            "Box 8"
+        ],
+        "boxes-9": [
+            "boxes/b-9",
+            "body",
+            "7fddc880f37b1a485026fcb2e23f4500.png",
+            "Box 9"
+        ],
+        "boxes-10": [
+            "boxes/b-10",
+            "body",
+            "188f313149b0867b2fce149b24caa2af.png",
+            "Box 10"
+        ],
+        "boxes-11": [
+            "boxes/b-11",
+            "body",
+            "cd82c9042e10749f5d73e06a56f1c123.png",
+            "Box 11"
+        ],
+        "boxes-12": [
+            "boxes/b-12",
+            "body",
+            "a2030ddf1f54c3028f0f56d9ecc2e7de.png",
+            "Box 12"
         ]
     },
     "slider": {
@@ -105,6 +147,24 @@
             "body",
             "slider-2.png",
             "slider 2"
+        ],
+        "slider-3": [
+            "slider/s-3",
+            "body",
+            "5ffa74078ea5078338b0566f1abbdc6c.png",
+            "Slider 3"
+        ],
+        "slider-4": [
+            "slider/s-4",
+            "body",
+            "28c6e7a585711fdaf6723d6668dd9dd1.png",
+            "Slider 4"
+        ],
+        "slider-5": [
+            "slider/s-5",
+            "body",
+            "220d3912497f2ce4217ca71314f1dfd6.png",
+            "Slider 5"
         ]
     },
     "banner": {},
@@ -132,6 +192,24 @@
             "body",
             "carousel-4.png",
             "carousel 4"
+        ],
+        "carousel-5": [
+            "carousel/c-5",
+            "body",
+            "dff90ca9664bfb263b1e433e991421dc.png",
+            "Carousel 5"
+        ],
+        "carousel-6": [
+            "carousel/c-6",
+            "body",
+            "80aba5b538642b90e6ebc231c9b68ef0.png",
+            "Carousel 6"
+        ],
+        "carousel-7": [
+            "carousel/c-7",
+            "body",
+            "0748873f3617c58a2f9e5d7e93dd34ae.png",
+            "Carousel 7"
         ]
     },
     "news": {
@@ -152,6 +230,12 @@
             "body",
             "news-3.png",
             "news 3"
+        ],
+        "news-4": [
+            "news/n-4",
+            "body",
+            "64ce8b7f56c7d77db45e14cdc4a08f02.png",
+            "News 4"
         ]
     },
     "news-details": {
