@@ -5,10 +5,16 @@
 				"header/h-9"
 			],
 			"body": [
-				"gallery/g-4"
+				"carousel/c-5",
+				"carousel/c-6",
+				"news/n-4",
+				"slider/s-3",
+				"slider/s-4",
+				"slider/s-5",
+				"carousel/c-7"
 			],
 			"footer": [
-				"footer/f-8"
+				"footer/f-9"
 			]
 		}
 	}
