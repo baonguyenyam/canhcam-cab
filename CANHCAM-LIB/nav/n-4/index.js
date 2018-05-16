@@ -28,7 +28,9 @@ function navCollapseAllPanels4() {
 		} else {
 			closeAllPanels(accordionId);
 		}
-		checkOpenPanel4()
+		setTimeout(() => {
+			checkOpenPanel4()
+		}, 500);
 	})
 	$(".canhcam-nav-4 #accordion .card").on("click", function () {
 		checkClickPanel4($(this))
