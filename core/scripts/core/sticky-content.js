@@ -2,7 +2,6 @@ function canhCamStickyComtent() {
 
 	$('[data-fix]').each(function () {
 		$(this).css({
-			"position": 'absolute',
 			"z-index": '500'
 		})
 		if ($(this).attr('data-top') && $(this).attr('data-top').length) {
@@ -25,16 +24,31 @@ function canhCamStickyComtent() {
 				"right": $(this).attr('data-right')
 			})
 		}
+
 		var toFix = 0
+		var typeFix = 'fixed'
+		var changeFix = 'static'
+
 		if ($(this).attr('data-fix') && $(this).attr('data-fix').length) {
-			var toFix = parseInt($(this).attr('data-fix'))
+			toFix = parseInt($(this).attr('data-fix'))
 		}
+		if ($(this).attr('data-fix-type') && $(this).attr('data-fix-type').length) {
+			typeFix = $(this).attr('data-fix-type')
+		}
+		if ($(this).attr('data-fix-change') && $(this).attr('data-fix-change').length) {
+			changeFix = $(this).attr('data-fix-change')
+		}
+
+		$(this).css({
+			"position": typeFix
+		})
+
 		var scrollTop = $(window).scrollTop();
 		var elementOffset = $(this).offset().top;
 		var currentElementOffset = (elementOffset - scrollTop);
 		if (currentElementOffset <= toFix) {
 			$(this).css({
-				"position": 'fixed',
+				"position": changeFix,
 				"top": toFix + 'px'
 			})
 		}

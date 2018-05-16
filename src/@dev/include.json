@@ -5,7 +5,9 @@
 				"header/h-9"
 			],
 			"body": [
-				"nav/n-4"
+				"news-details/n-1",
+				"nav/n-1",
+				"form/f-7"
 			],
 			"footer": [
 				"footer/f-9"
