@@ -50,11 +50,10 @@
 						width: auto
 						max-width: none
 						color: lighten(color-get($mau,trang), 10%)
-						+pad(0 1rem)
 						+fz(1rem)
 						display: flex
 						align-items: center
-						max-width: 170px
+						max-width: 140px
 						span 
 							padding-left: .5rem
 							color: lighten(color-get($mau,main), 40%)
@@ -72,7 +71,7 @@
 					max-width: none
 					white-space: nowrap
 					color: lighten(color-get($mau,trang), 10%)
-					+pad(0 1rem)
+					+pad(0 0 0 1rem)
 					+fz(1rem)
 					display: flex
 					align-items: center
@@ -118,6 +117,14 @@
 						color: color-get($mau,trang)
 
 			.__main-menu
+				.__promotion
+					.navbar-nav
+						.nav-item
+							.nav-link
+								color: lighten(color-get($mau,main), 30%)
+								i 
+									+fz(1.5rem)
+									margin-right: .5rem 
 				.__product
 					margin: 1rem 0
 					.menu-toggler
@@ -137,7 +144,8 @@
 									color: color-get($mau,trang) 
 
 	// CHANGE MENU 
-	+media-breakpoint-up(lg)
+	
+	+media-breakpoint-up(md)
 		&:after 
 			content: ''
 			width: 100%
@@ -177,16 +185,18 @@
 					min-width: 250px 
 				.__notice-menu
 					.nav-item
+						margin-left: 1rem
 						.__bl
 							span 
-								display: block
+								display: none 
+
 				.__search-menu 
 					.input-group
 						input 
-							min-width: 300px
+							min-width: 180px
 					.__cart
 						span 
-							display: block
+							display: none
 				.__main-menu
 					display: flex
 					order: 3
@@ -194,6 +204,13 @@
 					align-items: center 
 					justify-content: flex-start
 					margin-top: 1rem 
+					.__promotion
+						.navbar-nav
+							.nav-item
+								.nav-link
+									color: lighten(color-get($mau,den), 0%)
+									i 
+										+fz(1rem)
 					.__product 
 						position: relative
 						min-width: 250px
@@ -255,8 +272,32 @@
 							&:hover, &:active 
 								.nav-link
 									color: lighten(color-get($mau,extra),0%) 
+	
+	+media-breakpoint-up(lg)
+		#GlobalMENU
+			#CCMenuHeader
+				.__notice-menu
+					.nav-item
+						.__bl
+							span 
+								display: block
+				.__search-menu 
+					.__cart
+						span 
+							display: block
+					.input-group 
+						input
+							min-width: 160px
+	+media-breakpoint-up(xl)
+		#GlobalMENU
+			#CCMenuHeader
+				.__search-menu 
+					.input-group 
+						input
+							min-width: 350px
+
 	// MENU 
-	+media-breakpoint-down(md)
+	+media-breakpoint-down(sm)
 		#GlobalMENU
 			#CCMenuHeader
 				transition: all .3s ease-in-out
@@ -290,6 +331,5 @@
 
 .select2-container.select2-container--default.select2-container--open
 	.select2-dropdown
-		// margin-left: -1px 
 		border: 0
 		+bor-rad(0)

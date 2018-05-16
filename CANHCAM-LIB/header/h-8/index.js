@@ -1,4 +1,3 @@
-// phần của nguyên 
 function CCHeader8() {
 	// Bật tắt Menu
 	$('.canhcam-header-8 .navbar-toggler').on("click", function () {
@@ -13,10 +12,6 @@ function CCHeader8() {
 $(document).ready(function () {
 	// Fixed Header
 	CCHeader8();
-});
-// Fixed Header
-$(window).scroll(function () {
-	setHeader($(document).scrollTop());
 });
 // Fixed Header
 $(window).resize(function () {

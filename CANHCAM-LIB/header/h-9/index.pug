@@ -1,6 +1,6 @@
 header.canhcam-shop-menu
-	nav#GlobalMENU.navbar.navbar-expand-lg.container
-		a.navbar-brand.d-lg-none.mr-auto(href='#')
+	nav#GlobalMENU.navbar.navbar-expand-md.container
+		a.navbar-brand.d-md-none.mr-auto(href='#')
 			img(src="./img/logo-trang.png", alt="Logo")
 		.__top-bar
 			ul.nav.justify-content-end
@@ -24,12 +24,12 @@ header.canhcam-shop-menu
 			span.fa.fa-bars
 
 		#CCMenuHeader.collapse.navbar-collapse
-			.d-flex.d-lg-none.menubars
+			.d-flex.d-md-none.menubars
 				.brand.mr-auto
 					img(src="./img/logo-trang.png", alt="Logo")
 				button.navbar-toggler.navbar-closed(type='button')
 					span.mdi.mdi-close
-			.logo.d-none.d-lg-block
+			.logo.d-none.d-md-block
 				img(src="./img/logo-trang.png", alt="Logo")
 			.__search-menu 
 				.input-group
@@ -73,11 +73,13 @@ header.canhcam-shop-menu
 				.__promotion 
 					ul.navbar-nav
 						li.nav-item.active 
-							i.mdi.mdi-gift
-							span Khuyến mãi HOT
+							a(href="#").nav-link
+								i.mdi.mdi-gift
+								span Khuyến mãi HOT
 						li.nav-item.active 
-							i.mdi.mdi-newspaper
-							span Góc tư vấn 
+							a(href="#").nav-link
+								i.mdi.mdi-newspaper
+								span Góc tư vấn 
 
 
 			.__notice-menu 
