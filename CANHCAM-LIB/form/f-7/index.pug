@@ -1,0 +1,26 @@
+section.canhcam-form-7(bg-img="./img/bg/sub.png")
+	article.subscribe.container
+		.row.justify-content-lg-center
+			.col-md.col-lg-auto
+				ul.nav
+					li.nav-item
+						img(src="./img/icon/icon-call.png", alt="")
+					li.nav-item
+						p Lorem ipsum, dolor sit amet conse
+							br 
+							| ctetur adipisicing elit.
+						p.mb-0 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+			.col-md.col-lg-auto.lines
+				ul.nav.mt-4.mt-md-0
+					li.nav-item
+						img(src="./img/icon/icon-mail.png", alt="")
+					li.nav-item
+						p Lorem ipsum, dolor sit amet conse
+							br 
+							| ctetur adipisicing elit.
+						form.validator.d-flex.justify-content-center.row
+							.form-group.col-12
+								input#email.form-control(type='email', pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", placeholder='Enter your email', data-error="Vui lòng nhập thông tin", required)
+								.help-block.with-errors.small
+								button.btn.btn-primary(type="submit")
+									i.mdi.mdi-arrow-right

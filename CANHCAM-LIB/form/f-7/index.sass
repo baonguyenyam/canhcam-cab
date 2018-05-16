@@ -1,0 +1,70 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-form-7
+	+pad(2rem 0)
+	+media-breakpoint-up(xl)
+		.col-lg-auto
+			padding-right: 6rem
+			padding-left: 6rem
+			&:first-child
+				padding-left: 0
+			&:last-child
+				padding-right: 0
+	background: darken(color-get($mau,trang),3%)
+	background-attachment: fixed
+	color: color-get($mau,trang)		
+	.subscribe
+		.lines
+			+media-breakpoint-up(md)
+				border-left: 1px solid darken(color-get($mau,trang),0%)
+		h2
+			color: color-get($mau,trang)
+		.nav
+			flex-wrap: nowrap
+			.nav-item
+				padding-left: 1rem
+				&:first-child
+					padding-left: 0
+				img 
+					max-width: 60px
+					padding-top: .5rem 
+		form
+			button.disabled
+				+opacity(1)
+			.has-danger
+				input, textarea, select
+					background: color-get($mau,trang)
+			.help-block
+				display: none
+		.form-group
+			max-width: 600px
+			margin-bottom: 0
+			position: relative
+			input
+				+bor-rad(3rem)
+				+pad(.7rem 1.5rem)
+				border-color: color-get($mau,main)
+				+fz(1rem)
+				min-width: 250px
+				background: rgba(255,255,255,.5) !important
+				+placeholder
+					color: color-get($mau,trang) 
+			button
+				text-transform: uppercase
+				+bor-rad(50%)
+				+pos(abs, 0.3rem 1.4rem null null)
+				+pad(0)
+				height: 2.5rem
+				width: 2.5rem
+				display: flex
+				justify-content: center 
+				align-items: center 
+				+fz(1.5rem)
+				color: color-get($mau,trang)
+				background: color-get($mau,extra)
+				border-color: color-get($mau,extra)
+				
+
