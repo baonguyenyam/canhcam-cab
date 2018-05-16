@@ -4,78 +4,61 @@
 //////////////////////////////////////
 
 .canhcam-footer-8
-	.footer-content
-		background: lighten(color-get($mau,main), 0%)
-		color: lighten(color-get($mau,trang), 0%)
-		padding: 2rem 0
-		font-weight: 200
-		h6
-			font-size: 1rem 
-			margin-bottom: 1rem 
-			color: lighten(color-get($mau,trang), 0%) 
-		.slogan 
-			.logo 
-				a
-					display: block
-				img 
-					max-width: 200px 
-			.quote
-				color: darken(color-get($mau,trang), 30%)
-				font-size: .9rem 
-				line-height: 1.2rem 
-			.social-list
-				margin: 2rem 
-				.list-inline
-					margin: 0
-					.list-inline-item
-						font-size: .9rem 
-						margin-right: .5rem 
-						a
-							display: flex
-							height: 2rem
-							width: 2rem
-							border: 2px solid darken(color-get($mau,trang), 30%)
-							color: darken(color-get($mau,trang), 30%)
-							align-items: center 
-							justify-content: center 
-							text-decoration: none
-						&:last-child
-							margin-right: 0
-						&:hover 
-							a 
-								background: rgba(255,255,255,.13)
-								color: lighten(color-get($mau,trang), 0%) 
-								border-color: lighten(color-get($mau,trang), 0%) 
+	background-color: darken(color-get($mau,trang) ,3%)
+	position: relative
+	z-index: 1
+	color: darken(color-get($mau,trang) ,50%)
+	overflow: hidden
+	+media-breakpoint-down(xs)
+		text-align: center
+	h4
+		text-transform: uppercase
+		color: color-get($mau,extra)
+		position: relative
+		+fz(1rem)
+		+fw(700)
+		margin-bottom: 1.5rem
+	.linkfooter
+		padding: 3rem 0 2rem
 		.list-group
 			.list-group-item
 				display: inline-block
-				background: none 
+				+bg(none, none, none)
 				border: 0
-				padding: .5rem 0
+				+pad(.5rem 0)
+				+media-breakpoint-up(md)
+					+pad(.15rem 0)
 				a
 					font-size: .9rem
-					color: darken(color-get($mau,trang), 30%) 
-					&:hover 
-						text-decoration: underline
-						color: lighten(color-get($mau,trang), 0%) 
-	.copy-right
-		font-size: .8rem 
-		padding: .75rem 1rem
-		background: darken(color-get($mau,trang), 90%)
-		color: darken(color-get($mau,trang), 20%)
-	// Khi lên Tablet 
-	+media-breakpoint-up(md)
-		.footer-content
-			padding: 4rem 0
-			.list-group
-				.list-group-item
-					padding: .15rem 0
-			.slogan 
-				.social-list
-					margin: 1rem 0 0 0
-	// Khi lên PC
-	+media-breakpoint-up(lg)
-		.slogan
-			display: flex 
-			.quote
-				padding-left: 1rem 
+					+link(darken(color-get($mau,trang),55%),color-get($mau,main),color-get($mau,main))
+		img 
+			max-height: 2rem
+	.socials
+		.social-list
+			+media-breakpoint-down(sm)
+				+mar(1rem null 0 null)
+			.list-inline
+				+mar(0)
+				.list-inline-item
+					+fz(.9rem)
+					+link(darken(color-get($mau,trang), 85%), color-get($mau,trang), color-get($mau,trang))
+					+mar(null 1rem null null)
+					a
+						display: block
+						height: 2rem
+						width: 2rem
+						+lh(2rem)
+						+bg(darken(color-get($mau,extra),0%), color-get($mau,main), color-get($mau,main))
+						+link(darken(color-get($mau,trang),0%), darken(color-get($mau,trang),0%))
+						+border-radius(50%)
+						text-align: center
+						i
+							+lh(2rem)
+					&:last-child
+						+mar(0)
+
+	.copyright
+		padding: 1rem
+		background-color: darken(color-get($mau,trang) ,95%)
+		+fz(.8rem)
+		
