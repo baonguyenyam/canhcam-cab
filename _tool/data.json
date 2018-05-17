@@ -79,7 +79,9 @@
             "boxes/b-3",
             "body",
             "7e07c3213f76f5d7696ff597e20ffaec.png",
-            "dfg"
+			"dfg",
+			"",
+			"Sử dụng CountUp number"
         ],
         "boxes-4": [
             "boxes/b-4",
@@ -109,7 +111,9 @@
             "boxes/b-8",
             "body",
             "922a03d8dd20e732ac2fe2afca8a368d.png",
-            "Box 8"
+			"Box 8",
+			"",
+			"Perfect Scrollbar được tích hợp vào đây"
         ],
         "boxes-9": [
             "boxes/b-9",
@@ -147,7 +151,9 @@
             "slider/s-2",
             "body",
             "slider-2.png",
-            "slider 2"
+			"slider 2",
+			"",
+			"Fullscreen khi load, cần bật active header và header tranparent cho site"
         ],
         "slider-3": [
             "slider/s-3",
@@ -175,7 +181,7 @@
             "nav-1.png",
             "Nav 1",
             "10px",
-            "Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế"
+            "Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế, có sử dụng chế độ màu âm bản"
         ],
         "nav-2": [
             "nav/n-2",
@@ -200,6 +206,14 @@
             "Nav 4",
             "",
             ""
+        ],
+        "nav-5": [
+            "nav/n-5",
+            "body",
+            "1cf80189e09c4a6952185dfd96bf97a1.png",
+            "Nav 5",
+            "",
+            "Sử dụng chế độ màu âm bản"
         ]
     },
     "banner": {
@@ -213,7 +227,9 @@
             "banner/b-2",
             "body",
             "dc8c0e798df3610973a8ad41a197cb38.png",
-            "Banner 2"
+            "Banner 2",
+			"",
+			"Fullscreen khi load, cần bật active header và header tranparent cho site"
         ]
     },
     "carousel": {
@@ -357,7 +373,9 @@
             "gallery/g-4",
             "body",
             "7afbbb96fbb667c6c84ae157f84256d8.png",
-            "Gallery 4"
+            "Gallery 4",
+			"",
+			"Tích hợp Masonry bằng SASS"
         ]
     },
     "form": {
@@ -371,7 +389,9 @@
             "form/f-2",
             "body",
             "form-2.png",
-            "form 2"
+            "form 2",
+			"",
+			"Tích hợp tính năng tự load iframe khác nhau"
         ],
         "form-3": [
             "form/f-3",
