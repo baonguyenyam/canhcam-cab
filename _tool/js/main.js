@@ -191,7 +191,7 @@ $('#formAddComponent button').click(function (e) {
 		data: data,
 		success: function () {
 			alert('Upload hoàn tất')
-			$('#addComponent').trigger('click')
+			$('#addCompo').modal('hide')
 			$('#formAddComponent')[0].reset();
 			$('#formAddComponent .textresult').html('...')
 		},

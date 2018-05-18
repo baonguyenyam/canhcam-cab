@@ -147,7 +147,7 @@
   "main": "gulpfile.babel.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baonguyenyam/auto-build-static-web"
+    "url": "git+https://github.com/baonguyenyam/canhcam-cab"
   },
   "keywords": [
     "gulp",
@@ -156,7 +156,7 @@
   "author": "BaoNguyen <baonguyenyam@gmail.com> (http://baonguyenyam.github.io/)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/baonguyenyam/auto-build-static-web/issues"
+    "url": "https://github.com/baonguyenyam/canhcam-cab/issues"
   },
-  "homepage": "https://github.com/baonguyenyam/auto-build-static-web#readme"
+  "homepage": "https://github.com/baonguyenyam/canhcam-cab#readme"
 }

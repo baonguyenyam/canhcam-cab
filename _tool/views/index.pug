@@ -43,31 +43,33 @@ html(lang='en')
 		.container-no
 			#maincc.row.no-gutters
 				.col.flex-column.bleft(style='display:none')
-					#accordion.bg-light
+					#accordion
 						figure#logopage
-							img.img-fluid(src='./img/logo.jpg')
+							img.img-fluid(src='./img/logo.png')
+							span.text-info
 				#noleft.col.d-flex.flex-column.noleft
 					.container-fluid
-						.row.deview(style='display: none')
-							.col-auto.mr-auto.d-flex.align-items-center.justify-content-start
-								button.btn.btn-outline-secondary.btn-sm.togglemenu.mr-2(data-toggle='tooltip', data-placement='bottom', title='Bật tắt menu')
+						.row.no-gutters.deview(style='display: none')
+							.menuct.col-auto.mr-auto.d-flex.align-items-center.justify-content-start
+								button.btn.btn-outline-success.btn-sm.togglemenu.mr-2(data-toggle='tooltip', data-placement='bottom', title='Bật tắt menu')
 									i.fa.fa-bars
 								h4.mb-0.h6
 									| Dự án: 
 									abbr#projectname.text-danger(data-toggle='tooltip', data-placement='bottom', title='Sửa tên dự án')
+									| 
 									i#edit-projectname.text-danger.fa.fa-pencil
 							.col-auto.text-right.d-flex.align-items-center.justify-content-end
 								form#toDoList.mr-2(name='toDoList')
 									.input-group.input-group-sm
 										input.form-control(type='text', placeholder='Nhập tên trang', name='ListItem')
 										.input-group-append
-											button#createPage.btn.btn-primary(type='button') Thêm
+											button#createPage.btn.btn-success(type='button') Thêm
 								.btn-group.btn-group-sm.mr-2(role='group')
-									button#tooglepc.btn.btn-outline-secondary.active(onclick='javascript:void(0)')
+									button#tooglepc.btn.btn-outline-success.active(onclick='javascript:void(0)')
 										| PC
-									button#tooglemobile.btn.btn-outline-secondary(onclick='javascript:void(0)')
+									button#tooglemobile.btn.btn-outline-success(onclick='javascript:void(0)')
 										| Mobile
-									button#toogletablet.btn.btn-outline-secondary(onclick='javascript:void(0)')
+									button#toogletablet.btn.btn-outline-success(onclick='javascript:void(0)')
 										| Tablet
 								button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#keyboardShortCut')
 									i.fa.fa-keyboard-o(data-toggle='tooltip', data-placement='bottom', title='Phím tắt')
@@ -75,49 +77,55 @@ html(lang='en')
 									i.fa.fa-info-circle(data-toggle='tooltip', data-placement='bottom', title='Xem hướng dẫn')
 								button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#exampleModalCenter')
 									i.fa.fa-cog(data-toggle='tooltip', data-placement='bottom', title='Cấu hình dự án')
-								button#addComponent.btn.btn-outline-success.btn-sm(type='button', data-toggle='collapse', data-target='#addCompo', aria-expanded='false', aria-controls='addCompo')
+								button#addComponent.btn.btn-outline-secondary.btn-sm(type='button', data-toggle="modal", data-target='#addCompo', aria-expanded='false', aria-controls='addCompo', data-backdrop="static" data-keyboard="false")
 									i.fa.fa-plus(data-toggle='tooltip', data-placement='bottom', title='Thêm một component vào dự án')
-						#addCompo.collapse.mt-3
-							.card.card-body
-								.alert.alert-danger(role='alert')
-									| Chú ý: Cẩn trọng khi thêm plugins
-								form#formAddComponent(enctype='multipart/form-data', method='POST')
-									.row
-										.col-6
-											.form-group.mb-2
-												label Tên components
-												input#nameCompo.form-control(type='text', name='nameCompo', placeholder="Tên components VD: 'Header 3'", required='')
-										.col-6
-											.form-group.mb-2
-												label Độ cao mặc định
-												.input-group.mb-3
-													input#heightCompo.form-control(type='text', name='heightCompo', placeholder='Không bắt buộc')
-													.input-group-append
-														span.input-group-text px
-										.col-12
-											.form-group.mb-2
-												label Chú thích
-												input#nameNoted.form-control(type='text', name='nameNoted', placeholder="", required='')
-										.col-6
-											.form-group.mb-2
-												label Chọn menu
-												select.form-control(name='selectCompo', required='')
-													option(selected='', disabled='') Vui lòng chọn
-										.col-6
-											.form-group.mb-2
-												label Upload
-												.custom-file
-													input#imgUploader.custom-file-input(type='file', name='imgUploader', required='')
-													label.custom-file-label.justify-content-start(for='imgUploader') Chọn ảnh
-									.row
-										.col
-											.bg-light.p-2.textresult ...
-									.row.mt-3
-										.col
-											input#comkey(type='hidden', name='comkey')
-											input#commain(type='hidden', name='commain')
-											input#comnum(type='hidden', name='comnum')
-											button.btn.btn-primary(type='button') Thêm Component
+						// Modal
+						#addCompo.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+							.modal-dialog.modal-dialog-centered(role='document')
+								.modal-content
+										.modal-header
+											h5#exampleModalLabel.modal-title Thêm Components 
+											button.close(type='button', data-dismiss='modal', aria-label='Close')
+												span(aria-hidden='true') ×
+										form#formAddComponent(enctype='multipart/form-data', method='POST')
+											.modal-body
+												.row
+													.col-6
+														.form-group.mb-2
+															label Tên components
+															input#nameCompo.form-control(type='text', name='nameCompo', placeholder="Tên components VD: 'Header 3'", required='')
+													.col-6
+														.form-group.mb-2
+															label Độ cao mặc định
+															.input-group.mb-3
+																input#heightCompo.form-control(type='text', name='heightCompo', placeholder='Không bắt buộc')
+																.input-group-append
+																	span.input-group-text px
+													.col-12
+														.form-group.mb-2
+															label Chú thích
+															input#nameNoted.form-control(type='text', name='nameNoted', placeholder="", required='')
+													.col-6
+														.form-group.mb-2
+															label Chọn menu
+															select.form-control(name='selectCompo', required='')
+																option(selected='', disabled='') Vui lòng chọn
+													.col-6
+														.form-group.mb-2
+															label Upload
+															.custom-file
+																input#imgUploader.custom-file-input(type='file', name='imgUploader', required='')
+																label.custom-file-label.justify-content-start(for='imgUploader') Chọn ảnh
+												.row
+													.col
+														.bg-light.p-2.textresult ...
+											.modal-footer
+												input#comkey(type='hidden', name='comkey')
+												input#commain(type='hidden', name='commain')
+												input#comnum(type='hidden', name='comnum')
+												button.btn.btn-success(type='button') Thêm Component
+
+						
 						.maindev
 							ul#myTab.nav.nav-tabs.tab-sm(role='tablist')
 							#nav-tabContent.tab-content
@@ -359,7 +367,7 @@ html(lang='en')
 									button.btn.btn-success(type='button', onclick='setDefault()') Reset to default
 								.col-6.text-right
 									button.btn.btn-secondary(type='button', data-dismiss='modal') Bỏ qua
-									button#saveConfig.btn.btn-primary(type='button') Lưu
+									button#saveConfig.btn.btn-success(type='button') Lưu
 		if process.env.NODE_ENV === 'production'
 			script(src='/js/app.min.js')
 		else 

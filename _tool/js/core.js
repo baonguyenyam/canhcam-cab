@@ -35,18 +35,22 @@ function createLeftMenuList() {
 		var total = 0
 		var index = 0
 		var show = ''
+		var collapsed = 'collapsed'
 		for (var key in parsedJSON) {
-			if (index == 0) {
-				show = ' show';
-			} else {
-				show = ''
-			}
+			// Dòng này bật sẽ tự động bật menu đầu tiên ra 
+			// if (index == 0) {
+			// 	show = ' show';
+			// 	collapsed = ''
+			// } else {
+			// 	show = ''
+			// 	collapsed = ' collapsed';
+			// }
 			var count = Object.keys(parsedJSON[key]).length;
 			total = + total + count
 			var father = document.createElement('div');
 			father.id = "cc-menu-" + key;
 			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
-			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.replace('-', ' ').toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show +'" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
+			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link ' + collapsed +' d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.replace('-', ' ').toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show +'" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
 			$('#accordion').append(father)
 
 			for (var des in parsedJSON[key]) {
@@ -106,7 +110,8 @@ function buildTotal(params) {
 	jQuery.get("/version.json", function (data) {
 		var info = data;
 		$('#version').html(info.version + ' ' + info.build)
-		$('#accordion').append('<div class="total bg-light p-2 small">Components: <span class="text-info">' + params + '</span><br>Tập tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phiên bản: <span class="text-info">' + info.version + ' ' + info.build + '</span></div>')
+		$('#accordion').append('<div class="total p-2 small">Components: <span class="text-info">' + params + '</span><br>Tập tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phiên bản: <span class="text-info">' + info.version + ' ' + info.build + '</span></div>')
+		$('#logopage .text-info').html(info.version)
 	})
 	jQuery.get("/justbuild.json", function (data) {
 		var info = data;
