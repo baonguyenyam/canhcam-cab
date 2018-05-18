@@ -150,6 +150,8 @@ gulp.task('k-builder', function (cb) {
 		'inject-dev',
 		'pug-rename-dev',
 		'map-dev',
+		'copytool',
+		'concattool',
 		cb
 	);
 });
