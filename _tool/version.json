@@ -1,4 +1,5 @@
 {
 	"version": "v3.0",
-	"build": "beta.2"
+	"build": "beta.2",
+	"bootstrap": "v4.1.0"
 }

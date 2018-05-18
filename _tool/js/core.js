@@ -110,7 +110,7 @@ function buildTotal(params) {
 	jQuery.get("/version.json", function (data) {
 		var info = data;
 		$('#version').html(info.version + ' ' + info.build)
-		$('#accordion').append('<div class="total p-2 small">S&#x1ED1; th&#xE0;nh ph&#x1EA7;n: <span class="text-info">' + params + '</span><br>T&#x1EAD;p tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phi&#xEA;n b&#x1EA3;nn: <span class="text-info">' + info.version + ' ' + info.build + '</span><br>T&#xE1;c gi&#x1EA3;: <span class="text-info">B&#x1EA3;o Nguy&#xEA;n</span></div>')
+		$('#accordion').append('<div class="total p-2 small">S&#x1ED1; th&#xE0;nh ph&#x1EA7;n: <span class="text-info">' + params + '</span><br>T&#x1EAD;p tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phi&#xEA;n b&#x1EA3;n: <span class="text-info">' + info.version + ' ' + info.build + '</span><br>Phi&#xEA;n b&#x1EA3;n Bootstrap: <span class="text-info">' + info.bootstrap +'</span><br>T&#xE1;c gi&#x1EA3;: <span class="text-info">B&#x1EA3;o Nguy&#xEA;n</span></div>')
 		$('#logopage .text-info').html(info.version)
 	})
 	jQuery.get("/justbuild.json", function (data) {

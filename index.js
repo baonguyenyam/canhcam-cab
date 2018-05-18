@@ -383,7 +383,7 @@ function PugCom(a,b) {
 	writeToOutput = function (fn, fnName) {
 		var fnString;
 		var id = makeid(10)
-		fnString = fn.toString().replace('function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html +', "var " + id+ " = ").replace('return pug_html;}', 'document.write('+id+')')
+		fnString = fn.toString().replace('function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html +', "var " + id+ " = ").replace('return pug_html;}', 'document.write('+id+');;')
 		return outFileStream.write(fnString);
 	};
 	outFileStream = fs.createWriteStream(b, {
