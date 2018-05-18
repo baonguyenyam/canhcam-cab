@@ -168,9 +168,10 @@ iframe {
     top: 0;
     right: 0;
     padding: .15rem .25rem;
-    font-size: .6rem !important;
+    font-size: .8rem !important;
     color: #fff;
-    font-weight: 100;
+	font-weight: 100;
+	z-index: 999;
     text-transform: lowercase;
 }
 .mainList .list-group-item:hover h5 {
@@ -318,7 +319,6 @@ iframe {
 	border-radius: .25rem !important;
 }
 #accordion .list-group .list-group-item figure {
-	/* max-height: 140px; */
 	overflow: hidden;
 }
 #accordion .list-group .list-group-item {
@@ -338,6 +338,9 @@ iframe {
 }
 #accordion .list-group .list-group-item:hover:after {
 	display: block;
+}
+#accordion .list-group .list-group-item:hover figure img {
+	    opacity: .2
 }
 
 .list-group .list-group-item figure img {

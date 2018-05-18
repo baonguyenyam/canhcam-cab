@@ -1,0 +1,415 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-shop-4
+	+pad(1rem 0)
+	background: darken(color-get($mau,trang) ,5%)
+	.shop-category
+		.title
+			p
+				color: darken(color-get($mau,trang) ,60%)
+	.product-lists
+		.filter
+			+pad(.5rem 1rem)
+			border-bottom: 1px solid darken(color-get($mau,trang) ,5%)
+			background: darken(color-get($mau,trang) ,0%)
+			.breadcrumb
+				background: none
+				+mar(.5rem 0 0 0)
+				+pad(0)
+				+fz(.9rem)
+				a 
+					color: darken(color-get($mau,trang) ,60%)
+			.nav
+				margin-bottom: 0
+				+fz(.85rem)
+				.nav-item
+					margin-right: .5rem
+					&:last-child
+						margin-right: 0
+					.nav-link
+						+pad(.5rem 0)
+					&:not(:first-child)
+						.nav-link
+							color: darken(color-get($mau,trang) ,60%)
+						
+					.form-check
+						text-decoration: none
+						color: darken(color-get($mau,trang) ,60%)
+						input[type="checkbox"]:checked + label, 
+						input[type="radio"]:checked + label
+							color: darken(color-get($mau,trang) ,60%)
+						label
+							padding-left: 0
+							margin-left: .25rem
+							&:before
+								width: 12px
+								height: 12px
+								top: 2px
+								left: 5px
+							&:after
+								width: 6px
+								height: 6px
+								font-size: 7px
+								top: 5px
+								background-color: color-get($mau,trang)
+								left: 8px
+			.btn-group
+				.btn
+					border: 0
+					&.active 
+						color: color-get($mau,main)
+					&:focus, &:active, &.active 
+						outline: none 
+						+box-sha(none)
+						border: 0
+
+		.search
+			input
+				+bor-rad(1rem 0 0 1rem)
+				padding-left: 1rem
+				border-color: darken(color-get($mau,trang) ,20%)
+				&:focus, &:active
+					outline: none
+					+box-sha(none)
+			button
+				padding-right: .75rem
+				+bor-rad(0 1rem 1rem 0)
+				background: darken(color-get($mau,trang) ,10%)
+				border-color: darken(color-get($mau,trang) ,20%)
+				&:focus, &:active
+					outline: none
+					+box-sha(none)
+		.boxprice
+			.title
+				h3
+					color: color-get($mau,main)
+					+fz(1.5rem)
+					margin-bottom: 0
+				.btn
+					background: white!important
+					color: black!important
+					&.collapsed
+						background: color-get($mau,main) !important
+						color: white!important
+			#filterSearch
+				padding-top: .5rem
+				margin-top: .5rem
+				border-top: 1px dashed darken(color-get($mau,trang) ,20%)
+				+media-breakpoint-up(md)
+					padding: 0
+					margin: 0
+					border: 0
+				h4
+					color: color-get($mau,main)
+					+fz(1rem)
+					margin-bottom: 1rem
+					+fw(bold)
+				hr
+					border-top: 1px dashed darken(color-get($mau,trang) ,20%)
+
+				.checkbox-styled
+					cursor: pointer
+					+fz(1rem)
+					margin-right: .5rem 
+					color: darken(color-get($mau,trang) ,80%)
+					display: inline-block
+					span
+						display: inline-block
+						background: darken(color-get($mau,trang) ,0%)
+						+pad(.5rem .75rem)
+						text-transform: uppercase
+						+bor-rad(0)
+						border: 1px solid darken(color-get($mau,trang) ,20%)
+						line-height: 1rem
+					&:hover, &.active 
+						span 
+							background: color-get($mau,main)
+							color: color-get($mau,trang)
+							border: 1px solid color-get($mau,main)
+				.slider
+					.slider-handle
+						border: 2px solid color-get($mau,main)
+						background: color-get($mau,trang)
+						height: 15px
+						width: 15px
+					&.slider-horizontal
+						width: 100%
+						height: 15px
+						.slider-track
+							height: 5px
+							margin-top: -2px
+							.slider-selection
+								background: color-get($mau,main)
+							.slider-track-low, .slider-track-high
+								background: color-get($mau,trang)
+				.innerbox
+					background: color-get($mau,trang)
+					margin-bottom: 2rem 
+					.title 
+						background: darken(color-get($mau,trang) ,60%)
+						+pad(1rem)
+						h4 
+							display: flex
+							align-items: center
+							margin-bottom: .5rem
+							.ic 
+								margin-right: 1rem
+								img 
+									filter: invert(100%)
+									min-width: 2rem
+							.name 
+								color: color-get($mau,trang)
+								text-transform: uppercase
+								+fw(400)
+						.desc 
+							color: darken(color-get($mau,trang) ,30%)
+							+lh(1.2rem)
+					.body 
+						+pad(1rem 1rem .5rem 1rem)
+						.form-check
+							margin-bottom: .75rem
+							+fw(bold)
+							text-decoration: none
+							color: darken(color-get($mau,trang) ,60%)
+							input[type="checkbox"]:checked + label, 
+							input[type="radio"]:checked + label
+								color: darken(color-get($mau,trang) ,60%)
+							label
+								padding-left: 0
+								&:before
+									width: 12px
+									height: 12px
+									top: 3px
+									border-radius: 0
+								&:after
+									width: 12px
+									height: 12px
+									font-size: 7px
+									top: 4px
+						.child
+							+mar(1.5rem 0 1.5rem 1.5rem)
+							.form-check
+								label 
+									+fw(normal)
+		.product-details
+			+media-breakpoint-up(md)
+				padding-left: 0
+			.product-details-box
+			.boxproducts
+				background: darken(color-get($mau,trang) ,0%)
+				margin-bottom: 1rem
+				&.list-group-wrapper
+					> div 
+						flex-direction: column
+						.item 
+							flex: 0 0 100%
+							max-width: 100%
+							border-bottom: 1px solid darken(color-get($mau,trang) ,5%)
+							&:last-child
+								border-bottom: 0
+							&:hover 
+								&:before
+									display: none
+								&:after
+									height: 100%
+							.item-detail 
+								figure
+									+clearfix
+									+pad(1rem)
+									img 
+										float: left
+										width: 35%
+									figcaption
+										float: left
+										width: 65%
+										padding-left: 1rem
+										.addtocart-toggle
+											display: block
+											.btn-group
+												flex-wrap: wrap
+												justify-content: center
+												.btn
+													background: color-get($mau,main)
+													color: color-get($mau,trang)
+													+bor-rad(1.5rem)
+													display: flex
+													align-items: center
+													margin-top: 1rem
+													+pad(.5rem 1.5rem)
+													i
+														padding-right: .5rem
+							.addtocart
+								display: none
+				.item
+					.item-detail
+						display: block
+						color: darken(color-get($mau,trang),50%)
+						text-decoration: none
+						figure
+							overflow: hidden
+							margin-bottom: 0
+							padding: 0 1rem 2rem 1rem
+							position: relative
+							text-align: center
+							.circle
+								+pos(abs, 1rem null null 1rem)
+								span
+									text-align: center
+									width: 3rem
+									height: 3rem
+									+bor-rad(50%)
+									background: color-get($mau,main)
+									color: color-get($mau,trang)
+									justify-content: center
+									align-items: center
+									display: flex
+									margin-bottom: .5rem
+									&.circle-hot
+										background: color-get($mau,do-1)
+									&.circle-success
+										background: color-get($mau,la-1)
+							.bagde
+								+pos(abs, 15px -45px null null)
+								text-align: right
+								width: 150px
+								+transform(rotate(45deg))
+								span
+									width: 150px
+									background: color-get($mau,main)
+									color: color-get($mau,trang)
+									text-align: center
+									+pad(.25rem .5rem)
+									display: block
+									&.bagde-hot
+										background: color-get($mau,do-1)
+									&.bagde-success
+										background: color-get($mau,la-1)
+							img
+								max-width: 100%
+							figcaption 
+								text-align: left
+								.addtocart-toggle
+									display: none
+								.price
+									color: color-get($mau,do-1)
+									+fw(bold)
+									min-height: 1.5rem
+									+fz(1.2rem)
+								.old-price 
+									text-decoration: line-through
+									color: darken(color-get($mau,trang),65%)
+									+fz(.9rem)
+									min-height: 1.3rem
+								h3 
+									margin-top: .5rem
+									text-transform: uppercase
+									color: color-get($mau,den)
+									+fz(1rem)
+									+fw(500)
+									min-height: 2.4rem
+									max-height: 2.4rem
+									overflow: hidden
+									text-overflow: ellipsis
+								.code 
+									+fw(initial)
+									display: block
+									+fz(.8rem)
+									color: darken(color-get($mau,trang),45%)
+									min-height: 1.2rem
+									margin-bottom: .5rem
+								.noted
+									+fz(.9rem)
+									+lh(1.1rem)
+									color: darken(color-get($mau,extra),0%)
+					.addtocart
+						z-index: 500
+						margin-bottom: 2rem
+						display: flex
+						justify-content: center
+						width: 100%
+						.btn-group
+							flex-wrap: wrap
+							justify-content: center
+							.btn
+								background: color-get($mau,main)
+								color: color-get($mau,trang)
+								+bor-rad(1.5rem)
+								display: flex
+								align-items: center
+								margin: .5rem
+								+pad(.5rem 1.5rem)
+								i
+									padding-right: .5rem
+						+media-breakpoint-up(sm)
+							+pad(0)
+							+pos(abs, null 0 0 null)
+							z-index: 100
+							+opacity(0)
+							+mar(0)
+							.btn-group
+								.btn
+									i
+										display: block
+					&:hover
+						+media-breakpoint-up(sm)
+							position: relative
+							overflow: initial 
+							&:after 
+								content: ''
+								display: block
+								+pos(abs, 0 0 null null)
+								width: 100%
+								height: calc(100% + 2rem)
+								z-index: 99
+								+box-sha(0 0 0 1px color-get($mau,main), inset)
+							&:before 
+								content: ''
+								display: block
+								+pos(abs, null 0 -2rem null)
+								width: 100%
+								height: 2rem
+								z-index: 99
+								background: color-get($mau,trang)
+							.addtocart
+								+opacity(1)
+								+pos(abs, null 0 -1.75rem null)
+
+
+		.pager
+			.pagination
+				.page-item
+					.page-link
+						+bor-rad(3px)
+						color: darken(color-get($mau,trang) ,20%)
+						margin-left: 3px
+					&:first-child
+						.page-link
+							margin-left: 0
+					&.active, &:hover
+						.page-link
+							background: none
+							color: color-get($mau,main)
+							border-color: color-get($mau,main)
+		.pagelist
+			margin-bottom: 2rem
+			.pagination
+				margin-bottom: 0
+				.page-item
+					margin-left: .5rem
+					&:first-child
+						margin-left: 0
+					.page-link
+						+bor-rad(50% 50%)
+						width: 2.5rem
+						height: 2.5rem
+						justify-content: center
+						align-items: center
+						display: flex
+						color: darken(color-get($mau,trang) ,20%)
+					&.active
+						.page-link
+							color: darken(color-get($mau,trang) ,0%)
+
