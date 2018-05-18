@@ -42,7 +42,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.set('view engine', 'pug')
 app.set('views', './_tool/views')
 app.get('/', function (req, res) {
-	res.render('index')
+	res.render('index', { key: makeid(200), val: makeid(20) })
 })
 app.use(compression());
 
@@ -352,11 +352,11 @@ function copyLibsUse(a, b) {
 	copyFiles()
 }
 
-function makeid() {
+function makeid(e) {
 	var text = "";
 	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	for (var i = 0; i < 5; i++)
+	for (var i = 0; i < e; i++)
 		text += possible.charAt(Math.floor(Math.random() * possible.length));
 
 	return text;
@@ -382,7 +382,7 @@ function PugCom(a,b) {
 
 	writeToOutput = function (fn, fnName) {
 		var fnString;
-		var id = makeid()
+		var id = makeid(10)
 		fnString = fn.toString().replace('function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html +', "var " + id+ " = ").replace('return pug_html;}', 'document.write('+id+')')
 		return outFileStream.write(fnString);
 	};
