@@ -42,7 +42,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.set('view engine', 'pug')
 app.set('views', './_tool/views')
 app.get('/', function (req, res) {
-	res.render('index', { key: makeid(200), val: makeid(20) })
+	res.render('index', { key: makeid(200), val: makeid(20), memory: process.memoryUsage(), cpu: process.cpuUsage(), platform: process.platform, version: process.versions })
 })
 app.use(compression());
 

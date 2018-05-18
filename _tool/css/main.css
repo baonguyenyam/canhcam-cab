@@ -10,6 +10,20 @@ html {
 *:focus{
 	outline: none !important;
 }
+#aboutBox dd {
+	word-break: break-word;
+	max-height: 100px;
+	overflow-y: scroll
+}
+@media (min-width: 576px){
+
+	.modal-dialog.modal-md {
+		max-width: 800px;
+		margin: 1.75rem auto;
+	}
+}
+
+
 input:focus,
 button:focus,
 input:active,

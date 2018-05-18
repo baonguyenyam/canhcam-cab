@@ -1,9 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-    "editor.tabSize": 4,
-    // Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
-    "editor.renderWhitespace": "all",
-    // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-	"editor.insertSpaces": false
+	// The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+	"editor.tabSize": 4,
+	// Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
+	"editor.renderWhitespace": "all",
+	// Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "on"
 }

@@ -15,18 +15,39 @@ doctype html
 	URL: fb.com/pham.nguyen.bao.nguyen,
 	baonguyenyam.github.io
 	baonguyenyam.blogspot.com
-html(lang='en')
+	License Name: CanhCam CAB
+	Serial Number: #{key.slice(70, 75).toUpperCase()}-#{key.slice(80, 85).toUpperCase()}-#{key.slice(90, 95).toUpperCase()}-#{key.slice(40, 45).toUpperCase()}-#{key.slice(30, 35).toUpperCase()}
+	Hash Key: #{key}
+	License Key: #{key.slice(50, 100)}__________#{key.slice(70, 170)}_#{key}____#{key}#{key}________#{key.slice(0, 50)}
+html(serial-key=key.slice(70, 75).toUpperCase()+'-'+key.slice(80, 85).toUpperCase()+'-'+key.slice(90, 95).toUpperCase()+'-'+key.slice(40, 45).toUpperCase()+'-'+key.slice(30, 35).toUpperCase(), hash-key=key, platform=platform, openssl=version.openssl, unicode=version.unicode, http2=version.nghttp2, chrome-v8=version.v8, http-parser=version.http_parser,  zlib=version.zlib,  modules=version.modules,  nodejs=version.node, cpu=cpu.user, system=cpu.system, memory-rss=memory.rss, memory-heaptotal=memory.heapTotal, memory-heapused=memory.heapUsed, memory-external=memory.external, lang='en')
 	- var text = Math.random()
-
-	head
+	- var hash = key
+	head(hash-key=hash.slice(50, 100))
 		meta(charset='UTF-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		meta(name='msapplication-TileColor', content='#48a4bc')
+		meta(name='msapplication-TileImage', content='/favicon/ms-icon-144x144.png?v='+text)
+		meta(name='theme-color', content='#48a4bc')
 		title Canh Cam - All-In-One Website Builder tool by Bao Nguyen
+		link(rel='apple-touch-icon', sizes='57x57', href='/favicon/apple-icon-57x57.png?v='+text)
+		link(rel='apple-touch-icon', sizes='60x60', href='/favicon/apple-icon-60x60.png?v='+text)
+		link(rel='apple-touch-icon', sizes='72x72', href='/favicon/apple-icon-72x72.png?v='+text)
+		link(rel='apple-touch-icon', sizes='76x76', href='/favicon/apple-icon-76x76.png?v='+text)
+		link(rel='apple-touch-icon', sizes='114x114', href='/favicon/apple-icon-114x114.png?v='+text)
+		link(rel='apple-touch-icon', sizes='120x120', href='/favicon/apple-icon-120x120.png?v='+text)
+		link(rel='apple-touch-icon', sizes='144x144', href='/favicon/apple-icon-144x144.png?v='+text)
+		link(rel='apple-touch-icon', sizes='152x152', href='/favicon/apple-icon-152x152.png?v='+text)
+		link(rel='apple-touch-icon', sizes='180x180', href='/favicon/apple-icon-180x180.png?v='+text)
+		link(rel='icon', type='image/png', sizes='192x192', href='/favicon/android-icon-192x192.png?v='+text)
+		link(rel='icon', type='image/png', sizes='32x32', href='/favicon/favicon-32x32.png?v='+text)
+		link(rel='icon', type='image/png', sizes='96x96', href='/favicon/favicon-96x96.png?v='+text)
+		link(rel='icon', type='image/png', sizes='16x16', href='/favicon/favicon-16x16.png?v='+text)
+		link(rel='manifest', href='/favicon/manifest.json?v='+text)
 		if process.env.NODE_ENV === 'production'
-			link(rel='stylesheet', key=val, href='/views/core.min.css?v='+text)
-			link(rel='stylesheet', key=val, href='/views/app.min.css?v='+text)
-			script(key=val, src='/views/core.min.js?v='+text)
+			link(rel='stylesheet', key=val, href='/views/core.min.css?v='+hash.slice(100, 150))
+			link(rel='stylesheet', key=val, href='/views/app.min.css?v='+hash.slice(0, 50))
+			script(key=val, src='/views/core.min.js?v='+hash.slice(70, 130))
 		else 
 			link(rel='stylesheet', key=val, href='/css/bootstrap.min.css?v='+text)
 			link(rel='stylesheet', key=val, href='/css/font-awesome.min.css?v='+text)
@@ -44,14 +65,17 @@ html(lang='en')
 			script(key=val, src='/js/select2.full.min.js?v='+text)
 			script(key=val, src='/js/bootstrap-tour.min.js?v='+text)
 			script(key=val, src='/js/keymaster.js?v='+text)
-	body(id=key)
-		script
-			include cab.js
-			include modal.js 			
+	body(license-key=key.slice(50, 100)+"__________"+key.slice(70, 170)+"_____"+key+"____"+key+key+"________"+key.slice(0, 50))
+		.memory.d-none(data-memory=memory.rss/1024+';'+memory.external/1024+';'+cpu.user/10240+';'+platform+';'+version.node)
 		if process.env.NODE_ENV === 'production'
-			script
+			script(key=hash.slice(10, 150))
+				include cab.js
+				include modal.js
+			script(key=hash.slice(60, 100))
 				include app.min.js
 		else 
+			include cab
+			include modal
 			script(key=val, src='/js/core.js?v='+text)
 			script(key=val, src='/js/main.js?v='+text)
 			script(key=val, src='/js/key.js?v='+text)

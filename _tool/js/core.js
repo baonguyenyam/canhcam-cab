@@ -420,4 +420,15 @@ $(window).resize(function () {
 	resizeFrame()
 })
 
+$(document).ready(function () {
+	setTimeout(() => {
+		var memories = $('.memory').attr('data-memory').split(";")
+		$('#accordion .total').append('<br>Bộ nhớ sử dụng: <span class="text-info">' + parseInt(memories[1]).toFixed(0) + 'MB</span>')
+		$('#accordion .total').append('<br>Platform: <span class="text-info">' + memories[3].charAt(0).toUpperCase() + memories[3].slice(1) + '</span>')
+		$('#accordion .total').append('<br>Node: <span class="text-info">v' + memories[4] + '</span>')
+		$('#aboutBox .sn').html($('html').attr('serial-key'))
+		$('#aboutBox .hk').html($('html').attr('hash-key'))
+		$('#aboutBox .lk').html($('body').attr('license-key'))
+	}, 1000);
+})
 

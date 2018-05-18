@@ -126,8 +126,28 @@
 							button.btn.btn-secondary(type='button', data-dismiss='modal') Bỏ qua
 							button#saveConfig.btn.btn-success(type='button') Lưu
 				
+#aboutBox.modal(tabindex='-1', role='dialog', aria-labelledby='aboutBoxTitle', aria-hidden='true')
+	.modal-dialog.modal-md(role='document')
+		.modal-content
+			.modal-header
+				h5#aboutBoxTitle.modal-title Về CAB
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body 
+				dl.row
+					dt.col-3.small License Name
+					dd.col-9.small.ln Canh Cam CAB
+				dl.row
+					dt.col-3.small Serial Number
+					dd.col-9.small.sn
+				dl.row
+					dt.col-3.small Hash Key
+					dd.col-9.small.hk
+				dl.row
+					dt.col-3.small License Key
+					dd.col-9.small.lk
 #keyboardShortCut.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
-	.modal-dialog(role='document')
+	.modal-dialog.modal-md(role='document')
 		.modal-content
 			.modal-header
 				h5#exampleModalLongTitle.modal-title Phím tắt trên CAB
@@ -184,7 +204,7 @@
 					dd.col Bật/Tắt Navigation
 // Modal
 #addCompo.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
-	.modal-dialog.modal-dialog-centered(role='document')
+	.modal-dialog.modal-md.modal-dialog-centered(role='document')
 		.modal-content
 				.modal-header
 					h5#exampleModalLabel.modal-title Thêm Components 

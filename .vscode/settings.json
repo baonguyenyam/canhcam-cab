@@ -5,5 +5,6 @@
     // Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
     "editor.renderWhitespace": "all",
     // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-	"editor.insertSpaces": false
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "on"
 }
