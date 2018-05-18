@@ -10,7 +10,7 @@ var multer = require('multer');
 var browserSync = require('browser-sync');
 var pug = require('pug');
 
-const port = 8080; 
+const port = 8080;
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 app.use(json_body_parser);
@@ -23,7 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
 	function listening() {
 		browserSync({
 			files: ['_tool/**/*.{js,css}'],
-			notify: false,			
+			notify: false,
 			online: false,
 			open: true,
 			port: port + 1,
@@ -115,12 +115,12 @@ app.post('/upload', function (req, res) {
 		dataToAdd.push(req.body.commain.trim())
 		dataToAdd.push(req.files[0].filename)
 		dataToAdd.push(req.body.nameCompo.trim())
-		if (req.body.heightCompo && req.body.heightCompo.length > 0){
+		if (req.body.heightCompo && req.body.heightCompo.length > 0) {
 			dataToAdd.push(req.body.heightCompo.trim())
 		} else {
 			dataToAdd.push("")
 		}
-		if (req.body.nameNoted && req.body.nameNoted.length > 0){
+		if (req.body.nameNoted && req.body.nameNoted.length > 0) {
 			dataToAdd.push(req.body.nameNoted.trim())
 		} else {
 			dataToAdd.push("")
@@ -202,7 +202,7 @@ app.post('/checksite', function (req, res) {
 	let val = true
 	fs.readdir(dest, function (err, items) {
 		for (var i = 0; i < items.length; i++) {
-			if (req.body.site === items[i]){
+			if (req.body.site === items[i]) {
 				val = false
 			}
 		}
@@ -305,7 +305,7 @@ function copyFiles(dir, json) {
 	buildFiles(dir, json)
 	fse.copySync(root + '/_core', dir + '/lib/_core');
 	fse.copySync(root + '/_includes.sass', dir + '/lib/_includes.sass');
-	fse.move(dir + '/styles', dir + '/lib/styles', err => {});
+	fse.move(dir + '/styles', dir + '/lib/styles', err => { });
 }
 
 function buildFiles(dir, json) {
@@ -352,52 +352,44 @@ function copyLibsUse(a, b) {
 	copyFiles()
 }
 
-function name(params) {
-	var fs, pug, jadeFilePath, outFilePath, outFileStream, parseFiles, path, writeToOutput;
+function makeid() {
+	var text = "";
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+	for (var i = 0; i < 5; i++)
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	return text;
+}
+
+function PugCom(a,b) {
+	var outFileStream, parseFiles, writeToOutput;
 
 	parseFiles = function (dirname) {
-		var compiled, file, fileContents, filenames, i, len, path, results, stats;
-		filenames = fs.readdirSync(dirname);
+		var compiled, file, fileContents, filenames, i, pathv, len, results, stats;
+		file = path.join(dirname)
 		results = [];
-		for (i = 0, len = filenames.length; i < len; i++) {
-			file = filenames[i];
-			if (file.slice(0, 1) === '.') {
-				continue;
-			}
-			path = path.join(dirname, file);
-			stats = fs.statSync(path.join(dirname, path));
-			if (stats.isDirectory()) {
-				results.push(parseFiles(file));
-			} else if (file.slice(file.length - 5) === '.pug') {
-				fileContents = fs.readFileSync(path, 'utf8');
-				compiled = pug.compile(fileContents, {
-					client: true,
-					compileDebug: false,
-					filename: file
-				});
-				results.push(writeToOutput(compiled, file.replace('.pug', '')));
-			} else {
-				results.push(void 0);
-			}
-		}
+		fileContents = fs.readFileSync(file, 'utf8');
+		compiled = pug.compile(fileContents, {
+			client: true,
+			compileDebug: false,
+			filename: file
+		});
+		writeToOutput(compiled, file.replace('.pug', ''))
+
 		return results;
 	};
 
 	writeToOutput = function (fn, fnName) {
-		var finalFnName, fnString;
-		finalFnName = "Templates." + fnName;
-		fnString = fn.toString().replace('function anonymous(', "function " + finalFnName + "(");
+		var fnString;
+		var id = makeid()
+		fnString = fn.toString().replace('function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html +', "var " + id+ " = ").replace('return pug_html;}', 'document.write('+id+')')
 		return outFileStream.write(fnString);
 	};
-
-	jadeFilePath = process.argv[2] || '.';
-
-	outFilePath = process.argv[3] || './templates.js';
-
-	outFileStream = fs.createWriteStream(outFilePath, {
+	outFileStream = fs.createWriteStream(b, {
 		flags: 'w'
 	});
-
-	outFileStream.write("var Templates = {};\n");
-	parseFiles(jadeFilePath);
-}
+	parseFiles(a,b);
+} 
+PugCom('_tool/views/cab.pug', '_tool/views/cab.js')
+PugCom('_tool/views/modal.pug', '_tool/views/modal.js')

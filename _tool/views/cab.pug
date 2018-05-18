@@ -1,0 +1,94 @@
+.container-no
+	#maincc.row.no-gutters
+		.col.flex-column.bleft(style='display:none')
+			#accordion
+				figure#logopage
+					img.img-fluid(src='./img/logo.png')
+					span.text-info
+		#noleft.col.d-flex.flex-column.noleft
+			.container-fluid
+				.row.no-gutters.deview(style='display: none')
+					.menuct.col-auto.mr-auto.d-flex.align-items-center.justify-content-start
+						button.btn.btn-outline-success.btn-sm.togglemenu.mr-2(data-toggle='tooltip', data-placement='bottom', title='Bật tắt menu')
+							i.fa.fa-bars
+						h4.mb-0.h6
+							| Dự án: 
+							abbr#projectname.text-danger(data-toggle='tooltip', data-placement='bottom', title='Sửa tên dự án')
+							| 
+							i#edit-projectname.text-danger.fa.fa-pencil
+					.col-auto.text-right.d-flex.align-items-center.justify-content-end
+						form#toDoList.mr-2(name='toDoList')
+							.input-group.input-group-sm
+								input.form-control(type='text', placeholder='Nhập tên trang', name='ListItem')
+								.input-group-append
+									button#createPage.btn.btn-success(type='button') Thêm
+						.btn-group.btn-group-sm.mr-2(role='group')
+							button#tooglepc.btn.btn-outline-success.active(onclick='javascript:void(0)')
+								| PC
+							button#tooglemobile.btn.btn-outline-success(onclick='javascript:void(0)')
+								| Mobile
+							button#toogletablet.btn.btn-outline-success(onclick='javascript:void(0)')
+								| Tablet
+						button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#keyboardShortCut')
+							i.fa.fa-keyboard-o(data-toggle='tooltip', data-placement='bottom', title='Phím tắt')
+						button#retour.btn.btn-outline-secondary.btn-sm.mr-2
+							i.fa.fa-info-circle(data-toggle='tooltip', data-placement='bottom', title='Xem hướng dẫn')
+						button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#exampleModalCenter')
+							i.fa.fa-cog(data-toggle='tooltip', data-placement='bottom', title='Cấu hình dự án')
+						button#addComponent.btn.btn-outline-secondary.btn-sm(type='button', data-toggle="modal", data-target='#addCompo', aria-expanded='false', aria-controls='addCompo', data-backdrop="static" data-keyboard="false")
+							i.fa.fa-plus(data-toggle='tooltip', data-placement='bottom', title='Thêm một component vào dự án')
+				.maindev
+					ul#myTab.nav.nav-tabs.tab-sm(role='tablist')
+					#nav-tabContent.tab-content
+				.notedcanhcam.mt-5
+					.col-12.text-center
+						.alert.alert-success.mb-5(role='alert', style='display:none') Đã tạo site thành công!
+						p
+							img(src='./img/logo.jpg', alt='')
+						h4.mb-0 All-In-One Website Builder tool (CAB)
+						p.text-sm
+							span#version.text-muted
+							|  -
+							| 
+							a(href='https://baonguyenyam.github.io/canhcam-cab/', target='_blank') API Docs
+							|  -
+							| 
+							a(href='https://baonguyenyam.github.io/canhcam-cab/logs.html', target='_blank') ChangeLog
+						.enterpro.row.col-auto.align-items-center.justify-content-center.mb-5
+							.card.bg-light
+								.card-body
+									form#toDoListMain.form-inline(name='toDoListMain')
+										.input-group.mr-2 Nhập tên dự án
+										.input-group
+											input#typeahead.form-control(type='text', placeholder='Tên dự án', name='ListItemMain')
+											.input-group-append
+												button#buttonListItemMain.btn.btn-success(type='button') Nhập
+						.container.pt-4
+							.row
+								.col
+									figure.text-center
+										img(src='./img/icon-1.png', style='height:100px', alt='')
+										h3.h5.mt-3.text-danger Drag and Drop website builder
+										p.text-muted
+											| Được xây dựng trên công nghệ tiên tiến của Bootstrap, các components của chúng tôi được thiết kế tốt và phù hợp với mọi loại hình kinh doanh. Khám phá qua các mẫu wweb responsive của chúng tôi để thấy sự hấp dẫn.
+								.col
+									figure.text-center
+										img(src='./img/icon-4.png', style='height:100px', alt='')
+										h3.h5.mt-3.text-danger Thân thiện bán hàng
+										p.text-muted
+											| Các tính năng được xây dựng cho công cụ bán hàng hết sức chi tiết và mạnh mẽ, từ những công cụ quản lý album ảnh cho đến các bộ lọc giá hay tính năng phóng to thu nhỏ ảnh đều được chúng tôi chọn lọc một cách tỉ mỉ.
+								.col
+									figure.text-center
+										img(src='./img/icon-2.png', style='height:100px', alt='')
+										h3.h5.mt-3.text-danger Trình tạo ứng dụng
+										p.text-muted
+											| Xây dựng trên các nền tảng ngôn ngữ hiện đại cùng với sự hỗ trợ của giao diện người dùng linh hoạt chúng tôi cho phép thực hiện dễ dàng và nhanh chóng bất kỳ ứng dụng web nào, cho bất kỳ nhu cầu nào.
+						.copyright.bg-light.p-3.small(style='width:100%; position: fixed; bottom: 0; left: 0')
+							| Copyright by Canh Cam
+						.notedcanhcam(style='display: none')
+							.col-12.mt-4.text-center
+								button#preCreateSite.btn.btn-success(type='button') Tạo dự án mới
+				.createcanhcam(style='display: none')
+					.col-12.mt-4.text-center
+						button#createSite.btn.btn-success(type='button') Tạo site
+						p.text-muted.mt-2 Chỉ nên thực hiện tạo site khi hoàn tất toàn bộ page.

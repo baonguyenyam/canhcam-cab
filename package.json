@@ -126,7 +126,7 @@
     "npm-check-updates": "2.11.2",
     "optipng-bin": "4.0.0",
     "phantomjs": "2.1.7",
-    "pug": "2.0.3",
+    "pug": "^2.0.3",
     "pug-lint": "2.5.0",
     "rimraf": "2.6.2",
     "run-sequence": "2.2.1",
