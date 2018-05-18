@@ -1,0 +1,229 @@
+#exampleModalCenter.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+	.modal-dialog.modal-lg(role='document')
+		.modal-content
+			.modal-header
+				h5#exampleModalLongTitle.modal-title Tùy chỉnh
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body
+				ul#modalTab.nav.nav-tabs(role='tablist')
+					li.nav-item
+						a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Tùy chỉnh màu
+					li.nav-item
+						a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Cấu hình Javascript
+				#modalTabContent.tab-content
+					#home.tab-pane.show.active(role='tabpanel', aria-labelledby='home-tab')
+						form#settings
+							.row
+								.col
+									h5 Màu Chính
+							#maincolor.row
+					#profile.tab-pane(role='tabpanel', aria-labelledby='profile-tab')
+						form#jsf
+							.row
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck1.custom-control-input(type='checkbox', data-key='DEV_MODE')
+											label.custom-control-label(for='customCheck1') Enable Dev tool
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck2.custom-control-input(type='checkbox', data-key='DEV_MODE_GIRD_FULL')
+											label.custom-control-label(for='customCheck2') Enable Dev Full-width mode
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck3.custom-control-input(type='checkbox', data-key='ACTIVE_FIXED_FOOTER')
+											label.custom-control-label(for='customCheck3') Active Fixed Footer
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck4.custom-control-input(type='checkbox', data-key='ACTIVE_BACKTOTOP')
+											label.custom-control-label(for='customCheck4') Active Back to top button
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck5.custom-control-input(type='checkbox', data-key='ACTIVE_RESPONSIVE')
+											label.custom-control-label(for='customCheck5') Active Responsive IMG
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck6.custom-control-input(type='checkbox', data-key='ACTIVE_FIXED_HEADER')
+											label.custom-control-label(for='customCheck6') Active Fixed Header
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck7.custom-control-input(type='checkbox', data-key='HEADER_TRANPARENT')
+											label.custom-control-label(for='customCheck7') Active Header Tranparents
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck8.custom-control-input(type='checkbox', data-key='ACTIVE_PADDING_MAIN')
+											label.custom-control-label(for='customCheck8') Active Padding Main
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck9.custom-control-input(type='checkbox', data-key='ACTIVE_LIST_TO_SELECT')
+											label.custom-control-label(for='customCheck9') Active List to Select box
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck10.custom-control-input(type='checkbox', data-key='ACTIVE_VALIDATOR')
+											label.custom-control-label(for='customCheck10') Active Form validator
+								.col-sm-6.col-lg-3
+									.form-group
+										.custom-control.custom-checkbox
+											input#customCheck11.custom-control-input(type='checkbox', data-key='ACTIVE_SELECT')
+											label.custom-control-label(for='customCheck11') Active select2
+							.row
+								.col-sm-6.col-lg-3
+									.form-group
+										.input-group
+											.input-group-prepend
+												span.input-group-text Header Position
+											input.form-control(type='text', data-key='ACTIVE_HEADER_POSITION')
+											.input-group-append
+												span.input-group-text(style='min-width:initial') px
+								.col-sm-6.col-lg-3
+									.form-group
+										.input-group
+											.input-group-prepend
+												span.input-group-text Display footer
+											input.form-control(type='text', data-key='DISPLAY_FOOTER')
+											.input-group-append
+												span.input-group-text(style='min-width:initial') px
+								.col-sm-6.col-lg-3
+									.form-group
+										.input-group
+											.input-group-prepend
+												span.input-group-text Display ToTop
+											input.form-control(type='text', data-key='DISPLAY_BACKTOTOP')
+											.input-group-append
+												span.input-group-text(style='min-width:initial') px
+								.col-sm-6.col-lg-3
+									.form-group
+										.input-group
+											.input-group-prepend
+												span.input-group-text Default Grid
+											input.form-control(type='text', data-key='CHANGE_GRID')
+											.input-group-append
+												span.input-group-text(style='min-width:initial') px
+								.col-sm-6.col-lg-3
+									.form-group
+										.input-group
+											.input-group-prepend
+												span.input-group-text Default Grid SM
+											input.form-control(type='text', data-key='CHANGE_GRID_SM')
+											.input-group-append
+												span.input-group-text(style='min-width:initial') px
+			.modal-footer
+				.w-100
+					.row
+						.col-6
+							button.btn.btn-success(type='button', onclick='setDefault()') Reset to default
+						.col-6.text-right
+							button.btn.btn-secondary(type='button', data-dismiss='modal') Bỏ qua
+							button#saveConfig.btn.btn-success(type='button') Lưu
+				
+#keyboardShortCut.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+	.modal-dialog(role='document')
+		.modal-content
+			.modal-header
+				h5#exampleModalLongTitle.modal-title Phím tắt trên CAB
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + D
+						br
+						| ⌘ + Alt + D
+					dd.col Nhập tên dự án
+				hr
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + P
+						br
+						| ⌘ + Alt + P
+					dd.col Nhập tên trang
+				hr
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + E
+						br
+						| ⌘ + Alt + E
+					dd.col Enter
+				hr
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + L
+						br
+						| ⌘ + Alt + L
+					dd.col Chế độ view trên Laptop
+				hr
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + M
+						br
+						| ⌘ + Alt + M
+					dd.col Chế độ view trên Mobile
+				hr
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + T
+						br
+						| ⌘ + Alt + T
+					dd.col Chế độ view trên Tablet
+				hr
+				dl.row
+					dt.col-auto
+						| Ctrl + Alt + N
+						br
+						| ⌘ + Alt + N
+					dd.col Bật/Tắt Navigation
+// Modal
+#addCompo.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+	.modal-dialog.modal-dialog-centered(role='document')
+		.modal-content
+				.modal-header
+					h5#exampleModalLabel.modal-title Thêm Components 
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+				form#formAddComponent(enctype='multipart/form-data', method='POST')
+					.modal-body
+						.row
+							.col-6
+								.form-group.mb-2
+									label Tên components
+									input#nameCompo.form-control(type='text', name='nameCompo', placeholder="Tên components VD: 'Header 3'", required='')
+							.col-6
+								.form-group.mb-2
+									label Độ cao mặc định
+									.input-group.mb-3
+										input#heightCompo.form-control(type='text', name='heightCompo', placeholder='Không bắt buộc')
+										.input-group-append
+											span.input-group-text px
+							.col-12
+								.form-group.mb-2
+									label Chú thích
+									input#nameNoted.form-control(type='text', name='nameNoted', placeholder="", required='')
+							.col-6
+								.form-group.mb-2
+									label Chọn menu
+									select.form-control(name='selectCompo', required='')
+										option(selected='', disabled='') Vui lòng chọn
+							.col-6
+								.form-group.mb-2
+									label Upload
+									.custom-file
+										input#imgUploader.custom-file-input(type='file', name='imgUploader', required='')
+										label.custom-file-label.justify-content-start(for='imgUploader') Chọn ảnh
+						.row
+							.col
+								.bg-light.p-2.textresult ...
+					.modal-footer
+						input#comkey(type='hidden', name='comkey')
+						input#commain(type='hidden', name='commain')
+						input#comnum(type='hidden', name='comnum')
+						button.btn.btn-success(type='button') Thêm Component

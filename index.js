@@ -8,6 +8,8 @@ var fse = require('fs-extra')
 var crypto = require('crypto');
 var multer = require('multer');
 var browserSync = require('browser-sync');
+var pug = require('pug');
+
 const port = 8080; 
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
@@ -21,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
 	function listening() {
 		browserSync({
 			files: ['_tool/**/*.{js,css}'],
+			notify: false,			
 			online: false,
 			open: true,
 			port: port + 1,
@@ -215,7 +218,10 @@ app.get('/getreadysite', function (req, res) {
 	let val = []
 	fs.readdir(dest, function (err, items) {
 		for (var i = 0; i < items.length; i++) {
-			val.push(items[i])
+			if (items[i].indexOf(".") > -1) {
+			} else {
+				val.push(items[i])
+			}
 		}
 		res.send(val)
 	});
@@ -346,3 +352,52 @@ function copyLibsUse(a, b) {
 	copyFiles()
 }
 
+function name(params) {
+	var fs, pug, jadeFilePath, outFilePath, outFileStream, parseFiles, path, writeToOutput;
+
+	parseFiles = function (dirname) {
+		var compiled, file, fileContents, filenames, i, len, path, results, stats;
+		filenames = fs.readdirSync(dirname);
+		results = [];
+		for (i = 0, len = filenames.length; i < len; i++) {
+			file = filenames[i];
+			if (file.slice(0, 1) === '.') {
+				continue;
+			}
+			path = path.join(dirname, file);
+			stats = fs.statSync(path.join(dirname, path));
+			if (stats.isDirectory()) {
+				results.push(parseFiles(file));
+			} else if (file.slice(file.length - 5) === '.pug') {
+				fileContents = fs.readFileSync(path, 'utf8');
+				compiled = pug.compile(fileContents, {
+					client: true,
+					compileDebug: false,
+					filename: file
+				});
+				results.push(writeToOutput(compiled, file.replace('.pug', '')));
+			} else {
+				results.push(void 0);
+			}
+		}
+		return results;
+	};
+
+	writeToOutput = function (fn, fnName) {
+		var finalFnName, fnString;
+		finalFnName = "Templates." + fnName;
+		fnString = fn.toString().replace('function anonymous(', "function " + finalFnName + "(");
+		return outFileStream.write(fnString);
+	};
+
+	jadeFilePath = process.argv[2] || '.';
+
+	outFilePath = process.argv[3] || './templates.js';
+
+	outFileStream = fs.createWriteStream(outFilePath, {
+		flags: 'w'
+	});
+
+	outFileStream.write("var Templates = {};\n");
+	parseFiles(jadeFilePath);
+}

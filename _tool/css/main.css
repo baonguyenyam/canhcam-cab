@@ -350,9 +350,11 @@ iframe {
 #accordion.active .card {
 	display: flex
 }
+.total{
+	    font-size: .7rem
+}
 .total, .createcanhcam{
-		margin-bottom: calc(4rem - 1px)
-
+	margin-bottom: calc(4rem - 1px)
 }
 #accordion {
 	min-height: calc(100vh - 0px);

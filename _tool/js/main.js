@@ -205,30 +205,35 @@ $('#formAddComponent button').click(function (e) {
 
 $('#createSite').click(function (e) {
 	e.preventDefault();
-	var newData = data
-	if (confirm("Bạn có chắc chắn tạo site ngay bây giờ?")) {
-		jQuery.post("/createsite", {
-			name: objectName,
-			data: newData
-		}, function (data) {
-			if (data === 'done') {
-				$('#toDoListMain').show()
-				$('#toDoList, .deview').hide()
-				$('.notedcanhcam').show()
-				$('.notedcanhcam .alert').show()
-				$('.createcanhcam').hide()
-				$('.bleft').hide()
-				$('.enterpro').hide()
-				$('#myTab').removeClass('cnt')
-				$('#myTab, #nav-tabContent').html('')
-				data = {
-					SETUP: {}
+	if($('#nav-tabContent #index .newlist .list-group-item').length > 0) {
+		var newData = data
+		if (confirm("Bạn có chắc chắn tạo site ngay bây giờ?")) {
+			jQuery.post("/createsite", {
+				name: objectName,
+				data: newData
+			}, function (data) {
+				if (data === 'done') {
+					$('#toDoListMain').show()
+					$('#toDoList, .deview').hide()
+					$('.notedcanhcam').show()
+					$('.notedcanhcam .alert').show()
+					$('.createcanhcam').hide()
+					$('.bleft').hide()
+					$('.enterpro').hide()
+					$('#myTab').removeClass('cnt')
+					$('#myTab, #nav-tabContent').html('')
+					data = {
+						SETUP: {}
+					}
+					objectName = ''
+					pagesLists = ['index']
 				}
-				objectName = ''
-				pagesLists = ['index']
-			}
-		});
-	} else {
+			});
+		} else {
+			return false
+		}
+	} else{
+		alert('Bạn chưa có nội dung cho file index')
 		return false
 	}
 });
