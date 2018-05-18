@@ -15,11 +15,12 @@ while [ "$choice" != "q" ]
 do
         echo
         echo "Please choice a selection!"
-        echo "1) Chạy Site Builder (8080)"
+        echo "1) Chạy CAB (8080)"
         echo "2) Chạy site đã build"
         echo "3) Chạy xây dựng components (9999)"
         echo "4) Run HTML2PUG (1234)"
-        echo "p) Chạy Production"
+        echo "p) Chạy Production CAB"
+        echo "d) Chạy Dev CAB"
         echo "u) Updrage Package"
         echo "q) Quit"
 		echo "\n"
@@ -33,6 +34,7 @@ do
             '3') npm run dev;;
             '4') npm run node;;
             'p') npm run index;;
+            'd') node index.js;;
             'u') npm run update;;
             'q') ;;
             *)   printf "\033[0;33mMenu item is not available, try again!\033[0m\n";;

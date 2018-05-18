@@ -1,5 +1,6 @@
 doctype html
 //
+	. 
 	$$$$$$$\   $$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\  $$\   $$\ $$\     $$\ $$$$$$$$\ $$\   $$\
 	$$  __$$\ $$  __$$\ $$  __$$\ $$$\  $$ |$$  __$$\ $$ |  $$ |\$$\   $$  |$$  _____|$$$\  $$ |
 	$$ |  $$ |$$ /  $$ |$$ /  $$ |$$$$\ $$ |$$ /  \__|$$ |  $$ | \$$\ $$  / $$ |      $$$$\ $$ |
@@ -20,15 +21,17 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		meta(http-equiv='X-UA-Compatible', content='ie=edge')
 		title Canh Cam - All-In-One Website Builder tool by Bao Nguyen
-		link(rel='stylesheet', href='/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/css/font-awesome.min.css')
-		link(rel='stylesheet', href='/css/bootstrap-colorpicker.min.css')
-		link(rel='stylesheet', href='/css/select2.min.css')
-		link(rel='stylesheet', href='/css/bootstrap-tour.min.css')
-		link(rel='stylesheet', href='/css/main.css')
 		if process.env.NODE_ENV === 'production'
-			script(src='/js/core.min.js')
+			link(rel='stylesheet', href='/views/core.min.css')
+			link(rel='stylesheet', href='/views/app.min.css')
+			script(src='/views/core.min.js')
 		else 
+			link(rel='stylesheet', href='/css/bootstrap.min.css')
+			link(rel='stylesheet', href='/css/font-awesome.min.css')
+			link(rel='stylesheet', href='/css/bootstrap-colorpicker.min.css')
+			link(rel='stylesheet', href='/css/select2.min.css')
+			link(rel='stylesheet', href='/css/bootstrap-tour.min.css')
+			link(rel='stylesheet', href='/css/main.css')
 			script(src='/js/jquery-3.2.1.slim.min.js')
 			script(src='/js/popper.min.js')
 			script(src='/js/bootstrap.min.js')
@@ -80,7 +83,7 @@ html(lang='en')
 								button#addComponent.btn.btn-outline-secondary.btn-sm(type='button', data-toggle="modal", data-target='#addCompo', aria-expanded='false', aria-controls='addCompo', data-backdrop="static" data-keyboard="false")
 									i.fa.fa-plus(data-toggle='tooltip', data-placement='bottom', title='Thêm một component vào dự án')
 						// Modal
-						#addCompo.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+						#addCompo.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
 							.modal-dialog.modal-dialog-centered(role='document')
 								.modal-content
 										.modal-header
@@ -185,7 +188,7 @@ html(lang='en')
 							.col-12.mt-4.text-center
 								button#createSite.btn.btn-success(type='button') Tạo site
 								p.text-muted.mt-2 Chỉ nên thực hiện tạo site khi hoàn tất toàn bộ page.
-		#keyboardShortCut.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+		#keyboardShortCut.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
 			.modal-dialog(role='document')
 				.modal-content
 					.modal-header
@@ -241,7 +244,7 @@ html(lang='en')
 								br
 								| ⌘ + Alt + N
 							dd.col Bật/Tắt Navigation
-		#exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+		#exampleModalCenter.modal(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
 			.modal-dialog.modal-lg(role='document')
 				.modal-content
 					.modal-header
@@ -255,13 +258,13 @@ html(lang='en')
 							li.nav-item
 								a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Cấu hình Javascript
 						#modalTabContent.tab-content
-							#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+							#home.tab-pane.show.active(role='tabpanel', aria-labelledby='home-tab')
 								form#settings
 									.row
 										.col
 											h5 Màu Chính
 									#maincolor.row
-							#profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+							#profile.tab-pane(role='tabpanel', aria-labelledby='profile-tab')
 								form#jsf
 									.row
 										.col-sm-6.col-lg-3
@@ -369,7 +372,7 @@ html(lang='en')
 									button.btn.btn-secondary(type='button', data-dismiss='modal') Bỏ qua
 									button#saveConfig.btn.btn-success(type='button') Lưu
 		if process.env.NODE_ENV === 'production'
-			script(src='/js/app.min.js')
+			script(src='/views/app.min.js')
 		else 
 			script(src='/js/core.js')
 			script(src='/js/main.js')

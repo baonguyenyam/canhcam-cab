@@ -14,8 +14,8 @@ import rename from 'gulp-rename';
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let url = config;
 	let dest = path.join('_tool');
-	let destjs = path.join('_tool', 'js');
-	let destcss = path.join('_tool', 'css');
+	let destjs = path.join('_tool', 'views');
+	let destcss = path.join('_tool', 'views');
 
     // Run task
 
@@ -38,7 +38,33 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 				suffix: '.min'
 			}))
             .pipe(plugins.changed(dest))
-            .pipe(gulp.dest(destjs));
+			.pipe(gulp.dest(destjs));
+			
+        gulp.src([
+			'_tool/css/bootstrap.min.css',
+		])
+		.pipe(concatCss(url.concat.namecss_core + '.css'))
+		.pipe(minifyCss())
+		.pipe(rename({
+			suffix: '.min'
+		}))
+		.pipe(plugins.changed(dest))
+		.pipe(gulp.dest(destcss));
+		
+        gulp.src([
+			'_tool/css/font-awesome.min.css',
+			'_tool/css/bootstrap-colorpicker.min.css',
+			'_tool/css/select2.min.css',
+			'_tool/css/bootstrap-tour.min.css',
+			'_tool/css/main.css'
+		])
+			.pipe(concatCss(url.concat.babelconcat + '.css'))
+			.pipe(minifyCss())
+			.pipe(rename({
+				suffix: '.min'
+			}))
+            .pipe(plugins.changed(dest))
+			.pipe(gulp.dest(destcss));
 		
 		gulp.src([
 			'_tool/js/core.js',
