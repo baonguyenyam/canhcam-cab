@@ -7,6 +7,8 @@ var fs = require('fs');
 var fse = require('fs-extra')
 var crypto = require('crypto');
 var multer = require('multer');
+var browserSync = require('browser-sync');
+const port = 8080; 
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 app.use(json_body_parser);
@@ -15,6 +17,23 @@ app.use('/', express.static(__dirname + '/_tool/'));
 
 if (process.env.NODE_ENV !== 'production') {
 	app.locals.pretty = true;
+	app.listen(port, listening);
+	function listening() {
+		browserSync({
+			files: ['_tool/**/*.{js,css}'],
+			online: false,
+			open: true,
+			port: port + 1,
+			proxy: 'localhost:' + port,
+			ui: false
+		});
+	}
+} else {
+	app.listen(port, function () {
+		console.log('App listening on port 8080!');
+		require("openurl").open("http://localhost:8080")
+	});
+
 }
 
 app.set('view engine', 'pug')
@@ -327,8 +346,3 @@ function copyLibsUse(a, b) {
 	copyFiles()
 }
 
-
-app.listen(8080, function () {
-	console.log('App listening on port 8080!');
-	require("openurl").open("http://localhost:8080")
-});
