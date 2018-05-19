@@ -31,6 +31,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			'_tool/js/select2.full.min.js',
 			'_tool/js/bootstrap-tour.min.js',
 			'_tool/js/offline.min.js',
+			'_tool/js/pace.min.js',
 			'_tool/js/keymaster.js'
 		])
 			.pipe(concat(url.concat.namejs_core + '.js'))
@@ -44,7 +45,11 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
         gulp.src([
 			'_tool/css/bootstrap.min.css',
 		])
-		.pipe(concatCss(url.concat.namecss_core + '.css'))
+			.pipe(concatCss(url.concat.namecss_core + '.css', {
+				includePaths: '',
+				rebaseUrls: false,
+				inlineImports: false
+			}))
 		.pipe(minifyCss())
 		.pipe(rename({
 			suffix: '.min'
@@ -59,9 +64,14 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			'_tool/css/bootstrap-tour.min.css',
 			'_tool/css/offline-language-vietnam.css',
 			'_tool/css/offline-theme-chrome.css',
+			'_tool/css/pace-theme-mac-osx.css',
 			'_tool/css/main.css'
 		])
-			.pipe(concatCss(url.concat.babelconcat + '.css'))
+			.pipe(concatCss(url.concat.babelconcat + '.css', {
+				includePaths: '',
+				rebaseUrls: false,
+				inlineImports: false
+			}))
 			.pipe(minifyCss())
 			.pipe(rename({
 				suffix: '.min'

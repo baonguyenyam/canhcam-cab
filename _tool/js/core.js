@@ -221,6 +221,8 @@ function getDataJS() {
 }
 
 function resizeFrame() {
+	$('body').removeClass('pace-done').addClass('pace-running')
+	$('.pace').removeClass('pace-inactive')
 	$('.ifthumnails').each(function () {
 		$(this).removeAttr('style')
 		$(this).find('iframe').removeAttr('style')
@@ -247,6 +249,14 @@ function resizeFrame() {
 			}, 1000);
 		}
 	});
+	setTimeout(() => {
+		loadingPage()
+	}, 1000);
+}
+
+function loadingPage() {
+	$('body').addClass('pace-done').removeClass('pace-running')
+	$('.pace').addClass('pace-inactive')
 }
 
 function toggleContentReady() {

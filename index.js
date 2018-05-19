@@ -1,6 +1,7 @@
 var express = require('express');
 var compression = require('compression');
 var app = express();
+var router = express.Router();
 var path = require('path');
 var bodyParser = require("body-parser");
 var fs = require('fs');
@@ -9,53 +10,83 @@ var crypto = require('crypto');
 var multer = require('multer');
 var browserSync = require('browser-sync');
 var pug = require('pug');
-
-const port = 8080;
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
+var site = {
+	port: process.env.PORT || 8080,
+	root: './_tool',
+	views: './_tool/views',
+	lib: './CANHCAM-LIB',
+	dest: './@SITE',
+}
 app.use(json_body_parser);
 app.use(urlencoded_body_parser);
-app.use('/', express.static(__dirname + '/_tool/'));
+app.use('/', express.static(site.root + '/'));
 
 if (process.env.NODE_ENV !== 'production') {
 	app.locals.pretty = true;
-	app.listen(port, listening);
+	app.listen(site.port, listening);
 	function listening() {
 		browserSync({
-			files: ['_tool/**/*.{js,css}'],
+			files: [site.root + '/**/*.{js,css}'],
 			notify: false,
 			online: false,
 			open: true,
-			port: port + 1,
-			proxy: 'localhost:' + port,
+			port: site.port + 1,
+			proxy: 'localhost:' + site.port,
 			ui: false
 		});
 	}
 } else {
-	app.listen(port, function () {
-		console.log('App listening on port 8080!');
-		require("openurl").open("http://localhost:8080")
+	app.listen(site.port, function () {
+		console.log('App listening on port !' + site.port);
+		require("openurl").open("http://localhost:" + site.port + '/index.cab')
 	});
 
 }
-
 app.set('view engine', 'pug')
-app.set('views', './_tool/views')
-app.get('/', function (req, res) {
+app.set('views', site.views)
+
+router.use(function (req, res, next) {
+	next();
+});
+
+router.get('/', function (req, res) {
 	res.render('index', { key: makeid(200), val: makeid(20), memory: process.memoryUsage(), cpu: process.cpuUsage(), platform: process.platform, version: process.versions })
 })
+
+app.use('/', router);
+app.use('/index.cab', router);
+
+// handling 404 errors
+app.get('*', function (req, res, next) {
+	var err = new Error();
+	err.status = 404;
+	next(err);
+});
+app.use(function (err, req, res, next) {
+	if (err.status !== 404) {
+		return next();
+	}
+	res.status(400);
+	res.render('404.pug', { title: "404 We're sorry!", desc: "We couldn't find what you're looking for", btn: "» Go back to the main page" });
+});
+app.use(function (err, req, res, next) {
+	if (err.status !== 500) {
+		return next();
+	}
+	res.status(500);
+	res.render('500.pug', { title: "500 Internal server error", desc: "Application is shutting down on the web server." });
+});
+
 app.use(compression());
-
-app.get(/\/js/, express.static(path.join(__dirname + '/_tool/', 'js')));
-app.get(/\/css/, express.static(path.join(__dirname + '/_tool/', 'css')));
-app.get(/\/images/, express.static(path.join(__dirname + '/_tool/', 'images')));
-
-var root = './CANHCAM-LIB';
-var dest = './@SITE';
+router.get(/\/js/, express.static(site.root + '/js'));
+router.get(/\/css/, express.static(site.root + '/css'));
+router.get(/\/img/, express.static(site.root + '/img'));
 
 var Storage = multer.diskStorage({
 	destination: function (req, file, callback) {
-		callback(null, "./_tool/img/layout");
+		callback(null, site.root + "/img/layout");
 	},
 	filename: function (req, file, callback) {
 		let type = 'jpg'
@@ -107,7 +138,6 @@ function removeVietnam(s) {
 
 app.post('/upload', function (req, res) {
 	upload(req, res, function (err) {
-
 		let dataToAdd = []
 		let mainkey = req.body.selectCompo.trim()
 		let keynew = req.body.selectCompo.trim() + '-' + req.body.comnum.trim()
@@ -125,10 +155,7 @@ app.post('/upload', function (req, res) {
 		} else {
 			dataToAdd.push("")
 		}
-		// console.log(req.files[0])
-		// console.log(keynew)
-		// console.log(dataToAdd)
-		fs.readFile('_tool/data.json', 'utf8', function readFileCallback(err, data) {
+		fs.readFile(site.root + '/data.json', 'utf8', function readFileCallback(err, data) {
 			if (err) {
 				console.log(err);
 			} else {
@@ -137,7 +164,7 @@ app.post('/upload', function (req, res) {
 				var aResultS = getDat
 
 				var jsonJS = JSON.stringify(aResultS, null, 4);
-				fs.writeFileSync('_tool/data.json', jsonJS, 'utf8', function (err) {
+				fs.writeFileSync(site.root + '/data.json', jsonJS, 'utf8', function (err) {
 					if (err) {
 						return console.log(err);
 					}
@@ -156,7 +183,7 @@ app.post('/savedata', function (req, res) {
 	var jsonColor = JSON.stringify(req.body.dataColor, null, 4);
 	var jsonJS = JSON.stringify(req.body.dataJS, null, 4);
 	try {
-		fs.writeFileSync(root + '/_core/_colors.sass', jsonColor.replace(/["]/gi, ''), 'utf8', function (err) {
+		fs.writeFileSync(site.lib + '/_core/_colors.sass', jsonColor.replace(/["]/gi, ''), 'utf8', function (err) {
 			if (err) {
 				return console.log(err);
 			}
@@ -172,9 +199,9 @@ app.post('/savedata', function (req, res) {
 	res.end("done");
 })
 
-app.get('/getdata', function (req, res) {
+router.get('/getdata', function (req, res) {
 	var dataE
-	fs.readFile(root + '/_core/_colors.sass', 'utf8', function readFileCallback(err, data) {
+	fs.readFile(site.lib + '/_core/_colors.sass', 'utf8', function readFileCallback(err, data) {
 		if (err) {
 			console.log(err);
 		} else {
@@ -186,7 +213,7 @@ app.get('/getdata', function (req, res) {
 		}
 	});
 })
-app.get('/getdatajs', function (req, res) {
+router.get('/getdatajs', function (req, res) {
 	var dir = './core/scripts';
 	var dataE
 	fs.readFile(dir + '/config.js', 'utf8', function readFileCallback(err, data) {
@@ -200,7 +227,7 @@ app.get('/getdatajs', function (req, res) {
 })
 app.post('/checksite', function (req, res) {
 	let val = true
-	fs.readdir(dest, function (err, items) {
+	fs.readdir(site.dest, function (err, items) {
 		for (var i = 0; i < items.length; i++) {
 			if (req.body.site === items[i]) {
 				val = false
@@ -214,9 +241,9 @@ app.post('/checksite', function (req, res) {
 	});
 })
 
-app.get('/getreadysite', function (req, res) {
+router.get('/getreadysite', function (req, res) {
 	let val = []
-	fs.readdir(dest, function (err, items) {
+	fs.readdir(site.dest, function (err, items) {
 		for (var i = 0; i < items.length; i++) {
 			if (items[i].indexOf(".") > -1) {
 			} else {
@@ -229,15 +256,15 @@ app.get('/getreadysite', function (req, res) {
 
 app.post('/createsite', function (req, res) {
 	var json = JSON.stringify(req.body.data, null, 4);
-	var dir = dest + '/' + req.body.name
+	var dir = site.dest + '/' + req.body.name
 
 	try {
-		fs.writeFileSync(dest + '/setup.json', "{\"sitename\": \"" + req.body.name + "\"}", 'utf8', function (err) {
+		fs.writeFileSync(site.dest + '/setup.json', "{\"sitename\": \"" + req.body.name + "\"}", 'utf8', function (err) {
 			if (err) {
 				return console.log(err);
 			}
 		});
-		fs.writeFileSync('_tool/justbuild.json', "{\"sitename\": \"" + req.body.name + "\"}", 'utf8', function (err) {
+		fs.writeFileSync(site.root + '/justbuild.json', "{\"sitename\": \"" + req.body.name + "\"}", 'utf8', function (err) {
 			if (err) {
 				return console.log(err);
 			}
@@ -303,8 +330,8 @@ function copyFiles(dir, json) {
 		}
 	}
 	buildFiles(dir, json)
-	fse.copySync(root + '/_core', dir + '/lib/_core');
-	fse.copySync(root + '/_includes.sass', dir + '/lib/_includes.sass');
+	fse.copySync(site.lib + '/_core', dir + '/lib/_core');
+	fse.copySync(site.lib + '/_includes.sass', dir + '/lib/_includes.sass');
 	fse.move(dir + '/styles', dir + '/lib/styles', err => { });
 }
 
@@ -339,7 +366,7 @@ function createFolderLib(dir, dirfull, val) {
 		} catch (err) {
 		}
 	}
-	copyLibsUse(root + '/' + val, dir + '/lib/' + val)
+	copyLibsUse(site.lib + '/' + val, dir + '/lib/' + val)
 }
 
 function copyLibsUse(a, b) {
@@ -362,7 +389,7 @@ function makeid(e) {
 	return text;
 }
 
-function PugCom(a,b) {
+function PugCom(a, b) {
 	var outFileStream, parseFiles, writeToOutput;
 	parseFiles = function (dirname) {
 		var compiled, file, fileContents, filenames, i, pathv, len, results, stats;
@@ -382,13 +409,13 @@ function PugCom(a,b) {
 	writeToOutput = function (fn, fnName) {
 		var fnString;
 		var id = makeid(10)
-		fnString = fn.toString().replace('function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html +', "var " + id+ " = ").replace('return pug_html;}', 'document.write('+id+');;')
+		fnString = fn.toString().replace('function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html +', "var " + id + " = ").replace('return pug_html;}', 'document.write(' + id + ');;')
 		return outFileStream.write(fnString);
 	};
 	outFileStream = fs.createWriteStream(b, {
 		flags: 'w'
 	});
-	parseFiles(a,b);
-} 
-PugCom('_tool/views/cab.pug', '_tool/views/cab.js')
-PugCom('_tool/views/modal.pug', '_tool/views/modal.js')
+	parseFiles(a, b);
+}
+PugCom(site.root + '/views/cab.pug', site.root + '/views/cab.js')
+PugCom(site.root + '/views/modal.pug', site.root + '/views/modal.js')

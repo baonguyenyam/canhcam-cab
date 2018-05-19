@@ -44,6 +44,8 @@ function createPageBuilder(toAdd) {
 				var gname = $(itemEl).attr('data-key').replace('/', '-')
 				var getid = taoIdNgauNhien(10)
 				$(itemEl).append('<span class="btn btn-sm btn-danger js-remove" data-id="fg"><i class="fa fa-close"></i></span><div id="' + getid + '" class="ifthumnails"><iframe src="./templates/index-' + gname + '.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>')
+				$('body').removeClass('pace-done').addClass('pace-running')
+				$('.pace').removeClass('pace-inactive')
 				if ($(itemEl).attr('data-height') && $(itemEl).attr('data-height').length) {
 					var setH = $(itemEl).attr('data-height')
 					setTimeout(() => {
@@ -53,6 +55,7 @@ function createPageBuilder(toAdd) {
 						$('#' + getid + ' iframe').css({
 							"height": setH
 						})
+						loadingPage()
 					}, 1000);
 				} else {
 					setTimeout(() => {
@@ -63,6 +66,7 @@ function createPageBuilder(toAdd) {
 						$('#' + getid + ' iframe').css({
 							"height": abc + 'px'
 						})
+						loadingPage()
 					}, 1000);
 				}
 				getlist()
@@ -70,12 +74,25 @@ function createPageBuilder(toAdd) {
 			onUpdate: function (evt) {
 				var itemEl = evt.item
 				$(itemEl).find('iframe').removeAttr('style')
-				setTimeout(() => {
-					var abc = $(itemEl).find('iframe').contents().height()
-					$(itemEl).find('iframe').css({
-						"height": abc + 'px'
-					})
-				}, 3000);
+				$('body').removeClass('pace-done').addClass('pace-running')
+				$('.pace').removeClass('pace-inactive')
+				if ($(itemEl).attr('data-height') && $(itemEl).attr('data-height').length) {
+					var setH = $(itemEl).attr('data-height')
+					setTimeout(() => {
+						$(itemEl).find('iframe').css({
+							"height": setH
+						})
+						loadingPage()
+					}, 3000);
+				} else {
+					setTimeout(() => {
+						var abc = $(itemEl).find('iframe').contents().height()
+						$(itemEl).find('iframe').css({
+							"height": abc + 'px'
+						})
+						loadingPage()
+					}, 3000);
+				}
 				getlist()
 			},
 			onEnd: function (evt) {
