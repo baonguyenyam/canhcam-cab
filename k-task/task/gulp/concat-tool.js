@@ -30,6 +30,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			'_tool/js/typeahead.jquery.min.js',
 			'_tool/js/select2.full.min.js',
 			'_tool/js/bootstrap-tour.min.js',
+			'_tool/js/offline.min.js',
 			'_tool/js/keymaster.js'
 		])
 			.pipe(concat(url.concat.namejs_core + '.js'))
@@ -56,6 +57,8 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			'_tool/css/bootstrap-colorpicker.min.css',
 			'_tool/css/select2.min.css',
 			'_tool/css/bootstrap-tour.min.css',
+			'_tool/css/offline-language-vietnam.css',
+			'_tool/css/offline-theme-chrome.css',
 			'_tool/css/main.css'
 		])
 			.pipe(concatCss(url.concat.babelconcat + '.css'))

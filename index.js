@@ -364,7 +364,6 @@ function makeid(e) {
 
 function PugCom(a,b) {
 	var outFileStream, parseFiles, writeToOutput;
-
 	parseFiles = function (dirname) {
 		var compiled, file, fileContents, filenames, i, pathv, len, results, stats;
 		file = path.join(dirname)
