@@ -112,6 +112,16 @@ var upload = multer({ storage: Storage }).array(
 	"nameNoted",
 	10
 );
+var uploaddab = multer({ storage: Storage }).array(
+	"selectCompoElm",
+	"comkeyElm",
+	"commainElm",
+	"comnumElm",
+	"ElmContents",
+	"nameCompoElm",
+	"nameNotedElm",
+	10
+);
 
 function removeVietnam(s) {
 	var r = s.toLowerCase().replace(/\s+/g, '-');
@@ -135,6 +145,42 @@ function removeVietnam(s) {
 	r = r.replace(/[^\w\s]/gi, '-')
 	return r
 };
+
+app.post('/upload-dab', function (req, res) {
+	uploaddab(req, res, function (err) {
+		let dataToAdd = []
+		let mainkey = req.body.selectCompoElm.trim()
+		let keynew = req.body.selectCompoElm.trim() + '-' + req.body.comnumElm.trim()
+		dataToAdd.push(req.body.nameCompoElm.trim())
+		dataToAdd.push(req.body.ElmContents.trim())
+		if (req.body.nameNotedElm && req.body.nameNotedElm.length > 0) {
+			dataToAdd.push(req.body.nameNotedElm.trim())
+		} else {
+			dataToAdd.push("")
+		}
+		fs.readFile(site.root + '/data-dab.json', 'utf8', function readFileCallback(err, data) {
+			if (err) {
+				console.log(err);
+			} else {
+				var getDat = JSON.parse(data)
+				getDat[mainkey][keynew] = dataToAdd
+				var aResultS = getDat
+
+				var jsonJS = JSON.stringify(aResultS, null, 4);
+				fs.writeFileSync(site.root + '/data-dab.json', jsonJS, 'utf8', function (err) {
+					if (err) {
+						return console.log(err);
+					}
+				});
+			}
+		});
+
+		if (err) {
+			return res.end("error");
+		}
+		return res.end("done");
+	})
+})
 
 app.post('/upload', function (req, res) {
 	upload(req, res, function (err) {

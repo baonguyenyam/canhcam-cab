@@ -130,7 +130,7 @@
 	.modal-dialog.modal-md(role='document')
 		.modal-content
 			.modal-header
-				h5#aboutBoxTitle.modal-title Về CAB
+				h5#aboutBoxTitle.modal-title Về CAB/DAB
 				button.close(type='button', data-dismiss='modal', aria-label='Close')
 					span(aria-hidden='true') ×
 			.modal-body 
@@ -246,4 +246,41 @@
 						input#comkey(type='hidden', name='comkey')
 						input#commain(type='hidden', name='commain')
 						input#comnum(type='hidden', name='comnum')
+						button.btn.btn-success(type='button') Thêm Component
+// Modal
+#ElmModalCenter.modal(tabindex='-1', role='dialog', aria-labelledby='ModalCenterTitle', aria-hidden='true')
+	.modal-dialog.modal-md.modal-dialog-centered(role='document')
+		.modal-content
+				.modal-header
+					h5#ModalCenterTitle.modal-title Thêm Components 
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+				form#formAddComponentDAB(enctype='multipart/form-data', method='POST')
+					.modal-body
+						.row
+							.col-6
+								.form-group.mb-2
+									label Tên components
+									input#nameCompoElm.form-control(type='text', name='nameCompoElm', placeholder="Tên components VD: 'Header 3'", required='')
+							.col-6
+								.form-group.mb-2
+									label Chú thích
+									input#nameNotedElm.form-control(type='text', name='nameNotedElm', placeholder="", required='')
+							.col-12
+								.form-group.mb-2
+									label Mã nguồn
+									textarea#ElmContents.form-control(type='text', name='ElmContents', placeholder='Mã HTML', required='', rows="8")
+							.col-6
+								.form-group.mb-2
+									label Chọn menu
+									select.form-control(name='selectCompoElm', required='')
+										option(selected='', disabled='') Vui lòng chọn
+							.col-6
+								.form-group.mb-2
+									label Kết quả
+									.bg-light.form-control.textresult ...
+					.modal-footer
+						input#comkeyElm(type='hidden', name='comkeyElm')
+						input#commainElm(type='hidden', name='commainElm')
+						input#comnumElm(type='hidden', name='comnumElm')
 						button.btn.btn-success(type='button') Thêm Component

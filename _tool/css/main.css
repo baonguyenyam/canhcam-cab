@@ -22,6 +22,12 @@ html {
 		margin: 1.75rem auto;
 	}
 }
+.frameNewlist{
+	min-height: 300px;
+	width: 100%;
+	border: 0;
+	margin: 0
+}
 
 
 input:focus,
@@ -65,7 +71,7 @@ a:hover, a:visited {
 .container-no {
 	min-width: 1024px;
 }
-#accordion.remove .collapse .card-body .mainList:before{
+.accordion.remove .collapse .card-body .mainList:before{
 	content: 'Kéo vào đây để xóa component';
     color: white;
     padding: 2rem;
@@ -167,7 +173,7 @@ a:hover, a:visited {
 iframe {
 	height: 1px
 }
-#accordion  .mainList  {
+.accordion  .mainList  {
 	max-height: 400px;
 	overflow-y: scroll;
 	position: relative;
@@ -326,13 +332,13 @@ iframe {
 	margin-bottom: 0;
 	border-radius: .25rem !important;
 }
-#accordion .list-group .list-group-item figure {
+.accordion .list-group .list-group-item figure {
 	overflow: hidden;
 }
-#accordion .list-group .list-group-item {
+.accordion .list-group .list-group-item {
 	position: relative;
 }
-#accordion .list-group .list-group-item:after {
+.accordion .list-group .list-group-item:after {
 	content: attr(data-noted);
 	width: 100%;
 	position: absolute;
@@ -344,10 +350,10 @@ iframe {
     font-size: .7rem;
 	display: none;
 }
-#accordion .list-group .list-group-item:hover:after {
+.accordion .list-group .list-group-item:hover:after {
 	display: block;
 }
-#accordion .list-group .list-group-item:hover figure img {
+.accordion .list-group .list-group-item:hover figure img {
 	    opacity: .2
 }
 
@@ -358,10 +364,10 @@ iframe {
 	border: 1px solid #dfdfdf;
 	border-left: 0
 }
-#accordion .card {
+.accordion .card {
 	display: none
 }
-#accordion.active .card {
+.accordion.active .card {
 	display: flex
 }
 .total{
@@ -370,7 +376,7 @@ iframe {
 .total, .createcanhcam{
 	margin-bottom: calc(4rem - 1px)
 }
-#accordion {
+.accordion {
 	min-height: calc(100vh - 0px);
 	max-height: calc(100vh - 0px);
 	overflow: scroll;
@@ -378,16 +384,16 @@ iframe {
 	border-bottom: 1px solid #dfdfdf;
 	
 }
-#accordion .card-header {
+.accordion .card-header {
 	padding: 0;
 	background: none ;
 	border-bottom: 1px solid #e6e6e6;
 }
-#accordion .card-header .btn-link.collapsed {
+.accordion .card-header .btn-link.collapsed {
 	color: black;
 	background: #f8f9fa;
 }
-#accordion .card-header .btn-link {
+.accordion .card-header .btn-link {
     text-decoration: none;
     display: block;
     width: 100%;
@@ -405,14 +411,14 @@ iframe {
     position: relative;
     top: 0px;
 }
-#accordion .card {
+.accordion .card {
 	border: 0;
 	background: none
 }
-#accordion .card-body {
+.accordion .card-body {
 	padding: 0
 }
-#accordion .list-group-item {
+.accordion .list-group-item {
 	cursor: move
 }
 .cppicker.colorpicker-element .add-on i,

@@ -21,18 +21,18 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 
 	gulp.task('concattool', function() {
         gulp.src([
-			'_tool/js/jquery-3.2.1.slim.min.js',
-			'_tool/js/popper.min.js',
-			'_tool/js/bootstrap.min.js',
-			'_tool/js/sortable.min.js',
-			'_tool/js/bootstrap-colorpicker.min.js',
-			'_tool/js/jquery-quickedit.js',
-			'_tool/js/typeahead.jquery.min.js',
-			'_tool/js/select2.full.min.js',
-			'_tool/js/bootstrap-tour.min.js',
-			'_tool/js/offline.min.js',
-			'_tool/js/pace.min.js',
-			'_tool/js/keymaster.js'
+			'_tool/vendor/js/jquery-3.2.1.slim.min.js',
+			'_tool/vendor/js/popper.min.js',
+			'_tool/vendor/js/bootstrap.min.js',
+			'_tool/vendor/js/sortable.min.js',
+			'_tool/vendor/js/bootstrap-colorpicker.min.js',
+			'_tool/vendor/js/jquery-quickedit.js',
+			'_tool/vendor/js/typeahead.jquery.min.js',
+			'_tool/vendor/js/select2.full.min.js',
+			'_tool/vendor/js/bootstrap-tour.min.js',
+			'_tool/vendor/js/offline.min.js',
+			'_tool/vendor/js/pace.min.js',
+			'_tool/vendor/js/keymaster.js'
 		])
 			.pipe(concat(url.concat.namejs_core + '.js'))
 			.pipe(minifyJS())
@@ -43,7 +43,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			.pipe(gulp.dest(destjs));
 			
         gulp.src([
-			'_tool/css/bootstrap.min.css',
+			'_tool/vendor/css/bootstrap.min.css',
 		])
 			.pipe(concatCss(url.concat.namecss_core + '.css', {
 				includePaths: '',
@@ -58,13 +58,13 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 		.pipe(gulp.dest(destcss));
 		
         gulp.src([
-			'_tool/css/font-awesome.min.css',
-			'_tool/css/bootstrap-colorpicker.min.css',
-			'_tool/css/select2.min.css',
-			'_tool/css/bootstrap-tour.min.css',
-			'_tool/css/offline-language-vietnam.css',
-			'_tool/css/offline-theme-chrome.css',
-			'_tool/css/pace-theme-mac-osx.css',
+			'_tool/vendor/css/font-awesome.min.css',
+			'_tool/vendor/css/bootstrap-colorpicker.min.css',
+			'_tool/vendor/css/select2.min.css',
+			'_tool/vendor/css/bootstrap-tour.min.css',
+			'_tool/vendor/css/offline-language-vietnam.css',
+			'_tool/vendor/css/offline-theme-chrome.css',
+			'_tool/vendor/css/pace-theme-mac-osx.css',
 			'_tool/css/main.css'
 		])
 			.pipe(concatCss(url.concat.babelconcat + '.css', {
@@ -82,6 +82,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 		gulp.src([
 			'_tool/js/core.js',
 			'_tool/js/main.js',
+			'_tool/js/dab.js',
 			'_tool/js/key.js',
 			'_tool/js/tour.js',
 		])

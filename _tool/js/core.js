@@ -349,6 +349,9 @@ $(function () {
 	$('#addComponent').click(function (e) {
 		buildFormAddComponent()
 	})
+	$('#addElements').click(function (e) {
+		buildFormAddComponentDAB()
+	})
 	$('#preCreateSite').click(function (e) {
 		location.reload();
 	})

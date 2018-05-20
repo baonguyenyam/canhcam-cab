@@ -1,0 +1,75 @@
+{
+    "gird": {
+        "container-1": [
+            "Container Basic",
+            "<div class=\"container\"></div>"
+        ],
+        "container-2": [
+            "Container Fluid",
+            "<div class=\"container-fluid\"></div>"
+        ]
+    },
+    "row": {
+        "row-1": [
+            "Row 12",
+            "<div class=\"row\"><div class=\"col\"></div></div>"
+        ],
+        "row-2": [
+            "Row 6",
+            "<div class=\"row\"><div class=\"col\"></div><div class=\"col\"></div></div>"
+        ]
+    },
+    "buttons": {},
+    "form": {},
+    "collapse": {},
+    "dropdowns": {},
+    "list": {},
+    "modal": {},
+    "navs": {
+        "navs-1": [
+            "Base nav",
+            "<ul class=\"nav\">\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link active\" href=\"#\">Active</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\">Link</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\">Link</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n  </li>\r\n</ul>",
+            ""
+        ],
+        "navs-2": [
+            "Navs Vertical",
+            "<ul class=\"nav flex-column\">\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link active\" href=\"#\">Active</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\">Link</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\">Link</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n  </li>\r\n</ul>",
+            ""
+        ],
+        "navs-3": [
+            "Navs Link",
+            "<nav class=\"nav\">\r\n  <a class=\"nav-link active\" href=\"#\">Active</a>\r\n  <a class=\"nav-link\" href=\"#\">Link</a>\r\n  <a class=\"nav-link\" href=\"#\">Link</a>\r\n  <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n</nav>",
+            ""
+        ],
+        "navs-4": [
+            "Navs Pills",
+            "<ul class=\"nav nav-pills\">\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link active\" href=\"#\">Active</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\">Link</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\">Link</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n  </li>\r\n</ul>",
+            ""
+        ]
+    },
+    "navbar": {
+        "navbar-1": [
+            "Navbar Toggler",
+            "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">Navbar</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\" aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">\r\n    <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline my-2 my-lg-0\">\r\n      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\r\n      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</nav>",
+            ""
+        ]
+    },
+    "tab": {
+        "tab-1": [
+            "Tab Basic",
+            "<ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link active\" id=\"home-tab\" data-toggle=\"tab\" href=\"#home\" role=\"tab\" aria-controls=\"home\" aria-selected=\"true\">Home</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" id=\"profile-tab\" data-toggle=\"tab\" href=\"#profile\" role=\"tab\" aria-controls=\"profile\" aria-selected=\"false\">Profile</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" id=\"contact-tab\" data-toggle=\"tab\" href=\"#contact\" role=\"tab\" aria-controls=\"contact\" aria-selected=\"false\">Contact</a>\r\n  </li>\r\n</ul>\r\n<div class=\"tab-content\" id=\"myTabContent\">\r\n  <div class=\"tab-pane fade show active\" id=\"home\" role=\"tabpanel\" aria-labelledby=\"home-tab\">...</div>\r\n  <div class=\"tab-pane fade\" id=\"profile\" role=\"tabpanel\" aria-labelledby=\"profile-tab\">...</div>\r\n  <div class=\"tab-pane fade\" id=\"contact\" role=\"tabpanel\" aria-labelledby=\"contact-tab\">...</div>\r\n</div>",
+            ""
+        ],
+        "tab-2": [
+            "Tab vertical",
+            "<div class=\"row\">\r\n  <div class=\"col-3\">\r\n    <div class=\"nav flex-column nav-pills\" id=\"v-pills-tab\" role=\"tablist\" aria-orientation=\"vertical\">\r\n      <a class=\"nav-link active\" id=\"v-pills-home-tab\" data-toggle=\"pill\" href=\"#v-pills-home\" role=\"tab\" aria-controls=\"v-pills-home\" aria-selected=\"true\">Home</a>\r\n      <a class=\"nav-link\" id=\"v-pills-profile-tab\" data-toggle=\"pill\" href=\"#v-pills-profile\" role=\"tab\" aria-controls=\"v-pills-profile\" aria-selected=\"false\">Profile</a>\r\n      <a class=\"nav-link\" id=\"v-pills-messages-tab\" data-toggle=\"pill\" href=\"#v-pills-messages\" role=\"tab\" aria-controls=\"v-pills-messages\" aria-selected=\"false\">Messages</a>\r\n      <a class=\"nav-link\" id=\"v-pills-settings-tab\" data-toggle=\"pill\" href=\"#v-pills-settings\" role=\"tab\" aria-controls=\"v-pills-settings\" aria-selected=\"false\">Settings</a>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-9\">\r\n    <div class=\"tab-content\" id=\"v-pills-tabContent\">\r\n      <div class=\"tab-pane fade show active\" id=\"v-pills-home\" role=\"tabpanel\" aria-labelledby=\"v-pills-home-tab\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"v-pills-profile\" role=\"tabpanel\" aria-labelledby=\"v-pills-profile-tab\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"v-pills-messages\" role=\"tabpanel\" aria-labelledby=\"v-pills-messages-tab\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"v-pills-settings\" role=\"tabpanel\" aria-labelledby=\"v-pills-settings-tab\">...</div>\r\n    </div>\r\n  </div>\r\n</div>",
+            ""
+        ]
+    },
+    "components": {
+        "components-1": [
+            "Breadcrumb Basic",
+            "<nav aria-label=\"breadcrumb\"><ol class=\"breadcrumb\"><li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li><li class=\"breadcrumb-item\"><a href=\"#\">Library</a></li><li class=\"breadcrumb-item active\" aria-current=\"page\">Data</li></ol></nav>"
+        ]
+    }
+}

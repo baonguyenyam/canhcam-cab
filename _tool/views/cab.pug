@@ -1,7 +1,12 @@
 .container-no
 	#maincc.row.no-gutters
 		.col.flex-column.bleft(style='display:none')
-			#accordion
+			#accordion-dab.accordion
+				figure#logopage
+					img.img-fluid(src='./img/logo.png')
+					span.text-info
+				
+			#accordion.accordion
 				figure#logopage
 					img.img-fluid(src='./img/logo.png')
 					span.text-info
@@ -33,12 +38,14 @@
 							i.fa.fa-keyboard-o(data-toggle='tooltip', data-placement='bottom', title='Phím tắt')
 						button#retour.btn.btn-outline-secondary.btn-sm.mr-2
 							i.fa.fa-info-circle(data-toggle='tooltip', data-placement='bottom', title='Xem hướng dẫn')
-						button.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#exampleModalCenter')
+						button#stCssJS.btn.btn-outline-secondary.btn-sm.mr-2(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#exampleModalCenter')
 							i.fa.fa-cog(data-toggle='tooltip', data-placement='bottom', title='Cấu hình dự án')
 						button#addComponent.btn.btn-outline-secondary.btn-sm.mr-2(type='button', data-toggle="modal", data-target='#addCompo', aria-expanded='false', aria-controls='addCompo', data-backdrop="static" data-keyboard="false")
 							i.fa.fa-plus(data-toggle='tooltip', data-placement='bottom', title='Thêm một component vào dự án')
+						button#addElements.btn.btn-outline-secondary.btn-sm.mr-2(type='button', data-toggle="modal", data-target='#ElmModalCenter', aria-expanded='false', aria-controls='ElmModalCenter', data-backdrop="static" data-keyboard="false", style="display:none")
+							i.fa.fa-plus(data-toggle='tooltip', data-placement='bottom', title='Thêm một component vào dự án')
 						button#about.btn.btn-outline-secondary.btn-sm(data-toggle='modal', data-backdrop='static', data-keyboard='false', data-target='#aboutBox')
-							i.fa.fa-book(data-toggle='tooltip', data-placement='bottom', title='Về CAB')
+							i.fa.fa-book(data-toggle='tooltip', data-placement='bottom', title='Về CAB/DAB')
 				.maindev
 					ul#myTab.nav.nav-tabs.tab-sm(role='tablist')
 					#nav-tabContent.tab-content
@@ -47,7 +54,7 @@
 						.alert.alert-success.mb-5(role='alert', style='display:none') Đã tạo site thành công!
 						p
 							img(src='./img/logo.jpg', alt='')
-						h4.mb-0 All-In-One Website Builder tool (CAB)
+						h4.mb-0 All-In-One Website Builder tool (CAB/DAB)
 						p.text-sm
 							span#version.text-muted
 							|  -
@@ -63,6 +70,10 @@
 										.input-group.mr-2 Nhập tên dự án
 										.input-group
 											input#typeahead.form-control(type='text', placeholder='Tên dự án', name='ListItemMain')
+											.input-group-append
+												select.custom-select#cab-dab
+													option(value="cab") Web Components (CAB)
+													option(value="dab") OWN Builder (DAB)
 											.input-group-append
 												button#buttonListItemMain.btn.btn-success(type='button') Nhập
 						.container.pt-4

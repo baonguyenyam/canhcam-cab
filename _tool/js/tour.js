@@ -9,6 +9,12 @@ function showTour() {
 				content: "Kéo thả các components dưới đây vago màn hình bên phải."
 			},
 			{
+				element: "#accordion-dab",
+				placement: "bottom",
+				title: "Thư viện components",
+				content: "Kéo thả các components dưới đây vago màn hình bên phải."
+			},
+			{
 				element: "#index-tab",
 				placement: "right",
 				title: "Trang & Contents",
