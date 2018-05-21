@@ -1,0 +1,12 @@
+body {
+	padding: 1rem
+}
+.dab-item-remove.btn-danger{
+	background-color: #48a4bc !important;
+	border-color: #48a4bc !important;
+	    font-size: .675rem;
+}
+
+.dab-item-remove .fa-times:before {
+    content: "\f303"
+}

@@ -14,44 +14,83 @@ function toggleDAB() {
 
 function createPageBuilderDAB(toAdd) {
 	dab.SETUP[toAdd] = []
-	$('.frameNewlist').each(function (i, e) {
-	})
+	// $('iframe.framePreview').each(function (i, e) {
+	// 	var data = $(this).contents().find("body").html()
+	// 	console.log()
+	// })
 }
 
-$('#tooglepreview').click(function (e) {
-	var fcnt = $('.tab-pane.active.show').find('iframe.frameNewlist').contents()
-	var getcnt = fcnt.find("#listWithHandle").html()
-	var itemsToRemove = ['.dab-item-remove']
-	var attrToRemove = ['data-title', 'data-content', 'data-key', 'data-dab', 'draggable']
-	var classToRemove = ['dab-item-gird', 'dab-item-col']
-	var clone = $('.tab-pane.active.show').find('iframe.framePreview').contents()
-	clone.find("body").html(getcnt)
-	for (var key in itemsToRemove) {
-		if (itemsToRemove.hasOwnProperty(key)) {
-			var element = itemsToRemove[key];
-			clone.find(element).remove()
+function modeEdit() {
+	$('#nav-tabContent .tab-pane').each(function (i, e) {
+		var fcnt = $(this).find('iframe.frameNewlist').contents()
+		var getcnt = fcnt.find("#listWithHandle").html()
+		var clone = $(this).find('iframe.frameEdit').contents()
+		clone.find("body").html(getcnt)
+	})
+	$('#nav-tabContent .tab-pane .frameEdit').each(function () {
+		$(this).contents().find('.dab-item-remove').each(function () {
+			$(this).click(function () {
+				var getval = $(this).parents('.dab-item')
+				var getCNT = getval.attr('data-content')
+				$('#editContentModal .modal-body').html('<textarea name="editor" id="editor" rows="10" cols="80"></textarea>')
+				$('#editContentModal #editor').val(unescape(getCNT))
+				CKEDITOR.replace('editor')
+				$('#editContentModal').modal('show')
+			})
+		})
+	})
+
+	$('#editContentModal').on('hidden.bs.modal', function (e) {
+		$('#editContentModal .modal-body').html('')
+	})
+	$('#editContentModal').on('shown.bs.modal', function (e) {
+		$('#editContentModal #saveIt').click(function(){
+			var abc = CKEDITOR.instances.editor.getData()
+			console.log(abc)
+		})
+	})
+
+	reFrame()
+}
+
+function modePreview() {
+	$('#nav-tabContent .tab-pane').each(function (i, e) {
+		var fcnt = $(this).find('iframe.frameNewlist').contents()
+		var getcnt = fcnt.find("#listWithHandle").html()
+		var itemsToRemove = ['.dab-item-remove']
+		var attrToRemove = ['data-title', 'data-content', 'data-key', 'data-dab', 'draggable']
+		var classToRemove = ['dab-item-gird', 'dab-item-col']
+		var clone = $(this).find('iframe.framePreview').contents()
+		clone.find("body").html(getcnt)
+		for (var key in itemsToRemove) {
+			if (itemsToRemove.hasOwnProperty(key)) {
+				var element = itemsToRemove[key];
+				clone.find(element).remove()
+			}
 		}
-	}
-	for (var key in attrToRemove) {
-		if (attrToRemove.hasOwnProperty(key)) {
-			var element = attrToRemove[key];
-			clone.find('[' + element + ']').removeAttr(element)
+		for (var key in attrToRemove) {
+			if (attrToRemove.hasOwnProperty(key)) {
+				var element = attrToRemove[key];
+				clone.find('[' + element + ']').removeAttr(element)
+			}
 		}
-	}
-	for (var key in classToRemove) {
-		if (classToRemove.hasOwnProperty(key)) {
-			var element = classToRemove[key];
-			clone.find('.' + element).removeClass(element)
+		for (var key in classToRemove) {
+			if (classToRemove.hasOwnProperty(key)) {
+				var element = classToRemove[key];
+				clone.find('.' + element).removeClass(element)
+			}
 		}
-	}
-	$(clone).find('.dab-item').each(function () {
-		var child = $(this).children()
-		if ($(child).parent().is(".dab-item")) {
-			$(child).unwrap();
-		}
+		clone.find('*[id^="dab-item-"]').removeAttr('id')
+		
+		$(clone).find('.dab-item').each(function () {
+			var child = $(this).children()
+			if ($(child).parent().is(".dab-item")) {
+				$(child).unwrap();
+			}
+		})
 	})
 	reFrame()
-})
+}
 
 function checkReadyTabDAB(toAdd) {
 	if (!kiemTraTenTrang(toAdd, dab.pagesLists)) {
@@ -67,7 +106,8 @@ function checkReadyTabDAB(toAdd) {
 			$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '" role="tabpanel" aria-labelledby="' + toAdd + '-tab"></div>');
 			$('#toDoList')[0].reset();
 			$('#' + toAdd).html(iframe)
-			$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview"></iframe>')
+			$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview d-none"></iframe>')
+			$('#' + toAdd).append('<iframe src="/views/edit.html" class="frameEdit d-none"></iframe>')
 			$('#' + toAdd + '-tab').trigger('click')
 			$('#toogledev').trigger('click')
 			createPageBuilderDAB(toAdd)
@@ -261,14 +301,15 @@ function taoTrangIndexDAB() {
 		$('#toDoList')[0].reset();
 		$('#' + toAdd + '-tab').trigger('click')
 		$('#' + toAdd).html(iframe)
-		$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview"></iframe>')
+		$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview d-none"></iframe>')
+		$('#' + toAdd).append('<iframe src="/views/edit.html" class="frameEdit d-none"></iframe>')
 		createPageBuilderDAB(toAdd)
 		checkTab()
 	}
 }
 
 function reFrame() {
-	$('.frameNewlist, .framePreview').each(function (i, e) {
+	$('.frameNewlist, .framePreview, .frameEdit').each(function (i, e) {
 		$('body').removeClass('pace-done').addClass('pace-running')
 		$('.pace').removeClass('pace-inactive')
 		$(this).removeAttr('style')
@@ -278,7 +319,7 @@ function reFrame() {
 				"min-height": abc + 'px'
 			})
 			loadingPage()
-		}, 2000);
+		}, 1000);
 	})
 }
 
@@ -402,7 +443,3 @@ function buildFormAddComponentDAB() {
 		})
 	});
 }
-
-$(window).resize(function () {
-	reFrame()
-})

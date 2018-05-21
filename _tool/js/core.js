@@ -358,7 +358,11 @@ $(function () {
 	$('.togglemenu').click(function () {
 		$('#maincc').toggleClass('active')
 		$(this).toggleClass('active')
-		resizeFrame()
+		if (modeCAD === 'dab') {
+			reFrame()
+		} else {
+			resizeFrame()
+		}
 	});
 	$('#tooglepc').click(function () {
 		$(this).addClass('active')
@@ -378,32 +382,38 @@ $(function () {
 		$('.maindev').addClass('tablet').removeClass('mobile').removeClass('pc')
 		resizeFrame()
 	});
+	
 	$('#toogledev').click(function () {
-		$('#accordion-dab').removeClass('mode')
 		$(this).addClass('active')
-		$('.frameNewlist').show()
-		$('.framePreview').hide()
+		$('#accordion-dab').removeClass('mode')
+		$('.frameNewlist').removeClass('d-none').addClass('d-block')
+		$('.framePreview').removeClass('d-block').addClass('d-none')
+		$('.frameEdit').removeClass('d-block').addClass('d-none')
 		$('#tooglepreview, #toogleedit').removeClass('active')
 		$('.maindev').addClass('dev').removeClass('edit').removeClass('preview')
-		resizeFrame()
+		reFrame()
 	});
 	$('#toogleedit').click(function () {
-		$('#accordion-dab').addClass('mode')
-		$('.frameNewlist').hide()
-		$('.framePreview').show()
+		modeEdit()
 		$(this).addClass('active')
+		$('#accordion-dab').addClass('mode')
+		$('.frameNewlist').removeClass('d-block').addClass('d-none')
+		$('.framePreview').removeClass('d-block').addClass('d-none')
+		$('.frameEdit').removeClass('d-none').addClass('d-block')
 		$('#tooglepreview, #toogledev').removeClass('active')
 		$('.maindev').addClass('edit').removeClass('dev').removeClass('preview')
-		resizeFrame()
+		reFrame()
 	});
 	$('#tooglepreview').click(function () {
-		$('#accordion-dab').addClass('mode')
-		$('.frameNewlist').hide()
-		$('.framePreview').show()
+		modePreview()
 		$(this).addClass('active')
+		$('#accordion-dab').addClass('mode')
+		$('.frameNewlist').removeClass('d-block').addClass('d-none')
+		$('.framePreview').removeClass('d-none').addClass('d-block')
+		$('.frameEdit').removeClass('d-block').addClass('d-none')
 		$('#toogleedit, #toogledev').removeClass('active')
 		$('.maindev').addClass('preview').removeClass('edit').removeClass('dev')
-		resizeFrame()
+		reFrame()
 	});
 
 	$('#noleft').on('click', '.xoatab', function (e) {
@@ -457,7 +467,11 @@ $(function () {
 })
 
 $(window).resize(function () {
-	resizeFrame()
+	if (modeCAD === 'dab') {
+		reFrame()
+	} else {
+		resizeFrame()
+	}
 })
 
 $(document).ready(function () {

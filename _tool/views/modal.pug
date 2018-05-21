@@ -284,3 +284,16 @@
 						input#commainElm(type='hidden', name='commainElm')
 						input#comnumElm(type='hidden', name='comnumElm')
 						button.btn.btn-success(type='button') Thêm Component
+// Modal
+#editContentModal.modal(tabindex='-1', role='dialog', aria-labelledby='editContentModalLabel', aria-hidden='true')
+	.modal-dialog.modal-md(role='document')
+		.modal-content
+			.modal-header
+				h5#editContentModalLabel.modal-title Modal title
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body
+				
+			.modal-footer
+				button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+				button.btn.btn-primary#saveIt(type='button') Save
