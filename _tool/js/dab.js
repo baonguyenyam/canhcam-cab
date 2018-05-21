@@ -7,7 +7,7 @@ var dab = {
 function toggleDAB() {
 	$('#accordion-dab').addClass('active')
 	$('#accordion, #addComponent, #stCssJS, .notedcanhcam').hide()
-	$('#toDoList, .bleft, .deview, #addElements').show()
+	$('#toDoList, .bleft, .deview, #addElements, #layoutmode').show()
 	createLeftMenuListDAB()
 	taoTrangIndexDAB()
 }
@@ -17,6 +17,41 @@ function createPageBuilderDAB(toAdd) {
 	$('.frameNewlist').each(function (i, e) {
 	})
 }
+
+$('#tooglepreview').click(function (e) {
+	var fcnt = $('.tab-pane.active.show').find('iframe.frameNewlist').contents()
+	var getcnt = fcnt.find("#listWithHandle").html()
+	var itemsToRemove = ['.dab-item-remove']
+	var attrToRemove = ['data-title', 'data-content', 'data-key', 'data-dab', 'draggable']
+	var classToRemove = ['dab-item-gird', 'dab-item-col']
+	var clone = $('.tab-pane.active.show').find('iframe.framePreview').contents()
+	clone.find("body").html(getcnt)
+	for (var key in itemsToRemove) {
+		if (itemsToRemove.hasOwnProperty(key)) {
+			var element = itemsToRemove[key];
+			clone.find(element).remove()
+		}
+	}
+	for (var key in attrToRemove) {
+		if (attrToRemove.hasOwnProperty(key)) {
+			var element = attrToRemove[key];
+			clone.find('[' + element + ']').removeAttr(element)
+		}
+	}
+	for (var key in classToRemove) {
+		if (classToRemove.hasOwnProperty(key)) {
+			var element = classToRemove[key];
+			clone.find('.' + element).removeClass(element)
+		}
+	}
+	$(clone).find('.dab-item').each(function () {
+		var child = $(this).children()
+		if ($(child).parent().is(".dab-item")) {
+			$(child).unwrap();
+		}
+	})
+	reFrame()
+})
 
 function checkReadyTabDAB(toAdd) {
 	if (!kiemTraTenTrang(toAdd, dab.pagesLists)) {
@@ -32,7 +67,9 @@ function checkReadyTabDAB(toAdd) {
 			$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '" role="tabpanel" aria-labelledby="' + toAdd + '-tab"></div>');
 			$('#toDoList')[0].reset();
 			$('#' + toAdd).html(iframe)
+			$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview"></iframe>')
 			$('#' + toAdd + '-tab').trigger('click')
+			$('#toogledev').trigger('click')
 			createPageBuilderDAB(toAdd)
 			checkTab()
 			dab.pagesLists.push(toAdd)
@@ -79,14 +116,22 @@ function turnOnDND(evt, iframe) {
 	var gnum = $(itemEl).attr('data-key')
 	$(itemEl).html(gcont)
 	if (gnum === 'gird' || gnum === 'row') {
-		$(itemEl).find('.container, .container-fluid, .col').each(function (i, e) {
+		$(itemEl).find('.container, .container-fluid').each(function (i, e) {
 			var getid = taoIdNgauNhien(10)
 			$(this).attr('id', 'dab-item-' + getid)
 			$(itemEl).find('.container').addClass('dab-item-gird').attr('data-title', '.container')
 			$(itemEl).find('.container-fluid').addClass('dab-item-gird').attr('data-title', '.container-fluid')
-			$(itemEl).find('.col').addClass('dab-item-col').attr('data-title','.col')
 			frameChild(iframe, getid)
 			$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="fg"><i class="fa fa-times"></i></span>')
+		})
+		$(itemEl).find('.row').each(function (i, e) {
+			$(this).find('div').each(function (i, e) {
+				var getid = taoIdNgauNhien(10)
+				$(this).attr('id', 'dab-item-' + getid)
+				$(this).addClass('dab-item-col').attr('data-title','.col')
+				frameChild(iframe, getid)
+				$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="fg"><i class="fa fa-times"></i></span>')
+			})
 		})
 	} else {
 		$(itemEl).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="fg"><i class="fa fa-times"></i></span>')
@@ -104,27 +149,29 @@ function frameChild(iframe, getid) {
 		},
 		onMove: function (evt, originalEvent) {
 			$('#nav-tabContent').addClass('active')
-			$(iframe).contents().find("#listWithHandle").addClass('active')
+			$(iframe).contents().find("body").addClass('active')
 			$('.accordion').addClass('remove')
 		},
 		onStart: function (evt) {
 			$('#nav-tabContent').addClass('active')
-			$(iframe).contents().find("#listWithHandle").addClass('active')
+			$(iframe).contents().find("body").addClass('active')
 			$('.accordion').addClass('remove')
 		},
 		onClone: function (evt) {
 			$('#nav-tabContent').addClass('active')
-			$(iframe).contents().find("#listWithHandle").addClass('active')
+			$(iframe).contents().find("body").addClass('active')
 			$('.accordion').addClass('remove')
 		},
 		onEnd: function (evt) {
 			$('#nav-tabContent').removeClass('active')
-			$(iframe).contents().find("#listWithHandle").removeClass('active')
+			$(iframe).contents().find("body").removeClass('active')
 			$('.accordion').removeClass('remove')
 			toggleContentReadyDAB(iframe)
+			reFrame()
 		},
 		onAdd: function (evt) {
 			toggleContentReadyDAB(iframe)
+			reFrame()
 			turnOnDND(evt, iframe)
 		},
 		animation: 100,
@@ -134,6 +181,7 @@ function frameChild(iframe, getid) {
 				var el = sortableElm.closest(evt.item);
 				$(el).parents('.dab-item').remove()
 				toggleContentReadyDAB(iframe)
+				reFrame()
 			} else {
 				return false
 			}
@@ -152,28 +200,30 @@ function taoIframe(iframe) {
 		},
 		onMove: function (evt, originalEvent) {
 			$('#nav-tabContent').addClass('active')
-			$(iframe).contents().find("#listWithHandle").addClass('active')
+			$(iframe).contents().find("body").addClass('active')
 			$('.accordion').addClass('remove')
 		},
 		onStart: function (evt) {
 			$('#nav-tabContent').addClass('active')
-			$(iframe).contents().find("#listWithHandle").addClass('active')
+			$(iframe).contents().find("body").addClass('active')
 			$('.accordion').addClass('remove')
 		},
 		onClone: function (evt) {
 			$('#nav-tabContent').addClass('active')
-			$(iframe).contents().find("#listWithHandle").addClass('active')
+			$(iframe).contents().find("body").addClass('active')
 			$('.accordion').addClass('remove')
 		},
 		onAdd: function (evt) {
 			toggleContentReadyDAB(iframe)
+			reFrame()
 			turnOnDND(evt, iframe)
 		},
 		onEnd: function (evt) {
 			$('#nav-tabContent').removeClass('active')
-			$(iframe).contents().find("#listWithHandle").removeClass('active')
+			$(iframe).contents().find("body").removeClass('active')
 			$('.accordion').removeClass('remove')
 			toggleContentReadyDAB(iframe)
+			reFrame()
 		},
 		animation: 100,
 		filter: '.js-remove',
@@ -182,6 +232,7 @@ function taoIframe(iframe) {
 				var el = sortableIframe.closest(evt.item);
 				el && el.parentNode.removeChild(el);
 				toggleContentReadyDAB(iframe)
+				reFrame()
 			} else {
 				return false
 			}
@@ -210,25 +261,28 @@ function taoTrangIndexDAB() {
 		$('#toDoList')[0].reset();
 		$('#' + toAdd + '-tab').trigger('click')
 		$('#' + toAdd).html(iframe)
+		$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview"></iframe>')
 		createPageBuilderDAB(toAdd)
 		checkTab()
 	}
 }
 
-
-function toggleContentReadyDAB(iframe) {
-	$('.frameNewlist').each(function (i, e) {
+function reFrame() {
+	$('.frameNewlist, .framePreview').each(function (i, e) {
 		$('body').removeClass('pace-done').addClass('pace-running')
 		$('.pace').removeClass('pace-inactive')
 		$(this).removeAttr('style')
 		setTimeout(() => {
 			var abc = $(this).contents().height()
 			$(this).css({
-				"height": abc + 'px'
+				"min-height": abc + 'px'
 			})
 			loadingPage()
-		}, 1000);
+		}, 2000);
 	})
+}
+
+function toggleContentReadyDAB(iframe) {
 	var exitsCom = true
 	$('.frameNewlist').each(function () {
 		if ($(this).contents().find("#listWithHandle").html().trim().length > 0) {
@@ -260,6 +314,7 @@ function createLeftMenuListDAB() {
 				collapsed = ' collapsed';
 			}
 			var count = Object.keys(parsedJSON[key]).length;
+			total = + total + count
 			var father = document.createElement('div');
 			father.id = "cc-menu-dab-" + key;
 			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
@@ -286,19 +341,19 @@ function createLeftMenuListDAB() {
 
 							onMove: function (evt, originalEvent) {
 								$('#nav-tabContent').addClass('active')
-								$('#nav-tabContent iframe').contents().find("#listWithHandle").addClass('active')
+								$('#nav-tabContent iframe.frameNewlist').contents().find("body").addClass('active')
 							},
 							onClone: function (evt) {
 								$('#nav-tabContent').addClass('active')
-								$('#nav-tabContent iframe').contents().find("#listWithHandle").addClass('active')
+								$('#nav-tabContent iframe.frameNewlist').contents().find("body").addClass('active')
 							},
 							onStart: function (evt) {
 								$('#nav-tabContent').addClass('active')
-								$('#nav-tabContent iframe').contents().find("#listWithHandle").addClass('active')
+								$('#nav-tabContent iframe.frameNewlist').contents().find("body").addClass('active')
 							},
 							onEnd: function (evt) {
 								$('#nav-tabContent').removeClass('active')
-								$('#nav-tabContent iframe').contents().find("#listWithHandle").removeClass('active')
+								$('#nav-tabContent iframe.frameNewlist').contents().find("body").removeClass('active')
 							}
 						});
 					})
@@ -306,9 +361,22 @@ function createLeftMenuListDAB() {
 			}
 			index++
 		}
+		buildTotalDAB(total)
 	})
 }
 
+function buildTotalDAB(params) {
+	jQuery.get("/version.json", function (data) {
+		var info = data;
+		$('#version').html(info.version + ' ' + info.build)
+		$('#accordion-dab').append('<div class="total p-2 small">S&#x1ED1; th&#xE0;nh ph&#x1EA7;n: <span class="text-info">' + params + '</span><br>Phi&#xEA;n b&#x1EA3;n: <span class="text-info">' + info.version + ' ' + info.build + '</span><br>Phi&#xEA;n b&#x1EA3;n Bootstrap: <span class="text-info">' + info.bootstrap + '</span><br>T&#xE1;c gi&#x1EA3;: <span class="text-info">B&#x1EA3;o Nguy&#xEA;n</span></div>')
+		$('#logopage .text-success').html('DAB')
+		var memories = $('.memory').attr('data-memory').split(";")
+		$('#accordion-dab .total').append('<br>Bộ nhớ sử dụng: <span class="text-info">' + parseInt(memories[1]).toFixed(0) + 'MB</span>')
+		$('#accordion-dab .total').append('<br>Platform: <span class="text-info">' + memories[3].charAt(0).toUpperCase() + memories[3].slice(1) + '</span>')
+		$('#accordion-dab .total').append('<br>Node: <span class="text-info">v' + memories[4] + '</span>')
+	})
+}
 
 function buildFormAddComponentDAB() {
 	$('#formAddComponentDAB select').html('<option selected disabled>Vui lòng chọn</option>')
@@ -334,3 +402,7 @@ function buildFormAddComponentDAB() {
 		})
 	});
 }
+
+$(window).resize(function () {
+	reFrame()
+})

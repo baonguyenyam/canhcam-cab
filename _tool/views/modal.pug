@@ -5,7 +5,7 @@
 				h5#exampleModalLongTitle.modal-title Tùy chỉnh
 				button.close(type='button', data-dismiss='modal', aria-label='Close')
 					span(aria-hidden='true') ×
-			.modal-body
+			.modal-body.clearfix
 				ul#modalTab.nav.nav-tabs(role='tablist')
 					li.nav-item
 						a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Tùy chỉnh màu
@@ -133,10 +133,10 @@
 				h5#aboutBoxTitle.modal-title Về CAB/DAB
 				button.close(type='button', data-dismiss='modal', aria-label='Close')
 					span(aria-hidden='true') ×
-			.modal-body 
+			.modal-body.clearfix 
 				dl.row
 					dt.col-3.small License Name
-					dd.col-9.small.ln Canh Cam CAB
+					dd.col-9.small.ln Canh Cam CAB/DAB
 				dl.row
 					dt.col-3.small Serial Number
 					dd.col-9.small.sn
@@ -150,10 +150,10 @@
 	.modal-dialog.modal-md(role='document')
 		.modal-content
 			.modal-header
-				h5#exampleModalLongTitle.modal-title Phím tắt trên CAB
+				h5#exampleModalLongTitle.modal-title Phím tắt trên CAB/DAB
 				button.close(type='button', data-dismiss='modal', aria-label='Close')
 					span(aria-hidden='true') ×
-			.modal-body
+			.modal-body.clearfix
 				dl.row
 					dt.col-auto
 						| Ctrl + Alt + D
@@ -211,7 +211,7 @@
 					button.close(type='button', data-dismiss='modal', aria-label='Close')
 						span(aria-hidden='true') ×
 				form#formAddComponent(enctype='multipart/form-data', method='POST')
-					.modal-body
+					.modal-body.clearfix
 						.row
 							.col-6
 								.form-group.mb-2
@@ -249,14 +249,14 @@
 						button.btn.btn-success(type='button') Thêm Component
 // Modal
 #ElmModalCenter.modal(tabindex='-1', role='dialog', aria-labelledby='ModalCenterTitle', aria-hidden='true')
-	.modal-dialog.modal-md.modal-dialog-centered(role='document')
+	.modal-dialog.modal-md(role='document')
 		.modal-content
 				.modal-header
 					h5#ModalCenterTitle.modal-title Thêm Components 
 					button.close(type='button', data-dismiss='modal', aria-label='Close')
 						span(aria-hidden='true') ×
 				form#formAddComponentDAB(enctype='multipart/form-data', method='POST')
-					.modal-body
+					.modal-body.clearfix
 						.row
 							.col-6
 								.form-group.mb-2

@@ -1,15 +1,29 @@
 .container-no
 	#maincc.row.no-gutters
 		.col.flex-column.bleft(style='display:none')
+			#layoutmode(style="display:none")
+				.btn-group.btn-group-sm.mr-2(role='group')
+					button#toogledev.btn.btn-outline-success.active(onclick='javascript:void(0)')
+						i.fa.fa-code
+						| 
+						| Dev
+					button#toogleedit.btn.btn-outline-success(onclick='javascript:void(0)')
+						i.fa.fa-pencil
+						| 
+						| Edit
+					button#tooglepreview.btn.btn-outline-success(onclick='javascript:void(0)')
+						i.fa.fa-eye
+						| 
+						| Preview
 			#accordion-dab.accordion
 				figure#logopage
 					img.img-fluid(src='./img/logo.png')
-					span.text-info
+					strong.text-success
 				
 			#accordion.accordion
 				figure#logopage
 					img.img-fluid(src='./img/logo.png')
-					span.text-info
+					strong.text-info
 		#noleft.col.d-flex.flex-column.noleft
 			.container-fluid
 				.row.no-gutters.deview(style='display: none')

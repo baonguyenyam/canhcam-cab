@@ -80,10 +80,6 @@ app.use(function (err, req, res, next) {
 });
 
 app.use(compression());
-router.get(/\/js/, express.static(site.root + '/js'));
-router.get(/\/css/, express.static(site.root + '/css'));
-router.get(/\/img/, express.static(site.root + '/img'));
-
 var Storage = multer.diskStorage({
 	destination: function (req, file, callback) {
 		callback(null, site.root + "/img/layout");

@@ -181,10 +181,10 @@ $('#buttonListItemMain').click(function () {
 		if (toAdd) {
 			if (data === 'done') {
 				objectName = toAdd
+				alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
 				$('#projectname').html("" + objectName + "")
 				$('#toDoListMain').hide()
 				$('#toDoListMain')[0].reset();
-				alert('Thêm dự án thành công!, hãy tiếp tục tạo page trên dự án.')
 				if (modeCAD === 'dab') {
 					toggleDAB()
 					showTour()

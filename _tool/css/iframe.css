@@ -1,14 +1,21 @@
 html,
 body,
 #listWithHandle {
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
+	height: 100%;
 }
-#listWithHandle {
+body{
 	padding: .5rem
 }
-#listWithHandle.active {
+#listWithHandle {
+	padding: 1rem;
+}
+body.active {
 	background: #fff9c7;
+}
+body.active #listWithHandle:after {
+	content: none
 }
 
 #listWithHandle:after {
@@ -17,7 +24,7 @@ body,
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: calc(100% - .6rem);
+	height: calc(100% - 1rem);
 	width: calc(100% - 1rem);
 	justify-content: center;
 	align-items: center;

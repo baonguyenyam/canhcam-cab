@@ -10,7 +10,7 @@
     "start": "gulp server",
     "dev": "gulp dev",
     "web": "gulp builder && NODE_ENV=production node index.js",
-    "index": "NODE_ENV=production node index.js",
+    "index": "gulp concattool && NODE_ENV=production node index.js",
     "node": "cd k-task/tools && node index.js",
     "clean-deps": "rimraf node_modules",
     "rebuild": "npm rebuild",

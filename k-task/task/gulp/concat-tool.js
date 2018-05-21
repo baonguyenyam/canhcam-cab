@@ -10,6 +10,8 @@ import gulpif from 'gulp-if';
 import minifyCss from 'gulp-csso';
 import minifyJS from 'gulp-uglify';
 import rename from 'gulp-rename';
+import csscomb from 'gulp-csscomb';
+import autoprefixer from 'gulp-autoprefixer';
 
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let url = config;
@@ -72,6 +74,17 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 				rebaseUrls: false,
 				inlineImports: false
 			}))
+			.pipe(autoprefixer([
+				'Android 2.3',
+				'Android >= 4',
+				'Chrome >= 20',
+				'Firefox >= 24', 
+				'Explorer >= 8',
+				'iOS >= 6',
+				'Opera >= 12',
+				'Safari >= 6'
+			]))
+			.pipe(csscomb())
 			.pipe(minifyCss())
 			.pipe(rename({
 				suffix: '.min'
