@@ -13,62 +13,10 @@
 	<script src="/framework/js/jquery-3.3.1.slim.min.js"></script>
 	<script src="/framework/js/popper.min.js"></script>
 	<script src="/framework/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.dab-item-remove').each(function () {
-				$(this).click(function () {
-					var getval = $(this).parents('.dab-item').html()
-					alert(1)
-					console.log(getval)
-				})
-			})
-		});
-
-		$(function () {
-
-
-			$('.editbutton').click(function () {
-				// CKEDITOR.instances.editor.destroy()
-
-				var getCNT = $('.dab-item').attr('data-content')
-				$('#editor').val(unescape(getCNT))
-				console.log(unescape(getCNT))
-				CKEDITOR.replace('editor')
-			})
-		})
-
-	</script>
+	<script src="/js/lock.js"></script>
 </head>
 
 <body>
-
-	<button type="button" class="editbutton btn btn-primary" data-toggle="modal" data-target="#editContentModal" data-backdrop="static"
-	 data-keyboard="false">
-		Launch demo modal
-	</button>
-
-	<div class="dab-item" data-dab="true" data-key="tab" data-content="%3Cul%20class%3D%22nav%20nav-tabs%22%20id%3D%22myTab%22%20role%3D%22tablist%22%3E%0D%0A%20%20%3Cli%20class%3D%22nav-item%22%3E%0D%0A%20%20%20%20%3Ca%20class%3D%22nav-link%20active%22%20id%3D%22home-tab%22%20data-toggle%3D%22tab%22%20href%3D%22%23home%22%20role%3D%22tab%22%20aria-controls%3D%22home%22%20aria-selected%3D%22true%22%3EHome%3C/a%3E%0D%0A%20%20%3C/li%3E%0D%0A%20%20%3Cli%20class%3D%22nav-item%22%3E%0D%0A%20%20%20%20%3Ca%20class%3D%22nav-link%22%20id%3D%22profile-tab%22%20data-toggle%3D%22tab%22%20href%3D%22%23profile%22%20role%3D%22tab%22%20aria-controls%3D%22profile%22%20aria-selected%3D%22false%22%3EProfile%3C/a%3E%0D%0A%20%20%3C/li%3E%0D%0A%20%20%3Cli%20class%3D%22nav-item%22%3E%0D%0A%20%20%20%20%3Ca%20class%3D%22nav-link%22%20id%3D%22contact-tab%22%20data-toggle%3D%22tab%22%20href%3D%22%23contact%22%20role%3D%22tab%22%20aria-controls%3D%22contact%22%20aria-selected%3D%22false%22%3EContact%3C/a%3E%0D%0A%20%20%3C/li%3E%0D%0A%3C/ul%3E%0D%0A%3Cdiv%20class%3D%22tab-content%22%20id%3D%22myTabContent%22%3E%0D%0A%20%20%3Cdiv%20class%3D%22tab-pane%20fade%20show%20active%22%20id%3D%22home%22%20role%3D%22tabpanel%22%20aria-labelledby%3D%22home-tab%22%3E...%3C/div%3E%0D%0A%20%20%3Cdiv%20class%3D%22tab-pane%20fade%22%20id%3D%22profile%22%20role%3D%22tabpanel%22%20aria-labelledby%3D%22profile-tab%22%3E...%3C/div%3E%0D%0A%20%20%3Cdiv%20class%3D%22tab-pane%20fade%22%20id%3D%22contact%22%20role%3D%22tabpanel%22%20aria-labelledby%3D%22contact-tab%22%3E...%3C/div%3E%0D%0A%3C/div%3E"
-	 draggable="false" style="">
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item">
-				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-			</li>
-		</ul>
-		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-		</div>
-		<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="fg">
-			<i class="fa fa-times"></i>
-		</span>
-	</div>
 
 </body>
 

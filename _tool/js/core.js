@@ -391,10 +391,9 @@ $(function () {
 		$('.frameEdit').removeClass('d-block').addClass('d-none')
 		$('#tooglepreview, #toogleedit').removeClass('active')
 		$('.maindev').addClass('dev').removeClass('edit').removeClass('preview')
-		reFrame()
+		modeDev()
 	});
 	$('#toogleedit').click(function () {
-		modeEdit()
 		$(this).addClass('active')
 		$('#accordion-dab').addClass('mode')
 		$('.frameNewlist').removeClass('d-block').addClass('d-none')
@@ -402,10 +401,9 @@ $(function () {
 		$('.frameEdit').removeClass('d-none').addClass('d-block')
 		$('#tooglepreview, #toogledev').removeClass('active')
 		$('.maindev').addClass('edit').removeClass('dev').removeClass('preview')
-		reFrame()
+		modeEdit()
 	});
 	$('#tooglepreview').click(function () {
-		modePreview()
 		$(this).addClass('active')
 		$('#accordion-dab').addClass('mode')
 		$('.frameNewlist').removeClass('d-block').addClass('d-none')
@@ -413,7 +411,7 @@ $(function () {
 		$('.frameEdit').removeClass('d-block').addClass('d-none')
 		$('#toogleedit, #toogledev').removeClass('active')
 		$('.maindev').addClass('preview').removeClass('edit').removeClass('dev')
-		reFrame()
+		modePreview()
 	});
 
 	$('#noleft').on('click', '.xoatab', function (e) {

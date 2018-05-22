@@ -40,7 +40,7 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
 	app.listen(site.port, function () {
 		console.log('App listening on port !' + site.port);
-		require("openurl").open("http://localhost:" + site.port + '/index.cab')
+		require("openurl").open("http://localhost:" + site.port + '/index.cb')
 	});
 
 }
@@ -56,7 +56,7 @@ router.get('/', function (req, res) {
 })
 
 app.use('/', router);
-app.use('/index.cab', router);
+app.use('/index.cb', router);
 
 // handling 404 errors
 app.get('*', function (req, res, next) {

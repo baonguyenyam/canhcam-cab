@@ -2,6 +2,7 @@ var dab = {
 	SETUP: {},
 	objectName: '',
 	pagesLists: ['index'],
+	modeSwitch: 'dev'
 }
 
 function toggleDAB() {
@@ -14,46 +15,99 @@ function toggleDAB() {
 
 function createPageBuilderDAB(toAdd) {
 	dab.SETUP[toAdd] = []
-	// $('iframe.framePreview').each(function (i, e) {
-	// 	var data = $(this).contents().find("body").html()
-	// 	console.log()
-	// })
 }
 
 function modeEdit() {
-	$('#nav-tabContent .tab-pane').each(function (i, e) {
+	dab.modeSwitch = 'edit'
+	clearAllFrame(dab.modeSwitch)
+	$('#nav-tabContent .tab-pane.active').each(function (i, e) {
 		var fcnt = $(this).find('iframe.frameNewlist').contents()
 		var getcnt = fcnt.find("#listWithHandle").html()
 		var clone = $(this).find('iframe.frameEdit').contents()
 		clone.find("body").html(getcnt)
 	})
-	$('#nav-tabContent .tab-pane .frameEdit').each(function () {
-		$(this).contents().find('.dab-item-remove').each(function () {
-			$(this).click(function () {
-				var getval = $(this).parents('.dab-item')
-				var getCNT = getval.attr('data-content')
-				$('#editContentModal .modal-body').html('<textarea name="editor" id="editor" rows="10" cols="80"></textarea>')
-				$('#editContentModal #editor').val(unescape(getCNT))
-				CKEDITOR.replace('editor')
-				$('#editContentModal').modal('show')
-			})
-		})
-	})
-
-	$('#editContentModal').on('hidden.bs.modal', function (e) {
+	$('#editContentModal').on('hide.bs.modal', function (e) {
 		$('#editContentModal .modal-body').html('')
 	})
-	$('#editContentModal').on('shown.bs.modal', function (e) {
-		$('#editContentModal #saveIt').click(function(){
-			var abc = CKEDITOR.instances.editor.getData()
-			console.log(abc)
-		})
+	$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		if (dab.modeSwitch === 'edit') {
+			$('#nav-tabContent .tab-pane.active').each(function (i, e) {
+				var fcnt = $(this).find('iframe.frameNewlist').contents()
+				var getcnt = fcnt.find("#listWithHandle").html()
+				var clone = $(this).find('iframe.frameEdit').contents()
+				clone.find("body").html(getcnt)
+			})
+			reFrame()
+		}
 	})
+	reFrame()
+}
 
+// function callEditBtn(el) {
+// 	$('#nav-tabContent .tab-pane.active').find('iframe.frameEdit').contents().find('body').each(function () {
+// 		var e = $(this)
+// 		$(this).find('.dab-item-remove').each(function () {
+// 			var u = $(this)
+// 			u.click(function(){
+// 				var item = u.attr('data-id')
+// 				var getval = $(e).find('#' + item)
+// 				var getCNT = getval.attr('data-content')
+// 				$('#editContentModal .modal-body').html('<textarea name="editor" id="editor" rows="10" cols="80"></textarea>')
+// 				$('#editContentModal #editor').val(unescape(getCNT))
+// 				CKEDITOR.replace('editor')
+// 				modalEdit($(e), item, el)
+// 				$('#editContentModal').modal('show')
+// 			})
+// 		})
+// 	})
+
+// }
+
+// function modalEdit(el, item, u) {
+// 	$('#editContentModal #saveIt').click(function () {
+// 		var content = CKEDITOR.instances.editor.getData()
+// 		$(el).find('#' + item).attr('data-content', escape(content))
+// 		$(el).find('#' + item).html(content)
+// 		$(el).find('#' + item).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="' + item+'"><i class="fa fa-times"></i></span>')
+// 		$('#editContentModal').modal('hide')
+// 		var e = $(u).contents().find('body').html()
+// 		$(u).closest('.tab-pane').find('.frameNewlist').contents().find('#listWithHandle').html(e)
+// 	})
+// }
+
+function clearAllFrame(params) {
+	if (params === 'dev'){
+		$('#nav-tabContent .tab-pane').each(function (i, e) {
+			var clone = $(this).find('iframe.frameEdit').contents()
+			clone.find("body").html('')
+		})
+		$('#nav-tabContent .tab-pane').each(function (i, e) {
+			var clone = $(this).find('iframe.framePreview').contents()
+			clone.find("body").html('')
+		})
+	} else if (params === 'preview') {
+		$('#nav-tabContent .tab-pane').each(function (i, e) {
+			var clone = $(this).find('iframe.frameEdit').contents()
+			clone.find("body").html('')
+		})
+	} else {
+		$('#nav-tabContent .tab-pane').each(function (i, e) {
+			var clone = $(this).find('iframe.framePreview').contents()
+			clone.find("body").html('')
+		})
+	}
+}
+
+
+function modeDev() {
+	dab.modeSwitch = 'dev'
+	clearAllFrame(dab.modeSwitch)
 	reFrame()
 }
 
 function modePreview() {
+	dab.modeSwitch = 'preview'
+	clearAllFrame(dab.modeSwitch)
 	$('#nav-tabContent .tab-pane').each(function (i, e) {
 		var fcnt = $(this).find('iframe.frameNewlist').contents()
 		var getcnt = fcnt.find("#listWithHandle").html()
@@ -88,6 +142,9 @@ function modePreview() {
 				$(child).unwrap();
 			}
 		})
+	})
+	$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		reFrame()
 	})
 	reFrame()
 }
@@ -155,26 +212,28 @@ function turnOnDND(evt, iframe) {
 	var gcont = unescape($(itemEl).attr('data-content'))
 	var gnum = $(itemEl).attr('data-key')
 	$(itemEl).html(gcont)
+	var getid = taoIdNgauNhien(10)
+	$(itemEl).attr('id', 'dab-item-' + getid)
 	if (gnum === 'gird' || gnum === 'row') {
 		$(itemEl).find('.container, .container-fluid').each(function (i, e) {
-			var getid = taoIdNgauNhien(10)
-			$(this).attr('id', 'dab-item-' + getid)
+			// var getid = taoIdNgauNhien(10)
+			// $(this).attr('id', 'dab-item-' + getid)
 			$(itemEl).find('.container').addClass('dab-item-gird').attr('data-title', '.container')
 			$(itemEl).find('.container-fluid').addClass('dab-item-gird').attr('data-title', '.container-fluid')
 			frameChild(iframe, getid)
-			$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="fg"><i class="fa fa-times"></i></span>')
+			$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="dab-item-' + getid +'"><i class="fa fa-times"></i></span>')
 		})
 		$(itemEl).find('.row').each(function (i, e) {
 			$(this).find('div').each(function (i, e) {
-				var getid = taoIdNgauNhien(10)
-				$(this).attr('id', 'dab-item-' + getid)
+				// var getid = taoIdNgauNhien(10)
+				// $(this).attr('id', 'dab-item-' + getid)
 				$(this).addClass('dab-item-col').attr('data-title','.col')
 				frameChild(iframe, getid)
-				$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="fg"><i class="fa fa-times"></i></span>')
+				$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="dab-item-' + getid +'"><i class="fa fa-times"></i></span>')
 			})
 		})
 	} else {
-		$(itemEl).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="fg"><i class="fa fa-times"></i></span>')
+		$(itemEl).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="dab-item-' + getid +'"><i class="fa fa-times"></i></span>')
 	}
 }
 
@@ -185,7 +244,8 @@ function frameChild(iframe, getid) {
 		ghostClass: "canhcam-ghost",
 		group: {
 			name: 'chilsList',
-			put: ['mainList', 'chilsList']
+			put: ['mainList', 'chilsList'],
+			pull: false
 		},
 		onMove: function (evt, originalEvent) {
 			$('#nav-tabContent').addClass('active')
@@ -215,11 +275,10 @@ function frameChild(iframe, getid) {
 			turnOnDND(evt, iframe)
 		},
 		animation: 100,
-		filter: '.js-remove-child',
+		filter: '.dab-item-remove',
 		onFilter: function (evt) {
 			if (confirm("Bạn có chắc chắn xóa nó?")) {
-				var el = sortableElm.closest(evt.item);
-				$(el).parents('.dab-item').remove()
+				$(evt.item).closest('.dab-item').remove()
 				toggleContentReadyDAB(iframe)
 				reFrame()
 			} else {
@@ -236,7 +295,8 @@ function taoIframe(iframe) {
 		ghostClass: "canhcam-ghost",
 		group: {
 			name: 'chilsList',
-			put: ['mainList', 'chilsList']
+			put: ['mainList', 'chilsList'],
+			pull: false
 		},
 		onMove: function (evt, originalEvent) {
 			$('#nav-tabContent').addClass('active')
@@ -266,11 +326,10 @@ function taoIframe(iframe) {
 			reFrame()
 		},
 		animation: 100,
-		filter: '.js-remove',
+		filter: '.dab-item-remove',
 		onFilter: function (evt) {
 			if (confirm("Bạn có chắc chắn xóa nó?")) {
-				var el = sortableIframe.closest(evt.item);
-				el && el.parentNode.removeChild(el);
+				$(evt.item).closest('.dab-item').remove()
 				toggleContentReadyDAB(iframe)
 				reFrame()
 			} else {
@@ -316,7 +375,8 @@ function reFrame() {
 		setTimeout(() => {
 			var abc = $(this).contents().height()
 			$(this).css({
-				"min-height": abc + 'px'
+				"height": abc + 'px',
+				"min-height": abc + 'px',
 			})
 			loadingPage()
 		}, 1000);

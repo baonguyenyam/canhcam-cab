@@ -47,6 +47,8 @@ html(serial-key=key.slice(70, 75).toUpperCase()+'-'+key.slice(80, 85).toUpperCas
 		if process.env.NODE_ENV === 'production'
 			link(rel='stylesheet', key=val, href='/views/core.min.css?v='+hash.slice(100, 150))
 			link(rel='stylesheet', key=val, href='/views/app.min.css?v='+hash.slice(0, 50))
+			script(key=val, src='/vendor/ckeditor/ckeditor.js?v='+hash.slice(10, 60))
+			script(key=val, src='/vendor/ckeditor/config.js?v='+hash.slice(40, 90))
 			script(key=val, src='/views/core.min.js?v='+hash.slice(70, 130))
 		else 
 			link(rel='stylesheet', key=val, href='/vendor/css/bootstrap.min.css?v='+text)
