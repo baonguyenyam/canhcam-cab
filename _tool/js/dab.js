@@ -238,7 +238,6 @@ function frameChild(iframe, getid) {
 		group: {
 			name: 'chilsList',
 			put: ['mainList', 'chilsList'],
-			pull: false
 		},
 		onMove: function (evt, originalEvent) {
 			$('#nav-tabContent').addClass('active')
@@ -288,8 +287,7 @@ function taoIframe(iframe) {
 		ghostClass: "canhcam-ghost",
 		group: {
 			name: 'chilsList',
-			put: ['mainList', 'chilsList'],
-			pull: false
+			put: ['mainList', 'chilsList']
 		},
 		onMove: function (evt, originalEvent) {
 			$('#nav-tabContent').addClass('active')

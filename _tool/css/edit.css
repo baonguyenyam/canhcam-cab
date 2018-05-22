@@ -9,3 +9,21 @@ body {
 .dab-item-remove .fa-times:before {
     content: "\f303"
 }
+.dab-item-remove {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+.dab-item{
+	position: relative;
+}
+.dab-item-row > .dab-item-remove,
+.dab-item-gird > .dab-item-remove {
+	display: none;
+	position: relative;
+}
+.dab-item:hover > .js-remove, 
+.dab-item:hover > .js-remove-child {
+	display: block;
+}
