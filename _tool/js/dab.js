@@ -43,37 +43,37 @@ function modeEdit() {
 	reFrame()
 }
 
-// function callEditBtn(el) {
-// 	$('#nav-tabContent .tab-pane.active').find('iframe.frameEdit').contents().find('body').each(function () {
-// 		var e = $(this)
-// 		$(this).find('.dab-item-remove').each(function () {
-// 			var u = $(this)
-// 			u.click(function(){
-// 				var item = u.attr('data-id')
-// 				var getval = $(e).find('#' + item)
-// 				var getCNT = getval.attr('data-content')
-// 				$('#editContentModal .modal-body').html('<textarea name="editor" id="editor" rows="10" cols="80"></textarea>')
-// 				$('#editContentModal #editor').val(unescape(getCNT))
-// 				CKEDITOR.replace('editor')
-// 				modalEdit($(e), item, el)
-// 				$('#editContentModal').modal('show')
-// 			})
-// 		})
-// 	})
 
-// }
 
-// function modalEdit(el, item, u) {
-// 	$('#editContentModal #saveIt').click(function () {
-// 		var content = CKEDITOR.instances.editor.getData()
-// 		$(el).find('#' + item).attr('data-content', escape(content))
-// 		$(el).find('#' + item).html(content)
-// 		$(el).find('#' + item).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="' + item+'"><i class="fa fa-times"></i></span>')
-// 		$('#editContentModal').modal('hide')
-// 		var e = $(u).contents().find('body').html()
-// 		$(u).closest('.tab-pane').find('.frameNewlist').contents().find('#listWithHandle').html(e)
-// 	})
-// }
+function callEditBtn() {
+	// $(e).find('.dab-item-remove').each(function () {
+	// 	$(this).click(function () {
+	// 		alert(1)
+	// 		// var getval = $(this).closest('.dab-item')
+	// 		// var getCNT = getval.attr('data-content')
+	// 		// console.log(unescape(getCNT))
+	// 		// $('#editContentModal .modal-body').html('<textarea name="editor" id="editor" rows="10" cols="80"></textarea>')
+	// 		// $('#editContentModal #editor').val(unescape(getCNT))
+	// 		// CKEDITOR.replace('editor')
+	// 		// modalEdit(getval, f)
+	// 		// $('#editContentModal').modal('show')
+	// 	})
+	// })
+}
+
+function modalEdit(getval, u) {
+	// $('#editContentModal #saveIt').click(function () {
+	// 	var content = CKEDITOR.instances.editor.getData()
+	// 	getval.attr('data-content', escape(content))
+	// 	getval.html(content)
+	// 	getval.append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="fg"><i class="fa fa-times"></i></span>')
+	// 	callEditBtn(getval, u)
+	// 	$('#editContentModal').modal('hide')
+	// 	// var e = $(u).contents().find('body').html()
+	// 	// $(u).closest('.tab-pane').find('.frameNewlist').contents().find('#listWithHandle').html(e)
+	// 	console.log(1)
+	// })
+}
 
 function clearAllFrame(params) {
 	if (params === 'dev'){
@@ -216,19 +216,19 @@ function turnOnDND(evt, iframe) {
 	$(itemEl).attr('id', 'dab-item-' + getid)
 	if (gnum === 'gird' || gnum === 'row') {
 		$(itemEl).find('.container, .container-fluid').each(function (i, e) {
-			// var getid = taoIdNgauNhien(10)
-			// $(this).attr('id', 'dab-item-' + getid)
+			var getidnew = taoIdNgauNhien(10)
+			$(this).attr('id', 'dab-item-' + getidnew)
 			$(itemEl).find('.container').addClass('dab-item-gird').attr('data-title', '.container')
 			$(itemEl).find('.container-fluid').addClass('dab-item-gird').attr('data-title', '.container-fluid')
-			frameChild(iframe, getid)
+			frameChild(iframe, getidnew)
 			$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="dab-item-' + getid +'"><i class="fa fa-times"></i></span>')
 		})
 		$(itemEl).find('.row').each(function (i, e) {
 			$(this).find('div').each(function (i, e) {
-				// var getid = taoIdNgauNhien(10)
-				// $(this).attr('id', 'dab-item-' + getid)
+				var getidnew = taoIdNgauNhien(10)
+				$(this).attr('id', 'dab-item-' + getidnew)
 				$(this).addClass('dab-item-col').attr('data-title','.col')
-				frameChild(iframe, getid)
+				frameChild(iframe, getidnew)
 				$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="dab-item-' + getid +'"><i class="fa fa-times"></i></span>')
 			})
 		})
