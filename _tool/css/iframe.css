@@ -56,10 +56,23 @@ body.active #listWithHandle:after {
 #listWithHandle .dab-item:hover > .js-remove-child, 
 #listWithHandle .dab-item-col:hover > .js-remove, 
 #listWithHandle .dab-item-col:hover > .js-remove-child, 
+#listWithHandle .dab-item-row:hover > .js-remove, 
+#listWithHandle .dab-item-row:hover > .js-remove-child, 
 #listWithHandle .dab-item-gird:hover > .js-remove, 
 #listWithHandle .dab-item-gird:hover > .js-remove-child {
 	display: block;
 }
+
+#listWithHandle .dab-item-row{
+	position: relative;
+}
+
+#listWithHandle .dab-item-row > .js-remove,
+#listWithHandle .dab-item-row > .js-remove-child {
+	right: 0;
+	top: 0;
+}
+
 #listWithHandle .dab-item .dab-item-gird , 
 #listWithHandle .dab-item .dab-item-col {
 	min-height: 90px;
