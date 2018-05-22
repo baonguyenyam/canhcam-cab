@@ -159,6 +159,21 @@
             "Text Small",
             "<p class=\"small\">\r\n  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries\r\n</p>",
             ""
+        ],
+        "typography-15": [
+            "Address",
+            "<address contenteditable=\"true\">\r\n\t\t\t<strong>Twitter, Inc.</strong><br>\r\n\t\t\t795 Folsom Ave, Suite 600<br>\r\n\t\t\tSan Francisco, CA 94107<br>\r\n\t\t\t<abbr title=\"Phone\">P:</abbr> (123) 456-7890\r\n\t\t</address>",
+            ""
+        ],
+        "typography-16": [
+            "Page Header",
+            "<h1 contenteditable=\"true\">CanhCam! <small>Interface Builder for Bootstrap</small></h1>",
+            ""
+        ],
+        "typography-17": [
+            "Description",
+            "<div class=\"view\">\r\n\t\t<h2 contenteditable=\"true\">Heading</h2>\r\n\t\t<p contenteditable=\"true\">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>\r\n\t\t<p><a class=\"btn\" href=\"#\" contenteditable=\"true\">View details »</a></p>\r\n\t</div>",
+            ""
         ]
     },
     "images": {

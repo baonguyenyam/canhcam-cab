@@ -205,13 +205,14 @@ function checkReadyTabDAB(toAdd) {
 			iframe.onload = function () {
 				taoIframe(iframe)
 			};
-			$('.noleft .nav-tabs').append('<li class="nav-item page-tab" data-tab-name="' + toAdd + '" data-tab-id="' + taoIdNgauNhien(10) + '"><a class="nav-link" id="' + toAdd + '-tab" data-toggle="tab" href="#' + toAdd + '" role="tab" aria-controls="' + toAdd + '" aria-selected="true"><i class="fa fa-file mr-2"></i><abbr data-original-title="Edit" class="name-tab">' + toAdd + '</abbr>.html<span class="btn btn-sm btn-danger xoatab" data-id="' + toAdd + '"><i class="fa fa-close"></i></span></a></li>');
-			$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '" role="tabpanel" aria-labelledby="' + toAdd + '-tab"></div>');
+			var getid = taoIdNgauNhien(10)
+			$('.noleft .nav-tabs').append('<li class="nav-item page-tab" data-tab-name="' + toAdd + '-' + getid + '" data-tab-id="' + taoIdNgauNhien(10) + '"><a class="nav-link" id="' + toAdd + '-' + getid + '-tab" data-toggle="tab" href="#' + toAdd + '-' + getid + '" role="tab" aria-controls="' + toAdd + '-' + getid + '" aria-selected="true"><i class="fa fa-file mr-2"></i><abbr data-original-title="Edit" class="name-tab">' + toAdd + '</abbr>.html<span class="btn btn-sm btn-danger xoatab" data-id="' + toAdd + '-' + getid + '"><i class="fa fa-close"></i></span></a></li>');
+			$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '-' + getid + '" role="tabpanel" aria-labelledby="' + toAdd + '-' + getid + '-tab"></div>');
 			$('#toDoList')[0].reset();
-			$('#' + toAdd).html(iframe)
-			$('#' + toAdd).append('<iframe src="/views/mode.html" class="framePreview d-none"></iframe>')
-			$('#' + toAdd).append('<iframe src="/views/edit.html" class="frameEdit d-none"></iframe>')
-			$('#' + toAdd + '-tab').trigger('click')
+			$('#' + toAdd + '-' + getid).html(iframe)
+			$('#' + toAdd + '-' + getid).append('<iframe src="/views/mode.html" class="framePreview d-none"></iframe>')
+			$('#' + toAdd + '-' + getid).append('<iframe src="/views/edit.html" class="frameEdit d-none"></iframe>')
+			$('#' + toAdd + '-' + getid + '-tab').trigger('click')
 			$('#toogledev').trigger('click')
 			createPageBuilderDAB(toAdd)
 			checkTab()
