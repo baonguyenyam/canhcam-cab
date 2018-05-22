@@ -382,8 +382,8 @@ function taoIframe(iframe) {
 			}
 		}
 	});
-	$('.mainList').on('dragenter', function () {
-		$('.sortable-ghost', list).remove();
+	$('.mainList').on('dragenter', function (e) {
+		$('.canhcam-ghost', list).remove();
 	});
 }
 
