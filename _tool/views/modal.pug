@@ -297,3 +297,17 @@
 			.modal-footer
 				button.btn.btn-secondary(type='button', data-dismiss='modal') Close
 				button.btn.btn-primary#saveIt(type='button') Save
+// Modal
+#elmExp.modal(tabindex='-1', role='dialog', aria-labelledby='editContentModaelmExp', aria-hidden='true')
+	.modal-dialog.modal-md(role='document')
+		.modal-content
+			.modal-header
+				h5#editContentModaelmExp.modal-title HTML
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body
+				pre.prettyprint
+					code(lang="html")
+				textarea#langhtml(style="display:none")
+			.modal-footer
+				button.btn.btn-secondary(type='button', data-dismiss='modal') Close

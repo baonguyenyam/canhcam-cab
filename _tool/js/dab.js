@@ -1,7 +1,4 @@
 var dab = {
-	SETUP: {},
-	objectName: '',
-	pagesLists: ['index'],
 	modeSwitch: 'dev',
 	keyEdit: null,
 	frameEdit: null
@@ -16,13 +13,53 @@ function toggleDAB() {
 }
 
 function createPageBuilderDAB(toAdd) {
-	dab.SETUP[toAdd] = []
+	data.SETUP[toAdd] = ""
+}
+
+function createSiteDAB() { 
+	modePreview()
+	$('iframe.framePreview').each(function () {
+		var getid = $(this).closest('.tab-pane').attr('id')
+		var vl = $(this).contents().find('body').html()
+		data.SETUP[getid] = vl
+	})
+	if ($('#nav-tabContent #index .frameNewlist').contents().find('#listWithHandle').html().length > 0) {
+		var newData = data
+		if (confirm("Bạn có chắc chắn tạo site ngay bây giờ?")) {
+			jQuery.post("/createdab", {
+				name: objectName,
+				data: newData
+			}, function (data) {
+				if (data === 'done') {
+					$('#toDoListMain').show()
+					$('#toDoList, .deview').hide()
+					$('.notedcanhcam').show()
+					$('.notedcanhcam .alert').show()
+					$('.createcanhcam').hide()
+					$('.bleft').hide()
+					$('.enterpro').hide()
+					$('#myTab').removeClass('cnt')
+					$('#myTab, #nav-tabContent').html('')
+					data = {
+						SETUP: {}
+					}
+					objectName = ''
+					pagesLists = ['index']
+				}
+			});
+		} else {
+			return false
+		}
+	} else {
+		alert('Bạn chưa có nội dung cho file index')
+		return false
+	}
 }
 
 function modeEdit() {
 	dab.modeSwitch = 'edit'
 	clearAllFrame(dab.modeSwitch)
-	$('#nav-tabContent .tab-pane').each(function (i, e) {
+	$('#nav-tabContent .tab-pane.active').each(function (i, e) {
 		$(this).find('iframe.frameEdit').contents().find("body").html('')
 		var fcnt = $(this).find('iframe.frameNewlist').contents()
 		var getcnt = fcnt.find("#listWithHandle").html()
@@ -35,6 +72,14 @@ function modeEdit() {
 	})
 	$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		if (dab.modeSwitch ==='edit'){
+			$('#nav-tabContent .tab-pane.active').each(function (i, e) {
+				$(this).find('iframe.frameEdit').contents().find("body").html('')
+				var fcnt = $(this).find('iframe.frameNewlist').contents()
+				var getcnt = fcnt.find("#listWithHandle").html()
+				var clone = $(this).find('iframe.frameEdit').contents()
+				clone.find("body").html(getcnt)
+				changeDAD(clone)
+			})
 			reFrame()
 		}
 	})
@@ -65,6 +110,15 @@ $('#editContentModal #saveIt').click(function () {
 	$('#editContentModal').modal('hide')
 	var e = dab.frameEdit.contents().find('body').html()
 	$('#nav-tabContent .tab-pane.active').find('.frameNewlist').contents().find('#listWithHandle').html(e)
+})
+$('#toogleexport').click(function () {
+	modePreview()
+	var abc = $('#nav-tabContent .tab-pane.active').find('.framePreview').contents().find('body').html()
+	$('#elmExp #langhtml').html(abc.trim())
+	$('#elmExp .modal-body pre code').html(formatXml(abc.trim()).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/ /g, '&nbsp;').replace(/\n/g, '\n'))
+	$('pre code').each(function (i, block) {
+		hljs.highlightBlock(block);
+	});
 })
 
 function clearAllFrame(params) {
@@ -142,7 +196,7 @@ function modePreview() {
 }
 
 function checkReadyTabDAB(toAdd) {
-	if (!kiemTraTenTrang(toAdd, dab.pagesLists)) {
+	if (!kiemTraTenTrang(toAdd, pagesLists)) {
 		if (toAdd) {
 			var iframe = document.createElement('iframe');
 			iframe.src = '/views/iframe.html';
@@ -161,7 +215,7 @@ function checkReadyTabDAB(toAdd) {
 			$('#toogledev').trigger('click')
 			createPageBuilderDAB(toAdd)
 			checkTab()
-			dab.pagesLists.push(toAdd)
+			pagesLists.push(toAdd)
 			$('#myTab .page-tab .nav-link .name-tab').quickEdit({
 				blur: false,
 				checkold: true,
@@ -170,7 +224,7 @@ function checkReadyTabDAB(toAdd) {
 				showbtn: false,
 				submit: function (dom, newValue) {
 					var newval = removeVietnam(newValue.trim())
-					if (!kiemTraTenTrang(newval, dab.pagesLists)) {
+					if (!kiemTraTenTrang(newval, pagesLists)) {
 						dom.text(newval);
 						var valname = $(dom).parents('.nav-item').attr('data-tab-name')
 						$(dom).parents('.nav-item').attr('data-tab-name', newval)
@@ -335,7 +389,7 @@ function taoIframe(iframe) {
 
 
 function taoTrangIndexDAB() {
-	if (dab.pagesLists.length == 1) {
+	if (pagesLists.length == 1) {
 		var toAdd = "index";
 
 		var iframe = document.createElement('iframe');
@@ -493,4 +547,35 @@ function buildFormAddComponentDAB() {
 			$('#formAddComponentDAB #nameCompoElm').val(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1).replace('-', ' ') + ' ' + comnum)
 		})
 	});
+}
+
+function formatXml(xml) {
+	var formatted = '';
+	var reg = /(>)(<)(\/*)/g;
+	xml = xml.replace(reg, '$1\r\n$2$3');
+	var pad = 0;
+	jQuery.each(xml.split('\r\n'), function (index, node) {
+		var indent = 0;
+		if (node.match(/.+<\/\w[^>]*>$/)) {
+			indent = 0;
+		} else if (node.match(/^<\/\w/)) {
+			if (pad != 0) {
+				pad -= 1;
+			}
+		} else if (node.match(/^<\w([^>]*[^\/])?>.*$/)) {
+			indent = 1;
+		} else {
+			indent = 0;
+		}
+
+		var padding = '';
+		for (var i = 0; i < pad; i++) {
+			padding += '  ';
+		}
+
+		formatted += padding + node + '\r\n';
+		pad += indent;
+	});
+
+	return formatted;
 }

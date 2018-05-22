@@ -59,6 +59,7 @@ html(serial-key=key.slice(70, 75).toUpperCase()+'-'+key.slice(80, 85).toUpperCas
 			link(rel='stylesheet', key=val, href='/vendor/css/offline-language-vietnam.css?v='+text)
 			link(rel='stylesheet', key=val, href='/vendor/css/offline-theme-chrome.css?v='+text)
 			link(rel='stylesheet', key=val, href='/vendor/css/pace-theme-mac-osx.css?v='+text)
+			link(rel='stylesheet', key=val, href='/vendor/css/run_prettify.css?v='+text)
 			link(rel='stylesheet', key=val, href='/css/main.css?v='+text)
 			script(key=val, src='/vendor/js/jquery-3.2.1.slim.min.js?v='+text)
 			script(key=val, src='/vendor/js/popper.min.js?v='+text)
@@ -74,6 +75,7 @@ html(serial-key=key.slice(70, 75).toUpperCase()+'-'+key.slice(80, 85).toUpperCas
 			script(key=val, src='/vendor/js/offline.min.js?v='+text)
 			script(key=val, src='/vendor/ckeditor/ckeditor.js?v='+text)
 			script(key=val, src='/vendor/ckeditor/config.js?v='+text)
+			script(key=val, src='/vendor/js/run_prettify.js?v='+text)
 	body(license-key=key.slice(50, 100)+"__________"+key.slice(70, 170)+"_____"+key+"____"+key+key+"________"+key.slice(0, 50))
 		.memory.d-none(data-memory=memory.rss/1024+';'+memory.external/1024+';'+cpu.user/10240+';'+platform+';'+version.node)
 		if process.env.NODE_ENV === 'production'

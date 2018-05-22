@@ -254,7 +254,7 @@ $('#formAddComponent button').click(function (e) {
 $('#createSite').click(function (e) {
 	e.preventDefault();
 	if (modeCAD === 'dab') {
-		alert('HEHE')
+		createSiteDAB()
 	} else {
 		if ($('#nav-tabContent #index .newlist .list-group-item').length > 0) {
 			var newData = data
