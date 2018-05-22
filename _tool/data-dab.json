@@ -89,12 +89,204 @@
             ""
         ]
     },
-    "buttons": {},
-    "form": {},
-    "collapse": {},
-    "dropdowns": {},
-    "list": {},
-    "modal": {},
+    "typography": {
+        "typography-1": [
+            "H1 - Heading",
+            "<h1>h1. Bootstrap heading</h1>",
+            ""
+        ],
+        "typography-2": [
+            "H2 - Heading",
+            "<h2>h2. Bootstrap heading</h2>",
+            ""
+        ],
+        "typography-3": [
+            "H3 - Heading",
+            "<h3>h3. Bootstrap heading</h3>",
+            ""
+        ],
+        "typography-4": [
+            "H4 - Heading",
+            "<h4>h4. Bootstrap heading</h4>",
+            ""
+        ],
+        "typography-5": [
+            "H5 - Heading",
+            "<h5>h5. Bootstrap heading</h5>",
+            ""
+        ],
+        "typography-6": [
+            "H6 - Heading",
+            "<h6>h6. Bootstrap heading</h6>",
+            ""
+        ],
+        "typography-7": [
+            "Display 1",
+            "<h1 class=\"display-1\">Display 1</h1>",
+            ""
+        ],
+        "typography-8": [
+            "Display 2",
+            "<h1 class=\"display-2\">Display 2</h1>",
+            ""
+        ],
+        "typography-9": [
+            "Display 3",
+            "<h1 class=\"display-3\">Display 3</h1>",
+            ""
+        ],
+        "typography-10": [
+            "Display 4",
+            "<h1 class=\"display-4\">Display 4</h1>",
+            ""
+        ],
+        "typography-11": [
+            "Text LEAD",
+            "<p class=\"lead\">\r\n  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.\r\n</p>",
+            ""
+        ],
+        "typography-12": [
+            "Lorem Ipsum",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            ""
+        ],
+        "typography-13": [
+            "Blockquotes",
+            "<blockquote class=\"blockquote\">\r\n  <p class=\"mb-0\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\r\n  <footer class=\"blockquote-footer\">Someone famous in <cite title=\"Source Title\">Source Title</cite></footer>\r\n</blockquote>",
+            ""
+        ],
+        "typography-14": [
+            "Text Small",
+            "<p class=\"small\">\r\n  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries\r\n</p>",
+            ""
+        ]
+    },
+    "images": {
+        "images-1": [
+            "Responsive 565X250",
+            "<img class=\"img-fluid\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22565%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20565%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16387f4adde%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A28pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16387f4adde%22%3E%3Crect%20width%3D%22565%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22210.890625%22%20y%3D%22138.2%22%3E%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\">",
+            ""
+        ],
+        "images-2": [
+            "Responsive 1600x400",
+            "<img class=\"img-fluid\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221600%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201600%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16387f4adde%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A28pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16387f4adde%22%3E%3Crect%20width%3D%221600%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22210.890625%22%20y%3D%22138.2%22%3E%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\">",
+            ""
+        ],
+        "images-3": [
+            "Responsive 200x200",
+            "<img class=\"img-thumbnail\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16387f45379%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16387f45379%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\" data-holder-rendered=\"true\">",
+            ""
+        ]
+    },
+    "buttons": {
+        "buttons-1": [
+            "Buttons Basic",
+            "<button type=\"button\" class=\"btn btn-primary\">Primary</button>",
+            ""
+        ],
+        "buttons-2": [
+            "Buttons Outline",
+            "<button type=\"button\" class=\"btn btn-outline-primary\">Primary</button>",
+            ""
+        ],
+        "buttons-3": [
+            "Buttons Group",
+            "<div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\r\n  <label class=\"btn btn-secondary active\">\r\n    <input type=\"radio\" name=\"options\" id=\"option1\" autocomplete=\"off\" checked> Active\r\n  </label>\r\n  <label class=\"btn btn-secondary\">\r\n    <input type=\"radio\" name=\"options\" id=\"option2\" autocomplete=\"off\"> Radio\r\n  </label>\r\n  <label class=\"btn btn-secondary\">\r\n    <input type=\"radio\" name=\"options\" id=\"option3\" autocomplete=\"off\"> Radio\r\n  </label>\r\n</div>",
+            ""
+        ]
+    },
+    "form": {
+        "form-1": [
+            "Form Basic",
+            "<form>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputEmail1\">Email address</label>\r\n    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\r\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputPassword1\">Password</label>\r\n    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\r\n  </div>\r\n  <div class=\"form-group form-check\">\r\n    <input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\r\n    <label class=\"form-check-label\" for=\"exampleCheck1\">Check me out</label>\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n</form>",
+            ""
+        ],
+        "form-2": [
+            "Form Inline",
+            "<form class=\"form-inline\">\r\n  <div class=\"form-group mb-2\">\r\n    <label for=\"staticEmail2\" class=\"sr-only\">Email</label>\r\n    <input type=\"text\" readonly class=\"form-control-plaintext\" id=\"staticEmail2\" value=\"email@example.com\">\r\n  </div>\r\n  <div class=\"form-group mx-sm-3 mb-2\">\r\n    <label for=\"inputPassword2\" class=\"sr-only\">Password</label>\r\n    <input type=\"password\" class=\"form-control\" id=\"inputPassword2\" placeholder=\"Password\">\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-primary mb-2\">Confirm identity</button>\r\n</form>",
+            ""
+        ],
+        "form-3": [
+            "Input Group",
+            "<div class=\"input-group mb-3\">\r\n  <input type=\"text\" class=\"form-control\" placeholder=\"Recipient's username\" aria-label=\"Recipient's username\" aria-describedby=\"basic-addon2\">\r\n  <div class=\"input-group-append\">\r\n    <span class=\"input-group-text\" id=\"basic-addon2\">@example.com</span>\r\n  </div>\r\n</div>",
+            ""
+        ],
+        "form-4": [
+            "Input Group Button",
+            "<div class=\"input-group mb-3\">\r\n  <input type=\"text\" class=\"form-control\" placeholder=\"Recipient's username\" aria-label=\"Recipient's username\" aria-describedby=\"basic-addon2\">\r\n  <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Button</button>\r\n  </div>\r\n</div>",
+            ""
+        ]
+    },
+    "collapse": {
+        "collapse-1": [
+            "Collapse Basic",
+            "<p>\r\n  <a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseExample\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\">\r\n    Link with href\r\n  </a>\r\n</p>\r\n<div class=\"collapse\" id=\"collapseExample\">\r\n  <div class=\"card card-body\">\r\n    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.\r\n  </div>\r\n</div>",
+            ""
+        ],
+        "collapse-2": [
+            "Accordion",
+            "<div class=\"accordion\" id=\"accordion\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" id=\"headingOne\">\r\n      <h5 class=\"mb-0\">\r\n        <button class=\"btn btn-link\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\r\n          Collapsible Group Item #1\r\n        </button>\r\n      </h5>\r\n    </div>\r\n\r\n    <div id=\"collapseOne\" class=\"collapse show\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">\r\n      <div class=\"card-body\">\r\n        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" id=\"headingTwo\">\r\n      <h5 class=\"mb-0\">\r\n        <button class=\"btn btn-link collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">\r\n          Collapsible Group Item #2\r\n        </button>\r\n      </h5>\r\n    </div>\r\n    <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordion\">\r\n      <div class=\"card-body\">\r\n        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" id=\"headingThree\">\r\n      <h5 class=\"mb-0\">\r\n        <button class=\"btn btn-link collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"false\" aria-controls=\"collapseThree\">\r\n          Collapsible Group Item #3\r\n        </button>\r\n      </h5>\r\n    </div>\r\n    <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingThree\" data-parent=\"#accordion\">\r\n      <div class=\"card-body\">\r\n        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
+            ""
+        ]
+    },
+    "dropdowns": {
+        "dropdowns-1": [
+            "Dropdowns Button",
+            "<div class=\"dropdown\">\r\n  <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n    Dropdown button\r\n  </button>\r\n  <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n    <a class=\"dropdown-item\" href=\"#\">Action</a>\r\n    <a class=\"dropdown-item\" href=\"#\">Another action</a>\r\n    <a class=\"dropdown-item\" href=\"#\">Something else here</a>\r\n  </div>\r\n</div>",
+            ""
+        ]
+    },
+    "table": {
+        "table-1": [
+            "Table Basic",
+            "<table class=\"table table-striped  table-bordered\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">#</th>\r\n      <th scope=\"col\">First</th>\r\n      <th scope=\"col\">Last</th>\r\n      <th scope=\"col\">Handle</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <th scope=\"row\">1</th>\r\n      <td>Mark</td>\r\n      <td>Otto</td>\r\n      <td>@mdo</td>\r\n    </tr>\r\n    <tr>\r\n      <th scope=\"row\">2</th>\r\n      <td>Jacob</td>\r\n      <td>Thornton</td>\r\n      <td>@fat</td>\r\n    </tr>\r\n    <tr>\r\n      <th scope=\"row\">3</th>\r\n      <td>Larry</td>\r\n      <td>the Bird</td>\r\n      <td>@twitter</td>\r\n    </tr>\r\n  </tbody>\r\n</table>",
+            ""
+        ],
+        "table-2": [
+            "Table Hover",
+            "<table class=\"table table-striped  table-bordered table-hover\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">#</th>\r\n      <th scope=\"col\">First</th>\r\n      <th scope=\"col\">Last</th>\r\n      <th scope=\"col\">Handle</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <th scope=\"row\">1</th>\r\n      <td>Mark</td>\r\n      <td>Otto</td>\r\n      <td>@mdo</td>\r\n    </tr>\r\n    <tr>\r\n      <th scope=\"row\">2</th>\r\n      <td>Jacob</td>\r\n      <td>Thornton</td>\r\n      <td>@fat</td>\r\n    </tr>\r\n    <tr>\r\n      <th scope=\"row\">3</th>\r\n      <td>Larry</td>\r\n      <td>the Bird</td>\r\n      <td>@twitter</td>\r\n    </tr>\r\n  </tbody>\r\n</table>",
+            ""
+        ]
+    },
+    "list": {
+        "list-1": [
+            "List alignment",
+            "<dl class=\"row\">\r\n  <dt class=\"col-sm-3\">Description lists</dt>\r\n  <dd class=\"col-sm-9\">A description list is perfect for defining terms.</dd>\r\n\r\n  <dt class=\"col-sm-3\">Euismod</dt>\r\n  <dd class=\"col-sm-9\">\r\n    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>\r\n    <p>Donec id elit non mi porta gravida at eget metus.</p>\r\n  </dd>\r\n\r\n  <dt class=\"col-sm-3\">Malesuada porta</dt>\r\n  <dd class=\"col-sm-9\">Etiam porta sem malesuada magna mollis euismod.</dd>\r\n\r\n  <dt class=\"col-sm-3 text-truncate\">Truncated term is truncated</dt>\r\n  <dd class=\"col-sm-9\">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>\r\n\r\n  <dt class=\"col-sm-3\">Nesting</dt>\r\n  <dd class=\"col-sm-9\">\r\n    <dl class=\"row\">\r\n      <dt class=\"col-sm-4\">Nested definition list</dt>\r\n      <dd class=\"col-sm-8\">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>\r\n    </dl>\r\n  </dd>\r\n</dl>",
+            ""
+        ],
+        "list-2": [
+            "List UL",
+            "<ul>\r\n      <li>Phasellus iaculis neque</li>\r\n      <li>Purus sodales ultricies</li>\r\n      <li>Vestibulum laoreet porttitor sem</li>\r\n      <li>Ac tristique libero volutpat at</li>\r\n</ul>",
+            ""
+        ],
+        "list-3": [
+            "List OL",
+            "<ol>\r\n      <li>Phasellus iaculis neque</li>\r\n      <li>Purus sodales ultricies</li>\r\n      <li>Vestibulum laoreet porttitor sem</li>\r\n      <li>Ac tristique libero volutpat at</li>\r\n</ol>",
+            ""
+        ],
+        "list-4": [
+            "List Unstyled",
+            "<ul class=\"list-unstyled\">\r\n  <li>Lorem ipsum dolor sit amet</li>\r\n  <li>Consectetur adipiscing elit</li>\r\n  <li>Integer molestie lorem at massa</li>\r\n  <li>Facilisis in pretium nisl aliquet</li>\r\n  <li>Nulla volutpat aliquam velit</li>\r\n</ul>",
+            ""
+        ],
+        "list-5": [
+            "List Group Basic",
+            "<ul class=\"list-group\">\r\n  <li class=\"list-group-item active\">Cras justo odio</li>\r\n  <li class=\"list-group-item\">Dapibus ac facilisis in</li>\r\n  <li class=\"list-group-item\">Morbi leo risus</li>\r\n  <li class=\"list-group-item\">Porta ac consectetur ac</li>\r\n  <li class=\"list-group-item\">Vestibulum at eros</li>\r\n</ul>",
+            ""
+        ]
+    },
+    "modal": {
+        "modal-1": [
+            "Modal Basic",
+            "<!-- Button trigger modal -->\r\n<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n  Launch demo modal\r\n</button>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Modal title</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        ...\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
+            ""
+        ],
+        "modal-2": [
+            "Modal Vertically",
+            "<!-- Button trigger modal -->\r\n<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\r\n  Launch demo modal\r\n</button>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalCenterTitle\">Modal title</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        ...\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
+            ""
+        ]
+    },
     "navs": {
         "navs-1": [
             "Base nav",
@@ -134,12 +326,59 @@
             "Tab vertical",
             "<div class=\"row\">\r\n  <div class=\"col-3\">\r\n    <div class=\"nav flex-column nav-pills\" id=\"v-pills-tab\" role=\"tablist\" aria-orientation=\"vertical\">\r\n      <a class=\"nav-link active\" id=\"v-pills-home-tab\" data-toggle=\"pill\" href=\"#v-pills-home\" role=\"tab\" aria-controls=\"v-pills-home\" aria-selected=\"true\">Home</a>\r\n      <a class=\"nav-link\" id=\"v-pills-profile-tab\" data-toggle=\"pill\" href=\"#v-pills-profile\" role=\"tab\" aria-controls=\"v-pills-profile\" aria-selected=\"false\">Profile</a>\r\n      <a class=\"nav-link\" id=\"v-pills-messages-tab\" data-toggle=\"pill\" href=\"#v-pills-messages\" role=\"tab\" aria-controls=\"v-pills-messages\" aria-selected=\"false\">Messages</a>\r\n      <a class=\"nav-link\" id=\"v-pills-settings-tab\" data-toggle=\"pill\" href=\"#v-pills-settings\" role=\"tab\" aria-controls=\"v-pills-settings\" aria-selected=\"false\">Settings</a>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-9\">\r\n    <div class=\"tab-content\" id=\"v-pills-tabContent\">\r\n      <div class=\"tab-pane fade show active\" id=\"v-pills-home\" role=\"tabpanel\" aria-labelledby=\"v-pills-home-tab\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"v-pills-profile\" role=\"tabpanel\" aria-labelledby=\"v-pills-profile-tab\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"v-pills-messages\" role=\"tabpanel\" aria-labelledby=\"v-pills-messages-tab\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"v-pills-settings\" role=\"tabpanel\" aria-labelledby=\"v-pills-settings-tab\">...</div>\r\n    </div>\r\n  </div>\r\n</div>",
             ""
+        ],
+        "tab-3": [
+            "Tab by List Group",
+            "<div class=\"row\">\r\n  <div class=\"col-4\">\r\n    <div class=\"list-group\" id=\"list-tab\" role=\"tablist\">\r\n      <a class=\"list-group-item list-group-item-action active\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\">Home</a>\r\n      <a class=\"list-group-item list-group-item-action\" id=\"list-profile-list\" data-toggle=\"list\" href=\"#list-profile\" role=\"tab\" aria-controls=\"profile\">Profile</a>\r\n      <a class=\"list-group-item list-group-item-action\" id=\"list-messages-list\" data-toggle=\"list\" href=\"#list-messages\" role=\"tab\" aria-controls=\"messages\">Messages</a>\r\n      <a class=\"list-group-item list-group-item-action\" id=\"list-settings-list\" data-toggle=\"list\" href=\"#list-settings\" role=\"tab\" aria-controls=\"settings\">Settings</a>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-8\">\r\n    <div class=\"tab-content\" id=\"nav-tabContent\">\r\n      <div class=\"tab-pane fade show active\" id=\"list-home\" role=\"tabpanel\" aria-labelledby=\"list-home-list\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"list-profile\" role=\"tabpanel\" aria-labelledby=\"list-profile-list\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"list-messages\" role=\"tabpanel\" aria-labelledby=\"list-messages-list\">...</div>\r\n      <div class=\"tab-pane fade\" id=\"list-settings\" role=\"tabpanel\" aria-labelledby=\"list-settings-list\">...</div>\r\n    </div>\r\n  </div>\r\n</div>",
+            ""
+        ]
+    },
+    "cards": {
+        "cards-1": [
+            "Cards Basic",
+            "<div class=\"card\">\r\n  <img class=\"card-img-top\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1638812a91f%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1638812a91f%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.203125%22%20y%3D%2296.3%22%3E2%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\" data-holder-rendered=\"true\">\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Card title</h5>\r\n    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n  </div>\r\n</div>",
+            ""
+        ],
+        "cards-2": [
+            "Titles, text, and links",
+            "<div class=\"card\" style=\"width: 18rem;\">\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Card title</h5>\r\n    <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>\r\n    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n    <a href=\"#\" class=\"card-link\">Card link</a>\r\n    <a href=\"#\" class=\"card-link\">Another link</a>\r\n  </div>\r\n</div>",
+            ""
+        ],
+        "cards-3": [
+            "Header and footer",
+            "<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    Featured\r\n  </div>\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Special title treatment</h5>\r\n    <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>\r\n    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n  </div>\r\n</div>",
+            ""
         ]
     },
     "components": {
         "components-1": [
             "Breadcrumb Basic",
             "<nav aria-label=\"breadcrumb\"><ol class=\"breadcrumb\"><li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li><li class=\"breadcrumb-item\"><a href=\"#\">Library</a></li><li class=\"breadcrumb-item active\" aria-current=\"page\">Data</li></ol></nav>"
+        ],
+        "components-2": [
+            "Alert Danger",
+            "<div class=\"alert alert-danger\" role=\"alert\">\r\n  A simple primary alert—check it out!\r\n</div>",
+            ""
+        ],
+        "components-3": [
+            "Alert Dismissing",
+            "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">\r\n  <strong>Holy guacamole!</strong> You should check in on some of those fields below.\r\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>",
+            ""
+        ],
+        "components-4": [
+            "Jumbotron",
+            "<div class=\"jumbotron\">\r\n  <h1 class=\"display-4\">Hello, world!</h1>\r\n  <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>\r\n  <hr class=\"my-4\">\r\n  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>\r\n  <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>\r\n</div>",
+            ""
+        ],
+        "components-5": [
+            "Pagination",
+            "<nav aria-label=\"Page navigation example\">\r\n  <ul class=\"pagination justify-content-end\">\r\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Previous</a></li>\r\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>\r\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\r\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\r\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a></li>\r\n  </ul>\r\n</nav>",
+            ""
+        ],
+        "components-6": [
+            "Media heading",
+            "<div class=\"media\">\r\n  <img class=\"mr-3\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16388100bc4%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16388100bc4%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.84375%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\" data-holder-rendered=\"true\">\r\n  <div class=\"media-body\">\r\n    <h5 class=\"mt-0\">Media heading</h5>\r\n    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.\r\n  </div>\r\n</div>",
+            ""
         ]
     }
 }
