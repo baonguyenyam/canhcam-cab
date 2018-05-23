@@ -36,13 +36,22 @@ body.active #listWithHandle:after {
 #listWithHandle .js-remove-child {
 	position: absolute;
 	display: none;
-	right: -1px;
-	top: -1px;
+	right: 0;
+	top: 0;
 	padding: 0 .5rem;
 	border-radius: 0;
 	line-height: 1.4rem;
+	height: 1.5rem;
 	z-index: 100;
+	border-radius: 0 2px 0 0 
 }
+
+#listWithHandle .js-remove i, 
+#listWithHandle .js-remove-child i {
+	font-size: .7rem;
+}
+
+
 #listWithHandle.cnt:after {
 	content: '';
 	background: none
@@ -52,12 +61,23 @@ body.active #listWithHandle:after {
 	margin-top: 1px;
 }
 
+#listWithHandle .dab-item .dab-item-section {
+	box-shadow: 0 0 0 1px #C8EBFB inset !important;
+}
+#listWithHandle .dab-item .dab-item-section:after {
+	background: #C8EBFB !important;
+}
+
 #listWithHandle .dab-item:hover > .js-remove, 
 #listWithHandle .dab-item:hover > .js-remove-child, 
 #listWithHandle .dab-item-col:hover > .js-remove, 
 #listWithHandle .dab-item-col:hover > .js-remove-child, 
 #listWithHandle .dab-item-row:hover > .js-remove, 
 #listWithHandle .dab-item-row:hover > .js-remove-child, 
+#listWithHandle .dab-item-section:hover > .js-remove, 
+#listWithHandle .dab-item-section:hover > .js-remove-child, 
+#listWithHandle .dab-item-article:hover > .js-remove, 
+#listWithHandle .dab-item-article:hover > .js-remove-child, 
 #listWithHandle .dab-item-gird:hover > .js-remove, 
 #listWithHandle .dab-item-gird:hover > .js-remove-child {
 	display: block;
@@ -69,19 +89,24 @@ body.active #listWithHandle:after {
 
 #listWithHandle .dab-item-row > .js-remove,
 #listWithHandle .dab-item-row > .js-remove-child {
-	right: 0;
+	right: 1px;
 	top: 0;
 }
 
 #listWithHandle .dab-item .dab-item-gird , 
+#listWithHandle .dab-item .dab-item-section , 
+#listWithHandle .dab-item .dab-item-article , 
 #listWithHandle .dab-item .dab-item-col {
 	min-height: 90px;
-	padding: 3rem 2rem 1.5rem 2rem;
+	padding: 2.5rem 2rem 1.25rem 2rem;
 	position: relative;
-	border: 1px solid #dfdfdf;
-	background: white
+	box-shadow: 0 0 0 1px #dfdfdf inset;
+	background: white;
+	border-radius: 2px;
 }
 #listWithHandle .dab-item .dab-item-gird:after,
+#listWithHandle .dab-item .dab-item-section:after,
+#listWithHandle .dab-item .dab-item-article:after,
 #listWithHandle .dab-item .dab-item-col:after {
 	position: absolute;
 	top: 0;
@@ -95,6 +120,7 @@ body.active #listWithHandle:after {
 	font-size: .8rem;
 	padding: 0 .25rem;
 	line-height: 1.5rem;
+	border-radius:  2px 2px 0 0;
 }
 .sortable-drag {
 	background: #daf4ff
@@ -107,4 +133,58 @@ body.active #listWithHandle:after {
 	background: #000;
 	padding: 2rem;
 	opacity: .5;
+}
+
+.dab-component-typography:hover:after,
+.dab-component-images:hover:after,
+.dab-component-buttons:hover:after,
+.dab-component-form:hover:after,
+.dab-component-collapse:hover:after,
+.dab-component-dropdowns:hover:after,
+.dab-component-table:hover:after,
+.dab-component-list:hover:after,
+.dab-component-modal:hover:after,
+.dab-component-navs:hover:after,
+.dab-component-navbar:hover:after,
+.dab-component-tab:hover:after,
+.dab-component-cards:hover:after,
+.dab-component-components:hover:after {
+	box-shadow: 0 0 0 1px #fff6db inset;
+	border-radius: 3px;
+	z-index: 1;
+	display: block;
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	width: calc(100% + 6px);
+	height: calc(100% + 6px);
+}
+.dab-component-typography:hover:before,
+.dab-component-images:hover:before,
+.dab-component-buttons:hover:before,
+.dab-component-form:hover:before,
+.dab-component-collapse:hover:before,
+.dab-component-dropdowns:hover:before,
+.dab-component-table:hover:before,
+.dab-component-list:hover:before,
+.dab-component-modal:hover:before,
+.dab-component-navs:hover:before,
+.dab-component-navbar:hover:before,
+.dab-component-tab:hover:before,
+.dab-component-cards:hover:before,
+.dab-component-components:hover:before {
+	box-shadow: 0 0 0 3px #dcf8ff;
+	border-radius: 3px;
+	z-index: 1;
+	display: block;
+	content: '';
+	position: absolute;
+	top: -0;
+	left: -0;
+	width: 100%;
+	height: 100%;
+}
+.dab-item-edit {
+	display: none;
 }

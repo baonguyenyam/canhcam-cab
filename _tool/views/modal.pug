@@ -296,7 +296,7 @@
 				
 			.modal-footer
 				button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-				button.btn.btn-primary#saveIt(type='button') Save
+				button.btn.btn-success#saveIt(type='button') Save
 // Modal
 #elmExp.modal(tabindex='-1', role='dialog', aria-labelledby='editContentModaelmExp', aria-hidden='true')
 	.modal-dialog.modal-md(role='document')
@@ -311,3 +311,21 @@
 				textarea#langhtml(style="display:none")
 			.modal-footer
 				button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+#propertiesContentModal.modal(tabindex='-1', role='dialog', aria-labelledby='ProContentModaExp', aria-hidden='true')
+	.modal-dialog.modal-md(role='document')
+		.modal-content
+			.modal-header
+				h5#ProContentModaExp.modal-title Properties
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body
+				input#id(style="display:none")
+				input#old(style="display:none")
+				textarea(style="display:none")
+				.row.align-items-center.row-select(style="display:none")
+					.col-3 Select
+					.col-9 
+						select.form-control(name="swStyle")
+			.modal-footer
+				button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+				button.btn.btn-success#updateIt(type='button') Update

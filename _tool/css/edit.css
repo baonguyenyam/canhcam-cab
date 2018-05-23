@@ -1,14 +1,87 @@
 body {
 	padding: 1rem
 }
+.dab-component-typography:hover:after,
+.dab-component-images:hover:after,
+.dab-component-buttons:hover:after,
+.dab-component-form:hover:after,
+.dab-component-collapse:hover:after,
+.dab-component-dropdowns:hover:after,
+.dab-component-table:hover:after,
+.dab-component-list:hover:after,
+.dab-component-modal:hover:after,
+.dab-component-navs:hover:after,
+.dab-component-navbar:hover:after,
+.dab-component-tab:hover:after,
+.dab-component-cards:hover:after,
+.dab-component-components:hover:after {
+	box-shadow: 0 0 0 1px #fff6db inset;
+	border-radius: 3px;
+	z-index: 1;
+	display: block;
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	width: calc(100% + 6px);
+	height: calc(100% + 6px);
+}
+.dab-component-typography:hover:before,
+.dab-component-images:hover:before,
+.dab-component-buttons:hover:before,
+.dab-component-form:hover:before,
+.dab-component-collapse:hover:before,
+.dab-component-dropdowns:hover:before,
+.dab-component-table:hover:before,
+.dab-component-list:hover:before,
+.dab-component-modal:hover:before,
+.dab-component-navs:hover:before,
+.dab-component-navbar:hover:before,
+.dab-component-tab:hover:before,
+.dab-component-cards:hover:before,
+.dab-component-components:hover:before {
+	box-shadow: 0 0 0 3px #dcf8ff;
+	border-radius: 3px;
+	z-index: 1;
+	display: block;
+	content: '';
+	position: absolute;
+	top: -0;
+	left: -0;
+	width: 100%;
+	height: 100%;
+}
+
 .dab-item-remove.btn-danger{
 	background-color: #48a4bc !important;
 	border-color: #48a4bc !important;
-	    font-size: .675rem;
+	font-size: .675rem;
+	padding: .2rem .35rem;
+	z-index: 999;
 }
 .dab-item-remove .fa-times:before {
     content: "\f303"
 }
+.dab-item-edit {
+	position: absolute;
+	top: 0;
+	right:2rem;
+	display: none;
+	background: #efefef;
+    font-size: .8rem;
+    padding: .08rem .5rem;
+    border-radius: 3px;
+	border: 1px solid #dfdfdf;
+	cursor: pointer;
+	z-index: 999;
+}
+
+.dab-item-edit:hover {
+	background: #48a4bc;
+	border: 1px solid #48a4bc;
+	color: white 
+}
+
 .dab-item-remove {
 	position: absolute;
 	top: 0;
@@ -18,12 +91,72 @@ body {
 .dab-item{
 	position: relative;
 }
+.dab-item-section > .dab-item-edit,
+.dab-item-article > .dab-item-edit,
+.dab-item-row > .dab-item-edit,
+.dab-item-gird > .dab-item-edit {
+	right: 0;
+	z-index: 999;
+}
+.dab-item-section > .dab-item-remove,
+.dab-item-article > .dab-item-remove,
 .dab-item-row > .dab-item-remove,
 .dab-item-gird > .dab-item-remove {
 	display: none;
 	position: relative;
 }
+.dab-item:hover > .dab-item-edit, 
 .dab-item:hover > .js-remove, 
 .dab-item:hover > .js-remove-child {
 	display: block;
+}
+
+.dab-item-row, 
+.dab-component-gird, 
+.dab-component-row, 
+.dab-component-typography, 
+.dab-component-images, 
+.dab-component-buttons, 
+.dab-component-form, 
+.dab-component-collapse, 
+.dab-component-dropdowns, 
+.dab-component-table, 
+.dab-component-list, 
+.dab-component-modal, 
+.dab-component-navs, 
+.dab-component-navbar, 
+.dab-component-tab, 
+.dab-component-cards, 
+.dab-component-components {
+	position: relative;
+}
+
+.dab-item .dab-item-gird , 
+.dab-item .dab-item-section , 
+.dab-item .dab-item-article , 
+.dab-item .dab-item-col {
+	min-height: 90px;
+	padding: 2.5rem 2rem 1.25rem 2rem;
+	position: relative;
+	box-shadow: 0 0 0 1px #dfdfdf inset;
+	background: white;
+	border-radius: 2px;
+	margin-top: 1px ;
+}
+.dab-item .dab-item-gird:after,
+.dab-item .dab-item-section:after,
+.dab-item .dab-item-article:after,
+.dab-item .dab-item-col:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: ""attr(data-title)"";
+	display: block;
+	height: 1.5rem;
+	width: 100%;
+	background: #dfdfdf;
+	font-size: .8rem;
+	padding: 0 .25rem;
+	line-height: 1.5rem;
+	border-radius:  2px 2px 0 0;
 }

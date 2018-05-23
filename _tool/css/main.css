@@ -157,13 +157,17 @@ a:hover, a:visited {
 	border-color: #6c757d
 }
 #logopage img {
-	max-height: 2rem
+	max-height: 2rem;
+	filter: invert(100%)
 }
 #logopage span {
 	font-size: .9rem;
 }
+#logopage strong {
+	color: #ffffff !important
+}
 #logopage{
-	border-bottom: 1px solid #dfdfdf;
+	border-bottom: 1px solid #2c94af;
 	margin-bottom: 0;
 	    position: sticky;
     top: 0;
@@ -172,7 +176,7 @@ a:hover, a:visited {
 	padding: .25rem .25rem;
 	display: flex;
     justify-content: space-between;
-	align-items: flex-end;
+	align-items: center;
 	background: white 
 }
 .maindev.pc{

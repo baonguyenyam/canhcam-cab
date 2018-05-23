@@ -15,7 +15,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
 		{ name: 'forms', groups: ['forms'] },
 		{ name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
-		{ name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+		{ name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph', 'fontawesome'] },
 		'/',
 		{ name: 'links', groups: ['links'] },
 		{ name: 'insert', groups: ['insert'] },
@@ -33,10 +33,18 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// The default plugins included in the basic setup define some buttons that
 	// are not needed in a basic editor. They are removed here.
-	config.contentsCss = '/framework/css/bootstrap.min.css';
+	config.contentsCss = [
+		'/framework/css/bootstrap.min.css',
+		'/vendor/css/font-awesome.min.css'
+	];
 	config.language = 'vi';
 	config.uiColor = '#48a4bc';
+
+	config.extraPlugins = 'fontawesome';
 
 	// Dialog windows are also simplified.
 	// config.removeDialogTabs = 'link:advanced';
 };
+
+CKEDITOR.dtd.$removeEmpty['i'] = false;
+CKEDITOR.dtd.$removeEmpty['span'] = false;

@@ -1,7 +1,8 @@
 var dab = {
 	modeSwitch: 'dev',
 	keyEdit: null,
-	frameEdit: null
+	frameEdit: null,
+	activeDAB: ['dab-component-buttons', 'dab-component-components']
 }
 
 function toggleDAB() {
@@ -16,7 +17,7 @@ function createPageBuilderDAB(toAdd) {
 	data.SETUP[toAdd] = ""
 }
 
-function createSiteDAB() { 
+function createSiteDAB() {
 	modePreview()
 	$('iframe.framePreview').each(function () {
 		var getid = $(this).closest('.tab-pane').attr('id')
@@ -66,12 +67,13 @@ function modeEdit() {
 		var clone = $(this).find('iframe.frameEdit').contents()
 		clone.find("body").html(getcnt)
 		changeDAD(clone)
+		addDAD(clone)
 	})
 	$('#editContentModal').on('hide.bs.modal', function (e) {
 		$('#editContentModal .modal-body').html('')
 	})
 	$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-		if (dab.modeSwitch ==='edit'){
+		if (dab.modeSwitch === 'edit') {
 			$('#nav-tabContent .tab-pane.active').each(function (i, e) {
 				$(this).find('iframe.frameEdit').contents().find("body").html('')
 				var fcnt = $(this).find('iframe.frameNewlist').contents()
@@ -79,12 +81,118 @@ function modeEdit() {
 				var clone = $(this).find('iframe.frameEdit').contents()
 				clone.find("body").html(getcnt)
 				changeDAD(clone)
+				addDAD(clone)
 			})
 			reFrame()
 		}
 	})
 	reFrame()
+
+}
+
+function addDAD(clone) {
 	
+	clone.find('.dab-item-remove').each(function () {
+		var getval = $(this).attr('data-id')
+		$(this).find('.dab-item-edit').remove()
+		
+		for (var key in dab.activeDAB) {
+			if (dab.activeDAB.hasOwnProperty(key)) {
+				var element = dab.activeDAB[key];
+	
+				if ($(this).parents('.dab-item').hasClass(element)) {
+					$(this).after('<div class="dab-item-edit" edit-id="' + getval + '">Properties</div>')
+					$(this).parent().find('.dab-item-edit').click(function () {
+						var getAll = clone.find('#' + getval)
+						var getType = clone.find('#' + getval).attr('class')
+						var getCNT = clone.find('#' + getval).attr('data-content')
+						buildFormEdit(getAll, getType, getCNT)
+						$('#propertiesContentModal').modal('show').on('hide.bs.modal', function (e) {
+							$('#propertiesContentModal .row-select').hide()
+						})
+					})
+				}
+				
+			}
+		}
+
+	})
+}
+
+function buildFormEdit(getAll,getType, getCNT) {
+	var newVal = unescape(getCNT).toString()
+	$('#propertiesContentModal textarea').val('')
+	$('#propertiesContentModal input#old').val(newVal)
+	$('#propertiesContentModal input#id').val(getAll.attr('id'))
+	if (getType.includes('dab-component-buttons') || getType.includes('dab-component-components')){
+		var inCludeSelect = ''
+		inCludeSelect = '<option selected="" disabled="">Vui lòng chọn</option>' +
+			'<option value="default">default</option>' +
+			'<option value="primary">primary</option>' +
+			'<option value="info">info</option>' +
+			'<option value="danger">danger</option>' +
+			'<option value="warning">warning</option>' +
+			'<option value="light">light</option>' +
+			'<option value="dark">dark</option>' +
+			'<option value="link">link</option>' +
+			'<option value="success">success</option>' +
+			'<option value="secondary">secondary</option>';
+		$('#propertiesContentModal select').html(inCludeSelect).on('change', function (e) {
+			var itemsToRemove = ['default', 'primary', 'info', 'danger', 'warning', 'light', 'dark', 'link', 'success', 'secondary']
+			for (var key in itemsToRemove) {
+				if (itemsToRemove.hasOwnProperty(key)) {
+					var element = itemsToRemove[key];
+					newVal = replaceAll(newVal, "-" + element, "-" + e.target.value)
+				}
+			}
+			$('#propertiesContentModal textarea').val(newVal)
+		})
+		$('#propertiesContentModal .row-select').show()
+	}
+}
+
+
+$('#propertiesContentModal #updateIt').click(function () {
+	$('#nav-tabContent .tab-pane.active').each(function (i, e) {
+		var edit = $(this).find('iframe.frameEdit').contents().find("body")
+		var dev = $(this).find('iframe.frameNewlist').contents().find("#listWithHandle")
+		var getID = $('#propertiesContentModal #id').val().toString().trim()
+		var getOld = trimHTMLCode($('#propertiesContentModal #old').val().toString().trim())
+		var getVal = trimHTMLCode($('#propertiesContentModal textarea').val().toString().trim())
+		
+		if ($(edit).find('#' + getID).length>0){
+			$(edit).find('#' + getID).attr('data-content', escape(getVal))
+			var val = trimHTMLCode($(edit).find('#' + getID).html().toString().trim())
+			var help = replaceAll(val, getOld, getVal)
+			$(edit).find('#' + getID).html(help)
+			$(edit).find('.dab-item-edit').remove()
+			changeDAD(edit)
+			addDAD(edit)
+		}
+		if ($(dev).find('#' + getID).length>0){
+			$(dev).find('#' + getID).attr('data-content', escape(getVal))
+			var valdev = trimHTMLCode($(dev).find('#' + getID).html().toString().trim())
+			var helpdev = replaceAll(valdev, getOld, getVal)
+			$(dev).find('#' + getID).html(helpdev)
+		}
+	})
+	$('#propertiesContentModal').modal('hide')
+})
+
+function trimHTMLCode(params) {
+	var parser = $('<textarea/>').html(params).text();
+	return parser.replace(/\n/g, "")
+	.replace(/[\t ]+\</g, "<")
+	.replace(/\>[\t ]+\</g, "><")
+	.replace(/\>[\t ]+$/g, ">")
+	.replace(/\<\!--\s*?[^\s?\[][\s\S]*?--\>/g, '')
+	.replace(/\>\s*\</g, '><')
+}
+function replaceAll(str, find, replace) {
+	return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+function escapeRegExp(str) {
+	return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 function changeDAD(clone) {
@@ -106,8 +214,9 @@ $('#editContentModal #saveIt').click(function () {
 	var content = CKEDITOR.instances.editor.getData()
 	dab.frameEdit.find('#' + dab.keyEdit).attr('data-content', escape(content))
 	dab.frameEdit.find('#' + dab.keyEdit).html(content)
-	dab.frameEdit.find('#' + dab.keyEdit).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="' + dab.keyEdit+'"><i class="fa fa-times"></i></span>')
+	dab.frameEdit.find('#' + dab.keyEdit).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove" data-id="' + dab.keyEdit + '"><i class="fa fa-times"></i></span>')
 	$('#editContentModal').modal('hide')
+	changeDAD(dab.frameEdit)
 	var e = dab.frameEdit.contents().find('body').html()
 	$('#nav-tabContent .tab-pane.active').find('.frameNewlist').contents().find('#listWithHandle').html(e)
 })
@@ -119,6 +228,9 @@ $('#toogleexport').click(function () {
 	$('pre code').each(function (i, block) {
 		hljs.highlightBlock(block);
 	});
+	$('#elmExp').on('hide.bs.modal', function (e) {
+		$('#toogledev').click()
+	})
 })
 
 function clearAllFrame(params) {
@@ -157,9 +269,9 @@ function modePreview() {
 	$('#nav-tabContent .tab-pane').each(function (i, e) {
 		var fcnt = $(this).find('iframe.frameNewlist').contents()
 		var getcnt = fcnt.find("#listWithHandle").html()
-		var itemsToRemove = ['.dab-item-remove']
+		var itemsToRemove = ['.dab-item-remove', '.dab-item-edit']
 		var attrToRemove = ['data-title', 'data-content', 'data-key', 'data-dab', 'draggable']
-		var classToRemove = ['dab-item-gird', 'dab-item-col', 'dab-item-row']
+		var classToRemove = ['dab-item-gird', 'dab-item-col', 'dab-item-row', 'dab-component-gird', 'dab-component-row', 'dab-component-typography', 'dab-component-images', 'dab-component-buttons', 'dab-component-form', 'dab-component-collapse', 'dab-component-dropdowns', 'dab-component-table', 'dab-component-list', 'dab-component-modal', 'dab-component-navs', 'dab-component-navbar', 'dab-component-tab', 'dab-component-cards', 'dab-component-components', 'dab-item-section', 'dab-item-article']
 		var clone = $(this).find('iframe.framePreview').contents()
 		clone.find("body").html(getcnt)
 		for (var key in itemsToRemove) {
@@ -262,11 +374,13 @@ function turnOnDND(evt, iframe) {
 	var getid = taoIdNgauNhien(10)
 	$(itemEl).attr('id', 'dab-item-' + getid)
 	if (gnum === 'gird' || gnum === 'row') {
-		$(itemEl).find('.container, .container-fluid').each(function (i, e) {
+		$(itemEl).find('.container, .container-fluid, section, article').each(function (i, e) {
 			var getidnew = taoIdNgauNhien(10)
 			$(this).attr('id', 'dab-item-' + getidnew)
 			$(itemEl).find('.container').addClass('dab-item-gird').attr('data-title', '.container')
 			$(itemEl).find('.container-fluid').addClass('dab-item-gird').attr('data-title', '.container-fluid')
+			$(itemEl).find('section').addClass('dab-item-section').attr('data-title', 'section')
+			$(itemEl).find('article').addClass('dab-item-article').attr('data-title', 'article')
 			frameChild(iframe, getidnew)
 			$(this).append('<span class="dab-item-remove btn btn-sm btn-danger js-remove-child" data-id="dab-item-' + getid + '"><i class="fa fa-times"></i></span>')
 		})
@@ -470,7 +584,7 @@ function createLeftMenuListDAB() {
 			for (var des in parsedJSON[key]) {
 				var dataKey = parsedJSON[key][des][0]
 				var dataContent = parsedJSON[key][des][1]
-				var badge = '<div class="dab-item" data-dab="true" data-key=' + key + ' data-content=' + escape(dataContent) + '>' + dataKey + '</div>';
+				var badge = '<div class="dab-item dab-component-' + key + '" data-dab="true" data-key=' + key + ' data-content=' + escape(dataContent) + '>' + dataKey + '</div>';
 				if (key) {
 					if ($("#cc-menu-dab-" + key).length) {
 						$("#cc-menu-dab-" + key + " .mainList").append(badge);

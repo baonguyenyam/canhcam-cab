@@ -7,6 +7,14 @@
         "container-2": [
             "Container Fluid",
             "<div class=\"container-fluid\"></div>"
+        ],
+        "container-3": [
+            "Section",
+            "<section></section>"
+        ],
+        "container-4": [
+            "Article",
+            "<article></article>"
         ]
     },
     "row": {
