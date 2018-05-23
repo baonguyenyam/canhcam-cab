@@ -4,41 +4,39 @@ key.filter = function (event) {
 }
 // Tên dự án
 key('ctrl+alt+d,⌘+alt+d', function () {
-	$('#toDoListMain input').focus();
-	; return false
+	$('#toDoListMain input').focus();;
+	return false
 });
 // Enter tên dự án
 key('ctrl+alt+e,⌘+alt+e', function () {
 	$('#toDoList button').click()
-	$('#toDoListMain button').click()
-		; return false
+	$('#toDoListMain button').click();
+	return false
 });
 // Tên trang
 key('ctrl+alt+p,⌘+alt+p', function () {
-	$('#toDoList input').focus();
-	; return false
+	$('#toDoList input').focus();;
+	return false
 });
 key('ctrl+alt+l,⌘+alt+l', function () {
-	$('#tooglepc').click()
-		; return false
+	$('#tooglepc').click();
+	return false
 });
 key('ctrl+alt+m,⌘+alt+m', function () {
-	$('#tooglemobile').click()
-		; return false
+	$('#tooglemobile').click();
+	return false
 });
 key('ctrl+alt+t,⌘+alt+t', function () {
-	$('#toogletablet').click()
-		; return false
+	$('#toogletablet').click();
+	return false
 });
 key('ctrl+alt+n,⌘+alt+n', function () {
-	$('.togglemenu').click()
-		; return false
+	$('.togglemenu').click();
+	return false
 });
-
 // Check dự án đã tồn tại
 function getExitsProject() {
 	jQuery.get("/getreadysite", function (data) {
-
 		var substringMatcher = function (strs) {
 			return function findMatches(q, cb) {
 				var matches, substringRegex;
@@ -52,9 +50,7 @@ function getExitsProject() {
 				cb(matches);
 			};
 		};
-
 		var getExitsProject = data
-
 		$('#typeahead').typeahead({
 			hint: true,
 			highlight: true,
@@ -64,7 +60,5 @@ function getExitsProject() {
 				source: substringMatcher(getExitsProject)
 			});
 	});
-
 }
-
 getExitsProject()

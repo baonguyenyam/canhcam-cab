@@ -9,6 +9,7 @@ import minimist from 'minimist';
 import wrench from 'wrench';
 import runSequence from 'run-sequence';
 import genfile from 'gulp-file'
+import babel from 'gulp-babel';
 
 
 const fs = require('fs');

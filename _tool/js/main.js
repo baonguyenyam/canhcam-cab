@@ -149,10 +149,7 @@ function taoTrangIndex() {
 		checkTab()
 	}
 }
-
-
 // Đang làm phền xóa phage
-
 function deleteArrayPage(page) {
 	var index = pagesLists.indexOf(page);
 	if (index > -1) {
@@ -171,7 +168,6 @@ function changePageName(tenmoi, tencu) {
 	data.SETUP[tencu] = null
 	delete data.SETUP[tencu]
 }
-
 $('#buttonListItemMain').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItemMain]').val().trim());
 	modeCAD = $('#cab-dab').val()
@@ -202,10 +198,8 @@ $('#buttonListItemMain').click(function () {
 		} else {
 			return false
 		}
-
 	});
 });
-
 $('#formAddComponentDAB button').click(function (e) {
 	var data = new FormData($('#formAddComponentDAB')[0]);
 	$.ajax({
@@ -227,7 +221,6 @@ $('#formAddComponentDAB button').click(function (e) {
 	});
 	return false;
 })
-
 $('#formAddComponent button').click(function (e) {
 	var data = new FormData($('#formAddComponent')[0]);
 	$.ajax({
@@ -249,8 +242,6 @@ $('#formAddComponent button').click(function (e) {
 	});
 	return false;
 })
-
-
 $('#createSite').click(function (e) {
 	e.preventDefault();
 	if (modeCAD === 'dab') {
@@ -288,17 +279,12 @@ $('#createSite').click(function (e) {
 			return false
 		}
 	}
-
 });
-
 $('#createPage').click(function () {
 	var toAdd = removeVietnam($('input[name=ListItem]').val().trim());
 	if (modeCAD === 'dab') {
-
 		checkReadyTabDAB(toAdd)
-
 	} else {
-
 		if (!kiemTraTenTrang(toAdd, pagesLists)) {
 			if (toAdd) {
 				var getid = taoIdNgauNhien(10)
@@ -344,9 +330,7 @@ $('#createPage').click(function () {
 			$('#toDoList')[0].reset();
 		}
 	}
-
 });
-
 document.onkeyup = function (e) {
 	var e = e || window.event;
 	if (e.altKey && e.ctrlKey && e.shiftKey && e.which == 13) {

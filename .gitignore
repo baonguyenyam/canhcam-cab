@@ -3,6 +3,7 @@
 /_tool/templates
 /public/storage
 /.idea/
+package-lock.json
 Homestead.yaml
 Homestead.json
 .env

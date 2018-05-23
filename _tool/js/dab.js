@@ -87,19 +87,15 @@ function modeEdit() {
 		}
 	})
 	reFrame()
-
 }
 
 function addDAD(clone) {
-	
 	clone.find('.dab-item-remove').each(function () {
 		var getval = $(this).attr('data-id')
 		$(this).find('.dab-item-edit').remove()
-		
 		for (var key in dab.activeDAB) {
 			if (dab.activeDAB.hasOwnProperty(key)) {
 				var element = dab.activeDAB[key];
-	
 				if ($(this).parents('.dab-item').hasClass(element)) {
 					$(this).after('<div class="dab-item-edit" edit-id="' + getval + '">Properties</div>')
 					$(this).parent().find('.dab-item-edit').click(function () {
@@ -112,31 +108,19 @@ function addDAD(clone) {
 						})
 					})
 				}
-				
 			}
 		}
-
 	})
 }
 
-function buildFormEdit(getAll,getType, getCNT) {
+function buildFormEdit(getAll, getType, getCNT) {
 	var newVal = unescape(getCNT).toString()
 	$('#propertiesContentModal textarea').val('')
 	$('#propertiesContentModal input#old').val(newVal)
 	$('#propertiesContentModal input#id').val(getAll.attr('id'))
-	if (getType.includes('dab-component-buttons') || getType.includes('dab-component-components')){
+	if (getType.includes('dab-component-buttons') || getType.includes('dab-component-components')) {
 		var inCludeSelect = ''
-		inCludeSelect = '<option selected="" disabled="">Vui lòng chọn</option>' +
-			'<option value="default">default</option>' +
-			'<option value="primary">primary</option>' +
-			'<option value="info">info</option>' +
-			'<option value="danger">danger</option>' +
-			'<option value="warning">warning</option>' +
-			'<option value="light">light</option>' +
-			'<option value="dark">dark</option>' +
-			'<option value="link">link</option>' +
-			'<option value="success">success</option>' +
-			'<option value="secondary">secondary</option>';
+		inCludeSelect = '<option selected="" disabled="">Vui lòng chọn</option>' + '<option value="default">default</option>' + '<option value="primary">primary</option>' + '<option value="info">info</option>' + '<option value="danger">danger</option>' + '<option value="warning">warning</option>' + '<option value="light">light</option>' + '<option value="dark">dark</option>' + '<option value="link">link</option>' + '<option value="success">success</option>' + '<option value="secondary">secondary</option>';
 		$('#propertiesContentModal select').html(inCludeSelect).on('change', function (e) {
 			var itemsToRemove = ['default', 'primary', 'info', 'danger', 'warning', 'light', 'dark', 'link', 'success', 'secondary']
 			for (var key in itemsToRemove) {
@@ -150,8 +134,6 @@ function buildFormEdit(getAll,getType, getCNT) {
 		$('#propertiesContentModal .row-select').show()
 	}
 }
-
-
 $('#propertiesContentModal #updateIt').click(function () {
 	$('#nav-tabContent .tab-pane.active').each(function (i, e) {
 		var edit = $(this).find('iframe.frameEdit').contents().find("body")
@@ -159,8 +141,7 @@ $('#propertiesContentModal #updateIt').click(function () {
 		var getID = $('#propertiesContentModal #id').val().toString().trim()
 		var getOld = trimHTMLCode($('#propertiesContentModal #old').val().toString().trim())
 		var getVal = trimHTMLCode($('#propertiesContentModal textarea').val().toString().trim())
-		
-		if ($(edit).find('#' + getID).length>0){
+		if ($(edit).find('#' + getID).length > 0) {
 			$(edit).find('#' + getID).attr('data-content', escape(getVal))
 			var val = trimHTMLCode($(edit).find('#' + getID).html().toString().trim())
 			var help = replaceAll(val, getOld, getVal)
@@ -169,7 +150,7 @@ $('#propertiesContentModal #updateIt').click(function () {
 			changeDAD(edit)
 			addDAD(edit)
 		}
-		if ($(dev).find('#' + getID).length>0){
+		if ($(dev).find('#' + getID).length > 0) {
 			$(dev).find('#' + getID).attr('data-content', escape(getVal))
 			var valdev = trimHTMLCode($(dev).find('#' + getID).html().toString().trim())
 			var helpdev = replaceAll(valdev, getOld, getVal)
@@ -181,16 +162,13 @@ $('#propertiesContentModal #updateIt').click(function () {
 
 function trimHTMLCode(params) {
 	var parser = $('<textarea/>').html(params).text();
-	return parser.replace(/\n/g, "")
-	.replace(/[\t ]+\</g, "<")
-	.replace(/\>[\t ]+\</g, "><")
-	.replace(/\>[\t ]+$/g, ">")
-	.replace(/\<\!--\s*?[^\s?\[][\s\S]*?--\>/g, '')
-	.replace(/\>\s*\</g, '><')
+	return parser.replace(/\n/g, "").replace(/[\t ]+\</g, "<").replace(/\>[\t ]+\</g, "><").replace(/\>[\t ]+$/g, ">").replace(/\<\!--\s*?[^\s?\[][\s\S]*?--\>/g, '').replace(/\>\s*\</g, '><')
 }
+
 function replaceAll(str, find, replace) {
 	return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
 }
+
 function escapeRegExp(str) {
 	return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
@@ -209,7 +187,6 @@ function changeDAD(clone) {
 		})
 	})
 }
-
 $('#editContentModal #saveIt').click(function () {
 	var content = CKEDITOR.instances.editor.getData()
 	dab.frameEdit.find('#' + dab.keyEdit).attr('data-content', escape(content))
@@ -223,8 +200,17 @@ $('#editContentModal #saveIt').click(function () {
 $('#toogleexport').click(function () {
 	modePreview()
 	var abc = $('#nav-tabContent .tab-pane.active').find('.framePreview').contents().find('body').html()
-	$('#elmExp #langhtml').html(abc.trim())
-	$('#elmExp .modal-body pre code').html(formatXml(abc.trim()).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/ /g, '&nbsp;').replace(/\n/g, '\n'))
+	// var exp = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="/framework/css/bootstrap.min.css"><title>Canh Cam DAB</title></head><body>' + abc.trim() + '<script src="/framework/js/jquery.min.js"></script><script src="/framework/js/popper.min.js"></script><script src="/framework/js/bootstrap.min.js"></script></body></html>';
+
+	var beautified_html_source = style_html(abc, {
+		'indent_size': 2,
+		'indent_char': ' ',
+		'max_char': 78,
+		'brace_style': 'expand',
+		'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']
+	});
+	$('#elmExp #langhtml').html(beautified_html_source)
+	$('#elmExp .modal-body pre code').html(formatXml(beautified_html_source).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/ /g, '&nbsp;').replace(/\n/g, '\n'))
 	$('pre code').each(function (i, block) {
 		hljs.highlightBlock(block);
 	});
@@ -255,7 +241,6 @@ function clearAllFrame(params) {
 		})
 	}
 }
-
 
 function modeDev() {
 	dab.modeSwitch = 'dev'
@@ -293,7 +278,6 @@ function modePreview() {
 			}
 		}
 		clone.find('*[id^="dab-item-"]').removeAttr('id')
-
 		$(clone).find('.dab-item').each(function () {
 			var child = $(this).children()
 			if ($(child).parent().is(".dab-item")) {
@@ -363,7 +347,6 @@ function checkReadyTabDAB(toAdd) {
 		alert('Chưa nhập tên hoặc đã tồn tại trang này!')
 		$('#toDoList')[0].reset();
 	}
-
 }
 
 function turnOnDND(evt, iframe) {
@@ -502,11 +485,9 @@ function taoIframe(iframe) {
 	});
 }
 
-
 function taoTrangIndexDAB() {
 	if (pagesLists.length == 1) {
 		var toAdd = "index";
-
 		var iframe = document.createElement('iframe');
 		iframe.src = '/views/iframe.html';
 		iframe.width = '100%';
@@ -514,7 +495,6 @@ function taoTrangIndexDAB() {
 		iframe.onload = function () {
 			taoIframe(iframe)
 		};
-
 		$('.noleft .nav-tabs').append('<li class="nav-item" data-tab-id="' + taoIdNgauNhien(10) + '"><a class="nav-link" id="' + toAdd + '-tab" data-toggle="tab" href="#' + toAdd + '" role="tab" aria-controls="' + toAdd + '" aria-selected="true"><i class="fa fa-file mr-2"></i>' + toAdd + '.html</a></li>');
 		$('.noleft #nav-tabContent').append('<div class="tab-pane fade" id="' + toAdd + '" role="tabpanel" aria-labelledby="' + toAdd + '-tab"></div>');
 		$('#toDoList')[0].reset();
@@ -575,7 +555,7 @@ function createLeftMenuListDAB() {
 				collapsed = ' collapsed';
 			}
 			var count = Object.keys(parsedJSON[key]).length;
-			total = + total + count
+			total = +total + count
 			var father = document.createElement('div');
 			father.id = "cc-menu-dab-" + key;
 			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
@@ -599,7 +579,6 @@ function createLeftMenuListDAB() {
 							ghostClass: "canhcam-ghost",
 							sort: false,
 							animation: 100,
-
 							onMove: function (evt, originalEvent) {
 								$('#nav-tabContent').addClass('active')
 								$('#nav-tabContent iframe.frameNewlist').contents().find("body").addClass('active')
@@ -682,15 +661,12 @@ function formatXml(xml) {
 		} else {
 			indent = 0;
 		}
-
 		var padding = '';
 		for (var i = 0; i < pad; i++) {
 			padding += '  ';
 		}
-
 		formatted += padding + node + '\r\n';
 		pad += indent;
 	});
-
 	return formatted;
 }

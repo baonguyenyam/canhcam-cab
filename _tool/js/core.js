@@ -46,13 +46,12 @@ function createLeftMenuList() {
 			// 	collapsed = ' collapsed';
 			// }
 			var count = Object.keys(parsedJSON[key]).length;
-			total = + total + count
+			total = +total + count
 			var father = document.createElement('div');
 			father.id = "cc-menu-" + key;
 			father.setAttribute("data-tab-id", taoIdNgauNhien(25));
-			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link ' + collapsed +' d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.replace('-', ' ').toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show +'" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
+			father.innerHTML = '<div class="card"><div class="card-header" id="heading-' + key + '"><h5 class="mb-0"><button class="btn btn-link ' + collapsed + ' d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapse-' + key + '" aria-expanded="true" aria-controls="collapse-' + key + '">' + key.replace('-', ' ').toUpperCase() + ' <span class="badge badge-secondary">' + count + '</span></button></h5></div><div id="collapse-' + key + '" class="collapse' + show + '" aria-labelledby="heading-' + key + '" data-parent="#accordion"><div class="card-body"><div class="slider-items list-group mainList"></div></div></div>'
 			$('#accordion').append(father)
-
 			for (var des in parsedJSON[key]) {
 				var dataKey = parsedJSON[key][des][0]
 				var dataType = parsedJSON[key][des][1]
@@ -61,10 +60,10 @@ function createLeftMenuList() {
 				var dataHeight = ''
 				var dataNoted = ''
 				if (parsedJSON[key][des][4] && parsedJSON[key][des][4].length) {
-					dataHeight = 'data-height="'+ parsedJSON[key][des][4] + '"'
+					dataHeight = 'data-height="' + parsedJSON[key][des][4] + '"'
 				}
 				if (parsedJSON[key][des][5] && parsedJSON[key][des][5].length) {
-					dataNoted = 'data-noted="'+ parsedJSON[key][des][5] + '"'
+					dataNoted = 'data-noted="' + parsedJSON[key][des][5] + '"'
 				}
 				var badge = '<div class="list-group-item" ' + dataHeight + ' ' + dataNoted + ' data-key="' + dataKey + '" data-type="' + dataType + '"><h5><a href="/templates/index-' + dataKey.replace('/', '-') + '.html" target="_blank">' + dataTitle + '</a></h5>' + '<figure>' + '<img src="./img/layout/' + dataImg + '" alt=""></div>' +
 					// '<div><iframe src="./templates/index-carousel-c-1.html" frameborder="0" onload="this.style.opacity = 1"></iframe></div>'+
@@ -110,7 +109,7 @@ function buildTotal(params) {
 	jQuery.get("/version.json", function (data) {
 		var info = data;
 		$('#version').html(info.version + ' ' + info.build)
-		$('#accordion').append('<div class="total p-2 small">S&#x1ED1; th&#xE0;nh ph&#x1EA7;n: <span class="text-info">' + params + '</span><br>T&#x1EAD;p tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phi&#xEA;n b&#x1EA3;n: <span class="text-info">' + info.version + ' ' + info.build + '</span><br>Phi&#xEA;n b&#x1EA3;n Bootstrap: <span class="text-info">' + info.bootstrap +'</span><br>T&#xE1;c gi&#x1EA3;: <span class="text-info">B&#x1EA3;o Nguy&#xEA;n</span></div>')
+		$('#accordion').append('<div class="total p-2 small">S&#x1ED1; th&#xE0;nh ph&#x1EA7;n: <span class="text-info">' + params + '</span><br>T&#x1EAD;p tin: <span class="text-info">' + ((params * 3) + 9) + '</span><br>Site vừa tạo: <span class="text-info justbuild"></span><br>Phi&#xEA;n b&#x1EA3;n: <span class="text-info">' + info.version + ' ' + info.build + '</span><br>Phi&#xEA;n b&#x1EA3;n Bootstrap: <span class="text-info">' + info.bootstrap + '</span><br>T&#xE1;c gi&#x1EA3;: <span class="text-info">B&#x1EA3;o Nguy&#xEA;n</span></div>')
 		$('#logopage .text-info').html('CAB')
 	})
 	jQuery.get("/justbuild.json", function (data) {
@@ -118,22 +117,23 @@ function buildTotal(params) {
 		$('.justbuild').html('@SITE/' + info.sitename)
 	})
 }
+
 function removeVietnam(s) {
 	var r = s.toLowerCase().replace(/\s+/g, '-'),
-	non_asciis = {
-		'-': '[`~!@#$%^&*()_|+=?;:",.<>/]',
-		'a': '[ảàạảãàáâãäåắặẳằẵấầẩẫậâă]',
-		'ae': 'æ',
-		'c': 'ç',
-		'e': '[èéẹẽẻềệếểễê]',
-		'd': '[đ]',
-		'i': '[ìíîïị]',
-		'n': 'ñ',
-		'o': '[òóôõöộồốổỗơởợỡờớôơ]',
-		'oe': 'œ',
-		'u': '[ùúûűüủụưửựứừữư]',
-		'y': '[ýỳỷỵỹ]'
-	};
+		non_asciis = {
+			'-': '[`~!@#$%^&*()_|+=?;:",.<>/]',
+			'a': '[ảàạảãàáâãäåắặẳằẵấầẩẫậâă]',
+			'ae': 'æ',
+			'c': 'ç',
+			'e': '[èéẹẽẻềệếểễê]',
+			'd': '[đ]',
+			'i': '[ìíîïị]',
+			'n': 'ñ',
+			'o': '[òóôõöộồốổỗơởợỡờớôơ]',
+			'oe': 'œ',
+			'u': '[ùúûűüủụưửựứừữư]',
+			'y': '[ýỳỷỵỹ]'
+		};
 	for (var i in non_asciis) {
 		r = r.replace(new RegExp(non_asciis[i], 'gi'), i);
 	}
@@ -147,7 +147,6 @@ function taoIdNgauNhien(a) {
 	for (var i = 0; i < a; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
 	return text;
 }
-
 
 function kiemTraTenTrang(value, arr) {
 	return ($.inArray(value, arr) > -1);
@@ -274,18 +273,18 @@ function toggleContentReady() {
 	}
 }
 
-function addClickDel(a){
+function addClickDel(a) {
 	$('#edit-' + a).css({
 		"cursor": "pointer"
 	})
-	$('#edit-'+a).click(function () {
+	$('#edit-' + a).click(function () {
 		setTimeout(() => {
-			$('#'+a).focus().click()
+			$('#' + a).focus().click()
 		}, 100);
 	})
 }
 
-function buildFormAddComponent(){
+function buildFormAddComponent() {
 	$('#formAddComponent select').html('<option selected disabled>Vui lòng chọn</option>')
 	$('#formAddComponent')[0].reset();
 	$('#formAddComponent .textresult').html('...')
@@ -295,14 +294,14 @@ function buildFormAddComponent(){
 		for (var key in data) {
 			if (data.hasOwnProperty(key)) {
 				var imt = Object.keys(data[key]).length
-				if(key === 'header') {
+				if (key === 'header') {
 					main = 'header'
 				} else if (key === 'footer') {
 					main = 'footer'
 				} else {
 					main = 'body'
 				}
-				lists += '<option data-comnum=' + (imt+1) + ' data-type=' + main +' data-count=' + key.charAt(0) + '-' + (imt+1) +' value=' + key + '>' + key.charAt(0).toUpperCase() + key.slice(1); + '</option>'
+				lists += '<option data-comnum=' + (imt + 1) + ' data-type=' + main + ' data-count=' + key.charAt(0) + '-' + (imt + 1) + ' value=' + key + '>' + key.charAt(0).toUpperCase() + key.slice(1); + '</option>'
 			}
 		}
 		$('#formAddComponent select').append(lists).on('change', function (e) {
@@ -318,15 +317,12 @@ function buildFormAddComponent(){
 	});
 }
 
-
 function unSavePage() {
 	$(window).bind('beforeunload', function () {
 		return 'Bạn có muốn thoát trang ngay bây giờ?';
 	});
 }
-
 //////////////////////////////////////////////
-
 $(function () {
 	addClickDel('projectname')
 	$('[data-toggle="tooltip"]').tooltip()
@@ -382,7 +378,6 @@ $(function () {
 		$('.maindev').addClass('tablet').removeClass('mobile').removeClass('pc')
 		resizeFrame()
 	});
-	
 	$('#toogledev').click(function () {
 		$(this).addClass('active')
 		$('#accordion-dab').removeClass('mode')
@@ -413,7 +408,6 @@ $(function () {
 		$('.maindev').addClass('preview').removeClass('edit').removeClass('dev')
 		modePreview()
 	});
-
 	$('#noleft').on('click', '.xoatab', function (e) {
 		$(this).parents('.nav-link').trigger('click')
 		var item = this;
@@ -463,7 +457,6 @@ $(function () {
 	getDataColor()
 	getDataJS()
 })
-
 $(window).resize(function () {
 	if (modeCAD === 'dab') {
 		reFrame()
@@ -471,7 +464,6 @@ $(window).resize(function () {
 		resizeFrame()
 	}
 })
-
 $(document).ready(function () {
 	setTimeout(() => {
 		var memories = $('.memory').attr('data-memory').split(";")
@@ -483,4 +475,3 @@ $(document).ready(function () {
 		$('#aboutBox .lk').html($('body').attr('license-key'))
 	}, 1000);
 })
-

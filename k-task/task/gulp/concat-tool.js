@@ -35,6 +35,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			'_tool/vendor/js/offline.min.js',
 			'_tool/vendor/js/pace.min.js',
 			'_tool/vendor/js/run_prettify.js',
+			'_tool/vendor/js/beauty.js',
 			'_tool/vendor/js/keymaster.js'
 		])
 			.pipe(concat(url.concat.namejs_core + '.js'))
