@@ -1,6 +1,6 @@
 /vendor
 /node_modules
-/_tool/templates
+/CAB-DAB/templates
 /public/storage
 /.idea/
 package-lock.json

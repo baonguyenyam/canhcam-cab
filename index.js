@@ -14,8 +14,8 @@ var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 var site = {
 	port: process.env.PORT || 8080,
-	root: './_tool',
-	views: './_tool/views',
+	root: './CAB-DAB',
+	views: './CAB-DAB/views',
 	lib: './CANHCAM-LIB',
 	dest: './@SITE',
 }

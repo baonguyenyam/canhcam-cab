@@ -9,7 +9,7 @@ import sourcemaps from 'gulp-sourcemaps';
 
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let url = config;
-    let dest = path.join('_tool/templates');
+	let dest = path.join('CAB-DAB/templates');
     let destjs = path.join(target, url.scripts.assets);
 
     // Run task
