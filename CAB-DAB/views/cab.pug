@@ -5,19 +5,19 @@
 				.btn-group.btn-group-sm.mr-2(role='group')
 					button#toogledev.btn.btn-outline-success.active(onclick='javascript:void(0)')
 						i.fa.fa-code
-						| 
+						|
 						| Dev
 					button#toogleedit.btn.btn-outline-success(onclick='javascript:void(0)')
 						i.fa.fa-pencil
-						| 
+						|
 						| Edit
 					button#tooglepreview.btn.btn-outline-success(onclick='javascript:void(0)')
 						i.fa.fa-eye
-						| 
+						|
 						| Preview
 					button#toogleexport.btn.btn-outline-success(data-toggle="modal", data-target='#elmExp', aria-expanded='false', aria-controls='elmExp', data-backdrop="static" data-keyboard="false", type="button")
 						i.fa.fa-file
-						| 
+						|
 						| Export
 			#accordion-dab.accordion
 				figure#logopage(style="background: #4CAF50;")
@@ -34,9 +34,9 @@
 						button.btn.btn-outline-success.btn-sm.togglemenu.mr-2(data-toggle='tooltip', data-placement='bottom', title='Bật tắt menu')
 							i.fa.fa-bars
 						h4.mb-0.h6
-							| Dự án: 
+							| Dự án:
 							abbr#projectname.text-danger(data-toggle='tooltip', data-placement='bottom', title='Sửa tên dự án')
-							| 
+							|
 							i#edit-projectname.text-danger.fa.fa-pencil
 					.col-auto.text-right.d-flex.align-items-center.justify-content-end
 						form#toDoList.mr-2(name='toDoList')
@@ -75,10 +75,10 @@
 						p.text-sm
 							span#version.text-muted
 							|  -
-							| 
+							|
 							a(href='https://baonguyenyam.github.io/canhcam-cab/', target='_blank') API Docs
 							|  -
-							| 
+							|
 							a(href='https://baonguyenyam.github.io/canhcam-cab/logs.html', target='_blank') ChangeLog
 						.enterpro.row.col-auto.align-items-center.justify-content-center.mb-5
 							.card.bg-light
@@ -89,8 +89,8 @@
 											input#typeahead.form-control(type='text', placeholder='Tên dự án', name='ListItemMain')
 											.input-group-append
 												select.custom-select#cab-dab
-													option(value="cab") Web Components (CAB)
-													option(value="dab") Web Builder (DAB)
+													option(value="cab") CAB
+													option(value="dab") DAB
 											.input-group-append
 												button#buttonListItemMain.btn.btn-success(type='button') Nhập
 						.container.pt-4

@@ -37,7 +37,7 @@ function createLeftMenuList() {
 		var show = ''
 		var collapsed = 'collapsed'
 		for (var key in parsedJSON) {
-			// Dòng này bật sẽ tự động bật menu đầu tiên ra 
+			// Dòng này bật sẽ tự động bật menu đầu tiên ra
 			// if (index == 0) {
 			// 	show = ' show';
 			// 	collapsed = ''
@@ -475,3 +475,4 @@ $(document).ready(function () {
 		$('#aboutBox .lk').html($('body').attr('license-key'))
 	}, 1000);
 })
+

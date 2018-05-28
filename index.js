@@ -52,7 +52,15 @@ router.use(function (req, res, next) {
 });
 
 router.get('/', function (req, res) {
-	res.render('index', { key: makeid(200), val: makeid(20), memory: process.memoryUsage(), cpu: process.cpuUsage(), platform: process.platform, version: process.versions })
+	res.render('index', {
+		key: makeid(200),
+		val: makeid(20),
+		memory: process.memoryUsage(),
+		cpu: process.cpuUsage(),
+		platform: process.platform,
+		version: process.versions
+	})
+
 })
 
 app.use('/', router);

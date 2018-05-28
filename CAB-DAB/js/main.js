@@ -16,6 +16,13 @@ function setDefault() {
 	saveToData(dataColor.toString(), dataJS.toString())
 }
 
+function getENV() {
+	var ENVMODE = $('body').attr('env-mode')
+	if (ENVMODE && ENVMODE === 'production') {
+		$('#addComponent, #addElements').remove()
+	}
+}
+
 function createPageBuilder(toAdd) {
 	data.SETUP[toAdd] = []
 	$('.newlist').each(function (i, e) {
@@ -195,6 +202,7 @@ $('#buttonListItemMain').click(function () {
 				alert('KHÔNG THÀNH CÔNG! Đã tồn tại dự án với tên này!')
 				return false
 			}
+			getENV()
 		} else {
 			return false
 		}
