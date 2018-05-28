@@ -1,4 +1,5 @@
 /vendor
+/@SITE/**
 /node_modules
 /CAB-DAB/templates
 /public/storage
