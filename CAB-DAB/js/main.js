@@ -18,7 +18,7 @@ function setDefault() {
 
 function getENV() {
 	var ENVMODE = $('body').attr('env-mode')
-	if (ENVMODE && ENVMODE === 'production') {
+	if (ENVMODE && ENVMODE === 'true') {
 		$('#addComponent, #addElements').remove()
 	}
 }

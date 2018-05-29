@@ -2,6 +2,7 @@ var express = require('express');
 var compression = require('compression');
 var app = express();
 var router = express.Router();
+var minimist = require('minimist');
 var path = require('path');
 var bodyParser = require("body-parser");
 var fs = require('fs');
@@ -12,6 +13,13 @@ var browserSync = require('browser-sync');
 var pug = require('pug');
 var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
+process.env.ENVGLOBAL = false
+
+
+if (process.argv.slice(2).toString() === '--production') {
+	process.env.ENVGLOBAL = true
+}
+
 var site = {
 	port: process.env.PORT || 8080,
 	root: './CAB-DAB',
@@ -23,7 +31,7 @@ app.use(json_body_parser);
 app.use(urlencoded_body_parser);
 app.use('/', express.static(site.root + '/'));
 
-if (process.env.NODE_ENV !== 'production') {
+if (!process.env.ENVGLOBAL) {
 	app.locals.pretty = true;
 	app.listen(site.port, listening);
 	function listening() {

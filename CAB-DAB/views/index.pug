@@ -44,7 +44,7 @@ html(serial-key=key.slice(70, 75).toUpperCase()+'-'+key.slice(80, 85).toUpperCas
 		link(rel='icon', type='image/png', sizes='96x96', href='/favicon/favicon-96x96.png?v='+text)
 		link(rel='icon', type='image/png', sizes='16x16', href='/favicon/favicon-16x16.png?v='+text)
 		link(rel='manifest', href='/favicon/manifest.json?v='+text)
-		if process.env.NODE_ENV === 'production'
+		if process.env.ENVGLOBAL === 'true'
 			link(rel='stylesheet', key=val, href='/views/core.min.css?v='+hash.slice(100, 150))
 			link(rel='stylesheet', key=val, href='/views/app.min.css?v='+hash.slice(0, 50))
 			script(key=val, src='/vendor/ckeditor/ckeditor.js?v='+hash.slice(10, 60))
@@ -77,9 +77,9 @@ html(serial-key=key.slice(70, 75).toUpperCase()+'-'+key.slice(80, 85).toUpperCas
 			script(key=val, src='/vendor/ckeditor/config.js?v='+text)
 			script(key=val, src='/vendor/js/run_prettify.js?v='+text)
 			script(key=val, src='/vendor/js/beauty.js?v='+text)
-	body(license-key=key.slice(50, 100)+"__________"+key.slice(70, 170)+"_____"+key+"____"+key+key+"________"+key.slice(0, 50), env-mode=process.env.NODE_ENV)
+	body(license-key=key.slice(50, 100)+"__________"+key.slice(70, 170)+"_____"+key+"____"+key+key+"________"+key.slice(0, 50), env-mode=process.env.ENVGLOBAL)
 		.memory.d-none(data-memory=memory.rss/1024+';'+memory.external/1024+';'+cpu.user/10240+';'+platform+';'+version.node)
-		if process.env.NODE_ENV === 'production'
+		if process.env.ENVGLOBAL === 'true'
 			script(key=hash.slice(10, 150))
 				include cab.js
 				include modal.js
