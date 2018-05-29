@@ -5,18 +5,18 @@
 
 .canhcam-header-8
 	.navbar-brand
-		img 
+		img
 			max-height: 2rem
 	.navbar-toggler
 		border: 2px solid darken(color-get($mau,trang), 0%)
 		color: darken(color-get($mau,trang), 0%)
-		border-radius: 0 
+		border-radius: 0
 		padding: .35rem .5rem
-		margin-left: 1rem 
+		margin-left: 1rem
 	.language
 		margin-bottom: 0
 		.list-inline-item
-			a 
+			a
 				display: flex
 				align-items: center
 				justify-content: center
@@ -26,33 +26,33 @@
 			.nav-link
 				color: lighten(color-get($mau,main), 30%)
 				font-size: 1.3rem
-			&:hover, &:active 
+			&:hover, &:active
 				.nav-link
-					color: color-get($mau,trang) 
+					color: color-get($mau,trang)
 
 	&.fixedheader
 		position: fixed
-		top: 0 
+		top: 0
 		left: 0
-		width: 100% 
+		width: 100%
 		z-index: 8888
-		background: rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.5)
+		background: rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.8)
 		transition: all .5s ease-in-out
 		&.active , &.expand
 			background: color-get($mau,main)
 			box-shadow: 0 0 5px rgba(0,0,0,.5)
-	// CHANGE MENU 
+	// CHANGE MENU
 	+media-breakpoint-up(lg)
 		.language
 			order: 2
-			margin-left: 2rem 
+			margin-left: 2rem
 		.navbar-collapse
 			justify-content: space-between
 			order: 1
 			padding-top: 0
-			.logo 
+			.logo
 				+pad(1rem 0)
-				img 
+				img
 					max-height: 2rem
 					transition: all .5s ease-in-out
 		&.fixedheader
@@ -62,59 +62,59 @@
 					.nav-link
 						color: lighten(color-get($mau,trang), 0%)
 						font-size: 1rem
-					&:hover, &:active 
+					&:hover, &:active
 						.nav-link
 							color: lighten(color-get($mau,main), 0%)
-							&:after 
+							&:after
 								content: ''
 								display: block
 								width: 100%
-								height: 3px 
-								background: color-get($mau,main) 
+								height: 3px
+								background: color-get($mau,main)
 								position: absolute
-								top: calc(100% + 1.1rem) 
+								top: calc(100% + 1.1rem)
 								left: 0
-			&.active 
+			&.active
 				.navbar-collapse
-					.logo 
+					.logo
 						+pad(0 0)
-						img 
+						img
 							max-height: 1.6rem
 					.nav-item
 						.nav-link
-						&:hover, &:active 
+						&:hover, &:active
 							.nav-link
-								color: lighten(color-get($mau,extra),0%) 
-								&:after 
-									top: calc(100% + .35rem) 
-									background: lighten(color-get($mau,extra),0%) 
-	// MENU 
+								color: lighten(color-get($mau,extra),0%)
+								&:after
+									top: calc(100% + .35rem)
+									background: lighten(color-get($mau,extra),0%)
+	// MENU
 	+media-breakpoint-down(md)
 		.container
 			width: 100%
-			max-width: initial 
+			max-width: initial
 		.navbar-collapse
 			transition: all .3s ease-in-out
 			position: fixed
-			top: 0 
+			top: 0
 			right: -100%
 			height: 100%
 			width: 100%
 			overflow-y: scroll
 			background: color-get($mau,main)
 			display: block !important
-			padding: 1rem 
+			padding: 1rem
 			.menubars
-				margin-bottom: 1rem 
+				margin-bottom: 1rem
 				.brand
-					img 
-						max-height: 2rem 
+					img
+						max-height: 2rem
 				.navbar-closed
 					border: 2px solid darken(color-get($mau,trang), 0%)
 					color: darken(color-get($mau,trang), 0%)
-					border-radius: 0 
+					border-radius: 0
 					padding: .35rem .5rem
-					margin-left: 1rem 
+					margin-left: 1rem
 					background: none
 					cursor: pointer
 		&.expand

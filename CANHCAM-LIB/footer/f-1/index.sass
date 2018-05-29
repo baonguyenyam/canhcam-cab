@@ -10,7 +10,6 @@
 	color: darken(color-get($mau,trang) ,50%)
 	overflow: hidden
 	+media-breakpoint-down(xs)
-		text-align: center
 	h4
 		text-transform: uppercase
 		color: color-get($mau,trang)
@@ -23,11 +22,8 @@
 			background: color-get($mau,main)
 			content: ''
 			display: block
-			+pos(abs, null null -10px 50%)
-			+transform(translateX(-50%))
-			+media-breakpoint-up(md)
-				+pos(abs, null null -10px 0)
-				+transform(translateX(0))
+			+pos(abs, null null -10px 0)
+
 	.linkfooter
 		padding: 3rem 0 2rem
 		.list-group
@@ -44,6 +40,8 @@
 		.socials
 			h4
 				&:after
+					+pos(abs, null null -10px 50%)
+					+transform(translateX(-50%))
 					+media-breakpoint-up(md)
 						+pos(abs, null null -10px 50%)
 						+transform(translateX(-50%))

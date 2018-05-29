@@ -23,33 +23,33 @@
 		width: 100%
 		.sub
 			+pad(2rem 0)
-			label 
+			label
 				text-transform: uppercase
 				color: color-get($mau,trang)
 			.socials
-				ul 
+				ul
 					margin-bottom: 0
-					li 
-						a 
+					li
+						a
 							color: color-get($mau,trang)
 							+bor-rad(50%)
 							border: 2px solid color-get($mau,trang)
-							width: 2.2rem 
-							height: 2.2rem 
+							width: 2.2rem
+							height: 2.2rem
 							display: flex
-							justify-content: center 
-							align-items: center 
+							justify-content: center
+							align-items: center
 							text-decoration: none
-							i 
+							i
 								+fz(1rem)
-							&:hover 
+							&:hover
 								background: rgba(red(color-get($mau,trang)),green(color-get($mau,trang)),blue(color-get($mau,trang)),.3)
 
 			.input-group
 				border: 2px solid color-get($mau,trang)
-				input, button 
+				input, button
 					+bor-rad(0)
-					background: none 
+					background: none
 					border: 0
 					+box-sha(none)
 					color: color-get($mau,trang)
@@ -60,7 +60,7 @@
 					+placeholder
 						color: color-get($mau,trang)
 						+opacity(.4)
-				button 
+				button
 					text-transform: uppercase
 					position: relative
 					margin-left: .5rem
@@ -68,7 +68,7 @@
 						content: ''
 						display: block
 						min-height: 50%
-						width: 1px 
+						width: 1px
 						background: color-get($mau,trang)
 						+pos(abs, 50% null null -.5rem)
 						+transform(translateY(-50%))
@@ -80,8 +80,8 @@
 				form
 					flex-direction: row
 					display: flex
-					align-items: center 
-					label 
+					align-items: center
+					label
 						margin-bottom: 0
 
 	.linkfooter
@@ -94,6 +94,7 @@
 				+bg(none, none, none)
 				border: 0
 				+pad(.5rem 0)
+				white-space: nowrap
 				+media-breakpoint-up(md)
 					+pad(.15rem 0)
 				a
@@ -108,6 +109,7 @@
 				display: inline-block
 				+bg(none, none, none)
 				border: 0
+				white-space: nowrap
 				+pad(.5rem 0)
 				a
 					font-size: .9rem
