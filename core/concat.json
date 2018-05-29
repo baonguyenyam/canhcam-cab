@@ -36,7 +36,8 @@
       "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
       "bower_components/elevatezoom/jquery.elevatezoom.js",
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js",
-      "bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"
+	  "bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js",
+	  "bower_components/freewall/freewall.js"
     ],
     "css": [
       "bower_components/select2/dist/css/select2.min.css",

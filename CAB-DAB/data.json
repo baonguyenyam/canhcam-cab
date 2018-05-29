@@ -79,7 +79,7 @@
             "boxes/b-3",
             "body",
             "7e07c3213f76f5d7696ff597e20ffaec.png",
-            "dfg",
+            "CountUp number",
             "",
             "Sử dụng CountUp number"
         ],
@@ -384,6 +384,30 @@
             "Gallery 4",
             "",
             "Tích hợp Masonry bằng SASS"
+        ],
+        "gallery-5": [
+            "gallery/g-5",
+            "body",
+            "581ab6c2d4b629c0085d433a43336af7.png",
+            "Gallery 5",
+            "",
+            ""
+        ],
+        "gallery-6": [
+            "gallery/g-6",
+            "body",
+            "6b15fe4dcbb93f50c979545f2a2da36f.png",
+            "Gallery 6",
+            "",
+            ""
+        ],
+        "gallery-7": [
+            "gallery/g-7",
+            "body",
+            "6ef826f9feb6bdf7a14adafc7275159c.png",
+            "Gallery 7",
+            "",
+            ""
         ]
     },
     "form": {

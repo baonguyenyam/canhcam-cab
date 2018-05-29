@@ -16,13 +16,13 @@ $(function () {
 				{
 					breakpoint: 992,
 					settings: {
-						
+
 					}
 				},
 				{
 					breakpoint: 480,
 					settings: {
-						
+
 					}
 				}
 			]

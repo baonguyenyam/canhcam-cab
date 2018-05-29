@@ -1,0 +1,127 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-gallery-5
+	+pad(0 0 2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(0 0 4rem 0)
+	.gallery-details
+		overflow-x: hidden
+		.item
+			text-decoration: none
+			overflow: hidden
+			width: 300px
+			figure
+				overflow: hidden
+				height: 100%
+				position: relative
+				.boxzoom
+					overflow: hidden
+					img
+						+transition(all .5s ease-in-out)
+						+opacity(0)
+				figcaption
+					padding: 1rem
+					+transition(all .5s ease-in-out)
+					background: color-get($mau,main)
+					+pos(abs, null null 0 0)
+					z-index: 100
+					width: 100%
+					h3
+						+fz(1.1rem)
+						+fw(600)
+						margin-bottom: 0
+						+transition(all 1s ease-in-out)
+						color: lighten(color-get($mau,main),70%)
+						a
+							color: lighten(color-get($mau,trang),0%)
+							text-decoration: none
+					p
+						margin-bottom: 0
+						color: lighten(color-get($mau,main),30%)
+					span
+						display: none
+						a
+							color: lighten(color-get($mau,trang),0%)
+							text-decoration: none
+			+media-breakpoint-up(md)
+				figure
+					position: relative
+					&:before
+						+pos(abs, null null 0 0 )
+						width: 100%
+						height: 100%
+						+opacity(0)
+						content: ''
+						background: darken(color-get($mau,main),0%)
+						+transition(all .5s ease-in-out)
+						z-index: 1
+					figcaption
+						width: 100%
+						height: 100%
+						overflow: hidden
+						+pos(abs, null null 0 0)
+						background: none
+						z-index: 100
+						+pad(2rem)
+						.text
+							+pos(abs, 2rem null null 100%)
+							+transition(all .5s ease-in-out)
+							width: 100%
+							h3
+								+fz(1.5rem)
+								max-width: calc(100% - 3rem)
+							p
+								max-width: calc(100% - 3rem)
+						span
+							display: inline-flex
+							text-transform: uppercase
+							color: darken(color-get($mau,trang),0%)
+							+fw(600)
+							+pos(abs, null null 2rem 2rem)
+							+opacity(0)
+							+transition(all .5s ease-in-out)
+							&:before
+								display: inline-flex
+								width: 0px
+								height: 1px
+								background: darken(color-get($mau,extra),0%)
+								content: ''
+								+pos(abs, 50% null null calc(100% + 1rem))
+								+transition(all .5s ease-in-out)
+				&:hover
+					figure
+						&:before
+							+opacity(.9)
+						figcaption
+							.text
+								+pos(abs, 2rem null null 2rem)
+							span
+								+opacity(1)
+								transition-delay: .5s
+								&:before
+									transition-delay: .7s
+									width: 1000px
+
+
+
+	.pagelist
+		.pagination
+			margin-bottom: 0
+			.page-item
+				margin-left: .5rem
+				&:first-child
+					margin-left: 0
+				.page-link
+					+bor-rad(0%)
+					width: 2.5rem
+					height: 2.5rem
+					justify-content: center
+					align-items: center
+					display: flex
+					color: darken(color-get($mau,trang) ,20%)
+				&.active
+					.page-link
+						color: darken(color-get($mau,trang) ,0%)

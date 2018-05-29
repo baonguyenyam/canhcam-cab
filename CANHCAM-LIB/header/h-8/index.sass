@@ -88,6 +88,20 @@
 								&:after
 									top: calc(100% + .35rem)
 									background: lighten(color-get($mau,extra),0%)
+
+	+media-breakpoint-up(xl)
+		&.fixedheader
+			.navbar-collapse
+				.order-md-1
+					.nav-item
+						margin-right: 1.5rem
+						&:last-child
+							margin-right: 0
+				.order-md-3
+					.nav-item
+						margin-left: 1.5rem
+						&:first-child
+							margin-left: 0
 	// MENU
 	+media-breakpoint-down(md)
 		.container

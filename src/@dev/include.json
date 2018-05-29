@@ -5,7 +5,17 @@
 				"header/h-8"
 			],
 			"body": [
-				"shop/s-4"
+				"gallery/g-1",
+				"gallery/g-2",
+				"gallery/g-3",
+				"gallery/g-4",
+				"gallery/g-5",
+				"gallery/g-6",
+				"gallery/g-7",
+				"carousel/c-5",
+				"carousel/c-6",
+				"carousel/c-7"
+
 			],
 			"footer": [
 				"footer/f-1",
