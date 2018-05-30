@@ -1,0 +1,73 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-form-8
+	+pad(4rem 0)
+	+media-breakpoint-up(lg)
+		+pad(6rem 0)
+	.canhcam-sub
+		.sub
+			+pad(2rem 0)
+			label
+				text-transform: uppercase
+				color: color-get($mau,trang)
+			.socials
+				ul
+					margin-bottom: 0
+					li
+						a
+							color: color-get($mau,trang)
+							+bor-rad(50%)
+							border: 2px solid color-get($mau,trang)
+							width: 2.2rem
+							height: 2.2rem
+							display: flex
+							justify-content: center
+							align-items: center
+							text-decoration: none
+							i
+								+fz(1rem)
+							&:hover
+								background: rgba(red(color-get($mau,trang)),green(color-get($mau,trang)),blue(color-get($mau,trang)),.3)
+
+			.input-group
+				border: 2px solid color-get($mau,trang)
+				input, button
+					+bor-rad(0)
+					background: none
+					border: 0
+					+box-sha(none)
+					color: color-get($mau,trang)
+					+pad(.75rem 1rem)
+					+fz(.9rem)
+				input
+					min-width: 250px
+					+placeholder
+						color: color-get($mau,trang)
+						+opacity(.4)
+				button
+					text-transform: uppercase
+					position: relative
+					margin-left: .5rem
+					&:after
+						content: ''
+						display: block
+						min-height: 50%
+						width: 1px
+						background: color-get($mau,trang)
+						+pos(abs, 50% null null -.5rem)
+						+transform(translateY(-50%))
+					&:focus, &:active, &:hover
+						background: rgba(red(color-get($mau,trang)),green(color-get($mau,trang)),blue(color-get($mau,trang)),.3)
+						outline: none
+						+box-sha(none !important)
+			+media-breakpoint-up(md)
+				form
+					flex-direction: row
+					display: flex
+					align-items: center
+					label
+						margin-bottom: 0
+

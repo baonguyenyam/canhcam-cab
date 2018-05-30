@@ -7,35 +7,35 @@
 	background: color-get($mau,main)
 	&.fixedheader
 		position: fixed
-		top: 0 
+		top: 0
 		left: 0
-		width: 100% 
-		z-index: 888
+		width: 100%
+		z-index: 999
 		transition: all .25s ease-in-out
 		&.active , &.expand
 			box-shadow: 0 0 5px rgba(0,0,0,.5)
 	#GlobalMENU
 		.navbar-brand
-			img 
+			img
 				max-height: 2rem
 		.navbar-toggler
 			border: 2px solid darken(color-get($mau,trang), 0%)
 			color: darken(color-get($mau,trang), 0%)
-			border-radius: 0 
+			border-radius: 0
 			padding: .35rem .5rem
-			margin-left: 1rem 
-		// Menu trên 
+			margin-left: 1rem
+		// Menu trên
 		.__top-bar
-			ul 
+			ul
 				margin-bottom: 0
 				.nav-item
 					.nav-link
 						color: color-get($mau,trang)
 						+pad(.25rem .25rem)
-						margin-left: .25rem 
-						span 
+						margin-left: .25rem
+						span
 							display: none
-						i 
+						i
 							+fz(1.3rem)
 							font-style: normal
 					&:first-child
@@ -54,18 +54,18 @@
 						display: flex
 						align-items: center
 						max-width: 140px
-						span 
+						span
 							padding-left: .5rem
 							color: lighten(color-get($mau,main), 40%)
 							+lh(1rem)
 						.icon
 							position: relative
-							i 
+							i
 								overflow: hidden
 								+fz(2rem)
-			.__search-menu 
+			.__search-menu
 				display: flex
-				align-items: center 
+				align-items: center
 				.__cart
 					width: auto
 					max-width: none
@@ -75,16 +75,16 @@
 					+fz(1rem)
 					display: flex
 					align-items: center
-					span 
+					span
 						display: none
 						padding-left: .5rem
 						color: lighten(color-get($mau,main), 40%)
 					.icon
 						position: relative
-						i 
+						i
 							overflow: hidden
 							+fz(2rem)
-						.bagde 
+						.bagde
 							+fz(.7rem)
 							font-weight: bold
 							background: color-get($mau,do-1)
@@ -101,16 +101,16 @@
 				.input-group
 					border: 1px solid darken(color-get($mau,trang), 80%)
 					background: color-get($mau,trang)
-					.select2.select2-container 
+					.select2.select2-container
 						.select2-selection
 							border: 1px solid transparent
 							+box-sha(none !important)
-					input 
+					input
 						border: 1px solid transparent
 						&:focus, &:active
 							+box-sha(none !important)
 							outline: none !important
-					button 
+					button
 						+bor-rad(0)
 						border-color: color-get($mau,extra)
 						background: color-get($mau,extra)
@@ -122,9 +122,9 @@
 						.nav-item
 							.nav-link
 								color: lighten(color-get($mau,main), 30%)
-								i 
+								i
 									+fz(1.5rem)
-									margin-right: .5rem 
+									margin-right: .5rem
 				.__product
 					margin: 1rem 0
 					.menu-toggler
@@ -136,20 +136,20 @@
 								font-size: 1.3rem
 								display: flex
 								align-items: center
-								img 
-									margin-right: .5rem 
+								img
+									margin-right: .5rem
 									max-height: 1.5rem
-							&:hover, &:active 
+							&:hover, &:active
 								.nav-link
-									color: color-get($mau,trang) 
+									color: color-get($mau,trang)
 
-	// CHANGE MENU 
-	
+	// CHANGE MENU
+
 	+media-breakpoint-up(md)
-		&:after 
+		&:after
 			content: ''
 			width: 100%
-			height: 2.6rem 
+			height: 2.6rem
 			background: color-get($mau,trang)
 			display: block
 			+pos(abs, null 0 0 null)
@@ -163,14 +163,14 @@
 				transition: all .25s ease-in-out
 				height: 2rem
 				font-size: .75rem
-				ul 
+				ul
 					.nav-item
 						.nav-link
 							display: flex
-							align-items: center 
-							span 
+							align-items: center
+							span
 								display: inline-block
-							i 
+							i
 								+fz(1rem)
 								+pad(0 .25rem)
 						&:first-child
@@ -182,36 +182,36 @@
 				flex-wrap: wrap
 				padding: .25rem 0 0 0
 				.logo
-					min-width: 250px 
+					min-width: 250px
 				.__notice-menu
 					.nav-item
 						margin-left: 1rem
 						.__bl
-							span 
-								display: none 
+							span
+								display: none
 
-				.__search-menu 
+				.__search-menu
 					.input-group
-						input 
+						input
 							min-width: 180px
 					.__cart
-						span 
+						span
 							display: none
 				.__main-menu
 					display: flex
 					order: 3
 					width: 100%
-					align-items: center 
+					align-items: center
 					justify-content: flex-start
-					margin-top: 1rem 
+					margin-top: 1rem
 					.__promotion
 						.navbar-nav
 							.nav-item
 								.nav-link
 									color: lighten(color-get($mau,den), 0%)
-									i 
+									i
 										+fz(1rem)
-					.__product 
+					.__product
 						position: relative
 						min-width: 250px
 						margin: 0
@@ -245,8 +245,8 @@
 									background: darken(color-get($mau,trang), 10%)
 									.nav-link
 										color: color-get($mau,main)
-				.logo 
-					img 
+				.logo
+					img
 						max-height: 2rem
 						transition: all .25s ease-in-out
 		&.fixedheader
@@ -257,72 +257,72 @@
 						.nav-link
 							color: lighten(color-get($mau,trang), 0%)
 							font-size: 1rem
-						&:hover, &:active 
+						&:hover, &:active
 							.nav-link
 								color: lighten(color-get($mau,main), 0%)
-			&.active 
+			&.active
 				#GlobalMENU
 					.__top-bar
 						height: 0
 						overflow: hidden
 					#CCMenuHeader
 						padding: 1rem 0 0 0
-	
+
 	+media-breakpoint-up(lg)
 		#GlobalMENU
 			#CCMenuHeader
 				.__notice-menu
 					.nav-item
 						.__bl
-							span 
+							span
 								display: block
-				.__search-menu 
+				.__search-menu
 					.__cart
-						span 
+						span
 							display: block
-					.input-group 
+					.input-group
 						input
 							min-width: 160px
 	+media-breakpoint-up(xl)
 		#GlobalMENU
 			#CCMenuHeader
-				.__search-menu 
-					.input-group 
+				.__search-menu
+					.input-group
 						input
 							min-width: 350px
 
-	// MENU 
+	// MENU
 	+media-breakpoint-down(sm)
 		#GlobalMENU
 			#CCMenuHeader
 				transition: all .3s ease-in-out
 				position: fixed
-				top: 0 
+				top: 0
 				right: -100%
 				height: 100%
 				width: 100%
 				overflow-y: scroll
 				background: color-get($mau,main)
 				display: block !important
-				padding: 1rem 
+				padding: 1rem
 				.menubars
-					margin-bottom: 1rem 
+					margin-bottom: 1rem
 					.brand
-						img 
-							max-height: 2rem 
+						img
+							max-height: 2rem
 					.navbar-closed
 						border: 2px solid darken(color-get($mau,trang), 0%)
 						color: darken(color-get($mau,trang), 0%)
-						border-radius: 0 
+						border-radius: 0
 						padding: .35rem .5rem
-						margin-left: 1rem 
+						margin-left: 1rem
 						background: none
 						cursor: pointer
 		&.expand
 			#GlobalMENU
 				#CCMenuHeader
 					right: 0
-					z-index: 99999
+					z-index: 1000
 
 .select2-container.select2-container--default.select2-container--open
 	.select2-dropdown
