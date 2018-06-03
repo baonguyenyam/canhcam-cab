@@ -22,7 +22,8 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 			'!' + path.join(url.src2, '{**/\_*,**/\_*/**}')
 		])
 			.pipe(rename(function (path) {
-				var a = path.dirname.replace('/', '-')
+				// var a = path.dirname.replace('/', '-')
+				var a = path.dirname.replace(/\\/g, "-").replace(/\//g, "-");
 				path.dirname = "/";
 				path.basename += "-" + a;
 				path.extname = ".html"
