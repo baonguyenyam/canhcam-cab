@@ -1,0 +1,40 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-14
+	+pad(3rem 0)
+	.item
+		position: relative
+		.info
+			.box
+				width: 100%
+				h2
+					margin-top: 1rem
+					+fz(1.7rem)
+				.text
+					color: darken(color-get($mau,trang),50%)
+				p:last-child
+					margin-bottom: 0
+	+media-breakpoint-up(lg)
+		.item
+			.info
+				+pos(abs, 0 null null 0)
+				height: 100%
+				display: flex
+				align-items: center
+				.box
+					background: color-get($mau,trang)
+					+pad(3rem 6rem 3rem 3rem)
+					h2
+						margin-top: 0
+					.ar
+						+pos(abs, 50% 3rem null null)
+						+transform(translateY(-50%))
+						a
+							text-decoration: none
+						i
+							+fz(3rem)
+						span
+							display: none
