@@ -1,0 +1,112 @@
+@import ../../_includes
+
+.canhcam-footer-10
+	background-color: lighten(color-get($mau,den), 20%)
+	.canhcam-sub
+		color: lighten(color-get($mau,trang), 0%)
+		+pad(3rem 0 0 0)
+		.lines
+			background: url('../img/lines/footer-line.png') top left no-repeat
+			height: 4px
+			width: 100%
+		.text-details
+			color: darken(color-get($mau,trang), 50%)
+		.subscribe
+			position: relative
+			form
+				button.disabled
+					+opacity(1)
+				input
+					background: none
+					+bor-rad(0)
+					border: 0
+					padding-left: 0
+					border-bottom: 1px solid darken(color-get($mau,trang), 50%)
+					&:focus
+						outline: none
+						+box-sha(none)
+					+placeholder
+						color: darken(color-get($mau,trang), 50%)
+			.has-danger
+				input, textarea, select
+					border-color: color-get($mau,extra)
+	.footer-content
+		color: lighten(color-get($mau,trang), 0%)
+		padding: 2rem 0
+		font-weight: 200
+		position: relative
+		h6
+			font-size: 1rem
+			margin-bottom: 1rem
+			color: lighten(color-get($mau,trang), 0%)
+			+fw(700)
+		.slogan
+			.logo
+				a
+					display: block
+				img
+					max-width: 80px
+					filter: grayscale(100%) invert(100%)
+			.quote
+				color: darken(color-get($mau,trang), 30%)
+				font-size: .9rem
+				line-height: 1.5rem
+			.social-list
+				margin: 2rem
+				.list-inline
+					margin: 0
+					.list-inline-item
+						font-size: .9rem
+						margin-right: .5rem
+						a
+							display: flex
+							height: 2rem
+							width: 2rem
+							border: 2px solid darken(color-get($mau,trang), 30%)
+							color: darken(color-get($mau,trang), 30%)
+							align-items: center
+							justify-content: center
+							text-decoration: none
+						&:last-child
+							margin-right: 0
+						&:hover
+							a
+								background: rgba(255,255,255,.13)
+								color: lighten(color-get($mau,trang), 0%)
+								border-color: lighten(color-get($mau,trang), 0%)
+		.list-group
+			.list-group-item
+				display: inline-block
+				background: none
+				border: 0
+				padding: .5rem 0
+				a
+					font-size: .9rem
+					color: darken(color-get($mau,trang), 30%)
+					&:hover
+						text-decoration: underline
+						color: lighten(color-get($mau,trang), 0%)
+	.copy-right
+		font-size: .8rem
+		padding: .75rem 1rem
+		background: darken(color-get($mau,trang), 90%)
+		color: darken(color-get($mau,trang), 20%)
+		text-transform: uppercase
+	// Khi lên Tablet
+	+media-breakpoint-up(md)
+		.footer-content
+			padding: 4rem 0
+			.slogan
+				.quote
+					padding-left: 2rem
+				.social-list
+					margin: 1rem 0 0 0
+	// Khi lên PC
+	+media-breakpoint-up(lg)
+		.footer-content
+			.list-group
+				.list-group-item
+					padding: .15rem 0
+			.slogan
+				display: flex
+

@@ -7,6 +7,7 @@
 	background: color-get($mau,trang)
 	border-bottom: 1px solid darken(color-get($mau,trang),20%)
 	.navbar
+		align-items: center
 		.title
 			order: 0
 			display: none
@@ -25,7 +26,6 @@
 					font-size: 3rem
 					line-height: 3rem
 	.navbar-toggler
-		border: 1px solid darken(color-get($mau,trang),20%)
 		border: 0
 		.mdi
 			font-size: 2rem
@@ -35,8 +35,9 @@
 		position: relative
 		img
 			max-height: 2rem
+			+transition(all ease-in-out .3s)
 	.language
-		+pad(0 2rem)
+		+pad(0 1rem 0 0)
 		+media-breakpoint-up(md)
 			+pad(0 .5rem)
 		+media-breakpoint-up(lg)
@@ -100,14 +101,20 @@
 			+pos(fix, 0 0 null null)
 			z-index: 999
 	+media-breakpoint-up(md)
+		// border-bottom: 0
+		&.fixedheader
+			&.active
+				+box-sha()
 		.navbar
 			padding-top: 0
 			padding-bottom: 0
 			position: relative
 			.navbar-brand
-				+pos(abs, 0 null null 1rem)
+				+pos(abs, .75rem null null 1rem)
 				z-index: 1000
-				+pad(0)
+				+pad(.25rem .15rem)
+				background: color-get($mau,trang)
+				+bor-rad(3px)
 				img
 					max-height: initial
 					max-width: 7rem
@@ -129,25 +136,16 @@
 						.nav-link
 							+box-sha(0 -3px 0 color-get($mau,main), inset)
 							color: color-get($mau,main)
-	+media-breakpoint-up(lg)
-		.navbar
+
+	+media-breakpoint-up(md)
+		&.fixedheader
 			.navbar-brand
 				img
-					max-width: 10rem
-			.navbar-nav
-				.nav-item
-					.nav-link
-						+pad(2.5rem .5rem)
-						+fz(1rem)
-						text-transform: uppercase
-	+media-breakpoint-up(xl)
-		.navbar
-			.navbar-nav
-				.nav-item
-					.nav-link
-						+fw(bold)
-						+pad(2.5rem 1rem)
-	+media-breakpoint-up(md)
+					max-width: 4rem
+			&.active
+				.navbar-brand
+					img
+						max-width: 2.2rem
 		.navbar
 			position: relative
 		.navbar-collapse
@@ -187,3 +185,42 @@
 					display: block
 				.fa-search
 					display: none
+	+media-breakpoint-up(lg)
+		.navbar
+			.navbar-brand
+				img
+					max-width: 10rem
+			.navbar-nav
+				.nav-item
+					.nav-link
+						+pad(2.5rem .5rem)
+						+fz(1rem)
+						text-transform: uppercase
+						+transition(all ease-in-out .3s)
+		&.fixedheader
+			.navbar-brand
+				img
+					max-width: 8rem
+			&.active
+				.navbar-brand
+					img
+						max-width: 2.4rem
+				.navbar
+					.navbar-nav
+						.nav-item
+							.nav-link
+								+pad(1.5rem .5rem)
+	+media-breakpoint-up(xl)
+		.navbar
+			.navbar-nav
+				.nav-item
+					.nav-link
+						+fw(bold)
+						+pad(2.5rem 1rem)
+		&.fixedheader
+			&.active
+				.navbar
+					.navbar-nav
+						.nav-item
+							.nav-link
+								+pad(1.5rem 1rem)

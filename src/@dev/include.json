@@ -2,31 +2,14 @@
 	"SETUP": {
 		"index": {
 			"header": [
-				"header/h-8"
+				"header/h-7"
 			],
 			"body": [
-				"gallery/g-1",
-				"gallery/g-2",
-				"gallery/g-3",
-				"gallery/g-4",
-				"gallery/g-5",
-				"form/f-8",
-				"gallery/g-7",
-				"carousel/c-5",
-				"carousel/c-6",
-				"carousel/c-7"
+				"news/n-5"
 
 			],
 			"footer": [
-				"footer/f-1",
-				"footer/f-2",
-				"footer/f-3",
-				"footer/f-4",
-				"footer/f-5",
-				"footer/f-6",
-				"footer/f-7",
-				"footer/f-8",
-				"footer/f-9"
+				"footer/f-10"
 			]
 		}
 	}

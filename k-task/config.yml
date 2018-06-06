@@ -62,7 +62,7 @@ config:
     test: "{vendor,vendor/**}"
 # Config Host
   host: "127.0.0.1"
-  port: "9999"
+  port: "1234"
   sameport: "6000"
   proxy: "9018"
   website: "baonguyenyam.github.io"

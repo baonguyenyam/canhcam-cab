@@ -2,8 +2,9 @@ header.canhcam-header-7
 	nav.navbar.navbar-expand-md.container
 		a.navbar-brand.d-none.d-md-block(href='#')
 			img(src="./img/logo-ang.png", alt="Logo")
-		a.navbar-brand.d-md-none(href='#')
+		a.navbar-brand.d-md-none.mr-auto(href='#')
 			img(src="./img/logo-min.png", alt="Logo")
+		#language
 		button.navbar-toggler(type='button', data-toggle='offcanvas', data-target='#CCMenuHeader', aria-controls='CCMenuHeader', aria-expanded='false', aria-label='Toggle navigation')
 			span.mdi.mdi-menu
 
@@ -29,8 +30,8 @@ header.canhcam-header-7
 					a.nav-link(href='#') Liên hệ
 
 
-			.language
-				ul.mt-2.mt-md-0.list-unstyled(data-select)
+			.language(k-menu-map-to="#language")
+				ul.list-unstyled
 					li
 						a(href='#')
 							span English
