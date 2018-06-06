@@ -1,0 +1,37 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-tagline-14
+	+pad(2rem 0)
+	text-align: right
+	+media-breakpoint-up(lg)
+		+pad(3rem 0)
+	h1
+		position: relative
+		margin-bottom: 2rem
+		span
+			display: block
+			width: 60px
+			height: 3px
+			background: color-get($mau,main)
+			+pos(abs, calc(100% + 10px) 0 null null)
+			&:after, &:before
+				content: ''
+				display: inline-block
+				width: 0
+				height: 0
+			&:after
+				border-bottom: 3px solid color-get($mau,main)
+				border-right: 3px solid transparent
+				+pos(abs, 0 -3px null null)
+			&:before
+				border-top: 3px solid color-get($mau,main)
+				border-left: 3px solid transparent
+				+pos(abs, 0 null null -3px)
+	p
+		+media-breakpoint-up(lg)
+			max-width: 50%
+			text-align: right
+			margin: 0 0 0 50%

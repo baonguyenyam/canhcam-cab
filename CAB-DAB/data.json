@@ -550,6 +550,54 @@
             "body",
             "tagline-8.png",
             "tagline 8"
+        ],
+        "tagline-9": [
+            "tagline/t-9",
+            "body",
+            "2a16a20659aa3d578425b54a045d3a5c.png",
+            "Tagline 9",
+            "",
+            ""
+        ],
+        "tagline-10": [
+            "tagline/t-10",
+            "body",
+            "7d8935d4333cdd4c14304de29e608b1f.png",
+            "Tagline 10",
+            "",
+            ""
+        ],
+        "tagline-11": [
+            "tagline/t-11",
+            "body",
+            "2380b439339a3ff5de5026c42ee2ec67.png",
+            "Tagline 11",
+            "",
+            ""
+        ],
+        "tagline-12": [
+            "tagline/t-12",
+            "body",
+            "bebec0b1f29d6d190f15ae3bbb7a19c8.png",
+            "Tagline 12",
+            "",
+            ""
+        ],
+        "tagline-13": [
+            "tagline/t-13",
+            "body",
+            "f373d7a8b4724e9257e2ca2ba7565695.png",
+            "Tagline 13",
+            "",
+            ""
+        ],
+        "tagline-14": [
+            "tagline/t-14",
+            "body",
+            "9dccfcac2bb7b9b34777b4f1e3344f65.png",
+            "Tagline 14",
+            "",
+            ""
         ]
     },
     "footer": {
