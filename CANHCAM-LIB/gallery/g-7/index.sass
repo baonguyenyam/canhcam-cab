@@ -106,3 +106,41 @@
 									width: 1000px
 
 
++media-breakpoint-up(md)
+	.fancybox-custom-layout
+		.fancybox-bg
+			background: lighten(color-get($mau,trang),0%)
+		&.fancybox-is-open .fancybox-bg
+			opacity: 1
+		.fancybox-caption
+			background: lighten(color-get($mau,main),0%)
+			bottom: 0
+			left: auto
+			padding: 30px 20px
+			right: 44px
+			top: 0
+			width: 256px
+			h3
+				margin-bottom: 1rem
+				+fz(1.5rem)
+			p
+				darken(color-get($mau,trang),20%)
+			&::before
+				display: none
+		.fancybox-stage
+			right: 300px
+		.fancybox-toolbar
+			background: darken(color-get($mau,trang),80%)
+			bottom: 0
+			left: auto
+			right: 0
+			top: 0
+			width: 44px
+		.fancybox-button
+			background: transparent
+		.fancybox-navigation a
+			padding: 0
+			&:not(.disabled)
+				color: #333
+		.fancybox-button--arrow_right
+			right: 308px
