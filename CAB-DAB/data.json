@@ -190,7 +190,16 @@
             "Slider 5"
         ]
     },
-    "testimonials": {},
+    "testimonials": {
+        "testimonials-1": [
+            "testimonials/t-1",
+            "body",
+            "51ab8e6c2b073ea7057b10a2ae1cb2de.png",
+            "Testimonials 1",
+            "",
+            ""
+        ]
+    },
     "pagination": {
         "pagination-1": [
             "pagination/p-1",
