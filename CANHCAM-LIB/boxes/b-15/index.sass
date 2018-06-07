@@ -1,0 +1,39 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-15
+	.item
+		min-height: 500px
+		position: relative
+		border-radius: 0 0 85% 85% / 30%
+	.title
+		+pos(abs, null null 3rem 0)
+		text-align: center
+		width: 100%
+		+pad(0 1rem)
+		h1
+			color: color-get($mau,trang)
+			+text-sha(1px 1px 3px rgba(0,0,0,.4))
+		p
+			color: color-get($mau,trang)
+			+text-sha(2px 2px 3px rgba(0,0,0,.2))
+			+fz(1.5rem)
+			+lh(1.8rem)
+			+fw(300)
+			+media-breakpoint-up(md)
+				max-width: 50%
+				margin: 0 auto 1rem auto
+		+media-breakpoint-up(lg)
+			+pos(abs, 50% null initial 0)
+			+transform(translateY(-50%))
+			h1
+				+fz(4rem)
+				letter-spacing: 1px
+			p
+				+fz(2rem)
+				+lh(2.3rem)
+				letter-spacing: 1px
+
+
