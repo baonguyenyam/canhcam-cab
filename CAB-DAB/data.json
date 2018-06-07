@@ -230,6 +230,14 @@
             "Nav 5",
             "",
             "Sử dụng chế độ màu âm bản"
+        ],
+        "nav-6": [
+            "nav/n-6",
+            "body",
+            "8b6cfb8fb5dd94c543313b66cf17b842.png",
+            "Nav with breadcrumb",
+            "",
+            ""
         ]
     },
     "banner": {
