@@ -23,7 +23,12 @@ function selectCountriesShop2() {
 		escapeMarkup: function (markup) {
 			return markup;
 		}
+	}).on('select2:select', function (e) {
+		var data = e.params.data;
+		var attributes = e.target.value
+		window.location.href = attributes
 	});
+
 }
 
 function shopCanhCam2() {

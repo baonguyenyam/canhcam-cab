@@ -1,10 +1,4 @@
 section.canhcam-shop-1
-	article.shop-category
-		.container.title
-			.row
-				.col
-					h2.h2 Lorem
-					p.mb-3.mb-md-5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sequi modi impedit laboriosam esse voluptatibus, repellat laudantium omnis magnam hic reiciendis similique laborum tempore eos soluta natus facilis explicabo expedita?
 	article.product-lists
 		.container
 			.row
@@ -17,7 +11,7 @@ section.canhcam-shop-1
 						form#filterSearch
 							h4 Brands
 							.form-check.abc-checkbox
-								input.form-check-input(name="IsChecked", id="checkbox", type='checkbox', value="true")
+								input.form-check-input(name="IsChecked", id="checkbox", type='checkbox', value="true", checked)
 								label.form-check-label(for="checkbox") I agree
 							.form-check.abc-checkbox
 								input.form-check-input(name="IsChecked1", id="checkbox1", type='checkbox', value="true")
@@ -32,13 +26,13 @@ section.canhcam-shop-1
 							h4 Countries
 							select#selectcountries.custom-select.my-1.mr-sm-2(data-no="Không tìm thấy kếy quả nào")
 								option(selected) Choose...
-								option(value="1") One
-								option(value="2") Two
-								option(value="3") Three
+								option(value="#") One
+								option(value="#") Two
+								option(value="#") Three
 							hr
 							h4 Kind
 							.form-check.abc-checkbox.abc-checkbox-circle
-								input.form-check-input(name="IsChecked", id="radio", type='radio', value="true")
+								input.form-check-input(name="IsChecked", id="radio", type='radio', value="true", checked)
 								label.form-check-label(for="radio") I agree
 							.form-check.abc-checkbox.abc-checkbox-circle
 								input.form-check-input(name="IsChecked", id="radio1", type='radio', value="true")
