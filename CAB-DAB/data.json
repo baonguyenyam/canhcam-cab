@@ -190,6 +190,33 @@
             "Slider 5"
         ]
     },
+    "testimonials": {},
+    "pagination": {
+        "pagination-1": [
+            "pagination/p-1",
+            "body",
+            "5b3d28d226f7bb3fe4b92ad991a112ae.png",
+            "Pagination 1",
+            "",
+            ""
+        ],
+        "pagination-2": [
+            "pagination/p-2",
+            "body",
+            "69fa048beaa5cf7cf1e841729a540329.png",
+            "Pagination 2",
+            "",
+            ""
+        ],
+        "pagination-3": [
+            "pagination/p-3",
+            "body",
+            "acc6f3b52b69c560adbe6c9a3e7ea7cc.png",
+            "Pagination 3",
+            "",
+            ""
+        ]
+    },
     "nav": {
         "nav-1": [
             "nav/n-1",

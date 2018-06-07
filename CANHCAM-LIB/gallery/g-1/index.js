@@ -4,7 +4,8 @@ $(document).ready(function() {
 		thumbnail: true,
 		animateThumb: false,
 		showThumbByDefault: false,
-		selector: '.item'
+		selector: '.item',
+		addClass: 'canhcam-gallery-1 canhcam-video-fixed-size'
 	});
 
 });

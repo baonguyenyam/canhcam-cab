@@ -20,7 +20,7 @@
 				+mar(.5rem 0 0 0)
 				+pad(0)
 				+fz(.9rem)
-				a 
+				a
 					color: darken(color-get($mau,trang) ,60%)
 			.nav
 				margin-bottom: 0
@@ -34,11 +34,11 @@
 					&:not(:first-child)
 						.nav-link
 							color: darken(color-get($mau,trang) ,60%)
-						
+
 					.form-check
 						text-decoration: none
 						color: darken(color-get($mau,trang) ,60%)
-						input[type="checkbox"]:checked + label, 
+						input[type="checkbox"]:checked + label,
 						input[type="radio"]:checked + label
 							color: darken(color-get($mau,trang) ,60%)
 						label
@@ -59,10 +59,10 @@
 			.btn-group
 				.btn
 					border: 0
-					&.active 
+					&.active
 						color: color-get($mau,main)
-					&:focus, &:active, &.active 
-						outline: none 
+					&:focus, &:active, &.active
+						outline: none
 						+box-sha(none)
 						border: 0
 
@@ -113,7 +113,7 @@
 				.checkbox-styled
 					cursor: pointer
 					+fz(1rem)
-					margin-right: .5rem 
+					margin-right: .5rem
 					color: darken(color-get($mau,trang) ,80%)
 					display: inline-block
 					span
@@ -124,8 +124,8 @@
 						+bor-rad(0)
 						border: 1px solid darken(color-get($mau,trang) ,20%)
 						line-height: 1rem
-					&:hover, &.active 
-						span 
+					&:hover, &.active
+						span
 							background: color-get($mau,main)
 							color: color-get($mau,trang)
 							border: 1px solid color-get($mau,main)
@@ -147,34 +147,34 @@
 								background: color-get($mau,trang)
 				.innerbox
 					background: color-get($mau,trang)
-					margin-bottom: 2rem 
-					.title 
+					margin-bottom: 2rem
+					.title
 						background: darken(color-get($mau,trang) ,60%)
 						+pad(1rem)
-						h4 
+						h4
 							display: flex
 							align-items: center
 							margin-bottom: .5rem
-							.ic 
+							.ic
 								margin-right: 1rem
-								img 
+								img
 									filter: invert(100%)
 									min-width: 2rem
-							.name 
+							.name
 								color: color-get($mau,trang)
 								text-transform: uppercase
 								+fw(400)
-						.desc 
+						.desc
 							color: darken(color-get($mau,trang) ,30%)
 							+lh(1.2rem)
-					.body 
+					.body
 						+pad(1rem 1rem .5rem 1rem)
 						.form-check
 							margin-bottom: .75rem
 							+fw(bold)
 							text-decoration: none
 							color: darken(color-get($mau,trang) ,60%)
-							input[type="checkbox"]:checked + label, 
+							input[type="checkbox"]:checked + label,
 							input[type="radio"]:checked + label
 								color: darken(color-get($mau,trang) ,60%)
 							label
@@ -192,7 +192,7 @@
 						.child
 							+mar(1.5rem 0 1.5rem 1.5rem)
 							.form-check
-								label 
+								label
 									+fw(normal)
 		.product-details
 			+media-breakpoint-up(md)
@@ -202,24 +202,24 @@
 				background: darken(color-get($mau,trang) ,0%)
 				margin-bottom: 1rem
 				&.list-group-wrapper
-					> div 
+					> div
 						flex-direction: column
-						.item 
+						.item
 							flex: 0 0 100%
 							max-width: 100%
 							border-bottom: 1px solid darken(color-get($mau,trang) ,5%)
 							&:last-child
 								border-bottom: 0
-							&:hover 
+							&:hover
 								&:before
 									display: none
 								&:after
 									height: 100%
-							.item-detail 
+							.item-detail
 								figure
 									+clearfix
 									+pad(1rem)
-									img 
+									img
 										float: left
 										width: 35%
 									figcaption
@@ -289,7 +289,7 @@
 										background: color-get($mau,la-1)
 							img
 								max-width: 100%
-							figcaption 
+							figcaption
 								text-align: left
 								.addtocart-toggle
 									display: none
@@ -298,12 +298,12 @@
 									+fw(bold)
 									min-height: 1.5rem
 									+fz(1.2rem)
-								.old-price 
+								.old-price
 									text-decoration: line-through
 									color: darken(color-get($mau,trang),65%)
 									+fz(.9rem)
 									min-height: 1.3rem
-								h3 
+								h3
 									margin-top: .5rem
 									text-transform: uppercase
 									color: color-get($mau,den)
@@ -313,7 +313,7 @@
 									max-height: 2.4rem
 									overflow: hidden
 									text-overflow: ellipsis
-								.code 
+								.code
 									+fw(initial)
 									display: block
 									+fz(.8rem)
@@ -356,8 +356,8 @@
 					&:hover
 						+media-breakpoint-up(sm)
 							position: relative
-							overflow: initial 
-							&:after 
+							overflow: initial
+							&:after
 								content: ''
 								display: block
 								+pos(abs, 0 0 null null)
@@ -365,7 +365,7 @@
 								height: calc(100% + 2rem)
 								z-index: 99
 								+box-sha(0 0 0 1px color-get($mau,main), inset)
-							&:before 
+							&:before
 								content: ''
 								display: block
 								+pos(abs, null 0 -2rem null)
@@ -393,23 +393,3 @@
 							background: none
 							color: color-get($mau,main)
 							border-color: color-get($mau,main)
-		.pagelist
-			margin-bottom: 2rem
-			.pagination
-				margin-bottom: 0
-				.page-item
-					margin-left: .5rem
-					&:first-child
-						margin-left: 0
-					.page-link
-						+bor-rad(50% 50%)
-						width: 2.5rem
-						height: 2.5rem
-						justify-content: center
-						align-items: center
-						display: flex
-						color: darken(color-get($mau,trang) ,20%)
-					&.active
-						.page-link
-							color: darken(color-get($mau,trang) ,0%)
-

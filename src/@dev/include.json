@@ -5,9 +5,9 @@
 				"header/h-7"
 			],
 			"body": [
-				"nav/n-6",
-				"tagline/t-10",
-				"tagline/t-11"
+				"testimonials/t-1",
+				"pagination/p-2"
+
 			],
 			"footer": [
 				"footer/f-10"

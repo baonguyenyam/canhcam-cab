@@ -7,16 +7,12 @@
     "namejs_core": "core",
     "namecss_core": "core",
     "js_core": [
-      "bower_components/Modernizr/modernizr.custom.js",
       "node_modules/jquery/dist/jquery.js",
       "node_modules/popper.js/dist/umd/popper.js",
       "node_modules/bootstrap/dist/js/bootstrap.js",
-	  "bower_components/moment/min/moment.min.js",
-	  "bower_components/offline/offline.min.js",
-      "bower_components/lodash/dist/lodash.min.js"
+	  "bower_components/offline/offline.min.js"
     ],
     "css_core": [
-      "bower_components/animate.css/animate.css",
       "bower_components/offline/themes/offline-theme-default.css",
       "bower_components/offline/themes/offline-language-english.css",
       "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
@@ -34,7 +30,6 @@
       "bower_components/select2/dist/js/select2.full.min.js",
       "bower_components/lightgallery/dist/js/lightgallery-all.min.js",
       "bower_components/slick-carousel/slick/slick.min.js",
-      "bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js",
       "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
       "bower_components/elevatezoom/jquery.elevatezoom.js",
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js",
@@ -52,7 +47,6 @@
       "bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css",
       "bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css",
       "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.css",
-      "bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css",
       "bower_components/owl.carousel/dist/assets/owl.carousel.min.css",
       "bower_components/owl.carousel/dist/assets/owl.theme.default.css"
     ]
