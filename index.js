@@ -15,7 +15,6 @@ var json_body_parser = bodyParser.json();
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 process.env.ENVGLOBAL = false
 
-
 if (process.argv.slice(2).toString() === '--production') {
 	process.env.ENVGLOBAL = true
 }
