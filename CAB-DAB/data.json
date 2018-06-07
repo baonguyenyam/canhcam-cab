@@ -1,702 +1,704 @@
 {
-    "header": {
-        "header-1": [
-            "header/h-1",
-            "header",
-            "header-1.png",
-            "Header 1",
-            "51px"
-        ],
-        "header-2": [
-            "header/h-2",
-            "header",
-            "header-2.png",
-            "Header 2",
-            "51px"
-        ],
-        "header-3": [
-            "header/h-3",
-            "header",
-            "header-3.png",
-            "Header 3",
-            "51px"
-        ],
-        "header-4": [
-            "header/h-4",
-            "header",
-            "header-4.png",
-            "Header 4",
-            "51px"
-        ],
-        "header-5": [
-            "header/h-5",
-            "header",
-            "header-5.png",
-            "Header 5",
-            "51px"
-        ],
-        "header-6": [
-            "header/h-6",
-            "header",
-            "header-6.png",
-            "Header 6",
-            "51px"
-        ],
-        "header-7": [
-            "header/h-7",
-            "header",
-            "4bce78ba6e87a21236f52f144f940c85.png",
-            "Header big logo",
-            "140px"
-        ],
-        "header-8": [
-            "header/h-8",
-            "header",
-            "14ed823d93896fefe52afb5bf1c49e7c.png",
-            "Header 8"
-        ],
-        "header-9": [
-            "header/h-9",
-            "header",
-            "92c9a0f2d572a5687a9c7fa981b755a9.png",
-            "Header 9"
-        ]
-    },
-    "boxes": {
-        "boxes-1": [
-            "boxes/b-1",
-            "body",
-            "boxes-1.png",
-            "boxes 1"
-        ],
-        "boxes-2": [
-            "boxes/b-2",
-            "body",
-            "boxes-2.png",
-            "boxes 2"
-        ],
-        "boxes-3": [
-            "boxes/b-3",
-            "body",
-            "7e07c3213f76f5d7696ff597e20ffaec.png",
-            "CountUp number",
-            "",
-            "Sử dụng CountUp number"
-        ],
-        "boxes-4": [
-            "boxes/b-4",
-            "body",
-            "f6e92256e2a7d837302b5a870409735a.png",
-            "Boxes 4"
-        ],
-        "boxes-5": [
-            "boxes/b-5",
-            "body",
-            "012d813c37a4d74ba3672030950a0df6.png",
-            "Boxes 5"
-        ],
-        "boxes-6": [
-            "boxes/b-6",
-            "body",
-            "6877ce036fd0106384d814741ac8d220.png",
-            "Boxes 6"
-        ],
-        "boxes-7": [
-            "boxes/b-7",
-            "body",
-            "caeccd0e19fd8dc006e8c1067ce841a3.png",
-            "Box 7"
-        ],
-        "boxes-8": [
-            "boxes/b-8",
-            "body",
-            "922a03d8dd20e732ac2fe2afca8a368d.png",
-            "Box 8",
-            "",
-            "Perfect Scrollbar được tích hợp vào đây"
-        ],
-        "boxes-9": [
-            "boxes/b-9",
-            "body",
-            "7fddc880f37b1a485026fcb2e23f4500.png",
-            "Box 9"
-        ],
-        "boxes-10": [
-            "boxes/b-10",
-            "body",
-            "188f313149b0867b2fce149b24caa2af.png",
-            "Box 10"
-        ],
-        "boxes-11": [
-            "boxes/b-11",
-            "body",
-            "cd82c9042e10749f5d73e06a56f1c123.png",
-            "Box 11"
-        ],
-        "boxes-12": [
-            "boxes/b-12",
-            "body",
-            "a2030ddf1f54c3028f0f56d9ecc2e7de.png",
-            "Box 12"
-        ],
-        "boxes-13": [
-            "boxes/b-13",
-            "body",
-            "e4aaaafe3a1eb3d8933861ac31c7c397.png",
-            "Boxes 13",
-            "",
-            ""
-        ],
-        "boxes-14": [
-            "boxes/b-14",
-            "body",
-            "d8b51e16828c99a0d1fb0fb209fb6c54.png",
-            "Boxes 14",
-            "",
-            ""
-        ]
-    },
-    "slider": {
-        "slider-1": [
-            "slider/s-1",
-            "body",
-            "slider-1.png",
-            "slider 1"
-        ],
-        "slider-2": [
-            "slider/s-2",
-            "body",
-            "slider-2.png",
-            "slider 2",
-            "",
-            "Fullscreen khi load, cần bật active header và header tranparent cho site"
-        ],
-        "slider-3": [
-            "slider/s-3",
-            "body",
-            "5ffa74078ea5078338b0566f1abbdc6c.png",
-            "Slider 3"
-        ],
-        "slider-4": [
-            "slider/s-4",
-            "body",
-            "28c6e7a585711fdaf6723d6668dd9dd1.png",
-            "Slider 4"
-        ],
-        "slider-5": [
-            "slider/s-5",
-            "body",
-            "220d3912497f2ce4217ca71314f1dfd6.png",
-            "Slider 5"
-        ]
-    },
-    "testimonials": {},
-    "pagination": {
-        "pagination-1": [
-            "pagination/p-1",
-            "body",
-            "5b3d28d226f7bb3fe4b92ad991a112ae.png",
-            "Pagination 1",
-            "",
-            ""
-        ],
-        "pagination-2": [
-            "pagination/p-2",
-            "body",
-            "69fa048beaa5cf7cf1e841729a540329.png",
-            "Pagination 2",
-            "",
-            ""
-        ],
-        "pagination-3": [
-            "pagination/p-3",
-            "body",
-            "acc6f3b52b69c560adbe6c9a3e7ea7cc.png",
-            "Pagination 3",
-            "",
-            ""
-        ]
-    },
-    "nav": {
-        "nav-1": [
-            "nav/n-1",
-            "body",
-            "nav-1.png",
-            "Nav 1",
-            "10px",
-            "Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế, có sử dụng chế độ màu âm bản"
-        ],
-        "nav-2": [
-            "nav/n-2",
-            "body",
-            "ebee8771e948779386090f03c6c90967.png",
-            "Nav 2",
-            "",
-            ""
-        ],
-        "nav-3": [
-            "nav/n-3",
-            "body",
-            "b4aa3f62529507eaa0c900219051acf0.png",
-            "Nav 3",
-            "",
-            ""
-        ],
-        "nav-4": [
-            "nav/n-4",
-            "body",
-            "91b9c3392d1d6ca767946c87376ad45a.png",
-            "Nav 4",
-            "",
-            ""
-        ],
-        "nav-5": [
-            "nav/n-5",
-            "body",
-            "1cf80189e09c4a6952185dfd96bf97a1.png",
-            "Nav 5",
-            "",
-            "Sử dụng chế độ màu âm bản"
-        ],
-        "nav-6": [
-            "nav/n-6",
-            "body",
-            "8b6cfb8fb5dd94c543313b66cf17b842.png",
-            "Nav with breadcrumb",
-            "",
-            ""
-        ]
-    },
-    "banner": {
-        "banner-1": [
-            "banner/b-1",
-            "body",
-            "bbcdc2d1b8a7d09efd6ee313c6c3ac88.png",
-            "Banner 1"
-        ],
-        "banner-2": [
-            "banner/b-2",
-            "body",
-            "dc8c0e798df3610973a8ad41a197cb38.png",
-            "Banner 2",
-            "",
-            "Fullscreen khi load, cần bật active header và header tranparent cho site"
-        ]
-    },
-    "carousel": {
-        "carousel-1": [
-            "carousel/c-1",
-            "body",
-            "carousel-1.png",
-            "carousel 1"
-        ],
-        "carousel-2": [
-            "carousel/c-2",
-            "body",
-            "carousel-2.png",
-            "carousel 2"
-        ],
-        "carousel-3": [
-            "carousel/c-3",
-            "body",
-            "carousel-3.png",
-            "carousel 3"
-        ],
-        "carousel-4": [
-            "carousel/c-4",
-            "body",
-            "carousel-4.png",
-            "carousel 4"
-        ],
-        "carousel-5": [
-            "carousel/c-5",
-            "body",
-            "dff90ca9664bfb263b1e433e991421dc.png",
-            "Carousel 5"
-        ],
-        "carousel-6": [
-            "carousel/c-6",
-            "body",
-            "80aba5b538642b90e6ebc231c9b68ef0.png",
-            "Carousel 6"
-        ],
-        "carousel-7": [
-            "carousel/c-7",
-            "body",
-            "0748873f3617c58a2f9e5d7e93dd34ae.png",
-            "Carousel 7"
-        ]
-    },
-    "news": {
-        "news-1": [
-            "news/n-1",
-            "body",
-            "news-1.png",
-            "news 1"
-        ],
-        "news-2": [
-            "news/n-2",
-            "body",
-            "news-2.png",
-            "news 2"
-        ],
-        "news-3": [
-            "news/n-3",
-            "body",
-            "news-3.png",
-            "news 3"
-        ],
-        "news-4": [
-            "news/n-4",
-            "body",
-            "64ce8b7f56c7d77db45e14cdc4a08f02.png",
-            "News 4"
-        ],
-        "news-5": [
-            "news/n-5",
-            "body",
-            "a99dc161b582b93ce7b17c7a26e55a08.png",
-            "News 5",
-            "",
-            ""
-        ]
-    },
-    "news-details": {
-        "news-details-1": [
-            "news-details/n-1",
-            "body",
-            "d692c21877284337d23b07caaa0d40f5.png",
-            "News Details 1 with stycky"
-        ]
-    },
-    "shop": {
-        "shop-1": [
-            "shop/s-1",
-            "body",
-            "shop-1.png",
-            "shop 1"
-        ],
-        "shop-2": [
-            "shop/s-2",
-            "body",
-            "shop-2.png",
-            "shop 2"
-        ],
-        "shop-3": [
-            "shop/s-3",
-            "body",
-            "c041b486fa87ef9cca1f9beb51fc8f48.png",
-            "Shop 3 - Quick view"
-        ],
-        "shop-4": [
-            "shop/s-4",
-            "body",
-            "92d7a49012196833e7feeffe834083ae.png",
-            "Shop 4",
-            "",
-            ""
-        ]
-    },
-    "shop-details": {
-        "shop-details-1": [
-            "shop-details/s-1",
-            "body",
-            "shop-details-1.png",
-            "shop-details 1"
-        ],
-        "shop-details-2": [
-            "shop-details/s-2",
-            "body",
-            "shop-details-2.png",
-            "shop-details 2"
-        ],
-        "shop-details-3": [
-            "shop-details/s-3",
-            "body",
-            "shop-details-3.png",
-            "shop-details 3"
-        ]
-    },
-    "gallery": {
-        "gallery-1": [
-            "gallery/g-1",
-            "body",
-            "gallery-1.png",
-            "gallery 1"
-        ],
-        "gallery-2": [
-            "gallery/g-2",
-            "body",
-            "711d2a1733005cd9ab00016753036e06.png",
-            "Gallery Video"
-        ],
-        "gallery-3": [
-            "gallery/g-3",
-            "body",
-            "0157ebd88a540ff4f65be0b6fe5424a0.png",
-            "Gallery Video/Image/Hover"
-        ],
-        "gallery-4": [
-            "gallery/g-4",
-            "body",
-            "7afbbb96fbb667c6c84ae157f84256d8.png",
-            "Gallery 4",
-            "",
-            "Tích hợp Masonry bằng SASS"
-        ],
-        "gallery-5": [
-            "gallery/g-5",
-            "body",
-            "581ab6c2d4b629c0085d433a43336af7.png",
-            "Gallery 5",
-            "",
-            ""
-        ],
-        "gallery-6": [
-            "gallery/g-6",
-            "body",
-            "6b15fe4dcbb93f50c979545f2a2da36f.png",
-            "Gallery 6",
-            "",
-            ""
-        ],
-        "gallery-7": [
-            "gallery/g-7",
-            "body",
-            "6ef826f9feb6bdf7a14adafc7275159c.png",
-            "Gallery 7",
-            "",
-            ""
-        ]
-    },
-    "form": {
-        "form-1": [
-            "form/f-1",
-            "body",
-            "form-1.png",
-            "form 1"
-        ],
-        "form-2": [
-            "form/f-2",
-            "body",
-            "form-2.png",
-            "form 2",
-            "",
-            "Tích hợp tính năng tự load iframe khác nhau"
-        ],
-        "form-3": [
-            "form/f-3",
-            "body",
-            "form-3.png",
-            "form 3"
-        ],
-        "form-4": [
-            "form/f-4",
-            "body",
-            "form-4.png",
-            "form 4"
-        ],
-        "form-5": [
-            "form/f-5",
-            "body",
-            "888e8edb4297291eef77a66acfe22cd0.png",
-            "Form 5"
-        ],
-        "form-6": [
-            "form/f-6",
-            "body",
-            "c486f373e434056da0d1fbe8484efec9.png",
-            "Form 6"
-        ],
-        "form-7": [
-            "form/f-7",
-            "body",
-            "dae021b08db57f4fb085402219b074d6.png",
-            "Form 7"
-        ],
-        "form-8": [
-            "form/f-8",
-            "body",
-            "a6b75e476a362477d005ec82166beb80.png",
-            "Form 8",
-            "",
-            ""
-        ]
-    },
-    "map": {
-        "map-1": [
-            "map/m-1",
-            "body",
-            "map-1.png",
-            "map 1"
-        ],
-        "map-2": [
-            "map/m-2",
-            "body",
-            "map-2.png",
-            "map 2"
-        ]
-    },
-    "tagline": {
-        "tagline-1": [
-            "tagline/t-1",
-            "body",
-            "tagline-1.png",
-            "tagline 1"
-        ],
-        "tagline-2": [
-            "tagline/t-2",
-            "body",
-            "tagline-2.png",
-            "tagline 2"
-        ],
-        "tagline-3": [
-            "tagline/t-3",
-            "body",
-            "tagline-3.png",
-            "tagline 3"
-        ],
-        "tagline-4": [
-            "tagline/t-4",
-            "body",
-            "tagline-4.png",
-            "tagline 4"
-        ],
-        "tagline-5": [
-            "tagline/t-5",
-            "body",
-            "tagline-5.png",
-            "tagline 5"
-        ],
-        "tagline-6": [
-            "tagline/t-6",
-            "body",
-            "tagline-6.png",
-            "tagline 6"
-        ],
-        "tagline-7": [
-            "tagline/t-7",
-            "body",
-            "tagline-7.png",
-            "tagline 7"
-        ],
-        "tagline-8": [
-            "tagline/t-8",
-            "body",
-            "tagline-8.png",
-            "tagline 8"
-        ],
-        "tagline-9": [
-            "tagline/t-9",
-            "body",
-            "2a16a20659aa3d578425b54a045d3a5c.png",
-            "Tagline 9",
-            "",
-            ""
-        ],
-        "tagline-10": [
-            "tagline/t-10",
-            "body",
-            "7d8935d4333cdd4c14304de29e608b1f.png",
-            "Tagline 10",
-            "",
-            ""
-        ],
-        "tagline-11": [
-            "tagline/t-11",
-            "body",
-            "2380b439339a3ff5de5026c42ee2ec67.png",
-            "Tagline 11",
-            "",
-            ""
-        ],
-        "tagline-12": [
-            "tagline/t-12",
-            "body",
-            "bebec0b1f29d6d190f15ae3bbb7a19c8.png",
-            "Tagline 12",
-            "",
-            ""
-        ],
-        "tagline-13": [
-            "tagline/t-13",
-            "body",
-            "f373d7a8b4724e9257e2ca2ba7565695.png",
-            "Tagline 13",
-            "",
-            ""
-        ],
-        "tagline-14": [
-            "tagline/t-14",
-            "body",
-            "9dccfcac2bb7b9b34777b4f1e3344f65.png",
-            "Tagline 14",
-            "",
-            ""
-        ]
-    },
-    "footer": {
-        "footer-1": [
-            "footer/f-1",
-            "footer",
-            "footer-1.png",
-            "footer 1"
-        ],
-        "footer-2": [
-            "footer/f-2",
-            "footer",
-            "footer-2.png",
-            "footer 2"
-        ],
-        "footer-3": [
-            "footer/f-3",
-            "footer",
-            "footer-3.png",
-            "footer 3"
-        ],
-        "footer-4": [
-            "footer/f-4",
-            "footer",
-            "footer-4.png",
-            "footer 4"
-        ],
-        "footer-5": [
-            "footer/f-5",
-            "footer",
-            "footer-5.png",
-            "footer 5"
-        ],
-        "footer-6": [
-            "footer/f-6",
-            "footer",
-            "4a39521b55cd4e039df619985f7ef78f.png",
-            "Footer 6"
-        ],
-        "footer-7": [
-            "footer/f-7",
-            "footer",
-            "004ffbce90efe6c8e778bbd77bcbf801.png",
-            "Footer 7"
-        ],
-        "footer-8": [
-            "footer/f-8",
-            "footer",
-            "acb1c94c08f2e71c0787442fdc2f630c.png",
-            "Footer 8"
-        ],
-        "footer-9": [
-            "footer/f-9",
-            "footer",
-            "efe7f75308d47e016379be988bf19c16.png",
-            "Footer 9"
-        ],
-        "footer-10": [
-            "footer/f-10",
-            "footer",
-            "ebceb2693a7f84498e1fea4d022fb7a5.png",
-            "Footer 10",
-            "",
-            ""
-        ]
-    }
+	"header": {
+		"header-1": [
+			"header/h-1",
+			"header",
+			"header-1.png",
+			"Header 1",
+			"51px"
+		],
+		"header-2": [
+			"header/h-2",
+			"header",
+			"header-2.png",
+			"Header 2",
+			"51px"
+		],
+		"header-3": [
+			"header/h-3",
+			"header",
+			"header-3.png",
+			"Header 3",
+			"51px"
+		],
+		"header-4": [
+			"header/h-4",
+			"header",
+			"header-4.png",
+			"Header 4",
+			"51px"
+		],
+		"header-5": [
+			"header/h-5",
+			"header",
+			"header-5.png",
+			"Header 5",
+			"51px"
+		],
+		"header-6": [
+			"header/h-6",
+			"header",
+			"header-6.png",
+			"Header 6",
+			"51px"
+		],
+		"header-7": [
+			"header/h-7",
+			"header",
+			"4bce78ba6e87a21236f52f144f940c85.png",
+			"Header big logo",
+			"140px"
+		],
+		"header-8": [
+			"header/h-8",
+			"header",
+			"14ed823d93896fefe52afb5bf1c49e7c.png",
+			"Header 8"
+		],
+		"header-9": [
+			"header/h-9",
+			"header",
+			"92c9a0f2d572a5687a9c7fa981b755a9.png",
+			"Header 9"
+		]
+	},
+	"boxes": {
+		"boxes-1": [
+			"boxes/b-1",
+			"body",
+			"boxes-1.png",
+			"boxes 1"
+		],
+		"boxes-2": [
+			"boxes/b-2",
+			"body",
+			"boxes-2.png",
+			"boxes 2"
+		],
+		"boxes-3": [
+			"boxes/b-3",
+			"body",
+			"7e07c3213f76f5d7696ff597e20ffaec.png",
+			"CountUp number",
+			"",
+			"Sử dụng CountUp number"
+		],
+		"boxes-4": [
+			"boxes/b-4",
+			"body",
+			"f6e92256e2a7d837302b5a870409735a.png",
+			"Boxes 4"
+		],
+		"boxes-5": [
+			"boxes/b-5",
+			"body",
+			"012d813c37a4d74ba3672030950a0df6.png",
+			"Boxes 5"
+		],
+		"boxes-6": [
+			"boxes/b-6",
+			"body",
+			"6877ce036fd0106384d814741ac8d220.png",
+			"Boxes 6"
+		],
+		"boxes-7": [
+			"boxes/b-7",
+			"body",
+			"caeccd0e19fd8dc006e8c1067ce841a3.png",
+			"Box 7"
+		],
+		"boxes-8": [
+			"boxes/b-8",
+			"body",
+			"922a03d8dd20e732ac2fe2afca8a368d.png",
+			"Box 8",
+			"",
+			"Perfect Scrollbar được tích hợp vào đây"
+		],
+		"boxes-9": [
+			"boxes/b-9",
+			"body",
+			"7fddc880f37b1a485026fcb2e23f4500.png",
+			"Box 9"
+		],
+		"boxes-10": [
+			"boxes/b-10",
+			"body",
+			"188f313149b0867b2fce149b24caa2af.png",
+			"Box 10"
+		],
+		"boxes-11": [
+			"boxes/b-11",
+			"body",
+			"cd82c9042e10749f5d73e06a56f1c123.png",
+			"Box 11"
+		],
+		"boxes-12": [
+			"boxes/b-12",
+			"body",
+			"a2030ddf1f54c3028f0f56d9ecc2e7de.png",
+			"Box 12"
+		],
+		"boxes-13": [
+			"boxes/b-13",
+			"body",
+			"e4aaaafe3a1eb3d8933861ac31c7c397.png",
+			"Boxes 13",
+			"",
+			""
+		],
+		"boxes-14": [
+			"boxes/b-14",
+			"body",
+			"d8b51e16828c99a0d1fb0fb209fb6c54.png",
+			"Boxes 14",
+			"",
+			""
+		]
+	},
+	"slider": {
+		"slider-1": [
+			"slider/s-1",
+			"body",
+			"slider-1.png",
+			"slider 1"
+		],
+		"slider-2": [
+			"slider/s-2",
+			"body",
+			"slider-2.png",
+			"slider 2",
+			"",
+			"Fullscreen khi load, cần bật active header và header tranparent cho site"
+		],
+		"slider-3": [
+			"slider/s-3",
+			"body",
+			"5ffa74078ea5078338b0566f1abbdc6c.png",
+			"Slider 3"
+		],
+		"slider-4": [
+			"slider/s-4",
+			"body",
+			"28c6e7a585711fdaf6723d6668dd9dd1.png",
+			"Slider 4"
+		],
+		"slider-5": [
+			"slider/s-5",
+			"body",
+			"220d3912497f2ce4217ca71314f1dfd6.png",
+			"Slider 5"
+		]
+	},
+	"testimonials": {},
+	"pagination": {
+		"pagination-1": [
+			"pagination/p-1",
+			"body",
+			"5b3d28d226f7bb3fe4b92ad991a112ae.png",
+			"Pagination 1",
+			"",
+			""
+		],
+		"pagination-2": [
+			"pagination/p-2",
+			"body",
+			"69fa048beaa5cf7cf1e841729a540329.png",
+			"Pagination 2",
+			"",
+			""
+		],
+		"pagination-3": [
+			"pagination/p-3",
+			"body",
+			"acc6f3b52b69c560adbe6c9a3e7ea7cc.png",
+			"Pagination 3",
+			"",
+			""
+		]
+	},
+	"nav": {
+		"nav-1": [
+			"nav/n-1",
+			"body",
+			"nav-1.png",
+			"Nav 1",
+			"10px",
+			"Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế, có sử dụng chế độ màu âm bản"
+		],
+		"nav-2": [
+			"nav/n-2",
+			"body",
+			"ebee8771e948779386090f03c6c90967.png",
+			"Nav 2",
+			"",
+			""
+		],
+		"nav-3": [
+			"nav/n-3",
+			"body",
+			"b4aa3f62529507eaa0c900219051acf0.png",
+			"Nav 3",
+			"",
+			""
+		],
+		"nav-4": [
+			"nav/n-4",
+			"body",
+			"91b9c3392d1d6ca767946c87376ad45a.png",
+			"Nav 4",
+			"",
+			""
+		],
+		"nav-5": [
+			"nav/n-5",
+			"body",
+			"1cf80189e09c4a6952185dfd96bf97a1.png",
+			"Nav 5",
+			"",
+			"Sử dụng chế độ màu âm bản"
+		]
+	},
+	"breadcrumb": {
+		"breadcrumb-1": [
+			"breadcrumb/b-1",
+			"body",
+			"8b6cfb8fb5dd94c543313b66cf17b842.png",
+			"Breadcrumb with banner",
+			"",
+			""
+		]
+	},
+	"banner": {
+		"banner-1": [
+			"banner/b-1",
+			"body",
+			"bbcdc2d1b8a7d09efd6ee313c6c3ac88.png",
+			"Banner 1"
+		],
+		"banner-2": [
+			"banner/b-2",
+			"body",
+			"dc8c0e798df3610973a8ad41a197cb38.png",
+			"Banner 2",
+			"",
+			"Fullscreen khi load, cần bật active header và header tranparent cho site"
+		]
+	},
+	"carousel": {
+		"carousel-1": [
+			"carousel/c-1",
+			"body",
+			"carousel-1.png",
+			"carousel 1"
+		],
+		"carousel-2": [
+			"carousel/c-2",
+			"body",
+			"carousel-2.png",
+			"carousel 2"
+		],
+		"carousel-3": [
+			"carousel/c-3",
+			"body",
+			"carousel-3.png",
+			"carousel 3"
+		],
+		"carousel-4": [
+			"carousel/c-4",
+			"body",
+			"carousel-4.png",
+			"carousel 4"
+		],
+		"carousel-5": [
+			"carousel/c-5",
+			"body",
+			"dff90ca9664bfb263b1e433e991421dc.png",
+			"Carousel 5"
+		],
+		"carousel-6": [
+			"carousel/c-6",
+			"body",
+			"80aba5b538642b90e6ebc231c9b68ef0.png",
+			"Carousel 6"
+		],
+		"carousel-7": [
+			"carousel/c-7",
+			"body",
+			"0748873f3617c58a2f9e5d7e93dd34ae.png",
+			"Carousel 7"
+		]
+	},
+	"news": {
+		"news-1": [
+			"news/n-1",
+			"body",
+			"news-1.png",
+			"news 1"
+		],
+		"news-2": [
+			"news/n-2",
+			"body",
+			"news-2.png",
+			"news 2"
+		],
+		"news-3": [
+			"news/n-3",
+			"body",
+			"news-3.png",
+			"news 3"
+		],
+		"news-4": [
+			"news/n-4",
+			"body",
+			"64ce8b7f56c7d77db45e14cdc4a08f02.png",
+			"News 4"
+		],
+		"news-5": [
+			"news/n-5",
+			"body",
+			"a99dc161b582b93ce7b17c7a26e55a08.png",
+			"News 5",
+			"",
+			""
+		]
+	},
+	"news-details": {
+		"news-details-1": [
+			"news-details/n-1",
+			"body",
+			"d692c21877284337d23b07caaa0d40f5.png",
+			"News Details 1 with stycky"
+		]
+	},
+	"shop": {
+		"shop-1": [
+			"shop/s-1",
+			"body",
+			"shop-1.png",
+			"shop 1"
+		],
+		"shop-2": [
+			"shop/s-2",
+			"body",
+			"shop-2.png",
+			"shop 2"
+		],
+		"shop-3": [
+			"shop/s-3",
+			"body",
+			"c041b486fa87ef9cca1f9beb51fc8f48.png",
+			"Shop 3 - Quick view"
+		],
+		"shop-4": [
+			"shop/s-4",
+			"body",
+			"92d7a49012196833e7feeffe834083ae.png",
+			"Shop 4",
+			"",
+			""
+		]
+	},
+	"shop-details": {
+		"shop-details-1": [
+			"shop-details/s-1",
+			"body",
+			"shop-details-1.png",
+			"shop-details 1"
+		],
+		"shop-details-2": [
+			"shop-details/s-2",
+			"body",
+			"shop-details-2.png",
+			"shop-details 2"
+		],
+		"shop-details-3": [
+			"shop-details/s-3",
+			"body",
+			"shop-details-3.png",
+			"shop-details 3"
+		]
+	},
+	"gallery": {
+		"gallery-1": [
+			"gallery/g-1",
+			"body",
+			"gallery-1.png",
+			"gallery 1"
+		],
+		"gallery-2": [
+			"gallery/g-2",
+			"body",
+			"711d2a1733005cd9ab00016753036e06.png",
+			"Gallery Video"
+		],
+		"gallery-3": [
+			"gallery/g-3",
+			"body",
+			"0157ebd88a540ff4f65be0b6fe5424a0.png",
+			"Gallery Video/Image/Hover"
+		],
+		"gallery-4": [
+			"gallery/g-4",
+			"body",
+			"7afbbb96fbb667c6c84ae157f84256d8.png",
+			"Gallery 4",
+			"",
+			"Tích hợp Masonry bằng SASS"
+		],
+		"gallery-5": [
+			"gallery/g-5",
+			"body",
+			"581ab6c2d4b629c0085d433a43336af7.png",
+			"Gallery 5",
+			"",
+			""
+		],
+		"gallery-6": [
+			"gallery/g-6",
+			"body",
+			"6b15fe4dcbb93f50c979545f2a2da36f.png",
+			"Gallery 6",
+			"",
+			""
+		],
+		"gallery-7": [
+			"gallery/g-7",
+			"body",
+			"6ef826f9feb6bdf7a14adafc7275159c.png",
+			"Gallery 7",
+			"",
+			""
+		]
+	},
+	"form": {
+		"form-1": [
+			"form/f-1",
+			"body",
+			"form-1.png",
+			"form 1"
+		],
+		"form-2": [
+			"form/f-2",
+			"body",
+			"form-2.png",
+			"form 2",
+			"",
+			"Tích hợp tính năng tự load iframe khác nhau"
+		],
+		"form-3": [
+			"form/f-3",
+			"body",
+			"form-3.png",
+			"form 3"
+		],
+		"form-4": [
+			"form/f-4",
+			"body",
+			"form-4.png",
+			"form 4"
+		],
+		"form-5": [
+			"form/f-5",
+			"body",
+			"888e8edb4297291eef77a66acfe22cd0.png",
+			"Form 5"
+		],
+		"form-6": [
+			"form/f-6",
+			"body",
+			"c486f373e434056da0d1fbe8484efec9.png",
+			"Form 6"
+		],
+		"form-7": [
+			"form/f-7",
+			"body",
+			"dae021b08db57f4fb085402219b074d6.png",
+			"Form 7"
+		],
+		"form-8": [
+			"form/f-8",
+			"body",
+			"a6b75e476a362477d005ec82166beb80.png",
+			"Form 8",
+			"",
+			""
+		]
+	},
+	"map": {
+		"map-1": [
+			"map/m-1",
+			"body",
+			"map-1.png",
+			"map 1"
+		],
+		"map-2": [
+			"map/m-2",
+			"body",
+			"map-2.png",
+			"map 2"
+		]
+	},
+	"tagline": {
+		"tagline-1": [
+			"tagline/t-1",
+			"body",
+			"tagline-1.png",
+			"tagline 1"
+		],
+		"tagline-2": [
+			"tagline/t-2",
+			"body",
+			"tagline-2.png",
+			"tagline 2"
+		],
+		"tagline-3": [
+			"tagline/t-3",
+			"body",
+			"tagline-3.png",
+			"tagline 3"
+		],
+		"tagline-4": [
+			"tagline/t-4",
+			"body",
+			"tagline-4.png",
+			"tagline 4"
+		],
+		"tagline-5": [
+			"tagline/t-5",
+			"body",
+			"tagline-5.png",
+			"tagline 5"
+		],
+		"tagline-6": [
+			"tagline/t-6",
+			"body",
+			"tagline-6.png",
+			"tagline 6"
+		],
+		"tagline-7": [
+			"tagline/t-7",
+			"body",
+			"tagline-7.png",
+			"tagline 7"
+		],
+		"tagline-8": [
+			"tagline/t-8",
+			"body",
+			"tagline-8.png",
+			"tagline 8"
+		],
+		"tagline-9": [
+			"tagline/t-9",
+			"body",
+			"2a16a20659aa3d578425b54a045d3a5c.png",
+			"Tagline 9",
+			"",
+			""
+		],
+		"tagline-10": [
+			"tagline/t-10",
+			"body",
+			"7d8935d4333cdd4c14304de29e608b1f.png",
+			"Tagline 10",
+			"",
+			""
+		],
+		"tagline-11": [
+			"tagline/t-11",
+			"body",
+			"2380b439339a3ff5de5026c42ee2ec67.png",
+			"Tagline 11",
+			"",
+			""
+		],
+		"tagline-12": [
+			"tagline/t-12",
+			"body",
+			"bebec0b1f29d6d190f15ae3bbb7a19c8.png",
+			"Tagline 12",
+			"",
+			""
+		],
+		"tagline-13": [
+			"tagline/t-13",
+			"body",
+			"f373d7a8b4724e9257e2ca2ba7565695.png",
+			"Tagline 13",
+			"",
+			""
+		],
+		"tagline-14": [
+			"tagline/t-14",
+			"body",
+			"9dccfcac2bb7b9b34777b4f1e3344f65.png",
+			"Tagline 14",
+			"",
+			""
+		]
+	},
+	"footer": {
+		"footer-1": [
+			"footer/f-1",
+			"footer",
+			"footer-1.png",
+			"footer 1"
+		],
+		"footer-2": [
+			"footer/f-2",
+			"footer",
+			"footer-2.png",
+			"footer 2"
+		],
+		"footer-3": [
+			"footer/f-3",
+			"footer",
+			"footer-3.png",
+			"footer 3"
+		],
+		"footer-4": [
+			"footer/f-4",
+			"footer",
+			"footer-4.png",
+			"footer 4"
+		],
+		"footer-5": [
+			"footer/f-5",
+			"footer",
+			"footer-5.png",
+			"footer 5"
+		],
+		"footer-6": [
+			"footer/f-6",
+			"footer",
+			"4a39521b55cd4e039df619985f7ef78f.png",
+			"Footer 6"
+		],
+		"footer-7": [
+			"footer/f-7",
+			"footer",
+			"004ffbce90efe6c8e778bbd77bcbf801.png",
+			"Footer 7"
+		],
+		"footer-8": [
+			"footer/f-8",
+			"footer",
+			"acb1c94c08f2e71c0787442fdc2f630c.png",
+			"Footer 8"
+		],
+		"footer-9": [
+			"footer/f-9",
+			"footer",
+			"efe7f75308d47e016379be988bf19c16.png",
+			"Footer 9"
+		],
+		"footer-10": [
+			"footer/f-10",
+			"footer",
+			"ebceb2693a7f84498e1fea4d022fb7a5.png",
+			"Footer 10",
+			"",
+			""
+		]
+	}
 }
