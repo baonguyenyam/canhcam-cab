@@ -1,0 +1,49 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-breadcrumb-2
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.bullets
+		display: flex
+		justify-content: space-between
+		margin: 0
+		padding: 0
+		position: relative
+		overflow: hidden
+		&:after
+			display: block
+			content: ''
+			width: 100%
+			height: 3px
+			background: darken(color-get($mau,trang),5%)
+			+pos(abs, 50% null null 0)
+			+transform(translateY(-50%))
+			z-index: -2
+		.bullet-wrapper
+			list-style-type: none
+			position: relative
+			.bullet
+				background: darken(color-get($mau,trang),5%)
+				+pad(.5rem 1rem)
+				color: darken(color-get($mau,trang),65%)
+				display: flex
+				align-items: center
+				justify-content: center
+			&.active
+				&:before
+					display: block
+					content: ''
+					width: 600px
+					height: 3px
+					background: darken(color-get($mau,main),0%)
+					+pos(abs, 50% 100% null null)
+					+transform(translateY(-50%))
+					z-index: -1
+				.bullet
+					background: color-get($mau,main)
+					color: darken(color-get($mau,trang),0%)
+					+fw(bold)

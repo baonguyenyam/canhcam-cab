@@ -276,6 +276,22 @@
             "Breadcrumb with banner",
             "",
             ""
+        ],
+        "breadcrumb-2": [
+            "breadcrumb/b-2",
+            "body",
+            "465802a02ae76e556ee4525e277e0c50.png",
+            "Breadcrumb 2",
+            "",
+            ""
+        ],
+        "breadcrumb-3": [
+            "breadcrumb/b-3",
+            "body",
+            "46724dd94e8dad2d248851f1d7aed066.png",
+            "Breadcrumb 3",
+            "",
+            ""
         ]
     },
     "banner": {
