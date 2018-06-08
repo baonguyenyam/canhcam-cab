@@ -1,5 +1,5 @@
-function galleryMasory9() {
-	var wall = new Freewall(".canhcam-gallery-9 .gallery-details .gallery-lists");
+function galleryMasory8() {
+	var wall = new Freewall(".canhcam-gallery-8 .gallery-details .gallery-lists");
 	wall.reset({
 		selector: '.item',
 		animate: true,
@@ -11,7 +11,7 @@ function galleryMasory9() {
 	});
 	wall.fitWidth();
 	$(window).trigger("resize");
-	$(".canhcam-gallery-9 .gallery-details .add-more").click(function () {
+	$(".canhcam-gallery-8 .gallery-details .add-more").click(function () {
 		var html = "";
 		var temp = '<a class="item" data-fancybox="gallery" href="./img/news/landing-2.jpg" data-caption="TÌm hiểu về HTML"> <figure bg-img="./img/news/landing-2.jpg"> <div class="boxzoom"><img class="img-fluid" src="./img/news/landing-2.jpg" alt="Demo title"></div><figcaption> <div class="text"> <h3>Nhà hàng Lạc Nam</h3> <p>156 Bùi Thị Xuân, Đà Lạt</p></div><span>See more</span> </figcaption> </figure></a>';
 		for (var i = 0; i < 5; ++i) {
@@ -22,7 +22,7 @@ function galleryMasory9() {
 	});
 
 
-	$('.canhcam-gallery-9 .gallery-details .gallery-lists [data-fancybox="gallery"]').fancybox({
+	$('.canhcam-gallery-8 .gallery-details .gallery-lists [data-fancybox="gallery"]').fancybox({
 		buttons: [
 			"zoom",
 			"share",
@@ -44,5 +44,5 @@ function galleryMasory9() {
 }
 
 $(document).ready(function () {
-	galleryMasory9()
+	galleryMasory8()
 });
