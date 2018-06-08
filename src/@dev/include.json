@@ -2,10 +2,11 @@
 	"SETUP": {
 		"index": {
 			"header": [
-				"header/h-7"
+				"header/h-1"
 			],
 			"body": [
-				"boxes/b-15"
+				"tabs/t-1",
+				"tabs/t-2"
 			],
 			"footer": [
 				"footer/f-10"

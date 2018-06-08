@@ -276,6 +276,32 @@
             "Sử dụng chế độ màu âm bản"
         ]
     },
+    "tabs": {
+        "tabs-1": [
+            "tabs/t-1",
+            "body",
+            "7c85cdb37df2da4e87cedf63d0160c61.png",
+            "Tabs 1",
+            "",
+            ""
+        ],
+        "tabs-2": [
+            "tabs/t-2",
+            "body",
+            "50b806e09eb3c4bb5e7b06b1be946609.png",
+            "Tabs 2",
+            "",
+            ""
+        ],
+        "tabs-3": [
+            "tabs/t-3",
+            "body",
+            "16001541a526a733fc738dc77bd27748.png",
+            "Tabs 3",
+            "",
+            ""
+        ]
+    },
     "breadcrumb": {
         "breadcrumb-1": [
             "breadcrumb/b-1",

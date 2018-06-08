@@ -1,0 +1,56 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-tabs-1
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.nav-tabs
+		border-color: darken(color-get($mau,trang),7%)
+		.nav-item
+			position: relative
+			+ .nav-item
+				margin-left: -1rem
+			&.active
+				z-index: 100
+			.nav-link
+				border: 0
+				+bor-rad(0)
+				+pad(.5rem 2.2rem)
+				background: none
+				color: darken(color-get($mau,trang),75%)
+				border-bottom: 1px solid darken(color-get($mau,trang),7%)
+				&:after
+					content: ''
+					display: block
+					width: 100%
+					height: calc(100% + 10px)
+					background: darken(color-get($mau,trang),3%)
+					transform: perspective(5px) rotateX(2deg)
+					transform-origin: bottom
+					+bor-rad(.5rem .5rem 0 0)
+					+pos(abs, -10px 0 null null)
+					z-index: -1
+					box-shadow: 1.5px 0 0 darken(color-get($mau,trang),7%) inset, -1.5px 0 0 darken(color-get($mau,trang),7%) inset, 0 2px 0 darken(color-get($mau,trang),7%) inset
+				&.active
+					color: darken(color-get($mau,main),0%)
+					border-bottom: 1px solid transparent
+					&:after
+						content: ''
+						display: block
+						width: 100%
+						height: calc(100% + 10px)
+						transform: perspective(5px) rotateX(2deg)
+						transform-origin: bottom
+						+pos(abs, -10px 0 null null)
+						z-index: -1
+						box-shadow: 1.5px 0 0 darken(color-get($mau,trang),7%) inset, -1.5px 0 0 darken(color-get($mau,trang),7%) inset, 0 2px 0 darken(color-get($mau,trang),7%) inset
+						+background-horizontal(darken(color-get($mau,trang),3%), darken(color-get($mau,trang),0%))
+
+	.tab-content
+		// border: 1px solid darken(color-get($mau,trang),7%)
+		border-top: 0
+		.tab-pane
+			+pad(1rem)

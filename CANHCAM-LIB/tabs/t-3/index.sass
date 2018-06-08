@@ -1,0 +1,91 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-tabs-3
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.tabs
+		z-index: 10
+		position: relative
+		background: darken(color-get($mau,trang),0%)
+		+bor-rad(.25rem)
+		+box-shadow(0 0 30px rgba(darken(color-get($mau,trang),50%), 0.1))
+		box-sizing: border-box
+		overflow: hidden
+		&-header
+			position: relative
+			background: darken(color-get($mau,main),0%)
+			overflow: hidden
+			.border-tab
+				+pos(abs, null null 0 0)
+				background: darken(color-get($mau,extra),0%)
+				width: auto
+				height: 2px
+				+transition(all 0.3s ease-in-out)
+			ul
+				display: flex
+				flex-direction: row
+				flex-wrap: wrap
+				padding: 0
+				margin: 0
+				width: calc(100% - 6rem)
+			// List Item
+			li
+				+transition(all 0.3s ease-in-out)
+				list-style-type: none
+				// Anchor
+				a
+					z-index: 1
+					display: block
+					box-sizing: border-box
+					+pad(1rem 1.5rem)
+					color: darken(color-get($mau,trang),0%)
+					text-decoration: none
+					text-transform: uppercase
+				&.active
+					a
+						color: darken(color-get($mau,extra),0%)
+
+		// Tabs Nav
+		&-nav
+			+pos(abs, 0 0 null null)
+			background: darken(color-get($mau,main),0%)
+			display: flex
+			align-items: center
+			height: 100%
+			+pad(0 1rem)
+			color: darken(color-get($mau,trang),0%)
+			user-select: none
+			i
+				cursor: pointer
+				+bor-rad(50%)
+				width: 2rem
+				height: 2rem
+				display: flex
+				align-items: center
+				justify-content: center
+				&:hover
+					background: rgba(255,255,255,.25)
+		// Tabs Content
+		&-content
+			position: relative
+			padding: 15px 20px
+			transition: 0.3s ease
+			overflow: hidden
+			&:after
+				content: ''
+				position: absolute
+				bottom: -1px
+				left: 0
+				display: block
+				width: 100%
+				height: 1px
+				box-shadow: 0 0 20px 10px darken(color-get($mau,trang),0%)
+			// Tab
+			.tab
+				display: none
+				&.active
+					display: block

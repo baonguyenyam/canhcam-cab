@@ -1,0 +1,30 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-tabs-2
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.nav-tabs
+		border-color: darken(color-get($mau,main),0%)
+		.nav-item
+			margin-right: .25rem
+			&:last-child
+				margin-right: 0
+			.nav-link
+				border: 1px solid darken(color-get($mau,trang),3%)
+				border-bottom: 1px solid darken(color-get($mau,main),0%)
+				background: darken(color-get($mau,trang),3%)
+				color: darken(color-get($mau,trang),75%)
+				&.active
+					border: 1px solid darken(color-get($mau,main),0%)
+					border-bottom: 1px solid darken(color-get($mau,trang),0%)
+					background: darken(color-get($mau,trang),0%)
+					color: darken(color-get($mau,main),0%)
+	.tab-content
+		border: 1px solid darken(color-get($mau,main),0%)
+		border-top: 0
+		.tab-pane
+			+pad(1rem)
