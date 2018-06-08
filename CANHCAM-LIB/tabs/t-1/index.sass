@@ -12,16 +12,26 @@
 		.nav-item
 			position: relative
 			+ .nav-item
-				margin-left: -1rem
+				margin-left: -.75rem
+				+media-breakpoint-up(md)
+					margin-left: -1rem
 			&.active
 				z-index: 100
 			.nav-link
 				border: 0
 				+bor-rad(0)
-				+pad(.5rem 2.2rem)
+				+pad(.75rem 2.2rem .5rem 2.2rem)
 				background: none
-				color: darken(color-get($mau,trang),75%)
+				color: darken(color-get($mau,trang),25%)
 				border-bottom: 1px solid darken(color-get($mau,trang),7%)
+				+fw(bold)
+				i
+					+media-breakpoint-up(md)
+						margin-right: .5rem
+				span
+					display: none
+					+media-breakpoint-up(md)
+						display: inline-block
 				&:after
 					content: ''
 					display: block
@@ -35,18 +45,9 @@
 					z-index: -1
 					box-shadow: 1.5px 0 0 darken(color-get($mau,trang),7%) inset, -1.5px 0 0 darken(color-get($mau,trang),7%) inset, 0 2px 0 darken(color-get($mau,trang),7%) inset
 				&.active
-					color: darken(color-get($mau,main),0%)
+					color: darken(color-get($mau,den),0%)
 					border-bottom: 1px solid transparent
 					&:after
-						content: ''
-						display: block
-						width: 100%
-						height: calc(100% + 10px)
-						transform: perspective(5px) rotateX(2deg)
-						transform-origin: bottom
-						+pos(abs, -10px 0 null null)
-						z-index: -1
-						box-shadow: 1.5px 0 0 darken(color-get($mau,trang),7%) inset, -1.5px 0 0 darken(color-get($mau,trang),7%) inset, 0 2px 0 darken(color-get($mau,trang),7%) inset
 						+background-horizontal(darken(color-get($mau,trang),3%), darken(color-get($mau,trang),0%))
 
 	.tab-content
