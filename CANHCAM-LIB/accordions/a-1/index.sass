@@ -1,0 +1,46 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+.canhcam-accordion-1
+	.c-accordion
+		.c-accordion__item
+			margin-bottom: 15px
+			h3
+				color: color-get($mau,trang)
+				font-size: 14px
+				font-weight: 400
+				padding: 13px 29px 18px 29px
+				background: color-get($mau,main)
+				position: relative
+				border-radius: 5px
+				transition: 0.3s ease-in-out
+				margin-bottom: 0
+				cursor: pointer
+				span.fa
+					color: color-get($mau,trang)
+					font-size: 18px
+					margin-right: 21px
+				&:after
+					font-family: FontAwesome
+					content: '\f107'
+					font-size: 18px
+					+pos(abs , 50% 20px null null)
+					transform: translateY(-50%)
+					margin: auto
+					transition: 0.3s ease-in-out
+			.is--open
+				border-bottom-left-radius: inherit
+				border-bottom-right-radius: inherit
+				background: color-get($mau,extra)
+				transition: 0.3s ease-in-out
+				&:after
+					content: '\f106 '
+					border-right-color: color-get($mau,trang)
+					border-bottom-color: color-get($mau,trang)
+		.c-accordion__list
+			padding: 30px 11px 30px 30px
+			font-size: 14px
+			color: color-get($mau,den)
+			border: 1px solid color-get($mau,extra)
+			border-top: none
