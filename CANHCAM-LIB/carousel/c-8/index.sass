@@ -1,0 +1,111 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-carousel-8
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.owl-carousel
+		position: relative
+		// Main
+		.owl-stage-outer
+		// Nav
+		.owl-nav
+			button
+				&.owl-prev, &.owl-next
+					+pad(.5rem_)
+					width: 3rem
+					height: 3rem
+					background: darken(color-get($mau,trang),5%)
+					+bor-rad(50%)
+					text-align: center
+					&:focus
+						outline: none
+				&:hover, &.active
+					&.owl-prev, &.owl-next
+						background: color-get($mau,main)
+			+media-breakpoint-up(md)
+				margin-top: 0
+				button
+					&.owl-prev, &.owl-next
+						margin: 0
+						+transform(translateY(-50%))
+						&:focus
+							outline: none
+					&.owl-prev
+						+pos(abs, 50% null null -1rem)
+					&.owl-next
+						+pos(abs, 50% -1rem null null)
+		// Dots
+		.owl-dots
+			.owl-dot
+				&:focus
+					outline: none
+				span
+					background: darken(color-get($mau,trang),5%)
+				&.active
+					span
+						background: color-get($mau,main)
+		// List
+		&.list-items
+			.item
+				+pad(0 .7rem)
+				transition: all .3s ease-in-out
+				position: relative
+				figcaption
+					+pad(1.5rem 0)
+					.categoryname
+						+pad(.5rem 0)
+				a
+					color: darken(color-get($mau,trang),50%)
+					text-decoration: none
+					.price
+						color: color-get($mau,do-1)
+						+fz(1.3rem)
+						+fw(bold)
+						display: flex
+						justify-content: center
+						align-items: center
+						.discount
+							margin-right: .7rem
+							color: color-get($mau,xam-1)
+							+fw(500)
+							text-decoration: line-through
+				.boxzoom
+					position: relative
+					overflow: hidden
+					ul
+						+pad(0)
+						+mar(0)
+						list-style-type: none
+				.box-color
+					+pos(abs, null null 10px 10px)
+					transition: .5s
+					transform: translateX(-150%)
+					opacity: 0
+					ul
+						display: flex
+					li
+						a
+							margin: 0
+							height: 15px
+							width: 15px
+							display: block
+							margin-right: 5px
+							border-radius: 50%
+							box-shadow: 0 0 3px rgba(0, 0, 0, 0.1)
+							background-color: color-get($mau,do-1)
+				&:hover
+					box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2)
+					.categoryname
+						span
+							color: color-get($mau,xam-2)
+
+					a
+						color: color-get($mau,den)
+					.box-color
+						transform: translateX(0)
+						opacity: 1
+
