@@ -1,0 +1,115 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-7
+	.floating-options
+		background-color: color-get($mau,extra)
+		box-shadow: 0px 1.5px 2.5px 0px rgba(0, 0, 0, 0.2), 0px 3px 8px 0px rgba(0, 0, 0, 0.12)
+		border-radius: 100em
+		border: none
+		cursor: pointer
+		display: block
+		font-size: 58px
+		height: 1em
+		outline: none
+		overflow: hidden
+		position: relative
+		transition: all 0.15s linear
+		width: 1em
+		z-index: 200
+		+pos(fix, null 2rem 2rem null)
+		z-index: 9999
+		&::after
+			background: rgba(255, 255, 255, 0.3)
+			border-radius: 100%
+			content: ""
+			display: block
+			font-size: 8px
+			height: 1em
+			left: 50%
+			margin: -0.5em 0 0 -0.5em
+			opacity: 0
+			position: absolute
+			transform: scale(1, 1)
+			transform-origin: 50% 50%
+			top: 50%
+			width: 1em
+			z-index: 1
+		&:focus:not(:active)::after
+			animation: cc-ripple-close 1.35s ease-out
+		.floating-icon
+			font-size: 32px
+			height: 1em
+			left: 50%
+			margin: -0.5em 0 0 -0.5em
+			position: absolute
+			transition: all 0.15s linear
+			top: 50%
+			width: 1em
+			span
+				background: color-get($mau,trang)
+				border-radius: 0.031em
+				height: 0.12em
+				left: 0
+				position: absolute
+				top: 0
+				transform: translate(0.375em, 0.188em)
+				transition: all 0.15s ease-in-out
+				width: 0.343em
+				+ span
+					transform: translate(0.781em, 0.188em)
+					width: 0.12em
+					+ span
+						+ span
+							transform: translate(0.781em, 0.188em)
+							width: 0.12em
+							+ span
+								+ span
+									transform: translate(0.781em, 0.188em)
+									width: 0.12em
+									transform: translate(0.781em, 0.688em)
+								transform: translate(0.25em, 0.688em)
+								width: 0.468em
+							transform: translate(0.781em, 0.438em)
+						transform: translate(0.063em, 0.438em)
+						width: 0.656em
+		&:active
+			box-shadow: none
+			outline: none
+
+		&.active-tgm .floating-icon
+			transform: rotate(90deg)
+			span
+				opacity: 1
+				height: 0.156em
+				border-radius: 1000px
+				width: 1.085em
+				transform: translate(-0.08em, 0.41em) rotate(45deg)
+				+ span
+					+ span + span
+						+ span
+							opacity: 1
+							height: 0.156em
+							border-radius: 1000px
+							width: 1.085em
+							transform: translate(-0.08em, 0.41em) rotate(45deg)
+							transform: translate(-0.05em, 0.42em) rotate(-45deg)
+							+ span
+								opacity: 0
+						opacity: 0
+					opacity: 0
+
+@keyframes cc-ripple-close
+	0%
+		transform: scale(0, 0)
+		opacity: 1
+
+	20%
+		transform: scale(11, 11)
+		opacity: 1
+
+	100%
+		opacity: 0
+		transform: scale(22, 22)

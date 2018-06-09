@@ -290,6 +290,14 @@
             "Nav 6",
             "",
             "Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế"
+        ],
+        "nav-7": [
+            "nav/n-7",
+            "body",
+            "4c3b9cd18819cfc7db42f02626faeda8.png",
+            "Nav 7",
+            "",
+            "Đây là thuộc tính đặc biệt nên xài chung với k-responsive-menu để bật tắt menu và chỉ hiển thị khi chạy thực tế"
         ]
     },
     "tabs": {
