@@ -6,23 +6,17 @@ header.canhcam-header-10
 			i.mdi.mdi-menu
 	#demoResAllInOneMenu.container.k-responsive-menu
 		.k-menu-bar
-			.k-logo.navbar-brand.mr-auto LOGO Menu
+			.k-logo.navbar-brand.mr-auto
+				img(src="./img/logo-trang.png", alt="")
 			button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
 				i.mdi.mdi-close
-		.k-logo.navbar-brand.mr-auto(k-menu-map-to="#logo") LOGO
+		.k-logo.navbar-brand.mr-auto(k-menu-map-to="#logo")
+			img(src="./img/logo-trang.png", alt="")
 		ul.nav
-			li.nav-item
+			li.nav-item.active
 				a.nav-link(href='#') About us
 			li.nav-item
 				a.nav-link(href='#') Services
-			li.nav-item.dropdown
-				a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-					| Dropdown
-				.dropdown-menu(aria-labelledby='navbarDropdown')
-					a.dropdown-item(href='#') Action
-					a.dropdown-item(href='#') Another action
-					.dropdown-divider
-					a.dropdown-item(href='#') Something else here
 			li.nav-item
 				a.nav-link(href='#') Shop
 			li.nav-item

@@ -1,144 +1,5 @@
 @import ../../_includes
 
-.k-menu-bar
-	padding: .5rem 15px
-	display: flex
-	flex-direction: row
-	align-items: center
-	display: none
-	&.active
-		display: flex
-/* MENU BACKDROP */
-.k-menu-backdrop
-	content: ''
-	display: block
-	width: 100%
-	height: 100%
-	position: fixed
-	background: rgba(0,0,0,.8)
-	top: 0
-	z-index: 9999
-	display: none
-	&.active
-		display: block
-/* BEGIN MENU */
-.k-responsive-menu, [k-responsive-menu]
-	display: flex
-	padding-top: .5rem
-	padding-bottom: .5rem
-	align-items: center
-	> *
-		list-style-type: none
-	.k-button-toggle
-		display: none
-	.form-inline
-		padding: 0 15px 0 15px
-/* Toggle */
-.k-responsive-menu, [k-responsive-menu]
-	&.k-menu-toggle
-		&.k-active-mobile
-			padding: 1rem 0
-			flex-direction: column
-			z-index: 1000
-			display: none
-			.dropdown-menu
-				position: static !important
-				transform: none !important
-				float: none
-			.k-button-toggle
-				display: block
-			.nav
-				flex-direction: column
-			&.k-menu-push-right
-				padding: 0
-				right: -100%
-				top: 0
-				height: 100%
-				overflow-y: scroll
-			&.k-menu-push-left
-				padding: 0
-				left: -100%
-				top: 0
-				height: 100%
-				overflow-y: scroll
-/* Horizontal */
-.k-responsive-menu, [k-responsive-menu]
-	&.k-menu-horizontal
-		&.k-active-mobile
-			padding: 1rem 0
-			flex-direction: column
-			z-index: 1000
-			display: none
-			&.k-expand
-				display: block
-			.dropdown-menu
-				position: static !important
-				transform: none !important
-				float: none
-			.k-button-toggle
-				display: block
-			.nav
-				flex-direction: column
-			&.k-menu-push-right
-				padding: 0
-				right: -100%
-				top: 0
-				height: 100%
-				overflow-y: scroll
-			&.k-menu-push-left
-				padding: 0
-				left: -100%
-				top: 0
-				height: 100%
-				overflow-y: scroll
-/* Vertical */
-.k-responsive-menu, [k-responsive-menu]
-	&.k-menu-vertical
-		padding-top: .5rem
-		padding-bottom: .5rem
-		display: block
-		flex-direction: column
-		.form-inline
-			padding: 15px 0
-		.dropdown-menu
-			position: static !important
-			transform: none !important
-			float: none
-		.nav
-			display: flex
-			flex-direction: column
-			.nav-item
-				.nav-link
-					padding: .5rem 0
-		&.k-active-mobile
-			display: none
-			padding: 1rem 0
-			flex-direction: column
-			z-index: 1000
-			&.k-expand
-				display: block
-			.form-inline
-				padding: 0 15px 0 15px
-			.k-button-toggle
-				display: block
-			.nav
-				.nav-item
-					.nav-link
-						padding: .5rem 1rem
-			&.k-menu-push-right
-				padding: 0
-				right: -100%
-				top: 0
-				height: 100%
-				overflow-y: scroll
-			&.k-menu-push-left
-				padding: 0
-				left: -100%
-				top: 0
-				height: 100%
-				overflow-y: scroll
-
-
 //////////////////////////////////////
 // CODE
 //////////////////////////////////////
@@ -158,6 +19,9 @@
 		color: color-get($mau,trang)
 		.k-button-toggle
 			color: color-get($mau,trang)
+		.navbar-brand
+			img
+				max-height: 2rem
 		.nav
 			.nav-item
 				.nav-link
@@ -166,15 +30,26 @@
 		background: color-get($mau,main) !important
 		.navbar-brand
 			color: color-get($mau,trang)
+			img
+				max-height: 2rem
 		.nav
 			.nav-item
 				.nav-link
-					color: color-get($mau,trang)
+					color: lighten(color-get($mau,main),30%)
+				&:hover, &.active
+					.nav-link
+						color: color-get($mau,trang)
 
 	// CHANGE MENU
 
 	+media-breakpoint-up(md)
-
+		.k-responsive-menu
+			.nav
+				.nav-item
+					+ .nav-item
+						margin-left: .25rem
+					&:hover, &.active
+						+box-sha(0 0 0 1px color-get($mau,trang), inset)
 
 	+media-breakpoint-up(lg)
 
