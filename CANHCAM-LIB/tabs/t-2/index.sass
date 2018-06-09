@@ -14,15 +14,26 @@
 			&:last-child
 				margin-right: 0
 			.nav-link
-				border: 1px solid darken(color-get($mau,trang),3%)
-				border-bottom: 1px solid darken(color-get($mau,main),0%)
+				position: relative
+				border: 0
 				background: darken(color-get($mau,trang),3%)
 				color: darken(color-get($mau,trang),75%)
+				+bor-rad(0)
+				&:after
+					content: ''
+					height: 1px
+					width: 100%
+					display: block
+					+pos(abs, null 0 0 null)
+					background: darken(color-get($mau,main),0%)
 				&.active
-					border: 1px solid darken(color-get($mau,main),0%)
-					border-bottom: 1px solid darken(color-get($mau,trang),0%)
 					background: darken(color-get($mau,trang),0%)
 					color: darken(color-get($mau,main),0%)
+					box-shadow: inset 1px 0 0 0 color-get($mau,main), inset -1px 0 0 0 color-get($mau,main), inset 0 1px 0 0 color-get($mau,main)
+					&:after
+						width: calc(100% - 2px)
+						+pos(abs, null 1px 0 null)
+						background: darken(color-get($mau,trang),0%)
 	.tab-content
 		border: 1px solid darken(color-get($mau,main),0%)
 		border-top: 0
