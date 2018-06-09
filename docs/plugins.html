@@ -65,6 +65,8 @@
 						<span class="badge badge-danger">HOT</span>
 					</a>
 					<a href="#sec20" class="list-group-item list-group-item-action">Hover to Change</a>
+					<a href="#sec21" class="list-group-item list-group-item-action">Ripple</a>
+					<a href="#sec22" class="list-group-item list-group-item-action">FreeWall</a>
 					<a href="#fawe" class="list-group-item list-group-item-action">Font Awesome</a>
 					<a href="#fmat" class="list-group-item list-group-item-action">Font Material</a>
 				</div>
@@ -569,6 +571,36 @@
 				</dl>
 
 
+				<h1 class="mt-5" id="sec21">Ripple</h1>
+				<p class="lead">Hiệu ứng đẹp mắt khi click button bằng cách thêm attribulte bên dưới vào nút
+					<code>[ripple]</code>,
+					<code>[ripple-color="#fff"]</code>
+				</p>
+
+				<h1 class="mt-5" id="sec21">FreeWall</h1>
+				<p class="lead">Hiệu ứng đẹp mắt khi click button bằng cách thêm attribulte bên dưới vào nút
+					<code>[ripple]</code>,
+					<code>[ripple-color="#fff"]</code>
+				</p>
+
+				<div class="card card-body bg-light text-left small mb-3">
+					<div>$("#zoomimg").elevateZoom({</div>
+					<div>&emsp;responsive: true,</div>
+					<div>&emsp;gallery: "product-control",</div>
+					<div>&emsp;galleryActiveClass: "active"</div>
+					<div>});</div>
+
+					<div>$(".product-control .item").each(function () {</div>
+					<div>&emsp;$(this).click(function (e) {</div>
+					<div>&emsp;&emsp;var currentValue = $(this).find('img').attr('data-preview-image')</div>
+					<div>&emsp;&emsp;var currentValueZoom = $(this).find('img').attr('data-zoom-image')</div>
+					<div>&emsp;&emsp;$('.product-control .item').removeClass('active')</div>
+					<div>&emsp;&emsp;$(this).addClass('active')</div>
+					<div>&emsp;&emsp;var gallery_zoomimg = $('#zoomimg').data('elevateZoom');</div>
+					<div>&emsp;&emsp;gallery_zoomimg.swaptheimage(currentValue, currentValueZoom);</div>
+					<div>&emsp;});</div>
+					<div>});</div>
+				</div>
 
 				<h1 class="mt-5" id="fawe">Font Awesome</h1>
 				<p class="lead">Cách sử dụng font bằng các class

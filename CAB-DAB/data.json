@@ -282,6 +282,14 @@
             "Nav 5",
             "",
             "Sử dụng chế độ màu âm bản"
+        ],
+        "nav-6": [
+            "nav/n-6",
+            "body",
+            "ccd067fbb866fd5a16f0e9872ed0f2f5.png",
+            "Nav 6",
+            "",
+            "Đây là thuộc tính đặc biệt chỉ hiển thị khi chạy thực tế"
         ]
     },
     "tabs": {

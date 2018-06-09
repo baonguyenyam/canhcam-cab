@@ -36,7 +36,7 @@
 			.nav-item
 				.nav-link
 					color: lighten(color-get($mau,main),30%)
-				&:hover, &.active
+				&:hover, &.active, &.show
 					.nav-link
 						color: color-get($mau,trang)
 
@@ -48,7 +48,7 @@
 				.nav-item
 					+ .nav-item
 						margin-left: .25rem
-					&:hover, &.active
+					&:hover, &.active, &.show
 						+box-sha(0 0 0 1px color-get($mau,trang), inset)
 
 	+media-breakpoint-up(lg)
