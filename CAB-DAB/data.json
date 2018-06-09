@@ -300,6 +300,22 @@
             "Tabs 3",
             "",
             ""
+        ],
+        "tabs-4": [
+            "tabs/t-4",
+            "body",
+            "48d72d80077b7db2fee6199ae7d4dab7.png",
+            "Tabs 4",
+            "",
+            ""
+        ],
+        "tabs-5": [
+            "tabs/t-5",
+            "body",
+            "7297f95480168e6008e5a5c43db10eb1.png",
+            "Tabs 5",
+            "",
+            ""
         ]
     },
     "breadcrumb": {

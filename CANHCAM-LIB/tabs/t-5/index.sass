@@ -1,0 +1,53 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-tabs-5
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.nav-tabs
+		border: 1px solid darken(color-get($mau,trang),7%)
+		border-bottom: 0
+		+bor-rad(.5rem .5rem 0 0)
+		+background-horizontal(darken(color-get($mau,trang),0%), darken(color-get($mau,trang),5%))
+		.nav-item
+			&.active
+				z-index: 100
+			.nav-link
+				position: relative
+				+bor-rad(0)
+				color: darken(color-get($mau,trang),25%)
+				+fw(400)
+				border: 0
+				+pad(.75rem 1rem .5rem 1rem)
+				background: none
+				span
+					display: none
+				&.active
+					background: darken(color-get($mau,trang),0%)
+					color: darken(color-get($mau,den),0%)
+					box-shadow: inset -1px 0 0 0 darken(color-get($mau,trang),7%), inset 1px 0 0 0 darken(color-get($mau,trang),7%)
+			&:first-child
+				.nav-link
+					+bor-rad(.5rem 0 0 0)
+				&.active
+					.nav-link
+						box-shadow: inset -1px 0 0 0 darken(color-get($mau,trang),7%)
+			+media-breakpoint-up(md)
+				.nav-link
+					text-align: center
+					+pad(1rem 3rem .5rem 3rem)
+					i
+						display: block
+						+fz(2rem)
+					span
+						display: block
+						margin-top: .25rem
+
+	.tab-content
+		border: 1px solid darken(color-get($mau,trang),7%)
+		+bor-rad(0 0 .5rem .5rem)
+		.tab-pane
+			+pad(1rem)
