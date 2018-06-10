@@ -8,11 +8,47 @@
 			.modal-body.clearfix
 				ul#modalTab.nav.nav-tabs(role='tablist')
 					li.nav-item
-						a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Tùy chỉnh màu
+						a#plugins-tab.nav-link.active(data-toggle='tab', href='#plugins', role='tab', aria-controls='plugins', aria-selected='true') Plugins sử dụng
+					li.nav-item
+						a#home-tab.nav-link(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Tùy chỉnh màu
 					li.nav-item
 						a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Cấu hình Javascript
 				#modalTabContent.tab-content
-					#home.tab-pane.show.active(role='tabpanel', aria-labelledby='home-tab')
+					#plugins.tab-pane.show.active(role='tabpanel', aria-labelledby='plugins-tab')
+						p.lead.pl-3.pr-3.pt-3.mb-0 Khi muốn thêm plugins chỉ cần thêm vào file
+							code.ml-2 concat-full.json
+						form#pluginsuser.p-3
+							.row
+								.col
+									ul#plg.nav.nav-tabs(role='tablist')
+										li.nav-item
+											a#plg-item-css-tab.nav-link.active(data-toggle='tab', href='#plg-item-css', role='tab', aria-controls='plg-item-css', aria-selected='true')
+												strong CSS
+										li.nav-item
+											a#plg-item-js-tab.nav-link(data-toggle='tab', href='#plg-item-js', role='tab', aria-controls='plg-item-js', aria-selected='true')
+												strong JS
+										li.nav-item
+											a#plg-item-lib-css-tab.nav-link(data-toggle='tab', href='#plg-item-lib-css', role='tab', aria-controls='plg-item-lib-css', aria-selected='true')
+												strong CSS Libs
+										li.nav-item
+											a#plg-item-lib-js-tab.nav-link(data-toggle='tab', href='#plg-item-lib-js', role='tab', aria-controls='plg-item-lib-js', aria-selected='true')
+												strong JS Libs
+									#plg.tab-content
+										#plg-item-css.tab-pane.show.active(role='tabpanel', aria-labelledby='plg-item-css-tab')
+											#css-main.p-3
+										#plg-item-js.tab-pane(role='tabpanel', aria-labelledby='plg-item-js-tab')
+											#js-main.p-3
+										#plg-item-lib-css.tab-pane(role='tabpanel', aria-labelledby='plg-item-lib-css-tab')
+											#css-lib.p-3
+										#plg-item-lib-js.tab-pane(role='tabpanel', aria-labelledby='plg-item-lib-js-tab')
+											#js-lib.p-3
+
+
+					#home.tab-pane(role='tabpanel', aria-labelledby='home-tab')
+						p.lead.pl-3.pr-3.pt-3.mb-0 Có hai màu chính là
+							code.ml-2.mr-2 main
+							| và
+							code.ml-2 extra
 						form#settings
 							.row
 								.col
@@ -125,7 +161,7 @@
 						.col-6.text-right
 							button.btn.btn-secondary(type='button', data-dismiss='modal') Bỏ qua
 							button#saveConfig.btn.btn-success(type='button') Lưu
-				
+
 #aboutBox.modal(tabindex='-1', role='dialog', aria-labelledby='aboutBoxTitle', aria-hidden='true')
 	.modal-dialog.modal-md(role='document')
 		.modal-content
@@ -133,7 +169,7 @@
 				h5#aboutBoxTitle.modal-title Về CAB/DAB
 				button.close(type='button', data-dismiss='modal', aria-label='Close')
 					span(aria-hidden='true') ×
-			.modal-body.clearfix 
+			.modal-body.clearfix
 				dl.row
 					dt.col-3.small License Name
 					dd.col-9.small.ln Canh Cam CAB/DAB
@@ -207,7 +243,7 @@
 	.modal-dialog.modal-md.modal-dialog-centered(role='document')
 		.modal-content
 				.modal-header
-					h5#exampleModalLabel.modal-title Thêm Components 
+					h5#exampleModalLabel.modal-title Thêm Components
 					button.close(type='button', data-dismiss='modal', aria-label='Close')
 						span(aria-hidden='true') ×
 				form#formAddComponent(enctype='multipart/form-data', method='POST')
@@ -252,7 +288,7 @@
 	.modal-dialog.modal-md(role='document')
 		.modal-content
 				.modal-header
-					h5#ModalCenterTitle.modal-title Thêm Components 
+					h5#ModalCenterTitle.modal-title Thêm Components
 					button.close(type='button', data-dismiss='modal', aria-label='Close')
 						span(aria-hidden='true') ×
 				form#formAddComponentDAB(enctype='multipart/form-data', method='POST')
@@ -293,7 +329,7 @@
 				button.close(type='button', data-dismiss='modal', aria-label='Close')
 					span(aria-hidden='true') ×
 			.modal-body
-				
+
 			.modal-footer
 				button.btn.btn-secondary(type='button', data-dismiss='modal') Close
 				button.btn.btn-success#saveIt(type='button') Save
@@ -324,7 +360,7 @@
 				textarea(style="display:none")
 				.row.align-items-center.row-select(style="display:none")
 					.col-3 Select
-					.col-9 
+					.col-9
 						select.form-control(name="swStyle")
 			.modal-footer
 				button.btn.btn-secondary(type='button', data-dismiss='modal') Close

@@ -11,12 +11,14 @@
 			"node_modules/jquery/dist/jquery.js",
 			"node_modules/popper.js/dist/umd/popper.js",
 			"node_modules/bootstrap/dist/js/bootstrap.js",
+			"bower_components/k-responsive-menu/dist/js/k-responsive-menu.min.js",
 			"bower_components/moment/min/moment.min.js",
 			"bower_components/offline/offline.min.js",
 			"bower_components/lodash/dist/lodash.min.js",
 			"bower_components/fancybox/dist/jquery.fancybox.min.js"
 		],
 		"css_core": [
+			"bower_components/k-responsive-menu/dist/css/k-responsive-menu.min.css",
 			"bower_components/animate.css/animate.css",
 			"bower_components/offline/themes/offline-theme-default.css",
 			"bower_components/offline/themes/offline-language-english.css",
@@ -31,7 +33,6 @@
 		"js": [
 			"bower_components/owl.carousel/dist/owl.carousel.min.js",
 			"bower_components/k-gmaps/dist/js/kmaps.js",
-			"bower_components/k-responsive-menu/dist/js/k-responsive-menu.min.js",
 			"bower_components/bootstrap-validator/dist/validator.min.js",
 			"bower_components/select2/dist/js/select2.full.min.js",
 			"bower_components/lightgallery/dist/js/lightgallery-all.min.js",
@@ -44,7 +45,6 @@
 			"bower_components/freewall/freewall.js"
 		],
 		"css": [
-			"bower_components/k-responsive-menu/dist/css/k-responsive-menu.min.css",
 			"bower_components/select2/dist/css/select2.min.css",
 			"bower_components/lightgallery/dist/css/lightgallery.min.css",
 			"bower_components/lightgallery/dist/css/lg-transitions.min.css",

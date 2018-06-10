@@ -10,6 +10,7 @@ var data = {
 	}
 
 function setDefault() {
+	$('#pluginsuser')[0].reset();
 	var dataColor, dataJS;
 	dataColor = "$mau: (" + dataSites.color + ")"
 	dataJS = "const CANHCAM_APP = {" + dataSites.js + "}"

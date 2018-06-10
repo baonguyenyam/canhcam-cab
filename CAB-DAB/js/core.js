@@ -102,6 +102,7 @@ function createLeftMenuList() {
 			index++
 		}
 		buildTotal(total)
+		getPluginsUse()
 	});
 }
 
@@ -115,6 +116,47 @@ function buildTotal(params) {
 	jQuery.get("/justbuild.json", function (data) {
 		var info = data;
 		$('.justbuild').html('@SITE/' + info.sitename)
+	})
+}
+
+function getPluginsUse() {
+	jQuery.get("/concat-full.json", function (data) {
+		var tmp = []
+		var tmp1 = []
+		var tmp2 = []
+		var tmp3 = []
+		for (const key in data.concat.css_core) {
+			if (data.concat.css_core.hasOwnProperty(key)) {
+				var element = data.concat.css_core[key];
+				var gem = taoIdNgauNhien(10)
+				tmp.push('<div class="input-group mb-1 input-group-sm"> <div class="input-group-prepend"> <div class="input-group-text" style="min-width:initial"> <input id="' + gem + '" type="checkbox" value="' + data.concat.css_core[key] + '" checked> </div></div><label for="' + gem + '" class="form-control">' + data.concat.css_core[key] + '</label></div>')
+			}
+		}
+		$('#pluginsuser #css-main').html(tmp)
+		for (const key in data.concat.js_core) {
+			if (data.concat.js_core.hasOwnProperty(key)) {
+				var element = data.concat.js_core[key];
+				var gem = taoIdNgauNhien(10)
+				tmp1.push('<div class="input-group mb-1 input-group-sm"> <div class="input-group-prepend"> <div class="input-group-text" style="min-width:initial"> <input id="' + gem + '" type="checkbox" value="' + data.concat.js_core[key] + '" checked> </div></div><label for="' + gem + '" class="form-control">' + data.concat.js_core[key] + '</label></div>')
+			}
+		}
+		$('#pluginsuser #js-main').html(tmp1)
+		for (const key in data.concat.css) {
+			if (data.concat.css.hasOwnProperty(key)) {
+				var element = data.concat.css[key];
+				var gem = taoIdNgauNhien(10)
+				tmp2.push('<div class="input-group mb-1 input-group-sm"> <div class="input-group-prepend"> <div class="input-group-text" style="min-width:initial"> <input id="' + gem + '" type="checkbox" value="' + data.concat.css[key] + '" checked> </div></div><label for="' + gem + '" class="form-control">' + data.concat.css[key] + '</label></div>')
+			}
+		}
+		$('#pluginsuser #css-lib').html(tmp2)
+		for (const key in data.concat.js) {
+			if (data.concat.js.hasOwnProperty(key)) {
+				var element = data.concat.js[key];
+				var gem = taoIdNgauNhien(10)
+				tmp3.push('<div class="input-group mb-1 input-group-sm"> <div class="input-group-prepend"> <div class="input-group-text" style="min-width:initial"> <input id="' + gem + '" type="checkbox" value="' + data.concat.js[key] + '" checked> </div></div><label for="' + gem + '" class="form-control">' + data.concat.js[key] + '</label></div>')
+			}
+		}
+		$('#pluginsuser #js-lib').html(tmp3)
 	})
 }
 
@@ -163,10 +205,30 @@ function checkFormDisable(a, b) {
 }
 
 function saveToData(a, b) {
+	var formData_CSS_CORE = [];
+	var formData_JS_CORE = [];
+	var formData_CSS_LIB = [];
+	var formData_JS_LIB = [];
+	$('#pluginsuser #css-main input:checked').each(function () {
+		formData_CSS_CORE.push($(this).val());
+	});
+	$('#pluginsuser #js-main input:checked').each(function () {
+		formData_JS_CORE.push($(this).val());
+	});
+	$('#pluginsuser #css-lib input:checked').each(function () {
+		formData_CSS_LIB.push($(this).val());
+	});
+	$('#pluginsuser #js-lib input:checked').each(function () {
+		formData_JS_LIB.push($(this).val());
+	});
 	if (confirm("Bạn có chắc chắn lưu ngay bây giờ?")) {
 		jQuery.post("/savedata", {
 			dataColor: a,
-			dataJS: b
+			dataJS: b,
+			dataCSSCore: formData_CSS_CORE,
+			dataJSCore: formData_JS_CORE,
+			dataCSSLib: formData_CSS_LIB,
+			dataJSLib: formData_JS_LIB,
 		}, function (data) {
 			if (data === 'done') {
 				$('#exampleModalCenter').modal('hide')

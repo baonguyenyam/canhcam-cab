@@ -239,6 +239,10 @@ app.post('/savedata', function (req, res) {
 	var dir2 = './core/scripts';
 	var jsonColor = JSON.stringify(req.body.dataColor, null, 4);
 	var jsonJS = JSON.stringify(req.body.dataJS, null, 4);
+	var dataCSSCore = JSON.stringify(req.body.dataCSSCore, null, 4);
+	var dataJSCore = JSON.stringify(req.body.dataJSCore, null, 4);
+	var dataCSSLib = JSON.stringify(req.body.dataCSSLib, null, 4);
+	var dataJSLib = JSON.stringify(req.body.dataJSLib, null, 4);
 	try {
 		fs.writeFileSync(site.lib + '/_core/_colors.sass', jsonColor.replace(/["]/gi, ''), 'utf8', function (err) {
 			if (err) {
@@ -248,6 +252,30 @@ app.post('/savedata', function (req, res) {
 		fs.writeFileSync(dir2 + '/config.js', jsonJS.replace(/["]/gi, '').replace(/[\\]/gi, '"'), 'utf8', function (err) {
 			if (err) {
 				return console.log(err);
+			}
+		});
+	} catch (err) {
+		return console.log(err);
+	}
+	try {
+		fs.readFile('./core/concat.json', 'utf8', function readFileCallback(err, data) {
+			if (err) {
+				return console.log(err);
+			} else {
+				var newDat = JSON.parse(data)
+				newDat.concat.css_core = JSON.parse(dataCSSCore)
+				newDat.concat.js_core = JSON.parse(dataJSCore)
+				newDat.concat.js = JSON.parse(dataJSLib)
+				newDat.concat.css = JSON.parse(dataCSSLib)
+				try {
+					fs.writeFileSync('./core/concat.json', JSON.stringify(newDat, null, 4), 'utf8', function (err) {
+						if (err) {
+							return console.log(err);
+						}
+					});
+				} catch (err) {
+					return console.log(err);
+				}
 			}
 		});
 	} catch (err) {
