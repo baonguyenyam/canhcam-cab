@@ -1,0 +1,61 @@
+header.canhcam-header-10
+	.headtoppart
+		.container
+			.headtopright.d-flex.justify-content-end
+				.ccphone.headtop-item
+					em.fa.fa-phone
+					span +84 283 775 4680 - 283 775 4681
+				.ccmail.headtop-item
+					em.fa.fa-envelope
+					span cus_service@bizami.com.vn
+				.language.headtop-item
+					select.cclang(name="")
+						option(value="") Tiếng Việt
+						option(value="") Tiếng Anh
+
+	nav.navbar.navbar-expand-md.container
+		a.navbar-brand.d-none.d-md-block(href='#')
+			img(src="./img/logo.png", alt="Logo")
+		a.navbar-brand.d-md-none.mr-auto(href='#')
+			img(src="./img/logo.png", alt="Logo")
+		#language
+		button.navbar-toggler(type='button', data-toggle='offcanvas', data-target='#CCMenuHeader', aria-controls='CCMenuHeader', aria-expanded='false', aria-label='Toggle navigation')
+			span.mdi.mdi-menu
+
+		#CCMenuHeader.collapse.navbar-collapse.justify-content-end
+			.title
+				h2 Menu
+				.closebnt
+					i.mdi.mdi-close
+			ul.navbar-nav.mt-2.mt-md-0
+				li.nav-item.active
+					a.nav-link(href='#') Giới thiệu
+				li.nav-item
+					a.nav-link(href='#') Dịch vụ
+				li.nav-item
+					a.nav-link(href='#') Sản phẩm
+				li.nav-item
+					a.nav-link(href='#') Dự án
+				li.nav-item
+					a.nav-link(href='#') Đối tác
+				li.nav-item
+					a.nav-link(href='#') Tin tức - Sự kiện
+				li.nav-item
+					a.nav-link(href='#') Liên hệ
+
+
+			.language.mobile-lang
+				select.cclang(name="")
+					option(value="") Tiếng Việt
+					option(value="") Tiếng Anh
+
+			form.form-inline.my-2.my-md-0.search
+				.input-group
+					input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+					.input-group-append
+						button.btn.btn-primary(type='submit')
+							i.fa.fa-search
+			.my-2.my-md-0.btnsearch.d-none.d-md-block
+				.btn.btn-link
+					i.fa.fa-search
+					i.fa.fa-times

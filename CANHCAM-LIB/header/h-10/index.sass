@@ -1,0 +1,271 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-10
+	background: color-get($mau,trang)
+	border-bottom: 1px solid darken(color-get($mau,trang),20%)
+	.navbar
+		align-items: center
+		.title
+			order: 0
+			display: none
+			color: color-get($mau,trang)
+			padding: 1rem 2rem
+			border-bottom: 1px dashed lighten(color-get($mau,main),40%)
+			h2
+				margin-bottom: 0
+				+fz(2rem)
+			.closebnt
+				+pos(abs, .5rem .5rem null null)
+				z-index: 999
+				color: color-get($mau,trang)
+				cursor: pointer
+				i
+					font-size: 3rem
+					line-height: 3rem
+	.navbar-toggler
+		border: 0
+		.mdi
+			font-size: 2rem
+		&:focus
+			outline: none
+	.navbar-brand
+		position: relative
+		img
+			max-height: 2rem
+			+transition(all ease-in-out .3s)
+	.headtoppart
+		display: none
+
+	.custom-select
+		+bor-rad(0)
+	.search
+		input, button
+			+bor-rad(0)
+		+media-breakpoint-down(sm)
+			input
+				border: 1px solid color-get($mau,trang)
+	.mobile-lang
+		display: block
+		+pad(0 2rem 1rem 2rem)
+		.cclang
+			padding: .5rem
+			border-radius: 5px
+			outline: none
+	+media-breakpoint-down(sm)
+		.navbar-collapse
+			display: flex
+			flex-direction: column
+			+transition(all .3s ease-in-out)
+			+pos(fix, 0 100% null null)
+			background: rgba(red(color-get($mau,main)),green(color-get($mau,main)),blue(color-get($mau,main)),.95)
+			height: 100%
+			width: 100%
+			overflow-y: scroll
+			display: block
+			+pad(0)
+			.search
+				order: 1
+				+pad(0 2rem)
+				.input-group
+					width: 100%
+				button
+					background: darken(color-get($mau,trang),5%)
+					color: color-get($mau,main)
+					border-color: darken(color-get($mau,trang),5%)
+			.navbar-nav
+				order: 2
+				+pad(1rem 2rem)
+				+fz(1.3rem)
+				font-weight: 300
+				.nav-link
+					+link(color-get($mau,trang), color-get($mau,trang), color-get($mau,trang))
+
+	&.expand
+		.navbar
+			.title
+				display: block
+		.navbar-toggler
+			background: none
+			color: color-get($mau,main)
+			border-color: none
+		.navbar-collapse
+			+pos(fix, 0 0 null null)
+			z-index: 999
+	+media-breakpoint-up(md)
+		// border-bottom: 0
+		&.fixedheader
+			&.active
+				+box-sha()
+		.navbar
+			padding-top: 0
+			padding-bottom: 0
+			position: relative
+			.navbar-brand
+				img
+					max-height: initial
+					max-width: 7rem
+			.navbar-nav
+				.nav-item
+					margin-left: 1px
+					.nav-link
+						color: darken(color-get($mau,trang),70%)
+						white-space: nowrap
+						+fw(400)
+						+pad(1.5rem .4rem)
+						+fz(.9rem)
+						text-align: center
+						height: 100%
+						&:hover
+							+box-sha(0 -3px 0 color-get($mau,main), inset)
+							color: color-get($mau,main)
+					&.active, &.show
+						.nav-link
+							+box-sha(0 -3px 0 color-get($mau,main), inset)
+							color: color-get($mau,main)
+		.headtoppart
+			display: block
+			.headtop-item
+				+pad(0 1rem 0 0)
+				background: color-get($mau,main)
+				color: color-get($mau,trang)
+				+fz(.9rem)
+				+fw(400)
+				position: relative
+				// border-right: 1px solid color-get($mau,trang)
+				+media-breakpoint-up(md)
+					+pad(.6rem .5rem)
+				+media-breakpoint-up(lg)
+					+pad(.6rem 1.3rem)
+				&:before
+					content: ''
+					width: 1px
+					height: 1rem
+					background: color-get($mau,trang)
+					+pos( abs , 50% 0px null null)
+					transform: translateY(-50%)
+				&:last-child
+					&:before
+						content: ''
+						width: 2000px
+						height: 5rem
+						background: color-get($mau,main)
+						+pos(abs, 0 null null 100%)
+					&:after
+						content: ''
+						width: 3000px
+						height: 2px
+						background: color-get($mau,main)
+						+pos(abs, 0 0 null null)
+				&:first-child
+					&:after
+						content: ''
+						display: inline-block
+						width: 0
+						height: 0
+						border-right: 2.5rem solid color-get($mau,main)
+						border-bottom: 2.5rem solid transparent
+						position: absolute
+						top: 0
+						left: -2.5rem
+				em.fa
+					margin-right: .5rem
+				.cclang
+					// margin-bottom: 1rem
+					background: none
+					border: none
+					outline: none
+					color: color-get($mau,trang)
+					option
+						color: color-get($mau,den)
+		.mobile-lang
+			display: none
+	+media-breakpoint-up(md)
+		&.fixedheader
+			.navbar-brand
+				img
+					max-width: 10rem
+			&.active
+				.navbar-brand
+					img
+						max-width: 2.2rem
+		.navbar
+			position: relative
+		.navbar-collapse
+			position: static
+		.search
+			+pos(abs, 100% 1rem null null)
+			display: none
+			max-width: 300px
+			background: darken(color-get($mau,trang),0%)
+			+pad(.5rem)
+			border: 1px solid darken(color-get($mau,trang),20%)
+			border-top: 0
+			+bor-rad(0)
+			.input-group
+				width: 100%
+
+			&.active
+				display: block
+
+		.btnsearch
+			margin-left: .5rem
+			.btn
+				// background: color-get($mau,main)
+				text-decoration: none
+				color: color-get($mau,den-1)
+				+bor-rad(0)
+				+pad(0.6rem 0.6rem)
+				i
+					width: 20px
+					height: 20px
+					line-height: 20px
+					text-align: center
+			.fa-times
+				display: none
+			&.active
+				.fa-times
+					display: block
+				.fa-search
+					display: none
+	+media-breakpoint-up(lg)
+		.navbar
+			.navbar-brand
+				img
+					max-width: 15rem
+			.navbar-nav
+				.nav-item
+					.nav-link
+						+pad(2.5rem .5rem)
+						+fz(1rem)
+						text-transform: uppercase
+						+transition(all ease-in-out .3s)
+		&.fixedheader
+			.navbar-brand
+				img
+					max-width: 15rem
+			&.active
+				.navbar-brand
+					img
+						max-width: 10rem
+				.navbar
+					.navbar-nav
+						.nav-item
+							.nav-link
+								+pad(1.5rem .5rem)
+	+media-breakpoint-up(xl)
+		.navbar
+			.navbar-nav
+				.nav-item
+					.nav-link
+						+fw(bold)
+						+pad(2.5rem 1rem)
+		&.fixedheader
+			&.active
+				.navbar
+					.navbar-nav
+						.nav-item
+							.nav-link
+								+pad(1.5rem 1rem)
