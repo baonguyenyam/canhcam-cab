@@ -1,0 +1,111 @@
+@import ../../_includes
+
+.canhcam-footer-13
+	background-color: lighten(color-get($mau,den), 20%)
+	.list-none
+		list-style-type: none
+	.canhcam-sub
+		color: lighten(color-get($mau,trang), 0%)
+		+pad(3rem 0 0 0)
+		.info
+			+pad(1.5rem)
+			background: rgba(255,255,255,.1)
+			h5
+				+fz(1.2rem)
+				+fw(400)
+				margin-top: .5rem
+		.subscribe
+			position: relative
+			form
+				button.disabled
+					+opacity(1)
+				input
+					background: none
+					+bor-rad(0)
+					border: 0
+					padding-left: .6rem
+					border: 1px solid darken(color-get($mau,trang), 50%)
+					border-right: none
+					&:focus
+						outline: none
+						+box-sha(none)
+					+placeholder
+						color: darken(color-get($mau,trang), 50%)
+			.has-danger
+				input, textarea, select
+					border-color: color-get($mau,extra)
+		.subsocial
+			ul
+				+pad(0)
+				justify-content: center
+				+media-breakpoint-up(lg)
+					padding-left: 5.5rem
+			li
+				width: 2.5rem
+				height: 2.5rem
+				line-height: 2.5rem
+				text-align: center
+				background: color-get($mau,den-1)
+				margin-right: .7rem
+				&:last-child
+					margin-right: 0
+				a
+					color: color-get($mau,trang)
+					transition: .3s
+					text-decoration: none
+				&:hover
+					a
+						color: color-get($mau,main)
+	.footer-content
+		color: lighten(color-get($mau,trang), 0%)
+		padding: 2rem 0
+		font-weight: 200
+		position: relative
+		h6
+			+fz(1.2rem)
+			margin-bottom: 1rem
+			color: lighten(color-get($mau,trang), 0%)
+			+fw(400)
+			text-transform: uppercase
+		.list-group
+			.list-group-item
+				display: inline-block
+				background: none
+				border: 0
+				padding: .5rem 0
+				a
+					font-size: .9rem
+					color: darken(color-get($mau,trang), 30%)
+					+fw(300)
+					&:hover
+						text-decoration: underline
+						color: lighten(color-get($mau,trang), 0%)
+					.fa
+						margin-right: .5rem
+					ul
+						+mar(0)
+						+pad(0)
+	.copy-right
+		font-size: .8rem
+		padding: .75rem 1rem
+		background: color-get($mau,main)
+		color: color-get($mau,trang)
+		text-transform: uppercase
+	// Khi lên Tablet
+	+media-breakpoint-up(md)
+		.footer-content
+			padding: 4rem 0
+			.slogan
+				.quote
+					padding-left: 2rem
+				.social-list
+					margin: 1rem 0 0 0
+	// Khi lên PC
+	+media-breakpoint-up(lg)
+		.footer-content
+			.list-group
+				.list-group-item
+					padding: .15rem 0
+			.slogan
+				display: flex
+
