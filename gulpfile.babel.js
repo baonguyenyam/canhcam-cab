@@ -4,16 +4,11 @@ import path from 'path';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSyncLib from 'browser-sync';
-import autoprefixer from 'autoprefixer';
 import minimist from 'minimist';
 import wrench from 'wrench';
 import runSequence from 'run-sequence';
-import genfile from 'gulp-file'
-import babel from 'gulp-babel';
-
-
+runSequence.options.ignoreUndefinedTasks = true;
 const fs = require('fs');
-const fse = require('fs-extra');
 const yaml = require("js-yaml");
 const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
 const loadSEO = JSON.parse(fs.readFileSync("./core/seo.json"));
