@@ -251,6 +251,26 @@ $('#formAddComponent button').click(function (e) {
 	});
 	return false;
 })
+$('#downloadsite').click(function (e) {
+	$(this).html('Đang tải...')
+	setTimeout(() => {
+		$(this).hide()
+	}, 3000);
+	if (modeCAD === 'dab') {
+		createSiteDAB()
+	} else {
+		var newData = data
+		jQuery.post("/zip", {
+			name: objectName,
+			data: newData
+		}, function (data) {
+			setTimeout(() => {
+				window.location.href = data
+			}, 3500);
+		})
+	}
+})
+
 $('#createSite').click(function (e) {
 	e.preventDefault();
 	if (modeCAD === 'dab') {
@@ -268,6 +288,7 @@ $('#createSite').click(function (e) {
 						$('#toDoList, .deview').hide()
 						$('.notedcanhcam').show()
 						$('.notedcanhcam .alert').show()
+						$('.notedcanhcam .downloadsite').show()
 						$('.createcanhcam').hide()
 						$('.bleft').hide()
 						$('.enterpro').hide()

@@ -12,6 +12,8 @@ var multer = require('multer');
 var browserSync = require('browser-sync');
 var pug = require('pug');
 var json_body_parser = bodyParser.json();
+var zipFolder = require('zip-folder');
+var rimraf = require('rimraf');
 var urlencoded_body_parser = bodyParser.urlencoded({ extended: true });
 process.env.ENVGLOBAL = false
 
@@ -26,6 +28,7 @@ var site = {
 	lib: './CANHCAM-LIB',
 	dest: './@SITE',
 }
+
 app.use(json_body_parser);
 app.use(urlencoded_body_parser);
 app.use('/', express.static(site.root + '/'));
@@ -339,7 +342,48 @@ router.get('/getreadysite', function (req, res) {
 	});
 })
 
+app.post('/zip', function (req, res) {
+	var dir = site.dest + '/' + req.body.name
+	var id = makeid(10)
+
+	rmDir = function (dirPath) {
+		try { var files = fs.readdirSync(dirPath); }
+		catch (e) { return; }
+		if (files.length > 0)
+			for (var i = 0; i < files.length; i++) {
+				var filePath = dirPath + '/' + files[i];
+				if (fs.statSync(filePath).isFile()) {
+					if (filePath.indexOf(".html") > -1) {
+					} else {
+						fs.unlinkSync(filePath);
+					}
+				} else {
+					rmDir(filePath);
+				}
+			}
+	};
+
+	rmDir(site.root + '/archive')
+
+	zipFolder(dir, site.root + '/archive/' + id + '.zip', function (err) {
+		if (err) {
+		} else {
+		}
+	});
+	res.end('/archive/' + id + '.zip');
+})
+
 app.post('/createsite', function (req, res) {
+
+	fs.readdir(site.dest, function (err, items) {
+		for (var i = 0; i < items.length; i++) {
+			if (items[i].indexOf(".") > -1) {
+			} else {
+				rimraf(site.dest + '/' + items[i], function () { });
+			}
+		}
+	});
+
 	var json = JSON.stringify(req.body.data, null, 4);
 	var dir = site.dest + '/' + req.body.name
 
