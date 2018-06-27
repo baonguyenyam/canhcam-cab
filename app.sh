@@ -30,7 +30,7 @@ do
 
         case $choice in
             '1') npm run web;;
-            '2') npm run start;;
+            '2') npm run site;;
             '3') npm run dev;;
             '4') npm run node;;
             'p') npm run index;;

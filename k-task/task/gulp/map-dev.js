@@ -28,14 +28,14 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 						});
 				});
 			});
-		}, 1500);
+		}, 3500);
 
 		setTimeout(() => {
 			fs.appendFile(directoryPath + '/index.html', '</div></div><script src="/js/jquery-3.2.1.slim.min.js" ></script><script src="/js/1.12.9/umd/popper.min.js"></script><script src="/js/bootstrap.min.js"></script></body></html>', function (err) {
 				if (err)
 					console.error(err);
 			});
-		}, 3000);
+		}, 7000);
 
 
     })

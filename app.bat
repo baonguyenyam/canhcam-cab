@@ -37,7 +37,7 @@ npm run web
 GOTO begin
 
 :dev
-npm run start
+npm run site
 GOTO begin
 
 :Pug
