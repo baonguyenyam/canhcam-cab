@@ -1,41 +1,30 @@
 {
-	"name": "canhcam-builder",
-	"version": "1.0.0",
-	"description": "by Bao Nguyen - 0969689893 - baonguyenyam.github.io ",
-	"main": "index.js",
-	"directories": {
-		"lib": "lib"
-	},
 	"scripts": {
+		"clean-deps": "rimraf node_modules",
+		"clear-cache": "npm cache clean",
+		"local": "gulp build-local --production",
+		"local-no": "gulp build-local-no --production --notmin",
+		"pro": "gulp build --production",
+		"pro-no": "gulp build-no --production --notmin",
+		"rebuild": "npm rebuild",
 		"serve": "gulp serve",
 		"start": "gulp server",
-		"pro": "gulp build --production",
-		"local": "gulp build-local --production",
-		"pro-no": "gulp build-no --production --notmin",
-		"local-no": "gulp build-local-no --production --notmin",
 		"test": "gulp test",
-		"clean-deps": "rimraf node_modules",
-		"rebuild": "npm rebuild",
-		"clear-cache": "npm cache clean",
 		"update": "ncu -u && ncu -u -m bower && npm i && npm i sass node-sass && bower update"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome": "1.1.5",
 		"@fortawesome/fontawesome-free-webfonts": "1.0.6",
+		"autoprefixer": "8.3.0",
 		"awesome-bootstrap-checkbox": "1.0.1",
 		"babel": "6.23.0",
-		"babel-register": "6.26.0",
-		"bootstrap": "4.1.0",
-		"jquery": "3.3.1",
-		"popper.js": "1.14.3"
-	},
-	"devDependencies": {
-		"autoprefixer": "8.3.0",
 		"babel-core": "6.26.3",
 		"babel-eslint": "8.2.3",
 		"babel-plugin-add-module-exports": "0.2.1",
 		"babel-preset-es2015": "6.24.1",
+		"babel-register": "6.26.0",
 		"body-parser": "1.18.2",
+		"bootstrap": "4.1.0",
 		"browser-sync": "2.23.7",
 		"clean-css": "4.1.11",
 		"colors": "1.2.1",
@@ -91,18 +80,18 @@
 		"imagemin-optipng": "5.2.1",
 		"imagemin-svgo": "6.0.0",
 		"jpegtran-bin": "3.2.0",
+		"jquery": "3.3.1",
 		"js-yaml": "3.11.0",
 		"jshint-stylish": "2.2.1",
 		"karma": "2.0.2",
 		"karma-browserify": "5.2.0",
 		"karma-jasmine": "1.1.1",
-		"karma-phantomjs-launcher": "1.0.4",
 		"lodash": "4.17.10",
 		"main-bower-files": "2.13.1",
 		"node-sass": "4.9.0",
 		"npm-check-updates": "2.11.2",
 		"optipng-bin": "4.0.0",
-		"phantomjs": "2.1.7",
+		"popper.js": "1.14.3",
 		"pug": "2.0.3",
 		"pug-lint": "2.5.0",
 		"rimraf": "2.6.2",
@@ -111,9 +100,16 @@
 		"svgo": "1.0.5",
 		"wrench": "1.5.9"
 	},
+	"description": "by Bao Nguyen - 0969689893 - baonguyenyam.github.io ",
+	"directories": {
+		"lib": "lib"
+	},
 	"engines": {
 		"node": ">=0.12.0"
 	},
-	"author": "Bao Nguyen",
-	"license": "ISC"
+	"author": "BaoNguyen <baonguyenyam@gmail.com> (https://baonguyenyam.github.io/)",
+	"homepage": "https://baonguyenyam.github.io/blog",
+	"license": "ISC",
+	"name": "baonguyenyam-builder",
+	"version": "1.0.0"
 }

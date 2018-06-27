@@ -4,15 +4,11 @@ import path from 'path';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSyncLib from 'browser-sync';
-import autoprefixer from 'autoprefixer';
 import minimist from 'minimist';
 import wrench from 'wrench';
 import runSequence from 'run-sequence';
-import genfile from 'gulp-file'
-
-
+runSequence.options.ignoreUndefinedTasks = true;
 const fs = require('fs');
-const fse = require('fs-extra');
 const yaml = require("js-yaml");
 const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
 const loadSEO = JSON.parse(fs.readFileSync("./seo.json"));
@@ -20,7 +16,7 @@ const loadCC = JSON.parse(fs.readFileSync("./concat.json"));
 const loadGEN = JSON.parse(fs.readFileSync("./include.json"));
 
 // Global
-const plugins = gulpLoadPlugins();
+const plugins = gulpLoadPlugins({ lazy: true });
 
 // Create karma server
 const KarmaServer = require('karma').Server;
@@ -88,20 +84,20 @@ gulp.task('build-local-no', ['cleanall'], () => {
 });
 
 // Basic production-ready code
-gulp.task('k-task', function (cb) {
+gulp.task('k-task', (cb) => {
 	runSequence(
-		'sass', // css, less, stylus
+		'copy',
+		'fonts',
+		'sass',
 		'concat',
 		'babel',
 		'babel-concat',
-		'pug', // hamber, ejs, pug
-		'copy',
-		'fonts',
+		'pug',
 		cb
 	);
 });
 
-gulp.task('ser', function (cb) {
+gulp.task('ser', (cb) => {
 	runSequence(
 		'k-task',
 		'inject',

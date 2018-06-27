@@ -3,56 +3,50 @@
 import path from 'path';
 import runSequence from 'run-sequence';
 
-module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
-    let url = config;
-    let dest = path.join(target);
+module.exports = function (gulp, setgulp, plugins, config, target, browserSync) {
+	let url = config;
+	// Run task
+	gulp.task('watch', () => {
 
-    // Run task
-    gulp.task('watch', () => {
-        if (!setgulp.production) {
+		// Styles
+		gulp.watch([
+			path.join(url.source, url.styles.assets, '**/*.css')
+		], ['css']);
 
-            // Concat
-            gulp.watch([
-                path.join('./task/config.yml')
-            ], function() {
-                runSequence('k-task', 'inject');
-            })
+		gulp.watch([
+			path.join(url.source, url.src2, '**/*.{sass,scss}')
+		], function (cb) {
+			runSequence('sass', 'inject', cb);
+		})
 
-            // Styles
-            gulp.watch([
-				path.join(url.source, url.styles.assets, '**/*.css')
-            ], ['css']);
+		// Scripts
+		gulp.watch([
+			path.join(url.source, url.scripts.javascript, '**/*.js'),
+			path.join(url.source, url.src2, '**/*.js')
+		], ['babel', 'babel-concat'])
 
-            gulp.watch([
-				path.join(url.source, url.src2, '**/*.{sass,scss}')
-            ], function() {
-                runSequence('sass', 'inject');
-            })
+		// Templates
+		gulp.watch([
+			path.join(url.source, url.layouts.jade, '**/*.pug'),
+			path.join(url.source, url.src2, '**/*.pug')
+		], function () {
+			runSequence('pug', 'inject');
+		})
 
-            // Scripts
-            gulp.watch([
-				path.join(url.source, url.scripts.javascript, '**/*.js'),
-				path.join(url.source, url.src2, '**/*.js')
-            ], ['babel', 'babel-concat'])
+		// Copy
+		gulp.watch([
+			'!' + path.join(url.source, 'tmp'),
+			'!' + path.join(url.source, 'tmp', '**/*'),
+			path.join(url.source, 'img', '**/*'),
+			path.join(url.source, url.styles.assets, '**/*'),
+			path.join(url.source, url.scripts.javascript, '**/*'),
+			path.join(url.source, url.layouts.jade, '**/*'),
+			path.join(url.source, url.src2, '**/*'),
+		], ['copy']);
 
-            // Templates
-            gulp.watch([
-				path.join(url.source, '**/*.pug')
-            ], function() {
-                runSequence('pug', 'inject');
-            })
-
-            // Copy
-            // gulp.watch([
-			// 	'!' + path.join(url.source, 'tmp'),
-			// 	'!' + path.join(url.source, 'tmp', '**/*'),
-			// 	path.join(url.source, '**/*.{svg,jpg,jpeg,png,gif,txt,bmp,md,json,yml,yaml,css,html,js,eot,svg,ttf,woff,woff2}'),
-            // ], ['copy']);
-
-            // All other files
-            gulp.watch([path.join(url.tmp, '**/*'),
-                '!' + path.join(url.tmp, '**/*.{css,map,html,js}')
-            ]).on('change', browserSync.reload);
-        }
-    });
+		// All other files
+		gulp.watch([path.join(url.tmp, '**/*'),
+		'!' + path.join(url.tmp, '**/*.{css,map,html,js}')
+		]).on('change', browserSync.reload);
+	});
 }

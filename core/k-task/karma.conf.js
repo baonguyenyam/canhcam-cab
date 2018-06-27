@@ -26,7 +26,6 @@ var karmaConf = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            './phantomjs-shims.js',
             testFiles
         ],
 
@@ -75,7 +74,7 @@ var karmaConf = function(config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 60000,
