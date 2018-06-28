@@ -11,10 +11,8 @@ import angularFilesort from 'gulp-angular-filesort';
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let url = config;
     let dest = path.join(target);
-    let destconfig = path.join(target, url.config);
     let destjs = path.join(target, url.scripts.assets);
 
-    let fstm = require('fs');
     let arrayJS = []
     let arrayJSList = []
 

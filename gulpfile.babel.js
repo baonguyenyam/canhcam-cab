@@ -7,14 +7,14 @@ import browserSyncLib from 'browser-sync';
 import minimist from 'minimist';
 import wrench from 'wrench';
 import runSequence from 'run-sequence';
+import { readFileSync } from 'fs';
+import { load as _load } from "js-yaml";
 runSequence.options.ignoreUndefinedTasks = true;
-const fs = require('fs');
-const yaml = require("js-yaml");
-const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
-const loadSEO = JSON.parse(fs.readFileSync("./core/seo.json"));
-const loadCC = JSON.parse(fs.readFileSync("./core/concat.json"));
-const getApp = JSON.parse(fs.readFileSync("./@SITE/setup.json"));
-var loadGEN = JSON.parse(fs.readFileSync(load.config.src + "/" + load.config.dev + "/include.json"));
+const load = _load(readFileSync("./k-task/config.yml"));
+const loadSEO = JSON.parse(readFileSync("./core/seo.json"));
+const loadCC = JSON.parse(readFileSync("./core/concat.json"));
+const getApp = JSON.parse(readFileSync("./@SITE/setup.json"));
+var loadGEN = JSON.parse(readFileSync(load.config.src + "/" + load.config.dev + "/include.json"));
 
 var srcgettmp = ''
 var devgettmp = ''
@@ -26,7 +26,7 @@ if (process.argv.slice(2).indexOf("builder") > -1) {
 	srcgettmp = load.config.src
 	devgettmp = load.config.dev
 } else if (process.argv.slice(2).indexOf("serve") > -1 || process.argv.slice(2).indexOf("server") > -1) {
-	loadGEN = JSON.parse(fs.readFileSync("./@SITE/" + getApp.sitename + "/include.json"));
+	loadGEN = JSON.parse(readFileSync("./@SITE/" + getApp.sitename + "/include.json"));
 	srcgettmp = "@SITE"
 	devgettmp = getApp.sitename
 }
@@ -38,7 +38,7 @@ loadGEN.dev = devgettmp
 const plugins = gulpLoadPlugins();
 
 // Create karma server
-const KarmaServer = require('karma').Server;
+import { Server as KarmaServer } from 'karma';
 
 // Create a new browserSync
 

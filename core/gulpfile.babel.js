@@ -7,19 +7,19 @@ import browserSyncLib from 'browser-sync';
 import minimist from 'minimist';
 import wrench from 'wrench';
 import runSequence from 'run-sequence';
+import { readFileSync } from 'fs';
+import { load as _load } from "js-yaml";
 runSequence.options.ignoreUndefinedTasks = true;
-const fs = require('fs');
-const yaml = require("js-yaml");
-const load = yaml.load(fs.readFileSync("./k-task/config.yml"));
-const loadSEO = JSON.parse(fs.readFileSync("./seo.json"));
-const loadCC = JSON.parse(fs.readFileSync("./concat.json"));
-const loadGEN = JSON.parse(fs.readFileSync("./include.json"));
+const load = _load(readFileSync("./k-task/config.yml"));
+const loadSEO = JSON.parse(readFileSync("./seo.json"));
+const loadCC = JSON.parse(readFileSync("./concat.json"));
+const loadGEN = JSON.parse(readFileSync("./include.json"));
 
 // Global
 const plugins = gulpLoadPlugins({ lazy: true });
 
 // Create karma server
-const KarmaServer = require('karma').Server;
+import { Server as KarmaServer } from 'karma';
 
 // Create a new browserSync
 
@@ -108,7 +108,7 @@ gulp.task('ser', (cb) => {
 });
 
 // Rebuild will call by browserify
-gulp.task('product', function (cb) {
+gulp.task('product', (cb) => {
 	runSequence(
 		'k-task',
 		// 'favicon',
@@ -134,7 +134,7 @@ gulp.task('product', function (cb) {
 });
 
 // Rebuild will call by browserify
-gulp.task('product-no', function (cb) {
+gulp.task('product-no', (cb) => {
 	runSequence(
 		'k-task',
 		// 'favicon',
@@ -156,7 +156,7 @@ gulp.task('product-no', function (cb) {
 });
 
 // Not min & can run without localhost
-gulp.task('product-local', function (cb) {
+gulp.task('product-local', (cb) => {
 	runSequence(
 		'k-task',
 		// 'favicon',
@@ -184,7 +184,7 @@ gulp.task('product-local', function (cb) {
 });
 
 // Not min & can run without localhost
-gulp.task('product-local-no', function (cb) {
+gulp.task('product-local-no', (cb) => {
 	runSequence(
 		'k-task',
 		// 'favicon',

@@ -9,7 +9,6 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let url = config;
     let dest = path.join(target, url.styles.assets);
 
-    let fstm = require('fs');
     let arraySass = []
     let arraySassList = []
 
