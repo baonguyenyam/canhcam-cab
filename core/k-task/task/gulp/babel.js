@@ -21,9 +21,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
                 path.join(url.source, url.scripts.javascript, '**/*.js')
             ])
             .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.babel({
-                presets: ['es2015']
-            }))
+            .pipe(plugins.babel())
             .pipe(plugins.sourcemaps.write('.'))
             .pipe(plugins.changed(dest))
             .pipe(gulp.dest(destjs));

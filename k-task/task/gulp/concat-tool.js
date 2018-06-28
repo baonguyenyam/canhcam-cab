@@ -102,9 +102,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 			'CAB-DAB/js/key.js',
 			'CAB-DAB/js/tour.js',
 		])
-			.pipe(plugins.babel({
-				presets: ['es2015']
-			}))
+			.pipe(plugins.babel())
 			.pipe(plugins.changed(dest))
 			.pipe(concat(url.concat.babelconcat + '.js'))
 			.pipe(minifyJS())

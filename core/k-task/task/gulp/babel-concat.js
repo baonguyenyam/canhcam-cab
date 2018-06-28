@@ -1,12 +1,7 @@
 'use strict';
 
 import path from 'path';
-import del from 'del';
-import babel from 'gulp-babel';
-import through from 'through2';
-import sourcemaps from 'gulp-sourcemaps';
 import concat from 'gulp-concat';
-import angularFilesort from 'gulp-angular-filesort';
 
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     let url = config;
@@ -42,9 +37,7 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
             // .pipe(angularFilesort())
             .pipe(concat(url.concat.babelconcat + '.js'))
             .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.babel({
-                presets: ['es2015']
-            }))
+            .pipe(plugins.babel())
             .pipe(plugins.sourcemaps.write('.'))
             .pipe(plugins.changed(dest))
             .pipe(gulp.dest(destjs));

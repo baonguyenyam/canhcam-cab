@@ -26,9 +26,7 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 			// .pipe(angularFilesort())
 			.pipe(concat(url.concat.babelconcat + '.js'))
 			.pipe(plugins.sourcemaps.init())
-			.pipe(plugins.babel({
-				presets: ['es2015']
-			}))
+			.pipe(plugins.babel())
 			.pipe(plugins.sourcemaps.write('.'))
 			.pipe(plugins.changed(dest))
 			.pipe(gulp.dest(destjs));
