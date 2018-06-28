@@ -4,7 +4,7 @@
 
 var fs = require('fs');
 var yaml = require("js-yaml");
-var load = yaml.load(fs.readFileSync("./task/config.yml"));
+var load = yaml.load(fs.readFileSync("./k-task/config.yml"));
 var path = require('path');
 var config = load.config;
 var url = config;
@@ -26,6 +26,7 @@ var karmaConf = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
+			'./phantomjs-shims.js',
             testFiles
         ],
 
@@ -74,7 +75,7 @@ var karmaConf = function(config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['Chrome'],
+		browsers: ['PhantomJS'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 60000,

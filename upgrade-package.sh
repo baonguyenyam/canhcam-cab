@@ -1,8 +1,8 @@
 #!/bin/bash
 printf "\033[1;36m=====================================\033[0m\n"
-printf "\033[1;36mWelcome to the BIZ4X-Mobile Application. This is the products of 4xLabs\033[0m\n"
+printf "\033[1;36mWelcome to the K-Mobile Application. This is the products of Bao Nguyen\033[0m\n"
 printf "\033[1;36mCopyright 2017\033[0m\n"
-printf "\033[1;36mBuild by BIZ4X Team\033[0m\n"
+printf "\033[1;36mBuild by K Team\033[0m\n"
 printf "\033[1;36m=====================================\033[0m\n"
 printf "\033[0;33mAre You ready to install?!?\033[0m\n"
 read -p "Press enter to continue..." nothing
@@ -11,7 +11,7 @@ npm run rimraf -- node_modules
 printf "\033[0;33mRemove Bower Components folders...\033[0m\n"
 npm run rimraf -- bower_components
 printf "\033[0;33mChecking update...\033[0m\n"
-ncu -u 
+ncu -u
 printf "\033[0;33mInstall Node Modules...\033[0m\n"
 npm install
 npm install --only=dev
