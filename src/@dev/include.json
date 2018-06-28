@@ -2,10 +2,9 @@
 	"SETUP": {
 		"index": {
 			"header": [
-				"header/h-10"
+				"header/h-11"
 			],
 			"body": [
-				"nav/n-7"
 			],
 			"footer": [
 				"footer/f-10"

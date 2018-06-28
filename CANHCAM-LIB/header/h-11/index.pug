@@ -1,0 +1,56 @@
+header.canhcam-header-11
+	.k-menu-bar.container
+		#logo.mr-auto
+		#language
+		button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
+			i.mdi.mdi-menu
+	#demoResAllInOneMenu.container.k-responsive-menu
+		.k-menu-bar
+			.k-logo.navbar-brand.mr-auto
+				img(src="./img/logo-ang.png", alt="")
+			button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
+				i.mdi.mdi-close
+		.k-logo.navbar-brand(k-menu-map-to="#logo")
+			img(src="./img/singlelogo.png", alt="")
+		.nav.mainnav.ml-auto
+			.topbar
+				.inner
+					ul.contactinfo(k-menu-map-to="#contactinfotel")
+						li 
+							span.link 090909090808
+					ul.contactinfo.line(k-menu-map-to="#contactinfo")
+						li
+							a(href='#') 
+								em.fab.fa-facebook-f
+						li
+							a(href='#') 
+								em.fab.fa-twitter
+					ul.language(k-menu-map-to="#language")
+						li
+							a(href='#') EN
+						li
+							a(href='#') VN
+			ul.nav
+				li.nav-item.active
+					a.nav-link(href='#') About us
+				li.nav-item.dropdown
+					a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+						| Dropdown
+					.dropdown-menu(aria-labelledby='navbarDropdown')
+						a.dropdown-item(href='#') Action
+						a.dropdown-item(href='#') Another action
+						.dropdown-divider
+						a.dropdown-item(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Shop
+				li.nav-item
+					a.nav-link(href='#') Contact us
+			#contactinfotel
+			#contactinfo
+

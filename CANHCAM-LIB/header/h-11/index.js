@@ -1,7 +1,7 @@
-function CCHeader10() {
-	$('.canhcam-header-10 #demoResAllInOneMenu').kResponsiveMenu({
+function CCHeader11() {
+	$('.canhcam-header-11 #demoResAllInOneMenu').kResponsiveMenu({
 		animationSpeed: 'fast', // slow, fast, 200
-		resizeWidth: 'md', // 'xs', 'sm', 'md', 'lg', 'xl', 480,
+		resizeWidth: 'lg', // 'xs', 'sm', 'md', 'lg', 'xl', 480,
 		menuType: 'horizontal', // right, left
 		menuPush: 'right', // right, left
 		menuPushPosition: 'fixed', // absolute
@@ -12,7 +12,7 @@ function CCHeader10() {
 
 
 $(document).ready(function () {
-	CCHeader10()
+	CCHeader11()
 });
 // Fixed Header
 $(window).scroll(function () {

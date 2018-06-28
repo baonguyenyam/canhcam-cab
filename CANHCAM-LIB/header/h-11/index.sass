@@ -1,0 +1,187 @@
+@import ../../_includes
+
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-header-11
+	background: color-get($mau,trang)
+	box-shadow: 0 0 5px rgba(0,0,0,.5)
+	&.fixedheader
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 999
+		transition: all .25s ease-in-out
+		&.active , &.expand
+	.language
+		margin-bottom: 0 
+		display: flex
+		align-items: center
+		+mar(0)
+		+pad(0)
+		li 
+			list-style: none
+			+ li 
+				margin-right: .5rem
+			a 
+				color: lighten(color-get($mau,main),0%)
+				display: inline-block
+				text-decoration: none
+				+pad(0.5rem 1rem)
+			&:hover, &.active, &.show
+				a
+					color: color-get($mau,extra)
+	.contactinfo
+		margin-bottom: 0 
+		display: flex
+		+mar(0)
+		+pad(0)
+		flex-wrap: wrap
+		li 
+			list-style: none
+			a, .link
+				color: lighten(color-get($mau,main),30%)
+				display: inline-block
+				text-decoration: none
+				+pad(0.5rem 1rem)
+			&:hover, &.active, &.show
+				a
+					color: color-get($mau,trang)
+	.k-menu-bar
+		color: color-get($mau,main)
+		.k-button-toggle
+			color: color-get($mau,main)
+		.navbar-brand
+			img
+				max-height: 2rem
+		.nav
+			.nav-item
+				.nav-link
+					color: color-get($mau,main)
+
+	.k-responsive-menu
+		background: color-get($mau,main)
+		.navbar-brand
+			color: color-get($mau,trang)
+			img
+				max-height: 2rem
+		.nav
+			.nav-item
+				.nav-link
+					color: lighten(color-get($mau,main),30%)
+				&:hover, &.active, &.show
+					.nav-link
+						color: color-get($mau,trang)
+		.k-menu-bar
+			.k-button-toggle
+				color: color-get($mau,trang)
+
+	// CHANGE MENU
+
+	+media-breakpoint-up(lg)
+		.k-responsive-menu
+			background: color-get($mau,trang)
+			padding-top: 0
+			padding-bottom: 0
+			position: relative
+			.navbar-brand
+				+pad(1rem 0 0 0)
+				+pos(abs, 0 null null 0)
+				background: #fff
+				width: 160px
+				text-align: center
+				&:after 
+					content: ''
+					display: block
+					height: 16px 
+					width: 160px
+					+pos(abs, calc(100% - 0px) null null 0)
+					background: url('../img/bottom.png') center top no-repeat
+					background-size: cover
+					z-index: -1
+				img 
+					max-height: 5.2rem
+					+transition(.3s all ease-in-out)
+					
+			.nav
+				justify-content: flex-end
+				.nav-item
+					+ .nav-item
+						margin-left: 1rem
+					.nav-link
+						color: lighten(color-get($mau,den),40%)
+						+pad(1rem 0)
+					&:hover, &.active, &.show
+						.nav-link
+							color: color-get($mau,extra)
+					.dropdown-menu
+						.dropdown-item
+							color: lighten(color-get($mau,den),40%)
+							&:active 
+								color: color-get($mau,trang)
+			.mainnav
+				display: flex
+				flex-direction: column
+				.topbar
+					justify-content: flex-end
+					display: flex
+					height: 38px
+					+transition(.3s all ease-in-out)
+					.inner
+						background: lighten(color-get($mau,main),0%)
+						+bor-rad(0 0 25px 25px)
+						padding-left: 1.25rem 
+						padding-right: 1.25rem
+						display: flex
+						width: auto
+				.contactinfo, .language
+					flex-direction: row
+					+fz(.85rem)
+					padding: 0 .5rem
+					&.line
+						border-left: 1px solid  color-get($mau,trang)
+						border-right: 1px solid  color-get($mau,trang)
+					li 
+						color: color-get($mau,trang)
+						+ li 
+							margin-right: 0
+						a, .link
+							color: color-get($mau,trang)
+							+pad(.75rem .5rem)
+							em 
+								width: 1rem
+								text-align: center
+		&.fixedheader
+			&.active
+				.k-responsive-menu
+					.topbar
+						height: 0px
+						overflow: hidden
+					.navbar-brand 
+						img
+							max-height: 2.5rem
+	+media-breakpoint-up(xl)
+		.k-responsive-menu
+			.navbar-brand
+				width: 206px
+				+pos(abs, 0 null null -4.5rem)
+				&:after 
+					height: 22px 
+					width: 206px
+				img 
+					max-height: 6.2rem
+			.nav
+				.nav-item
+					+ .nav-item
+						margin-left: 1.5rem
+					.nav-link
+						+pad(1.5rem 0)
+						text-transform: uppercase
+		&.fixedheader
+			&.active
+				.k-responsive-menu
+					.navbar-brand 
+						img
+							max-height: 3.5rem
