@@ -38,5 +38,7 @@ function getBG16(time) {
 }
 
 $(document).ready(function () {
-	getBG16(1000)
+	if ($(window).width() > CANHCAM_APP.CHANGE_GRID) {
+		getBG16(1000)
+	}
 });
