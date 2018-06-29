@@ -1,0 +1,47 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-16
+	+pad(3rem 0)
+	.item
+		text-decoration: none
+		figure
+			.boximg
+				+bor-rad(5px)
+				overflow: hidden
+				img
+					+opacity(0)
+			figcaption
+				+pad(1rem 0)
+				h3 
+					+fw(bold)
+					+fz(1.3rem)
+				p 
+					color: lighten(color-get($mau,den),30%)
+					margin-bottom: 0
+		&:hover
+			figure
+				figcaption
+					p 
+						color: lighten(color-get($mau,den),60%)
+		+media-breakpoint-up(lg)
+			figure
+				position: relative
+				+bor-rad(5px)
+				overflow: hidden
+				figcaption
+					text-align: center
+					+pos(abs, null null 0 0)
+					+pad(1rem)
+					width: 100%
+					background: lighten(color-get($mau,den),90%)
+					display: flex
+					align-items: center
+					flex-direction: column
+					justify-content: center
+					h3 
+						margin-bottom: 0
+					p 
+						padding-top: .5rem
