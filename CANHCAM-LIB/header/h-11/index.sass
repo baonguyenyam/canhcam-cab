@@ -18,7 +18,7 @@
 	.language
 		margin-bottom: 0 
 		display: flex
-		align-items: center
+		// align-items: center
 		+mar(0)
 		+pad(0)
 		li 
@@ -110,6 +110,15 @@
 				.nav-item
 					+ .nav-item
 						margin-left: 1rem
+					&.dropdown
+						margin-right: 1rem
+						.dropdown-toggle
+							&:after 
+								content: "\f078"
+								border: 0
+								font-family: 'Font Awesome 5 Free'
+								font-weight: 900
+								vertical-align: initial
 					.nav-link
 						color: lighten(color-get($mau,den),40%)
 						+pad(1rem 0)
