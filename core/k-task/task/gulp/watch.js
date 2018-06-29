@@ -15,8 +15,8 @@ module.exports = function (gulp, setgulp, plugins, config, target, browserSync) 
 
 		gulp.watch([
 			path.join(url.source, url.src2, '**/*.{sass,scss}')
-		], function (cb) {
-			runSequence('sass', 'inject', cb);
+		], function () {
+			runSequence('sass', 'inject');
 		})
 
 		// Scripts
