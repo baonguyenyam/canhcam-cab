@@ -1,0 +1,94 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-carousel-8
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.list-content-items
+		+pad(2rem 0 0 0)
+		.slick-track
+			.item
+				&:focus
+					outline: none 
+				.content
+					max-height: 280px
+					position: relative
+	.list-items
+		position: relative
+		.slick-track
+			.item
+				cursor: pointer
+				text-align: center
+				&:focus
+					outline: none 
+				a 
+					text-decoration: none
+				img 
+					max-height: 80px
+				span 
+					display: block
+				&.slick-current, &:hover
+					+fw(bold)
+		&:hover
+			.slick-arrow
+				display: block !important
+	// Arrow
+	.slick-arrow
+		background: rgba(0,0,0,.3)
+		color: rgba(255,255,255,.3)
+		padding: .85rem 1rem
+		width: initial
+		height: initial
+		z-index: 100
+		display: none !important
+		&:before
+			font-family: 'Font Awesome 5 Free'
+			font-weight: 900
+			+fz(1rem)
+		&.slick-prev
+			left: 0
+			+media-breakpoint-up(lg)
+				left: initial
+				right: 100%
+			&:before
+				content: '\f053'
+		&.slick-next
+			right: 0 
+			+media-breakpoint-up(lg)
+				right: initial 
+				left: 100%
+			&:before
+				content: '\f054'
+		&.slick-disabled
+			&:before
+				+opacity(.5)
+		&:hover 
+			background: color-get($mau,main)
+			color: color-get($mau,trang)
+	// Dots
+	.slick-dots
+		width: 100%
+		li
+			width: .75rem
+			height: .75rem
+			+mar(.5rem)
+			&:focus
+				outline: none
+			button
+				+pad(0)
+				width: .75rem
+				height: .75rem
+				&:before
+					content: '' 
+					background: darken(color-get($mau,trang),5%)
+					+bor-rad(50%)
+					width: .75rem
+					height: .75rem
+			&.slick-active
+				button
+					&:before
+						background: color-get($mau,main)
+

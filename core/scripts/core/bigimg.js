@@ -1,4 +1,16 @@
 function CanhCamResponsive() {
+	// Set BG Mask
+	$('[bg-mask]').each(function () {
+		var bgimg = $(this).attr('bg-mask');
+		$(this).css({
+			"mask-image": "url(" + bgimg + ")",
+			"mask-position": "center center",
+			"mask-repeat": "no-repeat",
+			"-webkit-mask-image": "url(" + bgimg + ")",
+			"-webkit-mask-position": "center center",
+			"-webkit-mask-repeat": "no-repeat"
+		});
+	})
 	// Set BG Resposive
 	$('[bg-img]').each(function () {
 		var bgimg = $(this).attr('bg-img');
