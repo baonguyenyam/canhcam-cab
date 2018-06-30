@@ -1,5 +1,5 @@
-function CCHeader11() {
-	$('.canhcam-header-11 #demoResAllInOneMenu').kResponsiveMenu({
+function CCHeader12() {
+	$('.canhcam-header-12 #demoResAllInOneMenu').kResponsiveMenu({
 		animationSpeed: 'fast', // slow, fast, 200
 		resizeWidth: 'lg', // 'xs', 'sm', 'md', 'lg', 'xl', 480,
 		menuType: 'horizontal', // horizontal, vertical
@@ -12,7 +12,7 @@ function CCHeader11() {
 
 
 $(document).ready(function () {
-	CCHeader11()
+	CCHeader12()
 });
 // Fixed Header
 $(window).scroll(function () {

@@ -2,7 +2,7 @@ function CCHeader10() {
 	$('.canhcam-header-10 #demoResAllInOneMenu').kResponsiveMenu({
 		animationSpeed: 'fast', // slow, fast, 200
 		resizeWidth: 'md', // 'xs', 'sm', 'md', 'lg', 'xl', 480,
-		menuType: 'horizontal', // right, left
+		menuType: 'horizontal', // horizontal, vertical
 		menuPush: 'right', // right, left
 		menuPushPosition: 'fixed', // absolute
 		menuPushWidth: '300px', // px, %, rem

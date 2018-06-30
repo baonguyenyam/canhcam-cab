@@ -1,0 +1,62 @@
+header.canhcam-header-12
+	.k-menu-bar.container
+		#logo.mr-auto
+		#language
+		button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
+			i.mdi.mdi-menu
+	.topbar.w-100.bg-light 
+		.container.d-flex
+			ul.language.mr-auto(k-menu-map-to="#language")
+				li
+					a(href='#') EN
+				li
+					a(href='#') VN
+			ul.contactinfo(k-menu-map-to="#contactinfotel")
+				li 
+					span.link 090909090808
+			ul.contactinfo(k-menu-map-to="#contactinfo")
+				li
+					a(href='#') 
+						em.fab.fa-facebook-f
+				li
+					a(href='#') 
+						em.fab.fa-twitter
+	#demoResAllInOneMenu.container.k-responsive-menu
+		.k-menu-bar
+			.k-logo.navbar-brand.mr-auto
+				img(src="./img/logo-ang.png", alt="")
+			button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
+				i.mdi.mdi-close
+		.k-logo.navbar-brand(k-menu-map-to="#logo")
+			img(src="./img/singlelogo.png", alt="")
+		.nav.mainnav.ml-auto
+			.searchbar
+				.input-group
+					input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+					.input-group-append
+						button.btn.btn-primary(type='submit')
+							i.fa.fa-search
+			ul.nav
+				li.nav-item.active
+					a.nav-link(href='#') Dropdown Hover
+				li.nav-item.dropdown
+					a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false', dropdown-type="hover")
+						| Dropdown
+					.dropdown-menu.dropdown-arrow(aria-labelledby='navbarDropdown')
+						a.dropdown-item(href='#') Action
+						a.dropdown-item(href='#') Another action
+						.dropdown-divider
+						a.dropdown-item(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Shop
+				li.nav-item
+					a.nav-link(href='#') Contact us
+			#contactinfotel
+			#contactinfo
+
