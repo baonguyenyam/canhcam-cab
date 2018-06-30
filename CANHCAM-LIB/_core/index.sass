@@ -184,29 +184,28 @@ header
 
 .dropdown
 	.dropdown-menu
-		position: relative
-		margin-top: 1rem
-		+bor-rad(0)
-		&:before, &:after
-			content: ''
-			display: block
-			width: 0
-			height: 0
-			border: solid transparent
-		&:before
-			border-bottom-color: darken(color-get($mau,trang),20%)
-			border-width: 10px
-			margin-left: -10px
-			+pos(abs, -20px null null 1.2rem)
-		&:after
-			border-bottom-color: color-get($mau,trang)
-			border-width: 10px
-			margin-left: -10px
-			+pos(abs, -19px null null 1.2rem)
-		&.dropdown-menu-right
+		&.dropdown-arrow
+			+bor-rad(0)
+			&:before, &:after
+				content: ''
+				display: block
+				width: 0
+				height: 0
+				border: solid transparent
 			&:before
-				+pos(abs, -20px 1.2rem null initial)
+				border-bottom-color: darken(color-get($mau,trang),20%)
+				border-width: 10px
+				margin-left: -10px
+				+pos(abs, -20px null null 1.2rem)
 			&:after
-				+pos(abs, -19px 1.2rem null initial)
+				border-bottom-color: color-get($mau,trang)
+				border-width: 10px
+				margin-left: -10px
+				+pos(abs, -19px null null 1.2rem)
+			&.dropdown-menu-right
+				&:before
+					+pos(abs, -20px 1.2rem null initial)
+				&:after
+					+pos(abs, -19px 1.2rem null initial)
 
 
