@@ -1,0 +1,89 @@
+header.canhcam-header-14
+	.k-menu-bar.container
+		#logo.mr-auto
+		#language
+		button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
+			i.mdi.mdi-menu
+	.topbar.w-100.bg-light 
+		.container.d-flex
+			ul.contactinfo.mr-auto(k-menu-map-to="#contactinfo")
+				li.line
+					span.link 090909090808
+				li 
+					a(href="#") Register
+				li 
+					a(href="#") Login
+			ul.social(k-menu-map-to="#social")
+				li
+					a(href='#') 
+						em.fab.fa-facebook-f
+				li
+					a(href='#') 
+						em.fab.fa-twitter
+			ul.language(k-menu-map-to="#language")
+				li
+					a(href='#') 
+						img(src="./img/icon/usa.png", alt="")
+						span EN
+				li
+					a(href='#')
+						img(src="./img/icon/usa.png", alt="")
+						span EN
+			.searchbar(k-menu-map-to="#searchbar")
+				.input-group
+					input.form-control(type='text', placeholder="Search", aria-label="Search", aria-describedby='basic-addon2')
+					.input-group-append
+						button.btn.btn-primary(type='submit')
+							i.fa.fa-search
+	#demoResAllInOneMenu.container.k-responsive-menu
+		.k-menu-bar
+			.k-logo.navbar-brand.mr-auto
+				img(src="./img/logo-ang.png", alt="")
+			button.k-button-toggle.navbar-toggler(k-toggle-for="#demoResAllInOneMenu")
+				i.mdi.mdi-close
+		.k-logo.navbar-brand(k-menu-map-to="#logo")
+			img(src="./img/logo.png", alt="")
+		.mainnav.ml-auto
+			#searchbar
+			ul.advbar(k-menu-map-to="#advbar") 
+				li
+					span.link 
+						em.fa.fa-fw.fa-phone
+						span.textinfo
+							span Call 
+							strong 19001234
+				li 
+					a(href="#") 
+						em.fa.fa-fw.fa-shopping-cart
+						span.textinfo
+							span Your cart 
+							span.badge.badge-primary 1
+				li 
+					a(href="#") 
+						em.fa.fa-fw.fa-bell
+						span.textinfo
+							span Your promotion 
+							span.badge.badge-danger 10
+			ul.nav
+				li.nav-item.active
+					a.nav-link(href='#') Dropdown Hover
+				li.nav-item.dropdown
+					a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false', dropdown-type="hover")
+						| Dropdown
+					.dropdown-menu.dropdown-arrow(aria-labelledby='navbarDropdown')
+						a.dropdown-item(href='#') Action
+						a.dropdown-item(href='#') Another action
+						.dropdown-divider
+						a.dropdown-item(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Something else here
+				li.nav-item
+					a.nav-link(href='#') Shop
+				li.nav-item
+					a.nav-link(href='#') Contact us
+			#advbar
+			#contactinfo
+			#social
+

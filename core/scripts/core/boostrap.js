@@ -17,6 +17,9 @@ if ($(window).width() > CANHCAM_APP.CHANGE_GRID) {
 		}
 	})
 } else {
-	$('.dropdown .dropdown-menu').show()
+	$('.dropdown').each(function () {
+		$(this).addClass('show')
+		$(this).find('.dropdown-menu').show()
+	})
 }
 
