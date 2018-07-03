@@ -34,5 +34,5 @@ $(function() {
 	})
 });
 $(function(){
-	 $('.canhcam-carousel-8 .content').perfectScrollbar();
+	 $('.canhcam-carousel-8 .content.scrollbar-light').scrollbar();
 });

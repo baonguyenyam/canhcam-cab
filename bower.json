@@ -31,11 +31,11 @@
     "slick-carousel": "1.8.1",
     "mdi": "2.4.85",
     "bootstrap-touchspin": "4.2.5",
-    "perfect-scrollbar": "0.8.1",
     "bootstrap-datepicker": "1.8.0",
     "elevatezoom": "2.2.3",
     "k-responsive-menu": "4.0.1",
     "linearicons": "1.0.1",
-    "fancybox": "3.3.5"
+    "fancybox": "3.3.5",
+    "jquery.scrollbar": "0.2.11"
   }
 }
