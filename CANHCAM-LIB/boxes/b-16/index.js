@@ -8,26 +8,26 @@ function getBG16(time) {
 		var em = $(this).find('figure').innerHeight()
 		var newg = $(this).find('figcaption').innerHeight()
 		$(this).hover(function () {
-			$(this).find('figcaption').animate({
+			$(this).find('figcaption').stop().animate({
 				height: em + "px"
 			}, {
 				duration: time,
 				complete: function () {}
 			})
-			$(this).find('figcaption p').animate({
+			$(this).find('figcaption p').stop().animate({
 				height : newgt + "px"
 			}, {
 				duration: time,
 				complete: function () {}
 			})
 		  }, function () {
-			$(this).find('figcaption').animate({
+			$(this).find('figcaption').stop().animate({
 				height : newg + "px"
 			}, {
 				duration: time,
 				complete: function () {}
 			})
-			$(this).find('figcaption p').animate({
+			$(this).find('figcaption p').stop().animate({
 				height : "0px"
 			}, {
 				duration: time,
