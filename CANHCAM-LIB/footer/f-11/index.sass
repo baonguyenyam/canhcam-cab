@@ -1,0 +1,99 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-footer-11
+	+pad(4rem null)
+	background-color: darken(color-get($mau,xam-1),50%)
+	position: relative
+	z-index: 1
+	color: color-get($mau, trang)
+	overflow: hidden
+	+media-breakpoint-down(xs)
+	h4
+		text-transform: uppercase
+		color: darken(color-get($mau,trang),40%)
+		position: relative
+		+fz(1rem)
+		margin-bottom: 1.5rem
+
+	.linkfooter
+		padding: 0 0 5rem
+		.list-group
+			.list-group-item
+				display: inline-block
+				+bg(none, none, none)
+				border: 0
+				+pad(.5rem 0)
+				+media-breakpoint-up(md)
+					+pad(.15rem 0)
+				a
+					text-transform: uppercase
+					font-size: .9rem
+					+fw(500)
+					+link(darken(color-get($mau,trang),0%),color-get($mau,extra),color-get($mau,extra))
+		.location
+			p 
+				+mar(0)
+				text-transform: uppercase
+				+fz(.9rem)
+				+fw(500)
+				line-height: 2rem
+			.email
+				text-decoration: underline
+
+		.socials
+			p
+				+fz(.85rem)
+				color: darken(color-get($mau,trang),20%)
+			.input-group
+				
+				+pad(0 0 .7rem 0)
+				border-bottom: 1px solid color-get($mau,trang)
+				.form-control
+					+pad(0)
+					border: 0
+					color: color-get($mau,trang)
+					background: none
+					// outline: none
+					&::placeholder
+						color: color-get($mau,trang)
+						text-transform: uppercase
+						+fz(.9rem)
+						+fw(500)
+					&:focus
+						box-shadow: none
+				.emailbtn
+					+pad(0)
+					background: none
+					border: 0
+			.social-list
+				+media-breakpoint-down(sm)
+					+mar(2rem null null null)
+				.list-inline
+					+mar(0)
+					.list-inline-item
+						+fz(.9rem)
+						+link(darken(color-get($mau,trang), 85%), color-get($mau,trang), color-get($mau,trang))
+						// +mar(null 1rem null null)
+						a
+							display: block
+							+pad(0 1.5rem)
+							+lh(2rem)
+							+bg(none)
+							+link(darken(color-get($mau,trang),0%), darken(color-get($mau,extra),0%))
+							+border-radius(0)
+							+bor(null, solid color-get($mau,trang), 1px)
+							text-align: center
+							i
+								+lh(2rem)
+						&:last-child
+							+mar(0)
+	.copyright
+		background-color: none
+		p
+			+pad(1rem 0 0)
+			border-top: 1px solid darken(color-get($mau,trang),20%)
+			text-transform: uppercase
+			+fz(.85rem)

@@ -1,0 +1,93 @@
+@import ../../_includes
+
+.canhcam-footer-12
+	+pad(4rem null)
+	background: lighten(color-get($mau,duong-1),40%)
+	.footer-logo
+		img
+			max-width: 200px
+	
+	.footer-content
+		color: color-get($mau,den)
+		padding:  0
+		font-weight: 200
+		position: relative
+		h6
+			font-size: 1rem
+			margin-bottom: 1rem
+			+fw(700)
+	
+		.list-group
+			.list-group-item
+				display: inline-block
+				background: none
+				border: 0
+				padding: .5rem 0
+				a
+					+fz(1rem)
+					+fw(500)
+					color: lighten(color-get($mau,den),30%)
+					&:hover
+						text-decoration: underline
+						color: lighten(color-get($mau,main), 0%)
+		.footer-nav
+	.footer-button
+		button
+			+opacity(1)
+			+bor-rad(0)
+		input
+			background: color-get($mau,trang)
+			+bor-rad(0)
+			+bor(null, solid color-get($mau,xam-1),1px)
+			+pad(.3rem 1rem)
+			&:focus
+				outline: none
+				+box-sha(none)
+			+placeholder
+				color: darken(color-get($mau,trang), 50%)
+		.socials
+			.social-list
+				.list-inline
+					+mar(0)
+					.list-inline-item
+						+fz(1.5rem)
+						+mar(null 1rem null null)
+						a
+							display: block
+							height: 2rem
+							width: 2rem
+							+lh(2rem)
+							text-align: center
+							i
+								+lh(2rem)
+						&:last-child
+							+mar(0)
+	.copy-right
+		font-size: .9rem 
+		+fw(500)
+		color: color-get($mau,den)
+	// Khi lên Tablet
+	+media-breakpoint-up(md)
+		.footer-logo
+			img
+				max-width: 250px
+		.footer-content
+			+pad(2rem null)
+	// Khi lên PC
+	+media-breakpoint-up(lg)
+		.footer-content
+			+pad(4rem null 2rem)
+			.list-group
+				.list-group-item
+					padding: .15rem 0
+			.list
+				&:after
+					content: ''
+					height: 100%
+					width: 1px
+					background: lighten(color-get($mau,xam-1),20%)
+					+pos(abs,50%,4rem,null, null)
+					transform: translate(-50%, -50%)
+				&:last-child:after
+					display: none
+
