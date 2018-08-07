@@ -1,0 +1,38 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-slider-6
+	padding: 4rem 0 
+	.swiper-container
+		width: 80%
+		.swiper-wrapper
+			.swiper-slide
+				min-height: 280px
+				display: flex
+				justify-content: center
+				align-items: center
+				&.swiper-slide-active, 
+				&.swiper-slide-duplicate-active
+	.swiper-button-next-thumb,
+	.swiper-button-prev-thumb
+		min-height: 80px
+		+pos(abs, 50% null null null)
+		width: 10%
+		background-size: cover
+		display: none
+		img 
+			max-width: 100%
+	+media-breakpoint-up(md)
+		.swiper-button-prev-thumb
+			display: block
+			+transform(translateX(-20px) translateY(-50%))
+		.swiper-button-next-thumb
+			display: block
+			+transform(translateX(20px) translateY(-50%))
+			right: 0
+
+
+		
+

@@ -12,6 +12,8 @@
             "node_modules/popper.js/dist/umd/popper.js",
             "node_modules/bootstrap/dist/js/bootstrap.js",
             "bower_components/swiper/dist/js/swiper.min.js",
+            "plugins/sliderrevolution/examples/rs-plugin/js/jquery.themepunch.plugins.min.js",
+            "plugins/sliderrevolution/examples/rs-plugin/js/jquery.themepunch.revolution.min.js",
             "bower_components/k-responsive-menu/dist/js/k-responsive-menu.min.js",
             "bower_components/moment/min/moment.min.js",
             "bower_components/offline/offline.min.js",
@@ -21,7 +23,7 @@
         "css_core": [
             "bower_components/k-responsive-menu/dist/css/k-responsive-menu.min.css",
             "bower_components/swiper/dist/css/swiper.min.css",
-            "bower_components/animate.css/animate.css",
+			"bower_components/animate.css/animate.css",
             "bower_components/offline/themes/offline-theme-default.css",
             "bower_components/offline/themes/offline-language-english.css",
             "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
