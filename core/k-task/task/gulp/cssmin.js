@@ -18,7 +18,8 @@ module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
 
         return gulp.src(path.join(target, '**/*.css'))
             .pipe(gulpif(!setgulp.production, plugins.sourcemaps.init()))
-            .pipe(minifyCss())
+			// .pipe(minifyCss())
+			.pipe(cleanCSS({compatibility: 'ie8', level: {1: {specialComments: 0}}}))
             .pipe(rename({
                 suffix: '.min'
             }))
