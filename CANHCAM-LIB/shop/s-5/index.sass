@@ -1,0 +1,191 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-shop-5
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.product-lists
+		position: relative
+		overflow: hidden
+		// Filter trigger
+		.pl-filter-trigger
+			height: 3.57rem
+			width: 3.57rem
+			+lh(3.57rem)
+			+fz(1.8rem)
+			display: block
+			color: color-get($mau , main)
+			cursor: pointer
+		// Filter menu
+		.pl-filter
+			+pos(abs,0 null null 0)
+			width: 20rem
+			height: 100%
+			background: color-get($mau , trang)
+			+box-sha(4px 4px 20px transparent)
+			z-index: 2
+			+transform(translateZ(0))
+			-webkit-backface-visibility: hidden
+			backface-visibility: hidden
+			+transform(translateX(-130%))
+			+transition(transform 0.3s, box-shadow 0.3s)
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				height: 3.57rem
+				width: 100%
+				background: color-get($mau , main)
+				z-index: 2
+			&.active
+				+transform(translateX(0))
+				+box-sha(4px 4px 20px color-rgba(color-get($mau,den),.2))
+			.pl-close
+				display: block
+				+pos(abs , 0 0 null null )
+				text-align: center
+				width: 3.57rem
+				height: 3.57rem
+				+lh(3.57rem)
+				z-index: 4
+				background: darken(color-get($mau , main),20%)
+				color: color-get($mau , trang)
+				+fz(2rem)
+				cursor: pointer
+		// Filter content
+		.pl-content
+			.pl-tab-filter-wrapper
+				+pad(.71rem 1rem)
+				background: color-get($mau , xam-3)
+				display: flex
+				justify-content: space-between
+				margin-bottom: 2rem
+				select
+					max-width: 30%
+				p,h2
+					margin-bottom: 0
+				h2
+					+fz(1.125rem)
+					+fw(700)
+					text-transform: uppercase
+				p
+					+fz(.7rem)
+					+fw(400)
+					color: darken(color-get($mau , xam-3),20%)
+			.item
+				figure
+					position: relative
+					.pl-new
+						+pos(abs, 0 0 null null)
+					.pl-hidden
+						display: flex
+						flex-direction: column
+						align-items: center
+						justify-content: center
+						a
+							border: 2px solid color-get($mau , main)
+							+bor-rad(0)
+							color: color-get($mau , main)
+							+fw(600)
+							&.btn-more
+								display: none
+							&.btn-buy
+								margin-top: .5rem
+					figcaption
+						text-align: center
+						ul
+							+pad(0)
+							+mar(0)
+							margin-top: .5rem
+							list-style-type: none
+							display: flex
+							justify-content: center
+							align-items: center
+							li
+								margin-right: .5rem
+								a
+									width: 1rem
+									height: 1rem
+									+bor-rad(50%)
+									display: block
+								&:last-child
+									margin-right: 0
+						hgroup
+							h3
+								+fz(.9rem)
+								color: color-get($mau , xam-1)
+								+fw(400)
+								&.brand
+									margin-top: .7rem
+							h2
+								+fz(1rem)
+								+fw(600)
+								text-transform: uppercase
+							a
+								text-decoration: none
+						.pl-cost
+							display: flex
+							justify-content: space-between
+							align-items: baseline
+							span
+								+fw(400)
+								color: color-get($mau , xam-1)
+								&.new
+									color: color-get($mau , do-1)
+								&.old
+									text-decoration: line-through
+									+fz(.8rem)
+		// Tablet and up
+		+media-breakpoint-up(md)
+			.pl-content
+				.item
+					figure
+						figcaption
+							hgroup
+								h3
+									&.brand
+										margin-top: .5rem
+		// PC and up
+		+media-breakpoint-up(lg)
+			display: flex
+			.pl-filter-trigger
+				display: none
+			.pl-content
+				.pl-tab-filter-wrapper
+					select
+						max-width: 15%
+				.item
+					figure
+						overflow: hidden
+						.pl-hidden
+							+pos(abs,0 null null 0)
+							width: 100%
+							height: 100%
+							background: color-rgba(color-get($mau , main),.3)
+							+transform(translateY(-100%))
+							+transition(all .3s ease-in-out)
+							a
+								+transition(all .3s ease-in-out)
+								border: 2px solid color-get($mau , trang)
+								text-transform: uppercase
+								color: color-get($mau , trang)
+								&.btn-more
+									display: block
+								&:hover,&:active
+									background: color-get($mau , trang)
+									color: color-get($mau , den)
+						figcaption
+							.pl-cost
+								span
+									&.new
+										+fz(1.2rem)
+									&.old
+										+fz(1rem)
+						&:hover
+							.pl-hidden
+								+transform(translateY(0))
+		+media-breakpoint-up(xl)
