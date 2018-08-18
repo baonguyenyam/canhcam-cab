@@ -22,16 +22,18 @@
 			border: 1px solid darken(color-get($mau,trang),10%)
 			border-top: 0
 			+bor-rad(0 0 5px 5px)
-			+pad(.75rem 1rem)
+			+pad(1rem)
+			&.box-resume-content-top
+				border-top: 1px solid darken(color-get($mau,trang),10%)
 			.text-mini
 				+fz(.8rem)
 				color: darken(color-get($mau,trang),30%)
-			.validator
-				.help-block
-					ul
-						margin-bottom: 0
-						+fz(.9rem)
-						color: color-get($mau,do-1)
+	.validator
+		.help-block
+			ul
+				margin-bottom: 0
+				+fz(.9rem)
+				color: color-get($mau,do-1)
 	.form-check
 		margin-bottom: 1rem
 	.btn-facebook

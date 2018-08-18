@@ -50,7 +50,13 @@ section.canhcam-checkout-3
 											input.form-check-input(name="IsChecked", id="checkbox", type='checkbox', expand-to="infomem", checked)
 											label.form-check-label(for="checkbox") Thông tin người mua hàng giống như trên
 										.row.mt-4.mb-4#infomem(style="display:none") 
-											.col INFO 
+											.col 
+												.form-group.row.align-items-center
+													label.col-form-label.col-sm-4(for='name') Name
+														span.text-danger (*)
+													.col-sm-8
+														input#name.form-control(type='text', placeholder='Nhập họ và tên', data-error="Vui lòng nhập thông tin", required)
+														.help-block.with-errors 
 										.form-check.abc-checkbox.mb-0
 											input.form-check-input(name="IsChecked1", id="checkbox1", type='checkbox', checked)
 											label.form-check-label(for="checkbox1") Cập nhật thông tin trên làm địa chỉ hiện tại của tôi
@@ -61,7 +67,20 @@ section.canhcam-checkout-3
 							input.form-check-input(name="IsChecked1", id="checkbox2", type='checkbox', expand-to-invert="vatview")
 							label.form-check-label(for="checkbox2") Yêu cầu xuất hóa đơn GTGT cho đơn hàng này
 						.row.mt-4#vatview(style="display:none") 
-							.col VAT 
+							.col 
+								.box-resume
+									.box-resume-content.box-resume-content-top
+										h6.mb-3 Vui lòng điền đầy đủ thông tin công ty để nhận hóa đơn GTGT
+										.form-group.row.align-items-center
+											label.col-form-label.col-sm-4(for='name') Name
+												span.text-danger (*)
+											.col-sm-8
+												input#name.form-control(type='text', placeholder='Nhập họ và tên', data-error="Vui lòng nhập thông tin", required)
+												.help-block.with-errors 
+										.row 
+											.col 
+												.text-mini Lưu ý: Giá trị hóa đơn không bao gồm giá trị giảm giá
+
 				.row.mt-4
 					.col
 						.box-resume
@@ -72,16 +91,17 @@ section.canhcam-checkout-3
 									span 
 										span SỬ DỤNG MÃ GIẢM GIÁ
 							.box-resume-content
-								.input-group.mb-3
-									input.form-control(type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2")
-									.input-group-append
-										button#button-addon2.btn.btn-primary(type="button") Button
+								.form-inline
+									.input-group.mb-3
+										input.form-control(type="text" placeholder="CODE" aria-label="CODE" aria-describedby="button-addon2")
+										.input-group-append
+											button#button-addon2.btn.btn-primary(type="button") Button
 
 								p.text-mini Sau khi áp dụng, Mã giảm giá có thể không dùng được trong vòng 15 phút.
-								p Trong quá trình thanh toán, sẽ tạm khóa mã giảm giá của quý khách để đảm bảo phiên giao dịch được ổn định. Mã giảm giá sẽ được mở lại ngay khi phiên giao dịch kết thúc
+								p.mb-0 Trong quá trình thanh toán, sẽ tạm khóa mã giảm giá của quý khách để đảm bảo phiên giao dịch được ổn định. Mã giảm giá sẽ được mở lại ngay khi phiên giao dịch kết thúc
 				.row.mb-4.navi.mt-5
 					.col.mb-3.text-center.text-sm-left
-						a.btn.btn-primary(href="#")
+						a.btn.btn-secondary.text-white(href="#")
 							i.fa.fa-chevron-left.mr-2
 							| 
 							| Tiếp tục mua hàng
