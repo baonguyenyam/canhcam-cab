@@ -21,7 +21,9 @@
 			cursor: pointer
 		// Filter menu
 		.pl-filter
-			+pos(abs,0 null null 0)
+			+pad(0 15px)
+			padding-top: 20px
+			+pos(fixed,0 null null 0)
 			width: 20rem
 			height: 100%
 			background: color-get($mau , trang)
@@ -32,30 +34,66 @@
 			backface-visibility: hidden
 			+transform(translateX(-130%))
 			+transition(transform 0.3s, box-shadow 0.3s)
-			&:before
-				content: ''
-				position: absolute
-				top: 0
-				left: 0
-				height: 3.57rem
-				width: 100%
-				background: color-get($mau , main)
-				z-index: 2
 			&.active
 				+transform(translateX(0))
 				+box-sha(4px 4px 20px color-rgba(color-get($mau,den),.2))
 			.pl-close
 				display: block
-				+pos(abs , 0 0 null null )
+				+pos(abs , 20px 10px null null )
 				text-align: center
-				width: 3.57rem
-				height: 3.57rem
-				+lh(3.57rem)
-				z-index: 4
-				background: darken(color-get($mau , main),20%)
-				color: color-get($mau , trang)
-				+fz(2rem)
+				z-index: 3
+				color: color-get($mau , main)
+				+fz(1.5rem)
 				cursor: pointer
+			.pl-filter-title
+				+fw(700)
+				text-transform: uppercase
+				margin-bottom: 1rem
+				color: color-get($mau ,den-3)
+			.pl-filter-block
+				margin-top: 1.5rem
+				h4
+					color: color-get($mau , main)
+					position: relative
+					cursor: pointer
+				.pl-filter-content
+					.dropdown-filter
+						float: right
+						cursor: pointer
+						&:hover
+							color: color-get($mau , extra)
+					ul,.sub-filter
+						list-style-type: none
+						padding-left: 1.5rem
+						li
+							margin-bottom: .3rem
+							a
+								text-decoration: none
+								color: color-get($mau , den-3)
+								position: relative
+								&:before,&:after
+									content: ''
+									+pos(abs , 0 null null -20px)
+								&:before
+									width: 1rem
+									height: 1rem
+									border: 1px solid color-get($mau , main)
+							&:last-child
+								margin-bottom: 0
+							&.active
+								> a
+										&:before
+											background: color-get($mau , main)
+										&:after
+											content: '\f00c'
+											font-family: 'Font Awesome 5 Free'
+											+fw(600)
+											+fz(1.2rem)
+											color: color-get($mau , extra)
+											top: -5px
+						.sub-filter
+							+pad(1rem null)
+							background: color-get($mau , xam-3)
 		// Filter content
 		.pl-content
 			.pl-tab-filter-wrapper
@@ -114,6 +152,9 @@
 									display: block
 								&:last-child
 									margin-right: 0
+								&.active
+									a
+										+box-sha(0 0 0 1px color-get($mau , den))
 						hgroup
 							h3
 								+fz(.9rem)
@@ -154,7 +195,24 @@
 			display: flex
 			.pl-filter-trigger
 				display: none
+			.pl-filter
+				padding-top: 0
+				position: static
+				transform: inherit
+				width: 25%
+				border-right: 1px solid color-get($mau , xam-3)
+				+box-sha(none)
+				.pl-close
+					display: none
+				.pl-filter-block
+					ul
+						li
+							&:hover
+								a
+									color: color-get($mau , main)
 			.pl-content
+				padding-left: 15px
+				width: 75%
 				.pl-tab-filter-wrapper
 					select
 						max-width: 15%
@@ -166,7 +224,7 @@
 							width: 100%
 							height: 100%
 							background: color-rgba(color-get($mau , main),.3)
-							+transform(translateY(-100%))
+							+transform(translateY(-105%))
 							+transition(all .3s ease-in-out)
 							a
 								+transition(all .3s ease-in-out)

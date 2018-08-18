@@ -16,25 +16,57 @@ function getHightBox() {
 		});
 	}
 }
-function triggerFilter($bool) {
-	var elementsToTrigger = $([$('.pl-filter-trigger'), $('.pl-filter'), $('.pl-content')]);
-	elementsToTrigger.each(function(){
-		$(this).toggleClass('active', $bool);
-	});
+// Trigger BTN
+function TriggerBtn(){
+	function triggerFilter($bool) {
+		var elementsToTrigger = $([$('.pl-filter-trigger'), $('.pl-filter'), $('.pl-content')]);
+		elementsToTrigger.each(function(){
+			$(this).toggleClass('active', $bool);
+		});
+	}
+		var onpenBtn = $('.canhcam-shop-5 .product-lists .pl-filter-trigger'),
+			closeBtn = $('.canhcam-shop-5 .product-lists .pl-close');
+		$(onpenBtn).on('click', function(){
+			triggerFilter(true);
+		});
+		$(closeBtn).on('click', function(){
+			triggerFilter(false);
+		});
+}
+// Toggle .pl-filter-content
+function ClickH4(){
+	$('.pl-filter-block h4').on('click', function(){
+		$(this).toggleClass('closed').siblings('.pl-filter-content').slideToggle(300);
+	})
+}
+// Toggle .sub-filter
+function SubFilter(){
+	$('.pl-filter-content nav li .sub-filter').slideUp();
+	$('.pl-filter-content nav li .dropdown-filter').on('click', function(){
+		$(this).toggleClass('closed').siblings('.sub-filter').slideToggle(300);
+	})
+}
+// Top filter-menu
+function TopFilterMenu(){
+	var geth = $('header').outerHeight();
+	$('.canhcam-shop-5 .product-lists .pl-filter').css({
+		top: geth
+	})
 }
 $(document).ready(function() {
 	getHightBox();
-	// add class active
-	var onpenBtn = $('.canhcam-shop-5 .product-lists .pl-filter-trigger'),
-		closeBtn = $('.canhcam-shop-5 .product-lists .pl-close');
-	$(onpenBtn).on('click', function(){
-		triggerFilter(true);
-	});
-	$(closeBtn).on('click', function(){
-		triggerFilter(false);
-	});
+	TriggerBtn();
+
+	ClickH4();
+	SubFilter();
+	TopFilterMenu();
+
 });
 
 $(window).resize(function () {
-	getHightBox()
+	getHightBox();
+	TriggerBtn();
+	ClickH4();
+	SubFilter();
+	TopFilterMenu();
 })
