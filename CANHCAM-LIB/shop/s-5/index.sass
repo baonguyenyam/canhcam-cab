@@ -28,7 +28,7 @@
 			height: 100%
 			background: color-get($mau , trang)
 			+box-sha(4px 4px 20px transparent)
-			z-index: 2
+			z-index: 999
 			+transform(translateZ(0))
 			-webkit-backface-visibility: hidden
 			backface-visibility: hidden
@@ -247,3 +247,8 @@
 							.pl-hidden
 								+transform(translateY(0))
 		+media-breakpoint-up(xl)
+		+media-breakpoint-down(md)
+			.pl-filter
+				.pl-filter-wrapper
+					max-height: 700px
+					overflow: auto

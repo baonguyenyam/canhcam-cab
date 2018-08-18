@@ -59,7 +59,8 @@ $(document).ready(function() {
 
 	ClickH4();
 	SubFilter();
-	TopFilterMenu();
+	$('#pl-filter-wrapper').scrollbar()
+	// TopFilterMenu();
 
 });
 
@@ -68,5 +69,5 @@ $(window).resize(function () {
 	TriggerBtn();
 	ClickH4();
 	SubFilter();
-	TopFilterMenu();
+	// TopFilterMenu();
 })
