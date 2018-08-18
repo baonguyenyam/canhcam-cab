@@ -5,7 +5,8 @@
 				"header/h-14"
 			],
 			"body": [
-				"breadcrumb/b-5"
+				"breadcrumb/b-5",
+				"checkout/c-3"
 			],
 			"footer": [
 				"footer/f-11",

@@ -590,6 +590,32 @@
             "shop-details 3"
         ]
     },
+    "checkout": {
+        "checkout-1": [
+            "checkout/c-1",
+            "body",
+            "526d9da2a46b9de4644c02a11f151805.png",
+            "Checkout 1",
+            "",
+            ""
+        ],
+        "checkout-2": [
+            "checkout/c-2",
+            "body",
+            "89e5372384de22ff116dce092871b862.png",
+            "Checkout 2",
+            "",
+            ""
+        ],
+        "checkout-3": [
+            "checkout/c-3",
+            "body",
+            "f7f019ccac7015359a0ec13e70999bc5.png",
+            "Checkout 3",
+            "",
+            ""
+        ]
+    },
     "gallery": {
         "gallery-1": [
             "gallery/g-1",

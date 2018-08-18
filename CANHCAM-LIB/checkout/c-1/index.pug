@@ -1,0 +1,69 @@
+section.canhcam-checkout-1
+	.container
+		.row
+			.col
+				h3.h6
+					i.fa.fa-shopping-cart
+					| 
+					span (
+						span.text-danger 1
+						| 
+						span SẢN PHẨM)
+		.row
+			.col
+				table.table.table-bordered
+					thead
+						tr 
+							th.product-details Sản phẩm
+							th.product-price Giá
+							th.product-count Số lượng
+							th.product-result Tổng
+					tbody
+						- for(x=1;x<5;x++)
+							tr 
+								td.product-details
+									.row 
+										.col
+											.media
+												img.mr-3(src="./img/product/t-shirt.jpg" alt="XXXXXX")
+												.media-body
+													.more American Tourister
+													h4.mb-0 
+														a(href="#") Vali kéo Bon Air Deluxe
+													.desc Trung 66cm/24inch TSA
+										.col-sm-auto.mt-3.mt-sm-0
+											a.del.btn.btn-danger.btn-sm(href="javascript:void(0)")
+												i.fa.fa-times-circle
+												| 
+												| Xóa
+
+								td.product-price
+									.price 1.950.000 ₫
+									.promotion Giảm giá 50%
+								td.product-count 
+									.form-inline#quantity
+										.form-group
+											input(value="1")
+								td.product-result
+									.sum 3.900.000 ₫
+
+
+		.row
+			.col
+				.total.text-center.text-sm-right
+					.price Tạm tính:
+						| 
+						span 3.900.000 ₫
+					.price-discout Giảm giá theo thành viên: 0%
+					.price-vat Giá chưa bao gồm VAT
+
+		.row.mb-4.navi
+			.col.mb-3.text-center.text-sm-left
+				a.btn.btn-primary(href="#")
+					i.fa.fa-chevron-left.mr-2
+					| 
+					| Tiếp tục mua hàng
+			.col.mb-3.text-center.text-sm-right
+				a.btn.btn-primary(href="#") Tiến hành thanh toán
+					| 
+					i.fa.fa-chevron-right.ml-2

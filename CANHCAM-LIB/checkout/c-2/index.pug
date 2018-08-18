@@ -1,0 +1,100 @@
+section.canhcam-checkout-2
+	.container.mb-5
+		.row 
+			.col-lg-8
+				.row
+					.col
+						.form-check.abc-checkbox.abc-checkbox-circle
+							input.form-check-input(name="IsChecked", id="no-reg", type='radio')
+							label.form-check-label(for="no-reg") Đặt hàng không cần đăng ký
+						.form-check.abc-checkbox.abc-checkbox-circle
+							input.form-check-input(name="IsChecked", id="add-reg", type='radio', checked)
+							label.form-check-label(for="add-reg") Tôi đã có tài khoản
+				.row
+					.col
+						.box-account
+							h3.h5.mt-5.mt-md-0.mb-4 Vui lòng nhập thông tin
+							.validator
+								.form-group.row
+									.col
+										label(for='name') Name
+											span.text-danger (*)
+										input#name.form-control(type='text', placeholder='Name', data-error="Vui lòng nhập thông tin", required)
+										.help-block.with-errors
+								.form-group.row
+									.col
+										label(for='Email') Email
+										input#Email.form-control(type='text', placeholder='Email', data-error="Vui lòng nhập thông tin", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", required)
+										.help-block.with-errors
+								.form-group.row
+									.col
+										button.btn.btn-lg.btn-primary.text-uppercase.btn-block(type="submit")
+											| Tiếp tục
+								.row.text-center
+									.col
+										a.getstart(href="#") Quên mật khẩu?
+										| - 
+										a.getstart(href="#") Đăng ký
+				.row
+					.col
+						hr
+						h3.h6.mt-3.mb-3 Hoặc đăng nhập bằng:
+						.row 
+							.col 
+								p 
+									a.btn.btn-facebook.text-uppercase.btn-block(href="#") 
+										i.fab.fa-fw.fa-facebook-f
+										| 
+										span Facebook
+							.col 
+								p 
+									a.btn.btn-google.text-uppercase.btn-block(href="#") 
+										i.fab.fa-fw.fa-google
+										| 
+										span Google
+			.col-lg-4.box-resume.mt-4.mt-lg-0
+				.box-resume-title
+					.row.align-items-center
+						.col
+							h3.h6
+								i.fa.fa-shopping-cart
+								| 
+								span (
+									span.text-danger 1
+									| 
+									span SẢN PHẨM)
+						.col-auto 
+							a.btn.btn-sm.btn-warning.text-dark(href="#")
+								i.fa.fa-edit 
+								| 
+								| Sửa
+				table.table.table-bordered
+					tbody
+						tr 
+							td.product-details
+								.media
+									img.mr-3(src="./img/product/t-shirt.jpg" alt="XXXXXX")
+									.media-body
+										.more American Tourister
+										h4.mb-0 
+											a(href="#") Vali kéo Bon Air Deluxe
+										.desc Trung 66cm/24inch TSA
+							
+							td.product-result
+								.quantity 3.900.000 ₫
+									br 
+									| x 1
+								.sum 3.900.000 ₫
+						tr 
+							td.product-details Tạm tính
+							td.product-result
+								.sum 3.900.000 ₫
+						tr 
+							td.product-details Tạm tính
+							td.product-result
+								.sum 3.900.000 ₫
+						tr 
+							td.product-details Thành tiền
+							td.product-result
+								.sum 3.900.000 ₫
+

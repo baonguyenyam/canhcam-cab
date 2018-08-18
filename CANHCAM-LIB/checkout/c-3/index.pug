@@ -1,0 +1,138 @@
+section.canhcam-checkout-3
+	.container.mb-5
+		.row 
+			.col-lg-8
+				.row.validator
+					.col 
+						.box-resume
+							.box-resume-title
+								h3.h6
+									i.fa.fa-map-marker-alt.fa-fw
+									| 
+									span 
+										span Thông tin khách hàng
+							.box-resume-content
+								.form-group.row.align-items-center
+									label.col-form-label.col-sm-4(for='name') Name
+										span.text-danger (*)
+									.col-sm-8
+										input#name.form-control(type='text', placeholder='Nhập họ và tên', data-error="Vui lòng nhập thông tin", required)
+										.help-block.with-errors
+								.form-group.row.align-items-center
+									label.col-form-label.col-sm-4(for='tel') Điện thoại
+										span.text-danger (*)
+									.col-sm-8.col-md-4
+										input#tel.form-control(type='text', placeholder='Số điện thoại', data-error="Vui lòng nhập thông tin", required)
+										.help-block.with-errors
+									.col-md-4.text-mini (Nhân viên giao nhận sẽ liên hệ với SĐT này.)
+								.form-group.row
+									label.col-form-label.col-sm-4(for='Email') Email
+									.col-sm-8
+										input#Email.form-control(type='text', placeholder='Email', data-error="Vui lòng nhập thông tin", pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", required)
+										.help-block.with-errors
+								hr 
+								.form-group.row
+									label.col-form-label.col-sm-4(for='Country') Country
+									.col-sm-8
+										select#Country.form-control(type='text', placeholder='Country', data-error="Vui lòng nhập thông tin", required)
+											option Hehe
+										.help-block.with-errors
+								.form-group.row
+									label.col-form-label.col-sm-4(for='Message') Message
+										.text-mini Không bắt buộc
+									.col-sm-8
+										textarea#Message.form-control(cols="30", rows="3", placeholder='Message', data-error="Vui lòng nhập thông tin", required)
+										.help-block.with-errors
+								hr 
+								.row
+									.col 
+										.form-check.abc-checkbox
+											input.form-check-input(name="IsChecked", id="checkbox", type='checkbox', expand-to="infomem", checked)
+											label.form-check-label(for="checkbox") Thông tin người mua hàng giống như trên
+										.row.mt-4.mb-4#infomem(style="display:none") 
+											.col INFO 
+										.form-check.abc-checkbox.mb-0
+											input.form-check-input(name="IsChecked1", id="checkbox1", type='checkbox', checked)
+											label.form-check-label(for="checkbox1") Cập nhật thông tin trên làm địa chỉ hiện tại của tôi
+										
+				.row.mt-4
+					.col 
+						.form-check.abc-checkbox.mb-0
+							input.form-check-input(name="IsChecked1", id="checkbox2", type='checkbox', expand-to-invert="vatview")
+							label.form-check-label(for="checkbox2") Yêu cầu xuất hóa đơn GTGT cho đơn hàng này
+						.row.mt-4#vatview(style="display:none") 
+							.col VAT 
+				.row.mt-4
+					.col
+						.box-resume
+							.box-resume-title
+								h3.h6
+									i.fa.fa-shopping-cart.fa-fw
+									| 
+									span 
+										span SỬ DỤNG MÃ GIẢM GIÁ
+							.box-resume-content
+								.input-group.mb-3
+									input.form-control(type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2")
+									.input-group-append
+										button#button-addon2.btn.btn-primary(type="button") Button
+
+								p.text-mini Sau khi áp dụng, Mã giảm giá có thể không dùng được trong vòng 15 phút.
+								p Trong quá trình thanh toán, sẽ tạm khóa mã giảm giá của quý khách để đảm bảo phiên giao dịch được ổn định. Mã giảm giá sẽ được mở lại ngay khi phiên giao dịch kết thúc
+				.row.mb-4.navi.mt-5
+					.col.mb-3.text-center.text-sm-left
+						a.btn.btn-primary(href="#")
+							i.fa.fa-chevron-left.mr-2
+							| 
+							| Tiếp tục mua hàng
+					.col.mb-3.text-center.text-sm-right
+						button.btn.btn-primary(type="submit")
+							|  Tiến hành thanh toán
+							| 
+							i.fa.fa-chevron-right.ml-2
+			.col-lg-4.box-resume.mt-4.mt-lg-0
+				.box-resume-title
+					.row.align-items-center
+						.col
+							h3.h6
+								i.fa.fa-shopping-cart
+								| 
+								span (
+									span.text-danger 1
+									| 
+									span SẢN PHẨM)
+						.col-auto 
+							a.btn.btn-sm.btn-warning.text-dark(href="#")
+								i.fa.fa-edit 
+								| 
+								| Sửa
+				table.table.table-bordered
+					tbody
+						tr 
+							td.product-details
+								.media
+									img.mr-3(src="./img/product/t-shirt.jpg" alt="XXXXXX")
+									.media-body
+										.more American Tourister
+										h4.mb-0 
+											a(href="#") Vali kéo Bon Air Deluxe
+										.desc Trung 66cm/24inch TSA
+							
+							td.product-result
+								.quantity 3.900.000 ₫
+									br 
+									| x 1
+								.sum 3.900.000 ₫
+						tr 
+							td.product-details Tạm tính
+							td.product-result
+								.sum 3.900.000 ₫
+						tr 
+							td.product-details Tạm tính
+							td.product-result
+								.sum 3.900.000 ₫
+						tr 
+							td.product-details Thành tiền
+							td.product-result
+								.sum 3.900.000 ₫
+

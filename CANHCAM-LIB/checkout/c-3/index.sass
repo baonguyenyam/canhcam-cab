@@ -1,0 +1,75 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-checkout-3
+	.box-resume
+		.box-resume-title 
+			background: darken(color-get($mau,trang),5%)
+			border: 1px solid darken(color-get($mau,trang),10%)
+			+pad(.75rem 1rem)
+			+bor-rad(5px 5px 0 0)
+			margin-bottom: 0
+			text-transform: uppercase
+			h3 
+				+mar(0)
+			span 
+				span 
+					+fw(bold)
+		.box-resume-content
+			background: darken(color-get($mau,trang),3)
+			border: 1px solid darken(color-get($mau,trang),10%)
+			border-top: 0
+			+bor-rad(0 0 5px 5px)
+			+pad(.75rem 1rem)
+			.text-mini
+				+fz(.8rem)
+				color: darken(color-get($mau,trang),30%)
+			.validator
+				.help-block
+					ul
+						margin-bottom: 0
+						+fz(.9rem)
+						color: color-get($mau,do-1)
+	.form-check
+		margin-bottom: 1rem
+	.btn-facebook
+		background:  color-get($mau,duong-1)
+		color: color-get($mau,trang)
+	.btn-google
+		background:  color-get($mau,do-1)
+		color: color-get($mau,trang)
+	.box-account
+		background: darken(color-get($mau,trang),5%)
+		+pad(1.5rem)
+		+bor-rad(5px)
+		.validator
+			.help-block
+				ul
+					margin-bottom: 0
+					+fz(.9rem)
+					color: color-get($mau,do-1)
+	table
+		tbody 
+			.product-details
+				.media
+					img
+						max-width: 80px
+						border: 1px solid darken(color-get($mau,trang),10%)
+					.media-body
+						+fz(.9rem)
+						h4
+							+fz(.9rem)
+							+fw(bold)
+							a 
+								color: darken(color-get($mau,trang),80%)
+			.product-result
+				text-align: right
+				white-space: nowrap
+				+fz(.85rem)
+				.sum
+					color: darken(color-get($mau,main),0%)
+					+fz(1rem)
+					+lh(1.5rem)
+					+fw(bold)

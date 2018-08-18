@@ -1,0 +1,92 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-checkout-1
+	h3 
+		background: darken(color-get($mau,trang),5%)
+		border: 1px solid darken(color-get($mau,trang),10%)
+		+pad(.75rem 1rem)
+		+bor-rad(5px 5px 0 0)
+		margin-bottom: 0
+		span 
+			span 
+				+fw(bold)
+	table
+		thead
+			text-transform: uppercase
+			.product-details
+			.product-price
+			.product-count
+			.product-result
+				text-align: right
+		tbody 
+			tr
+				&:nth-child(even)
+					background: darken(color-get($mau,trang),3%)
+			.product-details
+				.media
+					img
+						max-width: 80px
+						border: 1px solid darken(color-get($mau,trang),10%)
+					.media-body
+						+fz(.9rem)
+						h4
+							+fz(.9rem)
+							+fw(bold)
+							a 
+								color: darken(color-get($mau,trang),80%)
+			.product-price
+				.price
+					+fw(bold)
+				.promotion
+					color: color-get($mau,do-1)
+					line-height: 1rem
+					font-size: .9rem
+			.product-count
+				.form-group
+					margin-bottom: 0
+				#quantity
+					input
+						max-width: 40px
+						text-align: center
+						border-color: darken(color-get($mau,trang) ,20%)
+					.btn
+						border-color: darken(color-get($mau,trang) ,20%)
+			.product-result
+				text-align: right
+				white-space: nowrap
+				.sum
+					color: darken(color-get($mau,main),0%)
+					+fz(1.3rem)
+					+lh(1.5rem)
+					+fw(bold)
+	.total 
+		padding-bottom: 2rem
+	// Mobile
+	+media-breakpoint-down(sm)
+		table
+			thead
+				display: none
+			tbody 
+				tr 
+					border-bottom: 1px solid darken(color-get($mau,trang),10%)
+					.product-details
+						width: calc(100% - 110px)
+						float: left
+						border: 0
+					.product-price,
+					.product-count,
+					.product-result
+						width: 110px
+						float: left
+						border: 0
+					.product-result
+
+						.sum 
+							+fz(1rem)
+							+lh(1rem)
+					.product-count
+						padding-top: 0
+						padding-bottom: 0
