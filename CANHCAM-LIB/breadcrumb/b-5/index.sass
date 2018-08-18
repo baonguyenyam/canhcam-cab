@@ -1,0 +1,72 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-breadcrumb-5
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.bullets
+		display: flex
+		margin: 0
+		padding: 0
+		overflow: hidden
+		background: darken(color-get($mau,trang),5%)
+		+bor-rad(5px)
+		+pad(1rem)
+		.bullet-wrapper
+			list-style-type: none
+			position: relative
+			display: flex
+			flex-basis: 0
+			flex-grow: 1
+			flex-direction: column
+			text-align: center
+			align-items: center
+			+fz(.85rem)
+			.num
+				background: darken(color-get($mau,trang),10%)
+				width: 2rem
+				height: 2rem
+				+bor-rad(50%)
+				color: darken(color-get($mau,trang),65%)
+				display: flex
+				align-items: center
+				justify-content: center
+				+fw(bold)
+				margin-bottom: .25rem
+			.title
+				display: block
+			&.active
+				.num 
+					background: darken(color-get($mau,main),0%)
+					color: color-get($mau,trang)
+				.title
+					color: color-get($mau,main)
+		+media-breakpoint-up(sm)
+			.bullet-wrapper
+				+fz(1rem)
+				&:after 
+					content: ''
+					position: absolute
+					overflow: hidden
+					display: inline-block
+					width: 6rem
+					height: 6rem
+					top: 50%
+					right: 1rem
+					border-top: 1px solid darken(color-get($mau,trang),15%)
+					border-right: 1px solid darken(color-get($mau,trang),15%)
+					transform: rotate(55deg) skew(22deg) translateY(-3rem)
+				&:last-child 
+					&:after 
+						content: none
+		+media-breakpoint-up(lg)
+			.bullet-wrapper
+				flex-direction: initial
+				margin-right: 2rem
+				.title
+					margin-left: 1rem
+				&:last-child 
+					margin-right: 0
