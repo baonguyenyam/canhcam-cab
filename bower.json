@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "animate.css": "3.5.2",
+    "animate.css": "3.7.0",
     "owl.carousel": "2.3.4",
     "k-sass-core": "6.0.4",
     "k-gmaps": "1.0.6",
@@ -27,9 +27,9 @@
     "select2": "4.0.5",
     "lightgallery": "1.6.11",
     "freewall": "1.0.6",
-    "seiyria-bootstrap-slider": "10.0.2",
+    "seiyria-bootstrap-slider": "10.2.0",
     "slick-carousel": "1.8.1",
-    "mdi": "2.4.85",
+    "mdi": "2.6.95",
     "bootstrap-touchspin": "4.2.5",
     "bootstrap-datepicker": "1.8.0",
     "elevatezoom": "2.2.3",
@@ -37,6 +37,6 @@
     "linearicons": "1.0.1",
     "fancybox": "3.3.5",
     "jquery.scrollbar": "0.2.11",
-    "swiper": "4.3.3"
+    "swiper": "4.3.5"
   }
 }
