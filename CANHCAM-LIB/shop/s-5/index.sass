@@ -28,7 +28,6 @@
 			height: 100%
 			background: color-get($mau , trang)
 			+box-sha(4px 4px 20px transparent)
-			z-index: 999
 			+transform(translateZ(0))
 			-webkit-backface-visibility: hidden
 			backface-visibility: hidden
@@ -94,6 +93,22 @@
 						.sub-filter
 							+pad(1rem null)
 							background: color-get($mau , xam-3)
+				.slider
+					.slider-handle
+						border: 2px solid color-get($mau,main)
+						background: color-get($mau,trang)
+						height: 15px
+						width: 15px
+					&.slider-horizontal
+						width: 100%
+						height: 15px
+						.slider-track
+							height: 5px
+							margin-top: -2px
+							.slider-selection
+								background: color-get($mau,main)
+							.slider-track-low, .slider-track-high
+								background: color-get($mau,extra)
 		// Filter content
 		.pl-content
 			.pl-tab-filter-wrapper
@@ -249,6 +264,16 @@
 		+media-breakpoint-up(xl)
 		+media-breakpoint-down(md)
 			.pl-filter
+				z-index: 999
 				.pl-filter-wrapper
-					max-height: 700px
+					max-height: 600px
 					overflow: auto
+					// &::-webkit-scrollbar-track
+					// 	background: #e5e5e5
+					// 	border: 4px solid transparent
+					// 	background-clip: content-box
+					// &::-webkit-scrollbar-thumb
+					// 	background: color-get($mau,main)
+					// 	max-height: 50px
+					// &::-webkit-scrollbar
+					// 	width: 10px

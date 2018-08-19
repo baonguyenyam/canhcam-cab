@@ -53,14 +53,28 @@ function TopFilterMenu(){
 		top: geth
 	})
 }
+function shopCanhCam5() {
+	if ($(window).width() <= CANHCAM_APP.CHANGE_GRID_SM) {
+		$('.canhcam-shop-5 #filterSearch').addClass('collapse')
+	} else {
+		$('.canhcam-shop-5 #filterSearch').removeClass('collapse')
+	}
+}
 $(document).ready(function() {
 	getHightBox();
 	TriggerBtn();
 
 	ClickH4();
 	SubFilter();
-	$('#pl-filter-wrapper').scrollbar()
-	// TopFilterMenu();
+	shopCanhCam5();
+	$(".canhcam-shop-5 #price").slider({
+		formatter: function (value) {
+			return value;
+		}
+	});
+	$(".canhcam-shop-5 #price").on("slide", function (slideEvt) {
+		$(".canhcam-shop-5 #geVal").text(slideEvt.value);
+	});
 
 });
 
@@ -69,5 +83,5 @@ $(window).resize(function () {
 	TriggerBtn();
 	ClickH4();
 	SubFilter();
-	// TopFilterMenu();
+	shopCanhCam5();
 })
