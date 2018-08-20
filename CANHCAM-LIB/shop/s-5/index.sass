@@ -1,0 +1,279 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-shop-5
+	+pad(2rem 0)
+	+media-breakpoint-up(lg)
+		+pad(4rem 0)
+	.product-lists
+		position: relative
+		overflow: hidden
+		.price-handle-father
+			+pad(0 1rem)
+			overflow: hidden
+		// Filter trigger
+		.pl-filter-trigger
+			+fz(1.5rem)
+			display: block
+			color: color-get($mau, main)
+			cursor: pointer
+		// Filter menu
+		.pl-filter
+			+pad(1.5rem)
+			+pos(fixed,0 null null 0)
+			width: 20rem
+			height: 100%
+			background: color-get($mau, trang)
+			+box-sha(4px 4px 20px transparent)
+			// +transform(translateZ(0))
+			// -webkit-backface-visibility: hidden
+			// backface-visibility: hidden
+			+transform(translateX(-110%))
+			+transition(transform 0.3s, box-shadow 0.3s)
+			&.active
+				+transform(translateX(0))
+				+box-sha(4px 4px 20px color-rgba(color-get($mau,den),.2))
+			.pl-close
+				display: block
+				+pos(abs , 20px 10px null null )
+				text-align: center
+				z-index: 3
+				color: color-get($mau, main)
+				+fz(1.5rem)
+				cursor: pointer
+			.pl-filter-title
+				+fw(700)
+				text-transform: uppercase
+				margin-bottom: 1rem
+				color: darken(color-get($mau, trang),70%)
+			.pl-filter-block
+				margin-top: 1.5rem
+				h4
+					color: color-get($mau, main)
+					position: relative
+					cursor: pointer
+				.pl-filter-content
+					.dropdown-filter
+						float: right
+						cursor: pointer
+						&:hover
+							color: color-get($mau, extra)
+					.sub-filter
+						display: none
+						&.active 
+							display: block
+					ul,.sub-filter
+						list-style-type: none
+						padding-left: 1.5rem
+						li
+							margin-bottom: .3rem
+							a
+								text-decoration: none
+								color: darken(color-get($mau, trang),70%)
+								position: relative
+								&:before,&:after
+									content: ''
+									+pos(abs , 0 null null -20px)
+								&:before
+									width: 1rem
+									height: 1rem
+									border: 1px solid color-get($mau, main)
+							&:last-child
+								margin-bottom: 0
+							&.active
+								> a
+										&:before
+											background: color-get($mau, main)
+										&:after
+											content: '\f00c'
+											font-family: 'Font Awesome 5 Free'
+											+fw(600)
+											+fz(1.2rem)
+											color: color-get($mau, extra)
+											top: -5px
+						.sub-filter
+							+pad(1rem)
+							background: darken(color-get($mau, trang),5%)
+				.slider
+					.slider-handle
+						border: 2px solid color-get($mau,main)
+						background: color-get($mau,trang)
+						height: 15px
+						width: 15px
+					&.slider-horizontal
+						width: 100%
+						height: 15px
+						.slider-track
+							height: 5px
+							margin-top: -2px
+							.slider-selection
+								background: color-get($mau,main)
+							.slider-track-low, .slider-track-high
+								background: color-get($mau,extra)
+		// Filter content
+		.pl-content
+			.pl-tab-filter-wrapper
+				+pad(.71rem 1rem)
+				background: darken(color-get($mau, trang),5%)
+				display: flex
+				// justify-content: space-between
+				margin-bottom: 2rem
+				select
+					max-width: 30%
+				p,h2
+					margin-bottom: 0
+				h2
+					+fz(1.125rem)
+					+fw(700)
+					text-transform: uppercase
+				p
+					+fz(.7rem)
+					+fw(400)
+					color: darken(color-get($mau, trang),60%)
+			.item
+				margin-bottom: 1.5rem
+				figure
+					position: relative
+					.pl-new
+						+pos(abs, .25rem .25rem null null)
+						span 
+							line-height: 1.3
+							display: inline-block
+					.pl-hidden
+						display: flex
+						flex-direction: column
+						align-items: center
+						justify-content: center
+						a
+							border: 2px solid color-get($mau, main)
+							+bor-rad(0)
+							color: color-get($mau, main)
+							+fw(600)
+							&.btn-more
+								display: none
+							&.btn-buy
+								margin-top: .5rem
+					figcaption
+						text-align: center
+						ul
+							+pad(0)
+							+mar(0)
+							margin-top: .5rem
+							list-style-type: none
+							display: flex
+							justify-content: center
+							align-items: center
+							li
+								margin-right: .5rem
+								a
+									width: 1rem
+									height: 1rem
+									+bor-rad(50%)
+									display: block
+								&:last-child
+									margin-right: 0
+								&.active
+									a
+										+box-sha(0 0 0 1px color-get($mau, den))
+						hgroup
+							h3
+								+fz(.9rem)
+								color: color-get($mau, xam-1)
+								+fw(400)
+								&.brand
+									margin-top: .7rem
+							h2
+								+fz(1rem)
+								+fw(600)
+								text-transform: uppercase
+							a
+								text-decoration: none
+						.pl-cost
+							display: flex
+							justify-content: space-between
+							align-items: baseline
+							span
+								+fw(400)
+								color: color-get($mau, xam-1)
+								&.new
+									color: color-get($mau, do-1)
+								&.old
+									text-decoration: line-through
+									+fz(.8rem)
+		// Tablet and up
+		+media-breakpoint-up(md)
+			.pl-content
+				.item
+					figure
+						figcaption
+							hgroup
+								h3
+									&.brand
+										margin-top: .5rem
+		// PC and up
+		+media-breakpoint-up(lg)
+			display: flex
+			.pl-filter-trigger
+				display: none
+			.pl-filter
+				padding-top: 0
+				position: static
+				transform: inherit
+				width: 25%
+				border-right: 1px solid color-get($mau, xam-3)
+				+box-sha(none)
+				.pl-close
+					display: none
+				.pl-filter-block
+					ul
+						li
+							&:hover
+								a
+									color: color-get($mau, main)
+			.pl-content
+				padding-left: 15px
+				width: 75%
+				.pl-tab-filter-wrapper
+					select
+						max-width: 15%
+				.item
+					figure
+						overflow: hidden
+						.pl-hidden
+							+pos(abs,0 null null 0)
+							width: 100%
+							height: 100%
+							background: color-rgba(color-get($mau, main),.3)
+							+transform(translateY(-105%))
+							+transition(all .3s ease-in-out)
+							a
+								+transition(all .3s ease-in-out)
+								border: 2px solid color-get($mau, trang)
+								text-transform: uppercase
+								color: color-get($mau, trang)
+								&.btn-more
+									display: block
+								&:hover,&:active
+									background: color-get($mau, trang)
+									color: color-get($mau, den)
+						figcaption
+							.pl-cost
+								span
+									&.new
+										+fz(1.2rem)
+									&.old
+										+fz(1rem)
+						&:hover
+							.pl-hidden
+								+transform(translateY(0))
+		+media-breakpoint-up(xl)
+		+media-breakpoint-down(md)
+			.pl-filter
+				z-index: 999
+				display: flex
+				flex-direction: column
+				.pl-filter-wrapper
+					overflow-y: auto
+					
