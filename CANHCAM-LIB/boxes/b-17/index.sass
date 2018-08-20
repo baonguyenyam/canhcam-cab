@@ -1,0 +1,51 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-boxes-17
+	+pad(1.5rem 0)
+	.feature
+		.item
+			margin-bottom: 1rem
+			&:last-child
+				margin-bottom: 0
+			.feature-col
+				figure
+					display: flex
+					margin-bottom: 0
+					.icon
+						width: 4rem
+						height: 4rem
+						display: flex
+						justify-content: center
+						align-items: center
+						+bor(null,1px solid,color-get($mau,trang))
+						+bor-rad(50%)
+						em
+							+fz(1.4rem)
+							color: color-get($mau,trang)
+					figcaption
+						width: calc(100% - 4rem)
+						display: flex
+						flex-direction: column
+						align-self: center
+						padding-left: 1rem
+						.title
+							color: color-get($mau,trang)
+							+fz(1rem)
+							+fw(600)
+							margin-bottom: 0
+						.des
+							margin-bottom: 0
+							color: color-rgba(color-get($mau,trang),.5)
+							line-height: 1rem
+							font-size: .85rem
+	+media-breakpoint-up(md)
+		+pad(3rem)
+		.feature
+			.item
+				margin-bottom: 0
+				.feature-col
+					figure
+						margin-bottom: 0

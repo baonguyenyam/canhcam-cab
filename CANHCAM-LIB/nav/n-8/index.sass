@@ -1,0 +1,53 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-3
+	position: fixed
+	right: 0
+	z-index: 100
+	+transform(translateX(calc(100% - 2.8rem)))
+	+transition(all .3s ease-in-out)
+	.nav
+		flex-direction: column
+		max-width: 240px
+		li
+			background: color-get($mau , main)
+			border-bottom: 1px solid color-get($mau , bor-5)
+			+transition(all .3s ease-in-out)
+			&:last-child
+				border-bottom: none
+			a
+				color: color-get($mau , trang)
+				+fw(400)
+				+fz(1rem)
+				+pad(0 1rem 0 0)
+				display: flex
+				align-items: center
+				em
+					+fz(1.5rem)
+					+transition(all .3s ease-in-out)
+					width: 2.2rem
+					height: 2.2rem
+					margin-right: .5rem
+					text-align: center
+					+pad(1.4rem)
+					border-right: 1px solid color-get($mau , bor-5)
+					display: flex
+					justify-content: center
+					align-items: center
+			&:hover
+				background: color-get($mau , extra)
+
+	&:hover,&:focus
+		+transform(translateX(0))
+
+	+media-breakpoint-up(md)
+		+transform(translateX(calc(100% - 4.2rem)))
+		.nav
+			li
+				a
+					em
+						width: 4.2rem
+						height: 4.2rem

@@ -1,0 +1,325 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-shop-details-4
+	+pad(3rem null)
+	+media-breakpoint-up(lg)
+		+pad(4rem null)
+	.product-details
+		.productimg-slide
+			.slidewrap
+				.product-nav
+					display: none
+				.product-slide
+					margin-top: 2rem
+					.item
+						display: flex
+						justify-content: center
+						a
+							width: 100%
+					.slick-arrow
+						background: rgba(0,0,0,.3)
+						color: rgba(255,255,255,.3)
+						padding: .85rem 1rem
+						width: initial
+						height: initial
+						z-index: 100
+						&:before
+							font-family: 'Font Awesome 5 Free'
+							font-weight: 900
+							+fz(1rem)
+						&.slick-prev
+							left: 0
+							&:before
+								content: '\f053'
+						&.slick-next
+							right: 0
+							&:before
+								content: '\f054'
+						&.slick-disabled
+							&:before
+								+opacity(.5)
+						&:hover 
+							background: color-get($mau,main)
+							color: color-get($mau,trang)
+				.promotion
+					color: #fff
+					border-radius: 3px
+					+fz(.7rem)
+					+fw(700)
+					text-transform: uppercase
+					+lh(1)
+					+pad(.2rem)
+					display: inline-block
+					z-index: 1
+					+pos(abs, 3.8rem null null 1.5rem)
+					&.new
+						background: color-get($mau,main)
+				.product-name
+					font-size: .9rem
+					font-weight: 700
+					color: color-get($mau,main)
+					background: lighten(color-get($mau,main),50%)
+					+pad(.8rem)
+					+mar(.3rem null)
+					border-radius: 5px
+				+media-breakpoint-up(sm)
+					.promotion,.product-name
+						display: none
+					.product-nav
+						+pad(1rem)
+						display: block
+						width: 20%
+						display: flex
+						align-items: center
+						.slick-arrow
+							&:before
+								opacity: 1
+								font-family: 'Font Awesome 5 Free'
+								font-weight: 900
+								+fz(1rem)
+								color: color-get($mau,main)
+							&.slick-prev, &.slick-next
+								width: 100%
+								top: auto
+								+transform(translate(-50%,-50%))
+							&.slick-prev
+								left: 50%
+								top: .5rem
+								&:before
+									content: '\f077'
+							&.slick-next
+								left: 50%
+								bottom: -1rem
+								&:before
+									content: '\f078'
+					.product-slide
+						margin-top: 0
+						width: 80%
+		.product-info
+			.product-brand
+				text-transform: uppercase
+				+fw(700)
+				color: color-get($mau,main)
+				+fz(1.25rem)
+				+media-breakpoint-up(lg)
+			.product-name
+				+fz(1.25rem)
+				+fw(500)
+				color: lighten(color-get($mau,den),20%)
+				+lh(1.3)
+			.product-category
+				color: lighten(color-get($mau,den),20%)
+				+fw(500)
+				+fz(.9rem)
+			.product-price
+				align-items: flex-end
+				.new
+					+fw(500)
+					color: darken(color-get($mau, do-1),20%)
+					margin-right: 10px
+					+lh(1)
+					+fz(1.4rem)
+				.old
+					font-size: 1.1rem
+					text-decoration: line-through
+					color: #ccc
+					line-height: 1
+			+media-breakpoint-up(lg)
+				.product-brand
+					+fz(1.6rem)
+				.product-name
+					+fz(1.4rem)
+				.product-category
+					+fz(1rem)
+				.product-price
+					+fz(2rem)
+			.product-color
+				margin-bottom: 1rem
+				.label
+					text-transform: uppercase
+					+fz(1rem)
+					+fw(600)
+				.color-select
+					display: flex
+					.item
+						&:focus,&:active
+							outline: 0
+						.color
+							.color-1,.color-2,.color-3
+								margin-right: 1rem
+								border-radius: 50%
+								display: block
+								border: 1px solid darken(color-get($mau,trang),20%)
+								background: color-get($mau,main)
+								width: 25px
+								height: 25px
+								position: relative
+								&:before
+										content: ''
+										display: block
+										border: 2px solid #fff
+										+bor-rad(50%)
+										+pos(abs,0 0 0 0)
+							.color-1
+								margin-left: 0
+							.color-2
+								background: color-get($mau,extra)
+							.color-3
+								background: color-get($mau,den)
+							&.active
+								a
+									border: 1px solid darken(color-get($mau,den),0%)
+			.product-size
+				.label
+					text-transform: uppercase
+					+fz(1rem)
+					+fw(600)
+				ul
+					padding-left: 0
+					list-style: none
+					.size
+						display: inline-block
+						+mar(null .5rem .5rem null)
+						a.link-size
+							text-decoration: none
+							+fw(600)
+							+bor-rad(5px)
+							display: block
+							+pad(.5rem)
+							background: darken(color-get($mau,trang),5%)
+							+bor(null, 1px solid, darken(color-get($mau,trang),20%))
+							+fz(.8rem)
+							color: darken(color-get($mau,trang),40%)
+							&.active
+								+bor(null, 1px solid, darken(color-get($mau,main),0%))
+								color: darken(color-get($mau,main),0%)
+				+media-breakpoint-up(lg)
+					ul
+						.size
+							// margin-bottom: 0
+			.input-number
+				margin-bottom: 1rem
+				margin-right: 1rem
+				display: inline-block
+				border: 1px solid #e6e6e6
+				background: #fafafa
+				border-radius: 50px
+				input
+					max-width: 40px
+					border: 0
+					+fw(700)
+					text-align: center
+				.input-group-append, .input-group-prepend
+					button
+						background: color-get($mau,trang)
+						+bor-rad(50px)
+				.input-group-append
+					button
+						border-top-left-radius: 0
+						border-bottom-left-radius: 0
+				.input-group-prepend
+					button
+						border-top-right-radius: 0
+						border-bottom-right-radius: 0
+			.product-overview
+				.content
+					ul
+						padding-left: 1.5rem
+						list-style: none
+						li
+							+fz(.95rem)
+							position: relative
+							&:before
+								content: ''
+								display: block
+								width: 4px
+								background: black
+								height: 4px
+								+pos(abs, 7px null null -1.5rem)
+			.btn-wrap
+				margin-bottom: 1rem
+				display: inline-block
+				a.btn-wishlist
+					color: color-get($mau,trang)
+					background: lighten(color-get($mau,do-1),20%)
+					+bor-rad(50%)
+					width: 40px
+					height: 40px
+					+fz(1.3rem)
+					line-height: 40px
+					padding: 0
+					&:hover
+						background: lighten(color-get($mau,do-1),10%)
+				a.btn-buy
+					border: 0
+					margin-right: 1rem
+					+bor-rad(50px)
+					color: color-get($mau,trang)
+					text-transform: uppercase
+					+fz(1rem)
+					+lh(2rem)
+					+pad(null 2rem)
+					background: lighten(color-get($mau,main),10%)
+					position: relative
+					&:after
+						content: ''
+						width: 100%
+						+bor-rad(50px)
+						height: 100%
+						+pos(abs,0 null null 0)
+						background: color-rgba(color-get($mau,trang),.3)
+						transform: scale(0)
+					&:hover
+						&:after
+							transform: scale(1)
+							transition: .3s ease-in-out
+			.share
+				.label
+					text-transform: uppercase
+					+fz(1rem)
+					margin-right: 1.5rem
+					+fw(600)
+					display: inline-block
+				a
+					display: inline-block
+					color: lighten(color-get($mau,den),30%)
+					+fz(1.2rem)
+					+ a
+						margin-left: 1rem
+					&:hover
+						color: color-get($mau,extra)
+	.product-description
+		margin-top: 2rem
+		nav
+			border: 0
+			padding-bottom: 1px
+			margin-bottom: 2rem
+			justify-content: center
+			border-bottom: 1px solid lighten(color-get($mau,den),10%)
+			a.nav-link
+				border: 0
+				+pad(1rem 1.2rem)
+				+fw(600)
+				color: darken(color-get($mau,trang),30%)
+				font-size: 1rem
+				position: relative
+				&.active,&:hover
+					color: lighten(color-get($mau,den),20%)
+					border: 0
+					&:after
+						content: ''
+						width: 60px
+						height: 3px
+						background: lighten(color-get($mau,den),20%)
+						+pos(abs,null null -2px 50%)
+						+transform(translate(-50%,-50%))
+						transition: .5s all ease-in-out
+				&.active
+					color: lighten(color-get($mau,den),20%)!important
+				&:hover
+					color: darken(color-get($mau,trang),30%)
+		.tab-content
+			+fw(400)

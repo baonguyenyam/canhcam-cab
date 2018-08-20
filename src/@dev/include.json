@@ -6,7 +6,10 @@
 			],
 			"body": [
 				"breadcrumb/b-5",
-				"checkout/c-4"
+				"boxes/b-17",
+				"shop/s-5",
+				"shop-details/s-4",
+				"nav/n-8"
 			],
 			"footer": [
 				"footer/f-11",
