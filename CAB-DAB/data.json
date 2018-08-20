@@ -210,6 +210,14 @@
             "Boxes 16",
             "",
             ""
+        ],
+        "boxes-17": [
+            "boxes/b-17",
+            "body",
+            "d856c843c1c94e06434565c8f95935bc.png",
+            "Boxes 17",
+            "",
+            ""
         ]
     },
     "slider": {
@@ -346,6 +354,14 @@
             "Nav 7",
             "",
             "Đây là thuộc tính đặc biệt nên xài chung với k-responsive-menu để bật tắt menu và chỉ hiển thị khi chạy thực tế"
+        ],
+        "nav-8": [
+            "nav/n-8",
+            "body",
+            "3a87efe517dec136712ce5daf0e60987.png",
+            "Nav 8",
+            "",
+            ""
         ]
     },
     "tabs": {
@@ -588,6 +604,14 @@
             "body",
             "shop-details-3.png",
             "shop-details 3"
+        ],
+        "shop-details-4": [
+            "shop-details/s-4",
+            "body",
+            "8630fe0364b4d43c083b5bbadf24f6bf.png",
+            "Shop details 4",
+            "",
+            ""
         ]
     },
     "checkout": {
