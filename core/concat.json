@@ -26,10 +26,7 @@
             "bower_components/animate.css/animate.css",
             "bower_components/offline/themes/offline-theme-default.css",
             "bower_components/offline/themes/offline-language-english.css",
-            "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
-            "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
-            "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
-            "node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
+            "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
             "bower_components/mdi/css/materialdesignicons.min.css",
             "bower_components/linearicons/dist/web-font/style.css",
             "bower_components/fancybox/dist/jquery.fancybox.min.css"
