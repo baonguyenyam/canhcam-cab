@@ -1,14 +1,14 @@
-function changeTopBoxes() {
+function changeTopBoxes8() {
 	var geth = $('header').outerHeight();
-	$('.canhcam-nav-3').css({
+	$('.canhcam-nav-8').css({
 		'top': geth + 'px'
 	})
 }
 
 $(document).ready(function () {
-	changeTopBoxes()
+	changeTopBoxes8()
 });
 
 $(window).resize(function () {
-	changeTopBoxes()
+	changeTopBoxes8()
 })

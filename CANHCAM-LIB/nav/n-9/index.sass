@@ -1,0 +1,80 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-nav-9
+	.nav-list
+		background: darken(color-get($mau,whites),5%)
+		ul
+			margin-bottom: 0
+			display: flex
+			flex-direction: row
+			justify-content: center
+			flex-wrap: wrap
+			padding: 0
+			margin: 0
+			+media-breakpoint-up(lg)
+				flex-wrap: initial
+			li
+				+transition(all 0.3s ease-in-out)
+				list-style-type: none
+				position: relative
+				text-align: center
+				display: flex
+				justify-content: center
+				+media-breakpoint-up(lg)
+					width: 14.29%
+				// Anchor
+				a
+					z-index: 1
+					display: flex
+					align-items: center
+					box-sizing: border-box
+					+pad(.8rem 1rem)
+					color: darken(color-get($mau,whites),50%)
+					text-decoration: none
+					position: relative
+					+lh(1.3rem)
+					+fz(1rem)
+					+fw(400)
+					+transition(all 0.3s ease-in-out)
+					&.active
+						color: color-get($mau,main)
+					&.active,&:hover
+						&:before
+							content: ''
+							+pos(abs, null null 0 50%)
+							transform: translate(-50%,-50%)
+							width: 50px
+							height: 2px
+							background: color-get($mau,main)
+							transition: .3s all ease-in-out
+	+media-breakpoint-up(md)
+		z-index: 99
+		&.active 
+			position: sticky
+			position: -webkit-stick
+	+media-breakpoint-up(lg)
+		// top: 49px
+		ul
+			li
+				&:after
+					content: ''
+					position: absolute
+					top: 50%
+					width: 1px
+					height: 40px
+					background: darken(color-get($mau,trang),30%)
+					right: -3px
+					transform: translate(-50%,-50%)
+				&:last-child
+					&:after
+						display: none
+	+media-breakpoint-up(xl)
+		// top: 63.3px
+		.nav-list
+			ul
+				li
+					a
+						+fz(1.1rem)

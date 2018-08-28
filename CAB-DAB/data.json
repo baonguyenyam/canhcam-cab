@@ -362,6 +362,14 @@
             "Nav 8",
             "",
             ""
+        ],
+        "nav-9": [
+            "nav/n-9",
+            "body",
+            "85e354f8ca286b554dc3a9410d6261b7.png",
+            "Nav 9",
+            "",
+            "Phần này sẽ tự động sticky khi đụng header"
         ]
     },
     "tabs": {
@@ -512,6 +520,14 @@
             "body",
             "b076f730dd5634a2e10c0d139c728df2.png",
             "Carousel 8",
+            "",
+            ""
+        ],
+        "carousel-9": [
+            "carousel/c-9",
+            "body",
+            "c57a09204dea14724957bcc0de0e310d.png",
+            "Carousel 9",
             "",
             ""
         ]
@@ -950,6 +966,14 @@
             "footer",
             "5a05459d9a955040826dae7539cc45aa.png",
             "Footer 12",
+            "",
+            ""
+        ],
+        "footer-13": [
+            "footer/f-13",
+            "footer",
+            "149997d3a206602d9f766b5b02c52ef2.png",
+            "Footer 13",
             "",
             ""
         ]

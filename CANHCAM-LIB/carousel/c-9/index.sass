@@ -1,0 +1,123 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+
+.canhcam-carousel-9
+	+pad(4rem null null)
+	.slide-1
+		.item
+			min-height: 300px
+			&:focus
+				outline: 0
+	.wrap
+		.nav
+			justify-content: center
+			.slick-track
+				width: auto!important
+			.item
+				color: color-get($mau,main)
+				+pad(2rem 3rem)
+				position: relative
+				&:after
+					content: ''
+					width: 100%
+					height: 1px
+					background: color-get($mau,main)
+					+pos(abs,null null 9px 0)
+				
+				&.slick-current
+					h4
+						text-align: center
+						color: color-get($mau,extra)
+						// +fz(2rem)
+						+fw(700)
+					&:before
+						background: color-get($mau, extra)
+					&:after
+						background: color-get($mau, extra)
+				&:before
+					content: ''
+					width: 10px
+					height: 10px
+					position: absolute
+					bottom: 0
+					background: color-get($mau,main)
+					border-radius: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+			.slick-list
+				+pad(null 4rem 1rem 4rem)
+				h4
+					margin-bottom: 0
+		.content
+			+pad(2rem null)
+			.text
+				+pad(null 3rem)
+				color: color-get($mau,main)
+				text-align: center
+				h2
+					display: inline-block
+					font-size: 2rem
+					padding-bottom: 1rem
+					margin-bottom: 1rem
+					font-weight: 900
+					position: relative
+					&:before
+						content: ''
+						width: 8px
+						height: 8px
+						+bor-rad(50%)
+						background: color-get($mau,main)
+						+pos(abs, null null -4px 50%)
+						transform: translateX(-50%)
+					&:after
+						content: ''
+						width: 100%
+						height: 1px
+						background: color-get($mau,main)
+						+pos(abs, null null 0 0)
+				h3
+					+fz(1.4rem)
+					font-weight: 700
+					margin-bottom: 1rem
+				p
+					+fw(400)
+					margin-bottom: 0
+			.slick-arrow
+				background: rgba(0,0,0,.3)
+				color: rgba(255,255,255,.3)
+				padding: .85rem 1rem
+				width: initial
+				height: initial
+				z-index: 100
+				&:before
+					font-family: 'Font Awesome 5 Free'
+					font-weight: 900
+					+fz(1rem)
+				&.slick-prev
+					left: 0
+					&:before
+						content: '\f053'
+				&.slick-next
+					right: 0
+					&:before
+						content: '\f054'
+				&.slick-disabled
+					&:before
+						+opacity(.5)
+				&:hover 
+					background: color-get($mau,main)
+					color: color-get($mau,trang)
+		+media-breakpoint-up(lg)
+			.content
+				+pad(1rem null 3rem)
+				.text
+					margin: auto
+					max-width: 70%
+					h3
+						font-size: 1.7rem
+					p
+						+fz(1.2rem)
+				.slick-arrow
+					display: none
