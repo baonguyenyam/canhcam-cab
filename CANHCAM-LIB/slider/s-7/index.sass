@@ -1,0 +1,56 @@
+@import ../../_includes
+//////////////////////////////////////
+// CODE
+//////////////////////////////////////
+.canhcam-slider-7
+	overflow: hidden
+	.slide
+		position: relative
+		.owl-nav
+			button
+				width: 3rem
+				height: 3rem
+				+lh(3rem)
+				text-align: center
+				border-radius: 50%
+				background: rgba(#fff,.7)
+				color: black
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				&.owl-prev
+					left: 0
+				&.owl-next
+					right: 0
+				&:hover
+					background: color-get($mau,main)
+				&:focus
+					box-shadow: none
+	+media-breakpoint-up(lg)
+		.slide
+			.owl-stage-outer
+				overflow: visible
+				.owl-item
+					transform: scale(.8)
+					position: relative
+					&:after
+						content: ''
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						background: rgba(#000,.8)
+					&.active
+						transform: scale(1)
+						&:after
+							display: none
+
+	@media screen and (min-width: 1400px)
+		.slide
+			.owl-nav
+				button
+					&.owl-prev
+						left: -12rem
+					&.owl-next
+						right: -12rem
