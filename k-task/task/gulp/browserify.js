@@ -9,7 +9,6 @@ import babelify from 'babelify';
 import _ from 'lodash';
 import vsource from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
-import gulpif from 'gulp-if';
 
 module.exports = function(gulp, setgulp, plugins, config, target, browserSync) {
     // Run task
