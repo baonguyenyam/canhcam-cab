@@ -1,7 +1,6 @@
 'use strict';
 
 import path from 'path';
-import gulpif from 'gulp-if';
 import cssbeautify from 'gulp-cssbeautify';
 import beautify from 'gulp-beautify';
 
